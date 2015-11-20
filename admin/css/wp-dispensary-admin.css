@@ -1,0 +1,56 @@
+/**
+ * Admin CSS
+ *
+ * This file is used to add styles to the admin pages of each custom post type.
+ *
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin/css
+ */
+ 
+#wpdispensary_prices .inside {
+    overflow: auto;
+}
+
+#wpdispensary_prices .inside .pricebox {
+	float: left;
+	margin: 10px 1%;
+	position: relative;
+	width: 31.333%;
+}
+
+#dashboard_right_now .flowers-count a:before,
+#dashboard_right_now .flowers-count span:before,
+#dashboard_right_now .edibles-count a:before,
+#dashboard_right_now .edibles-count span:before,
+#dashboard_right_now .concentrates-count a:before,
+#dashboard_right_now .concentrates-count span:before,
+#dashboard_right_now .prerolls-count a:before,
+#dashboard_right_now .prerolls-count span:before {
+    content: "\f345";
+}
+
+
+/* Leafly Reviews admin
+-------------------------------------------------------------- */
+
+div.widget[id*=_wpdispensary_] .widget-top,
+div.widget[id*=_wpdispensary_] .widget-top:hover {
+	border-color: #76BD1D;
+}
+
+div.widget[id*=_wpdispensary_] .widget-title,
+div.widget[id*=_wpdispensary_] .widget-title h3 {
+	background: #76BD1D;
+	color: #FFF;
+}
+
+div.widget[id*=_wpdispensary_] .widget-title .in-widget-title {
+	color: rgba(255,255,255,0.6);
+}
+
+div.widget[id*=_wpdispensary_] .widget-action {
+	color: #FFF;
+}

@@ -1,0 +1,186 @@
+<?php
+
+/**
+ * The admin-specific functionality of the plugin.
+ *
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin
+ */
+
+/**
+ * The admin-specific functionality of the plugin.
+ *
+ * Defines the plugin name, version, and two examples hooks for how to
+ * enqueue the admin-specific stylesheet and JavaScript.
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin
+ * @author     Robert DeVore <me@robertdevore.com>
+ */
+class WP_Dispensary_Admin {
+
+	/**
+	 * The ID of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $plugin_name    The ID of this plugin.
+	 */
+	private $plugin_name;
+
+	/**
+	 * The version of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $version    The current version of this plugin.
+	 */
+	private $version;
+
+	/**
+	 * Initialize the class and set its properties.
+	 *
+	 * @since    1.0.0
+	 * @param      string    $plugin_name       The name of this plugin.
+	 * @param      string    $version    The version of this plugin.
+	 */
+	public function __construct( $plugin_name, $version ) {
+
+		$this->plugin_name = $plugin_name;
+		$this->version = $version;
+
+	}
+
+	/**
+	 * Register the stylesheets for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function enqueue_styles() {
+
+		/**
+		 * This function is provided for demonstration purposes only.
+		 *
+		 * An instance of this class should be passed to the run() function
+		 * defined in WP_Dispensary_Loader as all of the hooks are defined
+		 * in that particular class.
+		 *
+		 * The WP_Dispensary_Loader will then create the relationship
+		 * between the defined hooks and the functions defined in this
+		 * class.
+		 */
+
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-dispensary-admin.css', array(), $this->version, 'all' );
+
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function enqueue_scripts() {
+
+		/**
+		 * This function is provided for demonstration purposes only.
+		 *
+		 * An instance of this class should be passed to the run() function
+		 * defined in WP_Dispensary_Loader as all of the hooks are defined
+		 * in that particular class.
+		 *
+		 * The WP_Dispensary_Loader will then create the relationship
+		 * between the defined hooks and the functions defined in this
+		 * class.
+		 */
+
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-dispensary-admin.js', array( 'jquery' ), $this->version, false );
+
+	}
+
+}
+
+/**
+ * Add our custom post types to the "At a Glance" box in the WordPress
+ * admin dashboard.
+ *
+ * @since    1.0.0
+ */
+function wpdispensary_right_now_content_table_end() {
+	$args = array(
+		'public' => true ,
+		'_builtin' => false
+	);
+	$output = 'object';
+	$operator = 'and';
+	$post_types = get_post_types( $args , $output , $operator );
+	foreach( $post_types as $post_type ) {
+		$num_posts = wp_count_posts( $post_type->name );
+		$num = number_format_i18n( $num_posts->publish );
+		$text = _n( $post_type->labels->singular_name, $post_type->labels->name , intval( $num_posts->publish ) );
+		if ( current_user_can( 'edit_posts' ) ) {
+			$cpt_name = $post_type->name;
+		}
+		echo '<li class="'.$cpt_name.'-count"><tr><a href="edit.php?post_type='.$cpt_name.'"><td class="first b b-' . $post_type->name . '"></td>' . $num . ' <td class="t ' . $post_type->name . '">' . $text . '</td></a></tr></li>';
+	}
+
+}
+
+add_action( 'dashboard_glance_items' , 'wpdispensary_right_now_content_table_end' );
+
+/**
+ * Adding the Custom Post Type itself to it's navigation menu box in the
+ * MENU section so users can add the CPT's main link to their navigation
+ *
+ * @since    1.0.0
+ */
+
+class WPDispensaryArchiveNavMenu {
+	public function __construct() {
+		add_action( 'admin_head-nav-menus.php', array( $this, 'add_filters' ) );
+	}
+
+	public function add_filters() {
+		$post_type_args = array(
+			'show_in_nav_menus' => true
+		);
+
+		$post_types = get_post_types( $post_type_args, 'object' );
+
+		foreach ( $post_types as $post_type ) {
+			if ( $post_type->has_archive ) {
+				add_filter( 'nav_menu_items_' . $post_type->name, array( $this, 'add_archive_checkbox' ), null, 3 );
+			}
+		}
+	}
+
+	public function add_archive_checkbox( $posts, $args, $post_type ) {
+		global $_nav_menu_placeholder, $wp_rewrite;
+		$_nav_menu_placeholder = ( 0 > $_nav_menu_placeholder ) ? intval($_nav_menu_placeholder) - 1 : -1;
+
+		//dump( $post_type, '$post_type', 'htmlcomment' );
+
+		$archive_slug = $post_type['args']->has_archive === true ? $post_type['args']->rewrite['slug'] : $post_type['args']->has_archive;
+		if ( $post_type['args']->rewrite['with_front'] )
+			$archive_slug = substr( $wp_rewrite->front, 1 ) . $archive_slug;
+		else
+			$archive_slug = $wp_rewrite->root . $archive_slug;
+
+		array_unshift( $posts, (object) array(
+			'ID' => 0,
+			'object_id' => $_nav_menu_placeholder,
+			'post_content' => '',
+			'post_excerpt' => '',
+			'post_title' => $post_type['args']->labels->name,
+			'post_type' => 'nav_menu_item',
+			'type' => 'custom',
+			'url' => site_url( $archive_slug ),
+		) );
+
+		return $posts;
+	}
+}
+
+$WPDispensaryArchiveNavMenu = new WPDispensaryArchiveNavMenu();

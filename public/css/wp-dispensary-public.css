@@ -1,0 +1,93 @@
+/**
+ * Public CSS
+ *
+ * This file is used to add styles to the public display of the plugin.
+ *
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/public/css
+ */
+ 
+.wpdispensary-widget {
+    display: inline-block;
+	margin: 12px 0;
+	max-width: 312px;
+    position: relative;
+}
+
+.wpdispensary-widget:first-child {
+	margin-top: 0;
+}
+
+.wpdispensary-widget:last-child {
+	margin-bottom: 0;
+}
+
+.wpdispensary-widget img {
+    margin-bottom: 12px;
+}
+
+span.wpdispensary-widget-title {
+    font-size: 16px;
+	font-weight: 600;
+	line-hehgit: 1.2;
+}
+
+span.wpdispensary-widget-categories {
+    float: right;
+	font-size: 13px;
+    font-weight: 600;
+	line-height: 1.2;
+}
+
+span.wpdispensary-widget-categories a,
+span.wpdispensary-widget-categories a:visited {
+    background: #EEE;
+    border-radius: 15px;
+    color: #AAA;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+span.wpdispensary-widget-categories a:hover {
+	color: #454545;
+}
+
+ul.wpdispensary-list li:before {
+    color: #454545;
+    content: "\f105";
+    font-family: 'FontAwesome';
+    margin-right: 6px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Mobile responsive CSS */
+
+@media screen and (max-width: 1199px) {
+
+	.wpdispensary-widget {
+		max-width: 31.333%;
+		margin: 12px 1%;
+	}
+
+}
+
+@media screen and (max-width: 900px) {
+
+	.wpdispensary-widget {
+		max-width: 48%;
+		margin: 12px 1%;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	.wpdispensary-widget {
+		max-width: 312px;
+		margin: 12px 1%;
+	}
+
+}

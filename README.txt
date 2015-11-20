@@ -1,6 +1,16 @@
-![WP Dispensary logo](https://www.wpdispensary.com/wp-content/uploads/2015/10/wpdispensary-logo.png)
+=== WP Dispensary ===
+Contributors: deviodigital
+Donate link: https://www.wpdispensary.com
+Tags: menu, dispensary, medical, marijuana
+Requires at least: 3.0.1
+Tested up to: 4.3
+Stable tag: 4.3
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-# WP Dispensary
+The complete dispensary menu solution for WordPress
+
+== Description ==
 
 The world's first (and best) medical marijuana dispensary menu plugin for WordPress.
 
@@ -66,8 +76,20 @@ With our free and commercial add-on's, you'll be able to extend the functionalit
 
 You can view our current add-on's on the [offical WP Dispensary website](https://www.wpdispensary.com)
 
-## Installation
+== Installation ==
 
 1. Go to `Plugins - Add New` in your WordPress admin panel and search for "WP Dispensary"
 2. Install and activate the plugin directly in your admin panel
 3. Pat yourself on the back for a job well done :)
+
+== Screenshots ==
+
+1. Overview of content added to the "Flowers" section of your menu
+2. The content editor for a post in the "Flowers" section of your menu
+3. Example of how the menu content is output in the "Dispensary Display" theme
+4. Example of how the individual menu item is output in the "Dispensary Display" theme
+
+== Changelog ==
+
+= 1.0 =
+* Initial release
