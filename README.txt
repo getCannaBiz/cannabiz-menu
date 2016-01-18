@@ -1,10 +1,10 @@
 === WP Dispensary ===
 Contributors: deviodigital
-Donate link: https://www.wpdispensary.com
+Donate link: http://www.wpdispensary.com
 Tags: menu, dispensary, medical, marijuana
 Requires at least: 3.0.1
-Tested up to: 4.4.0
-Stable tag: 4.4.0
+Tested up to: 4.4.1
+Stable tag: 4.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,7 +66,7 @@ We've personally crafted a WordPress theme that is fully integrated with the WP 
 
 The best part is, since we personally built and maintain this theme, you no longer have to worry about plugin conflicts every time there's an update released. Instead, you're able to focus on your patients, knowing that we've got your online menu completely covered.
 
-You can view more information about this theme, as well as the live demo at the [offical WP Dispensary website](https://www.wpdispensary.com)
+You can view more information about this theme, as well as the live demo at the [offical WP Dispensary website](http://www.wpdispensary.com)
 
 ### Extend WP Dispensary
 
@@ -74,7 +74,7 @@ When building this plugin, we made sure to keep it lean, including only the core
 
 With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-You can view our current add-on's on the [offical WP Dispensary website](https://www.wpdispensary.com)
+You can view our current add-on's on the [offical WP Dispensary website](http://www.wpdispensary.com)
 
 == Installation ==
 
@@ -90,6 +90,9 @@ You can view our current add-on's on the [offical WP Dispensary website](https:/
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.1 =
+* Added WordPress REST API integration
 
 = 1.0 =
 * Initial release

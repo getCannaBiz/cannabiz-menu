@@ -130,6 +130,13 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-prerolls.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-widgets.php';
 
+		/**
+		 * Adding custom post type taxonomy and metabox data to WP REST API
+		 *
+		 * @since    1.1.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-rest-api.php';
+
 		$this->loader = new WP_Dispensary_Loader();
 
 	}

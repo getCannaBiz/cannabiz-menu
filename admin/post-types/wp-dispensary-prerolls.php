@@ -54,6 +54,7 @@
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
+			'show_in_rest'		  => true,
 			'menu_position'       => 5,
 			'menu_icon'           => 'dashicons-arrow-right-alt2',
 			'show_in_admin_bar'   => true,

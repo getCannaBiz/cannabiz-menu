@@ -1,4 +1,4 @@
-![WP Dispensary logo](https://www.wpdispensary.com/wp-content/uploads/2015/10/wpdispensary-logo.png)
+![WP Dispensary logo](http://www.wpdispensary.com/wp-content/uploads/2015/10/wpdispensary-logo.png)
 
 # WP Dispensary
 
@@ -64,7 +64,7 @@ When building this plugin, we made sure to keep it lean, including only the core
 
 With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-You can view our current add-on's on the [offical WP Dispensary website](https://www.wpdispensary.com)
+You can view our current add-on's on the [offical WP Dispensary website](http://www.wpdispensary.com)
 
 ## Installation
 
