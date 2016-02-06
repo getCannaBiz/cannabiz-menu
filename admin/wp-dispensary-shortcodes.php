@@ -30,7 +30,6 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'flowers',
 			'posts_per_page'	=> $posts,
-			'cat' 				=> $category
 		)
 	);
 
@@ -104,7 +103,6 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'concentrates',
 			'posts_per_page'	=> $posts,
-			'cat' 				=> $category
 		)
 	);
 
@@ -130,23 +128,11 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
 			$pricinglow = "$" . get_post_meta(get_the_id(), '_halfounce', true);
 		}
-		$pricingsep = ' - ';
-		if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			$pricinghigh = "$" . get_post_meta(get_the_id(), '_ounce', true);
-		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$pricinghigh = "$" . get_post_meta(get_the_id(), '_halfounce', true);
-		} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			$pricinghigh = "$" . get_post_meta(get_the_id(), '_quarter', true);
-		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			$pricinghigh = "$" . get_post_meta(get_the_id(), '_eighth', true);
-		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$pricinghigh = "$" . get_post_meta(get_the_id(), '_gram', true);
-		}
 
 		$wpdposts .= '<div class="wpdshortcode wpd-concentrates' . $class .'">
 			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . $title . '" /></a>
 			<p><strong><a href="' . get_permalink() . '">' . $title . '</a></strong></p>
-			<span>' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>
+			<span>' . $pricinglow . '</span>
 		</div>';
 
 	endwhile;
@@ -178,7 +164,6 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'edibles',
 			'posts_per_page'	=> $posts,
-			'cat' 				=> $category
 		)
 	);
 
@@ -238,7 +223,6 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'prerolls',
 			'posts_per_page'	=> $posts,
-			'cat' 				=> $category
 		)
 	);
 
