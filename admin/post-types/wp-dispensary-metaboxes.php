@@ -1,9 +1,8 @@
 <?php
-
 /**
  * The file that defines the metaboxes used by the various custom post types
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.wpdispensary.com
  * @since      1.0.0
  *
  * @package    WP_Dispensary

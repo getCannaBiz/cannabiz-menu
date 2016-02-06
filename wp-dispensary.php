@@ -1,22 +1,14 @@
 <?php
 
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link              https://www.wpdispensary.com
+ * @link              http://www.wpdispensary.com
  * @since             1.0.0
  * @package           WP_Dispensary
  *
- * @wordpress-plugin
  * Plugin Name:       WP Dispensary
  * Plugin URI:        http://www.wpdispensary.com
  * Description:       The complete medical marijuana dispensary menu solution for WordPress.
- * Version:           1.1
+ * Version:           1.2
  * Author:            WP Dispensary
  * Author URI:        http://www.wpdispensary.com
  * License:           GPL-2.0+

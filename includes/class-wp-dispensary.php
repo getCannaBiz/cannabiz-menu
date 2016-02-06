@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.wpdispensary.com
  * @since      1.0.0
  *
  * @package    WP_Dispensary
@@ -136,6 +136,13 @@ class WP_Dispensary {
 		 * @since    1.1.0
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-rest-api.php';
+
+		/**
+		 * Adding shortcode generation
+		 *
+		 * @since    1.2.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-shortcodes.php';
 
 		$this->loader = new WP_Dispensary_Loader();
 

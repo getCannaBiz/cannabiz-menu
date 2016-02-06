@@ -1,10 +1,9 @@
 <?php
-
 /**
  * Adding the Custom Post Type metaboxes and taxonomies
  * to the WordPress REST API
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.wpdispensary.com
  * @since      1.1.0
  *
  * @package    WP_Dispensary

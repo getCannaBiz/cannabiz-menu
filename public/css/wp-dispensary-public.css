@@ -3,7 +3,7 @@
  *
  * This file is used to add styles to the public display of the plugin.
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.wpdispensary.com
  * @since      1.0.0
  *
  * @package    WP_Dispensary
@@ -63,6 +63,33 @@ ul.wpdispensary-list li:before {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Shortcodes */
+
+.wpdispensary {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.wpdshortcode {
+    float: left;
+    margin: 12px 0;
+    width: 31.333%;
+}
+
+.wpdshortcode:nth-child(3n+3) {
+	margin: 12px 2%;
+}
+
+.wpdshortcode p {
+	margin: 12px 0 0 0;
+}
+
+.wpdshortcode span {
+	color: #AAA;
+	font-size: 13px;
+}
+
 /* Mobile responsive CSS */
 
 @media screen and (max-width: 1199px) {
@@ -88,6 +115,13 @@ ul.wpdispensary-list li:before {
 	.wpdispensary-widget {
 		max-width: 312px;
 		margin: 12px 1%;
+		width: 100%;
+	}
+	
+	.wpdshortcode,
+	.wpdshortcode:nth-child(3n+3) {
+		margin: 12px auto;
+		width: 100%;
 	}
 
 }

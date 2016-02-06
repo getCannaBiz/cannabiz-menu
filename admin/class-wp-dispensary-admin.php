@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.wpdispensary.com
  * @since      1.0.0
  *
  * @package    WP_Dispensary
