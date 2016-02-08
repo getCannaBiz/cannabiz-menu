@@ -72,7 +72,9 @@ We've personally crafted a WordPress theme that is fully integrated with the WP 
 
 The best part is, since we personally built and maintain this theme, you no longer have to worry about plugin conflicts every time there's an update released. Instead, you're able to focus on your patients, knowing that we've got your online menu completely covered.
 
-You can view more information about this theme, as well as the live demo at the [offical WP Dispensary website](https://www.wpdispensary.com)
+You can view more information about this theme at the [offical WP Dispensary website](http://www.wpdispensary.com).
+
+**[Live Demo](http://www.wpdispensary.com/demo/)**
 
 ### Extend WP Dispensary
 
