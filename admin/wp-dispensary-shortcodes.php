@@ -69,9 +69,9 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		}
 
 		$wpdposts .= '<div class="wpdshortcode wpd-flowers' . $class .'">
-			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . $title . '" /></a>
+			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>
 			<p><strong><a href="' . get_permalink() . '">' . $title . '</a></strong></p>
-			<span>' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>
+			<span class="wpd-pricing">' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>
 		</div>';
 
 	endwhile;
@@ -130,9 +130,9 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		}
 
 		$wpdposts .= '<div class="wpdshortcode wpd-concentrates' . $class .'">
-			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . $title . '" /></a>
+			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Concentrate" /></a>
 			<p><strong><a href="' . get_permalink() . '">' . $title . '</a></strong></p>
-			<span>' . $pricinglow . '</span>
+			<span class="wpd-pricing">' . $pricinglow . '</span>
 		</div>';
 
 	endwhile;
@@ -181,17 +181,17 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		 */
 
 		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
-			$pricinglow = get_post_meta(get_the_id(), '_thcmg', true) . "mg";
+			$thcmg = get_post_meta(get_the_id(), '_thcmg', true) . "mg";
 		}
-		$pricingsep = ' - ';
+		$thcsep = ' - ';
 		if ( get_post_meta( get_the_ID(), '_thcservings', true ) ) {
-			$pricinghigh = "Servings: " . get_post_meta(get_the_id(), '_thcservings', true);
+			$thcservings = "Servings: " . get_post_meta(get_the_id(), '_thcservings', true);
 		}
 
 		$wpdposts .= '<div class="wpdshortcode wpd-edibles' . $class .'">
-			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . $title . '" /></a>
+			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Edible" /></a>
 			<p><strong><a href="' . get_permalink() . '">' . $title . '</a></strong></p>
-			<span>' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>
+			<span class="wpd-thc">' . $thcmg . '' . $thcsep . '' . $thcservings . '</span>
 		</div>';
 
 	endwhile;
@@ -244,9 +244,9 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		}
 
 		$wpdposts .= '<div class="wpdshortcode wpd-prerolls' . $class .'">
-			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . $title . '" /></a>
+			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Pre-roll" /></a>
 			<p><strong><a href="' . get_permalink() . '">' . $title . '</a></strong></p>
-			<span>' . $pricinglow . '</span>
+			<span class="wpd-pricing">' . $pricinglow . '</span>
 		</div>';
 
 	endwhile;
