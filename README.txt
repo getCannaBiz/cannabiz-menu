@@ -107,6 +107,7 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 
 = 1.2 =
 * Added Shortcode output for use with any theme
+* Removed code causing error on Menus page
 
 = 1.1 =
 * Added WordPress REST API integration

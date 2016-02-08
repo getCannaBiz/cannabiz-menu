@@ -89,3 +89,7 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 1. Go to `Plugins - Add New` in your WordPress admin panel and search for "WP Dispensary"
 2. Install and activate the plugin directly in your admin panel
 3. Pat yourself on the back for a job well done :)
+
+## Changelog
+
+View `CHANGELOG.md`
