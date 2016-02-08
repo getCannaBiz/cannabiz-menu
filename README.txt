@@ -56,11 +56,23 @@ We believe in the power of open source, and this plugin is a shining example of 
 
 This means that more eyes are looking at the code base to make sure everything is built with WordPress standards in mind, giving you the peace of mind that the plugin you're using is of the highest quality possible.
 
-### Dispensary Display
+### Easy to use shortcodes
 
-The WP Dispensary menu plugin is the first step to getting your menu live online. Once you have the plugin installed, you'll need an easy way to display your menu, and that's where the Dispensary Display WordPress theme comes into play.
+As of version 1.2, the WP Dispensary menu plugin comes with built in shortcodes which allow you to display your menu with any theme.
 
-**Get the most out of WP Dispensary**
+You can call your menu anywhere shortcodes are accepted in your theme. The shortcodes and options currently available are below.
+
+`[wpd-flowers posts="6"]`
+
+`[wpd-concentrates posts="6"]`
+
+`[wpd-edibles posts="6"]`
+
+`[wpd-prerolls posts="6"]`
+
+*please note that more options to customize output are being worked into the shortcode for future versions*
+
+### Get the most out of WP Dispensary
 
 We've personally crafted a WordPress theme that is fully integrated with the WP Dispensary plugin, giving you a website that showcases your menu in the most beautiful way possible.
 
@@ -92,7 +104,7 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 == Changelog ==
 
 = 1.2 =
-* Added shortcodes for dispensary menu output
+* Added Shortcode output for use with any theme
 
 = 1.1 =
 * Added WordPress REST API integration
