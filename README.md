@@ -66,16 +66,6 @@ You can call your menu anywhere shortcodes are accepted in your theme. The short
 
 *please note that more options to customize output are being worked into the shortcode for future versions*
 
-### Get the most out of WP Dispensary
-
-We've personally crafted a WordPress theme that is fully integrated with the WP Dispensary plugin, giving you a website that showcases your menu in the most beautiful way possible.
-
-The best part is, since we personally built and maintain this theme, you no longer have to worry about plugin conflicts every time there's an update released. Instead, you're able to focus on your patients, knowing that we've got your online menu completely covered.
-
-You can view more information about this theme at the [offical WP Dispensary website](http://www.wpdispensary.com).
-
-**[Live Demo](http://www.wpdispensary.com/demo/)**
-
 ### Extend WP Dispensary
 
 When building this plugin, we made sure to keep it lean, including only the core needs of every menu. While this works well in most cases, we're aware there are additional needs that dispensary owners will need to address, which is where the add-on's come in.
