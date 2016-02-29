@@ -9,6 +9,13 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
  */
+ 
+/**
+ * Shortcode Image
+ */
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'dispensary-image', 360, 250, true );
+}
 
 /**
  * Flowers Shortcode Fuction
