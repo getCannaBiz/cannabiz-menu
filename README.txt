@@ -18,6 +18,8 @@ The world's first (and best) medical marijuana dispensary menu plugin for WordPr
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
+*if you enjoy using this plugin, please consider giving it a 5 star rating* &rarr;
+
 There's also a lot of cool things baked right into the WP Dispensary menu plugin.
 
 ### Easy to manage menu

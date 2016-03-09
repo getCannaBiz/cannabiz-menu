@@ -2,6 +2,7 @@
 
 ### 1.3
 * Added THC% and CBD% metaboxes
+* Added custom image size for the shortcodes
 
 ### 1.2
 * Added Shortcode output for use with any theme
