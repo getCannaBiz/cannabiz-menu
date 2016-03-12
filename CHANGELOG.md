@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.3.1
+* Fixed CBD being called BCD #typingtoofast
+
 ### 1.3
 * Added THC% and CBD% metaboxes
 * Added custom image size for the shortcodes

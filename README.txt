@@ -4,7 +4,7 @@ Donate link: http://www.wpdispensary.com
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis
 Requires at least: 3.0.1
 Tested up to: 4.4.2
-Stable tag: 1.3
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,9 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.3.1 =
+* Fixed CBD being called BCD #typingtoofast
 
 = 1.3 =
 * Added THC% and CBD% metaboxes

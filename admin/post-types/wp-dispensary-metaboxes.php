@@ -10,22 +10,22 @@
  */
  
 /**
- * THC% & BCD% metabox
+ * THC% & CBD% metabox
  *
- * Adds the THC% & BCD% metabox to specific custom post types
+ * Adds the THC% & CBD% metabox to specific custom post types
  *
  * @since    1.3.0
  */
 
-function add_thcbcd_metaboxes() {
+function add_thccbd_metaboxes() {
 	
 	$screens = array( 'flowers', 'concentrates', 'edibles', 'prerolls' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
-			'wpdispensary_thcbcd',
-			__( 'THC% & BCD%', 'wp-dispensary' ),
-			'wpdispensary_thcbcd',
+			'wpdispensary_thccbd',
+			__( 'THC% & CBD%', 'wp-dispensary' ),
+			'wpdispensary_thccbd',
 			$screen,
 			'side',
 			'default'
@@ -34,18 +34,18 @@ function add_thcbcd_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_thcbcd_metaboxes' );
+add_action( 'add_meta_boxes', 'add_thccbd_metaboxes' );
 
-function wpdispensary_thcbcd() {
+function wpdispensary_thccbd() {
 	global $post;
 	
 	// Noncename needed to verify where the data originated
-	echo '<input type="hidden" name="thcbcdmeta_noncename" id="thcbcdmeta_noncename" value="' . 
+	echo '<input type="hidden" name="thccbdmeta_noncename" id="thccbdmeta_noncename" value="' . 
 	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
 	
-	// Get the thcbcd data if its already been entered
+	// Get the thccbd data if its already been entered
 	$thc = get_post_meta($post->ID, '_thc', true);
-	$bcd = get_post_meta($post->ID, '_bcd', true);
+	$cbd = get_post_meta($post->ID, '_cbd', true);
 	
 	// Echo out the fields
 	echo '<div class="pricebox">';
@@ -53,19 +53,19 @@ function wpdispensary_thcbcd() {
 	echo '<input type="number" name="_thc" value="' . $thc  . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>BCD %:</p>';
-	echo '<input type="number" name="_bcd" value="' . $bcd  . '" class="widefat" />';
+	echo '<p>CBD %:</p>';
+	echo '<input type="number" name="_cbd" value="' . $cbd  . '" class="widefat" />';
 	echo '</div>';
 
 }
 
 // Save the Metabox Data
 
-function wpdispensary_save_thcbcd_meta($post_id, $post) {
+function wpdispensary_save_thccbd_meta($post_id, $post) {
 	
 	// verify this came from the our screen and with proper authorization,
 	// because save_post can be triggered at other times
-	if ( !wp_verify_nonce( $_POST['thcbcdmeta_noncename'], plugin_basename(__FILE__) )) {
+	if ( !wp_verify_nonce( $_POST['thccbdmeta_noncename'], plugin_basename(__FILE__) )) {
 		return $post->ID;
 	}
 
@@ -76,12 +76,12 @@ function wpdispensary_save_thcbcd_meta($post_id, $post) {
 	// OK, we're authenticated: we need to find and save the data
 	// We'll put it into an array to make it easier to loop though.
 	
-	$thcbcd_meta['_thc'] = $_POST['_thc'];
-	$thcbcd_meta['_bcd'] = $_POST['_bcd'];
+	$thccbd_meta['_thc'] = $_POST['_thc'];
+	$thccbd_meta['_cbd'] = $_POST['_cbd'];
 	
-	// Add values of $thcbcd_meta as custom fields
+	// Add values of $thccbd_meta as custom fields
 	
-	foreach ($thcbcd_meta as $key => $value) { // Cycle through the $thcbcd_meta array!
+	foreach ($thccbd_meta as $key => $value) { // Cycle through the $thccbd_meta array!
 		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
 		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
 		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
@@ -94,7 +94,7 @@ function wpdispensary_save_thcbcd_meta($post_id, $post) {
 
 }
 
-add_action('save_post', 'wpdispensary_save_thcbcd_meta', 1, 2); // save the custom fields
+add_action('save_post', 'wpdispensary_save_thccbd_meta', 1, 2); // save the custom fields
 
 
 /**

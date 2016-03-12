@@ -271,29 +271,29 @@ function slug_get_prerollinfo( $object, $field_name, $request ) {
 }
 
 /**
- * This adds the wpdispensary_thcbcd metafields to the
+ * This adds the wpdispensary_thccbd metafields to the
  * API callback for flowers, concentrates, edibles and
  * pre-rolls
  *
  * @since    1.3.0
  */
 
-add_action( 'rest_api_init', 'slug_register_thcbcd' );
-function slug_register_thcbcd() {
-	$productsizes = array( '_thc', '_bcd' );
+add_action( 'rest_api_init', 'slug_register_thccbd' );
+function slug_register_thccbd() {
+	$productsizes = array( '_thc', '_cbd' );
 	foreach ( $productsizes as $size ) {
 		register_api_field(
 			array( 'flowers', 'concentrates', 'edibles', 'concentrates' ),
 			$size,
 			array(
-				'get_callback'    => 'slug_get_thcbcd',
+				'get_callback'    => 'slug_get_thccbd',
 				'update_callback' => null,
 				'schema'          => null,
 			)
 		);
 	} // /foreach
 }
-function slug_get_thcbcd( $object, $field_name, $request ) {
+function slug_get_thccbd( $object, $field_name, $request ) {
     return get_post_meta( $object[ 'id' ], $field_name, true );
 }
 
