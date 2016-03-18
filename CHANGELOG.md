@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.4
+* PHP Code Sniffer WordPress standards updates throughout plugin files
+
 ### 1.3.1
 * Fixed CBD being called BCD #typingtoofast
 

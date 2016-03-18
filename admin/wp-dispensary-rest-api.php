@@ -10,7 +10,7 @@
  * @subpackage WP_Dispensary/admin
  */
 
-// Adding featured image URL's to each Custom Post Type
+/** Adding featured image URL's to each Custom Post Type */
 
 function flowers_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;
@@ -52,7 +52,7 @@ function prerolls_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_prerolls', 'prerolls_featuredimage', 10, 3 );
 
-// Add Category taxonomy for the Flowers Custom Post Type
+/** Add Category taxonomy for the Flowers Custom Post Type */
 
 function flowers_category( $data, $post, $request ) {
 	$_data = $data->data;
@@ -62,7 +62,7 @@ function flowers_category( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_category', 10, 3 );
 
-// Add Aroma taxonomy for the Flowers Custom Post Type
+/** Add Aroma taxonomy for the Flowers Custom Post Type */
 
 function flowers_aroma( $data, $post, $request ) {
 	$_data = $data->data;
@@ -72,7 +72,7 @@ function flowers_aroma( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_aroma', 10, 3 );
 
-// Add Flavor taxonomy for the Flowers Custom Post Type
+/** Add Flavor taxonomy for the Flowers Custom Post Type */
 
 function flowers_flavor( $data, $post, $request ) {
 	$_data = $data->data;
@@ -82,7 +82,7 @@ function flowers_flavor( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_flavor', 10, 3 );
 
-// Add Effect taxonomy for the Flowers Custom Post Type
+/** Add Effect taxonomy for the Flowers Custom Post Type */
 
 function flowers_effect( $data, $post, $request ) {
 	$_data = $data->data;
@@ -92,7 +92,7 @@ function flowers_effect( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_effect', 10, 3 );
 
-// Add Symptom taxonomy for the Flowers Custom Post Type
+/** Add Symptom taxonomy for the Flowers Custom Post Type */
 
 function flowers_symptom( $data, $post, $request ) {
 	$_data = $data->data;
@@ -102,7 +102,7 @@ function flowers_symptom( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_symptom', 10, 3 );
 
-// Add Condition taxonomy for the Flowers Custom Post Type
+/** Add Condition taxonomy for the Flowers Custom Post Type */
 
 function flowers_condition( $data, $post, $request ) {
 	$_data = $data->data;
@@ -112,7 +112,7 @@ function flowers_condition( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_condition', 10, 3 );
 
-// Add Category taxonomy for the Concentrates Custom Post Type
+/** Add Category taxonomy for the Concentrates Custom Post Type */
 
 function concentrates_category( $data, $post, $request ) {
 	$_data = $data->data;
@@ -122,7 +122,7 @@ function concentrates_category( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_category', 10, 3 );
 
-// Add Aroma taxonomy for the Concentrates Custom Post Type
+/** Add Aroma taxonomy for the Concentrates Custom Post Type */
 
 function concentrates_aroma( $data, $post, $request ) {
 	$_data = $data->data;
@@ -132,7 +132,7 @@ function concentrates_aroma( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_aroma', 10, 3 );
 
-// Add Flavor taxonomy for the Concentrates Custom Post Type
+/** Add Flavor taxonomy for the Concentrates Custom Post Type */
 
 function concentrates_flavor( $data, $post, $request ) {
 	$_data = $data->data;
@@ -142,7 +142,7 @@ function concentrates_flavor( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_flavor', 10, 3 );
 
-// Add Effect taxonomy for the Concentrates Custom Post Type
+/** Add Effect taxonomy for the Concentrates Custom Post Type */
 
 function concentrates_effect( $data, $post, $request ) {
 	$_data = $data->data;
@@ -152,7 +152,7 @@ function concentrates_effect( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_effect', 10, 3 );
 
-// Add Symptom taxonomy for the Concentrates Custom Post Type
+/** Add Symptom taxonomy for the Concentrates Custom Post Type */
 
 function concentrates_symptom( $data, $post, $request ) {
 	$_data = $data->data;
@@ -162,7 +162,7 @@ function concentrates_symptom( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_symptom', 10, 3 );
 
-// Add Condition taxonomy for the Concentrates Custom Post Type
+/** Add Condition taxonomy for the Concentrates Custom Post Type */
 
 function concentrates_condition( $data, $post, $request ) {
 	$_data = $data->data;
@@ -172,7 +172,7 @@ function concentrates_condition( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_condition', 10, 3 );
 
-// Add Category taxonomy for the Edibles Custom Post Type
+/** Add Category taxonomy for the Edibles Custom Post Type */
 
 function edibles_category( $data, $post, $request ) {
 	$_data = $data->data;
@@ -182,7 +182,7 @@ function edibles_category( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_edibles', 'edibles_category', 10, 3 );
 
-// Add Ingredients taxonomy for the Edibles Custom Post Type
+/** Add Ingredients taxonomy for the Edibles Custom Post Type */
 
 function edibles_ingredients( $data, $post, $request ) {
 	$_data = $data->data;
@@ -204,7 +204,7 @@ function slug_register_prices() {
 	$productsizes = array( '_halfgram', '_gram', '_eighth', '_quarter', '_halfounce', '_ounce' );
 	foreach ( $productsizes as $size ) {
 		register_api_field(
-			array( 'flowers', 'concentrates'),
+			array( 'flowers', 'concentrates' ),
 			$size,
 			array(
 				'get_callback'    => 'slug_get_prices',
@@ -212,10 +212,10 @@ function slug_register_prices() {
 				'schema'          => null,
 			)
 		);
-	} // /foreach
+	} /** /foreach */
 }
 function slug_get_prices( $object, $field_name, $request ) {
-    return get_post_meta( $object[ 'id' ], $field_name, true );
+	return get_post_meta( $object['id'], $field_name, true );
 }
 
 /**
@@ -238,10 +238,10 @@ function slug_register_edibleinfo() {
 				'schema'          => null,
 			)
 		);
-	} // /foreach
+	} /** /foreach */
 }
 function slug_get_edibleinfo( $object, $field_name, $request ) {
-    return get_post_meta( $object[ 'id' ], $field_name, true );
+	return get_post_meta( $object['id'], $field_name, true );
 }
 
 /**
@@ -264,10 +264,10 @@ function slug_register_prerollinfo() {
 				'schema'          => null,
 			)
 		);
-	} // /foreach
+	} /** /foreach */
 }
 function slug_get_prerollinfo( $object, $field_name, $request ) {
-    return get_post_meta( $object[ 'id' ], $field_name, true );
+	return get_post_meta( $object['id'], $field_name, true );
 }
 
 /**
@@ -291,10 +291,10 @@ function slug_register_thccbd() {
 				'schema'          => null,
 			)
 		);
-	} // /foreach
+	} /** /foreach */
 }
 function slug_get_thccbd( $object, $field_name, $request ) {
-    return get_post_meta( $object[ 'id' ], $field_name, true );
+	return get_post_meta( $object['id'], $field_name, true );
 }
 
 /**

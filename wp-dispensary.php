@@ -1,6 +1,9 @@
 <?php
-
 /**
+ * WordPress Dispensary
+ *
+ * Plugin details
+ *
  * @link              http://www.wpdispensary.com
  * @since             1.0.0
  * @package           WP_Dispensary
@@ -26,22 +29,22 @@ if ( ! defined( 'WPINC' ) ) {
  * The code that runs during plugin activation.
  * This action is documented in includes/class-wp-dispensary-activator.php
  */
-function activate_WP_Dispensary() {
+function activate_wp_dispensary() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-activator.php';
-	WP_Dispensary_Activator::activate();
+	wp_dispensary_activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-wp-dispensary-deactivator.php
  */
-function deactivate_WP_Dispensary() {
+function deactivate_wp_dispensary() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-deactivator.php';
-	WP_Dispensary_Deactivator::deactivate();
+	wp_dispensary_deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_WP_Dispensary' );
-register_deactivation_hook( __FILE__, 'deactivate_WP_Dispensary' );
+register_activation_hook( __FILE__, 'activate_wp_dispensary' );
+register_deactivation_hook( __FILE__, 'deactivate_wp_dispensary' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -58,10 +61,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary.php';
  *
  * @since    1.0.0
  */
-function run_WP_Dispensary() {
+function run_wp_dispensary() {
 
-	$plugin = new WP_Dispensary();
+	$plugin = new wp_dispensary();
 	$plugin->run();
 
 }
-run_WP_Dispensary();
+run_wp_dispensary();

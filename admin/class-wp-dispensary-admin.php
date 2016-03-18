@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -25,27 +24,27 @@ class WP_Dispensary_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @since	1.0.0
+	 * @access	private
+	 * @var		string		$plugin_name	The ID of this plugin.
 	 */
 	private $plugin_name;
 
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @since	1.0.0
+	 * @access	private
+	 * @var		string		$version	The current version of this plugin.
 	 */
 	private $version;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @since	1.0.0
+	 * @param string $plugin_name The name of this plugin.
+	 * @param string $version The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -99,7 +98,6 @@ class WP_Dispensary_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-dispensary-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
-
 }
 
 /**
@@ -110,13 +108,13 @@ class WP_Dispensary_Admin {
  */
 function wpdispensary_right_now_content_table_end() {
 	$args = array(
-		'public' => true ,
-		'_builtin' => false
+		'public' => true,
+		'_builtin' => false,
 	);
 	$output = 'object';
 	$operator = 'and';
 	$post_types = get_post_types( $args , $output , $operator );
-	foreach( $post_types as $post_type ) {
+	foreach ( $post_types as $post_type ) {
 		$num_posts = wp_count_posts( $post_type->name );
 		$num = number_format_i18n( $num_posts->publish );
 		$text = _n( $post_type->labels->singular_name, $post_type->labels->name , intval( $num_posts->publish ) );
