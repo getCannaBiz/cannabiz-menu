@@ -8,7 +8,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/post-types
  */
- 
+
 /**
  * THC% & CBD% metabox
  *
@@ -18,7 +18,7 @@
  */
 
 function add_thccbd_metaboxes() {
-	
+
 	$screens = array( 'flowers', 'concentrates', 'edibles', 'prerolls' );
 
 	foreach ( $screens as $screen ) {
@@ -38,15 +38,15 @@ add_action( 'add_meta_boxes', 'add_thccbd_metaboxes' );
 
 function wpdispensary_thccbd() {
 	global $post;
-	
+
 	// Noncename needed to verify where the data originated
-	echo '<input type="hidden" name="thccbdmeta_noncename" id="thccbdmeta_noncename" value="' . 
-	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
-	
+	echo '<input type="hidden" name="thccbdmeta_noncename" id="thccbdmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
 	// Get the thccbd data if its already been entered
-	$thc = get_post_meta($post->ID, '_thc', true);
-	$cbd = get_post_meta($post->ID, '_cbd', true);
-	
+	$thc = get_post_meta( $post->ID, '_thc', true );
+	$cbd = get_post_meta( $post->ID, '_cbd', true );
+
 	// Echo out the fields
 	echo '<div class="pricebox">';
 	echo '<p>THC %:</p>';
@@ -59,42 +59,51 @@ function wpdispensary_thccbd() {
 
 }
 
-// Save the Metabox Data
+/** Save the Metabox Data */
 
-function wpdispensary_save_thccbd_meta($post_id, $post) {
-	
-	// verify this came from the our screen and with proper authorization,
-	// because save_post can be triggered at other times
-	if ( !wp_verify_nonce( $_POST['thccbdmeta_noncename'], plugin_basename(__FILE__) )) {
+function wpdispensary_save_thccbd_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['thccbdmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
 		return $post->ID;
 	}
 
 	// Is the user allowed to edit the post or page?
-	if ( !current_user_can( 'edit_post', $post->ID ))
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 		return $post->ID;
+	}
 
-	// OK, we're authenticated: we need to find and save the data
-	// We'll put it into an array to make it easier to loop though.
-	
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
 	$thccbd_meta['_thc'] = $_POST['_thc'];
 	$thccbd_meta['_cbd'] = $_POST['_cbd'];
-	
-	// Add values of $thccbd_meta as custom fields
-	
-	foreach ($thccbd_meta as $key => $value) { // Cycle through the $thccbd_meta array!
-		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
-		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
-		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
-			update_post_meta($post->ID, $key, $value);
-		} else { // If the custom field doesn't have a value
-			add_post_meta($post->ID, $key, $value);
+
+	/** Add values of $thccbd_meta as custom fields */
+
+	foreach ( $thccbd_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
+		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+			return;
 		}
-		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
+		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value
+			update_post_meta( $post->ID, $key, $value );
+		} else { // If the custom field doesn't have a value
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
 	}
 
 }
 
-add_action('save_post', 'wpdispensary_save_thccbd_meta', 1, 2); // save the custom fields
+add_action( 'save_post', 'wpdispensary_save_thccbd_meta', 1, 2 ); // save the custom fields
 
 
 /**
@@ -106,7 +115,7 @@ add_action('save_post', 'wpdispensary_save_thccbd_meta', 1, 2); // save the cust
  */
 
 function add_prices_metaboxes() {
-	
+
 	$screens = array( 'flowers', 'concentrates' );
 
 	foreach ( $screens as $screen ) {
@@ -126,19 +135,19 @@ add_action( 'add_meta_boxes', 'add_prices_metaboxes' );
 
 function wpdispensary_prices() {
 	global $post;
-	
-	// Noncename needed to verify where the data originated
-	echo '<input type="hidden" name="pricesmeta_noncename" id="pricesmeta_noncename" value="' . 
-	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
-	
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="pricesmeta_noncename" id="pricesmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
 	// Get the prices data if its already been entered
-	$halfgram = get_post_meta($post->ID, '_halfgram', true);
-	$gram = get_post_meta($post->ID, '_gram', true);
-	$eighth = get_post_meta($post->ID, '_eighth', true);
-	$quarter = get_post_meta($post->ID, '_quarter', true);
-	$halfounce = get_post_meta($post->ID, '_halfounce', true);
-	$ounce = get_post_meta($post->ID, '_ounce', true);
-	
+	$halfgram = get_post_meta( $post->ID, '_halfgram', true );
+	$gram = get_post_meta( $post->ID, '_gram', true );
+	$eighth = get_post_meta( $post->ID, '_eighth', true );
+	$quarter = get_post_meta( $post->ID, '_quarter', true );
+	$halfounce = get_post_meta( $post->ID, '_halfounce', true );
+	$ounce = get_post_meta( $post->ID, '_ounce', true );
+
 	// Echo out the fields
 	echo '<div class="pricebox">';
 	echo '<p>1/2 Gram:</p>';
@@ -167,46 +176,55 @@ function wpdispensary_prices() {
 
 }
 
-// Save the Metabox Data
+/** Save the Metabox Data */
 
-function wpdispensary_save_prices_meta($post_id, $post) {
-	
-	// verify this came from the our screen and with proper authorization,
-	// because save_post can be triggered at other times
-	if ( !wp_verify_nonce( $_POST['pricesmeta_noncename'], plugin_basename(__FILE__) )) {
+function wpdispensary_save_prices_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['pricesmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
 		return $post->ID;
 	}
 
 	// Is the user allowed to edit the post or page?
-	if ( !current_user_can( 'edit_post', $post->ID ))
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 		return $post->ID;
+	}
 
-	// OK, we're authenticated: we need to find and save the data
-	// We'll put it into an array to make it easier to loop though.
-	
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
 	$prices_meta['_halfgram'] = $_POST['_halfgram'];
 	$prices_meta['_gram'] = $_POST['_gram'];
 	$prices_meta['_eighth'] = $_POST['_eighth'];
 	$prices_meta['_quarter'] = $_POST['_quarter'];
 	$prices_meta['_halfounce'] = $_POST['_halfounce'];
 	$prices_meta['_ounce'] = $_POST['_ounce'];
-	
-	// Add values of $prices_meta as custom fields
-	
-	foreach ($prices_meta as $key => $value) { // Cycle through the $prices_meta array!
-		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
-		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
-		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
-			update_post_meta($post->ID, $key, $value);
-		} else { // If the custom field doesn't have a value
-			add_post_meta($post->ID, $key, $value);
+
+	/** Add values of $prices_meta as custom fields */
+
+	foreach ( $prices_meta as $key => $value ) { /** Cycle through the $prices_meta array! */
+		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+			return;
 		}
-		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
 	}
 
 }
 
-add_action('save_post', 'wpdispensary_save_prices_meta', 1, 2); // save the custom fields
+add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** save the custom fields */
 
 /**
  * Pre-Roll Prices metabox
@@ -215,7 +233,7 @@ add_action('save_post', 'wpdispensary_save_prices_meta', 1, 2); // save the cust
  *
  * @since    1.0.0
  */
-	
+
 class WPDispensary_Prerolls {
 	var $FOR_POST_TYPE = 'prerolls';
 	var $SELECT_POST_TYPE = 'flowers';
@@ -236,7 +254,7 @@ class WPDispensary_Prerolls {
 		$this->box_id       = "select-{$this->SELECT_POST_TYPE}-metabox";
 		$this->field_id     = "selected_{$this->SELECT_POST_TYPE}";
 		$this->field_name   = "selected_{$this->SELECT_POST_TYPE}";
-		$this->box_label    = __( "Pre-roll Strain", 'wp-dispensary' );
+		$this->box_label    = __( 'Pre-roll Strain', 'wp-dispensary' );
 		$this->field_label  = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
 	}
 	function add_meta_boxes() {
@@ -251,8 +269,8 @@ class WPDispensary_Prerolls {
 	function select_box( $post ) {
 		$selected_post_id = get_post_meta( $post->ID, $this->meta_key, true );
 		global $wp_post_types;
-		$save_hierarchical = $wp_post_types[$this->SELECT_POST_TYPE]->hierarchical;
-		$wp_post_types[$this->SELECT_POST_TYPE]->hierarchical = true;
+		$save_hierarchical = $wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical;
+		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = true;
 		wp_dropdown_pages( array(
 			'id' => $this->field_id,
 			'name' => $this->field_name,
@@ -260,16 +278,16 @@ class WPDispensary_Prerolls {
 			'post_type' => $this->SELECT_POST_TYPE,
 			'show_option_none' => $this->field_label,
 		));
-		$wp_post_types[$this->SELECT_POST_TYPE]->hierarchical = $save_hierarchical;
+		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = $save_hierarchical;
 	}
 	function save_post( $post_id, $post ) {
-		if ( $post->post_type == $this->FOR_POST_TYPE && isset( $_POST[$this->field_name] ) ) {
-		  update_post_meta( $post_id, $this->meta_key, $_POST[$this->field_name] );
+		if ( $post->post_type == $this->FOR_POST_TYPE && isset( $_POST[ $this->field_name ] ) ) {
+			update_post_meta( $post_id, $this->meta_key, $_POST[ $this->field_name ] );
 		}
 	}
 }
 new WPDispensary_Prerolls();
-	
+
 /**
  * Pre-roll Prices metabox
  *
@@ -279,7 +297,7 @@ new WPDispensary_Prerolls();
  */
 
 function add_singleprices_metaboxes() {
-	
+
 	$screens = array( 'prerolls', 'edibles' );
 
 	foreach ( $screens as $screen ) {
@@ -299,57 +317,66 @@ add_action( 'add_meta_boxes', 'add_singleprices_metaboxes' );
 
 function wpdispensary_singleprices() {
 	global $post;
-	
-	// Noncename needed to verify where the data originated
-	echo '<input type="hidden" name="singlepricesmeta_noncename" id="singlepricesmeta_noncename" value="' . 
-	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
-	
-	// Get the prices data if its already been entered
-	$priceeach = get_post_meta($post->ID, '_priceeach', true);
-	
-	// Echo out the fields
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="singlepricesmeta_noncename" id="singlepricesmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the prices data if its already been entered */
+	$priceeach = get_post_meta( $post->ID, '_priceeach', true );
+
+	/** Echo out the fields */
 	echo '<p>Price per unit:</p>';
 	echo '<input type="number" name="_priceeach" value="' . $priceeach  . '" class="widefat" />';
 
 }
 
-// Save the Metabox Data
+/** Save the Metabox Data */
 
-function wpdispensary_save_singleprices_meta($post_id, $post) {
-	
-	// verify this came from the our screen and with proper authorization,
-	// because save_post can be triggered at other times
-	if ( !wp_verify_nonce( $_POST['singlepricesmeta_noncename'], plugin_basename(__FILE__) )) {
+function wpdispensary_save_singleprices_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['singlepricesmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
 		return $post->ID;
 	}
 
-	// Is the user allowed to edit the post or page?
-	if ( !current_user_can( 'edit_post', $post->ID ))
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 		return $post->ID;
+	}
 
-	// OK, we're authenticated: we need to find and save the data
-	// We'll put it into an array to make it easier to loop though.
-	
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
 	$prices_meta['_priceeach'] = $_POST['_priceeach'];
-	
-	// Add values of $prices_meta as custom fields
-	
-	foreach ($prices_meta as $key => $value) { // Cycle through the $prices_meta array!
-		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
-		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
-		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
-			update_post_meta($post->ID, $key, $value);
-		} else { // If the custom field doesn't have a value
-			add_post_meta($post->ID, $key, $value);
+
+	/** Add values of $prices_meta as custom fields */
+
+	foreach ( $prices_meta as $key => $value ) { /** Cycle through the $prices_meta array! */
+		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+			return;
 		}
-		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
 	}
 
 }
 
-add_action('save_post', 'wpdispensary_save_singleprices_meta', 1, 2); // save the custom fields
+add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** save the custom fields */
 
-	
+
 /**
  * Edibles THC content metabox
  *
@@ -359,7 +386,7 @@ add_action('save_post', 'wpdispensary_save_singleprices_meta', 1, 2); // save th
  */
 
 function add_thcmg_metaboxes() {
-	
+
 	$screens = array( 'edibles' );
 
 	foreach ( $screens as $screen ) {
@@ -379,16 +406,16 @@ add_action( 'add_meta_boxes', 'add_thcmg_metaboxes' );
 
 function wpdispensary_thcmg() {
 	global $post;
-	
-	// Noncename needed to verify where the data originated
-	echo '<input type="hidden" name="thcmgmeta_noncename" id="thcmgmeta_noncename" value="' . 
-	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
-	
-	// Get the thc mg data if its already been entered
-	$thcmg = get_post_meta($post->ID, '_thcmg', true);
-	$thcservings = get_post_meta($post->ID, '_thcservings', true);
-	
-	// Echo out the fields
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="thcmgmeta_noncename" id="thcmgmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the thc mg data if its already been entered */
+	$thcmg = get_post_meta( $post->ID, '_thcmg', true );
+	$thcservings = get_post_meta( $post->ID, '_thcservings', true );
+
+	/** Echo out the fields */
 	echo '<p>mg per serving:</p>';
 	echo '<input type="number" name="_thcmg" value="' . $thcmg  . '" class="widefat" />';
 	echo '<p>Servings:</p>';
@@ -396,41 +423,48 @@ function wpdispensary_thcmg() {
 
 }
 
-// Save the Metabox Data
+/** Save the Metabox Data */
 
-function wpdispensary_save_thcmg_meta($post_id, $post) {
-	
-	// verify this came from the our screen and with proper authorization,
-	// because save_post can be triggered at other times
-	if ( !wp_verify_nonce( $_POST['thcmgmeta_noncename'], plugin_basename(__FILE__) )) {
+function wpdispensary_save_thcmg_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['thcmgmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
 		return $post->ID;
 	}
 
-	// Is the user allowed to edit the post or page?
-	if ( !current_user_can( 'edit_post', $post->ID ))
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 		return $post->ID;
+	}
 
-	// OK, we're authenticated: we need to find and save the data
-	// We'll put it into an array to make it easier to loop though.
-	
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
 	$thcmg_meta['_thcmg'] = $_POST['_thcmg'];
 	$thcmg_meta['_thcservings'] = $_POST['_thcservings'];
-	
-	// Add values of $thcmg_meta as custom fields
-	
-	foreach ($thcmg_meta as $key => $value) { // Cycle through the $thcmg_meta array!
-		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
-		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
-		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
-			update_post_meta($post->ID, $key, $value);
-		} else { // If the custom field doesn't have a value
-			add_post_meta($post->ID, $key, $value);
+
+	/** Add values of $thcmg_meta as custom fields */
+
+	foreach ( $thcmg_meta as $key => $value ) { /** Cycle through the $thcmg_meta array! */
+		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+			return;
 		}
-		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
 	}
 
 }
 
-add_action('save_post', 'wpdispensary_save_thcmg_meta', 1, 2); // save the custom fields
-
-?>
+add_action( 'save_post', 'wpdispensary_save_thcmg_meta', 1, 2 ); /** save the custom fields */
