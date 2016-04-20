@@ -403,4 +403,47 @@
 
 	}
 
+	/**
+	 * Topical Category Taxonomy
+	 *
+	 * Adds the Topical Category taxonomy to all custom post types
+	 *
+	 * @since    1.4.0
+	 */
+
+	add_action( 'init', 'wpdispensary_topicalcategory', 0 );
+
+	function wpdispensary_topicalcategory() {
+
+	  $labels = array(
+		'name' => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Categories' ),
+		'all_items' => __( 'All Categories' ),
+		'parent_item' => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item' => __( 'Edit Category' ), 
+		'update_item' => __( 'Update Category' ),
+		'add_new_item' => __( 'Add New Category' ),
+		'new_item_name' => __( 'New Category Name' ),
+		'not_found' => 'No categories found',
+		'menu_name' => __( 'Categories' ),
+	  ); 	
+
+	  register_taxonomy('topicals_category','topicals', array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_in_rest' => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => false,
+		'query_var' => true,
+		'rewrite' => array(
+			'slug' => 'topicals/category',
+			'with_front' => false
+		),
+	  ));
+
+	}
+
 ?>

@@ -28,12 +28,14 @@
 #dashboard_right_now .concentrates-count a:before,
 #dashboard_right_now .concentrates-count span:before,
 #dashboard_right_now .prerolls-count a:before,
-#dashboard_right_now .prerolls-count span:before {
+#dashboard_right_now .prerolls-count span:before,
+#dashboard_right_now .topicals-count a:before,
+#dashboard_right_now .topicals-count span:before {
     content: "\f345";
 }
 
 
-/* Leafly Reviews admin
+/* Widget styles
 -------------------------------------------------------------- */
 
 div.widget[id*=_wpdispensary_] .widget-top,

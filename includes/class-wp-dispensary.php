@@ -128,6 +128,7 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-concentrates.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-edibles.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-prerolls.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-topicals.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-widgets.php';
 
 		/**

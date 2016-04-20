@@ -13,6 +13,7 @@
 .wpdispensary-widget {
     display: inline-block;
 	margin: 12px 0;
+	width: 100%;
 	max-width: 312px;
     position: relative;
 }
@@ -86,7 +87,8 @@ ul.wpdispensary-list li:before {
 }
 
 .wpdshortcode span.wpd-pricing,
-.wpdshortcode span.wpd-thc {
+.wpdshortcode span.wpd-thc,
+.wpdshortcode span.wpd-productinfo {
 	color: #AAA;
 	font-size: 13px;
 }

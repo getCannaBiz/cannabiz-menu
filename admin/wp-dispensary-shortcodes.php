@@ -191,11 +191,11 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		 */
 
 		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
-			$thcmg = get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
+			$thcmg = '<strong>THC:</strong>' .get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
 		}
 		$thcsep = ' - ';
 		if ( get_post_meta( get_the_ID(), '_thcservings', true ) ) {
-			$thcservings = 'Servings: ' . get_post_meta( get_the_id(), '_thcservings', true );
+			$thcservings = '<strong>Servings:</strong> ' . get_post_meta( get_the_id(), '_thcservings', true );
 		}
 
 		$wpdposts .= '<div class="wpdshortcode wpd-edibles' . $class .'">
@@ -251,13 +251,13 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		 */
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$pricinglow = '$' . get_post_meta( get_the_id(), '_priceeach', true ) . ' per roll';
+			$pricingeach = '$' . get_post_meta( get_the_id(), '_priceeach', true ) . ' per roll';
 		}
 
 		$wpdposts .= '<div class="wpdshortcode wpd-prerolls' . $class .'">
 			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Pre-roll" /></a>
 			<p><strong><a href="' . get_permalink() . '">' . $title . '</a></strong></p>
-			<span class="wpd-pricing">' . $pricinglow . '</span>
+			<span class="wpd-pricing">' . $pricingeach . '</span>
 		</div>';
 
 	endwhile;
@@ -268,3 +268,67 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 
 }
 add_shortcode( 'wpd-prerolls', 'wpdispensary_prerolls_shortcode' );
+
+
+/**
+ * Topicals Shortcode Fuction
+ */
+function wpdispensary_topicals_shortcode( $atts ) {
+
+	/* Attributes */
+	extract( shortcode_atts(
+		array(
+			'posts' => '100',
+		),
+		$atts
+	) );
+
+	/**
+	 * Code to create shortcode for Topicals
+	 */
+
+	$wpdquery = new WP_Query(
+		array(
+			'post_type' 		=> 'topicals',
+			'posts_per_page'	=> $posts,
+		)
+	);
+
+	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">Topicals</h2>';
+
+	while ( $wpdquery->have_posts() ) : $wpdquery->the_post();
+
+		$thumbnail_id = get_post_thumbnail_id();
+		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, 'dispensary-image', true );
+		$thumbnail_url = $thumbnail_url_array[0];
+		$title = get_the_title();
+
+		/** Get the pricing for Topicals */
+
+		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
+			$topicalprice = '<strong>Price:</strong> $' . get_post_meta( get_the_id(), '_pricetopical', true ) . '';
+		}
+		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
+			$topicalsize = ' - <strong>Size:</strong> '. get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz';
+		}
+		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
+			$topicalthc = ' - <strong>THC:</strong> '. get_post_meta( get_the_id(), '_thctopical', true ) . 'mg';
+		}
+		if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
+			$topicalcbd = ' - <strong>CBD:</strong> '. get_post_meta( get_the_id(), '_cbdtopical', true ) . 'mg';
+		}
+
+		$wpdposts .= '<div class="wpdshortcode wpd-topicals' . $class .'">
+			<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>
+			<p><strong><a href="' . get_permalink() . '">' . $title . '</a></strong></p>
+			<span class="wpd-productinfo">' . $topicalprice . '' . $topicalsize . '' . $topicalthc . ''. $topicalcbd .'</span>
+		</div>';
+
+	endwhile;
+
+	wp_reset_query();
+
+	return $wpdposts . '</div>';
+
+}
+add_shortcode( 'wpd-topicals', 'wpdispensary_topicals_shortcode' );

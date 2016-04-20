@@ -759,4 +759,188 @@ function wpdispensary_prerolls_register_widget() {
 }
 add_action( 'widgets_init', 'wpdispensary_prerolls_register_widget' );
 
+
+/**
+ * WP Dispensary Topicals Widget
+ *
+ * @since       1.0.0
+ */
+class wpdispensary_topicals_widget extends WP_Widget {
+
+    /**
+     * Constructor
+     *
+     * @access      public
+     * @since       1.4.0
+     * @return      void
+     */
+    public function wpdispensary_topicals_widget() {
+        parent::WP_Widget(
+            false,
+            __( 'Recent Topicals', 'wp-dispensary' ),
+            array(
+                'description'  => __( 'Your dispensaries most recent Topicals', 'wp-dispensary' )
+            )
+        );
+    }
+
+    /**
+     * Widget definition
+     *
+     * @access      public
+     * @since       1.4.0
+     * @see         WP_Widget::widget
+     * @param       array $args Arguments to pass to the widget
+     * @param       array $instance A given widget instance
+     * @return      void
+     */
+    public function widget( $args, $instance ) {
+        if( ! isset( $args['id'] ) ) {
+            $args['id'] = 'wpdispensary_topicals_widget';
+        }
+
+        $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
+
+        echo $args['before_widget'];
+
+        if( $title ) {
+            echo $args['before_title'] . $title . $args['after_title'];
+        }
+
+        do_action( 'wpdispensary_topicals_before_widget' );
+
+			if( ! 'on' == $instance['featuredimage'] ) {
+				echo "<ul class='wpdispensary-list'>";
+			}
+			
+			$wpdispensary_topicals_widget = new WP_Query(
+				array(
+					'post_type' => 'topicals',
+					'showposts' => $instance['limit']
+				)
+			);
+
+			while ( $wpdispensary_topicals_widget->have_posts() ) : $wpdispensary_topicals_widget->the_post();
+			
+			$do_not_duplicate = $post->ID;
+
+			if('on' == $instance['featuredimage'] ) {
+				
+				echo "<div class='wpdispensary-widget'>";
+					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+						the_post_thumbnail( 'wpdispensary-widget' );
+					echo "</a>";
+				if('on' == $instance['topicalname'] ) {
+					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+				}
+				if('on' == $instance['topicalcategory'] ) {
+					echo "<span class='wpdispensary-widget-categories'>". get_the_term_list( $post->ID, 'topicals_category' ) ."</a></span>";
+				}
+				echo "</div>";
+				
+			} else {
+				
+				echo "<li>";
+				if('on' == $instance['topicalname'] ) {
+					echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+				}
+				echo "</li>";
+				
+			}
+
+			endwhile; // end loop
+			
+			if( ! 'on' == $instance['featuredimage'] ) {
+				echo "</ul>";
+			}
+
+        do_action( 'wpdispensary_topicals_after_widget' );
+        
+        echo $args['after_widget'];
+    }
+
+
+    /**
+     * Update widget options
+     *
+     * @access      public
+     * @since       1.0.0
+     * @see         WP_Widget::update
+     * @param       array $new_instance The updated options
+     * @param       array $old_instance The old options
+     * @return      array $instance The updated instance options
+     */
+    public function update( $new_instance, $old_instance ) {
+        $instance = $old_instance;
+
+        $instance['title']      	= strip_tags( $new_instance['title'] );
+        $instance['limit']   		= strip_tags( $new_instance['limit'] );
+        $instance['featuredimage']	= $new_instance['featuredimage'];
+        $instance['topicalname']		= $new_instance['topicalname'];
+        $instance['topicalcategory']	= $new_instance['topicalcategory'];
+
+        return $instance;
+    }
+
+
+    /**
+     * Display widget form on dashboard
+     *
+     * @access      public
+     * @since       1.0.0
+     * @see         WP_Widget::form
+     * @param       array $instance A given widget instance
+     * @return      void
+     */
+    public function form( $instance ) {
+        $defaults = array(
+            'title'    			=> 'Recent Topicals',
+            'limit'  			=> '5',
+            'featuredimage'		=> '',
+            'topicalname' 		=> '',
+            'topicalcategory' 	=> ''
+        );
+
+        $instance = wp_parse_args( (array) $instance, $defaults );
+        ?>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo $instance['title']; ?>" />
+        </p>
+		
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php _e( 'Amount of topicals to show:', 'wp-dispensary' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
+        </p>
+		
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['featuredimage'], 'on'); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php _e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+        </p>
+
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['topicalname'], 'on'); ?> id="<?php echo $this->get_field_id('topicalname'); ?>" name="<?php echo $this->get_field_name('topicalname'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'topicalname' ) ); ?>"><?php _e( 'Display topical name?', 'wp-dispensary' ); ?></label>
+        </p>
+
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['topicalcategory'], 'on'); ?> id="<?php echo $this->get_field_id('topicalcategory'); ?>" name="<?php echo $this->get_field_name('topicalcategory'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'topicalcategory' ) ); ?>"><?php _e( 'Display topical category?', 'wp-dispensary' ); ?></label>
+        </p>
+
+		<?php
+    }
+}
+
+/**
+ * Register the new widget
+ *
+ * @since       1.0.0
+ * @return      void
+ */
+function wpdispensary_topicals_register_widget() {
+    register_widget( 'wpdispensary_topicals_widget' );
+}
+add_action( 'widgets_init', 'wpdispensary_topicals_register_widget' );
+
 ?>

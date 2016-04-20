@@ -3,7 +3,7 @@ Contributors: deviodigital
 Donate link: http://www.wpdispensary.com
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis
 Requires at least: 3.0.1
-Tested up to: 4.4.2
+Tested up to: 4.5
 Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,7 +72,9 @@ You can call your menu anywhere shortcodes are accepted in your theme. The short
 
 `[wpd-prerolls posts="6"]`
 
-*please note that more options to customize output are being worked into the shortcode for future versions*
+`[wpd-topicals posts="6"]`
+
+*please note that more options to customize shortcode output are being worked into the shortcode for future versions*
 
 ### Extend WP Dispensary
 
@@ -98,7 +100,11 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 == Changelog ==
 
 = 1.4 =
-* PHP Code Sniffer WordPress standards updates throughout plugin files
+* PHP CodeSniffer WordPress Standards updates throughout various plugin files
+* Created the Topicals menu type, with widget, shortcode and WP-API output options
+* Updated the output style of the shortcode item information
+* Added the WP Dispensary icon to each CPT in the admin dashboard for easier recognition when you're in the admin dashboard
+* Added `active_plugins` check for "Subtitles" plugin in `admin/wp-dispensary-rest-api.php` API output
 
 = 1.3.1 =
 * Fixed CBD being called BCD #typingtoofast

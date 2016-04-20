@@ -52,6 +52,16 @@ function prerolls_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_prerolls', 'prerolls_featuredimage', 10, 3 );
 
+function topicals_featuredimage( $data, $post, $request ) {
+	$_data = $data->data;
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+	$thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+	$_data['featured_image_url'] = $thumbnail[0];
+	$data->data = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_topicals', 'topicals_featuredimage', 10, 3 );
+
 /** Add Category taxonomy for the Flowers Custom Post Type */
 
 function flowers_category( $data, $post, $request ) {
@@ -192,6 +202,16 @@ function edibles_ingredients( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_edibles', 'edibles_ingredients', 10, 3 );
 
+/** Add Category taxonomy for the Topicals Custom Post Type */
+
+function topicals_category( $data, $post, $request ) {
+	$_data = $data->data;
+	$_data['topicals_category'] = get_the_term_list( $post->ID, 'topicals_category', '', ' ', '' );
+	$data->data = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_topicals', 'topicals_category', 10, 3 );
+
 /**
  * This adds the wpdispensary_prices metafields to the
  * API callback for flowers and concentrates
@@ -298,11 +318,39 @@ function slug_get_thccbd( $object, $field_name, $request ) {
 }
 
 /**
+ * This adds the metafields to the API
+ * callback for topicals
+ *
+ * @since    1.4.0
+ */
+
+add_action( 'rest_api_init', 'slug_register_topicalinfo' );
+function slug_register_topicalinfo() {
+	$topicalinformation = array( '_pricetopical', '_thctopical', '_cbdtopical', '_sizetopical' );
+	foreach ( $topicalinformation as $topicalinfo ) {
+		register_api_field(
+			'topicals',
+			$edibleinfo,
+			array(
+				'get_callback'    => 'slug_get_topicalinfo',
+				'update_callback' => null,
+				'schema'          => null,
+			)
+		);
+	} /** /foreach */
+}
+function slug_get_topicalinfo( $object, $field_name, $request ) {
+	return get_post_meta( $object['id'], $field_name, true );
+}
+
+
+/**
  * Add the subtitle to the API callback
  * for all custom post types
  *
  * @since    1.1.0
  */
+if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
 function subtitles_flowers( $data, $post, $request ) {
 	$_data = $data->data;
@@ -335,3 +383,18 @@ function subtitles_prerolls( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_prerolls', 'subtitles_prerolls', 10, 3 );
+
+/**
+ * Topicals subtitles
+ *
+ * @since    1.4.0
+ */
+function subtitles_topicals( $data, $post, $request ) {
+	$_data = $data->data;
+	$_data['subtitle'] = get_the_subtitle( $post->ID );
+	$data->data = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_topicals', 'subtitles_topicals', 10, 3 );
+
+}

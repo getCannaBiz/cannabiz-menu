@@ -282,7 +282,8 @@ class WPDispensary_Prerolls {
 	}
 	function save_post( $post_id, $post ) {
 		if ( $post->post_type == $this->FOR_POST_TYPE && isset( $_POST[ $this->field_name ] ) ) {
-			update_post_meta( $post_id, $this->meta_key, $_POST[ $this->field_name ] );
+			$prerollflower = sanitize_text_field( $_POST['selected_flowers'] );
+			update_post_meta( $post_id, $this->meta_key, $prerollflower );
 		}
 	}
 }
@@ -468,3 +469,105 @@ function wpdispensary_save_thcmg_meta( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'wpdispensary_save_thcmg_meta', 1, 2 ); /** save the custom fields */
+
+
+
+/**
+ * Topicals THC & CBD content metabox
+ *
+ * Adds a THC & CBD content metabox to the topicals custom post type
+ *
+ * @since    1.4.0
+ */
+
+function add_thccbdtopical_metaboxes() {
+
+	$screens = array( 'topicals' );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_thccbdtopical',
+			__( 'Product Information', 'wp-dispensary' ),
+			'wpdispensary_thccbdtopical',
+			$screen,
+			'side',
+			'default'
+		);
+	}
+
+}
+
+add_action( 'add_meta_boxes', 'add_thccbdtopical_metaboxes' );
+
+function wpdispensary_thccbdtopical() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="thccbdtopical_noncename" id="thccbdtopical_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the thc mg data if its already been entered */
+	$pricetopicals 	= get_post_meta( $post->ID, '_pricetopical', true );
+	$thctopicals 	= get_post_meta( $post->ID, '_thctopical', true );
+	$cbdtopicals 	= get_post_meta( $post->ID, '_cbdtopical', true );
+	$sizetopicals 	= get_post_meta( $post->ID, '_sizetopical', true );
+
+	/** Echo out the fields */
+	echo '<p>Price per unit:</p>';
+	echo '<input type="text" name="_pricetopical" value="' . $pricetopicals  . '" class="widefat" />';
+	echo '<p>Size (oz):</p>';
+	echo '<input type="text" name="_sizetopical" value="' . $sizetopicals  . '" class="widefat" />';
+	echo '<p>THC mg:</p>';
+	echo '<input type="number" name="_thctopical" value="' . $thctopicals  . '" class="widefat" />';
+	echo '<p>CBD mg:</p>';
+	echo '<input type="number" name="_cbdtopical" value="' . $cbdtopicals  . '" class="widefat" />';
+
+}
+
+/** Save the Metabox Data */
+
+function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['thccbdtopical_noncename'], plugin_basename( __FILE__ ) ) ) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	$thcmgtopical_meta['_pricetopical'] = $_POST['_pricetopical'];
+	$thcmgtopical_meta['_thctopical'] = $_POST['_thctopical'];
+	$thcmgtopical_meta['_cbdtopical'] = $_POST['_cbdtopical'];
+	$thcmgtopical_meta['_sizetopical'] = $_POST['_sizetopical'];
+
+	/** Add values of $thcmg_meta as custom fields */
+
+	foreach ( $thcmgtopical_meta as $key => $value ) { /** Cycle through the $thcmg_meta array! */
+		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+
+add_action( 'save_post', 'wpdispensary_save_thccbdtopical_meta', 1, 2 ); /** save the custom fields */
