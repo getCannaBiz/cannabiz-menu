@@ -52,7 +52,7 @@ This means that more eyes are looking at the code base to make sure everything i
 
 ### Easy to use shortcodes
 
-As of version 1.2, the WP Dispensary menu plugin comes with built in shortcodes which allow you to display your menu with any theme.
+WP Dispensary comes with built in shortcodes which allow you to display your menu with any theme.
 
 You can call your menu anywhere shortcodes are accepted in your theme. The shortcodes and options currently available are below.
 
@@ -63,6 +63,8 @@ You can call your menu anywhere shortcodes are accepted in your theme. The short
 `[wpd-edibles posts="6"]`
 
 `[wpd-prerolls posts="6"]`
+
+`[wpd-topicals posts="6"]`
 
 *please note that more options to customize output are being worked into the shortcode for future versions*
 
@@ -82,4 +84,4 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 
 ## Changelog
 
-View `CHANGELOG.md`
+View [CHANGELOG.md](https://github.com/deviodigital/wp-dispensary/blob/master/CHANGELOG.md)
