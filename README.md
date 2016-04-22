@@ -2,11 +2,11 @@
 
 # WP Dispensary
 
-The world's first (and best) medical marijuana dispensary menu plugin for WordPress.
+The world's first (and best) marijuana dispensary menu management plugin for WordPress.
 
-**please note that this repo is always being updated.**
+**please note that the master branch is under active development.**
 
-If you're looking for a stable version to use with your website, you can download [WP Dispensary](http://www.wordpress.org/plugins/wp-dispensary) from the official WordPress repository.
+If you're looking for a stable version to use with your website, you can download [WP Dispensary](http://www.wordpress.org/plugins/wp-dispensary) from the official WordPress repository, or you can view the [releases](https://github.com/deviodigital/wp-dispensary/releases) here on Github.
 
 ### Features Overview
 

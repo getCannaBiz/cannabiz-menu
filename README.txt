@@ -8,11 +8,11 @@ Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The complete dispensary menu solution for WordPress
+The complete marijuana dispensary menu solution for WordPress
 
 == Description ==
 
-The world's first (and best) medical marijuana dispensary menu plugin for WordPress.
+The world's first (and best) marijuana dispensary menu management plugin for WordPress.
 
 ### Features Overview
 
