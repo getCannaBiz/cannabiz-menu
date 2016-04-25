@@ -13,9 +13,9 @@
 .wpdispensary-widget {
     display: inline-block;
 	margin: 12px 0;
-	width: 100%;
-	max-width: 312px;
+	max-width: 100%;
     position: relative;
+	width: 100%;
 }
 
 .wpdispensary-widget:first-child {
@@ -27,7 +27,9 @@
 }
 
 .wpdispensary-widget img {
+	height: auto;
     margin-bottom: 12px;
+	width: 100%;
 }
 
 span.wpdispensary-widget-title {
@@ -116,14 +118,14 @@ ul.wpdispensary-list li:before {
 @media screen and (max-width: 600px) {
 
 	.wpdispensary-widget {
-		max-width: 312px;
+		max-width: 98%;
 		margin: 12px 1%;
-		width: 100%;
+		width: 98%;
 	}
 	
 	.wpdshortcode,
 	.wpdshortcode:nth-child(3n+3) {
-		margin: 12px auto;
+		margin: 12px 0;
 		width: 100%;
 	}
 
