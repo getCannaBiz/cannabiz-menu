@@ -127,3 +127,39 @@ function wpdispensary_right_now_content_table_end() {
 }
 
 add_action( 'dashboard_glance_items' , 'wpdispensary_right_now_content_table_end' );
+
+
+/**
+ * Include the TGM_Plugin_Activation class.
+ */
+require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'wpdispensary_register_required_plugins' );
+
+function wpdispensary_register_required_plugins() {
+
+	$plugins = array(
+
+		array(
+			'name'      => 'Dispensary Coupons',
+			'slug'      => 'dispensary-coupons',
+			'required'  => false,
+		),
+
+	);
+
+	$config = array(
+		'id'           => 'wp-dispensary',          // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                     	// Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', 	// Menu slug.
+		'parent_slug'  => 'plugins.php',            // Parent menu slug.
+		'capability'   => 'manage_options',    		// Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+		'has_notices'  => true,                    	// Show admin notices or not.
+		'dismissable'  => true,                    	// If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      	// If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   	// Automatically activate plugins after installation or not.
+		'message'      => '',                      	// Message to output right before the plugins table.
+	);
+
+	tgmpa( $plugins, $config );
+}
