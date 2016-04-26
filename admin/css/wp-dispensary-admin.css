@@ -31,7 +31,10 @@
 #dashboard_right_now .prerolls-count span:before,
 #dashboard_right_now .topicals-count a:before,
 #dashboard_right_now .topicals-count span:before {
-    content: "\f345";
+    background: url(../images/glance-icon.png) no-repeat 2px 0px;
+    content: "";
+    height: 20px;
+    padding-right: 25px;
 }
 
 

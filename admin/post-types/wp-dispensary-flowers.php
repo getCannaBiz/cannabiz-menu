@@ -55,7 +55,7 @@ function wpdispensary_flowers() {
 		'show_in_menu'        => true,
 		'show_in_rest'		  => true,
 		'menu_position'       => 10,
-		'menu_icon'           => plugin_dir_url( __FILE__ ) . ( 'images/menu-icon.png' ),
+		'menu_icon'           => plugin_dir_url( __FILE__ ) . ( '../images/menu-icon.png' ),
 		'show_in_admin_bar'   => true,
 		'show_in_nav_menus'   => true,
 		'can_export'          => true,
