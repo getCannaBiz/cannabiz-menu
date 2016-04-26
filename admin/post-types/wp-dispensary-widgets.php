@@ -70,10 +70,17 @@ class wpdispensary_flowers_widget extends WP_Widget {
 				echo "<ul class='wpdispensary-list'>";
 			}
 			
+			if ($instance['order'] == 'on') {
+				$randorder = 'rand';
+			} else {
+				$randorder = '';
+			}
+			
 			$wpdispensary_flowers_widget = new WP_Query(
 				array(
 					'post_type' => 'flowers',
-					'showposts' => $instance['limit']
+					'showposts' => $instance['limit'],
+					'orderby'	=> $randorder
 				)
 			);
 
@@ -132,6 +139,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
         $instance['title']      	= strip_tags( $new_instance['title'] );
         $instance['limit']   		= strip_tags( $new_instance['limit'] );
+        $instance['order']   		= $new_instance['order'];
         $instance['featuredimage']	= $new_instance['featuredimage'];
         $instance['flowername']		= $new_instance['flowername'];
         $instance['flowercategory']	= $new_instance['flowercategory'];
@@ -153,6 +161,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
         $defaults = array(
             'title'    			=> 'Recent Flowers',
             'limit'  			=> '5',
+            'order'  			=> '',
             'featuredimage'		=> '',
             'flowername' 		=> '',
             'flowercategory' 	=> ''
@@ -168,6 +177,11 @@ class wpdispensary_flowers_widget extends WP_Widget {
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php _e( 'Amount of flowers to show:', 'wp-dispensary' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
+        </p>
+
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['order'], 'on'); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php _e( 'Randomize output?', 'wp-dispensary' ); ?></label>
         </p>
 		
 	    <p>
@@ -253,11 +267,18 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 			if( ! 'on' == $instance['featuredimage'] ) {
 				echo "<ul class='wpdispensary-list'>";
 			}
+
+			if ( $instance['order'] == 'on' ) {
+				$randorder = 'rand';
+			} else {
+				$randorder = '';
+			}
 			
 			$wpdispensary_concentrates_widget = new WP_Query(
 				array(
 					'post_type' => 'concentrates',
-					'showposts' => $instance['limit']
+					'showposts' => $instance['limit'],
+					'orderby'	=> $randorder
 				)
 			);
 
@@ -316,6 +337,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
         $instance['title']      			= strip_tags( $new_instance['title'] );
         $instance['limit']   				= strip_tags( $new_instance['limit'] );
+        $instance['order']   				= $new_instance['order'];
         $instance['featuredimage']			= $new_instance['featuredimage'];
         $instance['concentratename']		= $new_instance['concentratename'];
         $instance['concentratecategory']	= $new_instance['concentratecategory'];
@@ -337,6 +359,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
         $defaults = array(
             'title'    				=> 'Recent Concentrates',
             'limit'  				=> '5',
+            'order'					=> '',
             'featuredimage'			=> '',
             'concentratename' 		=> '',
             'concentratercategory' 	=> ''
@@ -354,6 +377,11 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
         </p>
 		
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['order'], 'on'); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php _e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        </p>
+
 	    <p>
 			<input class="checkbox" type="checkbox" <?php checked($instance['featuredimage'], 'on'); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" /> 
 			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php _e( 'Display featured image?', 'wp-dispensary' ); ?></label>
@@ -437,11 +465,18 @@ class wpdispensary_edibles_widget extends WP_Widget {
 			if( ! 'on' == $instance['featuredimage'] ) {
 				echo "<ul class='wpdispensary-list'>";
 			}
+
+			if ( $instance['order'] == 'on' ) {
+				$randorder = 'rand';
+			} else {
+				$randorder = '';
+			}
 			
 			$wpdispensary_edibles_widget = new WP_Query(
 				array(
 					'post_type' => 'edibles',
-					'showposts' => $instance['limit']
+					'showposts' => $instance['limit'],
+					'orderby'	=> $randorder
 				)
 			);
 
@@ -500,6 +535,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 
         $instance['title']      	= strip_tags( $new_instance['title'] );
         $instance['limit']   		= strip_tags( $new_instance['limit'] );
+        $instance['order']   		= $new_instance['order'];
         $instance['featuredimage']	= $new_instance['featuredimage'];
         $instance['ediblename']		= $new_instance['ediblename'];
         $instance['ediblecategory']	= $new_instance['ediblecategory'];
@@ -521,6 +557,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
         $defaults = array(
             'title'    			=> 'Recent Edibles',
             'limit'  			=> '5',
+            'order'  			=> '',
             'featuredimage'		=> '',
             'flowername' 		=> '',
             'flowercategory' 	=> ''
@@ -538,6 +575,11 @@ class wpdispensary_edibles_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
         </p>
 		
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['order'], 'on'); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php _e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        </p>
+
 	    <p>
 			<input class="checkbox" type="checkbox" <?php checked($instance['featuredimage'], 'on'); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" /> 
 			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php _e( 'Display featured image?', 'wp-dispensary' ); ?></label>
@@ -622,11 +664,18 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 			if( ! 'on' == $instance['featuredimage'] ) {
 				echo "<ul class='wpdispensary-list'>";
 			}
+
+			if ( $instance['order'] == 'on' ) {
+				$randorder = 'rand';
+			} else {
+				$randorder = '';
+			}
 			
 			$wpdispensary_edibles_widget = new WP_Query(
 				array(
 					'post_type' => 'prerolls',
-					'showposts' => $instance['limit']
+					'showposts' => $instance['limit'],
+					'orderby'	=> $randorder
 				)
 			);
 
@@ -688,6 +737,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
         $instance['title']      		= strip_tags( $new_instance['title'] );
         $instance['limit']   			= strip_tags( $new_instance['limit'] );
+        $instance['order']   			= $new_instance['order'];
         $instance['featuredimage']		= $new_instance['featuredimage'];
         $instance['prerollname']		= $new_instance['prerollname'];
         $instance['prerollcategory']	= $new_instance['prerollcategory'];
@@ -710,6 +760,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
         $defaults = array(
             'title'    			=> 'Recent Pre-Rolls',
             'limit'  			=> '5',
+            'order'  			=> '',
             'featuredimage'		=> '',
             'prerollname' 		=> '',
             'prerollcategory' 	=> '',
@@ -728,6 +779,11 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
         </p>
 		
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['order'], 'on'); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php _e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        </p>
+
 	    <p>
 			<input class="checkbox" type="checkbox" <?php checked($instance['featuredimage'], 'on'); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" /> 
 			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php _e( 'Display featured image?', 'wp-dispensary' ); ?></label>
@@ -812,11 +868,18 @@ class wpdispensary_topicals_widget extends WP_Widget {
 			if( ! 'on' == $instance['featuredimage'] ) {
 				echo "<ul class='wpdispensary-list'>";
 			}
+
+			if ( $instance['order'] == 'on' ) {
+				$randorder = 'rand';
+			} else {
+				$randorder = '';
+			}
 			
 			$wpdispensary_topicals_widget = new WP_Query(
 				array(
 					'post_type' => 'topicals',
-					'showposts' => $instance['limit']
+					'showposts' => $instance['limit'],
+					'orderby'	=> $randorder
 				)
 			);
 
@@ -873,9 +936,10 @@ class wpdispensary_topicals_widget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
 
-        $instance['title']      	= strip_tags( $new_instance['title'] );
-        $instance['limit']   		= strip_tags( $new_instance['limit'] );
-        $instance['featuredimage']	= $new_instance['featuredimage'];
+        $instance['title']      		= strip_tags( $new_instance['title'] );
+        $instance['limit']   			= strip_tags( $new_instance['limit'] );
+        $instance['order']				= $new_instance['order'];
+        $instance['featuredimage']		= $new_instance['featuredimage'];
         $instance['topicalname']		= $new_instance['topicalname'];
         $instance['topicalcategory']	= $new_instance['topicalcategory'];
 
@@ -896,6 +960,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
         $defaults = array(
             'title'    			=> 'Recent Topicals',
             'limit'  			=> '5',
+            'order'				=> '',
             'featuredimage'		=> '',
             'topicalname' 		=> '',
             'topicalcategory' 	=> ''
@@ -913,6 +978,11 @@ class wpdispensary_topicals_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
         </p>
 		
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['order'], 'on'); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php _e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        </p>
+
 	    <p>
 			<input class="checkbox" type="checkbox" <?php checked($instance['featuredimage'], 'on'); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" /> 
 			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php _e( 'Display featured image?', 'wp-dispensary' ); ?></label>
