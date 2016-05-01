@@ -16,9 +16,7 @@
  *
  * @since    1.3.0
  */
-
 function add_thccbd_metaboxes() {
-
 	$screens = array( 'flowers', 'concentrates', 'edibles', 'prerolls' );
 
 	foreach ( $screens as $screen ) {
@@ -36,18 +34,21 @@ function add_thccbd_metaboxes() {
 
 add_action( 'add_meta_boxes', 'add_thccbd_metaboxes' );
 
+/**
+ * Building the metabox
+ */
 function wpdispensary_thccbd() {
 	global $post;
 
-	// Noncename needed to verify where the data originated
+	/** Noncename needed to verify where the data originated */
 	echo '<input type="hidden" name="thccbdmeta_noncename" id="thccbdmeta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-	// Get the thccbd data if its already been entered
-	$thc = get_post_meta( $post->ID, '_thc', true );
-	$cbd = get_post_meta( $post->ID, '_cbd', true );
+	/** Get the thccbd data if its already been entered */
+	$thc	= get_post_meta( $post->ID, '_thc', true );
+	$cbd	= get_post_meta( $post->ID, '_cbd', true );
 
-	// Echo out the fields
+	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>THC %:</p>';
 	echo '<input type="number" name="_thc" value="' . $thc  . '" class="widefat" />';
@@ -71,7 +72,7 @@ function wpdispensary_save_thccbd_meta( $post_id, $post ) {
 		return $post->ID;
 	}
 
-	// Is the user allowed to edit the post or page?
+	/** Is the user allowed to edit the post or page? */
 	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 		return $post->ID;
 	}
@@ -81,8 +82,8 @@ function wpdispensary_save_thccbd_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thccbd_meta['_thc'] = $_POST['_thc'];
-	$thccbd_meta['_cbd'] = $_POST['_cbd'];
+	$thccbd_meta['_thc']	= $_POST['_thc'];
+	$thccbd_meta['_cbd']	= $_POST['_cbd'];
 
 	/** Add values of $thccbd_meta as custom fields */
 
@@ -140,15 +141,15 @@ function wpdispensary_prices() {
 	echo '<input type="hidden" name="pricesmeta_noncename" id="pricesmeta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-	// Get the prices data if its already been entered
-	$halfgram = get_post_meta( $post->ID, '_halfgram', true );
-	$gram = get_post_meta( $post->ID, '_gram', true );
-	$eighth = get_post_meta( $post->ID, '_eighth', true );
-	$quarter = get_post_meta( $post->ID, '_quarter', true );
-	$halfounce = get_post_meta( $post->ID, '_halfounce', true );
-	$ounce = get_post_meta( $post->ID, '_ounce', true );
+	/** Get the prices data if its already been entered */
+	$halfgram	= get_post_meta( $post->ID, '_halfgram', true );
+	$gram		= get_post_meta( $post->ID, '_gram', true );
+	$eighth		= get_post_meta( $post->ID, '_eighth', true );
+	$quarter	= get_post_meta( $post->ID, '_quarter', true );
+	$halfounce	= get_post_meta( $post->ID, '_halfounce', true );
+	$ounce		= get_post_meta( $post->ID, '_ounce', true );
 
-	// Echo out the fields
+	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>1/2 Gram:</p>';
 	echo '<input type="number" name="_halfgram" value="' . $halfgram  . '" class="widefat" />';
@@ -188,7 +189,7 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 		return $post->ID;
 	}
 
-	// Is the user allowed to edit the post or page?
+	/** Is the user allowed to edit the post or page? */
 	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 		return $post->ID;
 	}
@@ -198,12 +199,12 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_halfgram'] = $_POST['_halfgram'];
-	$prices_meta['_gram'] = $_POST['_gram'];
-	$prices_meta['_eighth'] = $_POST['_eighth'];
-	$prices_meta['_quarter'] = $_POST['_quarter'];
-	$prices_meta['_halfounce'] = $_POST['_halfounce'];
-	$prices_meta['_ounce'] = $_POST['_ounce'];
+	$prices_meta['_halfgram']	= $_POST['_halfgram'];
+	$prices_meta['_gram']		= $_POST['_gram'];
+	$prices_meta['_eighth']		= $_POST['_eighth'];
+	$prices_meta['_quarter']	= $_POST['_quarter'];
+	$prices_meta['_halfounce']	= $_POST['_halfounce'];
+	$prices_meta['_ounce']		= $_POST['_ounce'];
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -324,7 +325,7 @@ function wpdispensary_singleprices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$priceeach = get_post_meta( $post->ID, '_priceeach', true );
+	$priceeach	= get_post_meta( $post->ID, '_priceeach', true );
 
 	/** Echo out the fields */
 	echo '<p>Price per unit:</p>';
@@ -354,7 +355,7 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_priceeach'] = $_POST['_priceeach'];
+	$prices_meta['_priceeach']	= $_POST['_priceeach'];
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -413,8 +414,8 @@ function wpdispensary_thcmg() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thc mg data if its already been entered */
-	$thcmg = get_post_meta( $post->ID, '_thcmg', true );
-	$thcservings = get_post_meta( $post->ID, '_thcservings', true );
+	$thcmg			= get_post_meta( $post->ID, '_thcmg', true );
+	$thcservings	= get_post_meta( $post->ID, '_thcservings', true );
 
 	/** Echo out the fields */
 	echo '<p>mg per serving:</p>';
@@ -446,8 +447,8 @@ function wpdispensary_save_thcmg_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thcmg_meta['_thcmg'] = $_POST['_thcmg'];
-	$thcmg_meta['_thcservings'] = $_POST['_thcservings'];
+	$thcmg_meta['_thcmg']		= $_POST['_thcmg'];
+	$thcmg_meta['_thcservings']	= $_POST['_thcservings'];
 
 	/** Add values of $thcmg_meta as custom fields */
 
@@ -471,7 +472,6 @@ function wpdispensary_save_thcmg_meta( $post_id, $post ) {
 add_action( 'save_post', 'wpdispensary_save_thcmg_meta', 1, 2 ); /** save the custom fields */
 
 
-
 /**
  * Topicals THC & CBD content metabox
  *
@@ -479,7 +479,6 @@ add_action( 'save_post', 'wpdispensary_save_thcmg_meta', 1, 2 ); /** save the cu
  *
  * @since    1.4.0
  */
-
 function add_thccbdtopical_metaboxes() {
 
 	$screens = array( 'topicals' );
@@ -499,6 +498,9 @@ function add_thccbdtopical_metaboxes() {
 
 add_action( 'add_meta_boxes', 'add_thccbdtopical_metaboxes' );
 
+/**
+ * Building the metabox
+ */
 function wpdispensary_thccbdtopical() {
 	global $post;
 
@@ -507,10 +509,10 @@ function wpdispensary_thccbdtopical() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thc mg data if its already been entered */
-	$pricetopicals 	= get_post_meta( $post->ID, '_pricetopical', true );
-	$thctopicals 	= get_post_meta( $post->ID, '_thctopical', true );
-	$cbdtopicals 	= get_post_meta( $post->ID, '_cbdtopical', true );
-	$sizetopicals 	= get_post_meta( $post->ID, '_sizetopical', true );
+	$pricetopicals	= get_post_meta( $post->ID, '_pricetopical', true );
+	$thctopicals	= get_post_meta( $post->ID, '_thctopical', true );
+	$cbdtopicals	= get_post_meta( $post->ID, '_cbdtopical', true );
+	$sizetopicals	= get_post_meta( $post->ID, '_sizetopical', true );
 
 	/** Echo out the fields */
 	echo '<p>Price per unit:</p>';
@@ -546,10 +548,10 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thcmgtopical_meta['_pricetopical'] = $_POST['_pricetopical'];
-	$thcmgtopical_meta['_thctopical'] = $_POST['_thctopical'];
-	$thcmgtopical_meta['_cbdtopical'] = $_POST['_cbdtopical'];
-	$thcmgtopical_meta['_sizetopical'] = $_POST['_sizetopical'];
+	$thcmgtopical_meta['_pricetopical']	= $_POST['_pricetopical'];
+	$thcmgtopical_meta['_thctopical']	= $_POST['_thctopical'];
+	$thcmgtopical_meta['_cbdtopical']	= $_POST['_cbdtopical'];
+	$thcmgtopical_meta['_sizetopical']	= $_POST['_sizetopical'];
 
 	/** Add values of $thcmg_meta as custom fields */
 
@@ -570,4 +572,4 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_thccbdtopical_meta', 1, 2 ); /** save the custom fields */
+add_action( 'save_post', 'wpdispensary_save_thccbdtopical_meta', 1, 2 ); /** Save the custom fields */
