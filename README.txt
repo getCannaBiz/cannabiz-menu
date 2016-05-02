@@ -3,14 +3,16 @@ Contributors: deviodigital
 Donate link: http://www.wpdispensary.com
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis
 Requires at least: 3.0.1
-Tested up to: 4.5
-Stable tag: 1.4
+Tested up to: 4.5.1
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 The complete marijuana dispensary menu solution for WordPress
 
 == Description ==
+
+![WP Dispensary](http://www.wpdispensary.com/wp-content/uploads/2016/05/wpdispensary-logo-updated.png)
 
 The world's first (and best) marijuana dispensary menu management plugin for WordPress.
 
@@ -62,7 +64,7 @@ This means that more eyes are looking at the code base to make sure everything i
 
 As of version 1.2, the WP Dispensary menu plugin comes with built in shortcodes which allow you to display your menu with any theme.
 
-You can call your menu anywhere shortcodes are accepted in your theme. The shortcodes and options currently available are below.
+You can call your menu anywhere shortcodes are accepted in your theme. Samples of the shortcodes are below. See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
 
 `[wpd-flowers posts="6"]`
 
@@ -82,7 +84,7 @@ When building this plugin, we made sure to keep it lean, including only the core
 
 With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-You can view our current add-on's on the [offical WP Dispensary website](http://www.wpdispensary.com)
+You can view our current add-on's on the [offical WP Dispensary website](http://www.wpdispensary.com/add-ons)
 
 == Installation ==
 
@@ -99,12 +101,21 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 
 == Changelog ==
 
+= 1.5 =
+* Added various new output options for shortcode display
+* Updated CSS in `public/css/wp-dispensary-public.css` for improved display in the widgets
+* Added WPD icon to each menu section in dashboard "At A Glance" box
+* Added option to randomize menu item output in widgets
+* Added plugin recommendation for [Dispensary Coupons](https://wordpress.org/plugins/dispensary-coupons/)
+* PHP_CodeSniffer WordPress Coding Standards updates throughout various plugin files
+
 = 1.4 =
-* PHP CodeSniffer WordPress Standards updates throughout various plugin files
-* Created the Topicals menu type, with widget, shortcode and WP-API output options
-* Updated the output style of the shortcode item information
-* Added the WP Dispensary icon to each CPT in the admin dashboard for easier recognition when you're in the admin dashboard
+* PHP_CodeSniffer WordPress Coding Standards updates throughout various plugin files
+* Created the Topicals menu type, with Widget, Shortcode and WP-API output options
+* Updated the output style of the Shortcode item information
+* Added the WP Dispensary icon to each CPT in the admin dashboard for easier visual recognition
 * Added `active_plugins` check for "Subtitles" plugin in `admin/wp-dispensary-rest-api.php` API output
+* Added sanitization to $_POST in `admin/post-types/wp-dispensary-metaboxes.php` pre-roll flower selection drop down
 
 = 1.3.1 =
 * Fixed CBD being called BCD #typingtoofast

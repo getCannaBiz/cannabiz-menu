@@ -54,7 +54,7 @@ This means that more eyes are looking at the code base to make sure everything i
 
 WP Dispensary comes with built in shortcodes which allow you to display your menu with any theme.
 
-You can call your menu anywhere shortcodes are accepted in your theme. The shortcodes and options currently available are below.
+You can call your menu anywhere shortcodes are accepted in your theme. Samples of the shortcodes are below. See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
 
 `[wpd-flowers posts="6"]`
 
@@ -74,7 +74,7 @@ When building this plugin, we made sure to keep it lean, including only the core
 
 With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-You can view our current add-on's on the [offical WP Dispensary website](http://www.wpdispensary.com)
+You can view our current add-on's on the [offical WP Dispensary website](http://www.wpdispensary.com/add-ons)
 
 ## Installation
 
