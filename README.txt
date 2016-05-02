@@ -101,6 +101,7 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 
 == Changelog ==
 
+= 1.5.1 =
 * Removed plugin recommendation since it was causing upgrade errors.
 
 = 1.5 =
