@@ -1,7 +1,10 @@
 # Changelog
 
+### 1.5.2
+* Removed file that was left behind for the plugin recommendation
+
 ### 1.5.1
-* Removed plugin recommendation since it was causing upgrade errors.
+* Removed plugin recommendation since it was causing upgrade errors
 
 ### 1.5
 * Added various new output options for shortcode display
