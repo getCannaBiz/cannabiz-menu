@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.5.1
+* Removed plugin recommendation since it was causing upgrade errors.
+
 ### 1.5
 * Added various new output options for shortcode display
 * Updated CSS in `public/css/wp-dispensary-public.css` for improved display in the widgets
