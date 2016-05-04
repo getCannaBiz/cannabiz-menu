@@ -10,6 +10,8 @@
  */
 
 
+if ( ! function_exists( 'wpd_data_output_content' ) ) :
+
 /**
  * Creating the menu item
  */
@@ -76,4 +78,4 @@ function wpd_data_output_content( $content ) {
 }
 add_filter( 'the_content', 'wpd_data_output_content' );
 
-?>
+endif;
