@@ -115,8 +115,20 @@ table.wpdispensary-table td.wpdispensary-title {
 
 table.wpdispensary-table td {
 	border: 1px solid #DDD;
-	color: #76BD1D;
 	padding: 10px;
+	width: 50%;
+}
+
+table.wpdispensary-table.pricing td {
+	color: #76BD1D;
+	width: auto;
+}
+
+table.wpdispensary-table.pricing td.wpdispensary-title {
+	color: #454545;
+}
+
+table.wpdispensary-table.pricing tr.priceeach td {
 	width: 50%;
 }
 
