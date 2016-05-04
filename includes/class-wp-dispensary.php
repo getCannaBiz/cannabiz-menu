@@ -152,6 +152,13 @@ class WP_Dispensary {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-admin-settings.php';
 
+		/**
+		 * Adding metaboxes and taxonomy data output in the_content
+		 *
+		 * @since    1.6.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-data-output.php';
+
 		$this->loader = new WP_Dispensary_Loader();
 
 	}
