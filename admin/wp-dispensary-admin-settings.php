@@ -32,61 +32,61 @@ function wpd_settings_add_admin_menu(  ) {
 
 function wpd_settings_settings_init(  ) { 
 
-	register_setting( 'pluginPage', 'wpd_settings_settings' );
+	register_setting( 'wpdsettings', 'wpd_settings_settings' );
 
 	add_settings_section(
-		'wpd_settings_pluginPage_section', 
+		'wpd_settings_wpdsettings_section', 
 		__( 'Your section description', 'wp-dispensary' ), 
 		'wpd_settings_settings_section_callback', 
-		'pluginPage'
+		'wpdsettings'
 	);
 
 	add_settings_field( 
 		'wpd_settings_radio_field_0', 
 		__( 'Settings field description', 'wp-dispensary' ), 
 		'wpd_settings_radio_field_0_render', 
-		'pluginPage', 
-		'wpd_settings_pluginPage_section' 
+		'wpdsettings', 
+		'wpd_settings_wpdsettings_section' 
 	);
 
 	add_settings_field( 
 		'wpd_settings_radio_field_1', 
 		__( 'Settings field description', 'wp-dispensary' ), 
 		'wpd_settings_radio_field_1_render', 
-		'pluginPage', 
-		'wpd_settings_pluginPage_section' 
+		'wpdsettings', 
+		'wpd_settings_wpdsettings_section' 
 	);
 
 	add_settings_field( 
 		'wpd_settings_text_field_2', 
 		__( 'Settings field description', 'wp-dispensary' ), 
 		'wpd_settings_text_field_2_render', 
-		'pluginPage', 
-		'wpd_settings_pluginPage_section' 
+		'wpdsettings', 
+		'wpd_settings_wpdsettings_section' 
 	);
 
 	add_settings_field( 
 		'wpd_settings_checkbox_field_3', 
 		__( 'Settings field description', 'wp-dispensary' ), 
 		'wpd_settings_checkbox_field_3_render', 
-		'pluginPage', 
-		'wpd_settings_pluginPage_section' 
+		'wpdsettings', 
+		'wpd_settings_wpdsettings_section' 
 	);
 
 	add_settings_field( 
 		'wpd_settings_textarea_field_4', 
 		__( 'Settings field description', 'wp-dispensary' ), 
 		'wpd_settings_textarea_field_4_render', 
-		'pluginPage', 
-		'wpd_settings_pluginPage_section' 
+		'wpdsettings', 
+		'wpd_settings_wpdsettings_section' 
 	);
 
 	add_settings_field( 
 		'wpd_settings_select_field_5', 
 		__( 'Settings field description', 'wp-dispensary' ), 
 		'wpd_settings_select_field_5_render', 
-		'pluginPage', 
-		'wpd_settings_pluginPage_section' 
+		'wpdsettings', 
+		'wpd_settings_wpdsettings_section' 
 	);
 
 
@@ -169,14 +169,14 @@ function wpd_settings_settings_section_callback(  ) {
 function wpd_settings_options_page(  ) { 
 
 	?>
-	<form action='options.php' method='post'>
+	<form action='options.php' method='post' class="wpd-settings">
 
-		<h2>WP Dispensary</h2>
+		<p><img src="<?php echo plugin_dir_url( __FILE__ ) . ( '/images/wpd-logo.png' ); ?>" alt="WP Dispensary logo" class="wpd-settings-logo" /></p>
 
 		<?php
-		settings_fields( 'pluginPage' );
-		do_settings_sections( 'pluginPage' );
-		submit_button();
+			settings_fields( 'wpdsettings' );
+			do_settings_sections( 'wpdsettings' );
+			submit_button();
 		?>
 
 	</form>
