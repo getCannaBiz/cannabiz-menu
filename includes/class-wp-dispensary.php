@@ -145,6 +145,13 @@ class WP_Dispensary {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-shortcodes.php';
 
+		/**
+		 * Adding admin settings page
+		 *
+		 * @since    1.6.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-admin-settings.php';
+
 		$this->loader = new WP_Dispensary_Loader();
 
 	}

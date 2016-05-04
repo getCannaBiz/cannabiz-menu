@@ -37,6 +37,13 @@
     padding-right: 25px;
 }
 
+.toplevel_page_wpdispensary #adminmenu div.wp-menu-image:before {
+    background: url(../images/menu-icon.png) no-repeat 2px 0px;
+    content: "";
+    height: 36px;
+    padding-right: 36px;
+}
+
 
 /* Widget styles
 -------------------------------------------------------------- */
