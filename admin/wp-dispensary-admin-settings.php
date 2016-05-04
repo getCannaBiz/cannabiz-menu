@@ -36,23 +36,15 @@ function wpd_settings_settings_init(  ) {
 
 	add_settings_section(
 		'wpd_settings_wpdsettings_section', 
-		__( 'Your section description', 'wp-dispensary' ), 
+		__( 'WP Dispensary Settings', 'wp-dispensary' ), 
 		'wpd_settings_settings_section_callback', 
 		'wpdsettings'
 	);
 
 	add_settings_field( 
-		'wpd_settings_radio_field_0', 
-		__( 'Settings field description', 'wp-dispensary' ), 
-		'wpd_settings_radio_field_0_render', 
-		'wpdsettings', 
-		'wpd_settings_wpdsettings_section' 
-	);
-
-	add_settings_field( 
-		'wpd_settings_radio_field_1', 
-		__( 'Settings field description', 'wp-dispensary' ), 
-		'wpd_settings_radio_field_1_render', 
+		'wpd_settings_single_menu_output', 
+		__( 'Hide menu item details in single item output?', 'wp-dispensary' ), 
+		'wpd_settings_single_menu_output_render', 
 		'wpdsettings', 
 		'wpd_settings_wpdsettings_section' 
 	);
@@ -61,14 +53,6 @@ function wpd_settings_settings_init(  ) {
 		'wpd_settings_text_field_2', 
 		__( 'Settings field description', 'wp-dispensary' ), 
 		'wpd_settings_text_field_2_render', 
-		'wpdsettings', 
-		'wpd_settings_wpdsettings_section' 
-	);
-
-	add_settings_field( 
-		'wpd_settings_checkbox_field_3', 
-		__( 'Settings field description', 'wp-dispensary' ), 
-		'wpd_settings_checkbox_field_3_render', 
 		'wpdsettings', 
 		'wpd_settings_wpdsettings_section' 
 	);
@@ -93,21 +77,11 @@ function wpd_settings_settings_init(  ) {
 }
 
 
-function wpd_settings_radio_field_0_render(  ) {
+function wpd_settings_single_menu_output_render(  ) { 
 
 	$options = get_option( 'wpd_settings_settings' );
 	?>
-	<input type='radio' name='wpd_settings_settings[wpd_settings_radio_field_0]' <?php checked( $options['wpd_settings_radio_field_0'], 1 ); ?> value='1'>
-	<?php
-
-}
-
-
-function wpd_settings_radio_field_1_render(  ) {
-
-	$options = get_option( 'wpd_settings_settings' );
-	?>
-	<input type='radio' name='wpd_settings_settings[wpd_settings_radio_field_1]' <?php checked( $options['wpd_settings_radio_field_1'], 1 ); ?> value='1'>
+	<input type='checkbox' name='wpd_settings_settings[wpd_settings_single_menu_output]' <?php checked( $options['wpd_settings_single_menu_output'], 1 ); ?> value='1'>
 	<?php
 
 }
@@ -118,16 +92,6 @@ function wpd_settings_text_field_2_render(  ) {
 	$options = get_option( 'wpd_settings_settings' );
 	?>
 	<input type='text' name='wpd_settings_settings[wpd_settings_text_field_2]' value='<?php echo $options['wpd_settings_text_field_2']; ?>'>
-	<?php
-
-}
-
-
-function wpd_settings_checkbox_field_3_render(  ) { 
-
-	$options = get_option( 'wpd_settings_settings' );
-	?>
-	<input type='checkbox' name='wpd_settings_settings[wpd_settings_checkbox_field_3]' <?php checked( $options['wpd_settings_checkbox_field_3'], 1 ); ?> value='1'>
 	<?php
 
 }
@@ -161,7 +125,7 @@ function wpd_settings_select_field_5_render(  ) {
 
 function wpd_settings_settings_section_callback(  ) { 
 
-	echo __( 'This section description', 'wp-dispensary' );
+	echo __( '', 'wp-dispensary' );
 
 }
 
@@ -170,8 +134,6 @@ function wpd_settings_options_page(  ) {
 
 	?>
 	<form action='options.php' method='post' class="wpd-settings">
-
-		<p><img src="<?php echo plugin_dir_url( __FILE__ ) . ( '/images/wpd-logo.png' ); ?>" alt="WP Dispensary logo" class="wpd-settings-logo" /></p>
 
 		<?php
 			settings_fields( 'wpdsettings' );
