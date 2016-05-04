@@ -40,21 +40,17 @@ One thing that we wanted to make sure of when creating this plugin was that you 
 
 Luckily, WordPress comes built with a great content exporter, and we've included your menu content in the export options so you can instantly have your dispensary menu backed up.
 
-If you ever need to move your website to another server, or would just like to have a backup of the current content, you're able to easily export your dispensary menu content with WordPress' built in export tool.
-
 ### 100% Open Source
 
 WP Dispensary is free to use with no license restrictions or expensive setup fees. It's as simple as downloading the plugin, installing it on your WordPress powered website, and adding content.
 
-We believe in the power of open source, and this plugin is a shining example of that. Not only can you download and freely use this plugin as you see fit, developers are free to contribute to the [code on Github](https://www.github.com/deviodigital/wp-dispensary/)
-
-This means that more eyes are looking at the code base to make sure everything is built with WordPress standards in mind, giving you the peace of mind that the plugin you're using is of the highest quality possible.
+We believe in the power of open source, and this plugin is a shining example of that. Not only can you download and freely use this plugin as you see fit, developers are free to open an [issue](https://www.github.com/deviodigital/wp-dispensary/issues) or submit a [pull request](https://www.github.com/deviodigital/wp-dispensary/pulls)
 
 ### Easy to use shortcodes
 
 WP Dispensary comes with built in shortcodes which allow you to display your menu with any theme.
 
-You can call your menu anywhere shortcodes are accepted in your theme. Samples of the shortcodes are below. See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
+You can call your menu anywhere shortcodes are accepted in your theme. Samples of the shortcodes are below.
 
 `[wpd-flowers posts="6"]`
 
@@ -65,6 +61,8 @@ You can call your menu anywhere shortcodes are accepted in your theme. Samples o
 `[wpd-prerolls posts="6"]`
 
 `[wpd-topicals posts="6"]`
+
+See all available shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
 
 *please note that more options to customize output are being worked into the shortcode for future versions*
 
