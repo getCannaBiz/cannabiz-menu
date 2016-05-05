@@ -17,7 +17,7 @@
  * @since    1.3.0
  */
 function add_thccbd_metaboxes() {
-	$screens = array( 'flowers', 'concentrates', 'edibles', 'prerolls' );
+	$screens = array( 'flowers', 'concentrates' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -387,15 +387,15 @@ add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** save
  * @since    1.0.0
  */
 
-function add_thcmg_metaboxes() {
+function add_thc_cbd_mg_metaboxes() {
 
 	$screens = array( 'edibles' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
-			'wpdispensary_thcmg',
-			__( 'THC MG Content', 'wp-dispensary' ),
-			'wpdispensary_thcmg',
+			'wpdispensary_thc_cbd_mg',
+			__( 'Serving information', 'wp-dispensary' ),
+			'wpdispensary_thc_cbd_mg',
 			$screen,
 			'side',
 			'default'
@@ -404,36 +404,39 @@ function add_thcmg_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_thcmg_metaboxes' );
+add_action( 'add_meta_boxes', 'add_thc_cbd_mg_metaboxes' );
 
-function wpdispensary_thcmg() {
+function wpdispensary_thc_cbd_mg() {
 	global $post;
 
 	/** Noncename needed to verify where the data originated */
-	echo '<input type="hidden" name="thcmgmeta_noncename" id="thcmgmeta_noncename" value="' .
+	echo '<input type="hidden" name="thccbdmgmeta_noncename" id="thccbdmgmeta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thc mg data if its already been entered */
 	$thcmg			= get_post_meta( $post->ID, '_thcmg', true );
-	$thcservings	= get_post_meta( $post->ID, '_thcservings', true );
+	$cbdmg			= get_post_meta( $post->ID, '_cbdmg', true );
+	$thccbdservings	= get_post_meta( $post->ID, '_thccbdservings', true );
 
 	/** Echo out the fields */
-	echo '<p>mg per serving:</p>';
+	echo '<p>THC mg per serving:</p>';
 	echo '<input type="number" name="_thcmg" value="' . $thcmg  . '" class="widefat" />';
+	echo '<p>CBD mg per serving:</p>';
+	echo '<input type="number" name="_cbdmg" value="' . $cbdmg  . '" class="widefat" />';
 	echo '<p>Servings:</p>';
-	echo '<input type="number" name="_thcservings" value="' . $thcservings  . '" class="widefat" />';
+	echo '<input type="number" name="_thccbdservings" value="' . $thccbdservings  . '" class="widefat" />';
 
 }
 
 /** Save the Metabox Data */
 
-function wpdispensary_save_thcmg_meta( $post_id, $post ) {
+function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 
 	/**
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['thcmgmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( ! wp_verify_nonce( $_POST['thccbdmgmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
 		return $post->ID;
 	}
 
@@ -447,12 +450,13 @@ function wpdispensary_save_thcmg_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thcmg_meta['_thcmg']		= $_POST['_thcmg'];
-	$thcmg_meta['_thcservings']	= $_POST['_thcservings'];
+	$thc_cbd_mg_meta['_thcmg']			= $_POST['_thcmg'];
+	$thc_cbd_mg_meta['_cbdmg']			= $_POST['_cbdmg'];
+	$thc_cbd_mg_meta['_thccbdservings']	= $_POST['_thccbdservings'];
 
-	/** Add values of $thcmg_meta as custom fields */
+	/** Add values of $thccbdmg_meta as custom fields */
 
-	foreach ( $thcmg_meta as $key => $value ) { /** Cycle through the $thcmg_meta array! */
+	foreach ( $thc_cbd_mg_meta as $key => $value ) { /** Cycle through the $thc_cbd_mg_meta array! */
 		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
 			return;
 		}
@@ -469,7 +473,7 @@ function wpdispensary_save_thcmg_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_thcmg_meta', 1, 2 ); /** save the custom fields */
+add_action( 'save_post', 'wpdispensary_save_thc_cbd_mg_meta', 1, 2 ); /** save the custom fields */
 
 
 /**
