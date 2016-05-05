@@ -9,102 +9,43 @@
  * @subpackage WP_Dispensary/admin
  */
 
-/**
- * Creating the menu item
- */
-add_action( 'admin_menu', 'wpd_settings_add_admin_menu' );
-add_action( 'admin_init', 'wpd_settings_init' );
-
-
-/**
- * Adding the menu page
- */
-function wpd_settings_add_admin_menu() {
-
-	add_menu_page(
-		'WP Dispensary',
-		'WP Dispensary',
-		'manage_options',
-		'wp_dispensary',
-		'wpd_settings_options_page',
-		plugin_dir_url( __FILE__ ) . ( '/images/menu-icon.png' )
-	);
-
+function wpd_settings_page() {
+    add_settings_section( "wpd_section", "Display options", null, "wpd" );
+    add_settings_field( "wpd-checkbox", "Hide menu item details from the_content?", "wpd_checkbox_display", "wpd", "wpd_section" );
+    register_setting( "wpd_section", "wpd-checkbox" );
 }
 
-
-/**
- * Adding settings init
- */
-
-function wpd_settings_init() {
-
-	register_setting( 'wpdsettings', 'wpd_settings_settings' );
-
-	add_settings_section(
-		'wpd_settings_wpdsettings_section', 
-		__( 'WP Dispensary Settings', 'wp-dispensary' ), 
-		'wpd_settings_subtitle_section_callback', 
-		'wpdsettings'
-	);
-
-	add_settings_field(
-		'wpd_settings_single_menu_output', 
-		__( 'Hide single menu item details in public display?', 'wp-dispensary' ), 
-		'wpd_settings_single_menu_output_render', 
-		'wpdsettings', 
-		'wpd_settings_wpdsettings_section' 
-	);
-
+function wpd_checkbox_display() {
+   ?>
+        <!-- Here we are comparing stored value with 1. Stored value is 1 if user checks the checkbox otherwise empty string. -->
+        <input type="checkbox" name="wpd-checkbox" value="1" <?php checked(1, get_option('wpd-checkbox'), true); ?> />
+   <?php
 }
 
+add_action("admin_init", "wpd_settings_page");
 
-/**
- * Add Function:
- * Single Menu Output
- */
-
-function wpd_settings_single_menu_output_render() {
-
-	$options = get_option( 'wpd_settings_settings' );
+function wpd_page() {
 	?>
-	<input type='checkbox' name='wpd_settings_settings[wpd_settings_single_menu_output]' <?php checked( $options['wpd_settings_single_menu_output'], 1 ); ?> value='1'>
-	<?php
+	<div class="wrap">
+		<h1>WP Dispensary Settings</h1>
 
-}
-
-
-/**
- * Add Function:
- * Setting sub-title
- */
-
-function wpd_settings_subtitle_section_callback(  ) { 
-
-	echo __( '', 'wp-dispensary' );
-
-}
-
-
-/**
- * Add Function:
- * Settings option page display
- */
-
-function wpd_settings_options_page(  ) { 
-
-	?>
-	<form action='options.php' method='post' class="wpd-settings">
-
+		<form method="post" action="options.php">
 		<?php
-			settings_fields( 'wpdsettings' );
-			do_settings_sections( 'wpdsettings' );
+			settings_fields("wpd_section");
+
+			do_settings_sections("wpd");
+			 
 			submit_button();
 		?>
-
-	</form>
+		</form>
+	</div>
 	<?php
-
 }
+
+function menu_item() {
+  add_submenu_page("options-general.php", "WP Dispensary", "WP Dispensary", "manage_options", "wp-dispensary", "wpd_page");
+}
+
+add_action("admin_menu", "menu_item");
 
 ?>
