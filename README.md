@@ -1,4 +1,4 @@
-![WP Dispensary logo](http://www.wpdispensary.com/wp-content/uploads/2015/10/wpdispensary-logo.png)
+![WP Dispensary logo](http://www.wpdispensary.com/wp-content/uploads/2016/05/wpdispensary-logo-updated.png)
 
 # WP Dispensary
 
@@ -8,7 +8,7 @@ The world's first (and best) marijuana dispensary menu management plugin for Wor
 
 If you're looking for a stable version to use with your website, you can download [WP Dispensary](http://www.wordpress.org/plugins/wp-dispensary) from the official WordPress repository, or you can view the [releases](https://github.com/deviodigital/wp-dispensary/releases) here on Github.
 
-### Features Overview
+## Features Overview
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
@@ -40,12 +40,6 @@ One thing that we wanted to make sure of when creating this plugin was that you 
 
 Luckily, WordPress comes built with a great content exporter, and we've included your menu content in the export options so you can instantly have your dispensary menu backed up.
 
-### 100% Open Source
-
-WP Dispensary is free to use with no license restrictions or expensive setup fees. It's as simple as downloading the plugin, installing it on your WordPress powered website, and adding content.
-
-We believe in the power of open source, and this plugin is a shining example of that. Not only can you download and freely use this plugin as you see fit, developers are free to open an [issue](https://www.github.com/deviodigital/wp-dispensary/issues) or submit a [pull request](https://www.github.com/deviodigital/wp-dispensary/pulls)
-
 ### Easy to use shortcodes
 
 WP Dispensary comes with built in shortcodes which allow you to display your menu with any theme.
@@ -66,7 +60,13 @@ See all available shortcode options in the [documentation](http://www.wpdispensa
 
 *please note that more options to customize output are being worked into the shortcode for future versions*
 
-### Extend WP Dispensary
+## 100% Open Source
+
+WP Dispensary is free to use with no license restrictions or expensive setup fees. It's as simple as downloading the plugin, installing it on your WordPress powered website, and adding content.
+
+We believe in the power of open source, and this plugin is a shining example of that. Not only can you download and freely use this plugin as you see fit, developers are free to open an [issue](https://www.github.com/deviodigital/wp-dispensary/issues) or submit a [pull request](https://www.github.com/deviodigital/wp-dispensary/pulls)
+
+## Extend WP Dispensary
 
 When building this plugin, we made sure to keep it lean, including only the core needs of every menu. While this works well in most cases, we're aware there are additional needs that dispensary owners will need to address, which is where the add-on's come in.
 
