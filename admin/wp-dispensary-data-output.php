@@ -9,6 +9,7 @@
  * @subpackage WP_Dispensary/admin
  */
 
+if ( ! get_option( 'wpd-checkbox') == '1' ) { 
 
 if ( ! function_exists( 'wpd_data_output_content' ) ) :
 
@@ -176,3 +177,5 @@ function wpd_data_output_content( $content ) {
 add_filter( 'the_content', 'wpd_data_output_content' );
 
 endif;
+
+}
