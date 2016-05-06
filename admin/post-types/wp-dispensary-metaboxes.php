@@ -329,7 +329,7 @@ function wpdispensary_singleprices() {
 
 	/** Echo out the fields */
 	echo '<p>Price per unit:</p>';
-	echo '<input type="number" name="_priceeach" value="' . $priceeach  . '" class="widefat" />';
+	echo '<input type="text" name="_priceeach" value="' . $priceeach  . '" class="widefat" />';
 
 }
 
