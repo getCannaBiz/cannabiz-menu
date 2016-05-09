@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.6
+* Added WP Dispensary settings page to the WordPress admin menu
+* Added in automatic output of menu item details and pricing to `the_content`
+* Updated `admin/post-types/wp-dispensary-metaboxes.php` to fix Serving information metabox details
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
+
 ### 1.5.2
 * Removed file that was left behind for the plugin recommendation
 
