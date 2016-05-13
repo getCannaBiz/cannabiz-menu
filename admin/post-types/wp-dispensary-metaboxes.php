@@ -228,9 +228,9 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** save the custom fields */
 
 /**
- * Pre-Roll Prices metabox
+ * Pre-Roll Flower Type metabox
  *
- * Adds the Prices metabox to all the pre-roll custom post type
+ * Adds the Flower Type metabox to all the pre-roll custom post type
  *
  * @since    1.0.0
  */
@@ -291,16 +291,80 @@ class WPDispensary_Prerolls {
 new WPDispensary_Prerolls();
 
 /**
- * Pre-roll Prices metabox
+ * Grower Flower Type metabox
  *
- * Adds a price metabox to the pre-roll custom post type
+ * Adds a drop down of all flowers to the Growers menu type
+ *
+ * @since    1.7.0
+ */
+
+class WPDispensary_Growers {
+	var $FOR_POST_TYPE = 'growers';
+	var $SELECT_POST_TYPE = 'flowers';
+	var $SELECT_POST_LABEL = 'Flower';
+	var $box_id;
+	var $box_label;
+	var $field_id;
+	var $field_label;
+	var $field_name;
+	var $meta_key;
+	function __construct() {
+		add_action( 'admin_init', array( $this, 'admin_init' ) );
+	}
+	function admin_init() {
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+		add_action( 'save_post', array( $this, 'save_post' ), 10, 2 );
+		$this->meta_key     = "_selected_{$this->SELECT_POST_TYPE}";
+		$this->box_id       = "select-{$this->SELECT_POST_TYPE}-metabox";
+		$this->field_id     = "selected_{$this->SELECT_POST_TYPE}";
+		$this->field_name   = "selected_{$this->SELECT_POST_TYPE}";
+		$this->box_label    = __( 'Pre-roll Strain', 'wp-dispensary' );
+		$this->field_label  = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
+	}
+	function add_meta_boxes() {
+		add_meta_box(
+			$this->box_id,
+			$this->box_label,
+			array( $this, 'select_box' ),
+			$this->FOR_POST_TYPE,
+			'side'
+		);
+	}
+	function select_box( $post ) {
+		$selected_post_id = get_post_meta( $post->ID, $this->meta_key, true );
+		global $wp_post_types;
+		$save_hierarchical = $wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical;
+		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = true;
+		wp_dropdown_pages( array(
+			'id' => $this->field_id,
+			'name' => $this->field_name,
+			'selected' => empty( $selected_post_id ) ? 0 : $selected_post_id,
+			'post_type' => $this->SELECT_POST_TYPE,
+			'show_option_none' => $this->field_label,
+		));
+		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = $save_hierarchical;
+	}
+	function save_post( $post_id, $post ) {
+		if ( $post->post_type == $this->FOR_POST_TYPE && isset( $_POST[ $this->field_name ] ) ) {
+			$growerflower = sanitize_text_field( $_POST['selected_flowers'] );
+			update_post_meta( $post_id, $this->meta_key, $growerflower );
+		}
+	}
+}
+new WPDispensary_Growers();
+
+/**
+ * Prices metabox for the following menu types:
+ * Pre-Rolls, Edibles, Growers
+ *
+ * Adds a price metabox to all of the above custom post types
  *
  * @since    1.0.0
  */
 
 function add_singleprices_metaboxes() {
 
-	$screens = array( 'prerolls', 'edibles' );
+	$screens = array( 'prerolls', 'edibles', 'growers' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -377,6 +441,186 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** save the custom fields */
+
+
+/**
+ * Seed Count metabox for the following menu types:
+ * Growers
+ *
+ * Adds a seed count metabox to all of the above custom post types
+ *
+ * @since    1.7.0
+ */
+
+function add_seedcount_metaboxes() {
+
+	$screens = array( 'growers' );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_seedcount',
+			__( 'Seed Count', 'wp-dispensary' ),
+			'wpdispensary_seedcount',
+			$screen,
+			'side',
+			'default'
+		);
+	}
+
+}
+
+add_action( 'add_meta_boxes', 'add_seedcount_metaboxes' );
+
+function wpdispensary_seedcount() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="seedcountmeta_noncename" id="seedcountmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the seed count data if its already been entered */
+	$seedcount	= get_post_meta( $post->ID, '_seedcount', true );
+
+	/** Echo out the fields */
+	echo '<p>Seed count:</p>';
+	echo '<input type="text" name="_seedcount" value="' . $seedcount  . '" class="widefat" />';
+
+}
+
+/** Save the Metabox Data */
+
+function wpdispensary_save_seedcount_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['seedcountmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	$seedcount['_seedcount']	= $_POST['_seedcount'];
+
+	/** Add values of $seedcount as custom fields */
+
+	foreach ( $seedcount as $key => $value ) { /** Cycle through the $seedcount array! */
+		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+
+add_action( 'save_post', 'wpdispensary_save_seedcount_meta', 1, 2 ); /** save the custom fields */
+
+
+/**
+ * Clone Count metabox for the following menu types:
+ * Growers
+ *
+ * Adds a clone count metabox to all of the above custom post types
+ *
+ * @since    1.7.0
+ */
+
+function add_clonecount_metaboxes() {
+
+	$screens = array( 'growers' );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_clonecount',
+			__( 'Clone Count', 'wp-dispensary' ),
+			'wpdispensary_clonecount',
+			$screen,
+			'side',
+			'default'
+		);
+	}
+
+}
+
+add_action( 'add_meta_boxes', 'add_clonecount_metaboxes' );
+
+function wpdispensary_clonecount() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="clonecountmeta_noncename" id="clonecountmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the clone count data if its already been entered */
+	$clonecount	= get_post_meta( $post->ID, '_clonecount', true );
+
+	/** Echo out the fields */
+	echo '<p>Clone count:</p>';
+	echo '<input type="text" name="_clonecount" value="' . $clonecount  . '" class="widefat" />';
+
+}
+
+/** Save the Metabox Data */
+
+function wpdispensary_save_clonecount_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['clonecountmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	$clonecount['_clonecount']	= $_POST['_clonecount'];
+
+	/** Add values of $clonecount as custom fields */
+
+	foreach ( $clonecount as $key => $value ) { /** Cycle through the $clonecount array! */
+		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+
+add_action( 'save_post', 'wpdispensary_save_clonecount_meta', 1, 2 ); /** save the custom fields */
 
 
 /**

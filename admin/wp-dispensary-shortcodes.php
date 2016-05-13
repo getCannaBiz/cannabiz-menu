@@ -423,3 +423,91 @@ function wpdispensary_topicals_shortcode( $atts ) {
 
 }
 add_shortcode( 'wpd-topicals', 'wpdispensary_topicals_shortcode' );
+
+/**
+ * Growers Shortcode Function
+ */
+function wpdispensary_growers_shortcode( $atts ) {
+
+	/** Attributes */
+	extract( shortcode_atts(
+		array(
+			'posts'		=> '100',
+			'class'		=> '',
+			'name'		=> 'show',
+			'info'		=> 'show',
+			'title'		=> 'Growers'
+		),
+		$atts
+	) );
+
+	/**
+	 * Code to create shortcode for Growers
+	 */
+
+	$wpdquery = new WP_Query(
+		array(
+			'post_type' 		=> 'growers',
+			'posts_per_page'	=> $posts,
+		)
+	);
+
+	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
+
+	while ( $wpdquery->have_posts() ) : $wpdquery->the_post();
+
+		$thumbnail_id			= get_post_thumbnail_id();
+		$thumbnail_url_array	= wp_get_attachment_image_src( $thumbnail_id, 'dispensary-image', true );
+		$thumbnail_url			= $thumbnail_url_array[0];
+		$querytitle 			= get_the_title();
+
+		/*
+		 * Get the pricing for Growers
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+			$pricingeach = '<strong>Price:</strong> $' . get_post_meta( get_the_id(), '_priceeach', true );
+		}
+
+		/*
+		 * Get the seed count for Growers
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
+			$seedcount = ' - <strong>Seed Count:</strong> ' . get_post_meta( get_the_id(), '_seedcount', true );
+		}
+
+		/*
+		 * Get the clone count for Growers
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
+			$clonecount = ' - <strong>Clone Count:</strong> ' . get_post_meta( get_the_id(), '_clonecount', true );
+		}
+
+		/** Check shortcode options input by user */
+
+		if ( $name == "show" ) {
+			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
+		} else {
+			$showname = '';
+		}
+
+		if ( $info == "show" ) {
+			$showinfo = '<span class="wpd-productinfo">' . $pricingeach . $seedcount . $clonecount . '</span>';
+		} else {
+			$showinfo = '';
+		}
+
+		/** Shortcode display */
+
+		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class .'"><a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Grower" /></a>'. $showname .''. $showinfo .'</div>';
+
+	endwhile;
+
+	wp_reset_query();
+
+	return $wpdposts . '</div>';
+
+}
+add_shortcode( 'wpd-growers', 'wpdispensary_growers_shortcode' );

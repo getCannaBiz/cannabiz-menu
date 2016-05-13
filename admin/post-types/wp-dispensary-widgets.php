@@ -1013,4 +1013,208 @@ function wpdispensary_topicals_register_widget() {
 }
 add_action( 'widgets_init', 'wpdispensary_topicals_register_widget' );
 
+/**
+ * WP Dispensary Growers Widget
+ *
+ * @since       1.7.0
+ */
+class wpdispensary_growers_widget extends WP_Widget {
+
+    /**
+     * Constructor
+     *
+     * @access      public
+     * @since       1.7.0
+     * @return      void
+     */
+    public function wpdispensary_growers_widget() {
+        parent::WP_Widget(
+            false,
+            __( 'Recent Growers', 'wp-dispensary' ),
+            array(
+                'description'  => __( 'Your dispensaries most recent Growers', 'wp-dispensary' )
+            )
+        );
+    }
+
+    /**
+     * Widget definition
+     *
+     * @access      public
+     * @since       1.7.0
+     * @see         WP_Widget::widget
+     * @param       array $args Arguments to pass to the widget
+     * @param       array $instance A given widget instance
+     * @return      void
+     */
+    public function widget( $args, $instance ) {
+        if( ! isset( $args['id'] ) ) {
+            $args['id'] = 'wpdispensary_growers_widget';
+        }
+
+        $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
+
+        echo $args['before_widget'];
+
+        if( $title ) {
+            echo $args['before_title'] . $title . $args['after_title'];
+        }
+
+        do_action( 'wpdispensary_growers_before_widget' );
+
+			if( ! 'on' == $instance['featuredimage'] ) {
+				echo "<ul class='wpdispensary-list'>";
+			}
+
+			if ( $instance['order'] == 'on' ) {
+				$randorder = 'rand';
+			} else {
+				$randorder = '';
+			}
+			
+			$wpdispensary_edibles_widget = new WP_Query(
+				array(
+					'post_type' => 'growers',
+					'showposts' => $instance['limit'],
+					'orderby'	=> $randorder
+				)
+			);
+
+			while ( $wpdispensary_edibles_widget->have_posts() ) : $wpdispensary_edibles_widget->the_post();
+			
+			$do_not_duplicate = $post->ID;
+
+			if('on' == $instance['featuredimage'] ) {
+				
+				echo "<div class='wpdispensary-widget'>";
+					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+						the_post_thumbnail( 'wpdispensary-widget' );
+					echo "</a>";
+				if('on' == $instance['growername'] ) {
+					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+				}
+				if('on' == $instance['growerflower'] ) {
+					$growerflower = get_post_meta(get_the_id(), '_selected_flowers', true); 
+					echo "<span class='wpdispensary-widget-categories'>";
+					echo "<a href='". get_permalink($growerflower) ."'>". get_the_title($growerflower) ."</a>";
+					echo "</span>";
+				}
+				echo "</div>";
+				
+			} else {
+				
+				echo "<li>";
+				if('on' == $instance['growername'] ) {
+					echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+				}
+				echo "</li>";
+				
+			}
+
+			endwhile; // end loop
+			
+			if( ! 'on' == $instance['featuredimage'] ) {
+				echo "</ul>";
+			}
+
+        do_action( 'wpdispensary_growers_after_widget' );
+        
+        echo $args['after_widget'];
+    }
+
+
+    /**
+     * Update widget options
+     *
+     * @access      public
+     * @since       1.7.0
+     * @see         WP_Widget::update
+     * @param       array $new_instance The updated options
+     * @param       array $old_instance The old options
+     * @return      array $instance The updated instance options
+     */
+    public function update( $new_instance, $old_instance ) {
+        $instance = $old_instance;
+
+        $instance['title']      		= strip_tags( $new_instance['title'] );
+        $instance['limit']   			= strip_tags( $new_instance['limit'] );
+        $instance['order']   			= $new_instance['order'];
+        $instance['featuredimage']		= $new_instance['featuredimage'];
+        $instance['growername']			= $new_instance['growername'];
+        $instance['growercategory']		= $new_instance['growercategory'];
+        $instance['growerflower']		= $new_instance['growerflower'];
+
+        return $instance;
+    }
+
+
+    /**
+     * Display widget form on dashboard
+     *
+     * @access      public
+     * @since       1.7.0
+     * @see         WP_Widget::form
+     * @param       array $instance A given widget instance
+     * @return      void
+     */
+    public function form( $instance ) {
+        $defaults = array(
+            'title'    			=> 'Recent Growers',
+            'limit'  			=> '5',
+            'order'  			=> '',
+            'featuredimage'		=> '',
+            'growername' 		=> '',
+            'growercategory' 	=> '',
+            'growerflower' 	=> ''
+        );
+
+        $instance = wp_parse_args( (array) $instance, $defaults );
+        ?>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo $instance['title']; ?>" />
+        </p>
+		
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php _e( 'Amount of growers to show:', 'wp-dispensary' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
+        </p>
+		
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['order'], 'on'); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php _e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        </p>
+
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['featuredimage'], 'on'); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php _e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+        </p>
+
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['growername'], 'on'); ?> id="<?php echo $this->get_field_id('growername'); ?>" name="<?php echo $this->get_field_name('growername'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'growername' ) ); ?>"><?php _e( 'Display grower name?', 'wp-dispensary' ); ?></label>
+        </p>
+		
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked($instance['growerflower'], 'on'); ?> id="<?php echo $this->get_field_id('growerflower'); ?>" name="<?php echo $this->get_field_name('growerflower'); ?>" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'growerflower' ) ); ?>"><?php _e( 'Display flower type?', 'wp-dispensary' ); ?></label>
+        </p>
+
+		<?php
+    }
+}
+
+
+/**
+ * Register the new widget
+ *
+ * @since       1.7.0
+ * @return      void
+ */
+function wpdispensary_growers_register_widget() {
+    register_widget( 'wpdispensary_growers_widget' );
+}
+add_action( 'widgets_init', 'wpdispensary_growers_register_widget' );
+
+
 ?>

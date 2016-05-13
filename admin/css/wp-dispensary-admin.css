@@ -30,7 +30,9 @@
 #dashboard_right_now .prerolls-count a:before,
 #dashboard_right_now .prerolls-count span:before,
 #dashboard_right_now .topicals-count a:before,
-#dashboard_right_now .topicals-count span:before {
+#dashboard_right_now .topicals-count span:before,
+#dashboard_right_now .growers-count a:before,
+#dashboard_right_now .growers-count span:before {
     background: url(../images/glance-icon.png) no-repeat 2px 0px;
     content: "";
     height: 20px;

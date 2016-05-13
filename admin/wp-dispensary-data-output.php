@@ -110,11 +110,30 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 				$wpdsizetopical = '';
 			}
 
+			if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
+				$wpdseedcount = '<tr><td><span>Seed Count:</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) .'</td></tr>';
+			} else {
+				$wpdseedcount = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
+				$wpdclonecount = '<tr><td><span>Clone Count:</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) .'</td></tr>';
+			} else {
+				$wpdclonecount = '';
+			}
+
 			if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
 				$prerollflower = get_post_meta( get_the_id(), '_selected_flowers', true );
 				$wpdpreroll = '<tr><td><span>Flower:</span></td><td><a href='. get_permalink( $prerollflower ) .'>'. get_the_title( $prerollflower ) .'</a></td></tr>';
 			} else {
 				$wpdpreroll = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
+				$growerflower = get_post_meta( get_the_id(), '_selected_flowers', true );
+				$wpdgrower = '<tr><td><span>Flower:</span></td><td><a href='. get_permalink( $growerflower ) .'>'. get_the_title( $growerflower ) .'</a></td></tr>';
+			} else {
+				$wpdgrower = '';
 			}
 
 			/**
@@ -173,14 +192,14 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 			/**
 			 * Adding the WP Dispensary menu item data
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ) ) ) {
 				$original = $content;
 			}
 
 			/**
 			 * Adding Details table
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls', 'edibles', 'topicals' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls', 'edibles', 'topicals', 'growers' ) ) ) {
 				$content = '<table class="wpdispensary-table single"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' Details</td></tr>';
 			}
 
@@ -190,6 +209,10 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 
 			if ( 'prerolls' === get_post_type() ) {
 				$content .= $wpdpreroll;
+			}
+
+			if ( 'growers' === get_post_type() ) {
+				$content .= $wpdseedcount . $wpdclonecount;
 			}
 
 			if ( 'edibles' === get_post_type() ) {
@@ -204,14 +227,14 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 				$content .= $wpdthc . $wpdcbd;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'growers' ) ) ) {
 				$content .= '</table>';
 			}
 
 			/**
 			 * Adding Pricing table
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls', 'edibles', 'topicals' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls', 'edibles', 'topicals', 'growers' ) ) ) {
 				$content .= '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' Pricing</td></tr>';
 			}
 
@@ -219,7 +242,7 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 				$content .= '<tr>' . $wpdhalfgram . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
 			}
 
-			if ( in_array( get_post_type(), array( 'prerolls', 'edibles' ) ) ) {
+			if ( in_array( get_post_type(), array( 'prerolls', 'edibles', 'growers' ) ) ) {
 				$content .= $wpdpriceeach;
 			}
 
@@ -227,11 +250,11 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 				$content .= $wpdpricetopical;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls', 'edibles', 'topicals' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls', 'edibles', 'topicals', 'growers' ) ) ) {
 				$content .= '</table>';
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
 				$content .= $original;
 			}
 
