@@ -62,6 +62,16 @@ function topicals_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_topicals', 'topicals_featuredimage', 10, 3 );
 
+function growers_featuredimage( $data, $post, $request ) {
+	$_data = $data->data;
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+	$thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+	$_data['featured_image_url'] = $thumbnail[0];
+	$data->data = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_growers', 'growers_featuredimage', 10, 3 );
+
 /** Add Category taxonomy for the Flowers Custom Post Type */
 
 function flowers_category( $data, $post, $request ) {
@@ -343,6 +353,30 @@ function slug_get_topicalinfo( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
 
+/**
+ * This adds the metafields to the API
+ * callback for growers
+ *
+ */
+
+add_action( 'rest_api_init', 'slug_register_growerinfo' );
+function slug_register_growerinfo() {
+	foreach ( $growerinformation as $growerinfo ) {
+		register_api_field(
+			'growers',
+			$growerinfo,
+			array(
+				'get_callback'    => 'slug_get_growerinfo',
+				'update_callback' => null,
+				'schema'          => null,
+			)
+		);
+	} /** /foreach */
+}
+function slug_get_growerinfo( $object, $field_name, $request ) {
+	return get_post_meta( $object['id'], $field_name, true );
+}
+
 
 /**
  * Add the subtitle to the API callback
@@ -396,5 +430,19 @@ function subtitles_topicals( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_topicals', 'subtitles_topicals', 10, 3 );
+
+
+/**
+ * Growers subtitles
+ *
+ * @since    1.7.0
+ */
+function subtitles_growers( $data, $post, $request ) {
+	$_data = $data->data;
+	$_data['subtitle'] = get_the_subtitle( $post->ID );
+	$data->data = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_growers', 'subtitles_growers', 10, 3 );
 
 }
