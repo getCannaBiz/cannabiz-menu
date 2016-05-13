@@ -303,7 +303,7 @@ function slug_register_thccbd() {
 	$productsizes = array( '_thc', '_cbd' );
 	foreach ( $productsizes as $size ) {
 		register_api_field(
-			array( 'flowers', 'concentrates', 'edibles', 'concentrates' ),
+			array( 'flowers', 'concentrates', 'edibles', 'prerolls' ),
 			$size,
 			array(
 				'get_callback'    => 'slug_get_thccbd',
