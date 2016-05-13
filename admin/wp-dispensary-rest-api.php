@@ -357,10 +357,12 @@ function slug_get_topicalinfo( $object, $field_name, $request ) {
  * This adds the metafields to the API
  * callback for growers
  *
+ * @since    1.7.0
  */
 
 add_action( 'rest_api_init', 'slug_register_growerinfo' );
 function slug_register_growerinfo() {
+	$growerinformation = array( '_priceeach', '_selected_flowers', '_seedcount', '_clonecount' );
 	foreach ( $growerinformation as $growerinfo ) {
 		register_api_field(
 			'growers',
