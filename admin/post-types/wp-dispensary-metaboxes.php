@@ -482,7 +482,7 @@ function wpdispensary_seedcount() {
 	$seedcount	= get_post_meta( $post->ID, '_seedcount', true );
 
 	/** Echo out the fields */
-	echo '<p>Seed count:</p>';
+	echo '<p>Seeds per unit:</p>';
 	echo '<input type="text" name="_seedcount" value="' . $seedcount  . '" class="widefat" />';
 
 }
@@ -572,7 +572,7 @@ function wpdispensary_clonecount() {
 	$clonecount	= get_post_meta( $post->ID, '_clonecount', true );
 
 	/** Echo out the fields */
-	echo '<p>Clone count:</p>';
+	echo '<p>Clones per unit:</p>';
 	echo '<input type="text" name="_clonecount" value="' . $clonecount  . '" class="widefat" />';
 
 }
