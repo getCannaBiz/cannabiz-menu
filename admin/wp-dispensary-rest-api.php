@@ -433,7 +433,6 @@ function subtitles_topicals( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_topicals', 'subtitles_topicals', 10, 3 );
 
-
 /**
  * Growers subtitles
  *
