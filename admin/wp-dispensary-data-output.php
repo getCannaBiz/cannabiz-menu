@@ -111,13 +111,13 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 			}
 
 			if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
-				$wpdseedcount = '<tr><td><span>Seed Count:</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) .'</td></tr>';
+				$wpdseedcount = '<tr><td><span>Seeds per unit:</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) .'</td></tr>';
 			} else {
 				$wpdseedcount = '';
 			}
 
 			if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
-				$wpdclonecount = '<tr><td><span>Clone Count:</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) .'</td></tr>';
+				$wpdclonecount = '<tr><td><span>Clones per unit:</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) .'</td></tr>';
 			} else {
 				$wpdclonecount = '';
 			}
@@ -143,6 +143,12 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 				$wpdpriceeach = '<tr class="priceeach"><td><span>Price Each:</span></td><td>$' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 			} else {
 				$wpdpriceeach = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+				$wpdpriceperunit = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>$' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			} else {
+				$wpdpriceperunit = '';
 			}
 
 			if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
@@ -242,8 +248,12 @@ if ( ! get_option( 'wpd-checkbox' ) == '1' ) {
 				$content .= '<tr>' . $wpdhalfgram . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
 			}
 
-			if ( in_array( get_post_type(), array( 'prerolls', 'edibles', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'prerolls', 'edibles' ) ) ) {
 				$content .= $wpdpriceeach;
+			}
+
+			if ( in_array( get_post_type(), array( 'growers' ) ) ) {
+				$content .= $wpdpriceperunit;
 			}
 
 			if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
