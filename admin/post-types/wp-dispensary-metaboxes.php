@@ -318,7 +318,7 @@ class WPDispensary_Growers {
 		$this->box_id       = "select-{$this->SELECT_POST_TYPE}-metabox";
 		$this->field_id     = "selected_{$this->SELECT_POST_TYPE}";
 		$this->field_name   = "selected_{$this->SELECT_POST_TYPE}";
-		$this->box_label    = __( 'Pre-roll Strain', 'wp-dispensary' );
+		$this->box_label    = __( 'Flower Strain', 'wp-dispensary' );
 		$this->field_label  = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
 	}
 	function add_meta_boxes() {
