@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.7
+* Updated `languages/wp-dispensary.pot` file with all current translatable text throughout the plugin
+* Added Growers menu type
+* Added API endpoints for Growers menu type
+* Added Widget for Growers menu type
+* Added `[wpd-growers]` shortcode for Growers menu type
+
 ### 1.6
 * Added WP Dispensary settings page to the WordPress admin menu
 * Added in automatic output of menu item details and pricing to `the_content`

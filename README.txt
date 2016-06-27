@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: http://www.wpdispensary.com
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis
 Requires at least: 3.0.1
-Tested up to: 4.5.2
-Stable tag: 1.6
+Tested up to: 4.5.3
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ The complete marijuana dispensary menu solution for WordPress
 
 ![WP Dispensary](http://www.wpdispensary.com/wp-content/uploads/2016/05/wpdispensary-logo-updated.png)
 
-The world's first (and best) marijuana dispensary menu management plugin for WordPress.
+#### The world's first (and best) marijuana dispensary menu management plugin for WordPress.
 
 ### Features Overview
 
@@ -62,9 +62,11 @@ This means that more eyes are looking at the code base to make sure everything i
 
 ### Easy to use shortcodes
 
-As of version 1.2, the WP Dispensary menu plugin comes with built in shortcodes which allow you to display your menu with any theme.
+The WP Dispensary plugin comes with built in shortcodes which allow you to display your menu with any theme, however you'd like.
 
-You can call your menu anywhere shortcodes are accepted in your theme. Samples of the shortcodes are below. See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
+You can call your menu anywhere shortcodes are accepted in your theme.
+
+Samples of the shortcodes are below. See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
 
 `[wpd-flowers posts="6"]`
 
@@ -76,7 +78,7 @@ You can call your menu anywhere shortcodes are accepted in your theme. Samples o
 
 `[wpd-topicals posts="6"]`
 
-*please note that more options to customize shortcode output are being worked into the shortcode for future versions*
+`[wpd-growers posts="6"]`
 
 ### Extend WP Dispensary
 
@@ -100,6 +102,13 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.7 =
+* Updated `languages/wp-dispensary.pot` file with all current translatable text throughout the plugin
+* Added Growers menu type
+* Added API endpoints for Growers menu type
+* Added Widget for Growers menu type
+* Added `[wpd-growers]` shortcode for Growers menu type
 
 = 1.6 =
 * Added WP Dispensary settings page to the WordPress admin menu

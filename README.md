@@ -2,7 +2,7 @@
 
 # WP Dispensary
 
-The world's first (and best) marijuana dispensary menu management plugin for WordPress.
+#### The world's first (and best) marijuana dispensary menu management plugin for WordPress.
 
 **please note that the master branch is under active development.**
 
@@ -42,9 +42,11 @@ Luckily, WordPress comes built with a great content exporter, and we've included
 
 ### Easy to use shortcodes
 
-WP Dispensary comes with built in shortcodes which allow you to display your menu with any theme.
+The WP Dispensary plugin comes with built in shortcodes which allow you to display your menu with any theme, however you'd like.
 
-You can call your menu anywhere shortcodes are accepted in your theme. Samples of the shortcodes are below.
+You can call your menu anywhere shortcodes are accepted in your theme.
+
+Samples of the shortcodes are below. See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
 
 `[wpd-flowers posts="6"]`
 
