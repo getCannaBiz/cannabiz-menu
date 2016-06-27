@@ -2,7 +2,7 @@
 
 # WP Dispensary
 
-#### The world's first (and best) marijuana dispensary menu management plugin for WordPress.
+#### The complete marijuana dispensary menu management plugin for WordPress.
 
 **please note that the master branch is under active development.**
 
@@ -58,9 +58,7 @@ Samples of the shortcodes are below. See all shortcode options in the [documenta
 
 `[wpd-topicals posts="6"]`
 
-See all available shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
-
-*please note that more options to customize output are being worked into the shortcode for future versions*
+`[wpd-growers posts="6"]`
 
 ## 100% Open Source
 

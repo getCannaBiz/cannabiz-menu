@@ -14,7 +14,7 @@ The complete marijuana dispensary menu solution for WordPress
 
 ![WP Dispensary](http://www.wpdispensary.com/wp-content/uploads/2016/05/wpdispensary-logo-updated.png)
 
-#### The world's first (and best) marijuana dispensary menu management plugin for WordPress.
+#### The complete marijuana dispensary menu management plugin for WordPress.
 
 ### Features Overview
 
