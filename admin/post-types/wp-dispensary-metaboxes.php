@@ -51,11 +51,11 @@ function wpdispensary_thccbd() {
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>THC %:</p>';
-	echo '<input type="number" name="_thc" value="' . $thc  . '" class="widefat" />';
+	echo '<input type="text" name="_thc" value="' . $thc  . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>CBD %:</p>';
-	echo '<input type="number" name="_cbd" value="' . $cbd  . '" class="widefat" />';
+	echo '<input type="text" name="_cbd" value="' . $cbd  . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -152,27 +152,27 @@ function wpdispensary_prices() {
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>1/2 Gram:</p>';
-	echo '<input type="number" name="_halfgram" value="' . $halfgram  . '" class="widefat" />';
+	echo '<input type="text" name="_halfgram" value="' . $halfgram  . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>Gram:</p>';
-	echo '<input type="number" name="_gram" value="' . $gram  . '" class="widefat" />';
+	echo '<input type="text" name="_gram" value="' . $gram  . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/8 Ounce:</p>';
-	echo '<input type="number" name="_eighth" value="' . $eighth  . '" class="widefat" />';
+	echo '<input type="text" name="_eighth" value="' . $eighth  . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/4 Ounce:</p>';
-	echo '<input type="number" name="_quarter" value="' . $quarter  . '" class="widefat" />';
+	echo '<input type="text" name="_quarter" value="' . $quarter  . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/2 Ounce:</p>';
-	echo '<input type="number" name="_halfounce" value="' . $halfounce  . '" class="widefat" />';
+	echo '<input type="text" name="_halfounce" value="' . $halfounce  . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>Ounce:</p>';
-	echo '<input type="number" name="_ounce" value="' . $ounce  . '" class="widefat" />';
+	echo '<input type="text" name="_ounce" value="' . $ounce  . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -664,11 +664,11 @@ function wpdispensary_thc_cbd_mg() {
 
 	/** Echo out the fields */
 	echo '<p>THC mg per serving:</p>';
-	echo '<input type="number" name="_thcmg" value="' . $thcmg  . '" class="widefat" />';
+	echo '<input type="text" name="_thcmg" value="' . $thcmg  . '" class="widefat" />';
 	echo '<p>CBD mg per serving:</p>';
-	echo '<input type="number" name="_cbdmg" value="' . $cbdmg  . '" class="widefat" />';
+	echo '<input type="text" name="_cbdmg" value="' . $cbdmg  . '" class="widefat" />';
 	echo '<p>Servings:</p>';
-	echo '<input type="number" name="_thccbdservings" value="' . $thccbdservings  . '" class="widefat" />';
+	echo '<input type="text" name="_thccbdservings" value="' . $thccbdservings  . '" class="widefat" />';
 
 }
 
@@ -768,9 +768,9 @@ function wpdispensary_thccbdtopical() {
 	echo '<p>Size (oz):</p>';
 	echo '<input type="text" name="_sizetopical" value="' . $sizetopicals  . '" class="widefat" />';
 	echo '<p>THC mg:</p>';
-	echo '<input type="number" name="_thctopical" value="' . $thctopicals  . '" class="widefat" />';
+	echo '<input type="text" name="_thctopical" value="' . $thctopicals  . '" class="widefat" />';
 	echo '<p>CBD mg:</p>';
-	echo '<input type="number" name="_cbdtopical" value="' . $cbdtopicals  . '" class="widefat" />';
+	echo '<input type="text" name="_cbdtopical" value="' . $cbdtopicals  . '" class="widefat" />';
 
 }
 

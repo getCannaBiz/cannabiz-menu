@@ -14,17 +14,41 @@
  */
 function wpd_settings_page() {
 	add_settings_section( 'wpd_section', 'Display options', null, 'wpd' );
-	add_settings_field( 'wpd-checkbox', 'Hide menu item details from the_content?', 'wpd_checkbox_display', 'wpd', 'wpd_section' );
-	register_setting( 'wpd_section', 'wpd-checkbox' );
+	add_settings_field( 'wpd-hidedetails', 'Hide menu item details from the_content?', 'wpd_checkbox_displaydetails', 'wpd', 'wpd_section' );
+	add_settings_field( 'wpd-hidepricing', 'Hide menu item pricing from the_content?', 'wpd_checkbox_displaypricing', 'wpd', 'wpd_section' );
+	add_settings_field( 'wpd-placement', 'Move all menu info below the_content?', 'wpd_checkbox_placement', 'wpd', 'wpd_section' );
+	register_setting( 'wpd_section', 'wpd-hidedetails' );
+	register_setting( 'wpd_section', 'wpd-hidepricing' );
+	register_setting( 'wpd_section', 'wpd-placement' );
 }
 
 /**
  * Here we are comparing stored value with 1.
  * Stored value is 1 if user checks the checkbox, otherwise it will be an empty string.
  */
-function wpd_checkbox_display() {
+function wpd_checkbox_displaydetails() {
 	?>
-	<input type='checkbox' name='wpd-checkbox' value='1' <?php checked( 1, get_option( 'wpd-checkbox' ), true ); ?> />
+	<input type='checkbox' name='wpd-hidedetails' value='1' <?php checked( 1, get_option( 'wpd-hidedetails' ), true ); ?> />
+	<?php
+}
+
+/**
+ * Here we are comparing stored value with 1.
+ * Stored value is 1 if user checks the checkbox, otherwise it will be an empty string.
+ */
+function wpd_checkbox_displaypricing() {
+	?>
+	<input type='checkbox' name='wpd-hidepricing' value='1' <?php checked( 1, get_option( 'wpd-hidepricing' ), true ); ?> />
+	<?php
+}
+
+/**
+ * Here we are comparing stored value with 1.
+ * Stored value is 1 if user checks the checkbox, otherwise it will be an empty string.
+ */
+function wpd_checkbox_placement() {
+	?>
+	<input type='checkbox' name='wpd-placement' value='1' <?php checked( 1, get_option( 'wpd-placement' ), true ); ?> />
 	<?php
 }
 

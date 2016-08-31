@@ -29,7 +29,8 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'class'		=> '',
 			'name'		=> 'show',
 			'info'		=> 'show',
-			'title'		=> 'Flowers'
+			'title'		=> 'Flowers',
+			'category'	=> ''
 		),
 		$atts
 	) );
@@ -42,6 +43,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'flowers',
 			'posts_per_page'	=> $posts,
+			'flowers_category'	=> $category,
 		)
 	);
 
@@ -55,6 +57,19 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		$querytitle 			= get_the_title();
 
 		/** Get the pricing for Flowers and Concentrates */
+
+		$priceHalfGram			= get_post_meta( get_the_ID(), '_halfgram', true );
+		$priceGram				= get_post_meta( get_the_ID(), '_gram', true );
+		$priceEighth			= get_post_meta( get_the_ID(), '_eighth', true );
+		$priceQuarter			= get_post_meta( get_the_ID(), '_quarter', true );
+		$priceHalfOunce			= get_post_meta( get_the_ID(), '_halfounce', true );
+		$priceOunce				= get_post_meta( get_the_ID(), '_ounce', true );
+		
+		if ( '' == $priceHalfGram && '' == $priceEighth && '' == $priceQuarter && '' == $priceHalfOunce && '' == $priceOunce ) {
+			$pricing = '$' . get_post_meta( get_the_id(), '_gram', true ) . ' per gram';
+		} else {
+			$pricing = '';
+		}
 
 		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
 			$pricinglow = '$' . get_post_meta( get_the_id(), '_halfgram', true );
@@ -89,7 +104,11 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		}
 
 		if ( $info == "show" ) {
-			$showinfo = '<span class="wpd-productinfo"><strong>Price:</strong> ' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
+			if ( empty( $pricing ) ) {
+				$showinfo = '<span class="wpd-productinfo"><strong>Price:</strong> ' . $pricing . '' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
+			} else {
+				$showinfo = '<span class="wpd-productinfo"><strong>Price:</strong> ' . $pricing . '</span>';
+			}
 		} else {
 			$showinfo = '';
 		}
@@ -119,7 +138,8 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'class'		=> '',
 			'name'		=> 'show',
 			'info'		=> 'show',
-			'title'		=> 'Concentrates'
+			'title'		=> 'Concentrates',
+			'category'	=> '',
 		),
 		$atts
 	) );
@@ -130,8 +150,9 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 	$wpdquery = new WP_Query(
 		array(
-			'post_type' 		=> 'concentrates',
-			'posts_per_page'	=> $posts,
+			'post_type' 			=> 'concentrates',
+			'posts_per_page'		=> $posts,
+			'concentrates_category'	=> $category,
 		)
 	);
 
@@ -205,7 +226,8 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'class'		=> '',
 			'name'		=> 'show',
 			'info'		=> 'show',
-			'title'		=> 'Edibles'
+			'title'		=> 'Edibles',
+			'category'	=> ''
 		),
 		$atts
 	) );
@@ -218,6 +240,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'edibles',
 			'posts_per_page'	=> $posts,
+			'edibles_category'	=> $category,
 		)
 	);
 
@@ -357,7 +380,8 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'class'		=> '',
 			'name'		=> 'show',
 			'info'		=> 'show',
-			'title'		=> 'Topicals'
+			'title'		=> 'Topicals',
+			'category'	=> ''
 		),
 		$atts
 	) );
@@ -370,6 +394,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'topicals',
 			'posts_per_page'	=> $posts,
+			'topicals_category'	=> $category,
 		)
 	);
 
@@ -437,7 +462,8 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'class'		=> '',
 			'name'		=> 'show',
 			'info'		=> 'show',
-			'title'		=> 'Growers'
+			'title'		=> 'Growers',
+			'category'	=> ''
 		),
 		$atts
 	) );
@@ -450,6 +476,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		array(
 			'post_type' 		=> 'growers',
 			'posts_per_page'	=> $posts,
+			'growers_category'	=> $category,
 		)
 	);
 

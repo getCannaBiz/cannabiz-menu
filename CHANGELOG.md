@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.7.1
+* Updated price output in the flowers shortcode if only the gram price is added
+* Added 'placement' and 'display' options to the WP Dispensary settings page
+* Added 'category' option to shortcodes to allow for separation of menu type by category
+* Updated metaboxes to use text input rather than number input, so decimals can be used
+
 ### 1.7
 * Updated `languages/wp-dispensary.pot` file with all current translatable text throughout the plugin
 * Added Growers menu type

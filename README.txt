@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: http://www.wpdispensary.com
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis
 Requires at least: 3.0.1
-Tested up to: 4.5.3
-Stable tag: 1.7
+Tested up to: 4.6
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,10 @@ You can view our current add-on's on the [offical WP Dispensary website](http://
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.7.1 =
+* Updated price output in the flowers shortcode if only the gram price is added
+* Added 'placement' and 'display' options to the WP Dispensary settings page
 
 = 1.7 =
 * Updated `languages/wp-dispensary.pot` file with all current translatable text throughout the plugin
