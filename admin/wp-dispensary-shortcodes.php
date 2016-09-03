@@ -258,11 +258,11 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		 */
 
 		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
-			$thcmg = '<strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
+			$thcmg = ' - <strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
 		}
 		$thcsep = ' - ';
 		if ( get_post_meta( get_the_ID(), '_thcservings', true ) ) {
-			$thcservings = '<strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thcservings', true );
+			$thcservings = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thcservings', true );
 		}
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>Price:</strong> $' . get_post_meta( get_the_id(), '_priceeach', true );
@@ -277,7 +277,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		}
 
 		if ( $info == "show" ) {
-			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcsep . '' . $thcmg . '' . $thcsep . '' . $thcservings . '</span>';
+			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcmg . '' . $thcservings . '</span>';
 		} else {
 			$showinfo = '';
 		}
