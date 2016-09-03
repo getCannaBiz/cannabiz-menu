@@ -261,8 +261,8 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$thcmg = ' - <strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
 		}
 		$thcsep = ' - ';
-		if ( get_post_meta( get_the_ID(), '_thcservings', true ) ) {
-			$thcservings = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thcservings', true );
+		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
+			$thcservings = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
 		}
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>Price:</strong> $' . get_post_meta( get_the_id(), '_priceeach', true );
