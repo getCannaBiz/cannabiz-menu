@@ -262,7 +262,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		}
 		$thcsep = ' - ';
 		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
-			$thcservings = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
+			$servingcount = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
 		}
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>Price:</strong> $' . get_post_meta( get_the_id(), '_priceeach', true );
@@ -277,7 +277,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		}
 
 		if ( $info == "show" ) {
-			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcmg . '' . $thcservings . '</span>';
+			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcmg . '' . $servingcount . '</span>';
 		} else {
 			$showinfo = '';
 		}
