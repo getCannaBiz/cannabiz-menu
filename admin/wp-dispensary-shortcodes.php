@@ -105,7 +105,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 		if ( $info == "show" ) {
 			if ( empty( $pricing ) ) {
-				$showinfo = '<span class="wpd-productinfo"><strong>Price:</strong> ' . $pricing . '' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
+				$showinfo = '<span class="wpd-productinfo"><strong>Price:</strong> ' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
 			} else {
 				$showinfo = '<span class="wpd-productinfo"><strong>Price:</strong> ' . $pricing . '</span>';
 			}
