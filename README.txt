@@ -1,6 +1,5 @@
 === WP Dispensary ===
 Contributors: deviodigital
-Donate link: http://www.wpdispensary.com
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis
 Requires at least: 3.0.1
 Tested up to: 4.6.1
