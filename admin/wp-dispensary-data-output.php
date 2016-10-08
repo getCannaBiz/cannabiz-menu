@@ -238,7 +238,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$content .= $wpdthc . $wpdcbd;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls', 'edibles', 'topicals', 'growers' ) ) ) {
 				$content .= '</table>';
 			}
 		}
