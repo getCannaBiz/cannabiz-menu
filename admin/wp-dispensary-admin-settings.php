@@ -59,18 +59,31 @@ add_action( 'admin_init', 'wpd_settings_page' );
  */
 function wpd_page() {
 	?>
-	<div class='wrap'>
-		<h1>WP Dispensary Settings</h1>
+	<div class="wpd-settings-wrap">
+		<div class="wpd-settings-page-ads">
+		<?php if( ! class_exists( 'WPD_Inventory' ) || ! class_exists( 'WPD_TopSellers' ) ) { ?>
+			<h1>Premium Add-Ons</h1>
+		<?php } ?>
+		<?php if( ! class_exists( 'WPD_Inventory' ) ) { ?>
+			<a href="https://www.wpdispensary.com/downloads/dispensary-inventory-management" target="_blank"><img src="<?php $url = plugins_url(); echo $url; ?>/wp-dispensary/admin/images/ad_dispensary-inventory.png" /></a>
+		<?php } ?>
+		<?php if( ! class_exists( 'WPD_TopSellers' ) ) { ?>
+			<a href="https://www.wpdispensary.com/downloads/dispensary-top-sellers" target="_blank"><img src="<?php $url = plugins_url(); echo $url; ?>/wp-dispensary/admin/images/ad_dispensary-topsellers.png" /></a>
+		<?php } ?>
+		</div>
+		<div class="wpd-settings-content">
+			<h1>WP Dispensary Settings</h1>
 
-		<form method='post' action='options.php'>
-		<?php
-			settings_fields( 'wpd_section' );
+			<form method='post' action='options.php'>
+			<?php
+				settings_fields( 'wpd_section' );
 
-			do_settings_sections( 'wpd' );
+				do_settings_sections( 'wpd' );
 
-			submit_button();
-		?>
-		</form>
+				submit_button();
+			?>
+			</form>
+		</div>
 	</div>
 	<?php
 }
