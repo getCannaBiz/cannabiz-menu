@@ -46,6 +46,41 @@
     padding-right: 36px;
 }
 
+.wpd-settings-wrap {
+    box-sizing: border-box;
+    float: left;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.wpd-settings-content {
+	float: left;
+	margin: 0;
+	position: relative;
+}
+
+.wpd-settings-page-ads {
+	float: right;
+	margin: 0;
+	position: relative;
+	width: 300px;
+}
+
+.wpd-settings-page-ads h1 {
+	text-align: center;
+	margin: .67em 0 24px 0;
+}
+
+.wpd-settings-page-ads a {
+	display: inline-block;
+	margin: 0 0 24px 0;
+}
+
+.wpd-settings-page-ads img {
+	height: auto;
+	max-width: 100%;
+}
 
 /* Widget styles
 -------------------------------------------------------------- */
