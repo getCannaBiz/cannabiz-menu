@@ -12,8 +12,6 @@ If you're looking for a stable version to use with your website, you can downloa
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
-*if you enjoy using this plugin, please consider giving it a 5 star rating* &rarr;
-
 Read the full list of [features](https://www.wpdispensary.com/features/).
 
 ### Easy to use shortcodes
