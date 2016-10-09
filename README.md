@@ -12,33 +12,9 @@ If you're looking for a stable version to use with your website, you can downloa
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
-There's also a lot of cool things baked right into the WP Dispensary menu plugin.
+*if you enjoy using this plugin, please consider giving it a 5 star rating* &rarr;
 
-### Easy to manage menu
-
-We've made every effort to have the adding and editing of your dispensary menu content as seamless as possible with the normal WordPress experience.
-
-This means that each menu category has it's own section in the WordPress dashboard and content can be added just like you would normally add content with posts or pages.
-
-When you log into your WordPress dashboard, you will also be able to see an overview of your dispensary menu in the at a glance box, letting you quickly see how many items are in your dispensary menu.
-
-But that's not all...
-
-### Complete control over menu item details
-
-With the WP Dispensary menu plugin, you'll be able to have 100% control over all of the information that you would like to include for each of your menu items.
-
-Let your patients easily see menu items based on the type of effects they have, as well as what flowers are good for specific symptoms. Patients can also find menu items based on flavor, aroma and specific conditions.
-
-You can also include the pricing for each item as well, directly from the content editor, giving you the ease of editing menu prices whenever you have a sale, run out of certain items, etc.
-
-But wait, there's more...
-
-### Your content is exportable
-
-One thing that we wanted to make sure of when creating this plugin was that you have the ability to easily export your content at any time.
-
-Luckily, WordPress comes built with a great content exporter, and we've included your menu content in the export options so you can instantly have your dispensary menu backed up.
+Read the full list of [features](https://www.wpdispensary.com/features/).
 
 ### Easy to use shortcodes
 
@@ -68,17 +44,13 @@ We believe in the power of open source, and this plugin is a shining example of 
 
 ## Extend WP Dispensary
 
-When building this plugin, we made sure to keep it lean, including only the core needs of every menu. While this works well in most cases, we're aware there are additional needs that dispensary owners will need to address, which is where the add-on's come in.
-
 With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-You can view our current add-on's on the [offical WP Dispensary website](http://www.wpdispensary.com/add-ons)
+You can view our current add-on's on the [offical WP Dispensary website](https://www.wpdispensary.com/add-ons)
 
-## Installation
+We also have a commerial WordPress theme for the cannabis industry, [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz).
 
-1. Go to `Plugins - Add New` in your WordPress admin panel and search for "WP Dispensary"
-2. Install and activate the plugin directly in your admin panel
-3. Pat yourself on the back for a job well done :)
+It has a long list of options built in for customization to fit your business branding and is 100% integrated with WP Dispensary and it's add-ons.
 
 ## Changelog
 
