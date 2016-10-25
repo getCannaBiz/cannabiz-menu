@@ -89,10 +89,10 @@ function wpd_page() {
 }
 
 /**
- * Here we are adding the 'WP Dispensary' page under Settings in the admin dashboard
+ * Here we are adding the 'WP Dispensary' Settings in the admin dashboard
  */
 function menu_item() {
-	add_submenu_page( 'options-general.php', 'WP Dispensary', 'WP Dispensary', 'manage_options', 'wp-dispensary', 'wpd_page' );
+	add_menu_page( 'WP Dispensary', 'WP Dispensary', 'activate_plugins', 'wpd-settings', 'wpd_page', plugin_dir_url( __FILE__ ) . ( '/images/menu-icon.png' ) );
 }
 
 add_action( 'admin_menu', 'menu_item' );
