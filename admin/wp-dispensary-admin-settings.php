@@ -32,18 +32,31 @@ class WPDispensarySettings {
 	public function wp_dispensary_create_admin_page() {
 		$this->wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); ?>
 
-		<div class="wrap">
-			<h2>WP Dispensary</h2>
-			<p>Settings page for the WP Dispensary plugin</p>
-			<?php settings_errors(); ?>
+		<div class="wpd-settings-wrap">
+			<div class="wpd-settings-page-ads">
+			<?php if( ! class_exists( 'WPD_Inventory' ) || ! class_exists( 'WPD_TopSellers' ) ) { ?>
+				<h1>Premium Add-Ons</h1>
+			<?php } ?>
+			<?php if( ! class_exists( 'WPD_Inventory' ) ) { ?>
+				<a href="https://www.wpdispensary.com/downloads/dispensary-inventory-management" target="_blank"><img src="<?php $url = plugins_url(); echo $url; ?>/wp-dispensary/admin/images/ad_dispensary-inventory.png" /></a>
+			<?php } ?>
+			<?php if( ! class_exists( 'WPD_TopSellers' ) ) { ?>
+				<a href="https://www.wpdispensary.com/downloads/dispensary-top-sellers" target="_blank"><img src="<?php $url = plugins_url(); echo $url; ?>/wp-dispensary/admin/images/ad_dispensary-topsellers.png" /></a>
+			<?php } ?>
+			</div>
+			<div class="wpd-settings-content">
+				<img src="<?php $url = plugins_url(); echo $url; ?>/wp-dispensary/admin/images/wpd-logo.png" />
+				<p>Settings page for the WP Dispensary plugin</p>
+				<?php settings_errors(); ?>
 
-			<form method="post" action="options.php">
-				<?php
-					settings_fields( 'wp_dispensary_option_group' );
-					do_settings_sections( 'wp-dispensary-admin' );
-					submit_button();
-				?>
-			</form>
+				<form method="post" action="options.php">
+					<?php
+						settings_fields( 'wp_dispensary_option_group' );
+						do_settings_sections( 'wp-dispensary-admin' );
+						submit_button();
+					?>
+				</form>
+			</div>
 		</div>
 	<?php }
 
@@ -62,33 +75,33 @@ class WPDispensarySettings {
 		);
 
 		add_settings_field(
-			'hidedetails_0', // id
+			'wpd_hide_details', // id
 			'Hide details table', // title
-			array( $this, 'hidedetails_0_callback' ), // callback
+			array( $this, 'wpd_hide_details_callback' ), // callback
 			'wp-dispensary-admin', // page
 			'wp_dispensary_setting_section' // section
 		);
 
 		add_settings_field(
-			'hidepricing_1', // id
+			'wpd_hide_pricing', // id
 			'Hide pricing table', // title
-			array( $this, 'hidepricing_1_callback' ), // callback
+			array( $this, 'wpd_hide_pricing_callback' ), // callback
 			'wp-dispensary-admin', // page
 			'wp_dispensary_setting_section' // section
 		);
 
 		add_settings_field(
-			'movecontent_2', // id
+			'wpd_content_placement', // id
 			'Move content', // title
-			array( $this, 'movecontent_2_callback' ), // callback
+			array( $this, 'wpd_content_placement_callback' ), // callback
 			'wp-dispensary-admin', // page
 			'wp_dispensary_setting_section' // section
 		);
 
 		add_settings_field(
-			'currencycode_3', // id
+			'wpd_currency', // id
 			'Currency code', // title
-			array( $this, 'currencycode_3_callback' ), // callback
+			array( $this, 'wpd_currency_callback' ), // callback
 			'wp-dispensary-admin', // page
 			'wp_dispensary_setting_section' // section
 		);
@@ -96,20 +109,20 @@ class WPDispensarySettings {
 
 	public function wp_dispensary_sanitize($input) {
 		$sanitary_values = array();
-		if ( isset( $input['hidedetails_0'] ) ) {
-			$sanitary_values['hidedetails_0'] = $input['hidedetails_0'];
+		if ( isset( $input['wpd_hide_details'] ) ) {
+			$sanitary_values['wpd_hide_details'] = $input['wpd_hide_details'];
 		}
 
-		if ( isset( $input['hidepricing_1'] ) ) {
-			$sanitary_values['hidepricing_1'] = $input['hidepricing_1'];
+		if ( isset( $input['wpd_hide_pricing'] ) ) {
+			$sanitary_values['wpd_hide_pricing'] = $input['wpd_hide_pricing'];
 		}
 
-		if ( isset( $input['movecontent_2'] ) ) {
-			$sanitary_values['movecontent_2'] = $input['movecontent_2'];
+		if ( isset( $input['wpd_content_placement'] ) ) {
+			$sanitary_values['wpd_content_placement'] = $input['wpd_content_placement'];
 		}
 
-		if ( isset( $input['currencycode_3'] ) ) {
-			$sanitary_values['currencycode_3'] = $input['currencycode_3'];
+		if ( isset( $input['wpd_currency'] ) ) {
+			$sanitary_values['wpd_currency'] = $input['wpd_currency'];
 		}
 
 		return $sanitary_values;
@@ -119,76 +132,76 @@ class WPDispensarySettings {
 		
 	}
 
-	public function hidedetails_0_callback() {
+	public function wpd_hide_details_callback() {
 		printf(
-			'<input type="checkbox" name="wp_dispensary_option_name[hidedetails_0]" id="hidedetails_0" value="hidedetails_0" %s> <label for="hidedetails_0">hide details from data output</label>',
-			( isset( $this->wp_dispensary_options['hidedetails_0'] ) && $this->wp_dispensary_options['hidedetails_0'] === 'hidedetails_0' ) ? 'checked' : ''
+			'<input type="checkbox" name="wp_dispensary_option_name[wpd_hide_details]" id="wpd_hide_details" value="wpd_hide_details" %s> <label for="wpd_hide_details">hide details from data output</label>',
+			( isset( $this->wp_dispensary_options['wpd_hide_details'] ) && $this->wp_dispensary_options['wpd_hide_details'] === 'wpd_hide_details' ) ? 'checked' : ''
 		);
 	}
 
-	public function hidepricing_1_callback() {
+	public function wpd_hide_pricing_callback() {
 		printf(
-			'<input type="checkbox" name="wp_dispensary_option_name[hidepricing_1]" id="hidepricing_1" value="hidepricing_1" %s> <label for="hidepricing_1">hide pricing from data output</label>',
-			( isset( $this->wp_dispensary_options['hidepricing_1'] ) && $this->wp_dispensary_options['hidepricing_1'] === 'hidepricing_1' ) ? 'checked' : ''
+			'<input type="checkbox" name="wp_dispensary_option_name[wpd_hide_pricing]" id="wpd_hide_pricing" value="wpd_hide_pricing" %s> <label for="wpd_hide_pricing">hide pricing from data output</label>',
+			( isset( $this->wp_dispensary_options['wpd_hide_pricing'] ) && $this->wp_dispensary_options['wpd_hide_pricing'] === 'wpd_hide_pricing' ) ? 'checked' : ''
 		);
 	}
 
-	public function movecontent_2_callback() {
+	public function wpd_content_placement_callback() {
 		printf(
-			'<input type="checkbox" name="wp_dispensary_option_name[movecontent_2]" id="movecontent_2" value="movecontent_2" %s> <label for="movecontent_2">move all menu info below the_content</label>',
-			( isset( $this->wp_dispensary_options['movecontent_2'] ) && $this->wp_dispensary_options['movecontent_2'] === 'movecontent_2' ) ? 'checked' : ''
+			'<input type="checkbox" name="wp_dispensary_option_name[wpd_content_placement]" id="wpd_content_placement" value="wpd_content_placement" %s> <label for="wpd_content_placement">move all menu info below the_content</label>',
+			( isset( $this->wp_dispensary_options['wpd_content_placement'] ) && $this->wp_dispensary_options['wpd_content_placement'] === 'wpd_content_placement' ) ? 'checked' : ''
 		);
 	}
 
-	public function currencycode_3_callback() {
-		?> <select name="wp_dispensary_option_name[currencycode_3]" id="currencycode_3">
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'AUD') ? 'selected' : '' ; ?>
+	public function wpd_currency_callback() {
+		?> <select name="wp_dispensary_option_name[wpd_currency]" id="wpd_currency">
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'AUD') ? 'selected' : '' ; ?>
 			<option value="AUD" <?php echo $selected; ?>>(AUD) Australian Dollar</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'BRL') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'BRL') ? 'selected' : '' ; ?>
 			<option value="BRL" <?php echo $selected; ?>>(BRL) Brazilian Real</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'CAD') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'CAD') ? 'selected' : '' ; ?>
 			<option value="CAD" <?php echo $selected; ?>>(CAD) Canadian Dollar</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'CZK') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'CZK') ? 'selected' : '' ; ?>
 			<option value="CZK" <?php echo $selected; ?>>(CZK) Czech Koruna</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'DKK') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'DKK') ? 'selected' : '' ; ?>
 			<option value="DKK" <?php echo $selected; ?>>(DKK) Danish Krone</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'EUR') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'EUR') ? 'selected' : '' ; ?>
 			<option value="EUR" <?php echo $selected; ?>>(EUR) Euro</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'HKD') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'HKD') ? 'selected' : '' ; ?>
 			<option value="HKD" <?php echo $selected; ?>>(HKD) Hong Kong Dollar</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'HUF') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'HUF') ? 'selected' : '' ; ?>
 			<option value="HUF" <?php echo $selected; ?>>(HUF) Hungarian Forint</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'ILS') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'ILS') ? 'selected' : '' ; ?>
 			<option value="ILS" <?php echo $selected; ?>>(ILS) Israeli New Sheqel</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'JPY') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'JPY') ? 'selected' : '' ; ?>
 			<option value="JPY" <?php echo $selected; ?>>(JPY) Japanese Yen</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'MYR') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'MYR') ? 'selected' : '' ; ?>
 			<option value="MYR" <?php echo $selected; ?>>(MYR) Malaysian Ringgit</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'MXN') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'MXN') ? 'selected' : '' ; ?>
 			<option value="MXN" <?php echo $selected; ?>>(MXN) Mexican Peso</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'NOK') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'NOK') ? 'selected' : '' ; ?>
 			<option value="NOK" <?php echo $selected; ?>>(NOK) Norwegian Krone</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'NZD') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'NZD') ? 'selected' : '' ; ?>
 			<option value="NZD" <?php echo $selected; ?>>(NZD) New Zealand Dollar</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'PHP') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'PHP') ? 'selected' : '' ; ?>
 			<option value="PHP" <?php echo $selected; ?>>(PHP) Philippine Peso</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'PLN') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'PLN') ? 'selected' : '' ; ?>
 			<option value="PLN" <?php echo $selected; ?>>(PLN) Polish Zloty</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'GBP') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'GBP') ? 'selected' : '' ; ?>
 			<option value="GBP" <?php echo $selected; ?>>(GBP) Pound Sterling</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'SGD') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'SGD') ? 'selected' : '' ; ?>
 			<option value="SGD" <?php echo $selected; ?>>(SGD) Singapore Dollar</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'SEK') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'SEK') ? 'selected' : '' ; ?>
 			<option value="SEK" <?php echo $selected; ?>>(SEK) Swedish Krona</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'CHF') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'CHF') ? 'selected' : '' ; ?>
 			<option value="CHF" <?php echo $selected; ?>>(CHF) Swiss Franc</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'TWD') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'TWD') ? 'selected' : '' ; ?>
 			<option value="TWD" <?php echo $selected; ?>>(TWD) Taiwan New Dollar</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'THB') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'THB') ? 'selected' : '' ; ?>
 			<option value="THB" <?php echo $selected; ?>>(THB) Thai Baht</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'TRY') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'TRY') ? 'selected' : '' ; ?>
 			<option value="TRY" <?php echo $selected; ?>>(TRY) Turkish Lira</option>
-			<?php $selected = (isset( $this->wp_dispensary_options['currencycode_3'] ) && $this->wp_dispensary_options['currencycode_3'] === 'USD') ? 'selected' : '' ; ?>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_currency'] ) && $this->wp_dispensary_options['wpd_currency'] === 'USD') ? 'selected' : '' ; ?>
 			<option value="USD" <?php echo $selected; ?>>(USD) U.S. Dollar</option>
 		</select> <?php
 	}
@@ -200,8 +213,8 @@ if ( is_admin() )
 /* 
  * Retrieve this value with:
  * $wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
- * $hidedetails_0 = $wp_dispensary_options['hidedetails_0']; // hidedetails
- * $hidepricing_1 = $wp_dispensary_options['hidepricing_1']; // hidepricing
- * $movecontent_2 = $wp_dispensary_options['movecontent_2']; // movecontent
- * $currencycode_3 = $wp_dispensary_options['currencycode_3']; // currencycode
+ * $wpd_hide_details = $wp_dispensary_options['wpd_hide_details']; // hidedetails
+ * $wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
+ * $wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
+ * $wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
  */
