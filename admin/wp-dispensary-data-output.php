@@ -22,10 +22,10 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 	function wpd_data_output_content( $content ) {
 
 		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
-		$hidedetails_0 = $wp_dispensary_options['hidedetails_0']; // hidedetails
-		$hidepricing_1 = $wp_dispensary_options['hidepricing_1']; // hidepricing
-		$movecontent_2 = $wp_dispensary_options['movecontent_2']; // movecontent
-		$currencycode_3 = $wp_dispensary_options['currencycode_3']; // currencycode
+		$wpd_hide_details = $wp_dispensary_options['wpd_hide_details']; // hidedetails
+		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
+		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
+		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
 
 		$currency_symbols = array(
 			'AED' => '&#1583;.&#1573;', // ?
@@ -308,55 +308,55 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Setting up WP Dispensary menu pricing data
 		 */
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceeach = '<tr class="priceeach"><td><span>Price Each:</span></td><td>'. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			$wpdpriceeach = '<tr class="priceeach"><td><span>Price Each:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 		} else {
 			$wpdpriceeach = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceperunit = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			$wpdpriceperunit = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 		} else {
 			$wpdpriceperunit = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
-			$wpdpricetopical = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
+			$wpdpricetopical = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
 		} else {
 			$wpdpricetopical = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			$wpdhalfgram = '<td><span>1/2 g:</span> '. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_halfgram', true ) .'</td>';
+			$wpdhalfgram = '<td><span>1/2 g:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true ) .'</td>';
 		} else {
 			$wpdhalfgram = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$wpdgram = '<td><span>1 g:</span> '. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_gram', true ) .'</td>';
+			$wpdgram = '<td><span>1 g:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true ) .'</td>';
 		} else {
 			$wpdgram = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			$wpdeighth = '<td><span>1/8 oz:</span> '. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_eighth', true ) .'</td>';
+			$wpdeighth = '<td><span>1/8 oz:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_eighth', true ) .'</td>';
 		} else {
 			$wpdeighth = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			$wpdquarter = '<td><span>1/4 oz:</span> '. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_quarter', true ) .'</td>';
+			$wpdquarter = '<td><span>1/4 oz:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_quarter', true ) .'</td>';
 		} else {
 			$wpdquarter = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$wpdhalfounce = '<td><span>1/2 oz:</span> '. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_halfounce', true ) .'</td>';
+			$wpdhalfounce = '<td><span>1/2 oz:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfounce', true ) .'</td>';
 		} else {
 			$wpdhalfounce = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$wpdounce = '<td><span>1 oz:</span> '. $currency_symbols[ $currencycode_3 ] .'' . get_post_meta( get_the_id(), '_ounce', true ) .'</td>';
+			$wpdounce = '<td><span>1 oz:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_ounce', true ) .'</td>';
 		} else {
 			$wpdounce = '';
 		}
@@ -377,7 +377,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Adding Details table
 		 */
-		if ( ! $hidedetails_0 == 'hidedetails_0' ) {
+		if ( ! $wpd_hide_details == 'wpd_hide_details' ) {
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
 				$content .= '<table class="wpdispensary-table single"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' Details</td></tr>';
@@ -427,7 +427,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Adding Pricing table
 		 */
-		if ( ! $hidepricing_1 == 'hidepricing_1' ) {
+		if ( ! $wpd_hide_pricing == 'wpd_hide_pricing' ) {
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
 				$content .= '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' Pricing</td></tr>';
@@ -472,7 +472,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * item details above or below the_content
 		 */
 		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
-			if ( ! $movecontent_2 == 'movecontent_2' ) {
+			if ( ! $wpd_content_placement == 'wpd_content_placement' ) {
 				$content .= $original;
 			} else {
 				$content = $original . $content;
