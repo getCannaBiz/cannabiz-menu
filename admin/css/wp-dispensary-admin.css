@@ -54,6 +54,11 @@
     width: 100%;
 }
 
+.wpd-settings-wrap img {
+	width: 100%;
+	max-width: 420px;
+}
+
 .wpd-settings-content {
 	float: left;
 	margin: 0;
