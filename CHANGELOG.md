@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.9
+* Added custom Currency Code to the data output tables in `admin/wp-dispensary-data-output.php`
+* Added custom Currency Code to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Moved WPD Settings to it's own parent menu in the admin dashboard in `admin/wp-dispensary-admin-settings.php`
+* Updated WPD Settings options in `admin/wp-dispensary-admin-settings.php`
+
 ### 1.8
 * Added "prerolls" in array to output </table> in `admin/wp-dispensary-data-output.php`
 * Added Action Hooks to Pricing & Data Tables in `admin/wp-dispensary-data-output.php`
