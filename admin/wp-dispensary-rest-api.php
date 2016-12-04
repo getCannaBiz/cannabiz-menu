@@ -388,62 +388,62 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
  */
 if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
-function subtitles_flowers( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['subtitle'] = get_the_subtitle( $post->ID );
-	$data->data = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_flowers', 'subtitles_flowers', 10, 3 );
+	function subtitles_flowers( $data, $post, $request ) {
+		$_data = $data->data;
+		$_data['subtitle'] = get_the_subtitle( $post->ID );
+		$data->data = $_data;
+		return $data;
+	}
+	add_filter( 'rest_prepare_flowers', 'subtitles_flowers', 10, 3 );
 
-function subtitles_concentrates( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['subtitle'] = get_the_subtitle( $post->ID );
-	$data->data = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_concentrates', 'subtitles_concentrates', 10, 3 );
+	function subtitles_concentrates( $data, $post, $request ) {
+		$_data = $data->data;
+		$_data['subtitle'] = get_the_subtitle( $post->ID );
+		$data->data = $_data;
+		return $data;
+	}
+	add_filter( 'rest_prepare_concentrates', 'subtitles_concentrates', 10, 3 );
 
-function subtitles_edibles( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['subtitle'] = get_the_subtitle( $post->ID );
-	$data->data = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_edibles', 'subtitles_edibles', 10, 3 );
+	function subtitles_edibles( $data, $post, $request ) {
+		$_data = $data->data;
+		$_data['subtitle'] = get_the_subtitle( $post->ID );
+		$data->data = $_data;
+		return $data;
+	}
+	add_filter( 'rest_prepare_edibles', 'subtitles_edibles', 10, 3 );
 
-function subtitles_prerolls( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['subtitle'] = get_the_subtitle( $post->ID );
-	$data->data = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_prerolls', 'subtitles_prerolls', 10, 3 );
+	function subtitles_prerolls( $data, $post, $request ) {
+		$_data = $data->data;
+		$_data['subtitle'] = get_the_subtitle( $post->ID );
+		$data->data = $_data;
+		return $data;
+	}
+	add_filter( 'rest_prepare_prerolls', 'subtitles_prerolls', 10, 3 );
 
 /**
  * Topicals subtitles
  *
  * @since    1.4.0
  */
-function subtitles_topicals( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['subtitle'] = get_the_subtitle( $post->ID );
-	$data->data = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_topicals', 'subtitles_topicals', 10, 3 );
+	function subtitles_topicals( $data, $post, $request ) {
+		$_data = $data->data;
+		$_data['subtitle'] = get_the_subtitle( $post->ID );
+		$data->data = $_data;
+		return $data;
+	}
+	add_filter( 'rest_prepare_topicals', 'subtitles_topicals', 10, 3 );
 
 /**
  * Growers subtitles
  *
  * @since    1.7.0
  */
-function subtitles_growers( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['subtitle'] = get_the_subtitle( $post->ID );
-	$data->data = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_growers', 'subtitles_growers', 10, 3 );
+	function subtitles_growers( $data, $post, $request ) {
+		$_data = $data->data;
+		$_data['subtitle'] = get_the_subtitle( $post->ID );
+		$data->data = $_data;
+		return $data;
+	}
+	add_filter( 'rest_prepare_growers', 'subtitles_growers', 10, 3 );
 
 }
