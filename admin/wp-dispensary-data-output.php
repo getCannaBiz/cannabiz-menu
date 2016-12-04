@@ -26,6 +26,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
+		if ( $wp_dispensary_options['wpd_cost_phrase'] == '' || $wp_dispensary_options['wpd_cost_phrase'] == 'Price' ) {
+			$wpd_cost_phrase = 'Pricing';
+		} else {
+			$wpd_cost_phrase = 'Donation' ; // costphrase
+		}
 
 		$currency_symbols = array(
 			'AED' => '&#1583;.&#1573;', // ?
@@ -430,7 +435,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		if ( ! $wpd_hide_pricing == 'wpd_hide_pricing' ) {
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
-				$content .= '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' Pricing</td></tr>';
+				$content .= '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' '. $wpd_cost_phrase .'</td></tr>';
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {

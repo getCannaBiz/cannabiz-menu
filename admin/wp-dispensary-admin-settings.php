@@ -105,6 +105,14 @@ class WPDispensarySettings {
 			'wp-dispensary-admin', // page
 			'wp_dispensary_setting_section' // section
 		);
+
+		add_settings_field(
+			'wpd_cost_phrase', // id
+			'Cost phrase', // title
+			array( $this, 'wpd_cost_phrase_callback' ), // callback
+			'wp-dispensary-admin', // page
+			'wp_dispensary_setting_section' // section
+		);
 	}
 
 	public function wp_dispensary_sanitize($input) {
@@ -123,6 +131,10 @@ class WPDispensarySettings {
 
 		if ( isset( $input['wpd_currency'] ) ) {
 			$sanitary_values['wpd_currency'] = $input['wpd_currency'];
+		}
+
+		if ( isset( $input['wpd_cost_phrase'] ) ) {
+			$sanitary_values['wpd_cost_phrase'] = $input['wpd_cost_phrase'];
 		}
 
 		return $sanitary_values;
@@ -206,6 +218,15 @@ class WPDispensarySettings {
 		</select> <?php
 	}
 
+	public function wpd_cost_phrase_callback() {
+		?> <select name="wp_dispensary_option_name[wpd_cost_phrase]" id="wpd_cost_phrase">
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_cost_phrase'] ) && $this->wp_dispensary_options['wpd_cost_phrase'] === 'Price') ? 'selected' : '' ; ?>
+			<option value="Price" <?php echo $selected; ?>>Price</option>
+			<?php $selected = (isset( $this->wp_dispensary_options['wpd_cost_phrase'] ) && $this->wp_dispensary_options['wpd_cost_phrase'] === 'Donation') ? 'selected' : '' ; ?>
+			<option value="Donation" <?php echo $selected; ?>>Donation</option>
+		</select> <?php
+	}
+
 }
 if ( is_admin() )
 	$wp_dispensary = new WPDispensarySettings();
@@ -217,4 +238,5 @@ if ( is_admin() )
  * $wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
  * $wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
  * $wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
+ * $wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
  */
