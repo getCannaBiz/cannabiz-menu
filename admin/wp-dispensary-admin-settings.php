@@ -19,13 +19,13 @@ class WPDispensarySettings {
 
 	public function wp_dispensary_add_plugin_page() {
 		add_menu_page(
-			'WP Dispensary', // page_title
-			'WP Dispensary', // menu_title
-			'manage_options', // capability
-			'wpd-settings', // menu_slug
-			array( $this, 'wp_dispensary_create_admin_page' ), // function
-			plugin_dir_url( __FILE__ ) . ( 'images/menu-icon.png' ), // icon_url
-			100 // position
+			'WP Dispensary', /** Paramater: page_title */
+			'WP Dispensary', /** Paramater: menu_title */
+			'manage_options', /** Paramater: capability */
+			'wpd-settings', /** Paramater: menu_slug */
+			array( $this, 'wp_dispensary_create_admin_page' ), /** Paramater: function */
+			plugin_dir_url( __FILE__ ) . ( 'images/menu-icon.png' ), /** Paramater: icon_url */
+			100 /** Paramater: position */
 		);
 	}
 
@@ -34,13 +34,13 @@ class WPDispensarySettings {
 
 		<div class="wpd-settings-wrap">
 			<div class="wpd-settings-page-ads">
-			<?php if( ! class_exists( 'WPD_Inventory' ) || ! class_exists( 'WPD_TopSellers' ) ) { ?>
+			<?php if ( ! class_exists( 'WPD_Inventory' ) || ! class_exists( 'WPD_TopSellers' ) ) { ?>
 				<h1>Premium Add-Ons</h1>
 			<?php } ?>
-			<?php if( ! class_exists( 'WPD_Inventory' ) ) { ?>
+			<?php if ( ! class_exists( 'WPD_Inventory' ) ) { ?>
 				<a href="https://www.wpdispensary.com/downloads/dispensary-inventory-management" target="_blank"><img src="<?php $url = plugins_url(); echo $url; ?>/wp-dispensary/admin/images/ad_dispensary-inventory.png" /></a>
 			<?php } ?>
-			<?php if( ! class_exists( 'WPD_TopSellers' ) ) { ?>
+			<?php if ( ! class_exists( 'WPD_TopSellers' ) ) { ?>
 				<a href="https://www.wpdispensary.com/downloads/dispensary-top-sellers" target="_blank"><img src="<?php $url = plugins_url(); echo $url; ?>/wp-dispensary/admin/images/ad_dispensary-topsellers.png" /></a>
 			<?php } ?>
 			</div>
@@ -62,60 +62,60 @@ class WPDispensarySettings {
 
 	public function wp_dispensary_page_init() {
 		register_setting(
-			'wp_dispensary_option_group', // option_group
-			'wp_dispensary_option_name', // option_name
-			array( $this, 'wp_dispensary_sanitize' ) // sanitize_callback
+			'wp_dispensary_option_group', /** Paramater: option_group */
+			'wp_dispensary_option_name', /** Paramater: option_name */
+			array( $this, 'wp_dispensary_sanitize' ) /** Paramater: sanitize_callback */
 		);
 
 		add_settings_section(
-			'wp_dispensary_setting_section', // id
-			'Settings', // title
-			array( $this, 'wp_dispensary_section_info' ), // callback
-			'wp-dispensary-admin' // page
+			'wp_dispensary_setting_section', /** Paramater: id */
+			'Settings', /** Paramater: title */
+			array( $this, 'wp_dispensary_section_info' ), /** Paramater: callback */
+			'wp-dispensary-admin' /** Paramater: page */
 		);
 
 		add_settings_field(
-			'wpd_hide_details', // id
-			'Hide details table', // title
-			array( $this, 'wpd_hide_details_callback' ), // callback
-			'wp-dispensary-admin', // page
-			'wp_dispensary_setting_section' // section
+			'wpd_hide_details', /** Paramater: id */
+			'Hide details table', /** Paramater: title */
+			array( $this, 'wpd_hide_details_callback' ), /** Paramater: callback */
+			'wp-dispensary-admin', /** Paramater: page */
+			'wp_dispensary_setting_section' /** Paramater: section */
 		);
 
 		add_settings_field(
-			'wpd_hide_pricing', // id
-			'Hide pricing table', // title
-			array( $this, 'wpd_hide_pricing_callback' ), // callback
-			'wp-dispensary-admin', // page
-			'wp_dispensary_setting_section' // section
+			'wpd_hide_pricing', /** Paramater: id */
+			'Hide pricing table', /** Paramater: title */
+			array( $this, 'wpd_hide_pricing_callback' ), /** Paramater: callback */
+			'wp-dispensary-admin', /** Paramater: page */
+			'wp_dispensary_setting_section' /** Paramater: section */
 		);
 
 		add_settings_field(
-			'wpd_content_placement', // id
-			'Move content', // title
-			array( $this, 'wpd_content_placement_callback' ), // callback
-			'wp-dispensary-admin', // page
-			'wp_dispensary_setting_section' // section
+			'wpd_content_placement', /** Paramater: id */
+			'Move content', /** Paramater: title */
+			array( $this, 'wpd_content_placement_callback' ), /** Paramater: callback */
+			'wp-dispensary-admin', /** Paramater: page */
+			'wp_dispensary_setting_section' /** Paramater: section */
 		);
 
 		add_settings_field(
-			'wpd_currency', // id
-			'Currency code', // title
-			array( $this, 'wpd_currency_callback' ), // callback
-			'wp-dispensary-admin', // page
-			'wp_dispensary_setting_section' // section
+			'wpd_currency', /** Paramater: id */
+			'Currency code', /** Paramater: title */
+			array( $this, 'wpd_currency_callback' ), /** Paramater: callback */
+			'wp-dispensary-admin', /** Paramater: page */
+			'wp_dispensary_setting_section' /** Paramater: section */
 		);
 
 		add_settings_field(
-			'wpd_cost_phrase', // id
-			'Cost phrase', // title
-			array( $this, 'wpd_cost_phrase_callback' ), // callback
-			'wp-dispensary-admin', // page
-			'wp_dispensary_setting_section' // section
+			'wpd_cost_phrase', /** Paramater: id */
+			'Cost phrase', /** Paramater: title */
+			array( $this, 'wpd_cost_phrase_callback' ), /** Paramater: callback */
+			'wp-dispensary-admin', /** Paramater: page */
+			'wp_dispensary_setting_section' /** Paramater: section */
 		);
 	}
 
-	public function wp_dispensary_sanitize($input) {
+	public function wp_dispensary_sanitize( $input ) {
 		$sanitary_values = array();
 		if ( isset( $input['wpd_hide_details'] ) ) {
 			$sanitary_values['wpd_hide_details'] = $input['wpd_hide_details'];
@@ -141,7 +141,7 @@ class WPDispensarySettings {
 	}
 
 	public function wp_dispensary_section_info() {
-		
+
 	}
 
 	public function wpd_hide_details_callback() {
@@ -228,10 +228,11 @@ class WPDispensarySettings {
 	}
 
 }
-if ( is_admin() )
+if ( is_admin() ) {
 	$wp_dispensary = new WPDispensarySettings();
+}
 
-/* 
+/*
  * Retrieve this value with:
  * $wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
  * $wpd_hide_details = $wp_dispensary_options['wpd_hide_details']; // hidedetails
