@@ -118,7 +118,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			'LTL' => '&#76;&#116;',
 			'LVL' => '&#76;&#115;',
 			'LYD' => '&#1604;.&#1583;', // ?
-			'MAD' => '&#1583;.&#1605;.', //?
+			'MAD' => '&#1583;.&#1605;.', // ?
 			'MDL' => '&#76;',
 			'MGA' => '&#65;&#114;', // ?
 			'MKD' => '&#1076;&#1077;&#1085;',
@@ -170,7 +170,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
@@ -374,7 +374,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ) ) ) {
 			$original = $content;
 		}
-		
+
 		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ) ) ) {
 			$content = '';
 		}
@@ -414,7 +414,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 			/**
 			 * Details Table Bottom Action Hook
-			 * 
+			 *
 			 * @since      1.8.0
 			 */
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
@@ -456,7 +456,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 			/**
 			 * Pricing Table Bottom Action Hook
-			 * 
+			 *
 			 * @since      1.8.0
 			 */
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
@@ -469,7 +469,6 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
 				$content .= '</table>';
 			}
-
 		}
 
 		/**
