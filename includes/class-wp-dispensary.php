@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -253,5 +252,4 @@ class WP_Dispensary {
 	public function get_version() {
 		return $this->version;
 	}
-
 }
