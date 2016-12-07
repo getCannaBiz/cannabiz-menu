@@ -10,8 +10,9 @@
  * @subpackage WP_Dispensary/admin
  */
 
-/** Adding featured image URL's to each Custom Post Type */
-
+/**
+ * Adding featured image URL's to Flowers Custom Post Type
+ */
 function flowers_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;
 	$thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -22,6 +23,9 @@ function flowers_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_featuredimage', 10, 3 );
 
+/**
+ * Adding featured image URL's to Concentrates Custom Post Type
+ */
 function concentrates_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;
 	$thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -32,6 +36,9 @@ function concentrates_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_featuredimage', 10, 3 );
 
+/**
+ * Adding featured image URL's to Edibles Custom Post Type
+ */
 function edibles_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;
 	$thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -42,6 +49,9 @@ function edibles_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_edibles', 'edibles_featuredimage', 10, 3 );
 
+/**
+ * Adding featured image URL's to Pre-rolls Custom Post Type
+ */
 function prerolls_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;
 	$thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -52,6 +62,9 @@ function prerolls_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_prerolls', 'prerolls_featuredimage', 10, 3 );
 
+/**
+ * Adding featured image URL's to Topicals Custom Post Type
+ */
 function topicals_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;
 	$thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -62,6 +75,9 @@ function topicals_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_topicals', 'topicals_featuredimage', 10, 3 );
 
+/**
+ * Adding featured image URL's to Growers Custom Post Type
+ */
 function growers_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;
 	$thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -72,8 +88,9 @@ function growers_featuredimage( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_growers', 'growers_featuredimage', 10, 3 );
 
-/** Add Category taxonomy for the Flowers Custom Post Type */
-
+/**
+ * Add Category taxonomy for the Flowers Custom Post Type
+ */
 function flowers_category( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['flowers_category'] = get_the_term_list( $post->ID, 'flowers_category', '', ' ', '' );
@@ -82,8 +99,9 @@ function flowers_category( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_category', 10, 3 );
 
-/** Add Aroma taxonomy for the Flowers Custom Post Type */
-
+/**
+ * Add Aroma taxonomy for the Flowers Custom Post Type
+ */
 function flowers_aroma( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['aromas'] = get_the_term_list( $post->ID, 'aroma', '', ' ', '' );
@@ -92,8 +110,9 @@ function flowers_aroma( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_aroma', 10, 3 );
 
-/** Add Flavor taxonomy for the Flowers Custom Post Type */
-
+/**
+ * Add Flavor taxonomy for the Flowers Custom Post Type
+ */
 function flowers_flavor( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['flavors'] = get_the_term_list( $post->ID, 'flavor', '', ' ', '' );
@@ -102,8 +121,9 @@ function flowers_flavor( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_flavor', 10, 3 );
 
-/** Add Effect taxonomy for the Flowers Custom Post Type */
-
+/**
+ * Add Effect taxonomy for the Flowers Custom Post Type
+ */
 function flowers_effect( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['effects'] = get_the_term_list( $post->ID, 'effect', '', ' ', '' );
@@ -112,8 +132,9 @@ function flowers_effect( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_effect', 10, 3 );
 
-/** Add Symptom taxonomy for the Flowers Custom Post Type */
-
+/**
+ * Add Symptom taxonomy for the Flowers Custom Post Type
+ */
 function flowers_symptom( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['symptoms'] = get_the_term_list( $post->ID, 'symptom', '', ' ', '' );
@@ -122,8 +143,9 @@ function flowers_symptom( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_symptom', 10, 3 );
 
-/** Add Condition taxonomy for the Flowers Custom Post Type */
-
+/**
+ * Add Condition taxonomy for the Flowers Custom Post Type
+ */
 function flowers_condition( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['conditions'] = get_the_term_list( $post->ID, 'condition', '', ' ', '' );
@@ -132,8 +154,9 @@ function flowers_condition( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'flowers_condition', 10, 3 );
 
-/** Add Category taxonomy for the Concentrates Custom Post Type */
-
+/**
+ * Add Category taxonomy for the Concentrates Custom Post Type
+ */
 function concentrates_category( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['concentrates_category'] = get_the_term_list( $post->ID, 'concentrates_category', '', ' ', '' );
@@ -142,8 +165,9 @@ function concentrates_category( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_category', 10, 3 );
 
-/** Add Aroma taxonomy for the Concentrates Custom Post Type */
-
+/**
+ * Add Aroma taxonomy for the Concentrates Custom Post Type
+ */
 function concentrates_aroma( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['aromas'] = get_the_term_list( $post->ID, 'aroma', '', ' ', '' );
@@ -152,8 +176,9 @@ function concentrates_aroma( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_aroma', 10, 3 );
 
-/** Add Flavor taxonomy for the Concentrates Custom Post Type */
-
+/**
+ * Add Flavor taxonomy for the Concentrates Custom Post Type
+ */
 function concentrates_flavor( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['flavors'] = get_the_term_list( $post->ID, 'flavor', '', ' ', '' );
@@ -162,8 +187,9 @@ function concentrates_flavor( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_flavor', 10, 3 );
 
-/** Add Effect taxonomy for the Concentrates Custom Post Type */
-
+/**
+ * Add Effect taxonomy for the Concentrates Custom Post Type
+ */
 function concentrates_effect( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['effects'] = get_the_term_list( $post->ID, 'effect', '', ' ', '' );
@@ -172,8 +198,9 @@ function concentrates_effect( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_effect', 10, 3 );
 
-/** Add Symptom taxonomy for the Concentrates Custom Post Type */
-
+/**
+ * Add Symptom taxonomy for the Concentrates Custom Post Type
+ */
 function concentrates_symptom( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['symptoms'] = get_the_term_list( $post->ID, 'symptom', '', ' ', '' );
@@ -182,8 +209,9 @@ function concentrates_symptom( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_symptom', 10, 3 );
 
-/** Add Condition taxonomy for the Concentrates Custom Post Type */
-
+/**
+ * Add Condition taxonomy for the Concentrates Custom Post Type
+ */
 function concentrates_condition( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['conditions'] = get_the_term_list( $post->ID, 'condition', '', ' ', '' );
@@ -192,8 +220,9 @@ function concentrates_condition( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_condition', 10, 3 );
 
-/** Add Category taxonomy for the Edibles Custom Post Type */
-
+/**
+ * Add Category taxonomy for the Edibles Custom Post Type
+ */
 function edibles_category( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['edibles_category'] = get_the_term_list( $post->ID, 'edibles_category', '', ' ', '' );
@@ -202,8 +231,9 @@ function edibles_category( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_edibles', 'edibles_category', 10, 3 );
 
-/** Add Ingredients taxonomy for the Edibles Custom Post Type */
-
+/**
+ * Add Ingredients taxonomy for the Edibles Custom Post Type
+ */
 function edibles_ingredients( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['ingredients'] = get_the_term_list( $post->ID, 'ingredients', '', ' ', '' );
@@ -212,8 +242,9 @@ function edibles_ingredients( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_edibles', 'edibles_ingredients', 10, 3 );
 
-/** Add Category taxonomy for the Topicals Custom Post Type */
-
+/**
+ * Add Category taxonomy for the Topicals Custom Post Type
+ */
 function topicals_category( $data, $post, $request ) {
 	$_data = $data->data;
 	$_data['topicals_category'] = get_the_term_list( $post->ID, 'topicals_category', '', ' ', '' );
@@ -230,6 +261,10 @@ add_filter( 'rest_prepare_topicals', 'topicals_category', 10, 3 );
  */
 
 add_action( 'rest_api_init', 'slug_register_prices' );
+
+/**
+ * Registering Prices
+ */
 function slug_register_prices() {
 	$productsizes = array( '_halfgram', '_gram', '_eighth', '_quarter', '_halfounce', '_ounce' );
 	foreach ( $productsizes as $size ) {
@@ -244,6 +279,10 @@ function slug_register_prices() {
 		);
 	} /** /foreach */
 }
+
+/**
+ * Get Prices
+ */
 function slug_get_prices( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
@@ -256,6 +295,10 @@ function slug_get_prices( $object, $field_name, $request ) {
  */
 
 add_action( 'rest_api_init', 'slug_register_edibleinfo' );
+
+/**
+ * Register Edible information
+ */
 function slug_register_edibleinfo() {
 	$edibleinformation = array( '_thcmg', '_thcservings', '_priceeach' );
 	foreach ( $edibleinformation as $edibleinfo ) {
@@ -270,6 +313,10 @@ function slug_register_edibleinfo() {
 		);
 	} /** /foreach */
 }
+
+/**
+ * Get Edible info
+ */
 function slug_get_edibleinfo( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
@@ -282,6 +329,10 @@ function slug_get_edibleinfo( $object, $field_name, $request ) {
  */
 
 add_action( 'rest_api_init', 'slug_register_prerollinfo' );
+
+/**
+ * Register Pre-roll info
+ */
 function slug_register_prerollinfo() {
 	$prerollinformation = array( '_priceeach', '_selected_flowers' );
 	foreach ( $prerollinformation as $prerollinfo ) {
@@ -296,6 +347,10 @@ function slug_register_prerollinfo() {
 		);
 	} /** /foreach */
 }
+
+/**
+ * Get Pre-roll info
+ */
 function slug_get_prerollinfo( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
@@ -309,6 +364,10 @@ function slug_get_prerollinfo( $object, $field_name, $request ) {
  */
 
 add_action( 'rest_api_init', 'slug_register_thccbd' );
+
+/**
+ * Register THC and CBD info
+ */
 function slug_register_thccbd() {
 	$productsizes = array( '_thc', '_cbd' );
 	foreach ( $productsizes as $size ) {
@@ -323,6 +382,10 @@ function slug_register_thccbd() {
 		);
 	} /** /foreach */
 }
+
+/**
+ * Get THC and CBD info
+ */
 function slug_get_thccbd( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
@@ -335,6 +398,10 @@ function slug_get_thccbd( $object, $field_name, $request ) {
  */
 
 add_action( 'rest_api_init', 'slug_register_topicalinfo' );
+
+/**
+ * Register Topical info
+ */
 function slug_register_topicalinfo() {
 	$topicalinformation = array( '_pricetopical', '_thctopical', '_cbdtopical', '_sizetopical' );
 	foreach ( $topicalinformation as $topicalinfo ) {
@@ -349,6 +416,10 @@ function slug_register_topicalinfo() {
 		);
 	} /** /foreach */
 }
+
+/**
+ * Get Topical info
+ */
 function slug_get_topicalinfo( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
@@ -361,6 +432,10 @@ function slug_get_topicalinfo( $object, $field_name, $request ) {
  */
 
 add_action( 'rest_api_init', 'slug_register_growerinfo' );
+
+/**
+ * Register Grower info
+ */
 function slug_register_growerinfo() {
 	$growerinformation = array( '_priceeach', '_selected_flowers', '_seedcount', '_clonecount' );
 	foreach ( $growerinformation as $growerinfo ) {
@@ -375,6 +450,10 @@ function slug_register_growerinfo() {
 		);
 	} /** /foreach */
 }
+
+/**
+ * Get Grower info
+ */
 function slug_get_growerinfo( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
@@ -388,6 +467,9 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
  */
 if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
+	/**
+	 * Add subtitles to Flowers Custom Post Type
+	 */
 	function subtitles_flowers( $data, $post, $request ) {
 		$_data = $data->data;
 		$_data['subtitle'] = get_the_subtitle( $post->ID );
@@ -396,6 +478,9 @@ if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_o
 	}
 	add_filter( 'rest_prepare_flowers', 'subtitles_flowers', 10, 3 );
 
+	/**
+	 * Add subtitles to Concentrates Custom Post Type
+	 */
 	function subtitles_concentrates( $data, $post, $request ) {
 		$_data = $data->data;
 		$_data['subtitle'] = get_the_subtitle( $post->ID );
@@ -404,6 +489,9 @@ if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_o
 	}
 	add_filter( 'rest_prepare_concentrates', 'subtitles_concentrates', 10, 3 );
 
+	/**
+	 * Add subtitles to Edibles Custom Post Type
+	 */
 	function subtitles_edibles( $data, $post, $request ) {
 		$_data = $data->data;
 		$_data['subtitle'] = get_the_subtitle( $post->ID );
@@ -412,6 +500,9 @@ if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_o
 	}
 	add_filter( 'rest_prepare_edibles', 'subtitles_edibles', 10, 3 );
 
+	/**
+	 * Add subtitles to Pre-Rolls Custom Post Type
+	 */
 	function subtitles_prerolls( $data, $post, $request ) {
 		$_data = $data->data;
 		$_data['subtitle'] = get_the_subtitle( $post->ID );
@@ -420,11 +511,11 @@ if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_o
 	}
 	add_filter( 'rest_prepare_prerolls', 'subtitles_prerolls', 10, 3 );
 
-/**
- * Topicals subtitles
- *
- * @since    1.4.0
- */
+	/**
+	 * Add subtitles to Topicals Custom Post Type
+	 *
+	 * @since    1.4.0
+	 */
 	function subtitles_topicals( $data, $post, $request ) {
 		$_data = $data->data;
 		$_data['subtitle'] = get_the_subtitle( $post->ID );
@@ -433,11 +524,11 @@ if ( in_array( 'subtitles/subtitles.php', apply_filters( 'active_plugins', get_o
 	}
 	add_filter( 'rest_prepare_topicals', 'subtitles_topicals', 10, 3 );
 
-/**
- * Growers subtitles
- *
- * @since    1.7.0
- */
+	/**
+	 * Add subtitles to Growers Custom Post Type
+	 *
+	 * @since    1.7.0
+	 */
 	function subtitles_growers( $data, $post, $request ) {
 		$_data = $data->data;
 		$_data['subtitle'] = get_the_subtitle( $post->ID );

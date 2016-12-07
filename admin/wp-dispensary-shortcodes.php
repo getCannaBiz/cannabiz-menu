@@ -30,7 +30,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'name'		=> 'show',
 			'info'		=> 'show',
 			'title'		=> 'Flowers',
-			'category'	=> ''
+			'category'	=> '',
 		),
 		$atts
 	) );
@@ -70,7 +70,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
-		if ( $wp_dispensary_options['wpd_cost_phrase'] == '' ) {
+		if ( '' === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
 			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
@@ -162,7 +162,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'LTL' => '&#76;&#116;',
 			'LVL' => '&#76;&#115;',
 			'LYD' => '&#1604;.&#1583;', // ?
-			'MAD' => '&#1583;.&#1605;.', //?
+			'MAD' => '&#1583;.&#1605;.', // ?
 			'MDL' => '&#76;',
 			'MGA' => '&#65;&#114;', // ?
 			'MKD' => '&#1076;&#1077;&#1085;',
@@ -237,9 +237,9 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'ZMK' => '&#90;&#75;', // ?
 			'ZWL' => '&#90;&#36;',
 		);
-		
-		if ( '' == $priceHalfGram && '' == $priceEighth && '' == $priceQuarter && '' == $priceHalfOunce && '' == $priceOunce ) {
-			$pricing =  $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true ) . ' per gram';
+
+		if ( '' === $priceHalfGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+			$pricing = $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true ) . ' per gram';
 		} else {
 			$pricing = '';
 		}
@@ -270,13 +270,13 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 		/** Check shortcode options input by user */
 
-		if ( $name == "show" ) {
+		if ( 'show' === $name) {
 			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
 		}
 
-		if ( $info == "show" ) {
+		if ( 'show' === $info ) {
 			if ( empty( $pricing ) ) {
 				$showinfo = '<span class="wpd-productinfo"><strong>'. $wpd_cost_phrase .':</strong> ' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
 			} else {
@@ -292,7 +292,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 	endwhile;
 
-	wp_reset_query();
+	wp_reset_postdata();
 
 	return $wpdposts . '</div>';
 
@@ -430,7 +430,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'LTL' => '&#76;&#116;',
 			'LVL' => '&#76;&#115;',
 			'LYD' => '&#1604;.&#1583;', // ?
-			'MAD' => '&#1583;.&#1605;.', //?
+			'MAD' => '&#1583;.&#1605;.', // ?
 			'MDL' => '&#76;',
 			'MGA' => '&#65;&#114;', // ?
 			'MKD' => '&#1076;&#1077;&#1085;',
@@ -509,34 +509,34 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		/** Get the pricing for Concentrates */
 
 		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			$pricinglow		=  $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true );
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true );
 			$pricingname	= '<strong>1/2 gram: </strong>';
 		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$pricinglow		=  $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true );
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true );
 			$pricingname	= '<strong>1 gram: </strong>';
 		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			$pricinglow		=  $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_eighth', true );
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_eighth', true );
 			$pricingname	= '<strong>1/8 ounce: </strong>';
 		} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			$pricinglow		=  $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_quarter', true );
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_quarter', true );
 			$pricingname	= '<strong>1/4 ounce: </strong>';
 		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$pricinglow		=  $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfounce', true );
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfounce', true );
 			$pricingname	= '<strong>1/2 ounce: </strong>';
 		} elseif ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			$pricinglow		=  $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_founce', true );
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_founce', true );
 			$pricingname	= '<strong>1 ounce: </strong>';
 		}
 
 		/** Check shortcode options input by user */
 
-		if ( $name == "show" ) {
+		if ( 'show' === $name ) {
 			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
 		}
 
-		if ( $info == "show" ) {
+		if ( 'show' === $info ) {
 			$showinfo = '<span class="wpd-productinfo">' . $pricingname . '' . $pricinglow . '</span>';
 		} else {
 			$showinfo = '';
@@ -548,7 +548,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 	endwhile;
 
-	wp_reset_query();
+	wp_reset_postdata();
 
 	return $wpdposts . '</div>';
 
@@ -568,7 +568,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'name'		=> 'show',
 			'info'		=> 'show',
 			'title'		=> 'Edibles',
-			'category'	=> ''
+			'category'	=> '',
 		),
 		$atts
 	) );
@@ -599,7 +599,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
-		if ( $wp_dispensary_options['wpd_cost_phrase'] == '' ) {
+		if ( '' === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
 			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
@@ -691,7 +691,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'LTL' => '&#76;&#116;',
 			'LVL' => '&#76;&#115;',
 			'LYD' => '&#1604;.&#1583;', // ?
-			'MAD' => '&#1583;.&#1605;.', //?
+			'MAD' => '&#1583;.&#1605;.', // ?
 			'MDL' => '&#76;',
 			'MGA' => '&#65;&#114;', // ?
 			'MKD' => '&#1076;&#1077;&#1085;',
@@ -784,13 +784,13 @@ function wpdispensary_edibles_shortcode( $atts ) {
 
 		/** Check shortcode options input by user */
 
-		if ( $name == "show" ) {
+		if ( 'show' === $name ) {
 			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
 		}
 
-		if ( $info == "show" ) {
+		if ( 'show' === $info ) {
 			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcmg . '' . $servingcount . '</span>';
 		} else {
 			$showinfo = '';
@@ -802,7 +802,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 
 	endwhile;
 
-	wp_reset_query();
+	wp_reset_postdata();
 
 	return $wpdposts . '</div>';
 
@@ -821,7 +821,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'class'		=> '',
 			'name'		=> 'show',
 			'info'		=> 'show',
-			'title'		=> 'Pre-rolls'
+			'title'		=> 'Pre-rolls',
 		),
 		$atts
 	) );
@@ -851,7 +851,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
-		if ( $wp_dispensary_options['wpd_cost_phrase'] == '' ) {
+		if ( '' === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
 			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
@@ -943,7 +943,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'LTL' => '&#76;&#116;',
 			'LVL' => '&#76;&#115;',
 			'LYD' => '&#1604;.&#1583;', // ?
-			'MAD' => '&#1583;.&#1605;.', //?
+			'MAD' => '&#1583;.&#1605;.', // ?
 			'MDL' => '&#76;',
 			'MGA' => '&#65;&#114;', // ?
 			'MKD' => '&#1076;&#1077;&#1085;',
@@ -1029,13 +1029,13 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 
 		/** Check shortcode options input by user */
 
-		if ( $name == "show" ) {
+		if ( 'show' === $name ) {
 			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
 		}
 
-		if ( $info == "show" ) {
+		if ( 'show' === $info ) {
 			$showinfo = '<span class="wpd-productinfo">' . $pricingeach . '</span>';
 		} else {
 			$showinfo = '';
@@ -1047,7 +1047,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 
 	endwhile;
 
-	wp_reset_query();
+	wp_reset_postdata();
 
 	return $wpdposts . '</div>';
 
@@ -1068,7 +1068,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'name'		=> 'show',
 			'info'		=> 'show',
 			'title'		=> 'Topicals',
-			'category'	=> ''
+			'category'	=> '',
 		),
 		$atts
 	) );
@@ -1099,7 +1099,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
-		if ( $wp_dispensary_options['wpd_cost_phrase'] == '' ) {
+		if ( '' === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
 			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
@@ -1191,7 +1191,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'LTL' => '&#76;&#116;',
 			'LVL' => '&#76;&#115;',
 			'LYD' => '&#1604;.&#1583;', // ?
-			'MAD' => '&#1583;.&#1605;.', //?
+			'MAD' => '&#1583;.&#1605;.', // ?
 			'MDL' => '&#76;',
 			'MGA' => '&#65;&#114;', // ?
 			'MKD' => '&#1076;&#1077;&#1085;',
@@ -1284,13 +1284,13 @@ function wpdispensary_topicals_shortcode( $atts ) {
 
 		/** Check shortcode options input by user */
 
-		if ( $name == "show" ) {
+		if ( 'show' === $name ) {
 			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
 		}
 
-		if ( $info == "show" ) {
+		if ( 'show' === $info ) {
 			$showinfo = '<span class="wpd-productinfo">' . $topicalprice . '' . $topicalsize . '' . $topicalthc . '' . $topicalcbd . '</span>';
 		} else {
 			$showinfo = '';
@@ -1302,7 +1302,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 
 	endwhile;
 
-	wp_reset_query();
+	wp_reset_postdata();
 
 	return $wpdposts . '</div>';
 
@@ -1323,7 +1323,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'name'		=> 'show',
 			'info'		=> 'show',
 			'title'		=> 'Growers',
-			'category'	=> ''
+			'category'	=> '',
 		),
 		$atts
 	) );
@@ -1354,7 +1354,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
-		if ( $wp_dispensary_options['wpd_cost_phrase'] == '' ) {
+		if ( '' === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
 			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
@@ -1446,7 +1446,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'LTL' => '&#76;&#116;',
 			'LVL' => '&#76;&#115;',
 			'LYD' => '&#1604;.&#1583;', // ?
-			'MAD' => '&#1583;.&#1605;.', //?
+			'MAD' => '&#1583;.&#1605;.', // ?
 			'MDL' => '&#76;',
 			'MGA' => '&#65;&#114;', // ?
 			'MKD' => '&#1076;&#1077;&#1085;',
@@ -1552,13 +1552,13 @@ function wpdispensary_growers_shortcode( $atts ) {
 
 		/** Check shortcode options input by user */
 
-		if ( $name == "show" ) {
+		if ( 'show' === $name ) {
 			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
 		}
 
-		if ( $info == "show" ) {
+		if ( 'show' === $info ) {
 			$showinfo = '<span class="wpd-productinfo">' . $pricingperunit . '' . $wpdseedcount . '' . $wpdclonecount . '</span>';
 		} else {
 			$showinfo = '';
@@ -1570,7 +1570,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 
 	endwhile;
 
-	wp_reset_query();
+	wp_reset_postdata();
 
 	return $wpdposts . '</div>';
 
