@@ -60,8 +60,9 @@ function wpdispensary_thccbd() {
 
 }
 
-/** Save the Metabox Data */
-
+/**
+ * Save the Metabox Data
+ */
 function wpdispensary_save_thccbd_meta( $post_id, $post ) {
 
 	/**
@@ -88,7 +89,7 @@ function wpdispensary_save_thccbd_meta( $post_id, $post ) {
 	/** Add values of $thccbd_meta as custom fields */
 
 	foreach ( $thccbd_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
-		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
 		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
@@ -114,7 +115,6 @@ add_action( 'save_post', 'wpdispensary_save_thccbd_meta', 1, 2 ); // save the cu
  *
  * @since    1.0.0
  */
-
 function add_prices_metaboxes() {
 
 	$screens = array( 'flowers', 'concentrates' );
@@ -134,6 +134,9 @@ function add_prices_metaboxes() {
 
 add_action( 'add_meta_boxes', 'add_prices_metaboxes' );
 
+/**
+ * WP Dispensary Prices
+ */
 function wpdispensary_prices() {
 	global $post;
 
@@ -177,8 +180,9 @@ function wpdispensary_prices() {
 
 }
 
-/** Save the Metabox Data */
-
+/**
+ * Save the Metabox Data
+ */
 function wpdispensary_save_prices_meta( $post_id, $post ) {
 
 	/**
@@ -209,7 +213,7 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	/** Add values of $prices_meta as custom fields */
 
 	foreach ( $prices_meta as $key => $value ) { /** Cycle through the $prices_meta array! */
-		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
 		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
@@ -225,7 +229,7 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** save the custom fields */
+add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** Save the custom fields */
 
 /**
  * Pre-Roll Flower Type metabox
@@ -234,7 +238,6 @@ add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** save the c
  *
  * @since    1.0.0
  */
-
 class WPDispensary_Prerolls {
 	var $FOR_POST_TYPE = 'prerolls';
 	var $SELECT_POST_TYPE = 'flowers';
@@ -258,6 +261,9 @@ class WPDispensary_Prerolls {
 		$this->box_label    = __( 'Pre-roll Strain', 'wp-dispensary' );
 		$this->field_label  = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
 	}
+	/**
+	 * Add meta boxes
+	 */
 	function add_meta_boxes() {
 		add_meta_box(
 			$this->box_id,
@@ -281,8 +287,11 @@ class WPDispensary_Prerolls {
 		));
 		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = $save_hierarchical;
 	}
+	/**
+	 * Save post
+	 */
 	function save_post( $post_id, $post ) {
-		if ( $post->post_type == $this->FOR_POST_TYPE && isset( $_POST[ $this->field_name ] ) ) {
+		if ( $post->post_type === $this->FOR_POST_TYPE && isset( $_POST[ $this->field_name ] ) ) {
 			$prerollflower = sanitize_text_field( $_POST['selected_flowers'] );
 			update_post_meta( $post_id, $this->meta_key, $prerollflower );
 		}
@@ -297,7 +306,6 @@ new WPDispensary_Prerolls();
  *
  * @since    1.7.0
  */
-
 class WPDispensary_Growers {
 	var $FOR_POST_TYPE = 'growers';
 	var $SELECT_POST_TYPE = 'flowers';
@@ -321,6 +329,9 @@ class WPDispensary_Growers {
 		$this->box_label    = __( 'Flower Strain', 'wp-dispensary' );
 		$this->field_label  = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
 	}
+	/**
+	 * Add meta boxes
+	 */
 	function add_meta_boxes() {
 		add_meta_box(
 			$this->box_id,
@@ -344,8 +355,11 @@ class WPDispensary_Growers {
 		));
 		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = $save_hierarchical;
 	}
+	/**
+	 * Save post
+	 */
 	function save_post( $post_id, $post ) {
-		if ( $post->post_type == $this->FOR_POST_TYPE && isset( $_POST[ $this->field_name ] ) ) {
+		if ( $post->post_type === $this->FOR_POST_TYPE && isset( $_POST[ $this->field_name ] ) ) {
 			$growerflower = sanitize_text_field( $_POST['selected_flowers'] );
 			update_post_meta( $post_id, $this->meta_key, $growerflower );
 		}
@@ -361,7 +375,6 @@ new WPDispensary_Growers();
  *
  * @since    1.0.0
  */
-
 function add_singleprices_metaboxes() {
 
 	$screens = array( 'prerolls', 'edibles', 'growers' );
@@ -381,6 +394,9 @@ function add_singleprices_metaboxes() {
 
 add_action( 'add_meta_boxes', 'add_singleprices_metaboxes' );
 
+/**
+ * Single Prices
+ */
 function wpdispensary_singleprices() {
 	global $post;
 
@@ -397,8 +413,9 @@ function wpdispensary_singleprices() {
 
 }
 
-/** Save the Metabox Data */
-
+/**
+ * Save the Metabox Data
+ */
 function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 
 	/**
@@ -424,7 +441,7 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 	/** Add values of $prices_meta as custom fields */
 
 	foreach ( $prices_meta as $key => $value ) { /** Cycle through the $prices_meta array! */
-		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
 		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
@@ -440,7 +457,7 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** save the custom fields */
+add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** Save the custom fields */
 
 
 /**
@@ -451,7 +468,6 @@ add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** save
  *
  * @since    1.7.0
  */
-
 function add_seedcount_metaboxes() {
 
 	$screens = array( 'growers' );
@@ -471,6 +487,9 @@ function add_seedcount_metaboxes() {
 
 add_action( 'add_meta_boxes', 'add_seedcount_metaboxes' );
 
+/**
+ * Seed Count
+ */
 function wpdispensary_seedcount() {
 	global $post;
 
@@ -487,8 +506,9 @@ function wpdispensary_seedcount() {
 
 }
 
-/** Save the Metabox Data */
-
+/**
+ * Save the Metabox Data
+ */
 function wpdispensary_save_seedcount_meta( $post_id, $post ) {
 
 	/**
@@ -514,7 +534,7 @@ function wpdispensary_save_seedcount_meta( $post_id, $post ) {
 	/** Add values of $seedcount as custom fields */
 
 	foreach ( $seedcount as $key => $value ) { /** Cycle through the $seedcount array! */
-		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
 		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
@@ -530,7 +550,7 @@ function wpdispensary_save_seedcount_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_seedcount_meta', 1, 2 ); /** save the custom fields */
+add_action( 'save_post', 'wpdispensary_save_seedcount_meta', 1, 2 ); /** Save the custom fields */
 
 
 /**
@@ -541,7 +561,6 @@ add_action( 'save_post', 'wpdispensary_save_seedcount_meta', 1, 2 ); /** save th
  *
  * @since    1.7.0
  */
-
 function add_clonecount_metaboxes() {
 
 	$screens = array( 'growers' );
@@ -561,6 +580,9 @@ function add_clonecount_metaboxes() {
 
 add_action( 'add_meta_boxes', 'add_clonecount_metaboxes' );
 
+/**
+ * Clone count
+ */
 function wpdispensary_clonecount() {
 	global $post;
 
@@ -577,8 +599,9 @@ function wpdispensary_clonecount() {
 
 }
 
-/** Save the Metabox Data */
-
+/**
+ * Save the Metabox Data
+ */
 function wpdispensary_save_clonecount_meta( $post_id, $post ) {
 
 	/**
@@ -604,7 +627,7 @@ function wpdispensary_save_clonecount_meta( $post_id, $post ) {
 	/** Add values of $clonecount as custom fields */
 
 	foreach ( $clonecount as $key => $value ) { /** Cycle through the $clonecount array! */
-		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
 		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
@@ -620,7 +643,7 @@ function wpdispensary_save_clonecount_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_clonecount_meta', 1, 2 ); /** save the custom fields */
+add_action( 'save_post', 'wpdispensary_save_clonecount_meta', 1, 2 ); /** Save the custom fields */
 
 
 /**
@@ -630,7 +653,6 @@ add_action( 'save_post', 'wpdispensary_save_clonecount_meta', 1, 2 ); /** save t
  *
  * @since    1.0.0
  */
-
 function add_thc_cbd_mg_metaboxes() {
 
 	$screens = array( 'edibles' );
@@ -650,6 +672,9 @@ function add_thc_cbd_mg_metaboxes() {
 
 add_action( 'add_meta_boxes', 'add_thc_cbd_mg_metaboxes' );
 
+/**
+ * THC and CBD mg
+ */
 function wpdispensary_thc_cbd_mg() {
 	global $post;
 
@@ -672,8 +697,9 @@ function wpdispensary_thc_cbd_mg() {
 
 }
 
-/** Save the Metabox Data */
-
+/**
+ * Save the Metabox Data
+ */
 function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 
 	/**
@@ -701,7 +727,7 @@ function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 	/** Add values of $thccbdmg_meta as custom fields */
 
 	foreach ( $thc_cbd_mg_meta as $key => $value ) { /** Cycle through the $thc_cbd_mg_meta array! */
-		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
 		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
@@ -717,7 +743,7 @@ function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_thc_cbd_mg_meta', 1, 2 ); /** save the custom fields */
+add_action( 'save_post', 'wpdispensary_save_thc_cbd_mg_meta', 1, 2 ); /** Save the custom fields */
 
 
 /**
@@ -774,8 +800,9 @@ function wpdispensary_thccbdtopical() {
 
 }
 
-/** Save the Metabox Data */
-
+/**
+ * Save the Metabox Data
+ */
 function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 
 	/**
@@ -804,7 +831,7 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 	/** Add values of $thcmg_meta as custom fields */
 
 	foreach ( $thcmgtopical_meta as $key => $value ) { /** Cycle through the $thcmg_meta array! */
-		if ( $post->post_type == 'revision' ) { /** Don't store custom data twice */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
 		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
