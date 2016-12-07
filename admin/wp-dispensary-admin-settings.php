@@ -30,7 +30,7 @@ class WPDispensarySettings {
 			'manage_options', /** Paramater: capability */
 			'wpd-settings', /** Paramater: menu_slug */
 			array( $this, 'wp_dispensary_create_admin_page' ), /** Paramater: function */
-			plugin_dir_url( __FILE__ ) . ( 'images/menu-icon.png' ), /** Paramater: icon_url */
+			'none', /** Paramater: icon_url */
 			100 /** Paramater: position */
 		);
 	}
