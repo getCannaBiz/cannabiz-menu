@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -43,9 +42,9 @@ class WP_Dispensary_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @since 1.0.0
+	 * @param string $plugin_name   The name of the plugin.
+	 * @param string $version       The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -99,5 +98,4 @@ class WP_Dispensary_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-dispensary-public.js', array( 'jquery' ), $this->version, false );
 
 	}
-
 }
