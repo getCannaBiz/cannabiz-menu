@@ -25,8 +25,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
 		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		$wpd_currency = $wp_dispensary_options['wpd_currency'];
 		if ( '' === $wp_dispensary_options['wpd_cost_phrase'] || 'Price' === $wp_dispensary_options['wpd_cost_phrase'] ) {
+		if ( null === $wp_dispensary_options['wpd_currency'] ) {
+			$wpd_currency = 'USD';
+		} else {
+			$wpd_currency = $wp_dispensary_options['wpd_currency'];
+		}
 			$wpd_cost_phrase = 'Pricing';
 		} else {
 			$wpd_cost_phrase = 'Donation' ;
