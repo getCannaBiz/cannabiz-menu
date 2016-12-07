@@ -27,9 +27,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		$wpd_currency = $wp_dispensary_options['wpd_currency']; // currencycode
 		if ( $wp_dispensary_options['wpd_cost_phrase'] == '' || $wp_dispensary_options['wpd_cost_phrase'] == 'Price' ) {
-			$wpd_cost_phrase = esc_html_e( 'Pricing', 'wp-dispensary' );
+			$wpd_cost_phrase = 'Pricing';
 		} else {
-			$wpd_cost_phrase = esc_html_e( 'Donation', 'wp-dispensary' ); // costphrase
+			$wpd_cost_phrase = 'Donation' ; // costphrase
 		}
 
 		$currency_symbols = array(
@@ -200,49 +200,49 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Setting up WP Dispensary menu item data
 		 */
 		if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
-			$wpdaroma = '<tr><td><span>'. esc_html_e( 'Aromas', 'wp-dispensary' ) .':</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
+			$wpdaroma = '<tr><td><span>Aromas:</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdaroma = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'flavor', true ) ) {
-			$wpdflavor = '<tr><td><span>'. esc_html_e( 'Flavors', 'wp-dispensary' ) .':</span></td><td>' . get_the_term_list( $post->ID, 'flavor', '', ', ', '' ) . '</td></tr>';
+			$wpdflavor = '<tr><td><span>Flavors:</span></td><td>' . get_the_term_list( $post->ID, 'flavor', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdflavor = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'effect', true ) ) {
-			$wpdeffect = '<tr><td><span>'. esc_html_e( 'Effects', 'wp-dispensary' ) .':</span></td><td>' . get_the_term_list( $post->ID, 'effect', '', ', ', '' ) . '</td></tr>';
+			$wpdeffect = '<tr><td><span>Effects:</span></td><td>' . get_the_term_list( $post->ID, 'effect', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdeffect = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'symptom', true ) ) {
-			$wpdsymptom = '<tr><td><span>'. esc_html_e( 'Symptoms', 'wp-dispensary' ) .':</span></td><td>' . get_the_term_list( $post->ID, 'symptom', '', ', ', '' ) . '</td></tr>';
+			$wpdsymptom = '<tr><td><span>Symptoms:</span></td><td>' . get_the_term_list( $post->ID, 'symptom', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdsymptom = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'condition', true ) ) {
-			$wpdcondition = '<tr><td><span>'. esc_html_e( 'Conditions', 'wp-dispensary' ) .':</span></td><td>' . get_the_term_list( $post->ID, 'condition', '', ', ', '' ) . '</td></tr>';
+			$wpdcondition = '<tr><td><span>Conditions:</span></td><td>' . get_the_term_list( $post->ID, 'condition', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdcondition = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'ingredients', true ) ) {
-			$wpdingredients = '<tr><td><span>'. esc_html_e( 'Ingredients', 'wp-dispensary' ) .':</span></td><td>' . get_the_term_list( $post->ID, 'ingredients', '', ', ', '' ) . '</td></tr>';
+			$wpdingredients = '<tr><td><span>Ingredients:</span></td><td>' . get_the_term_list( $post->ID, 'ingredients', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdingredients = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
-			$wpdthc = '<tr><td><span>'. esc_html_e( 'THC', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_thc', true ) .'%</td></tr>';
+			$wpdthc = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thc', true ) .'%</td></tr>';
 		} else {
 			$wpdthc = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
-			$wpdcbd = '<tr><td><span>'. esc_html_e( 'CBD', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</td></tr>';
+			$wpdcbd = '<tr><td><span>CBD:</span></td><td>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</td></tr>';
 		} else {
 			$wpdcbd = '';
 		}
@@ -254,57 +254,57 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( get_post_meta( get_the_ID(), '_cbdmg', true ) ) {
-			$wpdcbdmg = '<tr><td><span>'. esc_html_e( 'CBD mg per serving', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_cbdmg', true ) .'</td></tr>';
+			$wpdcbdmg = '<tr><td><span>CBD mg per serving:</span></td><td>' . get_post_meta( get_the_id(), '_cbdmg', true ) .'</td></tr>';
 		} else {
 			$wpdcbdmg = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
-			$wpdservings = '<tr><td><span>'. esc_html_e( 'Servings', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_thccbdservings', true ) .'</td></tr>';
+			$wpdservings = '<tr><td><span>Servings:</span></td><td>' . get_post_meta( get_the_id(), '_thccbdservings', true ) .'</td></tr>';
 		} else {
 			$wpdservings = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
-			$wpdthctopical = '<tr><td><span>'. esc_html_e( 'THC', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_thctopical', true ) .'%</td></tr>';
+			$wpdthctopical = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thctopical', true ) .'%</td></tr>';
 		} else {
 			$wpdthctopical = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
-			$wpdcbdtopical = '<tr><td><span>'. esc_html_e( 'CBD', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_cbdtopical', true ) .'%</td></tr>';
+			$wpdcbdtopical = '<tr><td><span>CBD:</span></td><td>' . get_post_meta( get_the_id(), '_cbdtopical', true ) .'%</td></tr>';
 		} else {
 			$wpdcbdtopical = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
-			$wpdsizetopical = '<tr><td><span>'. esc_html_e( 'Size', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_sizetopical', true ) .' (oz)</td></tr>';
+			$wpdsizetopical = '<tr><td><span>Size:</span></td><td>' . get_post_meta( get_the_id(), '_sizetopical', true ) .' (oz)</td></tr>';
 		} else {
 			$wpdsizetopical = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
-			$wpdseedcount = '<tr><td><span>'. esc_html_e( 'Seeds per unit', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) .'</td></tr>';
+			$wpdseedcount = '<tr><td><span>Seeds per unit:</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) .'</td></tr>';
 		} else {
 			$wpdseedcount = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
-			$wpdclonecount = '<tr><td><span>'. esc_html_e( 'Clones per unit', 'wp-dispensary' ) .':</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) .'</td></tr>';
+			$wpdclonecount = '<tr><td><span>Clones per unit:</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) .'</td></tr>';
 		} else {
 			$wpdclonecount = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
 			$prerollflower = get_post_meta( get_the_id(), '_selected_flowers', true );
-			$wpdpreroll = '<tr><td><span>'. esc_html_e( 'Flower', 'wp-dispensary' ) .':</span></td><td><a href='. get_permalink( $prerollflower ) .'>'. get_the_title( $prerollflower ) .'</a></td></tr>';
+			$wpdpreroll = '<tr><td><span>Flower:</span></td><td><a href='. get_permalink( $prerollflower ) .'>'. get_the_title( $prerollflower ) .'</a></td></tr>';
 		} else {
 			$wpdpreroll = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
 			$growerflower = get_post_meta( get_the_id(), '_selected_flowers', true );
-			$wpdgrower = '<tr><td><span>'. esc_html_e( 'Flower', 'wp-dispensary' ) .':</span></td><td><a href='. get_permalink( $growerflower ) .'>'. get_the_title( $growerflower ) .'</a></td></tr>';
+			$wpdgrower = '<tr><td><span>Flower:</span></td><td><a href='. get_permalink( $growerflower ) .'>'. get_the_title( $growerflower ) .'</a></td></tr>';
 		} else {
 			$wpdgrower = '';
 		}
@@ -313,19 +313,19 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Setting up WP Dispensary menu pricing data
 		 */
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceeach = '<tr class="priceeach"><td><span>'. esc_html_e( 'Price each', 'wp-dispensary' ) .':</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			$wpdpriceeach = '<tr class="priceeach"><td><span>Price Each:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 		} else {
 			$wpdpriceeach = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceperunit = '<tr class="priceeach"><td><span>'. esc_html_e( 'Price per unit', 'wp-dispensary' ) .':</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			$wpdpriceperunit = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 		} else {
 			$wpdpriceperunit = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
-			$wpdpricetopical = '<tr class="priceeach"><td><span>'. esc_html_e( 'Price per unit', 'wp-dispensary' ) .':</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
+			$wpdpricetopical = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
 		} else {
 			$wpdpricetopical = '';
 		}
@@ -385,7 +385,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		if ( ! $wpd_hide_details == 'wpd_hide_details' ) {
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
-				$content .= '<table class="wpdispensary-table single"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' '. esc_html_e( 'Details', 'wp-dispensary' ) .'</td></tr>';
+				$content .= '<table class="wpdispensary-table single"><tr><td class="wpdispensary-title" colspan="6">' .  $post_type->labels->singular_name . ' Details</td></tr>';
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
