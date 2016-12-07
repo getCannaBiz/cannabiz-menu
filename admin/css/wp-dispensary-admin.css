@@ -9,7 +9,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/css
  */
- 
+
 #wpdispensary_prices .inside {
     overflow: auto;
 }
@@ -44,6 +44,17 @@
     content: "";
     height: 36px;
     padding-right: 36px;
+}
+
+.menu-top .toplevel_page_wpd-settings .wp-menu-image.dashicons-before {
+    background: url(../images/menu-icon.png) no-repeat center center;
+    opacity: 0.6;
+}
+
+#toplevel_page_wpd-settings:hover .wp-menu-image.dashicons-before,
+.current.menu-top .toplevel_page_wpd-settings .wp-menu-image.dashicons-before {
+    background: url(../images/menu-icon.png) no-repeat center center;
+    opacity: 1;
 }
 
 .wpd-settings-wrap {
