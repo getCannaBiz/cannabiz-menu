@@ -172,33 +172,33 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
       <p>
-          <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+          <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
           <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo $instance['title']; ?>" />
       </p>
 
       <p>
-          <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of flowers to show:', 'wp-dispensary' ); ?></label>
+          <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_html_e( 'Amount of flowers to show:', 'wp-dispensary' ); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
       </p>
 
     <p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
     </p>
 
     <p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
   	</p>
 
     <p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['flowername'], 'on' ); ?> id="<?php echo $this->get_field_id('flowername'); ?>" name="<?php echo $this->get_field_name('flowername'); ?>" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'flowername' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower name?', 'wp-dispensary' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'flowername' ) ); ?>"><?php esc_html_e( 'Display flower name?', 'wp-dispensary' ); ?></label>
     </p>
 
     <p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['flowercategory'], 'on' ); ?> id="<?php echo $this->get_field_id('flowercategory'); ?>" name="<?php echo $this->get_field_name('flowercategory'); ?>" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'flowercategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower category?', 'wp-dispensary' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'flowercategory' ) ); ?>"><?php esc_html_e( 'Display flower category?', 'wp-dispensary' ); ?></label>
     </p>
 
 	<?php
