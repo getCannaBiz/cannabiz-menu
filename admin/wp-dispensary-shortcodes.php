@@ -274,7 +274,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 		/** Check shortcode options input by user */
 
-		if ( 'show' === $name) {
+		if ( 'show' === $name ) {
 			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
