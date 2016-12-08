@@ -2,8 +2,8 @@
 Contributors: deviodigital
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis, weed, pot, medical marijuana
 Requires at least: 3.0.1
-Tested up to: 4.6.1
-Stable tag: 1.9
+Tested up to: 4.7
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,14 @@ It has a long list of options built in for customization to fit your business br
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.9.1 =
+* Added custom Cost Phrase option to the WPD Settings page in `admin/wp-dispensary-admin-settings.php`
+* Added custom Cost Phrase to the data output Pricing table in `admin/wp-dispensary-data-output.php`
+* Added custom Cost Phrase to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated default Currency Code output to the data output Pricing table in `admin/wp-dispensary-data-output.php`
+* Updated default Currency Code output to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
 
 = 1.9 =
 * Added custom Currency Code to the data output tables in `admin/wp-dispensary-data-output.php`

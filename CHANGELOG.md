@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.9.1
+* Added custom Cost Phrase option to the WPD Settings page in `admin/wp-dispensary-admin-settings.php`
+* Added custom Cost Phrase to the data output Pricing table in `admin/wp-dispensary-data-output.php`
+* Added custom Cost Phrase to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated default Currency Code output to the data output Pricing table in `admin/wp-dispensary-data-output.php`
+* Updated default Currency Code output to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
+
 ### 1.9
 * Added custom Currency Code to the data output tables in `admin/wp-dispensary-data-output.php`
 * Added custom Currency Code to shortcodes in `admin/wp-dispensary-shortcodes.php`
