@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.9.2
+* Fixed error that caused the Widgets page in dashboards to not show correctly in `admin/post-types/wp-dispensary-widgets.php`
+
 ### 1.9.1
 * Added custom Cost Phrase option to the WPD Settings page in `admin/wp-dispensary-admin-settings.php`
 * Added custom Cost Phrase to the data output Pricing table in `admin/wp-dispensary-data-output.php`
