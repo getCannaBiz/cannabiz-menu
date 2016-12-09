@@ -691,7 +691,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 					}
 					if ( 'on' === $instance['prerollflower'] ) {
-						$prerollflower = get_post_meta( _the_id(), '_selected_flowers', true );
+						$prerollflower = get_post_meta( get_the_id(), '_selected_flowers', true );
 						echo "<span class='wpdispensary-widget-categories'>";
 						echo "<a href='" . get_permalink( $prerollflower ) . "'>" . get_the_title( $prerollflower ) . "</a>";
 						echo '</span>';
@@ -1091,7 +1091,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 					}
 					if ( 'on' === $instance['growerflower'] ) {
-						$growerflower = get_post_meta( _the_id(), '_selected_flowers', true );
+						$growerflower = get_post_meta( get_the_id(), '_selected_flowers', true );
 						echo "<span class='wpdispensary-widget-categories'>";
 						echo "<a href='" . get_permalink( $growerflower ) . "'>" . get_the_title( $growerflower ) . "</a>";
 						echo '</span>';
