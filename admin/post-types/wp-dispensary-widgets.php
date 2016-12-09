@@ -72,7 +72,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			echo "<ul class='wpdispensary-list'>";
 		}
 
-		if ( $instance['order'] === 'on' ) {
+		if ( 'on' === $instance['order'] ) {
 			$randorder = 'rand';
 		} else {
 			$randorder = '';
@@ -93,14 +93,14 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+					echo "<a href='" . get_permalink( $post->ID ) . "'>";
 						the_post_thumbnail( 'wpdispensary-widget' );
 					echo '</a>';
 				if ( 'on' === $instance['flowername'] ) {
-					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 				}
 				if ( 'on' === $instance['flowercategory'] ) {
-					echo "<span class='wpdispensary-widget-categories'>". get_the_term_list( $post->ID, 'flowers_category' ) ."</a></span>";
+					echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'flowers_category' ) . "</a></span>";
 				}
 				echo '</div>';
 
@@ -108,7 +108,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
 				echo '<li>';
 				if ( 'on' === $instance['flowername'] ) {
-					echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+					echo "<a href='" . get_permalink( $post->ID ) . "' class='wpdispensary-widget-link'>" . get_the_title( $post->ID ) . "</a>";
 				}
 				echo '</li>';
 
@@ -132,8 +132,8 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::update
-	 * @param       array $new_instance The updated options
-	 * @param       array $old_instance The old options
+	 * @param       array $new_instance The updated options.
+	 * @param       array $old_instance The old options.
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -150,15 +150,15 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	}
 
 
-/**
- * Display widget form on dashboard
- *
- * @access      public
- * @since       1.0.0
- * @see         WP_Widget::form
- * @param       array $instance A given widget instance
- * @return      void
- */
+	/**
+	 * Display widget form on dashboard
+	 *
+	 * @access      public
+	 * @since       1.0.0
+	 * @see         WP_Widget::form
+	 * @param       array $instance A given widget instance.
+	 * @return      void
+	 */
 	public function form( $instance ) {
 	    $defaults = array(
 	        'title'    			=> 'Recent Flowers',
@@ -182,22 +182,22 @@ class wpdispensary_flowers_widget extends WP_Widget {
       </p>
 
     <p>
-			<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" />
+			<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>" />
 			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
     </p>
 
     <p>
-			<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" />
+			<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id( 'featuredimage' ); ?>" name="<?php echo $this->get_field_name( 'featuredimage' ); ?>" />
 			<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
   	</p>
 
     <p>
-			<input class="checkbox" type="checkbox" <?php checked( $instance['flowername'], 'on' ); ?> id="<?php echo $this->get_field_id('flowername'); ?>" name="<?php echo $this->get_field_name('flowername'); ?>" />
+			<input class="checkbox" type="checkbox" <?php checked( $instance['flowername'], 'on' ); ?> id="<?php echo $this->get_field_id( 'flowername' ); ?>" name="<?php echo $this->get_field_name( 'flowername' ); ?>" />
 			<label for="<?php echo esc_attr( $this->get_field_id( 'flowername' ) ); ?>"><?php esc_html_e( 'Display flower name?', 'wp-dispensary' ); ?></label>
     </p>
 
     <p>
-			<input class="checkbox" type="checkbox" <?php checked( $instance['flowercategory'], 'on' ); ?> id="<?php echo $this->get_field_id('flowercategory'); ?>" name="<?php echo $this->get_field_name('flowercategory'); ?>" />
+			<input class="checkbox" type="checkbox" <?php checked( $instance['flowercategory'], 'on' ); ?> id="<?php echo $this->get_field_id( 'flowercategory' ); ?>" name="<?php echo $this->get_field_name( 'flowercategory' ); ?>" />
 			<label for="<?php echo esc_attr( $this->get_field_id( 'flowercategory' ) ); ?>"><?php esc_html_e( 'Display flower category?', 'wp-dispensary' ); ?></label>
     </p>
 
@@ -235,7 +235,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Concentrates', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Concentrates', 'wp-dispensary' )
+	            'description'  => __( 'Your dispensaries most recent Concentrates', 'wp-dispensary' ),
 	        )
 	    );
 	}
@@ -246,13 +246,13 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::widget
-	 * @param       array $args Arguments to pass to the widget
-	 * @param       array $instance A given widget instance
+	 * @param       array $args Arguments to pass to the widget.
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function widget( $args, $instance ) {
 		if ( ! isset( $args['id'] ) ) {
-	      $args['id'] = 'wpdispensary_concentrates_widget';
+			$args['id'] = 'wpdispensary_concentrates_widget';
 		}
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
@@ -290,14 +290,14 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+					echo "<a href='" . get_permalink( $post->ID ) . "'>";
 						the_post_thumbnail( 'wpdispensary-widget' );
 					echo '</a>';
 				if ( 'on' === $instance['concentratename'] ) {
-					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 				}
 				if ( 'on' === $instance['concentratecategory'] ) {
-					echo "<span class='wpdispensary-widget-categories'>". get_the_term_list( $post->ID, 'concentrates_category' ) ."</a></span>";
+					echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'concentrates_category' ) . "</a></span>";
 				}
 				echo '</div>';
 
@@ -305,7 +305,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
 				echo '<li>';
 				if ( 'on' === $instance['concentratename'] ) {
-					echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+					echo "<a href='" . get_permalink( $post->ID ) . "' class='wpdispensary-widget-link'>" . get_the_title( $post->ID ) . "</a>";
 				}
 				echo '</li>';
 
@@ -328,8 +328,8 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::update
-	 * @param       array $new_instance The updated options
-	 * @param       array $old_instance The old options
+	 * @param       array $new_instance The updated options.
+	 * @param       array $old_instance The old options.
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -352,7 +352,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::form
-	 * @param       array $instance A given widget instance
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function form( $instance ) {
@@ -378,22 +378,22 @@ class wpdispensary_concentrates_widget extends WP_Widget {
         </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
         </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id( 'featuredimage' ); ?>" name="<?php echo $this->get_field_name( 'featuredimage' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['concentratename'], 'on' ); ?> id="<?php echo $this->get_field_id('concentratename'); ?>" name="<?php echo $this->get_field_name('concentratename'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['concentratename'], 'on' ); ?> id="<?php echo $this->get_field_id( 'concentratename' ); ?>" name="<?php echo $this->get_field_name( 'concentratename' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'concentratename' ) ); ?>"><?php esc_html_e( 'Display concentrate name?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['concentratecategory'], 'on' ); ?> id="<?php echo $this->get_field_id('concentratecategory'); ?>" name="<?php echo $this->get_field_name('concentratecategory'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['concentratecategory'], 'on' ); ?> id="<?php echo $this->get_field_id( 'concentratecategory' ); ?>" name="<?php echo $this->get_field_name( 'concentratecategory' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'concentratecategory' ) ); ?>"><?php esc_html_e( 'Display concentrate category?', 'wp-dispensary' ); ?></label>
       </p>
 
@@ -411,7 +411,6 @@ function wpdispensary_concentrates_register_widget() {
 	register_widget( 'wpdispensary_concentrates_widget' );
 }
 add_action( 'widgets_init', 'wpdispensary_concentrates_register_widget' );
-
 
 /**
  * WP Dispensary Edibles Widget
@@ -443,34 +442,34 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::widget
-	 * @param       array $args Arguments to pass to the widget
-	 * @param       array $instance A given widget instance
+	 * @param       array $args Arguments to pass to the widget.
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function widget( $args, $instance ) {
-	    if ( ! isset( $args['id'] ) ) {
-	        $args['id'] = 'wpdispensary_edibles_widget';
-	    }
+		if ( ! isset( $args['id'] ) ) {
+		    $args['id'] = 'wpdispensary_edibles_widget';
+		}
 
-	    $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
+		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-	    echo $args['before_widget'];
+		echo $args['before_widget'];
 
-	    if ( $title ) {
-	        echo $args['before_title'] . $title . $args['after_title'];
-	    }
+		if ( $title ) {
+		    echo $args['before_title'] . $title . $args['after_title'];
+		}
 
-	    do_action( 'wpdispensary_edibles_before_widget' );
+		do_action( 'wpdispensary_edibles_before_widget' );
 
-			if ( ! 'on' === $instance['featuredimage'] ) {
-				echo "<ul class='wpdispensary-list'>";
-			}
+		if ( ! 'on' === $instance['featuredimage'] ) {
+			echo "<ul class='wpdispensary-list'>";
+		}
 
-			if ( 'on' === $instance['order'] ) {
-				$randorder = 'rand';
-			} else {
-				$randorder = '';
-			}
+		if ( 'on' === $instance['order'] ) {
+			$randorder = 'rand';
+		} else {
+			$randorder = '';
+		}
 
 			$wpdispensary_edibles_widget = new WP_Query(
 				array(
@@ -487,14 +486,14 @@ class wpdispensary_edibles_widget extends WP_Widget {
 				if ( 'on' === $instance['featuredimage'] ) {
 
 					echo "<div class='wpdispensary-widget'>";
-					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+					echo "<a href='" . get_permalink( $post->ID ) . "'>";
 						the_post_thumbnail( 'wpdispensary-widget' );
 					echo '</a>';
 					if ( 'on' === $instance['ediblename'] ) {
-						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 					}
 					if ( 'on' === $instance['ediblecategory'] ) {
-						echo "<span class='wpdispensary-widget-categories'>". get_the_term_list( $post->ID, 'edibles_category' ) ."</a></span>";
+						echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'edibles_category' ) . "</a></span>";
 					}
 					echo '</div>';
 
@@ -502,13 +501,13 @@ class wpdispensary_edibles_widget extends WP_Widget {
 
 					echo '<li>';
 					if ( 'on' === $instance['ediblename'] ) {
-						echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+						echo "<a href='" . get_permalink( $post->ID ) . "' class='wpdispensary-widget-link'>" . get_the_title( $post->ID ) . "</a>";
 					}
 					echo '</li>';
 
 				}
 
-			endwhile; // End loop
+			endwhile; // End loop.
 
 			if ( ! 'on' === $instance['featuredimage'] ) {
 				echo '</ul>';
@@ -526,8 +525,8 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::update
-	 * @param       array $new_instance The updated options
-	 * @param       array $old_instance The old options
+	 * @param       array $new_instance The updated options.
+	 * @param       array $old_instance The old options.
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -550,7 +549,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::form
-	 * @param       array $instance A given widget instance
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function form( $instance ) {
@@ -576,22 +575,22 @@ class wpdispensary_edibles_widget extends WP_Widget {
         </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id( 'featuredimage' ); ?>" name="<?php echo $this->get_field_name( 'featuredimage' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['ediblename'], 'on' ); ?> id="<?php echo $this->get_field_id('ediblename'); ?>" name="<?php echo $this->get_field_name('ediblename'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['ediblename'], 'on' ); ?> id="<?php echo $this->get_field_id( 'ediblename' ); ?>" name="<?php echo $this->get_field_name( 'ediblename' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'ediblename' ) ); ?>"><?php esc_html_e( 'Display edible name?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['ediblecategory'], 'on' ); ?> id="<?php echo $this->get_field_id('ediblecategory'); ?>" name="<?php echo $this->get_field_name('ediblecategory'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['ediblecategory'], 'on' ); ?> id="<?php echo $this->get_field_id( 'ediblecategory' ); ?>" name="<?php echo $this->get_field_name( 'ediblecategory' ); ?>" />
 				<label for="<?php echo esc_attr( $this->get_field_id( 'ediblecategory' ) ); ?>"><?php esc_html_e( 'Display edible category?', 'wp-dispensary' ); ?></label>
       </p>
 
@@ -607,7 +606,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
  * @return      void
  */
 function wpdispensary_edibles_register_widget() {
-  register_widget( 'wpdispensary_edibles_widget' );
+	register_widget( 'wpdispensary_edibles_widget' );
 }
 add_action( 'widgets_init', 'wpdispensary_edibles_register_widget' );
 
@@ -641,8 +640,8 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::widget
-	 * @param       array $args Arguments to pass to the widget
-	 * @param       array $instance A given widget instance
+	 * @param       array $args Arguments to pass to the widget.
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function widget( $args, $instance ) {
@@ -685,31 +684,31 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 				if ( 'on' === $instance['featuredimage'] ) {
 
 					echo "<div class='wpdispensary-widget'>";
-					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+					echo "<a href='" . get_permalink( $post->ID ) . "'>";
 						the_post_thumbnail( 'wpdispensary-widget' );
 					echo '</a>';
 					if ( 'on' === $instance['prerollname'] ) {
-						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 					}
 					if ( 'on' === $instance['prerollflower'] ) {
-						$prerollflower = get_post_meta(get_the_id(), '_selected_flowers', true);
+						$prerollflower = get_post_meta( _the_id(), '_selected_flowers', true );
 						echo "<span class='wpdispensary-widget-categories'>";
-						echo "<a href='". get_permalink($prerollflower) ."'>". get_the_title($prerollflower) ."</a>";
+						echo "<a href='" . get_permalink( $prerollflower ) . "'>" . get_the_title( $prerollflower ) . "</a>";
 						echo '</span>';
 					}
 					echo '</div>';
 
 				} else {
 
-				echo '<li>';
+					echo '<li>';
 					if ( 'on' === $instance['prerollname'] ) {
-						echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+						echo "<a href='" . get_permalink( $post->ID ) . "' class='wpdispensary-widget-link'>" . get_the_title( $post->ID ) . "</a>";
 					}
 					echo '</li>';
 
 				}
 
-			endwhile; // End loop
+			endwhile; // End loop.
 
 			if ( ! 'on' === $instance['featuredimage'] ) {
 				echo '</ul>';
@@ -727,8 +726,8 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::update
-	 * @param       array $new_instance The updated options
-	 * @param       array $old_instance The old options
+	 * @param       array $new_instance The updated options.
+	 * @param       array $old_instance The old options.
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -752,7 +751,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::form
-	 * @param       array $instance A given widget instance
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function form( $instance ) {
@@ -779,22 +778,22 @@ class wpdispensary_prerolls_widget extends WP_Widget {
         </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id( 'featuredimage' ); ?>" name="<?php echo $this->get_field_name( 'featuredimage' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['prerollname'], 'on' ); ?> id="<?php echo $this->get_field_id('prerollname'); ?>" name="<?php echo $this->get_field_name('prerollname'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['prerollname'], 'on' ); ?> id="<?php echo $this->get_field_id( 'prerollname' ); ?>" name="<?php echo $this->get_field_name( 'prerollname' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'prerollname' ) ); ?>"><?php esc_html_e( 'Display pre-roll name?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['prerollflower'], 'on' ); ?> id="<?php echo $this->get_field_id('prerollflower'); ?>" name="<?php echo $this->get_field_name('prerollflower'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['prerollflower'], 'on' ); ?> id="<?php echo $this->get_field_id( 'prerollflower' ); ?>" name="<?php echo $this->get_field_name( 'prerollflower' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'prerollflower' ) ); ?>"><?php esc_html_e( 'Display pre-roll flower?', 'wp-dispensary' ); ?></label>
       </p>
 
@@ -844,8 +843,8 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.4.0
 	 * @see         WP_Widget::widget
-	 * @param       array $args Arguments to pass to the widget
-	 * @param       array $instance A given widget instance
+	 * @param       array $args Arguments to pass to the widget.
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function widget( $args, $instance ) {
@@ -888,14 +887,14 @@ class wpdispensary_topicals_widget extends WP_Widget {
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+					echo "<a href='" . get_permalink( $post->ID ) . "'>";
 						the_post_thumbnail( 'wpdispensary-widget' );
 					echo '</a>';
 				if ( 'on' === $instance['topicalname'] ) {
-					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+					echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 				}
 				if ( 'on' === $instance['topicalcategory'] ) {
-					echo "<span class='wpdispensary-widget-categories'>". get_the_term_list( $post->ID, 'topicals_category' ) ."</a></span>";
+					echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'topicals_category' ) . "</a></span>";
 				}
 				echo '</div>';
 
@@ -903,13 +902,13 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
 				echo '<li>';
 				if ( 'on' === $instance['topicalname'] ) {
-					echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+					echo "<a href='" . get_permalink( $post->ID ) . "' class='wpdispensary-widget-link'>" . get_the_title( $post->ID ) . "</a>";
 				}
 				echo '</li>';
 
 			}
 
-			endwhile; // End loop
+		endwhile; // End loop.
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo '</ul>';
@@ -927,8 +926,8 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::update
-	 * @param       array $new_instance The updated options
-	 * @param       array $old_instance The old options
+	 * @param       array $new_instance The updated options.
+	 * @param       array $old_instance The old options.
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -951,7 +950,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.0.0
 	 * @see         WP_Widget::form
-	 * @param       array $instance A given widget instance
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function form( $instance ) {
@@ -977,22 +976,22 @@ class wpdispensary_topicals_widget extends WP_Widget {
         </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id( 'featuredimage' ); ?>" name="<?php echo $this->get_field_name( 'featuredimage' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['topicalname'], 'on' ); ?> id="<?php echo $this->get_field_id('topicalname'); ?>" name="<?php echo $this->get_field_name('topicalname'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['topicalname'], 'on' ); ?> id="<?php echo $this->get_field_id( 'topicalname' ); ?>" name="<?php echo $this->get_field_name( 'topicalname' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'topicalname' ) ); ?>"><?php esc_html_e( 'Display topical name?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['topicalcategory'], 'on' ); ?> id="<?php echo $this->get_field_id('topicalcategory'); ?>" name="<?php echo $this->get_field_name('topicalcategory'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['topicalcategory'], 'on' ); ?> id="<?php echo $this->get_field_id( 'topicalcategory' ); ?>" name="<?php echo $this->get_field_name( 'topicalcategory' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'topicalcategory' ) ); ?>"><?php esc_html_e( 'Display topical category?', 'wp-dispensary' ); ?></label>
       </p>
 
@@ -1030,7 +1029,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Growers', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Growers', 'wp-dispensary' )
+	            'description'  => __( 'Your dispensaries most recent Growers', 'wp-dispensary' ),
 	        )
 	    );
 	}
@@ -1041,8 +1040,8 @@ class wpdispensary_growers_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.7.0
 	 * @see         WP_Widget::widget
-	 * @param       array $args Arguments to pass to the widget
-	 * @param       array $instance A given widget instance
+	 * @param       array $args Arguments to pass to the widget.
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function widget( $args, $instance ) {
@@ -1085,16 +1084,16 @@ class wpdispensary_growers_widget extends WP_Widget {
 				if ( 'on' === $instance['featuredimage'] ) {
 
 					echo "<div class='wpdispensary-widget'>";
-					echo "<a href='" . get_permalink( $post->ID ) ."'>";
+					echo "<a href='" . get_permalink( $post->ID ) . "'>";
 						the_post_thumbnail( 'wpdispensary-widget' );
 					echo '</a>';
 					if ( 'on' === $instance['growername'] ) {
-						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+						echo "<span class='wpdispensary-widget-title'><a href='" . get_permalink( $post->ID ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
 					}
 					if ( 'on' === $instance['growerflower'] ) {
-						$growerflower = get_post_meta(get_the_id(), '_selected_flowers', true);
+						$growerflower = get_post_meta( _the_id(), '_selected_flowers', true );
 						echo "<span class='wpdispensary-widget-categories'>";
-						echo "<a href='". get_permalink($growerflower) ."'>". get_the_title($growerflower) ."</a>";
+						echo "<a href='" . get_permalink( $growerflower ) . "'>" . get_the_title( $growerflower ) . "</a>";
 						echo '</span>';
 					}
 					echo '</div>';
@@ -1103,13 +1102,13 @@ class wpdispensary_growers_widget extends WP_Widget {
 
 					echo '<li>';
 					if ( 'on' === $instance['growername'] ) {
-						echo "<a href='" . get_permalink( $post->ID ) ."' class='wpdispensary-widget-link'>". get_the_title( $post->ID ) ."</a>";
+						echo "<a href='" . get_permalink( $post->ID ) . "' class='wpdispensary-widget-link'>" . get_the_title( $post->ID ) . "</a>";
 					}
 					echo '</li>';
 
 				}
 
-			endwhile; // End loop
+			endwhile; // End loop.
 
 			if ( ! 'on' === $instance['featuredimage'] ) {
 				echo '</ul>';
@@ -1127,8 +1126,8 @@ class wpdispensary_growers_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.7.0
 	 * @see         WP_Widget::update
-	 * @param       array $new_instance The updated options
-	 * @param       array $old_instance The old options
+	 * @param       array $new_instance The updated options.
+	 * @param       array $old_instance The old options.
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -1152,7 +1151,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 	 * @access      public
 	 * @since       1.7.0
 	 * @see         WP_Widget::form
-	 * @param       array $instance A given widget instance
+	 * @param       array $instance A given widget instance.
 	 * @return      void
 	 */
 	public function form( $instance ) {
@@ -1179,22 +1178,22 @@ class wpdispensary_growers_widget extends WP_Widget {
         </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id('order'); ?>" name="<?php echo $this->get_field_name('order'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id('featuredimage'); ?>" name="<?php echo $this->get_field_name('featuredimage'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo $this->get_field_id( 'featuredimage' ); ?>" name="<?php echo $this->get_field_name( 'featuredimage' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['growername'], 'on' ); ?> id="<?php echo $this->get_field_id('growername'); ?>" name="<?php echo $this->get_field_name('growername'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['growername'], 'on' ); ?> id="<?php echo $this->get_field_id( 'growername' ); ?>" name="<?php echo $this->get_field_name( 'growername' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'growername' ) ); ?>"><?php esc_html_e( 'Display grower name?', 'wp-dispensary' ); ?></label>
       </p>
 
 	    <p>
-					<input class="checkbox" type="checkbox" <?php checked( $instance['growerflower'], 'on' ); ?> id="<?php echo $this->get_field_id('growerflower'); ?>" name="<?php echo $this->get_field_name('growerflower'); ?>" />
+					<input class="checkbox" type="checkbox" <?php checked( $instance['growerflower'], 'on' ); ?> id="<?php echo $this->get_field_id( 'growerflower' ); ?>" name="<?php echo $this->get_field_name( 'growerflower' ); ?>" />
 					<label for="<?php echo esc_attr( $this->get_field_id( 'growerflower' ) ); ?>"><?php esc_html_e( 'Display flower type?', 'wp-dispensary' ); ?></label>
       </p>
 
