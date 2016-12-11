@@ -29,6 +29,40 @@ class WP_Dispensary_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
+		/**
+		 * Custom Post Types
+		 */
+		wpdispensary_flowers();
+		wpdispensary_edibles();
+		wpdispensary_concentrates();
+		wpdispensary_prerolls();
+		wpdispensary_topicals();
+		wpdispensary_growers();
 
+		/**
+		 * Taxonomies
+		 */
+		wpdispensary_aroma();
+		wpdispensary_flavor();
+		wpdispensary_effect();
+		wpdispensary_symptom();
+		wpdispensary_condition();
+		wpdispensary_ingredient();
+
+		/**
+		 * Custom Categories
+		 */
+		wpdispensary_flowercategory();
+		wpdispensary_ediblecategory();
+		wpdispensary_concentratecategory();
+		wpdispensary_topicalcategory();
+		wpdispensary_growerscategory();
+
+		/**
+		 * Flush Rewrite Rules
+		 */
+		 global $wp_rewrite;
+		 $wp_rewrite->init();
+		 $wp_rewrite->flush_rules();
 	}
 }
