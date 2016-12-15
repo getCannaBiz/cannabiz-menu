@@ -269,6 +269,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdservings = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_netweight', true ) ) {
+			$wpdnetweight = '<tr><td><span>Net weight:</span></td><td>' . get_post_meta( get_the_id(), '_netweight', true ) .'g</td></tr>';
+		} else {
+			$wpdnetweight = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
 			$wpdthctopical = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thctopical', true ) .'%</td></tr>';
 		} else {
@@ -405,7 +411,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( 'edibles' === get_post_type() ) {
-				$content .= $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdingredients;
+				$content .= $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients;
 			}
 
 			if ( 'topicals' === get_post_type() ) {

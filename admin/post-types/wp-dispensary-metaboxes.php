@@ -686,6 +686,7 @@ function wpdispensary_thc_cbd_mg() {
 	$thcmg			= get_post_meta( $post->ID, '_thcmg', true );
 	$cbdmg			= get_post_meta( $post->ID, '_cbdmg', true );
 	$thccbdservings	= get_post_meta( $post->ID, '_thccbdservings', true );
+	$netweight	= get_post_meta( $post->ID, '_netweight', true );
 
 	/** Echo out the fields */
 	echo '<p>THC mg per serving:</p>';
@@ -694,6 +695,8 @@ function wpdispensary_thc_cbd_mg() {
 	echo '<input type="text" name="_cbdmg" value="' . $cbdmg  . '" class="widefat" />';
 	echo '<p>Servings:</p>';
 	echo '<input type="text" name="_thccbdservings" value="' . $thccbdservings  . '" class="widefat" />';
+	echo '<p>Net weight:</p>';
+	echo '<input type="text" name="_netweight" value="' . $netweight  . '" class="widefat" />';
 
 }
 
@@ -723,6 +726,7 @@ function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 	$thc_cbd_mg_meta['_thcmg']			= $_POST['_thcmg'];
 	$thc_cbd_mg_meta['_cbdmg']			= $_POST['_cbdmg'];
 	$thc_cbd_mg_meta['_thccbdservings']	= $_POST['_thccbdservings'];
+	$thc_cbd_mg_meta['_netweight']	= $_POST['_netweight'];
 
 	/** Add values of $thccbdmg_meta as custom fields */
 
