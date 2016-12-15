@@ -660,7 +660,7 @@ function add_thc_cbd_mg_metaboxes() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_thc_cbd_mg',
-			__( 'Serving information', 'wp-dispensary' ),
+			__( 'Product information', 'wp-dispensary' ),
 			'wpdispensary_thc_cbd_mg',
 			$screen,
 			'side',
