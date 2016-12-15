@@ -405,11 +405,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( 'edibles' === get_post_type() ) {
-				$content .= $wpdingredients . $wpdthcmg . $wpdcbdmg . $wpdservings;
+				$content .= $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdingredients;
 			}
 
 			if ( 'topicals' === get_post_type() ) {
-				$content .= $wpdsizetopical . $wpdthctopical . $wpdcbdtopical;
+				$content .= $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients;
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {

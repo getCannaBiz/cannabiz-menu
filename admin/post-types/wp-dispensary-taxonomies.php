@@ -279,7 +279,7 @@ function wpdispensary_ingredient() {
 		'menu_name' => __( 'Ingredients' ),
 	  );
 
-	  register_taxonomy('ingredients','edibles',array(
+	  register_taxonomy('ingredients',array( 'edibles', 'topicals' ),array(
 			'hierarchical' => false,
 			'labels' => $labels,
 			'show_ui' => true,
