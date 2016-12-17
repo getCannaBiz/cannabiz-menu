@@ -9,17 +9,17 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/public/css
  */
- 
+
 .wpdispensary-widget {
-    display: inline-block;
-	margin: 12px 0;
-	max-width: 100%;
-    position: relative;
-	width: 100%;
+  display: inline-block;
+  margin: 12px 0;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .wpdispensary-widget:first-child {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .wpdispensary-widget:last-child {
@@ -28,30 +28,30 @@
 
 .wpdispensary-widget img {
 	height: auto;
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 	width: 100%;
 }
 
 span.wpdispensary-widget-title {
-    font-size: 16px;
+  font-size: 16px;
 	font-weight: 600;
 	line-hehgit: 1.2;
 }
 
 span.wpdispensary-widget-categories {
-    float: right;
+  float: right;
 	font-size: 13px;
-    font-weight: 600;
+  font-weight: 600;
 	line-height: 1.2;
 }
 
 span.wpdispensary-widget-categories a,
 span.wpdispensary-widget-categories a:visited {
-    background: #EEE;
-    border-radius: 15px;
-    color: #AAA;
-    display: inline-block;
-    padding: 5px 10px;
+  background: #EEE;
+  border-radius: 15px;
+  color: #AAA;
+  display: inline-block;
+  padding: 5px 10px;
 }
 
 span.wpdispensary-widget-categories a:hover {
@@ -59,25 +59,25 @@ span.wpdispensary-widget-categories a:hover {
 }
 
 ul.wpdispensary-list li:before {
-    color: #454545;
-    content: "\f105";
-    font-family: 'FontAwesome';
-    margin-right: 6px;
-    -webkit-font-smoothing: antialiased;
+  color: #454545;
+  content: "\f105";
+  font-family: 'FontAwesome';
+  margin-right: 6px;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Shortcodes */
 
 .wpdispensary {
-    float: left;
-    position: relative;
-    width: 100%;
+  float: left;
+  position: relative;
+  width: 100%;
 }
 
 .wpdshortcode {
-    float: left;
-    margin: 12px 0;
-    width: 31.333%;
+  float: left;
+  margin: 12px 0;
+  width: 31.333%;
 }
 
 .wpdshortcode:nth-child(3n+3) {
@@ -85,7 +85,8 @@ ul.wpdispensary-list li:before {
 }
 
 .wpdshortcode p {
-	margin: 12px 0 0 0;
+  margin: 12px 0 0 0;
+  padding: 0;
 }
 
 .wpdshortcode span.wpd-pricing,
@@ -192,7 +193,7 @@ table.wpdispensary-table td span {
 		margin: 12px 1%;
 		width: 98%;
 	}
-	
+
 	.wpdshortcode,
 	.wpdshortcode:nth-child(3n+3) {
 		margin: 12px 0;
