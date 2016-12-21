@@ -47,9 +47,9 @@ Samples of the shortcodes are below. See all shortcode options in the [documenta
 
 With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-You can view our current add-on's on the [offical WP Dispensary website](https://www.wpdispensary.com/add-ons)
+You can view our current add-on's on the [official WP Dispensary website](https://www.wpdispensary.com/add-ons)
 
-We also have a commerial WordPress theme for the cannabis industry, [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz).
+We also have a commercial WordPress theme for the cannabis industry, [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz).
 
 It has a long list of options built in for customization to fit your business branding and is 100% integrated with WP Dispensary and it's add-ons.
 
