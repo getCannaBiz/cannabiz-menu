@@ -30,14 +30,18 @@ class WP_Dispensary_i18n {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $domain    The domain identifier for this plugin.
+	 *
+	 * @var string $domain The domain identifier for this plugin.
 	 */
 	private $domain;
 
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function load_plugin_textdomain() {
 
@@ -52,8 +56,12 @@ class WP_Dispensary_i18n {
 	/**
 	 * Set the domain equal to that of the specified domain.
 	 *
-	 * @since 1.0.0
-	 * @param string $domain    The domain that represents the locale of this plugin.
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @param string $domain The domain that represents the locale of this plugin.
+	 *
+	 * @return void
 	 */
 	public function set_domain( $domain ) {
 		$this->domain = $domain;

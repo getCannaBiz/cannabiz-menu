@@ -43,8 +43,11 @@ class WP_Dispensary_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param string $plugin_name   The name of the plugin.
 	 * @param string $version       The version of this plugin.
+	 *
+	 * @return void
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -56,7 +59,9 @@ class WP_Dispensary_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 *
+	 * @return void
 	 */
 	public function enqueue_styles() {
 
@@ -79,7 +84,9 @@ class WP_Dispensary_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 *
+	 * @return void
 	 */
 	public function enqueue_scripts() {
 

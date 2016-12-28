@@ -18,6 +18,10 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 	/**
 	 * Creating the menu item
+	 *
+	 * @access public
+	 *
+	 * @return string The content to be ouput.
 	 */
 	function wpd_data_output_content( $content ) {
 

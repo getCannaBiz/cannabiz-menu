@@ -12,6 +12,14 @@
 
 /**
  * Adding featured image URL's to Flowers Custom Post Type
+ *
+ * @access public
+ *
+ * @param object  $data
+ * @param WP_Post $post    The WordPress post object.
+ * @param null    $request Unused.
+ *
+ * @return object The featured image data.
  */
 function flowers_featuredimage( $data, $post, $request ) {
 	$_data = $data->data;

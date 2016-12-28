@@ -26,7 +26,12 @@ class WP_Dispensary_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @global $wp_rewrite
+	 *
+	 * @return void
 	 */
 	public static function activate() {
 		/**
