@@ -81,4 +81,6 @@ function run_wp_dispensary() {
 	$plugin->run();
 
 }
+
+// Runs WPDispensary;
 run_wp_dispensary();
