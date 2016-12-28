@@ -63,7 +63,10 @@ class WP_Dispensary {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function __construct() {
 
@@ -92,6 +95,8 @@ class WP_Dispensary {
 	 *
 	 * @since    1.0.0
 	 * @access   private
+	 *
+	 * @return void
 	 */
 	private function load_dependencies() {
 
@@ -169,8 +174,10 @@ class WP_Dispensary {
 	 * Uses the WP_Dispensary_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
-	 * @access   private
+	 * @since  1.0.0
+	 * @access private
+	 *
+	 * @return void
 	 */
 	private function set_locale() {
 
@@ -185,8 +192,10 @@ class WP_Dispensary {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
+	 * @since  1.0.0
+	 * @access private
+	 *
+	 * @return void
 	 */
 	private function define_admin_hooks() {
 
@@ -201,8 +210,10 @@ class WP_Dispensary {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
+	 * @since  1.0.0
+	 * @access private
+	 *
+	 * @return void
 	 */
 	private function define_public_hooks() {
 
@@ -216,7 +227,10 @@ class WP_Dispensary {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function run() {
 		$this->loader->run();
@@ -226,8 +240,10 @@ class WP_Dispensary {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.0.0
-	 * @return    string    The name of the plugin.
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return string The name of the plugin.
 	 */
 	public function get_plugin_name() {
 		return $this->plugin_name;
@@ -236,8 +252,10 @@ class WP_Dispensary {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.0.0
-	 * @return    WP_Dispensary_Loader    Orchestrates the hooks of the plugin.
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return WP_Dispensary_Loader Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
@@ -247,7 +265,9 @@ class WP_Dispensary {
 	 * Retrieve the version number of the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    string    The version number of the plugin.
+	 * @access public
+	 *
+	 * @return string The version number of the plugin.
 	 */
 	public function get_version() {
 		return $this->version;

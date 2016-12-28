@@ -27,7 +27,12 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * The code that runs during plugin activation.
+ *
  * This action is documented in includes/class-wp-dispensary-activator.php
+ *
+ * @access public
+ *
+ * @return void
  */
 function activate_wp_dispensary() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-activator.php';
@@ -36,14 +41,21 @@ function activate_wp_dispensary() {
 
 /**
  * The code that runs during plugin deactivation.
+ *
  * This action is documented in includes/class-wp-dispensary-deactivator.php
+ *
+ * @access public
+ *
+ * @return void
  */
 function deactivate_wp_dispensary() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-deactivator.php';
 	wp_dispensary_deactivator::deactivate();
 }
 
+// Registers the plugin activation hook.
 register_activation_hook( __FILE__, 'activate_wp_dispensary' );
+// Registers the plugin deactivation hook.
 register_deactivation_hook( __FILE__, 'deactivate_wp_dispensary' );
 
 /**
@@ -59,7 +71,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since 1.0.0
+ *
+ * @return void
  */
 function run_wp_dispensary() {
 
@@ -67,4 +81,6 @@ function run_wp_dispensary() {
 	$plugin->run();
 
 }
+
+// Runs WPDispensary;
 run_wp_dispensary();

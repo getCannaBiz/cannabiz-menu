@@ -24,27 +24,29 @@ class WP_Dispensary_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since	1.0.0
-	 * @access	private
-	 * @var		string		$plugin_name	The ID of this plugin.
+	 * @since  1.0.0
+	 * @access private
+	 * @var    string $plugin_name The ID of this plugin.
 	 */
 	private $plugin_name;
 
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since	1.0.0
-	 * @access	private
-	 * @var		string		$version	The current version of this plugin.
+	 * @since  1.0.0
+	 * @access private
+	 * @var    string $version The current version of this plugin.
 	 */
 	private $version;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @param string $plugin_name   The name of this plugin.
 	 * @param string $version       The version of this plugin.
+	 *
+	 * @return void
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -56,7 +58,10 @@ class WP_Dispensary_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since    1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function enqueue_styles() {
 
@@ -79,7 +84,10 @@ class WP_Dispensary_Admin {
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * @since    1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function enqueue_scripts() {
 
@@ -104,7 +112,10 @@ class WP_Dispensary_Admin {
  * Add our custom post types to the "At a Glance" box in the WordPress
  * admin dashboard.
  *
- * @since    1.0.0
+ * @since  1.0.0
+ * @access public
+ *
+ * @return void
  */
 function wpdispensary_right_now_content_table_end() {
 	$args = array(

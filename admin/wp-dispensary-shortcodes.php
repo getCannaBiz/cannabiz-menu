@@ -19,6 +19,10 @@ if ( function_exists( 'add_image_size' ) ) {
 
 /**
  * Flowers Shortcode Fuction
+ *
+ * @access public
+ *
+ * @return string HTML markup.
  */
 function wpdispensary_flowers_shortcode( $atts ) {
 

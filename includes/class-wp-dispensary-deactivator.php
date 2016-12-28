@@ -22,11 +22,12 @@
 class WP_Dispensary_Deactivator {
 
 	/**
-	 * Short Description. (use period)
+	 * Handles deactivation hooks.
 	 *
-	 * Long Description.
+	 * @since  1.0.0
+	 * @access public
 	 *
-	 * @since    1.0.0
+	 * @return void
 	 */
 	public static function deactivate() {
 

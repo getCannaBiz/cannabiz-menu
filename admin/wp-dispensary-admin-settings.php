@@ -13,8 +13,22 @@
  * Building the class for the WP Dispensary admin settings page.
  */
 class WPDispensarySettings {
+	/**
+	 * Defines the options.
+	 *
+	 * @access private
+	 *
+	 * @var [type] The options.
+	 */
 	private $wp_dispensary_options;
 
+	/**
+	 * Constructor for WPDispensarySettings.
+	 *
+	 * @access public
+	 *
+	 * @return void
+	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'wp_dispensary_add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'wp_dispensary_page_init' ) );
@@ -22,6 +36,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Adding WP Dispensary to admin dashboard menu.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wp_dispensary_add_plugin_page() {
 		add_menu_page(
@@ -37,6 +55,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Creating WP Dispensary admin page.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wp_dispensary_create_admin_page() {
 		$this->wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); ?>
@@ -72,6 +94,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Registering settings for WP Dispensary.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wp_dispensary_page_init() {
 		register_setting(
@@ -130,6 +156,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Sanitize input from WP Dispensary admin page.
+	 *
+	 * @access public
+	 *
+	 * @return array The sanitized values.
 	 */
 	public function wp_dispensary_sanitize( $input ) {
 		$sanitary_values = array();
@@ -158,6 +188,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Adding WP Dispensary section info to admin page.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wp_dispensary_section_info() {
 
@@ -165,6 +199,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Option to hide Details box from data output.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wpd_hide_details_callback() {
 		printf(
@@ -175,6 +213,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Option to hide Pricing box from data output.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wpd_hide_pricing_callback() {
 		printf(
@@ -185,6 +227,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Option to move Details and Pricing boxes data output to top or bottom of content.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wpd_content_placement_callback() {
 		printf(
@@ -195,6 +241,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Option to choose currency code for data output.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wpd_currency_callback() {
 		?> <select name="wp_dispensary_option_name[wpd_currency]" id="wpd_currency">
@@ -251,6 +301,10 @@ class WPDispensarySettings {
 
 	/**
 	 * Option to choose cost phrasing for data output.
+	 *
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function wpd_cost_phrase_callback() {
 		?> <select name="wp_dispensary_option_name[wpd_cost_phrase]" id="wpd_cost_phrase">
@@ -261,6 +315,8 @@ class WPDispensarySettings {
 		</select> <?php
 	}
 }
+
+// If within the admin, instantiate the WPDispensarySettings class.
 if ( is_admin() ) {
 	$wp_dispensary = new WPDispensarySettings();
 }
