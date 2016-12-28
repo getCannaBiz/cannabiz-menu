@@ -315,6 +315,8 @@ class WPDispensarySettings {
 		</select> <?php
 	}
 }
+
+// If within the admin, instantiate the WPDispensarySettings class.
 if ( is_admin() ) {
 	$wp_dispensary = new WPDispensarySettings();
 }
