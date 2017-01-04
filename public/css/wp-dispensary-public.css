@@ -97,6 +97,7 @@ ul.wpdispensary-list li:before {
 }
 
 table.wpdispensary-table {
+	background: #FFF;
 	border-width: 1px;
 	font-size: 14px;
 	line-height: 1.2;
