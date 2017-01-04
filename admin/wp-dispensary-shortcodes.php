@@ -541,7 +541,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfounce', true );
 			$pricingname	= '<strong>1/2 ounce: </strong>';
 		} elseif ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_founce', true );
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_ounce', true );
 			$pricingname	= '<strong>1 ounce: </strong>';
 		}
 
