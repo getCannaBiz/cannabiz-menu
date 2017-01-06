@@ -3,7 +3,7 @@ Contributors: deviodigital
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis, weed, pot, medical marijuana
 Requires at least: 3.0.1
 Tested up to: 4.7
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,15 @@ It has a long list of options built in for customization to fit your business br
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.9.3 =
+* Added ingredients to Topicals menu type in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added ingredients for Topicals to the data output Details table in `admin/wp-dispensary-data-output.php`
+* Added net weight option to the Edibles Product Information metabox in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added net weight for Edibles to the data output Details table in `admin/wp-dispensary-data-output.php`
+* Added match-height script for better shortcode display in `public/js/wp-dispensary-public.js`
+* Updated CSS style for Pricing and Details tables in `public/css/wp-dispensary-public.css`
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
 
 = 1.9.2 =
 * Fixed error that caused the Widgets page in dashboards to not show correctly in `admin/post-types/wp-dispensary-widgets.php`
