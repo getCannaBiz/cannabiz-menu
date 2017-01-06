@@ -374,7 +374,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdhalfounce = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+		if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
 			$wpdounce = '<td><span>1 oz:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_ounce', true ) .'</td>';
 		} else {
 			$wpdounce = '';
