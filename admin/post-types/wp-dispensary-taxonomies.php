@@ -328,7 +328,7 @@ function wpdispensary_flowercategory() {
 			'show_ui' => true,
 			'show_in_rest' => true,
 			'show_admin_column' => true,
-			'show_in_nav_menus' => false,
+			'show_in_nav_menus' => true,
 			'query_var' => true,
 			'rewrite' => array(
 				'slug' => 'flowers/category',
@@ -374,7 +374,7 @@ function wpdispensary_ediblecategory() {
 			'show_ui' => true,
 			'show_in_rest' => true,
 			'show_admin_column' => true,
-			'show_in_nav_menus' => false,
+			'show_in_nav_menus' => true,
 			'query_var' => true,
 			'rewrite' => array(
 				'slug' => 'edibles/category',
@@ -420,7 +420,7 @@ function wpdispensary_concentratecategory() {
 			'show_ui' => true,
 			'show_in_rest' => true,
 			'show_admin_column' => true,
-			'show_in_nav_menus' => false,
+			'show_in_nav_menus' => true,
 			'query_var' => true,
 			'rewrite' => array(
 				'slug' => 'concentrates/category',
@@ -466,7 +466,7 @@ function wpdispensary_topicalcategory() {
 			'show_ui' => true,
 			'show_in_rest' => true,
 			'show_admin_column' => true,
-			'show_in_nav_menus' => false,
+			'show_in_nav_menus' => true,
 			'query_var' => true,
 			'rewrite' => array(
 				'slug' => 'topicals/category',
@@ -512,7 +512,7 @@ function wpdispensary_growerscategory() {
 			'show_ui' => true,
 			'show_in_rest' => true,
 			'show_admin_column' => true,
-			'show_in_nav_menus' => false,
+			'show_in_nav_menus' => true,
 			'query_var' => true,
 			'rewrite' => array(
 				'slug' => 'growers/category',
