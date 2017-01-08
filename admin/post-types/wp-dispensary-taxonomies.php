@@ -308,8 +308,8 @@ add_action( 'init', 'wpdispensary_flowercategory', 0 );
 function wpdispensary_flowercategory() {
 
 	  $labels = array(
-		'name' => _x( 'Categories', 'taxonomy general name' ),
-		'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+		'name' => _x( 'Flower Categories', 'taxonomy general name' ),
+		'singular_name' => _x( 'Flower Category', 'taxonomy singular name' ),
 		'search_items' => __( 'Search Categories' ),
 		'all_items' => __( 'All Categories' ),
 		'parent_item' => __( 'Parent Category' ),
@@ -400,8 +400,8 @@ add_action( 'init', 'wpdispensary_concentratecategory', 0 );
 function wpdispensary_concentratecategory() {
 
 	  $labels = array(
-		'name' => _x( 'Categories', 'taxonomy general name' ),
-		'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+		'name' => _x( 'Concentrate Categories', 'taxonomy general name' ),
+		'singular_name' => _x( 'Concentrate Category', 'taxonomy singular name' ),
 		'search_items' => __( 'Search Categories' ),
 		'all_items' => __( 'All Categories' ),
 		'parent_item' => __( 'Parent Category' ),
@@ -446,8 +446,8 @@ add_action( 'init', 'wpdispensary_topicalcategory', 0 );
 function wpdispensary_topicalcategory() {
 
 	  $labels = array(
-		'name' => _x( 'Categories', 'taxonomy general name' ),
-		'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+		'name' => _x( 'Topical Categories', 'taxonomy general name' ),
+		'singular_name' => _x( 'Topical Category', 'taxonomy singular name' ),
 		'search_items' => __( 'Search Categories' ),
 		'all_items' => __( 'All Categories' ),
 		'parent_item' => __( 'Parent Category' ),
@@ -492,8 +492,8 @@ add_action( 'init', 'wpdispensary_growerscategory', 0 );
 function wpdispensary_growerscategory() {
 
 	  $labels = array(
-		'name' => _x( 'Categories', 'taxonomy general name' ),
-		'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+		'name' => _x( 'Growers Categories', 'taxonomy general name' ),
+		'singular_name' => _x( 'Growers Category', 'taxonomy singular name' ),
 		'search_items' => __( 'Search Categories' ),
 		'all_items' => __( 'All Categories' ),
 		'parent_item' => __( 'Parent Category' ),
