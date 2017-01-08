@@ -319,7 +319,7 @@ function wpdispensary_flowercategory() {
 		'add_new_item' => __( 'Add New Category' ),
 		'new_item_name' => __( 'New Category Name' ),
 		'not_found' => 'No categories found',
-		'menu_name' => __( 'Flowers Categories' ),
+		'menu_name' => __( 'Categories' ),
 	  );
 
 	  register_taxonomy( 'flowers_category', 'flowers', array(
@@ -365,7 +365,7 @@ function wpdispensary_ediblecategory() {
 		'add_new_item' => __( 'Add New Edible Category' ),
 		'new_item_name' => __( 'New Edible Category Name' ),
 		'not_found' => 'No edible categories found',
-		'menu_name' => __( 'Edibles Categories' ),
+		'menu_name' => __( 'Categories' ),
 	  );
 
 	  register_taxonomy('edibles_category','edibles', array(
@@ -411,7 +411,7 @@ function wpdispensary_concentratecategory() {
 		'add_new_item' => __( 'Add New Category' ),
 		'new_item_name' => __( 'New Category Name' ),
 		'not_found' => 'No categories found',
-		'menu_name' => __( 'Concentrates Categories' ),
+		'menu_name' => __( 'Categories' ),
 	  );
 
 	  register_taxonomy('concentrates_category','concentrates', array(
@@ -457,7 +457,7 @@ function wpdispensary_topicalcategory() {
 		'add_new_item' => __( 'Add New Category' ),
 		'new_item_name' => __( 'New Category Name' ),
 		'not_found' => 'No categories found',
-		'menu_name' => __( 'Topicals Categories' ),
+		'menu_name' => __( 'Categories' ),
 	  );
 
 	  register_taxonomy('topicals_category','topicals', array(
@@ -503,7 +503,7 @@ function wpdispensary_growerscategory() {
 		'add_new_item' => __( 'Add New Category' ),
 		'new_item_name' => __( 'New Category Name' ),
 		'not_found' => 'No categories found',
-		'menu_name' => __( 'Growers Categories' ),
+		'menu_name' => __( 'Categories' ),
 	  );
 
 	  register_taxonomy('growers_category','growers', array(
