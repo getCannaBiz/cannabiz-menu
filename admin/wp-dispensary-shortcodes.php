@@ -35,6 +35,11 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'info'		=> 'show',
 			'title'		=> 'Flowers',
 			'category'	=> '',
+			'aroma'     => '',
+			'flavor'    => '',
+			'effect'    => '',
+			'condition' => '',
+			'symptom'   => ''
 		),
 		$atts
 	) );
@@ -48,6 +53,34 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'post_type' 		=> 'flowers',
 			'posts_per_page'	=> $posts,
 			'flowers_category'	=> $category,
+			'tax_query' => array(
+				'relation' => 'OR',
+				array(
+					'taxonomy' => 'aroma',
+					'field' => 'slug',
+					'terms' => $aroma,
+				),
+				array(
+					'taxonomy' => 'flavor',
+					'field' => 'slug',
+					'terms' => $flavor,
+				),
+				array(
+					'taxonomy' => 'effect',
+					'field' => 'slug',
+					'terms' => $effect,
+				),
+				array(
+					'taxonomy' => 'symptom',
+					'field' => 'slug',
+					'terms' => $symptom,
+				),
+				array(
+					'taxonomy' => 'condition',
+					'field' => 'slug',
+					'terms' => $condition,
+				),
+			)
 		)
 	);
 
