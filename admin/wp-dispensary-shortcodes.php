@@ -364,6 +364,11 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'info'		=> 'show',
 			'title'		=> 'Concentrates',
 			'category'	=> '',
+			'aromy'	    => '',
+			'flavor'	  => '',
+			'effect'	  => '',
+			'symptom'	  => '',
+			'condition'	=> '',
 		),
 		$atts
 	) );
@@ -377,6 +382,34 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'post_type' 			=> 'concentrates',
 			'posts_per_page'		=> $posts,
 			'concentrates_category'	=> $category,
+			'tax_query' => array(
+				'relation' => 'OR',
+				array(
+					'taxonomy' => 'aroma',
+					'field' => 'slug',
+					'terms' => $aroma,
+				),
+				array(
+					'taxonomy' => 'flavor',
+					'field' => 'slug',
+					'terms' => $flavor,
+				),
+				array(
+					'taxonomy' => 'effect',
+					'field' => 'slug',
+					'terms' => $effect,
+				),
+				array(
+					'taxonomy' => 'symptom',
+					'field' => 'slug',
+					'terms' => $symptom,
+				),
+				array(
+					'taxonomy' => 'condition',
+					'field' => 'slug',
+					'terms' => $condition,
+				),
+			)
 		)
 	);
 
