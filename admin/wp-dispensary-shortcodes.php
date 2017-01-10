@@ -656,12 +656,13 @@ function wpdispensary_edibles_shortcode( $atts ) {
 	/** Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'		=> '100',
-			'class'		=> '',
-			'name'		=> 'show',
-			'info'		=> 'show',
-			'title'		=> 'Edibles',
-			'category'	=> '',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'title'       => 'Edibles',
+			'category'    => '',
+			'ingredients' => '',
 		),
 		$atts
 	) );
@@ -675,7 +676,12 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'post_type' 		=> 'edibles',
 			'posts_per_page'	=> $posts,
 			'edibles_category'	=> $category,
-		)
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'ingredients',
+					'field' => 'slug',
+					'terms' => $ingredients,
+				),		)
 	);
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
