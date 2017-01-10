@@ -1164,12 +1164,13 @@ function wpdispensary_topicals_shortcode( $atts ) {
 	/* Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'		=> '100',
-			'class'		=> '',
-			'name'		=> 'show',
-			'info'		=> 'show',
-			'title'		=> 'Topicals',
-			'category'	=> '',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'title'       => 'Topicals',
+			'category'    => '',
+			'ingredients' => '',
 		),
 		$atts
 	) );
@@ -1183,7 +1184,13 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'post_type' 		=> 'topicals',
 			'posts_per_page'	=> $posts,
 			'topicals_category'	=> $category,
-		)
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'ingredients',
+					'field' => 'slug',
+					'terms' => $ingredients,
+				),
+			)
 	);
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
