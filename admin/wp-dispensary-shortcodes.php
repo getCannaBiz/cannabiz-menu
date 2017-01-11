@@ -50,36 +50,36 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	 * Code to create shortcode for Flowers
 	 */
 	$tax_query = array( 'relation' => 'AND' );
-	if ( ! $aroma ) {
-			$tax_query[]   =  array(
+	if ( '' !== $aroma ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'aroma',
 					'field'    => 'slug',
 					'terms'    => $aroma,
 			);
 	}
-	if ( ! $flavor ) {
-			$tax_query[]   =  array(
+	if ( '' !== $flavor ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'flavor',
 					'field'    => 'slug',
 					'terms'    => $flavor,
 			);
 	}
-	if ( ! $effect ) {
-			$tax_query[]   =  array(
+	if ( '' !== $effect ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'effect',
 					'field'    => 'slug',
 					'terms'    => $effect,
 			);
 	}
-	if ( ! $symptom ) {
-			$tax_query[]   =  array(
+	if ( '' !== $symptom ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'symptom',
 					'field'    => 'slug',
 					'terms'    => $symptom,
 			);
 	}
-	if ( ! $condition ) {
-			$tax_query[]   =  array(
+	if ( '' !== $condition ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'condition',
 					'field'    => 'slug',
 					'terms'    => $condition,
