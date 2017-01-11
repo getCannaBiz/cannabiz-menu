@@ -730,7 +730,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'info'        => 'show',
 			'title'       => 'Edibles',
 			'category'    => '',
-			'ingredients' => '',
+			'ingredient'  => '',
 		),
 		$atts
 	) );
@@ -738,21 +738,23 @@ function wpdispensary_edibles_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode for Edibles
 	 */
-
-	$wpdquery = new WP_Query(
-		array(
-			'post_type' 		=> 'edibles',
-			'posts_per_page'	=> $posts,
-			'edibles_category'	=> $category,
-			'tax_query' => array(
-				array(
+	$tax_query = array( 'relation' => 'AND' );
+	if ( '' !== $ingredient ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'ingredients',
-					'field' => 'slug',
-					'terms' => $ingredients,
-				),
-			),
-		)
+					'field'    => 'slug',
+					'terms'    => $ingredient,
+			);
+	}
+
+	$args = array(
+		'post_type'          => 'edibles',
+		'posts_per_page'     => $posts,
+		'edibles_category'   => $category,
+		'tax_query'          => $tax_query,
 	);
+
+	$wpdquery = new WP_Query( $args );
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
 
