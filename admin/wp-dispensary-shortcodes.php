@@ -29,17 +29,16 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	/* Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'		=> '100',
-			'class'		=> '',
-			'name'		=> 'show',
-			'info'		=> 'show',
-			'title'		=> 'Flowers',
-			'category'	=> '',
-			'aroma'     => '',
-			'flavor'    => '',
-			'effect'    => '',
-			'condition' => '',
-			'symptom'   => ''
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'title'       => 'Flowers',
+			'aroma'       => '',
+			'flavor'      => '',
+			'effect'      => '',
+			'symptom'     => '',
+			'condition'   => '',
 		),
 		$atts
 	) );
@@ -50,35 +49,35 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 	$wpdquery = new WP_Query(
 		array(
-			'post_type' 		=> 'flowers',
-			'posts_per_page'	=> $posts,
-			'flowers_category'	=> $category,
-			'tax_query' => array(
-				'relation' => 'OR',
+			'post_type'          => 'flowers',
+			'posts_per_page'     => $posts,
+			'flowers_category'   => $category,
+			'tax_query'          => array(
+				'relation'         => 'OR',
 				array(
 					'taxonomy' => 'aroma',
-					'field' => 'slug',
-					'terms' => $aroma,
+					'field'    => 'slug',
+					'terms'    => $aroma,
 				),
 				array(
 					'taxonomy' => 'flavor',
-					'field' => 'slug',
-					'terms' => $flavor,
+					'field'    => 'slug',
+					'terms'    => $flavor,
 				),
 				array(
 					'taxonomy' => 'effect',
-					'field' => 'slug',
-					'terms' => $effect,
+					'field'    => 'slug',
+					'terms'    => $effect,
 				),
 				array(
 					'taxonomy' => 'symptom',
-					'field' => 'slug',
-					'terms' => $symptom,
+					'field'    => 'slug',
+					'terms'    => $symptom,
 				),
 				array(
 					'taxonomy' => 'condition',
-					'field' => 'slug',
-					'terms' => $condition,
+					'field'    => 'slug',
+					'terms'    => $condition,
 				),
 			)
 		)
@@ -88,24 +87,24 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 	while ( $wpdquery->have_posts() ) : $wpdquery->the_post();
 
-		$thumbnail_id 			= get_post_thumbnail_id();
-		$thumbnail_url_array	= wp_get_attachment_image_src( $thumbnail_id, 'dispensary-image', true );
-		$thumbnail_url			= $thumbnail_url_array[0];
-		$querytitle 			= get_the_title();
+		$thumbnail_id          = get_post_thumbnail_id();
+		$thumbnail_url_array   = wp_get_attachment_image_src( $thumbnail_id, 'dispensary-image', true );
+		$thumbnail_url         = $thumbnail_url_array[0];
+		$querytitle            = get_the_title();
 
 		/** Get the pricing for Flowers and Concentrates */
 
-		$priceHalfGram			= get_post_meta( get_the_ID(), '_halfgram', true );
-		$priceGram				= get_post_meta( get_the_ID(), '_gram', true );
-		$priceEighth			= get_post_meta( get_the_ID(), '_eighth', true );
-		$priceQuarter			= get_post_meta( get_the_ID(), '_quarter', true );
-		$priceHalfOunce			= get_post_meta( get_the_ID(), '_halfounce', true );
-		$priceOunce				= get_post_meta( get_the_ID(), '_ounce', true );
+		$priceHalfGram    = get_post_meta( get_the_ID(), '_halfgram', true );
+		$priceGram        = get_post_meta( get_the_ID(), '_gram', true );
+		$priceEighth      = get_post_meta( get_the_ID(), '_eighth', true );
+		$priceQuarter     = get_post_meta( get_the_ID(), '_quarter', true );
+		$priceHalfOunce   = get_post_meta( get_the_ID(), '_halfounce', true );
+		$priceOunce       = get_post_meta( get_the_ID(), '_ounce', true );
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
-		$wpd_hide_details = $wp_dispensary_options['wpd_hide_details']; // hidedetails
-		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
-		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
+		$wp_dispensary_options     = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wpd_hide_details          = $wp_dispensary_options['wpd_hide_details']; // hidedetails
+		$wpd_hide_pricing          = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
+		$wpd_content_placement     = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		if ( null === $wp_dispensary_options['wpd_currency'] ) {
 			$wpd_currency = 'USD';
 		} else {
@@ -358,17 +357,15 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 	/** Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'		=> '100',
-			'class'		=> '',
-			'name'		=> 'show',
-			'info'		=> 'show',
-			'title'		=> 'Concentrates',
-			'category'	=> '',
-			'aromy'	    => '',
-			'flavor'	  => '',
-			'effect'	  => '',
-			'symptom'	  => '',
-			'condition'	=> '',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'aroma'       => '',
+			'flavor'      => '',
+			'effect'      => '',
+			'symptom'     => '',
+			'condition'   => '',
 		),
 		$atts
 	) );
@@ -379,35 +376,35 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 	$wpdquery = new WP_Query(
 		array(
-			'post_type' 			=> 'concentrates',
-			'posts_per_page'		=> $posts,
-			'concentrates_category'	=> $category,
-			'tax_query' => array(
-				'relation' => 'OR',
+			'post_type'               => 'concentrates',
+			'posts_per_page'          => $posts,
+			'concentrates_category'   => $category,
+			'tax_query'               => array(
+				'relation'              => 'OR',
 				array(
-					'taxonomy' => 'aroma',
-					'field' => 'slug',
-					'terms' => $aroma,
+					'taxonomy'  => 'aroma',
+					'field'     => 'slug',
+					'terms'     => $aroma,
 				),
 				array(
-					'taxonomy' => 'flavor',
-					'field' => 'slug',
-					'terms' => $flavor,
+					'taxonomy'  => 'flavor',
+					'field'     => 'slug',
+					'terms'     => $flavor,
 				),
 				array(
 					'taxonomy' => 'effect',
-					'field' => 'slug',
-					'terms' => $effect,
+					'field'    => 'slug',
+					'terms'    => $effect,
 				),
 				array(
 					'taxonomy' => 'symptom',
-					'field' => 'slug',
-					'terms' => $symptom,
+					'field'    => 'slug',
+					'terms'    => $symptom,
 				),
 				array(
 					'taxonomy' => 'condition',
-					'field' => 'slug',
-					'terms' => $condition,
+					'field'    => 'slug',
+					'terms'    => $condition,
 				),
 			)
 		)
@@ -417,14 +414,14 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 	while ( $wpdquery->have_posts() ) : $wpdquery->the_post();
 
-		$thumbnail_id			= get_post_thumbnail_id();
-		$thumbnail_url_array	= wp_get_attachment_image_src( $thumbnail_id, 'dispensary-image', true );
-		$thumbnail_url			= $thumbnail_url_array[0];
-		$querytitle				= get_the_title();
+		$thumbnail_id          = get_post_thumbnail_id();
+		$thumbnail_url_array	 = wp_get_attachment_image_src( $thumbnail_id, 'dispensary-image', true );
+		$thumbnail_url         = $thumbnail_url_array[0];
+		$querytitle            = get_the_title();
 
 		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
-		$wpd_hide_details = $wp_dispensary_options['wpd_hide_details']; // hidedetails
-		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
+		$wpd_hide_details      = $wp_dispensary_options['wpd_hide_details']; // hidedetails
+		$wpd_hide_pricing      = $wp_dispensary_options['wpd_hide_pricing']; // hidepricing
 		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement']; // movecontent
 		if ( null === $wp_dispensary_options['wpd_currency'] ) {
 			$wpd_currency = 'USD';
