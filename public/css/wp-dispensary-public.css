@@ -92,8 +92,9 @@ ul.wpdispensary-list li:before {
 .wpdshortcode span.wpd-pricing,
 .wpdshortcode span.wpd-thc,
 .wpdshortcode span.wpd-productinfo {
-	color: #AAA;
-	font-size: 13px;
+  color: #AAA;
+  font-size: 13px;
+  margin-right: 10px;
 }
 
 table.wpdispensary-table {
