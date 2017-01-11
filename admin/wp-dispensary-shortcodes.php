@@ -707,7 +707,9 @@ function wpdispensary_edibles_shortcode( $atts ) {
 					'taxonomy' => 'ingredients',
 					'field' => 'slug',
 					'terms' => $ingredients,
-				),		)
+				),
+			),
+		)
 	);
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
@@ -1222,7 +1224,8 @@ function wpdispensary_topicals_shortcode( $atts ) {
 					'field' => 'slug',
 					'terms' => $ingredients,
 				),
-			)
+			),
+		)
 	);
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
