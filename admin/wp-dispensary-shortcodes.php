@@ -1465,12 +1465,12 @@ function wpdispensary_growers_shortcode( $atts ) {
 	/** Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'		=> '100',
-			'class'		=> '',
-			'name'		=> 'show',
-			'info'		=> 'show',
-			'title'		=> 'Growers',
-			'category'	=> '',
+			'posts'     => '100',
+			'class'     => '',
+			'name'      => 'show',
+			'info'      => 'show',
+			'title'     => 'Growers',
+			'category'  => '',
 		),
 		$atts
 	) );
