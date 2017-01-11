@@ -42,6 +42,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'effect'      => '',
 			'symptom'     => '',
 			'condition'   => '',
+			'orderby'     => '',
 		),
 		$atts
 	) );
@@ -85,11 +86,17 @@ function wpdispensary_flowers_shortcode( $atts ) {
 					'terms'    => $condition,
 			);
 	}
+	if ( '' !== $orderby ) {
+			$order = $orderby;
+			$ordernew = 'ASC';
+	}
 	$args = array(
 		'post_type'          => 'flowers',
 		'posts_per_page'     => $posts,
 		'flowers_category'   => $category,
 		'tax_query'          => $tax_query,
+		'orderby'            => $order,
+		'order'              => $ordernew,
 	);
 
 	$wpdquery = new WP_Query( $args );
