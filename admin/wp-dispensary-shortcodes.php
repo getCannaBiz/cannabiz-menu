@@ -33,6 +33,8 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'class'       => '',
 			'name'        => 'show',
 			'info'        => 'show',
+			'thc'         => '',
+			'cbd'         => '',
 			'title'       => 'Flowers',
 			'category'    => '',
 			'aroma'       => '',
@@ -319,6 +321,18 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$pricinghigh = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_gram', true );
 		}
 
+		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
+			$thcinfo = '<span class="wpd-productinfo"><strong>THC:</strong>' . get_post_meta( get_the_id(), '_thc', true ) .'%</span>';
+		} else {
+			$thcinfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
+			$cbdinfo = '<span class="wpd-productinfo"><strong>CBD:</strong>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</span>';
+		} else {
+			$cbdinfo = '';
+		}
+
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -337,9 +351,21 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
+		if ( 'show' === $thc ) {
+			$showthc = $thcinfo;
+		} else {
+			$showthc = '';
+		}
+
+		if ( 'show' === $cbd ) {
+			$showcbd = $cbdinfo;
+		} else {
+			$showcbd = '';
+		}
+
 		/** Shortcode display */
 
-		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class .'"><a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>'. $showname .''. $showinfo .'</div>';
+		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class .'"><a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>'. $showname .''. $showinfo .''. $showthc .''. $showcbd .'</div>';
 
 	endwhile;
 
