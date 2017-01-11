@@ -412,42 +412,50 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode for Concentrates
 	 */
-
-	$wpdquery = new WP_Query(
-		array(
-			'post_type'               => 'concentrates',
-			'posts_per_page'          => $posts,
-			'concentrates_category'   => $category,
-			'tax_query'               => array(
-				'relation'              => 'OR',
-				array(
-					'taxonomy'  => 'aroma',
-					'field'     => 'slug',
-					'terms'     => $aroma,
-				),
-				array(
-					'taxonomy'  => 'flavor',
-					'field'     => 'slug',
-					'terms'     => $flavor,
-				),
-				array(
+	$tax_query = array( 'relation' => 'AND' );
+	if ( '' !== $aroma ) {
+			$tax_query[]   = array(
+					'taxonomy' => 'aroma',
+					'field'    => 'slug',
+					'terms'    => $aroma,
+			);
+	}
+	if ( '' !== $flavor ) {
+			$tax_query[]   = array(
+					'taxonomy' => 'flavor',
+					'field'    => 'slug',
+					'terms'    => $flavor,
+			);
+	}
+	if ( '' !== $effect ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'effect',
 					'field'    => 'slug',
 					'terms'    => $effect,
-				),
-				array(
+			);
+	}
+	if ( '' !== $symptom ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'symptom',
 					'field'    => 'slug',
 					'terms'    => $symptom,
-				),
-				array(
+			);
+	}
+	if ( '' !== $condition ) {
+			$tax_query[]   = array(
 					'taxonomy' => 'condition',
 					'field'    => 'slug',
 					'terms'    => $condition,
-				),
-			)
-		)
+			);
+	}
+	$args = array(
+		'post_type'               => 'concentrates',
+		'posts_per_page'          => $posts,
+		'concentrates_category'   => $category,
+		'tax_query'               => $tax_query,
 	);
+
+	$wpdquery = new WP_Query( $args );
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
 
