@@ -49,42 +49,22 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode for Flowers
 	 */
-
-	$wpdquery = new WP_Query(
-		array(
-			'post_type'          => 'flowers',
-			'posts_per_page'     => $posts,
-			'flowers_category'   => $category,
-			'tax_query'          => array(
-				'relation'         => 'OR',
-				array(
+	$tax_query = array( 'relation' => 'AND' );
+	if ( empty( $aroma ) ) {} else {
+			$tax_query[] =  array(
 					'taxonomy' => 'aroma',
-					'field'    => 'slug',
-					'terms'    => $aroma,
-				),
-				array(
-					'taxonomy' => 'flavor',
-					'field'    => 'slug',
-					'terms'    => $flavor,
-				),
-				array(
-					'taxonomy' => 'effect',
-					'field'    => 'slug',
-					'terms'    => $effect,
-				),
-				array(
-					'taxonomy' => 'symptom',
-					'field'    => 'slug',
-					'terms'    => $symptom,
-				),
-				array(
-					'taxonomy' => 'condition',
-					'field'    => 'slug',
-					'terms'    => $condition,
-				),
-			)
-		)
+					'field' => 'slug',
+					'terms' => $aroma
+			);
+	}
+	$args = array(
+		'post_type'          => 'flowers',
+		'posts_per_page'     => $posts,
+		'flowers_category'   => $category,
+		'tax_query'          => $tax_query,
 	);
+
+	$wpdquery = new WP_Query( $args );
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
 
