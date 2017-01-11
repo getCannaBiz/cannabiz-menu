@@ -388,7 +388,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'class'       => '',
 			'name'        => 'show',
 			'info'        => 'show',
-			'title'       => 'Concentrtes',
+			'title'       => 'Concentrates',
 			'category'    => '',
 			'aroma'       => '',
 			'flavor'      => '',
