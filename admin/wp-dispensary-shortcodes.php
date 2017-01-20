@@ -1550,6 +1550,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'info'      => 'show',
 			'title'     => 'Growers',
 			'category'  => '',
+			'orderby'   => '',
 		),
 		$atts
 	) );
@@ -1557,12 +1558,17 @@ function wpdispensary_growers_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode for Growers
 	 */
-
+	if ( '' !== $orderby ) {
+		$order = $orderby;
+		$ordernew = 'ASC';
+	}
 	$wpdquery = new WP_Query(
 		array(
-			'post_type' 		=> 'growers',
-			'posts_per_page'	=> $posts,
+			'post_type' 		    => 'growers',
+			'posts_per_page'	  => $posts,
 			'growers_category'	=> $category,
+			'orderby'           => $order,
+			'order'             => $ordernew,
 		)
 	);
 
