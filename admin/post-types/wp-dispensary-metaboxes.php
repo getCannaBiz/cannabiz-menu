@@ -683,10 +683,10 @@ function wpdispensary_thc_cbd_mg() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thc mg data if its already been entered */
-	$thcmg			= get_post_meta( $post->ID, '_thcmg', true );
-	$cbdmg			= get_post_meta( $post->ID, '_cbdmg', true );
-	$thccbdservings	= get_post_meta( $post->ID, '_thccbdservings', true );
-	$netweight	= get_post_meta( $post->ID, '_netweight', true );
+	$thcmg          = get_post_meta( $post->ID, '_thcmg', true );
+	$cbdmg          = get_post_meta( $post->ID, '_cbdmg', true );
+	$thccbdservings = get_post_meta( $post->ID, '_thccbdservings', true );
+	$netweight      = get_post_meta( $post->ID, '_netweight', true );
 
 	/** Echo out the fields */
 	echo '<p>THC mg per serving:</p>';
@@ -695,7 +695,7 @@ function wpdispensary_thc_cbd_mg() {
 	echo '<input type="text" name="_cbdmg" value="' . $cbdmg  . '" class="widefat" />';
 	echo '<p>Servings:</p>';
 	echo '<input type="text" name="_thccbdservings" value="' . $thccbdservings  . '" class="widefat" />';
-	echo '<p>Net weight:</p>';
+	echo '<p>Net weight (grams):</p>';
 	echo '<input type="text" name="_netweight" value="' . $netweight  . '" class="widefat" />';
 
 }
