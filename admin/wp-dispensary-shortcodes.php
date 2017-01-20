@@ -412,6 +412,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'effect'      => '',
 			'symptom'     => '',
 			'condition'   => '',
+			'orderby'     => '',
 		),
 		$atts
 	) );
@@ -455,12 +456,18 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 					'terms'    => $condition,
 			);
 	}
+	if ( '' !== $orderby ) {
+			$order = $orderby;
+			$ordernew = 'ASC';
+	}
 	$args = array(
 		'post_type'               => 'concentrates',
 		'posts_per_page'          => $posts,
 		'concentrates_category'   => $category,
 		'tax_query'               => $tax_query,
-	);
+		'orderby'                 => $order,
+		'order'                   => $ordernew,
+		);
 
 	$wpdquery = new WP_Query( $args );
 
