@@ -1017,6 +1017,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'name'		=> 'show',
 			'info'		=> 'show',
 			'title'		=> 'Pre-rolls',
+			'orderby' => '',
 		),
 		$atts
 	) );
@@ -1024,11 +1025,16 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode for Pre-rolls
 	 */
-
+	if ( '' !== $orderby ) {
+			$order = $orderby;
+			$ordernew = 'ASC';
+	}
 	$wpdquery = new WP_Query(
 		array(
-			'post_type' 		=> 'prerolls',
-			'posts_per_page'	=> $posts,
+			'post_type'       => 'prerolls',
+			'posts_per_page'  => $posts,
+			'orderby'         => $order,
+			'order'           => $ordernew,
 		)
 	);
 
