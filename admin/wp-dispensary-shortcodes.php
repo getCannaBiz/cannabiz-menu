@@ -1275,6 +1275,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'title'       => 'Topicals',
 			'category'    => '',
 			'ingredient'  => '',
+			'orderby'     => '',
 		),
 		$atts
 	) );
@@ -1291,12 +1292,17 @@ function wpdispensary_topicals_shortcode( $atts ) {
 					'terms'    => $ingredient,
 			);
 	}
-
+	if ( '' !== $orderby ) {
+			$order = $orderby;
+			$ordernew = 'ASC';
+	}
 	$args = array(
 		'post_type'          => 'topicals',
 		'posts_per_page'     => $posts,
 		'topicals_category'  => $category,
 		'tax_query'          => $tax_query,
+		'orderby'            => $order,
+		'order'              => $ordernew,
 	);
 
 	$wpdquery = new WP_Query( $args );
