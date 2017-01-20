@@ -337,7 +337,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		}
 
 		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
-			$thcinfo = '<span class="wpd-productinfo"><strong>THC:</strong>' . get_post_meta( get_the_id(), '_thc', true ) .'%</span>';
+			$thcinfo = '<span class="wpd-productinfo"><strong>THC: </strong>' . get_post_meta( get_the_id(), '_thc', true ) .'%</span>';
 		} else {
 			$thcinfo = '';
 		}
