@@ -745,6 +745,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'title'       => 'Edibles',
 			'category'    => '',
 			'ingredient'  => '',
+			'orderby'     => '',
 		),
 		$atts
 	) );
@@ -760,12 +761,17 @@ function wpdispensary_edibles_shortcode( $atts ) {
 					'terms'    => $ingredient,
 			);
 	}
-
+	if ( '' !== $orderby ) {
+			$order = $orderby;
+			$ordernew = 'ASC';
+	}
 	$args = array(
 		'post_type'          => 'edibles',
 		'posts_per_page'     => $posts,
 		'edibles_category'   => $category,
 		'tax_query'          => $tax_query,
+		'orderby'            => $order,
+		'order'              => $ordernew,
 	);
 
 	$wpdquery = new WP_Query( $args );
