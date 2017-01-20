@@ -17,7 +17,7 @@
  * @since    1.3.0
  */
 function add_thccbd_metaboxes() {
-	$screens = array( 'flowers', 'concentrates' );
+	$screens = array( 'flowers', 'concentrates', 'prerolls' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(

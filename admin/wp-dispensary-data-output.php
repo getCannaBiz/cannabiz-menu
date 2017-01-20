@@ -422,7 +422,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$content .= $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls' ) ) ) {
 				$content .= $wpdthc . $wpdcbd;
 			}
 
