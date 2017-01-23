@@ -2,8 +2,8 @@
 Contributors: deviodigital
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis, weed, pot, medical marijuana
 Requires at least: 3.0.1
-Tested up to: 4.7
-Stable tag: 1.9.3
+Tested up to: 4.7.1
+Stable tag: 1.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,16 @@ It has a long list of options built in for customization to fit your business br
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.9.4 =
+* Added check for all prices, not just grams in `admin/wp-dispensary-shortcodes.php`
+* Added category taxonomies to Menus in admin dash `admin/post-types/wp-dispensary-taxonomies.php`
+* Added taxonomy options to shortcodes (Flowers, Concentrates, Topicals, Edibles) in `admin/wp-dispensary-shortcodes.php`
+* Added orderby option to all shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added THC% and CBD% to Pre-rolls in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added THC% and CBD% to the data output Details table in `admin/wp-dispensary-data-output.php`
+* Added THC and CBD options to Flowers shortcode in `admin/wp-dispensary-shortcodes.php`
+* Fixed ounce price check in `admin/wp-dispensary-data-output.php`
 
 = 1.9.3 =
 * Added ingredients to Topicals menu type in `admin/post-types/wp-dispensary-taxonomies.php`
