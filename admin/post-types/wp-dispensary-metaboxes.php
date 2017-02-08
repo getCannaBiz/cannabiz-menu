@@ -852,3 +852,101 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'wpdispensary_save_thccbdtopical_meta', 1, 2 ); /** Save the custom fields */
+
+/**
+ * Growers Clone Details metabox
+ *
+ * Adds the clone details metabox to specific custom post types
+ *
+ * @since    1.9.5
+ */
+function add_clonedetails_metaboxes() {
+	$screens = array( 'growers' );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_clonedetails',
+			__( 'Clone Details', 'wp-dispensary' ),
+			'wpdispensary_clonedetails',
+			$screen,
+			'side',
+			'default'
+		);
+	}
+
+}
+
+add_action( 'add_meta_boxes', 'add_clonedetails_metaboxes' );
+
+/**
+ * Building the metabox
+ */
+function wpdispensary_clonedetails() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="clonedetailsmeta_noncename" id="clonedetailsmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the origin data if its already been entered */
+	$origin   = get_post_meta( $post->ID, '_origin', true );
+	$time     = get_post_meta( $post->ID, '_time', true );
+
+	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>Origin:</p>';
+	echo '<input type="text" name="_origin" value="' . $origin  . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="pricebox">';
+	echo '<p>Grow Time:</p>';
+	echo '<input type="text" name="_time" value="' . $time  . '" class="widefat" />';
+	echo '</div>';
+
+}
+
+/**
+ * Save the Metabox Data
+ */
+function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['clonedetailsmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	 $clonedetails_meta['_origin']	= $_POST['_origin'];
+	 $clonedetails_meta['_time']	= $_POST['_time'];
+
+	/** Add values of $clonedetails_meta as custom fields */
+
+	foreach ( $clonedetails_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
+		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value
+			update_post_meta( $post->ID, $key, $value );
+		} else { // If the custom field doesn't have a value
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+
+add_action( 'save_post', 'wpdispensary_save_clonedetails_meta', 1, 2 ); // save the custom fields
