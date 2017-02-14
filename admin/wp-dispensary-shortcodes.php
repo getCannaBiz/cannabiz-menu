@@ -2206,6 +2206,106 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$cbdinfo = '';
 		}
 
+		/*
+		 * Get the pricing for Growers
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+			$pricingperunit = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true );
+		}
+
+		/*
+		 * Get the seed count for Growers
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
+			$wpdseedcount = ' - <strong>Seeds:</strong> ' . get_post_meta( get_the_id(), '_seedcount', true );
+		} else {
+			$wpdseedcount = '';
+		}
+
+		/*
+		 * Get the clone count for Growers
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
+			$wpdclonecount = ' - <strong>Clones:</strong> ' . get_post_meta( get_the_id(), '_clonecount', true );
+		} else {
+			$wpdclonecount = '';
+		}
+
+		/** Get the pricing for Topicals */
+
+		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
+			$topicalprice = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '';
+		}
+		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
+			$topicalsize = ' - <strong>Size:</strong> '. get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz';
+		}
+		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
+			$topicalthc = ' - <strong>THC:</strong> '. get_post_meta( get_the_id(), '_thctopical', true ) . 'mg';
+		}
+		if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
+			$topicalcbd = ' - <strong>CBD:</strong> '. get_post_meta( get_the_id(), '_cbdtopical', true ) . 'mg';
+		}
+
+		/*
+		 * Get the pricing for Pre-rolls
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+			$pricingeach = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true ) . ' per roll';
+		}
+
+		/*
+		 * Get the pricing for Edibles
+		 */
+
+		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
+			$thcmg = ' - <strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
+		}
+		$thcsep = ' - ';
+		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
+			$servingcount = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
+		}
+		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+			$priceeach = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true );
+		}
+
+		/** Get the pricing for Concentrates */
+
+		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true );
+			$pricingname	= '<strong>1/2 gram: </strong>';
+		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true );
+			$pricingname	= '<strong>1 gram: </strong>';
+		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_eighth', true );
+			$pricingname	= '<strong>1/8 ounce: </strong>';
+		} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_quarter', true );
+			$pricingname	= '<strong>1/4 ounce: </strong>';
+		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfounce', true );
+			$pricingname	= '<strong>1/2 ounce: </strong>';
+		} elseif ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
+			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_ounce', true );
+			$pricingname	= '<strong>1 ounce: </strong>';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
+			$thcinfo = '<span class="wpd-productinfo"><strong>THC: </strong>' . get_post_meta( get_the_id(), '_thc', true ) .'%</span>';
+		} else {
+			$thcinfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
+			$cbdinfo = '<span class="wpd-productinfo"><strong>CBD: </strong>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</span>';
+		} else {
+			$cbdinfo = '';
+		}
+
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -2214,14 +2314,58 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$showname = '';
 		}
 
-		if ( 'show' === $info ) {
-			if ( empty( $pricing ) ) {
-				$showinfo = '<span class="wpd-productinfo"><strong>'. $wpd_cost_phrase .':</strong> ' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
+		/** Growers */
+		if ( in_array( get_post_type(), array( 'growers' ) ) ) {
+			if ( 'show' === $info ) {
+				$showinfo = '<span class="wpd-productinfo">' . $pricingperunit . '' . $wpdseedcount . '' . $wpdclonecount . '</span>';
 			} else {
-				$showinfo = '<span class="wpd-productinfo"><strong>'. $wpd_cost_phrase .':</strong> ' . $pricing . '</span>';
+				$showinfo = '';
 			}
-		} else {
-			$showinfo = '';
+		}
+		/** Topicals */
+		if ( in_array( get_post_type(), array( 'topicals' ) ) ) {		 
+			if ( 'show' === $info ) {
+				$showinfo = '<span class="wpd-productinfo">' . $topicalprice . '' . $topicalsize . '' . $topicalthc . '' . $topicalcbd . '</span>';
+			} else {
+				$showinfo = '';
+			}
+		}
+
+		/** Pre-rolls */
+		if ( in_array( get_post_type(), array( 'prerolls' ) ) ) {
+			if ( 'show' === $info ) {
+				$showinfo = '<span class="wpd-productinfo">' . $pricingeach . '</span>';
+			} else {
+				$showinfo = '';
+			}
+		}
+		/** Edibles */
+		if ( in_array( get_post_type(), array( 'edibles' ) ) ) {
+			if ( 'show' === $info ) {
+				$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcmg . '' . $servingcount . '</span>';
+			} else {
+				$showinfo = '';
+			}
+		}
+		/** Concentrates */
+		if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
+			if ( 'show' === $info ) {
+				$showinfo = '<span class="wpd-productinfo">' . $pricingname . '' . $pricinglow . '</span>';
+			} else {
+				$showinfo = '';
+			}		 
+		}
+		/** Flowers */
+		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
+			if ( 'show' === $info ) {
+				if ( empty( $pricing ) ) {
+					$showinfo = '<span class="wpd-productinfo"><strong>'. $wpd_cost_phrase .':</strong> ' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
+				} else {
+					$showinfo = '<span class="wpd-productinfo"><strong>'. $wpd_cost_phrase .':</strong> ' . $pricing . '</span>';
+				}
+			} else {
+				$showinfo = '';
+			}
 		}
 
 		if ( 'show' === $thc ) {
