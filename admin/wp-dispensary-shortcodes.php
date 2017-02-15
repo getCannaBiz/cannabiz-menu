@@ -1958,8 +1958,14 @@ function wpdispensary_carousel_shortcode( $atts ) {
 	);
 
 	$wpdquery = new WP_Query( $args );
+	
+		if ( '' === $title ) {
+			$showtitle = '';
+		} else {
+			$showtitle = '<h2 class="wpd-title">'. $title .'</h2>';
+		}
 
-	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2><div class="wpd-carousel">';
+	$wpdposts = '<div class="wpdispensary">'. $showtitle .'<div class="wpd-carousel">';
 
 	while ( $wpdquery->have_posts() ) : $wpdquery->the_post();
 
