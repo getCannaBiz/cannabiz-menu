@@ -433,6 +433,10 @@ table.wpdispensary-table td span {
 
     cursor: pointer;
 }
+.slick-dots li:before,
+.slick-dots li:after {
+	display: none !important;
+}
 .slick-dots li button
 {
     font-size: 0;
