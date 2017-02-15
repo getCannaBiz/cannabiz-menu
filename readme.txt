@@ -2,8 +2,8 @@
 Contributors: deviodigital
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis, weed, pot, medical marijuana
 Requires at least: 3.0.1
-Tested up to: 4.7.1
-Stable tag: 1.9.4
+Tested up to: 4.7.2
+Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,16 @@ It has a long list of options built in for customization to fit your business br
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.9.5 =
+* Added 2 new Action Hooks to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added 8 new Action Hooks to Pricing & Data Tables in `admin/wp-dispensary-data-output.php`
+* Added Clone Details metabox to Growers menu type in `admin/wp-dispensary-metaboxes.php`
+* Added Clone Details information to Details Table in `admin/wp-dispensary-data-output.php`
+* Added Carousel shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added CSS styles for the Carousel shortcode in `public/css/wp-dispensary-public.css`
+* Added slick.js for the Carousel shortcode in `public/js/wp-dispensary-public.js`
+* Updated promotion for premium add-ons for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
 
 = 1.9.4 =
 * Added check for all prices, not just grams in `admin/wp-dispensary-shortcodes.php`

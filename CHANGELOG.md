@@ -1,5 +1,15 @@
 # Changelog
 
+### 1.9.5
+* Added 2 new Action Hooks to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added 8 new Action Hooks to Pricing & Data Tables in `admin/wp-dispensary-data-output.php`
+* Added Clone Details metabox to Growers menu type in `admin/wp-dispensary-metaboxes.php`
+* Added Clone Details information to Details Table in `admin/wp-dispensary-data-output.php`
+* Added Carousel shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added CSS styles for the Carousel shortcode in `public/css/wp-dispensary-public.css`
+* Added slick.js for the Carousel shortcode in `public/js/wp-dispensary-public.js`
+* Updated promotion for premium add-ons for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
+
 ### 1.9.4
 * Added check for all prices, not just grams in `admin/wp-dispensary-shortcodes.php`
 * Added category taxonomies to Menus in admin dash `admin/post-types/wp-dispensary-taxonomies.php`

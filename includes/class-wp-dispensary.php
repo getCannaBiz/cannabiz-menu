@@ -71,7 +71,7 @@ class WP_Dispensary {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-dispensary';
-		$this->version = '1.9.4';
+		$this->version = '1.9.5';
 
 		$this->load_dependencies();
 		$this->set_locale();
