@@ -11,10 +11,13 @@
  */
 
 /**
- * Shortcode Image
+ * Shortcode images
  */
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'dispensary-image', 360, 250, true );
+	add_image_size( 'wpd-large', 1200, 1200, true );
+	add_image_size( 'wpd-medium', 800, 800, true );
+	add_image_size( 'wpd-small', 400, 400, true );
 }
 
 /**
