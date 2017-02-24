@@ -385,12 +385,14 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
+		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>';
+
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>'. $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -734,12 +736,14 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
+		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Concentrate" /></a>';
+
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Concentrate" /></a>'. $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -1018,12 +1022,14 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
+		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Edible" /></a>';
+
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Edible" /></a>'. $showname .''. $showinfo .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -1283,12 +1289,14 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
+		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Pre-roll" /></a>';
+
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Pre-roll" /></a>'. $showname .''. $showinfo .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -1569,12 +1577,14 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
+		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>';
+
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>' . $showname . '' . $showinfo . ''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname . '' . $showinfo . ''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -1857,12 +1867,14 @@ function wpdispensary_growers_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
+		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Grower" /></a>';
+
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Grower" /></a>'. $showname .''. $showinfo .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -2393,12 +2405,14 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
+		$wpdposts .= '<div class="carousel-item ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - '. $showname .'" /></a>';
+
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="carousel-item ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>'. $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
