@@ -415,7 +415,7 @@ function slug_register_topicalinfo() {
 	foreach ( $topicalinformation as $topicalinfo ) {
 		register_api_field(
 			'topicals',
-			$edibleinfo,
+			$topicalinfo,
 			array(
 				'get_callback'    => 'slug_get_topicalinfo',
 				'update_callback' => null,
