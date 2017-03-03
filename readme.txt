@@ -68,6 +68,16 @@ It has a long list of options built in for customization to fit your business br
 
 == Changelog ==
 
+= 1.9.6 =
+* Added imgsize option to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added new image sizes for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated Action Hooks code for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated Concentrates pricing in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated Concentrates pricing for data ouput in `admin/wp-dispensary-data-output.php`
+* Updated Concentrates pricing for REST API in `admin/wp-dispensary-rest-api.php`
+* Updated Concentrates pricing output in shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated CSS for admin Concentrate Prices box in `admin/css/wp-dispensary-admin.css`
+
 = 1.9.5 =
 * Added 2 new Action Hooks to shortcodes in `admin/wp-dispensary-shortcodes.php`
 * Added 8 new Action Hooks to Pricing & Data Tables in `admin/wp-dispensary-data-output.php`
