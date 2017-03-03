@@ -109,7 +109,7 @@ add_action( 'save_post', 'wpdispensary_save_thccbd_meta', 1, 2 ); // save the cu
 
 
 /**
- * Prices metabox
+ * Flower Prices metabox
  *
  * Adds the Prices metabox to specific custom post types
  *
@@ -117,12 +117,12 @@ add_action( 'save_post', 'wpdispensary_save_thccbd_meta', 1, 2 ); // save the cu
  */
 function add_prices_metaboxes() {
 
-	$screens = array( 'flowers', 'concentrates' );
+	$screens = array( 'flowers' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_prices',
-			__( 'Product Prices', 'wp-dispensary' ),
+			__( 'Flower Prices', 'wp-dispensary' ),
 			'wpdispensary_prices',
 			$screen,
 			'normal',
@@ -230,6 +230,119 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** Save the custom fields */
+
+
+/**
+ * Concentrate Prices metabox
+ *
+ * Adds the Prices metabox to Concentrates menu type
+ *
+ * @since    1.9.6
+ */
+function add_concentrateprices_metaboxes() {
+
+	$screens = array( 'concentrates' );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_concentrateprices',
+			__( 'Concentrate Prices', 'wp-dispensary' ),
+			'wpdispensary_concentrateprices',
+			$screen,
+			'normal',
+			'default'
+		);
+	}
+
+}
+
+add_action( 'add_meta_boxes', 'add_concentrateprices_metaboxes' );
+
+/**
+ * WP Dispensary Concentrate Prices
+ */
+function wpdispensary_concentrateprices() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="concentratepricesmeta_noncename" id="concentratepricesmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the prices data if its already been entered */
+	$priceeach       = get_post_meta( $post->ID, '_priceeach', true );
+	$halfgram        = get_post_meta( $post->ID, '_halfgram', true );
+	$gram            = get_post_meta( $post->ID, '_gram', true );
+	$twograms        = get_post_meta( $post->ID, '_twograms', true );
+
+	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>Price Each:</p>';
+	echo '<input type="text" name="_priceeach" value="' . $priceeach  . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="pricebox">';
+	echo '<p>1/2 Gram:</p>';
+	echo '<input type="text" name="_halfgram" value="' . $halfgram  . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="pricebox">';
+	echo '<p>1 Gram:</p>';
+	echo '<input type="text" name="_gram" value="' . $gram  . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="pricebox">';
+	echo '<p>2 Grams:</p>';
+	echo '<input type="text" name="_twograms" value="' . $twograms  . '" class="widefat" />';
+	echo '</div>';
+
+}
+
+/**
+ * Save the Metabox Data
+ */
+function wpdispensary_save_concentrateprices_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! wp_verify_nonce( $_POST['concentratepricesmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	$concentrateprices_meta['_priceeach']        = $_POST['_priceeach'];
+	$concentrateprices_meta['_halfgram']         = $_POST['_halfgram'];
+	$concentrateprices_meta['_gram']             = $_POST['_gram'];
+	$concentrateprices_meta['_twograms']         = $_POST['_twograms'];
+
+	/** Add values of $prices_meta as custom fields */
+
+	foreach ( $concentrateprices_meta as $key => $value ) { /** Cycle through the $prices_meta array! */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+
+add_action( 'save_post', 'wpdispensary_save_concentrateprices_meta', 1, 2 ); /** Save the custom fields */
+
 
 /**
  * Pre-Roll Flower Type metabox

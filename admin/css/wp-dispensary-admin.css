@@ -10,7 +10,8 @@
  * @subpackage WP_Dispensary/admin/css
  */
 
-#wpdispensary_prices .inside {
+#wpdispensary_prices .inside,
+#wpdispensary_concentrateprices .inside {
     overflow: auto;
 }
 
@@ -19,6 +20,13 @@
 	margin: 10px 1%;
 	position: relative;
 	width: 31.333%;
+}
+
+#wpdispensary_concentrateprices .inside .pricebox {
+	float: left;
+	margin: 10px 1%;
+	position: relative;
+	width: 23%;
 }
 
 #dashboard_right_now .flowers-count a:before,

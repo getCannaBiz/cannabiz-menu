@@ -263,7 +263,7 @@ add_filter( 'rest_prepare_topicals', 'topicals_category', 10, 3 );
 
 /**
  * This adds the wpdispensary_prices metafields to the
- * API callback for flowers and concentrates
+ * API callback for flowers
  *
  * @since    1.1.0
  */
@@ -277,7 +277,7 @@ function slug_register_prices() {
 	$productsizes = array( '_halfgram', '_gram', '_eighth', '_quarter', '_halfounce', '_ounce' );
 	foreach ( $productsizes as $size ) {
 		register_api_field(
-			array( 'flowers', 'concentrates' ),
+			array( 'flowers' ),
 			$size,
 			array(
 				'get_callback'    => 'slug_get_prices',
@@ -292,6 +292,40 @@ function slug_register_prices() {
  * Get Prices
  */
 function slug_get_prices( $object, $field_name, $request ) {
+	return get_post_meta( $object['id'], $field_name, true );
+}
+
+/**
+ * This adds the wpdispensary_prices metafields to the
+ * API callback for concentrates
+ *
+ * @since    1.9.6
+ */
+
+add_action( 'rest_api_init', 'slug_register_concentrateprices' );
+
+/**
+ * Registering Prices
+ */
+function slug_register_concentrateprices() {
+	$productsizes = array( '_priceeach', '_halfgram', '_gram', '_twograms' );
+	foreach ( $productsizes as $size ) {
+		register_api_field(
+			array( 'concentrates' ),
+			$size,
+			array(
+				'get_callback'    => 'slug_get_concentrateprices',
+				'update_callback' => null,
+				'schema'          => null,
+			)
+		);
+	} /** /foreach */
+}
+
+/**
+ * Get Prices
+ */
+function slug_get_concentrateprices( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
 

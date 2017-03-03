@@ -345,7 +345,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceperunit = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			$wpdpriceperunit = '<tr class="priceeach"><td><span>Price Each:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 		} else {
 			$wpdpriceperunit = '';
 		}
@@ -366,6 +366,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdgram = '<td><span>1 g:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true ) .'</td>';
 		} else {
 			$wpdgram = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+			$wpdtwograms = '<td><span>2 g:</span> '. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_twograms', true ) .'</td>';
+		} else {
+			$wpdtwograms = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
@@ -524,8 +530,16 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$content .= $wpdpricingtop;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
 				$content .= '<tr>' . $wpdhalfgram . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
+			}
+
+			if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
+				if ( empty( $wpdpriceperunit ) ) {
+				$content .= '<tr>' . $wpdhalfgram . $wpdgram . $wpdtwograms . '</tr>';
+				} else {
+				$content .= '<tr>' . $wpdpriceperunit . '</tr>';
+				}
 			}
 
 			if ( in_array( get_post_type(), array( 'prerolls', 'edibles' ) ) ) {

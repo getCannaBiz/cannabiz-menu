@@ -505,7 +505,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		}
 
 		$thumbnail_id          = get_post_thumbnail_id();
-		$thumbnail_url_array	 = wp_get_attachment_image_src( $thumbnail_id, $imagesize, true );
+		$thumbnail_url_array   = wp_get_attachment_image_src( $thumbnail_id, $imagesize, true );
 		$thumbnail_url         = $thumbnail_url_array[0];
 		$querytitle            = get_the_title();
 
@@ -688,25 +688,26 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 		/** Get the pricing for Concentrates */
 
-		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true );
-			$pricingname	= '<strong>1/2 gram: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true );
-			$pricingname	= '<strong>1 gram: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_eighth', true );
-			$pricingname	= '<strong>1/8 ounce: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_quarter', true );
-			$pricingname	= '<strong>1/4 ounce: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfounce', true );
-			$pricingname	= '<strong>1/2 ounce: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_ounce', true );
-			$pricingname	= '<strong>1 ounce: </strong>';
+		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+			$pricingeach    = $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true );
+			$pricingname	= '<strong>Price: </strong>';
+		} else {
+			$pricingeach    = '';
 		}
+
+		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
+			$halfgram       = '<span class="wpd-productinfo"><strong>1/2g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true ) .'</span>';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+			$gram           = '<span class="wpd-productinfo"><strong>1g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true ) .'</span>';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+			$twograms       = '<span class="wpd-productinfo"><strong>2g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_twograms', true ) .'</span>';
+		}
+
+		$pricingsep = ' - ';
 
 		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
 			$thcinfo = '<span class="wpd-productinfo"><strong>THC: </strong>' . get_post_meta( get_the_id(), '_thc', true ) .'%</span>';
@@ -729,7 +730,11 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = '<span class="wpd-productinfo">' . $pricingname . '' . $pricinglow . '</span>';
+			if ( empty( $pricingeach ) ) {
+			$showinfo = $halfgram .''. $gram .''. $twograms;
+			} else {
+			$showinfo = '<span class="wpd-productinfo">' . $pricingname . '' . $pricingeach .'</span>';
+			}
 		} else {
 			$showinfo = '';
 		}
