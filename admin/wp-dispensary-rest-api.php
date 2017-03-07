@@ -276,7 +276,7 @@ add_action( 'rest_api_init', 'slug_register_prices' );
 function slug_register_prices() {
 	$productsizes = array( '_halfgram', '_gram', '_eighth', '_quarter', '_halfounce', '_ounce' );
 	foreach ( $productsizes as $size ) {
-		register_api_field(
+		register_rest_field(
 			array( 'flowers' ),
 			$size,
 			array(
@@ -310,7 +310,7 @@ add_action( 'rest_api_init', 'slug_register_concentrateprices' );
 function slug_register_concentrateprices() {
 	$productsizes = array( '_priceeach', '_halfgram', '_gram', '_twograms' );
 	foreach ( $productsizes as $size ) {
-		register_api_field(
+		register_rest_field(
 			array( 'concentrates' ),
 			$size,
 			array(
@@ -344,7 +344,7 @@ add_action( 'rest_api_init', 'slug_register_edibleinfo' );
 function slug_register_edibleinfo() {
 	$edibleinformation = array( '_thcmg', '_thcservings', '_priceeach' );
 	foreach ( $edibleinformation as $edibleinfo ) {
-		register_api_field(
+		register_rest_field(
 			'edibles',
 			$edibleinfo,
 			array(
@@ -378,7 +378,7 @@ add_action( 'rest_api_init', 'slug_register_prerollinfo' );
 function slug_register_prerollinfo() {
 	$prerollinformation = array( '_priceeach', '_selected_flowers' );
 	foreach ( $prerollinformation as $prerollinfo ) {
-		register_api_field(
+		register_rest_field(
 			'prerolls',
 			$prerollinfo,
 			array(
@@ -413,7 +413,7 @@ add_action( 'rest_api_init', 'slug_register_thccbd' );
 function slug_register_thccbd() {
 	$productsizes = array( '_thc', '_cbd' );
 	foreach ( $productsizes as $size ) {
-		register_api_field(
+		register_rest_field(
 			array( 'flowers', 'concentrates', 'edibles', 'prerolls' ),
 			$size,
 			array(
@@ -447,7 +447,7 @@ add_action( 'rest_api_init', 'slug_register_topicalinfo' );
 function slug_register_topicalinfo() {
 	$topicalinformation = array( '_pricetopical', '_thctopical', '_cbdtopical', '_sizetopical' );
 	foreach ( $topicalinformation as $topicalinfo ) {
-		register_api_field(
+		register_rest_field(
 			'topicals',
 			$topicalinfo,
 			array(
@@ -481,7 +481,7 @@ add_action( 'rest_api_init', 'slug_register_growerinfo' );
 function slug_register_growerinfo() {
 	$growerinformation = array( '_priceeach', '_selected_flowers', '_seedcount', '_clonecount' , '_time' , '_origin' );
 	foreach ( $growerinformation as $growerinfo ) {
-		register_api_field(
+		register_rest_field(
 			'growers',
 			$growerinfo,
 			array(
