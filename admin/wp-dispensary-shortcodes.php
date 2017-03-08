@@ -697,14 +697,20 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
 			$halfgram       = '<span class="wpd-productinfo"><strong>1/2g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true ) .'</span>';
+		} else {
+			$halfgram       = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
 			$gram           = '<span class="wpd-productinfo"><strong>1g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true ) .'</span>';
+		} else {
+			$gram           = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
 			$twograms       = '<span class="wpd-productinfo"><strong>2g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_twograms', true ) .'</span>';
+		} else {
+			$twograms       = '';
 		}
 
 		$pricingsep = ' - ';
