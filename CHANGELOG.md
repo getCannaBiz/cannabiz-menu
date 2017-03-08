@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.9.6.1
+* Fatal error bug with the REST API code fixed (thanks @jeherve!) in `admin/wp-dispensary-rest-api.php`
+* Fixed Concentrate price output for shortcodes in `admin/wp-dispensary-shortcodes.php`
+
 ### 1.9.6
 * Added imgsize option to shortcodes in `admin/wp-dispensary-shortcodes.php`
 * Added new image sizes for shortcodes in `admin/wp-dispensary-shortcodes.php`

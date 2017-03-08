@@ -2,8 +2,8 @@
 Contributors: deviodigital
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis, weed, pot, medical marijuana
 Requires at least: 3.0.1
-Tested up to: 4.7.2
-Stable tag: 1.9.6
+Tested up to: 4.7.3
+Stable tag: 1.9.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,10 @@ It has a long list of options built in for customization to fit your business br
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.9.6.1 =
+* Fatal error bug with the REST API code fixed (thanks @jeherve!) in `admin/wp-dispensary-rest-api.php`
+* Fixed Concentrate price output for shortcodes in `admin/wp-dispensary-shortcodes.php`
 
 = 1.9.6 =
 * Added imgsize option to shortcodes in `admin/wp-dispensary-shortcodes.php`
