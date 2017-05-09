@@ -43,6 +43,8 @@ Samples of the shortcodes are below. See all shortcode options in the [documenta
 
 `[wpd-growers posts="6"]`
 
+`[wpd-carousel posts="6"]`
+
 ### Extend WP Dispensary
 
 With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
