@@ -34,6 +34,8 @@ Samples of the shortcodes are below. See all shortcode options in the [documenta
 
 `[wpd-growers posts="6"]`
 
+`[wpd-carousel posts="6"]`
+
 ## 100% Open Source
 
 WP Dispensary is free to use with no license restrictions or expensive setup fees. It's as simple as downloading the plugin, installing it on your WordPress powered website, and adding content.
