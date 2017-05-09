@@ -322,6 +322,10 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$pricing = '';
 		}
 
+		if ( '' === $priceHalfGram && '' === $priceGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+			$pricing = ' ';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
 			$pricinglow = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_halfgram', true );
 		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
@@ -369,6 +373,8 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		if ( 'show' === $info ) {
 			if ( empty( $pricing ) ) {
 				$showinfo = '<span class="wpd-productinfo"><strong>'. $wpd_cost_phrase .':</strong> ' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
+			} elseif ( ' ' === $pricing ) {
+				$showinfo = ' ';
 			} else {
 				$showinfo = '<span class="wpd-productinfo"><strong>'. $wpd_cost_phrase .':</strong> ' . $pricing . '</span>';
 			}
