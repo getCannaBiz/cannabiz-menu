@@ -38,7 +38,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Flowers', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Flowers', 'wp-dispensary' ),
+	            'description'  => __( 'Your most recent Flowers', 'wp-dispensary' ),
 	        )
 	    );
 	}
@@ -235,7 +235,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Concentrates', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Concentrates', 'wp-dispensary' ),
+	            'description'  => __( 'Your most recent Concentrates', 'wp-dispensary' ),
 	        )
 	    );
 	}
@@ -431,7 +431,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Edibles', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Edibles', 'wp-dispensary' ),
+	            'description'  => __( 'Your most recent Edibles', 'wp-dispensary' ),
 	        )
 	    );
 	}
@@ -629,7 +629,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Pre-Rolls', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Pre-Rolls', 'wp-dispensary' ),
+	            'description'  => __( 'Your most recent Pre-Rolls', 'wp-dispensary' ),
 	        )
 	    );
 	}
@@ -832,7 +832,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Topicals', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Topicals', 'wp-dispensary' ),
+	            'description'  => __( 'Your most recent Topicals', 'wp-dispensary' ),
 	        )
 	    );
 	}
@@ -1029,7 +1029,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 	        false,
 	        __( 'Recent Growers', 'wp-dispensary' ),
 	        array(
-	            'description'  => __( 'Your dispensaries most recent Growers', 'wp-dispensary' ),
+	            'description'  => __( 'Your most recent Growers', 'wp-dispensary' ),
 	        )
 	    );
 	}
