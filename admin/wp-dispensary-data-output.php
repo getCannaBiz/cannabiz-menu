@@ -26,9 +26,21 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 	function wpd_data_output_content( $content ) {
 
 		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' );
-		$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
+		if ( !isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
+			$wpd_hide_details = '';
+		} else {
+			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
+		}
+		if ( !isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
+			$wpd_hide_pricing = '';
+		} else {
+			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
+		}
+		if ( !isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
+			$wpd_content_placement = '';
+		} else {
+			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
+		}
 		if ( null === $wp_dispensary_options['wpd_currency'] ) {
 			$wpd_currency = 'USD';
 		} else {
