@@ -1014,7 +1014,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 				echo "<div class='wpdispensary-widget'>";
 				do_action( 'wpdispensary_topicals_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( 'wpdispensary-widget' );
+					the_post_thumbnail( $instance["imagesize"] );
 				echo '</a>';
 				if ( 'on' === $instance['topicalname'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -1062,12 +1062,13 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 	    $instance = $old_instance;
 
-	    $instance['title']      		= strip_tags( $new_instance['title'] );
-	    $instance['limit']   			= strip_tags( $new_instance['limit'] );
-	    $instance['order']				= $new_instance['order'];
-	    $instance['featuredimage']		= $new_instance['featuredimage'];
-	    $instance['topicalname']		= $new_instance['topicalname'];
-	    $instance['topicalcategory']	= $new_instance['topicalcategory'];
+	    $instance['title']              = strip_tags( $new_instance['title'] );
+	    $instance['limit']              = strip_tags( $new_instance['limit'] );
+	    $instance['order']              = $new_instance['order'];
+	    $instance['featuredimage']      = $new_instance['featuredimage'];
+	    $instance['imagesize']          = $new_instance['imagesize'];
+	    $instance['topicalname']        = $new_instance['topicalname'];
+	    $instance['topicalcategory']    = $new_instance['topicalcategory'];
 
 	    return $instance;
 	}
@@ -1084,12 +1085,13 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 	    $defaults = array(
-	        'title'    			=> 'Recent Topicals',
-	        'limit'  			=> '5',
-	        'order'				=> '',
-	        'featuredimage'		=> '',
-	        'topicalname' 		=> '',
-	        'topicalcategory' 	=> '',
+	        'title'             => 'Recent Topicals',
+	        'limit'             => '5',
+	        'order'             => '',
+	        'featuredimage'     => '',
+			'imagesize'         => 'wpdispensary-widget',
+	        'topicalname'       => '',
+	        'topicalcategory'   => '',
 	    );
 
 	    $instance = wp_parse_args( (array) $instance, $defaults );
@@ -1110,11 +1112,6 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	</p>
 
 	<p>
-		<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-		<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
-	</p>
-
-	<p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['topicalname'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'topicalname' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'topicalname' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'topicalname' ) ); ?>"><?php esc_html_e( 'Display topical name?', 'wp-dispensary' ); ?></label>
 	</p>
@@ -1122,6 +1119,30 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	<p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['topicalcategory'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'topicalcategory' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'topicalcategory' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'topicalcategory' ) ); ?>"><?php esc_html_e( 'Display topical category?', 'wp-dispensary' ); ?></label>
+	</p>
+
+	<p>
+		<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
+		<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+	</p>
+
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
+		<?php 
+			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
+			if ( $terms ) {
+				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+				foreach ( $terms as $term ) {
+					if ( esc_html( $term ) != $instance['imagesize'] ) {
+						$imagesizeinfo = '';
+					} else {
+						$imagesizeinfo = 'selected="selected"';
+					}
+					printf( '<option value="%s" '. $imagesizeinfo .'>%s</option>', esc_html( $term ), esc_html( $term ) );
+				}
+				print( '</select>' );
+			}
+		?>
 	</p>
 
 		<?php
