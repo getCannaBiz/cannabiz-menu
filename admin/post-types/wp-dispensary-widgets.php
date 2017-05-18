@@ -1241,7 +1241,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 				echo "<div class='wpdispensary-widget'>";
 				do_action( 'wpdispensary_growers_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( 'wpdispensary-widget' );
+					the_post_thumbnail( $instance["imagesize"] );
 				echo '</a>';
 				if ( 'on' === $instance['growername'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -1292,13 +1292,14 @@ class wpdispensary_growers_widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 	    $instance = $old_instance;
 
-	    $instance['title']      		= strip_tags( $new_instance['title'] );
-	    $instance['limit']   			= strip_tags( $new_instance['limit'] );
-	    $instance['order']   			= $new_instance['order'];
-	    $instance['featuredimage']		= $new_instance['featuredimage'];
-	    $instance['growername']			= $new_instance['growername'];
-	    $instance['growercategory']		= $new_instance['growercategory'];
-	    $instance['growerflower']		= $new_instance['growerflower'];
+	    $instance['title']              = strip_tags( $new_instance['title'] );
+	    $instance['limit']              = strip_tags( $new_instance['limit'] );
+	    $instance['order']              = $new_instance['order'];
+	    $instance['featuredimage']      = $new_instance['featuredimage'];
+	    $instance['imagesize']          = $new_instance['imagesize'];
+	    $instance['growername']         = $new_instance['growername'];
+	    $instance['growercategory']     = $new_instance['growercategory'];
+	    $instance['growerflower']       = $new_instance['growerflower'];
 
 	    return $instance;
 	}
@@ -1319,6 +1320,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 	        'limit'             => '5',
 	        'order'             => '',
 	        'featuredimage'     => '',
+			'imagesize'         => 'wpdispensary-widget',
 	        'growername'        => '',
 	        'growercategory'    => '',
 	        'growerflower'      => '',
@@ -1342,11 +1344,6 @@ class wpdispensary_growers_widget extends WP_Widget {
 	</p>
 
 	<p>
-		<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-		<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
-	</p>
-
-	<p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['growername'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'growername' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'growername' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'growername' ) ); ?>"><?php esc_html_e( 'Display grower name?', 'wp-dispensary' ); ?></label>
 	</p>
@@ -1354,6 +1351,30 @@ class wpdispensary_growers_widget extends WP_Widget {
 	<p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['growerflower'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'growerflower' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'growerflower' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'growerflower' ) ); ?>"><?php esc_html_e( 'Display flower type?', 'wp-dispensary' ); ?></label>
+	</p>
+
+	<p>
+		<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
+		<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+	</p>
+
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
+		<?php 
+			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
+			if ( $terms ) {
+				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+				foreach ( $terms as $term ) {
+					if ( esc_html( $term ) != $instance['imagesize'] ) {
+						$imagesizeinfo = '';
+					} else {
+						$imagesizeinfo = 'selected="selected"';
+					}
+					printf( '<option value="%s" '. $imagesizeinfo .'>%s</option>', esc_html( $term ), esc_html( $term ) );
+				}
+				print( '</select>' );
+			}
+		?>
 	</p>
 
 		<?php
