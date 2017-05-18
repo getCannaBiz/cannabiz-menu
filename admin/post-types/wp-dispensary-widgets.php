@@ -327,7 +327,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 				echo "<div class='wpdispensary-widget'>";
 				do_action( 'wpdispensary_concentrates_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( 'wpdispensary-widget' );
+					the_post_thumbnail( $instance["imagesize"] );
 				echo '</a>';
 				if ( 'on' === $instance['concentratename'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -374,12 +374,13 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 	    $instance = $old_instance;
 
-	    $instance['title']      			= strip_tags( $new_instance['title'] );
-	    $instance['limit']   				= strip_tags( $new_instance['limit'] );
-	    $instance['order']   				= $new_instance['order'];
-	    $instance['featuredimage']			= $new_instance['featuredimage'];
-	    $instance['concentratename']		= $new_instance['concentratename'];
-	    $instance['concentratecategory']	= $new_instance['concentratecategory'];
+	    $instance['title']                  = strip_tags( $new_instance['title'] );
+	    $instance['limit']                  = strip_tags( $new_instance['limit'] );
+	    $instance['order']                  = $new_instance['order'];
+	    $instance['featuredimage']          = $new_instance['featuredimage'];
+	    $instance['imagesize']              = $new_instance['imagesize'];
+	    $instance['concentratename']        = $new_instance['concentratename'];
+	    $instance['concentratecategory']    = $new_instance['concentratecategory'];
 
 	    return $instance;
 	}
@@ -396,12 +397,13 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-		    'title'    				=> 'Recent Concentrates',
-		    'limit'  				=> '5',
-		    'order'					=> '',
-		    'featuredimage'			=> '',
-		    'concentratename' 		=> '',
-		    'concentratercategory' 	=> '',
+		    'title'                 => 'Recent Concentrates',
+		    'limit'                 => '5',
+		    'order'                 => '',
+		    'featuredimage'         => '',
+			'imagesize'             => 'wpdispensary-widget',
+		    'concentratename'       => '',
+		    'concentratercategory'  => '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -422,11 +424,6 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	</p>
 
 	<p>
-		<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-		<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
-	</p>
-
-	<p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['concentratename'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'concentratename' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'concentratename' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'concentratename' ) ); ?>"><?php esc_html_e( 'Display concentrate name?', 'wp-dispensary' ); ?></label>
 	</p>
@@ -434,6 +431,30 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	<p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['concentratecategory'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'concentratecategory' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'concentratecategory' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'concentratecategory' ) ); ?>"><?php esc_html_e( 'Display concentrate category?', 'wp-dispensary' ); ?></label>
+	</p>
+
+	<p>
+		<input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
+		<label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+	</p>
+
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
+		<?php 
+			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
+			if ( $terms ) {
+				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+				foreach ( $terms as $term ) {
+					if ( esc_html( $term ) != $instance['imagesize'] ) {
+						$imagesizeinfo = '';
+					} else {
+						$imagesizeinfo = 'selected="selected"';
+					}
+					printf( '<option value="%s" '. $imagesizeinfo .'>%s</option>', esc_html( $term ), esc_html( $term ) );
+				}
+				print( '</select>' );
+			}
+		?>
 	</p>
 
 		<?php
