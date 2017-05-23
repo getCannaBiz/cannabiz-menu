@@ -2,8 +2,8 @@
 Contributors: deviodigital
 Tags: menu, dispensary, medical, marijuana, mmj, cannabis, weed, pot, medical marijuana
 Requires at least: 3.0.1
-Tested up to: 4.7.3
-Stable tag: 1.9.6.1
+Tested up to: 4.7.5
+Stable tag: 1.9.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ The complete marijuana dispensary menu solution for WordPress
 
 Easily manage your dispensary or delivery service menu with the WP Dispensary plugin
 
-### Features Overview
+### Dispensary Menu Features
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
@@ -69,6 +69,15 @@ It has a long list of options built in for customization to fit your business br
 4. Example of how the individual menu item is output in the "Dispensary Display" theme
 
 == Changelog ==
+
+= 1.9.7 =
+* Added 12 new Action Hooks to widgets in `admin/wp-dispenesary-widgets.php`
+* Added an image size option to all widgets in `admin/wp-dispenesary-widgets.php`
+* Fixed flower shortcode price display if no prices are added in `admin/wp-dispenesary-shortcodes.php`
+* Fixed empty variables for WPD Settings options in `admin/wp-dispensary-data-output.php`
+* Fixed name error for the Edibles widget in `admin/wp-dispensary-widgets.php`
+* Updated 12 Action Hook names in `admin/wp-dispenesary-widgets.php`
+* Updated call constructor method for all widgets in `admin/wp-dispensary-widgets.php`
 
 = 1.9.6.1 =
 * Fatal error bug with the REST API code fixed (thanks @jeherve!) in `admin/wp-dispensary-rest-api.php`

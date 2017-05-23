@@ -1,5 +1,14 @@
 # Changelog
 
+### 1.9.7
+* Added 12 new Action Hooks to widgets in `admin/wp-dispenesary-widgets.php`
+* Added an image size option to all widgets in `admin/wp-dispenesary-widgets.php`
+* Fixed flower shortcode price display if no prices are added in `admin/wp-dispenesary-shortcodes.php`
+* Fixed empty variables for WPD Settings options in `admin/wp-dispensary-data-output.php`
+* Fixed name error for the Edibles widget in `admin/wp-dispensary-widgets.php`
+* Updated 12 Action Hook names in `admin/wp-dispenesary-widgets.php`
+* Updated call constructor method for all widgets in `admin/wp-dispensary-widgets.php`
+
 ### 1.9.6.1
 * Fatal error bug with the REST API code fixed (thanks @jeherve!) in `admin/wp-dispensary-rest-api.php`
 * Fixed Concentrate price output for shortcodes in `admin/wp-dispensary-shortcodes.php`

@@ -8,7 +8,7 @@
 
 If you're looking for a stable version to use with your website, you can download [WP Dispensary](http://www.wordpress.org/plugins/wp-dispensary) from the official WordPress repository, or you can view the [releases](https://github.com/deviodigital/wp-dispensary/releases) here on Github.
 
-## Features Overview
+## Dispensary Menu Features
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
