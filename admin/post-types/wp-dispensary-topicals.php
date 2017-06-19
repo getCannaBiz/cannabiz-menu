@@ -52,7 +52,7 @@ function wpdispensary_topicals() {
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
-		'show_in_menu'        => true,
+		'show_in_menu'        => false,
 		'show_in_rest'		  => true,
 		'menu_position'       => 10,
 		'menu_icon'           => plugin_dir_url( __FILE__ ) . ( '../images/menu-icon.png' ),
