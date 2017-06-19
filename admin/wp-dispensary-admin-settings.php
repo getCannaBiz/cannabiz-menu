@@ -73,12 +73,9 @@ class WPDispensarySettings {
 
 		<div class="wpd-settings-wrap">
 			<div class="wpd-settings-page-ads">
-			<?php if ( ! class_exists( 'WPD_Inventory' ) || ! class_exists( 'WPD_Wooconnect' ) ) { ?>
-				<h1>Premium Add-Ons</h1>
-			<?php } ?>
 			<?php $url = plugins_url(); ?>
-			<?php if ( ! class_exists( 'WPD_Inventory' ) ) { ?>
-				<a href="https://www.wpdispensary.com/downloads/dispensary-inventory-management" target="_blank"><img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/ad_dispensary-inventory.png" /></a>
+			<?php if ( ! class_exists( 'Weedmaps_Sync' ) ) { ?>
+				<a href="https://www.wpdispensary.com/downloads/menu-sync" target="_blank"><img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/ad_dispensary-menusync.png" /></a>
 			<?php } ?>
 			<?php if ( ! class_exists( 'Wpd_Wooconnect' ) ) { ?>
 				<a href="https://www.wpdispensary.com/downloads/wooconnect-for-woocommerce/" target="_blank"><img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/ad_dispensary-wooconnect.png" /></a>
