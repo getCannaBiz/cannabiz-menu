@@ -74,7 +74,7 @@
 }
 
 .wpd-settings-wrap img {
-	width: 100%;
+	width: 240px;
 	max-width: 420px;
 }
 
@@ -88,6 +88,7 @@
 	float: right;
 	margin: 0;
 	position: relative;
+	text-align: center;
 	width: 300px;
 }
 
