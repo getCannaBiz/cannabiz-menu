@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.9.8
+* Added `Settings` link for WP Dispensary on the `plugins` page in `wp-dispensary.php`
+* Removed all custom post type's from admin dashboard menu in `admin/post-types/`
+* Updated placement of `WP Dispensary` in the admin dashboard menu, and added menu type links to sub-menu in `admin/wp-dispensary-admin-settings.php`
+
 ### 1.9.7
 * Added 12 new Action Hooks to widgets in `admin/wp-dispenesary-widgets.php`
 * Added an image size option to all widgets in `admin/wp-dispenesary-widgets.php`

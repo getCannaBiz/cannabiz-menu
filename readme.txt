@@ -1,9 +1,9 @@
 === WP Dispensary ===
 Contributors: deviodigital
-Tags: menu, dispensary, medical, marijuana, mmj, cannabis, weed, pot, medical marijuana
+Tags: menu, dispensary, medical, marijuana, mmjmenu, mmj, weedmaps, leafly, cannabis, weed, pot, medical marijuana
 Requires at least: 3.0.1
-Tested up to: 4.7.5
-Stable tag: 1.9.7
+Tested up to: 4.8
+Stable tag: 1.9.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,11 +47,13 @@ Samples of the shortcodes are below. See all shortcode options in the [documenta
 
 ### Extend WP Dispensary
 
-With our free and commercial add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
+With our free and commercial add-on's, you can connect to WooCommerce, sync your menu with mmjmenu, weedmaps and leafly, manage inventory and more.
+
+Our add-on's help you extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
 You can view our current add-on's on the [official WP Dispensary website](https://www.wpdispensary.com/add-ons)
 
-We also have a commercial WordPress theme for the cannabis industry, [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz).
+We also have a dispensary WordPress theme for the cannabis industry, [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz).
 
 It has a long list of options built in for customization to fit your business branding and is 100% integrated with WP Dispensary and it's add-ons.
 
@@ -63,12 +65,17 @@ It has a long list of options built in for customization to fit your business br
 
 == Screenshots ==
 
-1. Overview of content added to the "Flowers" section of your menu
-2. The content editor for a post in the "Flowers" section of your menu
-3. Example of how the menu content is output in the "Dispensary Display" theme
-4. Example of how the individual menu item is output in the "Dispensary Display" theme
+1. WP Dispensary Settings page
+2. WP Dispensary "Flowers" menu type
+3. WP Dispensary shortcode display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
+4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 1.9.8 =
+* Added `Settings` link for WP Dispensary on the `plugins` page in `wp-dispensary.php`
+* Removed all custom post type's from admin dashboard menu in `admin/post-types/`
+* Updated placement of `WP Dispensary` in the admin dashboard menu, and added menu type links to sub-menu in `admin/wp-dispensary-admin-settings.php`
 
 = 1.9.7 =
 * Added 12 new Action Hooks to widgets in `admin/wp-dispenesary-widgets.php`
