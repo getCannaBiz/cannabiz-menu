@@ -84,3 +84,13 @@ function run_wp_dispensary() {
 
 // Runs WPDispensary
 run_wp_dispensary();
+
+// Add settings link on plugin page
+function wpd_settings_link($links) { 
+  $settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>'; 
+  array_unshift( $links, $settings_link ); 
+  return $links; 
+}
+ 
+$pluginname = plugin_basename(__FILE__); 
+add_filter( "plugin_action_links_$pluginname", 'wpd_settings_link' );
