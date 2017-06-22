@@ -1,0 +1,125 @@
+/**
+ * Public CSS
+ *
+ * This file is used to add styles to the public display of the plugin.
+ *
+ * @link       http://www.wpdispensary.com
+ * @since      1.0.0
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/public/css
+ */
+
+/** Main Table */
+
+table.wpdispensary-table {
+	background: #FFF;
+	border-width: 1px;
+	border-collapse: collapse;
+	font-size: 14px;
+	line-height: 1.2;
+	margin: 12px 0;
+	table-layout: unset;
+	width: 100%;
+}
+
+table.wpdispensary-table td.wpdispensary-title {
+	background: #F1F1F1;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #454545;
+	font-weight: 600;
+	text-align: center;
+}
+
+table.wpdispensary-table td {
+	border: 1px solid #DDD;
+	padding: 10px;
+	width: 50%;
+}
+
+table.wpdispensary-table.pricing td {
+	color: #76BD1D;
+	width: auto;
+}
+
+table.wpdispensary-table.pricing td.wpdispensary-title {
+	color: #454545;
+}
+
+table.wpdispensary-table.pricing tr.priceeach td {
+	width: 50%;
+}
+
+table.wpdispensary-table td span {
+	color: #454545;
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+.ingredientlist {
+	border: 1px solid #DDD;
+	float: left;
+	font-size: 15px;
+	line-height: 18px;
+	margin-top: 24px;
+	width: 100%;
+}
+
+.ingredientlist span {
+	display: inline-block;
+	padding: 10px;
+}
+
+.ingredientlist strong {
+	background: #DDD;
+	color: #454545;
+	display: block;
+	font-weight: 600;
+	padding: 10px;
+}
+
+.wpdispensary-table.single {
+	margin: 24px 0;
+}
+
+/**
+ * WooConnect buttons
+ * 
+ * www.wpdispensary.com/downloads/wooconnect-for-woocommerce
+ */
+
+p.wpd-wooconnect {
+	text-align: center;
+}
+
+a.button.wpd-connect-btn,
+a.button.wpd-connect-btn:visited {
+	background: transparent;
+	border: 1px solid #AAA;
+	box-shadow: none;
+	color: #AAA;
+	display: inline-block;
+	margin-bottom: 5px;
+	padding: 10px 15px;
+}
+
+a.button.wpd-connect-btn:hover {
+	background: transparent;
+	border: 1px solid #76BD1D;
+	box-shadow: none;
+	color: #76BD1D;
+}
+
+a.button.wpd-connect-btn.buy-now,
+a.button.wpd-connect-btn.buy-now:visited {
+	background: transparent;
+	border: 1px solid #76BD1D;
+	color: #76BD1D;
+}
+
+a.button.wpd-connect-btn.buy-now:hover {
+	background: #76BD1D;
+	border: 1px solid #76BD1D;
+	color: #FFF;
+}
