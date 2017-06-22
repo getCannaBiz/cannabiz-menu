@@ -98,3 +98,22 @@ function wpd_settings_link($links) {
 
 $pluginname = plugin_basename(__FILE__); 
 add_filter( "plugin_action_links_$pluginname", 'wpd_settings_link' );
+
+/**
+ * Returns the custom excerpt for oEmbeds.
+ *
+ * @since 2.0
+ * @param  string $output Default embed output.
+ * @return string         Customize embed output.
+ */
+add_filter( 'the_excerpt_embed', 'get_excerpt_embed' );
+function get_excerpt_embed( $output ) {
+    return the_content();
+
+    return $output;
+}
+
+add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
+function my_embed_oembed_html($html, $url, $attr, $post_id) {
+  return '<div id="wpd-oembed-wrap">' . $html . '</div>';
+}
