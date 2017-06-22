@@ -1,6 +1,6 @@
-=== WP Dispensary ===
+=== WP Dispensary menu management ===
 Contributors: deviodigital
-Tags: menu, dispensary, medical, marijuana, mmjmenu, mmj, weedmaps, leafly, cannabis, weed, pot, medical marijuana
+Tags: cannabis, dispensary, menu, weedmaps, mmjmenu, marijuana, leafly, weed, pot, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.8
 Stable tag: 1.9.8
@@ -19,7 +19,7 @@ Easily manage your dispensary or delivery service menu with the WP Dispensary pl
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
-*if you enjoy using this plugin, please consider giving it a 5 star rating* &rarr;
+*if you enjoy using this plugin, please consider giving it a [5 star rating](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
 
 Read the full list of [features](https://www.wpdispensary.com/features/).
 
@@ -29,7 +29,7 @@ The WP Dispensary plugin comes with built in shortcodes which allow you to displ
 
 You can call your menu anywhere shortcodes are accepted in your theme.
 
-Samples of the shortcodes are below. See all shortcode options in the [documentation](https://www.wpdispensary.com/section/shortcodes/)
+Samples of the shortcodes are below.
 
 `[wpd-flowers posts="6"]`
 
@@ -44,6 +44,8 @@ Samples of the shortcodes are below. See all shortcode options in the [documenta
 `[wpd-growers posts="6"]`
 
 `[wpd-carousel posts="6"]`
+
+See all shortcode options in the [documentation](https://www.wpdispensary.com/section/shortcodes/)
 
 ### Extend WP Dispensary
 
