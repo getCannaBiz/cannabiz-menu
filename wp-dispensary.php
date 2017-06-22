@@ -82,15 +82,19 @@ function run_wp_dispensary() {
 
 }
 
-// Runs WPDispensary
+/** Runs WPDispensary */
 run_wp_dispensary();
 
-// Add settings link on plugin page
+/**
+ * Add settings link on plugin page
+ *
+ * @since 1.9.8
+ */
 function wpd_settings_link($links) { 
-  $settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>'; 
-  array_unshift( $links, $settings_link ); 
-  return $links; 
+	$settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>'; 
+	array_unshift( $links, $settings_link ); 
+	return $links; 
 }
- 
+
 $pluginname = plugin_basename(__FILE__); 
 add_filter( "plugin_action_links_$pluginname", 'wpd_settings_link' );
