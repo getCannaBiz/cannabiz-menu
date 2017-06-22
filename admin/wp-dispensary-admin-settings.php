@@ -31,8 +31,6 @@ class WPDispensarySettings {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'wp_dispensary_add_plugin_page' ) );
-		add_action( 'admin_menu', array( $this, 'wp_dispensary_add_submenus', 11 ) );
-		add_action( 'admin_menu', array( $this, 'wp_dispensary_add_settings_submenu', 20 ) );
 		add_action( 'admin_init', array( $this, 'wp_dispensary_page_init' ) );
 	}
 
@@ -53,19 +51,16 @@ class WPDispensarySettings {
 			'none', /** Paramater: icon_url */
 			10 /** Paramater: position */
 		);
-	}
-	
-	public function wp_dispensary_add_settings_submenu() {
-		add_submenu_page( 'wpd-settings', 'WP Dispensary Settings', 'Settings', 'manage_options', 'wpd-settings' );
-	}
 
-	public function wp_dispensary_add_plugin_submenus() {
 		add_submenu_page( 'wpd-settings', 'Flowers', 'Flowers', 'manage_options', 'edit.php?post_type=flowers', NULL );
 		add_submenu_page( 'wpd-settings', 'Concentrates', 'Concentrates', 'manage_options', 'edit.php?post_type=concentrates', NULL );
 		add_submenu_page( 'wpd-settings', 'Edibles', 'Edibles', 'manage_options', 'edit.php?post_type=edibles', NULL );
 		add_submenu_page( 'wpd-settings', 'Pre-rolls', 'Pre-rolls', 'manage_options', 'edit.php?post_type=prerolls', NULL );
 		add_submenu_page( 'wpd-settings', 'Topicals', 'Topicals', 'manage_options', 'edit.php?post_type=topicals', NULL );
 		add_submenu_page( 'wpd-settings', 'Growers', 'Growers', 'manage_options', 'edit.php?post_type=growers', NULL );
+		add_submenu_page( 'wpd-settings', 'WP Dispensary Settings', 'Settings', 'manage_options', 'wpd-settings' );
+		remove_submenu_page('wpd-settings','wpd-settings');
+
 	}
 
 	/**
@@ -81,7 +76,7 @@ class WPDispensarySettings {
 		<div class="wpd-settings-wrap">
 			<div class="wpd-settings-page-ads">
 			<?php $url = plugins_url(); ?>
-			<?php if ( ! class_exists( 'Weedmaps_Sync' ) ) { ?>
+			<?php if ( ! class_exists( 'Menu_Sync' ) ) { ?>
 				<a href="https://www.wpdispensary.com/downloads/menu-sync" target="_blank"><img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/ad_dispensary-menusync.png" /></a>
 			<?php } ?>
 			<?php if ( ! class_exists( 'Wpd_Wooconnect' ) ) { ?>
