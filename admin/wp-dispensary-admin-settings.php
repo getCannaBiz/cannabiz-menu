@@ -49,7 +49,7 @@ class WPDispensarySettings {
 			'wpd-settings', /** Paramater: menu_slug */
 			array( $this, 'wp_dispensary_create_admin_page' ), /** Paramater: function */
 			'none', /** Paramater: icon_url */
-			10 /** Paramater: position */
+			3 /** Paramater: position */
 		);
 
 		add_submenu_page( 'wpd-settings', 'Flowers', 'Flowers', 'manage_options', 'edit.php?post_type=flowers', NULL );
