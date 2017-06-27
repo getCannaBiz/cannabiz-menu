@@ -10,6 +10,22 @@
  * @subpackage WP_Dispensary/public/css
  */
 
+.wp-embed p {
+	display: none;
+}
+
+
+.wp-embed p.wp-embed-heading {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+p.wpd-wooconnect {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
 /** Main Table */
 
 table.wpdispensary-table {
