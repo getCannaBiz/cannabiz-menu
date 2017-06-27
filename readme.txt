@@ -67,9 +67,9 @@ It has a long list of options built in for customization to fit your business br
 
 == Screenshots ==
 
-1. WP Dispensary Settings page
+1. WP Dispensary shortcode display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 2. WP Dispensary "Flowers" menu type
-3. WP Dispensary shortcode display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
+3. WP Dispensary Settings page
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
