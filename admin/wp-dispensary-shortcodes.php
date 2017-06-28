@@ -2128,7 +2128,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'symptom'     => '',
 			'condition'   => '',
 			'orderby'     => '',
-			'type'        => array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ),
+			'type'        => "flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers'",
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts
@@ -2178,7 +2178,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$ordernew = 'ASC';
 	}
 	$args = array(
-		'post_type'          => $type,
+		'post_type'          => explode( ', ', $type ),
 		'posts_per_page'     => $posts,
 		'flowers_category'   => $category,
 		'tax_query'          => $tax_query,
