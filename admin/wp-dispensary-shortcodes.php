@@ -2115,8 +2115,11 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'class'       => '',
 			'name'        => 'show',
 			'info'        => 'show',
-			'thc'         => '',
-			'cbd'         => '',
+			'thc'         => 'show',
+			'thca'        => '',
+			'cbd'         => 'show',
+			'cba'         => '',
+			'cbn'         => '',
 			'title'       => 'Dispensary Menu',
 			'category'    => '',
 			'aroma'       => '',
@@ -2450,10 +2453,28 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$thcinfo = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+			$thcainfo = '<span class="wpd-productinfo"><strong>THCA: </strong>' . get_post_meta( get_the_id(), '_thca', true ) .'%</span>';
+		} else {
+			$thcainfo = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
 			$cbdinfo = '<span class="wpd-productinfo"><strong>CBD: </strong>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</span>';
 		} else {
 			$cbdinfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+			$cbainfo = '<span class="wpd-productinfo"><strong>CBA: </strong>' . get_post_meta( get_the_id(), '_cba', true ) .'%</span>';
+		} else {
+			$cbainfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+			$cbninfo = '<span class="wpd-productinfo"><strong>CBN: </strong>' . get_post_meta( get_the_id(), '_cbn', true ) .'%</span>';
+		} else {
+			$cbninfo = '';
 		}
 
 		/*
@@ -2542,18 +2563,6 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		} elseif ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
 			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_ounce', true );
 			$pricingname	= '<strong>1 ounce: </strong>';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
-			$thcinfo = '<span class="wpd-productinfo"><strong>THC: </strong>' . get_post_meta( get_the_id(), '_thc', true ) .'%</span>';
-		} else {
-			$thcinfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
-			$cbdinfo = '<span class="wpd-productinfo"><strong>CBD: </strong>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</span>';
-		} else {
-			$cbdinfo = '';
 		}
 
 		/** Check shortcode options input by user */
@@ -2662,7 +2671,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showthca .''. $showcbd .''. $showcba .''. $showcbn .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $thcinfo .''. $thcainfo .''. $cbdinfo .''. $cbainfo .''. $cbninfo .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
