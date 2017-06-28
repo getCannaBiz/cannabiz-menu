@@ -11,7 +11,8 @@
  */
 
 #wpdispensary_prices .inside,
-#wpdispensary_concentrateprices .inside {
+#wpdispensary_concentrateprices .inside,
+#wpdispensary_compounds .inside {
     overflow: auto;
 }
 
@@ -27,6 +28,12 @@
 	margin: 10px 1%;
 	position: relative;
 	width: 23%;
+}
+
+#postbox-container-2 #wpdispensary_compounds .pricebox {
+    width: 18%;
+    float: left;
+    margin: 0 1%;
 }
 
 #dashboard_right_now .flowers-count a:before,
@@ -64,6 +71,10 @@
     background: url(../images/menu-icon.png) no-repeat center center;
     opacity: 1;
 }
+
+/**
+ * Settings Page
+ */
 
 .wpd-settings-wrap {
     box-sizing: border-box;
