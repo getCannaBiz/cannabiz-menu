@@ -261,10 +261,28 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdthc = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+			$wpdthca = '<tr><td><span>THCA:</span></td><td>' . get_post_meta( get_the_id(), '_thca', true ) .'%</td></tr>';
+		} else {
+			$wpdthca = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
 			$wpdcbd = '<tr><td><span>CBD:</span></td><td>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</td></tr>';
 		} else {
 			$wpdcbd = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+			$wpdcba = '<tr><td><span>CBA:</span></td><td>' . get_post_meta( get_the_id(), '_cba', true ) .'%</td></tr>';
+		} else {
+			$wpdcba = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+			$wpdcbn = '<tr><td><span>CBN:</span></td><td>' . get_post_meta( get_the_id(), '_cbn', true ) .'%</td></tr>';
+		} else {
+			$wpdcbn = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
@@ -476,8 +494,8 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$content .= $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'prerolls' ) ) ) {
-				$content .= $wpdthc . $wpdcbd;
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
+				$content .= $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn;
 			}
 
 			/**
