@@ -2664,7 +2664,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="carousel-item ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - '. $showname .'" /></a>';
+		$wpdposts .= '<div class="carousel-item ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - '. $querytitle .'" /></a>';
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
