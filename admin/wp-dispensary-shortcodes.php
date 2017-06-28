@@ -37,7 +37,10 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'name'        => 'show',
 			'info'        => 'show',
 			'thc'         => 'show',
+			'thca'        => '',
 			'cbd'         => 'show',
+			'cba'         => '',
+			'cbn'         => '',
 			'title'       => 'Flowers',
 			'category'    => '',
 			'aroma'       => '',
@@ -120,7 +123,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		$thumbnail_url         = $thumbnail_url_array[0];
 		$querytitle            = get_the_title();
 
-		/** Get the pricing for Flowers and Concentrates */
+		/** Get the pricing for Flowers */
 
 		$priceHalfGram    = get_post_meta( get_the_ID(), '_halfgram', true );
 		$priceGram        = get_post_meta( get_the_ID(), '_gram', true );
@@ -368,10 +371,28 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$thcinfo = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+			$thcainfo = '<span class="wpd-productinfo"><strong>THCA: </strong>' . get_post_meta( get_the_id(), '_thca', true ) .'%</span>';
+		} else {
+			$thcainfo = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
 			$cbdinfo = '<span class="wpd-productinfo"><strong>CBD: </strong>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</span>';
 		} else {
 			$cbdinfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+			$cbainfo = '<span class="wpd-productinfo"><strong>CBA: </strong>' . get_post_meta( get_the_id(), '_cba', true ) .'%</span>';
+		} else {
+			$cbainfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+			$cbninfo = '<span class="wpd-productinfo"><strong>CBN: </strong>' . get_post_meta( get_the_id(), '_cbn', true ) .'%</span>';
+		} else {
+			$cbninfo = '';
 		}
 
 		/** Check shortcode options input by user */
@@ -400,10 +421,28 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$showthc = '';
 		}
 
+		if ( 'show' === $thca ) {
+			$showthca = $thcainfo;
+		} else {
+			$showthca = '';
+		}
+
 		if ( 'show' === $cbd ) {
 			$showcbd = $cbdinfo;
 		} else {
 			$showcbd = '';
+		}
+
+		if ( 'show' === $cba ) {
+			$showcba = $cbainfo;
+		} else {
+			$showcba = '';
+		}
+
+		if ( 'show' === $cbn ) {
+			$showcbn = $cbninfo;
+		} else {
+			$showcbn = '';
 		}
 
 		/** Shortcode display */
@@ -420,7 +459,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showthca .''. $showcbd .''. $showcba .''. $showcbn .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -444,7 +483,10 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'name'        => 'show',
 			'info'        => 'show',
 			'thc'         => 'show',
+			'thca'        => '',
 			'cbd'         => 'show',
+			'cba'         => '',
+			'cbn'         => '',
 			'title'       => 'Concentrates',
 			'category'    => '',
 			'aroma'       => '',
@@ -501,6 +543,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$order = $orderby;
 			$ordernew = 'ASC';
 	}
+
 	$args = array(
 		'post_type'               => 'concentrates',
 		'posts_per_page'          => $posts,
@@ -751,10 +794,28 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$thcinfo = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+			$thcainfo = '<span class="wpd-productinfo"><strong>THCA: </strong>' . get_post_meta( get_the_id(), '_thca', true ) .'%</span>';
+		} else {
+			$thcainfo = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
 			$cbdinfo = '<span class="wpd-productinfo"><strong>CBD: </strong>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</span>';
 		} else {
 			$cbdinfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+			$cbainfo = '<span class="wpd-productinfo"><strong>CBA: </strong>' . get_post_meta( get_the_id(), '_cba', true ) .'%</span>';
+		} else {
+			$cbainfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+			$cbninfo = '<span class="wpd-productinfo"><strong>CBN: </strong>' . get_post_meta( get_the_id(), '_cbn', true ) .'%</span>';
+		} else {
+			$cbninfo = '';
 		}
 
 		/** Check shortcode options input by user */
@@ -781,10 +842,28 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$showthc = '';
 		}
 
+		if ( 'show' === $thca ) {
+			$showthca = $thcainfo;
+		} else {
+			$showthca = '';
+		}
+
 		if ( 'show' === $cbd ) {
 			$showcbd = $cbdinfo;
 		} else {
 			$showcbd = '';
+		}
+
+		if ( 'show' === $cbda ) {
+			$showcbda = $cbdainfo;
+		} else {
+			$showcbda = '';
+		}
+
+		if ( 'show' === $cbn ) {
+			$showcbn = $cbninfo;
+		} else {
+			$showcbn = '';
 		}
 
 		/** Shortcode display */
@@ -801,7 +880,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showthca .''. $showcbd .''. $showcba .''. $showcbn .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
@@ -2539,16 +2618,34 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			}
 		}
 
-		if ( 'show' === $thc ) {
-			$showthc = $thcinfo;
+		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
+			$thcinfo = '<span class="wpd-productinfo"><strong>THC: </strong>' . get_post_meta( get_the_id(), '_thc', true ) .'%</span>';
 		} else {
-			$showthc = '';
+			$thcinfo = '';
 		}
 
-		if ( 'show' === $cbd ) {
-			$showcbd = $cbdinfo;
+		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+			$thcainfo = '<span class="wpd-productinfo"><strong>THCA: </strong>' . get_post_meta( get_the_id(), '_thca', true ) .'%</span>';
 		} else {
-			$showcbd = '';
+			$thcainfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
+			$cbdinfo = '<span class="wpd-productinfo"><strong>CBD: </strong>' . get_post_meta( get_the_id(), '_cbd', true ) .'%</span>';
+		} else {
+			$cbdinfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+			$cbainfo = '<span class="wpd-productinfo"><strong>CBA: </strong>' . get_post_meta( get_the_id(), '_cba', true ) .'%</span>';
+		} else {
+			$cbainfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+			$cbninfo = '<span class="wpd-productinfo"><strong>CBN: </strong>' . get_post_meta( get_the_id(), '_cbn', true ) .'%</span>';
+		} else {
+			$cbninfo = '';
 		}
 
 		/** Shortcode display */
@@ -2565,7 +2662,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$wpd_shortcode_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showcbd .''. $wpd_shortcode_inside_bottom .'</div>';
+		$wpdposts .= $showname .''. $showinfo .''. $showthc .''. $showthca .''. $showcbd .''. $showcba .''. $showcbn .''. $wpd_shortcode_inside_bottom .'</div>';
 
 	endwhile;
 
