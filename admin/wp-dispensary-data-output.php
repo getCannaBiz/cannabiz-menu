@@ -380,8 +380,8 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdpriceperunit = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpricetopical = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
+			$wpdpricetopical = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
 		} else {
 			$wpdpricetopical = '';
 		}

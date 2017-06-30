@@ -918,14 +918,14 @@ function wpdispensary_thccbdtopical() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thc mg data if its already been entered */
-	$pricetopicals	= get_post_meta( $post->ID, '_priceeach', true );
+	$pricetopicals	= get_post_meta( $post->ID, '_pricetopical', true );
 	$thctopicals	= get_post_meta( $post->ID, '_thctopical', true );
 	$cbdtopicals	= get_post_meta( $post->ID, '_cbdtopical', true );
 	$sizetopicals	= get_post_meta( $post->ID, '_sizetopical', true );
 
 	/** Echo out the fields */
 	echo '<p>Price per unit:</p>';
-	echo '<input type="text" name="_priceeach" value="' . $pricetopicals  . '" class="widefat" />';
+	echo '<input type="text" name="_pricetopical" value="' . $pricetopicals  . '" class="widefat" />';
 	echo '<p>Size (oz):</p>';
 	echo '<input type="text" name="_sizetopical" value="' . $sizetopicals  . '" class="widefat" />';
 	echo '<p>THC mg:</p>';
@@ -958,7 +958,7 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thcmgtopical_meta['_priceeach']	= $_POST['_priceeach'];
+	$thcmgtopical_meta['_pricetopical']	= $_POST['_pricetopical'];
 	$thcmgtopical_meta['_thctopical']	= $_POST['_thctopical'];
 	$thcmgtopical_meta['_cbdtopical']	= $_POST['_cbdtopical'];
 	$thcmgtopical_meta['_sizetopical']	= $_POST['_sizetopical'];

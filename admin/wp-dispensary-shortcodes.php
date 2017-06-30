@@ -1737,8 +1737,8 @@ function wpdispensary_topicals_shortcode( $atts ) {
 
 		/** Get the pricing for Topicals */
 
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$topicalprice = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '';
+		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
+			$topicalprice = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '';
 		}
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
 			$topicalsize = ' - <strong>Size:</strong> '. get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz';
@@ -2507,8 +2507,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		/** Get the pricing for Topicals */
 
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$topicalprice = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '';
+		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
+			$topicalprice = '<strong>'. $wpd_cost_phrase .':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '';
 		}
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
 			$topicalsize = ' - <strong>Size:</strong> '. get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz';
