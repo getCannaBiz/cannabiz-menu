@@ -30,7 +30,13 @@
 	width: 23%;
 }
 
-#postbox-container-2 #wpdispensary_compounds .pricebox {
+#wpdispensary_compounds .inside .compoundbox {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#postbox-container-2 #wpdispensary_compounds .inside .compoundbox {
     width: 18%;
     float: left;
     margin: 0 1%;
