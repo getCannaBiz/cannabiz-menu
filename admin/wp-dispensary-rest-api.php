@@ -416,7 +416,7 @@ function slug_register_compounds() {
 			array( 'flowers', 'concentrates' ),
 			$size,
 			array(
-				'get_callback'    => 'slug_get_thccbd',
+				'get_callback'    => 'slug_get_compounds',
 				'update_callback' => null,
 				'schema'          => null,
 			)
