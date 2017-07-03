@@ -52,23 +52,23 @@ function wpdispensary_compounddetails() {
 	$cbn    = get_post_meta( $post->ID, '_cbn', true );
 
 	/** Echo out the fields */
-	echo '<div class="pricebox">';
+	echo '<div class="compoundbox">';
 	echo '<p>THC %:</p>';
 	echo '<input type="text" name="_thc" value="' . $thc  . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="pricebox">';
+	echo '<div class="compoundbox">';
 	echo '<p>THCA %:</p>';
 	echo '<input type="text" name="_thca" value="' . $thca  . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="pricebox">';
+	echo '<div class="compoundbox">';
 	echo '<p>CBD %:</p>';
 	echo '<input type="text" name="_cbd" value="' . $cbd  . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="pricebox">';
+	echo '<div class="compoundbox">';
 	echo '<p>CBA %:</p>';
 	echo '<input type="text" name="_cba" value="' . $cba  . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="pricebox">';
+	echo '<div class="compoundbox">';
 	echo '<p>CBN %:</p>';
 	echo '<input type="text" name="_cbn" value="' . $cbn  . '" class="widefat" />';
 	echo '</div>';
