@@ -1,5 +1,16 @@
 # Changelog
 
+### 1.9.9
+* Changed "THC % & CBD %" metabox to "Compound Details" and added 3 new compounds in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added 3 new compounds to Details table output in `admin/wp-dispensary-data-output.php`
+* Added API endpoints for the 3 new compounds in `admin/wp-dispensary-rest-api.php`
+* Added Compound Details to the shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added oEmbed style customization in `wp-dispensary.php`
+* Added oEmbed CSS in `public/wp-dispensary-oembed.css` and `public/class-wp-dispensary-public.php`
+* Fixed code error in the [wpd-carousel] output in `admin/wp-dispensary-shortcodes.php`
+* Updated translation strings in `languages/wp-dispensary.pot`
+* Updated Pricing table's title if donation is selected in `admin/wp-dispensary-data-output.php`
+
 ### 1.9.8
 * Added `Settings` link for WP Dispensary on the `plugins` page in `wp-dispensary.php`
 * Removed all custom post type's from admin dashboard menu in `admin/post-types/`

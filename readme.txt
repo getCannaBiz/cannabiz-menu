@@ -3,7 +3,7 @@ Contributors: deviodigital
 Tags: cannabis, dispensary, menu, weedmaps, mmjmenu, marijuana, leafly, weed, pot, medical-marijuana, wp-dispensary
 Requires at least: 3.0.1
 Tested up to: 4.8
-Stable tag: 1.9.8
+Stable tag: 1.9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,12 +67,23 @@ It has a long list of options built in for customization to fit your business br
 
 == Screenshots ==
 
-1. WP Dispensary shortcode display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
+1. WP Dispensary shortcode display, using our [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 2. WP Dispensary "Flowers" menu type
 3. WP Dispensary Settings page
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 1.9.9 =
+* Changed "THC % & CBD %" metabox to "Compound Details" and added 3 new compounds in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added 3 new compounds to Details table output in `admin/wp-dispensary-data-output.php`
+* Added API endpoints for the 3 new compounds in `admin/wp-dispensary-rest-api.php`
+* Added Compound Details to the shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added oEmbed style customization in `wp-dispensary.php`
+* Added oEmbed CSS in `public/wp-dispensary-oembed.css` and `public/class-wp-dispensary-public.php`
+* Fixed code error in the [wpd-carousel] output in `admin/wp-dispensary-shortcodes.php`
+* Updated translation strings in `languages/wp-dispensary.pot`
+* Updated Pricing table's title if donation is selected in `admin/wp-dispensary-data-output.php`
 
 = 1.9.8 =
 * Added `Settings` link for WP Dispensary on the `plugins` page in `wp-dispensary.php`
