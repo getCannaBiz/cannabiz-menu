@@ -60,37 +60,37 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	$tax_query = array( 'relation' => 'AND' );
 	if ( '' !== $aroma ) {
 			$tax_query[]   = array(
-					'taxonomy' => 'aroma',
-					'field'    => 'slug',
-					'terms'    => $aroma,
+				'taxonomy' => 'aroma',
+				'field'    => 'slug',
+				'terms'    => $aroma,
 			);
 	}
 	if ( '' !== $flavor ) {
 			$tax_query[]   = array(
-					'taxonomy' => 'flavor',
-					'field'    => 'slug',
-					'terms'    => $flavor,
+				'taxonomy' => 'flavor',
+				'field'    => 'slug',
+				'terms'    => $flavor,
 			);
 	}
 	if ( '' !== $effect ) {
 			$tax_query[]   = array(
-					'taxonomy' => 'effect',
-					'field'    => 'slug',
-					'terms'    => $effect,
+				'taxonomy' => 'effect',
+				'field'    => 'slug',
+				'terms'    => $effect,
 			);
 	}
 	if ( '' !== $symptom ) {
 			$tax_query[]   = array(
-					'taxonomy' => 'symptom',
-					'field'    => 'slug',
-					'terms'    => $symptom,
+				'taxonomy' => 'symptom',
+				'field'    => 'slug',
+				'terms'    => $symptom,
 			);
 	}
 	if ( '' !== $condition ) {
 			$tax_query[]   = array(
-					'taxonomy' => 'condition',
-					'field'    => 'slug',
-					'terms'    => $condition,
+				'taxonomy' => 'condition',
+				'field'    => 'slug',
+				'terms'    => $condition,
 			);
 	}
 	if ( '' !== $orderby ) {
