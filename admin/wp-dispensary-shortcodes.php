@@ -97,14 +97,14 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$order = $orderby;
 			$ordernew = 'ASC';
 	}
-	$args = array(
+	$args = apply_filters( 'wpd_flowers_shortcode_args', array(
 		'post_type'          => 'flowers',
 		'posts_per_page'     => $posts,
 		'flowers_category'   => $category,
 		'tax_query'          => $tax_query,
 		'orderby'            => $order,
 		'order'              => $ordernew,
-	);
+	) );
 
 	$wpdquery = new WP_Query( $args );
 
@@ -544,14 +544,14 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$ordernew = 'ASC';
 	}
 
-	$args = array(
+	$args = apply_filters( 'wpd_concentrates_shortcode_args', array(
 		'post_type'               => 'concentrates',
 		'posts_per_page'          => $posts,
 		'concentrates_category'   => $category,
 		'tax_query'               => $tax_query,
 		'orderby'                 => $order,
 		'order'                   => $ordernew,
-		);
+	) );
 
 	$wpdquery = new WP_Query( $args );
 
@@ -927,14 +927,14 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$order = $orderby;
 			$ordernew = 'ASC';
 	}
-	$args = array(
+	$args = apply_filters( 'wpd_edibles_shortcode_args', array(
 		'post_type'          => 'edibles',
 		'posts_per_page'     => $posts,
 		'edibles_category'   => $category,
 		'tax_query'          => $tax_query,
 		'orderby'            => $order,
 		'order'              => $ordernew,
-	);
+	) );
 
 	$wpdquery = new WP_Query( $args );
 
@@ -1222,14 +1222,14 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			$order = $orderby;
 			$ordernew = 'ASC';
 	}
-	$wpdquery = new WP_Query(
-		array(
-			'post_type'       => 'prerolls',
-			'posts_per_page'  => $posts,
-			'orderby'         => $order,
-			'order'           => $ordernew,
-		)
-	);
+	$args = apply_filters( 'wpd_prerolls_shortcode_args', array(
+		'post_type'       => 'prerolls',
+		'posts_per_page'  => $posts,
+		'orderby'         => $order,
+		'order'           => $ordernew,
+	) );
+
+	$wpdquery = new WP_Query( $args );
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
 
@@ -1817,15 +1817,15 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$order = $orderby;
 		$ordernew = 'ASC';
 	}
-	$wpdquery = new WP_Query(
-		array(
-			'post_type' 		    => 'growers',
-			'posts_per_page'	  => $posts,
-			'growers_category'	=> $category,
-			'orderby'           => $order,
-			'order'             => $ordernew,
-		)
-	);
+	$args = apply_filters( 'wpd_growers_shortcode_args', array(
+		'post_type'         => 'growers',
+		'posts_per_page'    => $posts,
+		'growers_category'  => $category,
+		'orderby'           => $order,
+		'order'             => $ordernew,
+	) );
+
+	$wpdquery = new WP_Query( $args );
 
 	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">'. $title .'</h2>';
 
@@ -2177,14 +2177,14 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$order = $orderby;
 			$ordernew = 'ASC';
 	}
-	$args = array(
+	$args = apply_filters( 'wpd_carousel_shortcode_args', array(
 		'post_type'          => explode( ', ', $type ),
 		'posts_per_page'     => $posts,
 		'flowers_category'   => $category,
 		'tax_query'          => $tax_query,
 		'orderby'            => $order,
 		'order'              => $ordernew,
-	);
+	) );
 
 	$wpdquery = new WP_Query( $args );
 	
