@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress Dispensary
+ * WP Dispensary
  *
  * Plugin details
  *
