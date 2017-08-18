@@ -854,10 +854,10 @@ function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thc_cbd_mg_meta['_thcmg']			= $_POST['_thcmg'];
-	$thc_cbd_mg_meta['_cbdmg']			= $_POST['_cbdmg'];
-	$thc_cbd_mg_meta['_thccbdservings']	= $_POST['_thccbdservings'];
-	$thc_cbd_mg_meta['_netweight']	= $_POST['_netweight'];
+	$thc_cbd_mg_meta['_thcmg']          = $_POST['_thcmg'];
+	$thc_cbd_mg_meta['_cbdmg']          = $_POST['_cbdmg'];
+	$thc_cbd_mg_meta['_thccbdservings'] = $_POST['_thccbdservings'];
+	$thc_cbd_mg_meta['_netweight']      = $_POST['_netweight'];
 
 	/** Add values of $thccbdmg_meta as custom fields */
 
