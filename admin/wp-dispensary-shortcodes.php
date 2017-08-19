@@ -2613,11 +2613,11 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 		/** Concentrates */
 		if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
-			if ( 'show' === $info ) {
-				$showinfo = '<span class="wpd-productinfo">' . $pricingname . '' . $pricinglow . '</span>';
+			if ( empty( $pricingeach ) ) {
+				$showinfo = $halfgram .''. $gram .''. $twograms;
 			} else {
-				$showinfo = '';
-			}		 
+				$showinfo = '<span class="wpd-productinfo pricing">' . $pricingname . '' . $pricingeach .'</span>';
+			}
 		}
 		/** Flowers */
 		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
