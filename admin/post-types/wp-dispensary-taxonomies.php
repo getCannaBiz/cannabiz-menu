@@ -43,6 +43,9 @@ function wpdispensary_aroma() {
 		'menu_name'                  => __( 'Aromas' ),
 	  );
 	  
+	  $aromataxtype = apply_filters( 'wpd_aroma_tax_type', array( 'flowers', 'concentrates' ) );
+
+	  register_taxonomy( 'aroma', $aromataxtype, array(
 			'hierarchical'           => false,
 			'labels'                 => $labels,
 			'show_ui'                => true,
@@ -90,6 +93,9 @@ function wpdispensary_flavor() {
 		'menu_name'                  => __( 'Flavors' ),
 	  );
 
+	  $flavortaxtype = apply_filters( 'wpd_flavor_tax_type', array( 'flowers', 'concentrates' ) );
+
+	  register_taxonomy( 'flavor', $flavortaxtype, array(
 			'hierarchical'           => false,
 			'labels'                 => $labels,
 			'show_ui'                => true,
@@ -136,6 +142,9 @@ function wpdispensary_effect() {
 		'menu_name'                  => __( 'Effects' ),
 	  );
 
+	  $effecttaxtype = apply_filters( 'wpd_effect_tax_type', array( 'flowers', 'concentrates' ) );
+
+	  register_taxonomy( 'effect', $effecttaxtype, array(
 			'hierarchical'           => false,
 			'labels'                 => $labels,
 			'show_ui'                => true,
@@ -182,6 +191,9 @@ function wpdispensary_symptom() {
 		'menu_name'                  => __( 'Symptoms' ),
 	  );
 
+	  $symptomtaxtype = apply_filters( 'wpd_symptom_tax_type', array( 'flowers', 'concentrates' ) );
+
+	  register_taxonomy( 'symptom', $symptomtaxtype, array(
 			'hierarchical'           => false,
 			'labels'                 => $labels,
 			'show_ui'                => true,
@@ -228,6 +240,9 @@ function wpdispensary_condition() {
 		'menu_name'                  => __( 'Conditions' ),
 	  );
 
+	  $conditiontaxtype = apply_filters( 'wpd_condition_tax_type', array( 'flowers', 'concentrates' ) );
+
+	  register_taxonomy( 'condition', $conditiontaxtype, array(
 			'hierarchical'           => false,
 			'labels'                 => $labels,
 			'show_ui'                => true,
@@ -274,6 +289,9 @@ function wpdispensary_ingredient() {
 		'menu_name'                  => __( 'Ingredients' ),
 	  );
 
+	  $ingredientstaxtype = apply_filters( 'wpd_ingredients_tax_type', array( 'edibles', 'topicals' ) );
+
+	  register_taxonomy( 'ingredients', $ingredientstaxtype, array(
 			'hierarchical'           => false,
 			'labels'                 => $labels,
 			'show_ui'                => true,
