@@ -2545,24 +2545,29 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		/** Get the pricing for Concentrates */
 
+		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
+			$pricingeach    = $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_priceeach', true );
+			$pricingname	= '<strong>Price: </strong>';
+		} else {
+			$pricingeach    = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true );
-			$pricingname	= '<strong>1/2 gram: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true );
-			$pricingname	= '<strong>1 gram: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_eighth', true );
-			$pricingname	= '<strong>1/8 ounce: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_quarter', true );
-			$pricingname	= '<strong>1/4 ounce: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfounce', true );
-			$pricingname	= '<strong>1/2 ounce: </strong>';
-		} elseif ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			$pricinglow		= $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_ounce', true );
-			$pricingname	= '<strong>1 ounce: </strong>';
+			$halfgram       = '<span class="wpd-productinfo"><strong>1/2g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_halfgram', true ) .'</span>';
+		} else {
+			$halfgram       = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+			$gram           = '<span class="wpd-productinfo"><strong>1g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_gram', true ) .'</span>';
+		} else {
+			$gram           = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+			$twograms       = '<span class="wpd-productinfo"><strong>2g: </strong>'. $currency_symbols[ $wpd_currency ] .'' . get_post_meta( get_the_id(), '_twograms', true ) .'</span>';
+		} else {
+			$twograms       = '';
 		}
 
 		/** Check shortcode options input by user */
