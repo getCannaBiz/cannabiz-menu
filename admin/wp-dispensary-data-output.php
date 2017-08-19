@@ -567,7 +567,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
-				$content .= '<tr>' . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
+				$content .= '<tr>' . $wpdhalfgram . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
 			}
 
 			if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {

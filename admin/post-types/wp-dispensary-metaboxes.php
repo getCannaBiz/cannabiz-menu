@@ -163,6 +163,7 @@ function wpdispensary_prices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
+	$halfgram	= get_post_meta( $post->ID, '_halfgram', true );
 	$gram		= get_post_meta( $post->ID, '_gram', true );
 	$eighth		= get_post_meta( $post->ID, '_eighth', true );
 	$quarter	= get_post_meta( $post->ID, '_quarter', true );
@@ -170,6 +171,10 @@ function wpdispensary_prices() {
 	$ounce		= get_post_meta( $post->ID, '_ounce', true );
 
 	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>1/2 Gram:</p>';
+	echo '<input type="text" name="_halfgram" value="' . $halfgram  . '" class="widefat" />';
+	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>Gram:</p>';
 	echo '<input type="text" name="_gram" value="' . $gram  . '" class="widefat" />';
@@ -216,6 +221,7 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
+	$prices_meta['_halfgram']	= $_POST['_halfgram'];
 	$prices_meta['_gram']		= $_POST['_gram'];
 	$prices_meta['_eighth']		= $_POST['_eighth'];
 	$prices_meta['_quarter']	= $_POST['_quarter'];
