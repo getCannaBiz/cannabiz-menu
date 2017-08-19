@@ -17,7 +17,7 @@
  * @since    1.9.9
  */
 function add_compounddetails_metaboxes() {
-	$screens = array( 'flowers', 'concentrates' );
+	$screens = apply_filters( 'wpd_compound_details_screens', array( 'flowers', 'concentrates' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -135,7 +135,7 @@ add_action( 'save_post', 'wpdispensary_save_compounddetails_meta', 1, 2 ); // sa
  */
 function add_prices_metaboxes() {
 
-	$screens = array( 'flowers' );
+	$screens = apply_filters( 'wpd_prices_screens', array( 'flowers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -259,7 +259,7 @@ add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** Save the c
  */
 function add_concentrateprices_metaboxes() {
 
-	$screens = array( 'concentrates' );
+	$screens = apply_filters( 'wpd_concentrateprices_screens', array( 'concentrates' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -508,7 +508,7 @@ new WPDispensary_Growers();
  */
 function add_singleprices_metaboxes() {
 
-	$screens = array( 'prerolls', 'edibles', 'growers' );
+	$screens = apply_filters( 'wpd_singleprices_screens', array( 'edibles', 'prerolls', 'growers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -601,7 +601,7 @@ add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** Save
  */
 function add_seedcount_metaboxes() {
 
-	$screens = array( 'growers' );
+	$screens = apply_filters( 'wpd_seedcount_screens', array( 'growers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -694,7 +694,7 @@ add_action( 'save_post', 'wpdispensary_save_seedcount_meta', 1, 2 ); /** Save th
  */
 function add_clonecount_metaboxes() {
 
-	$screens = array( 'growers' );
+	$screens = apply_filters( 'wpd_clonecount_screens', array( 'growers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -786,7 +786,7 @@ add_action( 'save_post', 'wpdispensary_save_clonecount_meta', 1, 2 ); /** Save t
  */
 function add_thc_cbd_mg_metaboxes() {
 
-	$screens = array( 'edibles' );
+	$screens = apply_filters( 'wpd_thc_cbd_mg_screens', array( 'edibles' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -890,7 +890,7 @@ add_action( 'save_post', 'wpdispensary_save_thc_cbd_mg_meta', 1, 2 ); /** Save t
  */
 function add_thccbdtopical_metaboxes() {
 
-	$screens = array( 'topicals' );
+	$screens = apply_filters( 'wpd_thccbdtopical_screens', array( 'topicals' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -992,7 +992,8 @@ add_action( 'save_post', 'wpdispensary_save_thccbdtopical_meta', 1, 2 ); /** Sav
  * @since    1.9.5
  */
 function add_clonedetails_metaboxes() {
-	$screens = array( 'growers' );
+
+	$screens = apply_filters( 'wpd_clonedetails_screens', array( 'growers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
