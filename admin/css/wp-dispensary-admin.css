@@ -18,9 +18,15 @@
 
 #wpdispensary_prices .inside .pricebox {
 	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#postbox-container-2 #wpdispensary_prices .inside .pricebox {
+	float: left;
 	margin: 10px 1%;
 	position: relative;
-	width: 31.333%;
+	width: 18%;
 }
 
 #wpdispensary_concentrateprices .inside .pricebox {
