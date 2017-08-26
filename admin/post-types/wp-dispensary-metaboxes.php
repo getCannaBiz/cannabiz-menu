@@ -25,7 +25,7 @@ function add_compounddetails_metaboxes() {
 			__( 'Compound Details', 'wp-dispensary' ),
 			'wpdispensary_compounddetails',
 			$screen,
-			'side',
+			'normal',
 			'default'
 		);
 	}
