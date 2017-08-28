@@ -1,6 +1,6 @@
 === WP Dispensary menu management ===
 Contributors: deviodigital
-Tags: cannabis, dispensary, marijuana, weed, pot, menu, mmj, mmp, menu-management, medical-marijuana, wp-dispensary
+Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, pot, mmj, mmp, menu-management, medical-marijuana, wp-dispensary
 Requires at least: 3.0.1
 Tested up to: 4.8
 Stable tag: 1.9.9
@@ -21,11 +21,9 @@ WP Dispensary was built with ease of use in mind, so the setup process of the pl
 
 *if you enjoy using this plugin, please consider giving it a [5 star rating](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
 
-Read the full list of [features](https://www.wpdispensary.com/features/).
-
 ### Easy to use shortcodes
 
-The WP Dispensary plugin comes with built in shortcodes which allow you to display your menu with any theme, however you'd like.
+The WP Dispensary plugin comes with 7 built in shortcodes that allow you to display your menu with any theme, however you'd like.
 
 You can call your menu anywhere shortcodes are accepted in your theme.
 
@@ -45,15 +43,15 @@ Samples of the shortcodes are below.
 
 `[wpd-carousel posts="6"]`
 
-See all shortcode options in the [documentation](https://www.wpdispensary.com/section/shortcodes/)
+See all shortcode options in the [documentation](https://www.wpdispensary.com/article/introduction-to-shortcodes/)
 
 ### Extend WP Dispensary
 
-With our free and commercial add-on's, you can connect to WooCommerce, sync your menu with mmjmenu, weedmaps and leafly, manage inventory and more.
+With our free and commercial add-on's, you can connect to WooCommerce, manage your inventory, create top sellers lists, coupons and more.
 
 Our add-on's help you extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-You can view our current add-on's on the [official WP Dispensary website](https://www.wpdispensary.com/add-ons)
+You can view our current add-on's on our [Extensions](https://www.wpdispensary.com/add-ons) page.
 
 We also have a dispensary WordPress theme for the cannabis industry, [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz).
 
