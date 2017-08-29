@@ -90,7 +90,7 @@ run_wp_dispensary();
  *
  * @since 1.9.8
  */
-function wpd_settings_link($links) { 
+function wpd_settings_link( $links ) { 
 	$settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>'; 
 	array_unshift( $links, $settings_link ); 
 	return $links; 
