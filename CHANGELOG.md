@@ -9,6 +9,8 @@
 * Removed support for the Subtitles plugin (we still love it, but it's not something we feel is right for core plugin inclusion)
 * Updated action hook names for widgets in `admin/post-types/wp-dispensary-widgets.php`
 * Updated price output for Concentrates in the carousel shortcode in `admin/wp-dispensary-shortcodes.php`
+* Updated oEmbed filter name in `wp-dispensary.php`
+* Updated the_excerpt filter name in `wp-dispensary.php`
 * WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
 
 ### 1.9.9
