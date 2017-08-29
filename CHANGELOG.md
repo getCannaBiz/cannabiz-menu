@@ -1,5 +1,16 @@
 # Changelog
 
+### 1.9.10
+* Added filters to post query $args for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added filters to register_taxonomy types in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added filters to $screens for metaboxes in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added CSS class names to item info span wraps in `admin/wp-dispensary-shortcodes.php`
+* Removed halfgram prices from flowers in various files (see [commit](https://github.com/deviodigital/wp-dispensary/commit/100dfeabb6e6b737f424a74ed1278a9a240330ee))
+* Removed support for the Subtitles plugin (we still love it, but it's not something we feel is right for core plugin inclusion)
+* Updated action hook names for widgets in `admin/post-types/wp-dispensary-widgets.php`
+* Updated price output for Concentrates in the carousel shortcode in `admin/wp-dispensary-shortcodes.php`
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
+
 ### 1.9.9
 * Changed "THC % & CBD %" metabox to "Compound Details" and added 3 new compounds in `admin/post-types/wp-dispensary-metaboxes.php`
 * Added 3 new compounds to Details table output in `admin/wp-dispensary-data-output.php`
