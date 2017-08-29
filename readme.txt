@@ -2,8 +2,8 @@
 Contributors: deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, pot, mmj, mmp, menu-management, medical-marijuana, wp-dispensary
 Requires at least: 3.0.1
-Tested up to: 4.8
-Stable tag: 1.9.9
+Tested up to: 4.8.1
+Stable tag: 1.9.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,9 @@ It has a long list of options built in for customization to fit your business br
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 1.9.10 =
+* 
 
 = 1.9.9 =
 * Changed "THC % & CBD %" metabox to "Compound Details" and added 3 new compounds in `admin/post-types/wp-dispensary-metaboxes.php`
