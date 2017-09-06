@@ -3,7 +3,7 @@
  * Adding the Shortcodes for easy output of content
  * within any theme
  *
- * @link       http://www.wpdispensary.com
+ * @link       https://www.wpdispensary.com
  * @since      1.2.0
  *
  * @package    WP_Dispensary
