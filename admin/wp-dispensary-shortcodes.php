@@ -1204,13 +1204,13 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	/** Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'		=> '100',
-			'class'		=> '',
-			'name'		=> 'show',
-			'info'		=> 'show',
-			'title'		=> 'Pre-rolls',
-			'orderby'   => '',
-			'imgsize'   => 'dispensary-image',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'title'       => 'Pre-rolls',
+			'orderby'     => '',
+			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
 		'wpd_prerolls'
