@@ -1800,14 +1800,14 @@ function wpdispensary_growers_shortcode( $atts ) {
 	/** Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'     => '100',
-			'class'     => '',
-			'name'      => 'show',
-			'info'      => 'show',
-			'title'     => 'Growers',
-			'category'  => '',
-			'orderby'   => '',
-			'imgsize'   => 'dispensary-image',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'title'       => 'Growers',
+			'category'    => '',
+			'orderby'     => '',
+			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
 		'wpd_growers'
