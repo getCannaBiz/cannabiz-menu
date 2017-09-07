@@ -828,7 +828,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
-			$showname = '<p><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
+			$showname = '<p class="wpd-producttitle"><strong><a href="' . get_permalink() . '">' . $querytitle . '</a></strong></p>';
 		} else {
 			$showname = '';
 		}
