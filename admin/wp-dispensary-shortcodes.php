@@ -49,6 +49,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'symptom'     => '',
 			'condition'   => '',
 			'orderby'     => '',
+			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
@@ -443,6 +444,12 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$showcbn = '';
 		}
 
+		if ( 'show' === $image ) {
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>';
+		} else {
+			$showimage = '';
+		}
+
 		/** Shortcode display */
 
 		ob_start();
@@ -450,7 +457,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>';
+		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class .'">'. $wpd_shortcode_inside_top .''. $showimage;
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -493,6 +500,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'symptom'     => '',
 			'condition'   => '',
 			'orderby'     => '',
+			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
@@ -865,6 +873,12 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$showcbn = '';
 		}
 
+		if ( 'show' === $image ) {
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Concentrate" /></a>';
+		} else {
+			$showimage = '';
+		}
+
 		/** Shortcode display */
 
 		ob_start();
@@ -872,7 +886,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Concentrate" /></a>';
+		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class .'">'. $wpd_shortcode_inside_top .''. $showimage;
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -906,6 +920,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'category'    => '',
 			'ingredient'  => '',
 			'orderby'     => '',
+			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
@@ -1171,6 +1186,12 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
+		if ( 'show' === $image ) {
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Edible" /></a>';
+		} else {
+			$showimage = '';
+		}
+
 		/** Shortcode display */
 
 		ob_start();
@@ -1178,7 +1199,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Edible" /></a>';
+		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class .'">'. $wpd_shortcode_inside_top .''. $showimage;
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -1210,6 +1231,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'info'        => 'show',
 			'title'       => 'Pre-rolls',
 			'orderby'     => '',
+			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
@@ -1458,6 +1480,12 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
+		if ( 'show' === $image ) {
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Pre-roll" /></a>';
+		} else {
+			$showimage = '';
+		}
+
 		/** Shortcode display */
 
 		ob_start();
@@ -1465,7 +1493,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Pre-roll" /></a>';
+		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class .'">'. $wpd_shortcode_inside_top .''. $showimage;
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -1500,6 +1528,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'category'    => '',
 			'ingredient'  => '',
 			'orderby'     => '',
+			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
@@ -1766,6 +1795,12 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
+		if ( 'show' === $image ) {
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Topical" /></a>';
+		} else {
+			$showimage = '';
+		}
+
 		/** Shortcode display */
 
 		ob_start();
@@ -1773,7 +1808,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>';
+		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class .'">'. $wpd_shortcode_inside_top .''. $showimage;
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -1807,6 +1842,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'title'       => 'Growers',
 			'category'    => '',
 			'orderby'     => '',
+			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
@@ -2076,6 +2112,12 @@ function wpdispensary_growers_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
+		if ( 'show' === $image ) {
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Grower" /></a>';
+		} else {
+			$showimage = '';
+		}
+
 		/** Shortcode display */
 
 		ob_start();
@@ -2083,7 +2125,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			$wpd_shortcode_inside_top = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class .'">'. $wpd_shortcode_inside_top .'<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Grower" /></a>';
+		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class .'">'. $wpd_shortcode_inside_top .''. $showimage;
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
