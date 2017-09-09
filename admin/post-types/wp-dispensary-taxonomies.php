@@ -334,7 +334,7 @@ function wpdispensary_flowercategory() {
 		'menu_name'                  => __( 'Categories' ),
 	  );
 
-	  register_taxonomy( 'flowers_category', 'flowers', array(
+	  register_taxonomy( 'flowers_category', array( 'flowers', 'prerolls' ), array(
 			'hierarchical'           => true,
 			'labels'                 => $labels,
 			'show_ui'                => true,
