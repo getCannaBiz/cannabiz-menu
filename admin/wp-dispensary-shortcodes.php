@@ -48,6 +48,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'effect'      => '',
 			'symptom'     => '',
 			'condition'   => '',
+			'vendor'      => '',
 			'orderby'     => '',
 			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
@@ -93,6 +94,13 @@ function wpdispensary_flowers_shortcode( $atts ) {
 				'taxonomy' => 'condition',
 				'field'    => 'slug',
 				'terms'    => $condition,
+			);
+	}
+	if ( '' !== $vendor ) {
+			$tax_query[]   = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
 			);
 	}
 	if ( '' !== $orderby ) {
@@ -509,6 +517,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'effect'      => '',
 			'symptom'     => '',
 			'condition'   => '',
+			'vendor'      => '',
 			'orderby'     => '',
 			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
@@ -554,6 +563,13 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 					'taxonomy' => 'condition',
 					'field'    => 'slug',
 					'terms'    => $condition,
+			);
+	}
+	if ( '' !== $vendor ) {
+			$tax_query[]   = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
 			);
 	}
 	if ( '' !== $orderby ) {
@@ -939,6 +955,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'title'       => 'Edibles',
 			'category'    => '',
 			'ingredient'  => '',
+			'vendor'      => '',
 			'orderby'     => '',
 			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
@@ -956,6 +973,13 @@ function wpdispensary_edibles_shortcode( $atts ) {
 					'taxonomy' => 'ingredients',
 					'field'    => 'slug',
 					'terms'    => $ingredient,
+			);
+	}
+	if ( '' !== $vendor ) {
+			$tax_query[]   = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
 			);
 	}
 	if ( '' !== $orderby ) {
@@ -1260,6 +1284,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'name'        => 'show',
 			'info'        => 'show',
 			'title'       => 'Pre-rolls',
+			'vendor'      => '',
 			'orderby'     => '',
 			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
@@ -1271,6 +1296,14 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode for Pre-rolls
 	 */
+	$tax_query = array( 'relation' => 'AND' );
+	if ( '' !== $vendor ) {
+			$tax_query[]   = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
+			);
+	}
 	if ( '' !== $orderby ) {
 			$order = $orderby;
 			$ordernew = 'ASC';
@@ -1278,6 +1311,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	$args = apply_filters( 'wpd_prerolls_shortcode_args', array(
 		'post_type'       => 'prerolls',
 		'posts_per_page'  => $posts,
+		'tax_query'       => $tax_query;
 		'orderby'         => $order,
 		'order'           => $ordernew,
 	) );
@@ -1567,6 +1601,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'title'       => 'Topicals',
 			'category'    => '',
 			'ingredient'  => '',
+			'vendor'      => '',
 			'orderby'     => '',
 			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
@@ -1585,6 +1620,13 @@ function wpdispensary_topicals_shortcode( $atts ) {
 					'taxonomy' => 'ingredients',
 					'field'    => 'slug',
 					'terms'    => $ingredient,
+			);
+	}
+	if ( '' !== $vendor ) {
+			$tax_query[]   = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
 			);
 	}
 	if ( '' !== $orderby ) {
@@ -1891,6 +1933,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'info'        => 'show',
 			'title'       => 'Growers',
 			'category'    => '',
+			'vendor'      => '',
 			'orderby'     => '',
 			'image'       => 'show',
 			'imgsize'     => 'dispensary-image',
@@ -1902,12 +1945,21 @@ function wpdispensary_growers_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode for Growers
 	 */
+	$tax_query = array( 'relation' => 'AND' );
+	if ( '' !== $vendor ) {
+			$tax_query[]   = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
+			);
+	}
 	if ( '' !== $orderby ) {
 		$order = $orderby;
 		$ordernew = 'ASC';
 	}
 	$args = apply_filters( 'wpd_growers_shortcode_args', array(
 		'post_type'         => 'growers',
+		'tax_query'         => $tax_query,
 		'posts_per_page'    => $posts,
 		'growers_category'  => $category,
 		'orderby'           => $order,
@@ -2232,6 +2284,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'effect'      => '',
 			'symptom'     => '',
 			'condition'   => '',
+			'vendor'      => '',
 			'orderby'     => '',
 			'type'        => "flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers'",
 			'imgsize'     => 'dispensary-image',
@@ -2277,6 +2330,13 @@ function wpdispensary_carousel_shortcode( $atts ) {
 					'taxonomy' => 'condition',
 					'field'    => 'slug',
 					'terms'    => $condition,
+			);
+	}
+	if ( '' !== $vendor ) {
+			$tax_query[]   = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
 			);
 	}
 	if ( '' !== $orderby ) {
