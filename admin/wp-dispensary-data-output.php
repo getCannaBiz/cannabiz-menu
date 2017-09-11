@@ -255,6 +255,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdingredients = '';
 		}
 
+		if ( get_the_term_list( $post->ID, 'vendor', true ) ) {
+			$wpdvendors = '<tr><td><span>Vendor:</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
+		} else {
+			$wpdvendors = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
 			$wpdthc = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thc', true ) .'%</td></tr>';
 		} else {
@@ -475,23 +481,23 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
-				$content .= $wpdaroma . $wpdflavor . $wpdeffect . $wpdsymptom . $wpdcondition;
+				$content .= $wpdaroma . $wpdflavor . $wpdeffect . $wpdsymptom . $wpdcondition . $wpdvendors;
 			}
 
 			if ( 'prerolls' === get_post_type() ) {
-				$content .= $wpdpreroll;
+				$content .= $wpdpreroll . $wpdvendors;
 			}
 
 			if ( 'growers' === get_post_type() ) {
-				$content .= $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime;
+				$content .= $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdvendors;
 			}
 
 			if ( 'edibles' === get_post_type() ) {
-				$content .= $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients;
+				$content .= $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients . $wpdvendors;
 			}
 
 			if ( 'topicals' === get_post_type() ) {
-				$content .= $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients;
+				$content .= $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients . $wpdvendors;
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {

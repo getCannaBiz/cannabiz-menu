@@ -499,3 +499,19 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
 }
 
+
+/**
+ * Add Aroma taxonomy for the Concentrates Custom Post Type
+ */
+function wpd_vendor( $data, $post, $request ) {
+	$_data = $data->data;
+	$_data['vendor'] = get_the_term_list( $post->ID, 'vendor', '', ' ', '' );
+	$data->data = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_flowers', 'wpd_vendor', 10, 3 );
+add_filter( 'rest_prepare_concentrates', 'wpd_vendor', 10, 3 );
+add_filter( 'rest_prepare_edibles', 'wpd_vendor', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_vendor', 10, 3 );
+add_filter( 'rest_prepare_topicals', 'wpd_vendor', 10, 3 );
+add_filter( 'rest_prepare_growers', 'wpd_vendor', 10, 3 );

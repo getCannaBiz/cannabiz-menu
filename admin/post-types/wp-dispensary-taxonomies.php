@@ -534,4 +534,54 @@ function wpdispensary_growerscategory() {
 
 }
 
+/**
+ * Vendor Taxonomy
+ *
+ * Adds the Vendor taxonomy to all custom post types
+ *
+ * @since    1.9.11
+ */
+
+add_action( 'init', 'wpdispensary_vendor', 0 );
+
+/**
+ * Vendor
+ */
+function wpdispensary_vendor() {
+
+	$labels = array(
+		'name'                       => _x( 'Vendors', 'general name' ),
+		'singular_name'              => _x( 'Vendor', 'singular name' ),
+		'search_items'               => __( 'Search Vendors' ),
+		'popular_items'              => __( 'Popular Vendors' ),
+		'all_items'                  => __( 'All Vendors' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Vendor' ),
+		'update_item'                => __( 'Update Vendor' ),
+		'add_new_item'               => __( 'Add New Vendor' ),
+		'new_item_name'              => __( 'New Vendor Name' ),
+		'separate_items_with_commas' => __( 'Separate vendors with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove vendors' ),
+		'choose_from_most_used'      => __( 'Choose from the most used vendors' ),
+		'not_found'                  => 'No vendors found',
+		'menu_name'                  => __( 'Vendors' ),
+	);
+	  
+	$vendortaxtype = apply_filters( 'wpd_vendor_tax_type', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) );
+
+	register_taxonomy( 'vendor', $vendortaxtype, array(
+		'hierarchical'           => false,
+		'labels'                 => $labels,
+		'show_ui'                => true,
+		'show_in_rest'           => true,
+		'show_admin_column'      => true,
+		'show_in_nav_menus'      => false,
+		'update_count_callback'  => '_update_post_term_count',
+		'query_var'              => true,
+		'rewrite'                => array( 'slug' => 'vendor' ),
+	) );
+
+}
+
 ?>
