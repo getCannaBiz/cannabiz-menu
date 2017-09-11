@@ -1311,7 +1311,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	$args = apply_filters( 'wpd_prerolls_shortcode_args', array(
 		'post_type'       => 'prerolls',
 		'posts_per_page'  => $posts,
-		'tax_query'       => $tax_query;
+		'tax_query'       => $tax_query,
 		'orderby'         => $order,
 		'order'           => $ordernew,
 	) );
