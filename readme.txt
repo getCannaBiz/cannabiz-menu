@@ -74,7 +74,7 @@ It has a long list of options built in for customization to fit your business br
 
 = 1.9.11 =
 * Added filter parameter shortcode names for each shortcode in `admin/wp-dispensary-shortcodes.php`
-* Added CSS class to shortcode item name <p> wraps in `admin/wp-dispensary-shortcodes.php`
+* Added CSS class to shortcode item name `<p>` wraps in `admin/wp-dispensary-shortcodes.php`
 * Added 'image' option to each shortcode in `admin/wp-dispensary-shortcodes.php`
 * Added Flowers category taxonomy to the Pre-rolls menu type in `admin/post-types/wp-dispensary-taxonomies.php`
 * Added 14 new action hooks to the shortcodes in `admin/wp-dispensary-shortcodes.php`
