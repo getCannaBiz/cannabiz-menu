@@ -3,7 +3,7 @@ Contributors: deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, pot, mmj, mmp, menu-management, medical-marijuana, wp-dispensary
 Requires at least: 3.0.1
 Tested up to: 4.8.1
-Stable tag: 1.9.10
+Stable tag: 1.9.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,19 @@ It has a long list of options built in for customization to fit your business br
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 1.9.11 =
+* Added filter parameter shortcode names for each shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added CSS class to shortcode item name <p> wraps in `admin/wp-dispensary-shortcodes.php`
+* Added 'image' option to each shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added Flowers category taxonomy to the Pre-rolls menu type in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added 14 new action hooks to the shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added new 'vendor' taxonomy in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added new 'vendor' option to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added new 'vendor' taxonomy to the Details table in `admin/wp-dispensary-data-output.php`
+* Added new 'vendor' taxonomy endpoints for the API in `admin/wp-dispensary-rest-api.php`
+* Fixed the THC and CBD amount from % to mg in `admin/wp-dispensary-data-output.php`
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
 
 = 1.9.10 =
 * Added filters to post query $args for shortcodes in `admin/wp-dispensary-shortcodes.php`

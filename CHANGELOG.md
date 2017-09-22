@@ -1,5 +1,18 @@
 # Changelog
 
+### 1.9.11
+* Added filter parameter shortcode names for each shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added CSS class to shortcode item name <p> wraps in `admin/wp-dispensary-shortcodes.php`
+* Added 'image' option to each shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added Flowers category taxonomy to the Pre-rolls menu type in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added 14 new action hooks to the shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added new 'vendor' taxonomy in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added new 'vendor' option to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added new 'vendor' taxonomy to the Details table in `admin/wp-dispensary-data-output.php`
+* Added new 'vendor' taxonomy endpoints for the API in `admin/wp-dispensary-rest-api.php`
+* Fixed the THC and CBD amount from % to mg in `admin/wp-dispensary-data-output.php`
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
+
 ### 1.9.10
 * Added filters to post query $args for shortcodes in `admin/wp-dispensary-shortcodes.php`
 * Added filters to register_taxonomy types in `admin/post-types/wp-dispensary-taxonomies.php`
