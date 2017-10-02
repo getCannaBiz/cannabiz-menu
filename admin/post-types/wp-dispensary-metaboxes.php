@@ -995,7 +995,7 @@ function add_clonedetails_metaboxes() {
 			__( 'Grower Item Details', 'wp-dispensary' ),
 			'wpdispensary_clonedetails',
 			$screen,
-			'side',
+			'normal',
 			'default'
 		);
 	}
@@ -1020,11 +1020,11 @@ function wpdispensary_clonedetails() {
 	$yield    = get_post_meta( $post->ID, '_yield', true );
 
 	/** Echo out the fields */
-	echo '<div class="pricebox">';
+	echo '<div class="growerbox">';
 	echo '<p>Origin:</p>';
 	echo '<input type="text" name="_origin" value="' . $origin  . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="pricebox">';
+	echo '<div class="growerbox">';
 	echo '<p>Grow Time:</p>';
 	echo '<input type="text" name="_time" value="' . $time  . '" class="widefat" />';
 	echo '</div>';
