@@ -992,7 +992,7 @@ function add_clonedetails_metaboxes() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_clonedetails',
-			__( 'Clone Details', 'wp-dispensary' ),
+			__( 'Grower Item Details', 'wp-dispensary' ),
 			'wpdispensary_clonedetails',
 			$screen,
 			'side',
