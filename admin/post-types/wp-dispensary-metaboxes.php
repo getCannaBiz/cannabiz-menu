@@ -1017,6 +1017,7 @@ function wpdispensary_clonedetails() {
 	/** Get the origin data if its already been entered */
 	$origin   = get_post_meta( $post->ID, '_origin', true );
 	$time     = get_post_meta( $post->ID, '_time', true );
+	$yield    = get_post_meta( $post->ID, '_yield', true );
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
@@ -1026,6 +1027,10 @@ function wpdispensary_clonedetails() {
 	echo '<div class="pricebox">';
 	echo '<p>Grow Time:</p>';
 	echo '<input type="text" name="_time" value="' . $time  . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="growerbox">';
+	echo '<p>Yield:</p>';
+	echo '<input type="text" name="_yield" value="' . $yield  . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -1055,6 +1060,7 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 
 	 $clonedetails_meta['_origin']	= $_POST['_origin'];
 	 $clonedetails_meta['_time']	= $_POST['_time'];
+	 $clonedetails_meta['_yield']   = $_POST['_yield'];
 
 	/** Add values of $clonedetails_meta as custom fields */
 
