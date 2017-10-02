@@ -478,7 +478,7 @@ add_action( 'rest_api_init', 'slug_register_growerinfo' );
  * Register Grower info
  */
 function slug_register_growerinfo() {
-	$growerinformation = array( '_priceeach', '_selected_flowers', '_seedcount', '_clonecount' , '_time' , '_origin' );
+	$growerinformation = array( '_priceeach', '_selected_flowers', '_seedcount', '_clonecount' , '_time' , '_origin', '_yield' );
 	foreach ( $growerinformation as $growerinfo ) {
 		register_rest_field(
 			'growers',
