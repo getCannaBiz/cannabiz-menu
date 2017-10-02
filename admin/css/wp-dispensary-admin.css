@@ -12,7 +12,8 @@
 
 #wpdispensary_prices .inside,
 #wpdispensary_concentrateprices .inside,
-#wpdispensary_compounds .inside {
+#wpdispensary_compounds .inside,
+#wpdispensary_clonedetails .inside {
     overflow: auto;
 }
 
@@ -53,6 +54,20 @@
     float: left;
     margin: 0 1%;
 }
+
+#wpdispensary_clonedetails .inside .growerbox {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#postbox-container-2 #wpdispensary_clonedetails .inside .growerbox {
+	float: left;
+	margin: 10px 1%;
+	position: relative;
+	width: 31.333%;
+}
+
 
 #dashboard_right_now .flowers-count a:before,
 #dashboard_right_now .flowers-count span:before,
