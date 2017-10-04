@@ -89,14 +89,16 @@ run_wp_dispensary();
  * Add settings link on plugin page
  *
  * @since 1.9.8
+ * @param array $links	an array of links related to the plugin.
+ * @return array 		updatead array of links related to the plugin.
  */
-function wpd_settings_link( $links ) { 
-	$settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>'; 
-	array_unshift( $links, $settings_link ); 
-	return $links; 
+function wpd_settings_link( $links ) {
+	$settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>';
+	array_unshift( $links, $settings_link );
+	return $links;
 }
 
-$pluginname = plugin_basename(__FILE__); 
+$pluginname = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$pluginname", 'wpd_settings_link' );
 
 /**
@@ -106,13 +108,23 @@ add_filter( "plugin_action_links_$pluginname", 'wpd_settings_link' );
  * @param  string $output Default embed output.
  * @return string         Customize embed output.
  */
-add_filter( 'the_excerpt_embed', 'wpd_excerpt_embed' );
 function wpd_excerpt_embed( $output ) {
-    return the_content();
-    return $output;
+	return the_content();
+	// NOTE: the code below can never execute???
+	return $output;
 }
+add_filter( 'the_excerpt_embed', 'wpd_excerpt_embed' );
 
-add_filter( 'embed_oembed_html', 'wpd_embed_oembed_html', 99, 4 );
+/**
+ * Filter to add a wrapper to embeds.
+ *
+ * @param  string $html    string of html of the embed.
+ * @param  string $url     url that the embed is generated from.
+ * @param  string $attr    attributes to apply to the embed markup.
+ * @param  int    $post_id id of the attached post.
+ * @return string          string with updated markup with a wrapper added.
+ */
 function wpd_embed_oembed_html( $html, $url, $attr, $post_id ) {
-  return '<div id="wpd-oembed-wrap">' . $html . '</div>';
+	return '<div id="wpd-oembed-wrap">' . $html . '</div>';
 }
+add_filter( 'embed_oembed_html', 'wpd_embed_oembed_html', 99, 4 );
