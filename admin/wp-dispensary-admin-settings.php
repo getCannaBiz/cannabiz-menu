@@ -52,14 +52,14 @@ class WPDispensarySettings {
 			3 /** Paramater: position */
 		);
 
-		add_submenu_page( 'wpd-settings', 'Flowers', 'Flowers', 'manage_options', 'edit.php?post_type=flowers', NULL );
-		add_submenu_page( 'wpd-settings', 'Concentrates', 'Concentrates', 'manage_options', 'edit.php?post_type=concentrates', NULL );
-		add_submenu_page( 'wpd-settings', 'Edibles', 'Edibles', 'manage_options', 'edit.php?post_type=edibles', NULL );
-		add_submenu_page( 'wpd-settings', 'Pre-rolls', 'Pre-rolls', 'manage_options', 'edit.php?post_type=prerolls', NULL );
-		add_submenu_page( 'wpd-settings', 'Topicals', 'Topicals', 'manage_options', 'edit.php?post_type=topicals', NULL );
-		add_submenu_page( 'wpd-settings', 'Growers', 'Growers', 'manage_options', 'edit.php?post_type=growers', NULL );
+		add_submenu_page( 'wpd-settings', 'Flowers', 'Flowers', 'manage_options', 'edit.php?post_type=flowers', null );
+		add_submenu_page( 'wpd-settings', 'Concentrates', 'Concentrates', 'manage_options', 'edit.php?post_type=concentrates', null );
+		add_submenu_page( 'wpd-settings', 'Edibles', 'Edibles', 'manage_options', 'edit.php?post_type=edibles', null );
+		add_submenu_page( 'wpd-settings', 'Pre-rolls', 'Pre-rolls', 'manage_options', 'edit.php?post_type=prerolls', null );
+		add_submenu_page( 'wpd-settings', 'Topicals', 'Topicals', 'manage_options', 'edit.php?post_type=topicals', null );
+		add_submenu_page( 'wpd-settings', 'Growers', 'Growers', 'manage_options', 'edit.php?post_type=growers', null );
 		add_submenu_page( 'wpd-settings', 'WP Dispensary Settings', 'Settings', 'manage_options', 'wpd-settings' );
-		remove_submenu_page('wpd-settings','wpd-settings');
+		remove_submenu_page( 'wpd-settings','wpd-settings' );
 
 	}
 
@@ -228,7 +228,7 @@ class WPDispensarySettings {
 	public function wpd_hide_pricing_callback() {
 		printf(
 			'<input type="checkbox" name="wp_dispensary_option_name[wpd_hide_pricing]" id="wpd_hide_pricing" value="wpd_hide_pricing" %s> <label for="wpd_hide_pricing">hide pricing from data output</label>',
-			( isset( $this->wp_dispensary_options['wpd_hide_pricing'] ) && 'wpd_hide_pricing' ===$this->wp_dispensary_options['wpd_hide_pricing'] ) ? 'checked' : ''
+			( isset( $this->wp_dispensary_options['wpd_hide_pricing'] ) && 'wpd_hide_pricing' === $this->wp_dispensary_options['wpd_hide_pricing'] ) ? 'checked' : ''
 		);
 	}
 
