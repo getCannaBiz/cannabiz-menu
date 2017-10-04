@@ -112,7 +112,7 @@ class WP_Dispensary_Public {
  */
 function wpd_oembed_styles() {
 
-	wp_register_style( 'wpd-oembed', plugin_dir_url( __FILE__ ) . 'css/wp-dispensary-oembed.css', false, $this-version );
+	wp_register_style( 'wpd-oembed', plugin_dir_url( __FILE__ ) . 'css/wp-dispensary-oembed.css', false, $this->version );
 	wp_enqueue_style( 'wpd-oembed' );
 
 }
