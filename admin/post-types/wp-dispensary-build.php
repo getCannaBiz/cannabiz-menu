@@ -442,7 +442,7 @@ class CPT {
 	 * @param string $taxonomy_name The slug for the taxonomy.
 	 * @param array  $options Taxonomy options.
 	 */
-	function register_taxonomy($taxonomy_names, $options = array()) {
+	function register_taxonomy( $taxonomy_names, $options = array() ) {
 
 		// Post type defaults to $this post type if unspecified.
 		$post_type = $this->post_type_name;
@@ -482,7 +482,7 @@ class CPT {
 			}
 
 			// Else if only the taxonomy_name has been supplied.
-		} else  {
+		} else {
 
 			// Create user friendly names.
 			$taxonomy_name = $taxonomy_names;
@@ -569,8 +569,8 @@ class CPT {
 	 */
 	function register_exisiting_taxonomies() {
 
-		if( is_array( $this->exisiting_taxonomies ) ) {
-			foreach( $this->exisiting_taxonomies as $taxonomy_name ) {
+		if ( is_array( $this->exisiting_taxonomies ) ) {
+			foreach ( $this->exisiting_taxonomies as $taxonomy_name ) {
 				register_taxonomy_for_object_type( $taxonomy_name, $this->post_type_name );
 			}
 		}
@@ -594,31 +594,31 @@ class CPT {
 			// determine which column to add custom taxonomies after.
 			if ( is_array( $this->taxonomies ) && in_array( 'post_tag', $this->taxonomies ) || $this->post_type_name === 'post' ) {
 				$after = 'tags';
-			} elseif( is_array( $this->taxonomies ) && in_array( 'category', $this->taxonomies ) || $this->post_type_name === 'post' ) {
+			} elseif ( is_array( $this->taxonomies ) && in_array( 'category', $this->taxonomies ) || $this->post_type_name === 'post' ) {
 				$after = 'categories';
-			} elseif( post_type_supports( $this->post_type_name, 'author' ) ) {
+			} elseif ( post_type_supports( $this->post_type_name, 'author' ) ) {
 				$after = 'author';
 			} else {
 				$after = 'title';
 			}
 
 			// foreach exisiting columns.
-			foreach( $columns as $key => $title ) {
+			foreach ( $columns as $key => $title ) {
 
 				// add exisiting column to the new column array.
-				$new_columns[$key] = $title;
+				$new_columns[ $key ] = $title;
 
 				// we want to add taxonomy columns after a specific column.
-				if( $key === $after ) {
+				if ( $key === $after ) {
 
 					// If there are taxonomies registered to the post type.
 					if ( is_array( $this->taxonomies ) ) {
 
 						// Create a column for each taxonomy.
-						foreach( $this->taxonomies as $tax ) {
+						foreach ( $this->taxonomies as $tax ) {
 
 							// WordPress adds Categories and Tags automatically, ignore these.
-							if( $tax !== 'category' && $tax !== 'post_tag' ) {
+							if ( $tax !== 'category' && $tax !== 'post_tag' ) {
 								// Get the taxonomy object for labels.
 								$taxonomy_object = get_taxonomy( $tax );
 
@@ -656,7 +656,7 @@ class CPT {
 		global $post;
 
 		// determine the column.
-		switch( $column ) {
+		switch ( $column ) {
 
 			// If column is a taxonomy associated with the post type.
 			case ( taxonomy_exists( $column ) ) :
@@ -670,7 +670,7 @@ class CPT {
 					$output = array();
 
 					// Loop through each term, linking to the 'edit posts' page for the specific term.
-					foreach( $terms as $term ) {
+					foreach ( $terms as $term ) {
 
 						// Output is an array of terms associated with the post.
 						$output[] = sprintf(
@@ -738,7 +738,7 @@ class CPT {
 				} else {
 
 					// Display default media image with link.
-					echo '<a href="' . $link . '"><img src="'. site_url( '/wp-includes/images/crystal/default.png' ) .'" alt="' . $post->post_title . '" /></a>';
+					echo '<a href="' . $link . '"><img src="' . site_url( '/wp-includes/images/crystal/default.png' ) . '" alt="' . $post->post_title . '" /></a>';
 
 				}
 
@@ -857,7 +857,7 @@ class CPT {
 	function columns( $columns ) {
 
 		// If columns is set.
-		if( isset( $columns ) ) {
+		if ( isset( $columns ) ) {
 
 			// Assign user submitted columns to object.
 			$this->columns = $columns;
@@ -954,7 +954,7 @@ class CPT {
 			$meta_key = $values[0];
 
 			// If the meta_key is a taxonomy.
-			if( taxonomy_exists( $meta_key ) ) {
+			if ( taxonomy_exists( $meta_key ) ) {
 
 				// Sort by taxonomy.
 				$key = "taxonomy";
@@ -1073,11 +1073,10 @@ class CPT {
 		$plural = $this->plural;
 
 		$bulk_messages[ $this->post_type_name ] = array(
-			'updated'   => _n( '%s '.$singular.' updated.', '%s '.$plural.' updated.', $bulk_counts['updated'] ),
-			'locked'    => _n( '%s '.$singular.' not updated, somebody is editing it.', '%s '.$plural.' not updated, somebody is editing them.', $bulk_counts['locked'] ),
-			'deleted'   => _n( '%s '.$singular.' permanently deleted.', '%s '.$plural.' permanently deleted.', $bulk_counts['deleted'] ),
-			'trashed'   => _n( '%s '.$singular.' moved to the Trash.', '%s '.$plural.' moved to the Trash.', $bulk_counts['trashed'] ),
-			'untrashed' => _n( '%s '.$singular.' restored from the Trash.', '%s '.$plural.' restored from the Trash.', $bulk_counts['untrashed'] ),
+			'locked'    => _n( '%s ' . $singular . ' not updated, somebody is editing it.', '%s ' . $plural . ' not updated, somebody is editing them.', $bulk_counts['locked'] ),
+			'deleted'   => _n( '%s ' . $singular . ' permanently deleted.', '%s ' . $plural . ' permanently deleted.', $bulk_counts['deleted'] ),
+			'trashed'   => _n( '%s ' . $singular . ' moved to the Trash.', '%s ' . $plural . ' moved to the Trash.', $bulk_counts['trashed'] ),
+			'untrashed' => _n( '%s ' . $singular . ' restored from the Trash.', '%s ' . $plural . ' restored from the Trash.', $bulk_counts['untrashed'] ),
 		);
 
 		return $bulk_messages;
