@@ -537,7 +537,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpddataafter = ob_get_clean();
 				$content .= $wpddataafter;
 			}
-		}
+		} // End if().
 
 		/**
 		 * Adding Pricing table
@@ -555,7 +555,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpdpricingbefore = ob_get_clean();
 				$content .= $wpdpricingbefore;
 			}
-			
+
 			if ( null === $wp_dispensary_options['wpd_cost_phrase'] || 'Price' === $wp_dispensary_options['wpd_cost_phrase'] ) {
 				$wpd_cost = $post_type->labels->singular_name .' Pricing';
 			} else {
@@ -629,7 +629,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpdpricingafter = ob_get_clean();
 				$content .= $wpdpricingafter;
 			}
-		}
+		} // End if().
 
 		/**
 		 * Conditional statement to output menu
@@ -648,4 +648,4 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 	}
 	add_filter( 'the_content', 'wpd_data_output_content' );
 
-}
+} // End if().
