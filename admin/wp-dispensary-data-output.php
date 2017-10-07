@@ -445,11 +445,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Adding the WP Dispensary menu item data
 		 */
-		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ) ) ) {
+		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ), true ) ) {
 			$original = $content;
 		}
 
-		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ) ) ) {
+		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers' ), true ) ) {
 			$content = '';
 		}
 
@@ -463,14 +463,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.9.5
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_dataoutput_before' );
 				$wpddatabefore = ob_get_clean();
 				$content .= $wpddatabefore;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				$content .= '<table class="wpdispensary-table single"><tr><td class="wpdispensary-title" colspan="6">' . $post_type->labels->singular_name . ' Details</td></tr>';
 			}
 
@@ -479,14 +479,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.9.5
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_dataoutput_top' );
 				$wpddatatop = ob_get_clean();
 				$content .= $wpddatatop;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ), true ) ) {
 				$content .= $wpdaroma . $wpdflavor . $wpdeffect . $wpdsymptom . $wpdcondition . $wpdvendors;
 			}
 
@@ -506,7 +506,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$content .= $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients . $wpdvendors;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ), true ) ) {
 				$content .= $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn;
 			}
 
@@ -515,14 +515,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.8.0
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_dataoutput_bottom' );
 				$wpddatabottom = ob_get_clean();
 				$content .= $wpddatabottom;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				$content .= '</table>';
 			}
 
@@ -531,7 +531,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.9.5
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_dataoutput_after' );
 				$wpddataafter = ob_get_clean();
@@ -549,7 +549,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.9.5
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_pricingoutput_before' );
 				$wpdpricingbefore = ob_get_clean();
@@ -562,7 +562,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpd_cost = 'Donation Amount';
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				$content .= '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_cost . '</td></tr>';
 			}
 
@@ -578,27 +578,27 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$content .= $wpdpricingtop;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers' ), true ) ) {
 				$content .= '<tr>' . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
 			}
 
-			if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
+			if ( in_array( get_post_type(), array( 'concentrates' ), true ) ) {
 				if ( empty( $wpdpriceperunit ) ) {
-				$content .= '<tr>' . $wpdhalfgram . $wpdgram . $wpdtwograms . '</tr>';
+					$content .= '<tr>' . $wpdhalfgram . $wpdgram . $wpdtwograms . '</tr>';
 				} else {
-				$content .= '<tr>' . $wpdpriceperunit . '</tr>';
+					$content .= '<tr>' . $wpdpriceperunit . '</tr>';
 				}
 			}
 
-			if ( in_array( get_post_type(), array( 'prerolls', 'edibles' ) ) ) {
+			if ( in_array( get_post_type(), array( 'prerolls', 'edibles' ), true ) ) {
 				$content .= $wpdpriceeach;
 			}
 
-			if ( in_array( get_post_type(), array( 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'growers' ), true ) ) {
 				$content .= $wpdpriceperunit;
 			}
 
-			if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
+			if ( in_array( get_post_type(), array( 'topicals' ), true ) ) {
 				$content .= $wpdpricetopical;
 			}
 
@@ -607,14 +607,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.8.0
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_pricingoutput_bottom' );
 				$wpdpricingbottom = ob_get_clean();
 				$content .= $wpdpricingbottom;
 			}
 
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				$content .= '</table>';
 			}
 
@@ -623,7 +623,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.9.5
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_pricingoutput_after' );
 				$wpdpricingafter = ob_get_clean();
@@ -635,7 +635,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Conditional statement to output menu
 		 * item details above or below the_content
 		 */
-		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+		if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 			if ( 'wpd_content_placement' !== $wpd_content_placement ) {
 				$content .= $original;
 			} else {
