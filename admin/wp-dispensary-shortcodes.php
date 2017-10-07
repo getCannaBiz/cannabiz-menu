@@ -143,7 +143,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		$price_half_ounce   = get_post_meta( get_the_ID(), '_halfounce', true );
 		$price_ounce       = get_post_meta( get_the_ID(), '_ounce', true );
 
-		$wp_dispensary_options     = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wp_dispensary_options     = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -167,7 +167,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
+			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
 		$currency_symbols = array(
@@ -304,11 +304,11 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'SYP' => '&#163;',
 			'SZL' => '&#76;', // ?
 			'THB' => '&#3647;',
-			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess)
+			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess).
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
@@ -607,7 +607,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		$thumbnail_url         = $thumbnail_url_array[0];
 		$querytitle            = get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -631,7 +631,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
+			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
 		$currency_symbols = array(
@@ -768,11 +768,11 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'SYP' => '&#163;',
 			'SZL' => '&#76;', // ?
 			'THB' => '&#3647;',
-			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess)
+			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess).
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
@@ -1018,7 +1018,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		$thumbnail_url			= $thumbnail_url_array[0];
 		$querytitle				= get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -1042,7 +1042,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
+			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
 		$currency_symbols = array(
@@ -1183,7 +1183,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
@@ -1341,7 +1341,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		$thumbnail_url			= $thumbnail_url_array[0];
 		$querytitle 			= get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -1365,7 +1365,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
+			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
 		$currency_symbols = array(
@@ -1506,7 +1506,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
@@ -1669,7 +1669,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$thumbnail_url			= $thumbnail_url_array[0];
 		$querytitle				= get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -1693,7 +1693,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
+			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
 		$currency_symbols = array(
@@ -1834,7 +1834,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
@@ -1995,7 +1995,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$thumbnail_url			= $thumbnail_url_array[0];
 		$querytitle 			= get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -2019,7 +2019,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
+			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
 		$currency_symbols = array(
@@ -2156,11 +2156,11 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'SYP' => '&#163;',
 			'SZL' => '&#76;', // ?
 			'THB' => '&#3647;',
-			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess)
+			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess).
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
@@ -2397,7 +2397,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		$price_half_ounce   = get_post_meta( get_the_ID(), '_halfounce', true );
 		$price_ounce       = get_post_meta( get_the_ID(), '_ounce', true );
 
-		$wp_dispensary_options     = get_option( 'wp_dispensary_option_name' ); // Array of All Options
+		$wp_dispensary_options     = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -2421,7 +2421,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Price';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase
+			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
 		$currency_symbols = array(
@@ -2558,11 +2558,11 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'SYP' => '&#163;',
 			'SZL' => '&#76;', // ?
 			'THB' => '&#3647;',
-			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess)
+			'TJS' => '&#84;&#74;&#83;', // ? TJS (guess).
 			'TMT' => '&#109;',
 			'TND' => '&#1583;.&#1578;',
 			'TOP' => '&#84;&#36;',
-			'TRY' => '&#8356;', // New Turkey Lira (old symbol used)
+			'TRY' => '&#8356;', // New Turkey Lira (old symbol used).
 			'TTD' => '&#36;',
 			'TWD' => '&#78;&#84;&#36;',
 			'TZS' => '',
