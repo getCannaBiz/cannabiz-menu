@@ -42,7 +42,7 @@ function wpdispensary_aroma() {
 		'not_found'                  => 'No aromas found',
 		'menu_name'                  => __( 'Aromas' ),
 	  );
-	  
+
 	  $aromataxtype = apply_filters( 'wpd_aroma_tax_type', array( 'flowers', 'concentrates' ) );
 
 	  register_taxonomy( 'aroma', $aromataxtype, array(
@@ -54,7 +54,9 @@ function wpdispensary_aroma() {
 			'show_in_nav_menus'      => false,
 			'update_count_callback'  => '_update_post_term_count',
 			'query_var'              => true,
-			'rewrite'                => array( 'slug' => 'aroma' ),
+			'rewrite'                => array(
+				'slug' => 'aroma',
+			),
 	  ) );
 
 }
@@ -104,7 +106,9 @@ function wpdispensary_flavor() {
 			'show_in_nav_menus'      => false,
 			'update_count_callback'  => '_update_post_term_count',
 			'query_var'              => true,
-			'rewrite'                => array( 'slug' => 'flavor' ),
+			'rewrite'                => array(
+				'slug' => 'flavor',
+			),
 	  ) );
 }
 
@@ -153,7 +157,9 @@ function wpdispensary_effect() {
 			'show_in_nav_menus'      => false,
 			'update_count_callback'  => '_update_post_term_count',
 			'query_var'              => true,
-			'rewrite'                => array( 'slug' => 'effect' ),
+			'rewrite'                => array(
+				'slug' => 'effect',
+			),
 	  ) );
 }
 
@@ -202,7 +208,9 @@ function wpdispensary_symptom() {
 			'show_in_nav_menus'      => false,
 			'update_count_callback'  => '_update_post_term_count',
 			'query_var'              => true,
-			'rewrite'                => array( 'slug' => 'symptom' ),
+			'rewrite'                => array(
+				'slug' => 'symptom',
+			),
 	  ) );
 }
 
@@ -251,7 +259,9 @@ function wpdispensary_condition() {
 			'show_in_nav_menus'      => false,
 			'update_count_callback'  => '_update_post_term_count',
 			'query_var'              => true,
-			'rewrite'                => array( 'slug' => 'condition' ),
+			'rewrite'                => array(
+				'slug' => 'condition',
+			),
 	  ) );
 }
 
@@ -300,7 +310,9 @@ function wpdispensary_ingredient() {
 			'show_in_nav_menus'      => false,
 			'update_count_callback'  => '_update_post_term_count',
 			'query_var'              => true,
-			'rewrite'                => array( 'slug' => 'ingredient' ),
+			'rewrite'                => array(
+				'slug' => 'ingredient',
+			),
 	  ) );
 }
 
@@ -378,7 +390,7 @@ function wpdispensary_ediblecategory() {
 		'new_item_name'              => __( 'New Edible Category Name' ),
 		'not_found'                  => 'No edible categories found',
 		'menu_name'                  => __( 'Categories' ),
-	  ); 
+	  );
 
 	  register_taxonomy( 'edibles_category', 'edibles', array(
 			'hierarchical'           => true,
@@ -567,7 +579,7 @@ function wpdispensary_vendor() {
 		'not_found'                  => 'No vendors found',
 		'menu_name'                  => __( 'Vendors' ),
 	);
-	  
+
 	$vendortaxtype = apply_filters( 'wpd_vendor_tax_type', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) );
 
 	register_taxonomy( 'vendor', $vendortaxtype, array(
@@ -579,9 +591,9 @@ function wpdispensary_vendor() {
 		'show_in_nav_menus'      => false,
 		'update_count_callback'  => '_update_post_term_count',
 		'query_var'              => true,
-		'rewrite'                => array( 'slug' => 'vendor' ),
+		'rewrite'                => array(
+			'slug' => 'vendor',
+		),
 	) );
 
 }
-
-?>

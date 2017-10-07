@@ -21,9 +21,9 @@
 }
 
 p.wpd-wooconnect {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
 }
 
 /** Main Table */
@@ -101,7 +101,7 @@ table.wpdispensary-table td span {
 
 /**
  * WooConnect buttons
- * 
+ *
  * www.wpdispensary.com/downloads/wooconnect-for-woocommerce
  */
 
