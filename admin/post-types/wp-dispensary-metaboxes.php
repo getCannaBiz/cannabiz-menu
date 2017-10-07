@@ -16,7 +16,7 @@
  *
  * @since    1.9.9
  */
-function add_compounddetails_metaboxes() {
+function wpdispensary_add_compounddetails_metaboxes() {
 	$screens = apply_filters( 'wpd_compound_details_screens', array( 'flowers', 'concentrates' ) );
 
 	foreach ( $screens as $screen ) {
@@ -32,7 +32,7 @@ function add_compounddetails_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_compounddetails_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_compounddetails_metaboxes' );
 
 /**
  * Building the metabox
@@ -133,7 +133,7 @@ add_action( 'save_post', 'wpdispensary_save_compounddetails_meta', 1, 2 ); // sa
  *
  * @since    1.0.0
  */
-function add_prices_metaboxes() {
+function wpdispensary_add_prices_metaboxes() {
 
 	$screens = apply_filters( 'wpd_prices_screens', array( 'flowers' ) );
 
@@ -150,7 +150,7 @@ function add_prices_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_prices_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_prices_metaboxes' );
 
 /**
  * WP Dispensary Prices
@@ -251,7 +251,7 @@ add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** Save the c
  *
  * @since    1.9.6
  */
-function add_concentrateprices_metaboxes() {
+function wpdispensary_add_concentrateprices_metaboxes() {
 
 	$screens = apply_filters( 'wpd_concentrateprices_screens', array( 'concentrates' ) );
 
@@ -268,7 +268,7 @@ function add_concentrateprices_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_concentrateprices_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_concentrateprices_metaboxes' );
 
 /**
  * WP Dispensary Concentrate Prices
@@ -500,7 +500,7 @@ new WPDispensary_Growers();
  *
  * @since    1.0.0
  */
-function add_singleprices_metaboxes() {
+function wpdispensary_add_singleprices_metaboxes() {
 
 	$screens = apply_filters( 'wpd_singleprices_screens', array( 'edibles', 'prerolls', 'growers' ) );
 
@@ -517,7 +517,7 @@ function add_singleprices_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_singleprices_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_singleprices_metaboxes' );
 
 /**
  * Single Prices
@@ -593,7 +593,7 @@ add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** Save
  *
  * @since    1.7.0
  */
-function add_seedcount_metaboxes() {
+function wpdispensary_add_seedcount_metaboxes() {
 
 	$screens = apply_filters( 'wpd_seedcount_screens', array( 'growers' ) );
 
@@ -610,7 +610,7 @@ function add_seedcount_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_seedcount_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_seedcount_metaboxes' );
 
 /**
  * Seed Count
@@ -686,7 +686,7 @@ add_action( 'save_post', 'wpdispensary_save_seedcount_meta', 1, 2 ); /** Save th
  *
  * @since    1.7.0
  */
-function add_clonecount_metaboxes() {
+function wpdispensary_add_clonecount_metaboxes() {
 
 	$screens = apply_filters( 'wpd_clonecount_screens', array( 'growers' ) );
 
@@ -703,7 +703,7 @@ function add_clonecount_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_clonecount_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_clonecount_metaboxes' );
 
 /**
  * Clone count
@@ -778,7 +778,7 @@ add_action( 'save_post', 'wpdispensary_save_clonecount_meta', 1, 2 ); /** Save t
  *
  * @since    1.0.0
  */
-function add_thc_cbd_mg_metaboxes() {
+function wpdispensary_add_thc_cbd_mg_metaboxes() {
 
 	$screens = apply_filters( 'wpd_thc_cbd_mg_screens', array( 'edibles' ) );
 
@@ -795,7 +795,7 @@ function add_thc_cbd_mg_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_thc_cbd_mg_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_thc_cbd_mg_metaboxes' );
 
 /**
  * THC and CBD mg
@@ -882,7 +882,7 @@ add_action( 'save_post', 'wpdispensary_save_thc_cbd_mg_meta', 1, 2 ); /** Save t
  *
  * @since    1.4.0
  */
-function add_thccbdtopical_metaboxes() {
+function wpdispensary_add_thccbdtopical_metaboxes() {
 
 	$screens = apply_filters( 'wpd_thccbdtopical_screens', array( 'topicals' ) );
 
@@ -899,7 +899,7 @@ function add_thccbdtopical_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_thccbdtopical_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_thccbdtopical_metaboxes' );
 
 /**
  * Building the metabox
@@ -985,7 +985,7 @@ add_action( 'save_post', 'wpdispensary_save_thccbdtopical_meta', 1, 2 ); /** Sav
  *
  * @since    1.9.5
  */
-function add_clonedetails_metaboxes() {
+function wpdispensary_add_clonedetails_metaboxes() {
 
 	$screens = apply_filters( 'wpd_clonedetails_screens', array( 'growers' ) );
 
@@ -1002,7 +1002,7 @@ function add_clonedetails_metaboxes() {
 
 }
 
-add_action( 'add_meta_boxes', 'add_clonedetails_metaboxes' );
+add_action( 'add_meta_boxes', 'wpdispensary_add_clonedetails_metaboxes' );
 
 /**
  * Building the metabox
