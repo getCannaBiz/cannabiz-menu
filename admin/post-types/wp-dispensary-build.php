@@ -138,16 +138,16 @@ class CPT {
 				// If the name has been set by user.
 				if ( isset( $post_type_names[ $name ] ) ) {
 
-					// Use the user setting
+					// Use the user setting.
 					$this->$name = $post_type_names[ $name ];
 
 				// Else generate the name.
 				} else {
 
-					// define the method to be used
+					// define the method to be used.
 					$method = 'get_' . $name;
 
-					// Generate the name
+					// Generate the name.
 					$this->$name = $this->$method();
 				}
 			}
@@ -189,7 +189,7 @@ class CPT {
 		// Add filter select option to admin edit.
 		$this->add_action( 'restrict_manage_posts', array( &$this, 'add_taxonomy_filters' ) );
 
-		// rewrite post update messages
+		// rewrite post update messages.
 		$this->add_filter( 'post_updated_messages', array( &$this, 'updated_messages' ) );
 		$this->add_filter( 'bulk_post_updated_messages', array( &$this, 'bulk_updated_messages' ), 10, 2 );
 	}
@@ -212,7 +212,7 @@ class CPT {
 
 		} else {
 
-			// on fail return false
+			// on fail return false.
 			return false;
 		}
 	}
@@ -239,10 +239,10 @@ class CPT {
 			'taxonomies'
 		);
 
-		// If the variable is not a reserved variable
+		// If the variable is not a reserved variable.
 		if ( ! in_array( $var, $reserved ) ) {
 
-			// Write variable and value
+			// Write variable and value.
 			$this->$var = $value;
 		}
 	}
@@ -259,7 +259,7 @@ class CPT {
 	 */
 	function add_action( $action, $function, $priority = 10, $accepted_args = 1 ) {
 
-		// Pass variables into WordPress add_action function
+		// Pass variables into WordPress add_action function.
 		add_action( $action, $function, $priority, $accepted_args );
 	}
 
@@ -277,7 +277,7 @@ class CPT {
 	 */
 	function add_filter( $action, $function, $priority = 10, $accepted_args = 1 ) {
 
-		// Pass variables into Wordpress add_action function
+		// Pass variables into Wordpress add_action function.
 		add_filter( $action, $function, $priority, $accepted_args );
 	}
 
@@ -454,10 +454,10 @@ class CPT {
 			'slug'
 		);
 
-		// if an array of names are passed
+		// if an array of names are passed.
 		if ( is_array( $taxonomy_names ) ) {
 
-			// Set the taxonomy name
+			// Set the taxonomy name.
 			$taxonomy_name = $taxonomy_names['taxonomy_name'];
 
 			// Cycle through possible names.
@@ -475,7 +475,7 @@ class CPT {
 					// Define the function to be used.
 					$method = 'get_' . $name;
 
-					// Generate the name
+					// Generate the name.
 					$$name = $this->$method( $taxonomy_name );
 
 				}
@@ -550,12 +550,12 @@ class CPT {
 				// Register the taxonomy if it doesn't exist.
 				if ( ! taxonomy_exists( $taxonomy_name ) ) {
 
-					// Register the taxonomy with Wordpress
+					// Register the taxonomy with Wordpress.
 					register_taxonomy( $taxonomy_name, $this->post_type_name, $options );
 
 				} else {
 
-					// If taxonomy exists, register it later with register_exisiting_taxonomies
+					// If taxonomy exists, register it later with register_exisiting_taxonomies.
 					$this->exisiting_taxonomies[] = $taxonomy_name;
 				}
 			}
@@ -586,12 +586,12 @@ class CPT {
 	 */
 	function add_admin_columns( $columns ) {
 
-		// If no user columns have been specified, add taxonomies
+		// If no user columns have been specified, add taxonomies.
 		if ( ! isset( $this->columns ) ) {
 
 			$new_columns = array();
 
-			// determine which column to add custom taxonomies after
+			// determine which column to add custom taxonomies after.
 			if ( is_array( $this->taxonomies ) && in_array( 'post_tag', $this->taxonomies ) || $this->post_type_name === 'post' ) {
 				$after = 'tags';
 			} elseif( is_array( $this->taxonomies ) && in_array( 'category', $this->taxonomies ) || $this->post_type_name === 'post' ) {
@@ -602,13 +602,13 @@ class CPT {
 				$after = 'title';
 			}
 
-			// foreach exisiting columns
+			// foreach exisiting columns.
 			foreach( $columns as $key => $title ) {
 
-				// add exisiting column to the new column array
+				// add exisiting column to the new column array.
 				$new_columns[$key] = $title;
 
-				// we want to add taxonomy columns after a specific column
+				// we want to add taxonomy columns after a specific column.
 				if( $key === $after ) {
 
 					// If there are taxonomies registered to the post type.
@@ -617,7 +617,7 @@ class CPT {
 						// Create a column for each taxonomy.
 						foreach( $this->taxonomies as $tax ) {
 
-							// WordPress adds Categories and Tags automatically, ignore these
+							// WordPress adds Categories and Tags automatically, ignore these.
 							if( $tax !== 'category' && $tax !== 'post_tag' ) {
 								// Get the taxonomy object for labels.
 								$taxonomy_object = get_taxonomy( $tax );
@@ -630,7 +630,7 @@ class CPT {
 				}
 			}
 
-			// overide with new columns
+			// overide with new columns.
 			$columns = $new_columns;
 
 		} else {
@@ -655,13 +655,13 @@ class CPT {
 		// Get wordpress $post object.
 		global $post;
 
-		// determine the column
+		// determine the column.
 		switch( $column ) {
 
 			// If column is a taxonomy associated with the post type.
 			case ( taxonomy_exists( $column ) ) :
 
-				// Get the taxonomy for the post
+				// Get the taxonomy for the post.
 				$terms = get_the_terms( $post_id, $column );
 
 				// If we have terms.
@@ -693,7 +693,7 @@ class CPT {
 				// If no terms found.
 				} else {
 
-					// Get the taxonomy object for labels
+					// Get the taxonomy object for labels.
 					$taxonomy_object = get_taxonomy( $column );
 
 					// Echo no terms.
@@ -712,7 +712,7 @@ class CPT {
 			// if the column is prepended with 'meta_', this will automagically retrieve the meta values and display them.
 			case ( preg_match( '/^meta_/', $column ) ? true : false ) :
 
-				// meta_book_author (meta key = book_author)
+				// meta_book_author (meta key = book_author).
 				$x = substr( $column, 5 );
 
 				$meta = get_post_meta( $post->ID, $x );
@@ -788,12 +788,12 @@ class CPT {
 		// Must set this to the post type you want the filter(s) displayed on.
 		if ( $typenow == $this->post_type_name ) {
 
-			// if custom filters are defined use those
+			// if custom filters are defined use those.
 			if ( is_array( $this->filters ) ) {
 
 				$filters = $this->filters;
 
-			// else default to use all taxonomies associated with the post
+			// else default to use all taxonomies associated with the post.
 			} else {
 
 				$filters = $this->taxonomies;
@@ -930,7 +930,7 @@ class CPT {
 	 */
 	function load_edit() {
 
-		// Run filter to sort columns when requested
+		// Run filter to sort columns when requested.
 		$this->add_filter( 'request', array( &$this, 'sort_columns' ) );
 
 	}
@@ -947,13 +947,13 @@ class CPT {
 	 */
 	function sort_columns( $vars ) {
 
-		// Cycle through all sortable columns submitted by the user
+		// Cycle through all sortable columns submitted by the user.
 		foreach ( $this->sortable as $column => $values ) {
 
-			// Retrieve the meta key from the user submitted array of sortable columns
+			// Retrieve the meta key from the user submitted array of sortable columns.
 			$meta_key = $values[0];
 
-			// If the meta_key is a taxonomy
+			// If the meta_key is a taxonomy.
 			if( taxonomy_exists( $meta_key ) ) {
 
 				// Sort by taxonomy.
@@ -965,25 +965,25 @@ class CPT {
 				$key = "meta_key";
 			}
 
-			// If the optional parameter is set and is set to true
+			// If the optional parameter is set and is set to true.
 			if ( isset( $values[1] ) && true === $values[1] ) {
 
-				// Vaules needed to be ordered by integer value
+				// Vaules needed to be ordered by integer value.
 				$orderby = 'meta_value_num';
 
 			} else {
 
-				// Values are to be order by string value
+				// Values are to be order by string value.
 				$orderby = 'meta_value';
 			}
 
-			// Check if we're viewing this post type
+			// Check if we're viewing this post type.
 			if ( isset( $vars['post_type'] ) && $this->post_type_name == $vars['post_type'] ) {
 
-				// find the meta key we want to order posts by
+				// find the meta key we want to order posts by.
 				if ( isset( $vars['orderby'] ) && $meta_key == $vars['orderby'] ) {
 
-					// Merge the query vars with our custom variables
+					// Merge the query vars with our custom variables.
 					$vars = array_merge(
 						$vars,
 						array(
@@ -1003,7 +1003,7 @@ class CPT {
 	 * Use this function to set the menu icon in the admin dashboard. Since WordPress v3.8
 	 * dashicons are used. For more information see @link http://melchoyce.github.io/dashicons/
 	 *
-	 * @param string $icon dashicon name
+	 * @param string $icon dashicon name.
 	 */
 	function menu_icon( $icon = "dashicons-admin-page" ) {
 
@@ -1013,7 +1013,7 @@ class CPT {
 
 		} else {
 
-			// Set a default menu icon
+			// Set a default menu icon.
 			$this->options["menu_icon"] = "dashicons-admin-page";
 		}
 	}
@@ -1032,7 +1032,7 @@ class CPT {
 	 *
 	 * Internal function that modifies the post type names in updated messages
 	 *
-	 * @param array $messages an array of post updated messages
+	 * @param array $messages an array of post updated messages.
 	 */
 	function updated_messages( $messages ) {
 
@@ -1065,7 +1065,7 @@ class CPT {
 	 *
 	 * Internal function that modifies the post type names in bulk updated messages
 	 *
-	 * @param array $messages an array of bulk updated messages
+	 * @param array $messages an array of bulk updated messages.
 	 */
 	function bulk_updated_messages( $bulk_messages, $bulk_counts ) {
 
