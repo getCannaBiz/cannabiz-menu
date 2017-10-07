@@ -137,11 +137,11 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 		/** Get the pricing for Flowers */
 
-		$priceGram        = get_post_meta( get_the_ID(), '_gram', true );
-		$priceEighth      = get_post_meta( get_the_ID(), '_eighth', true );
-		$priceQuarter     = get_post_meta( get_the_ID(), '_quarter', true );
-		$priceHalfOunce   = get_post_meta( get_the_ID(), '_halfounce', true );
-		$priceOunce       = get_post_meta( get_the_ID(), '_ounce', true );
+		$price_gram        = get_post_meta( get_the_ID(), '_gram', true );
+		$price_eighth      = get_post_meta( get_the_ID(), '_eighth', true );
+		$price_quarter     = get_post_meta( get_the_ID(), '_quarter', true );
+		$price_half_ounce   = get_post_meta( get_the_ID(), '_halfounce', true );
+		$price_ounce       = get_post_meta( get_the_ID(), '_ounce', true );
 
 		$wp_dispensary_options     = get_option( 'wp_dispensary_option_name' ); // Array of All Options
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
@@ -332,21 +332,21 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'ZWL' => '&#90;&#36;',
 		);
 
-		if ( '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+		if ( '' === $price_eighth && '' === $price_quarter && '' === $price_half_ounce && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_gram', true ) . ' per gram';
-		} elseif ( '' === $priceGram && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_quarter && '' === $price_half_ounce && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_eighth', true ) . ' per eighth';
-		} elseif ( '' === $priceGram && '' === $priceEighth && '' === $priceHalfOunce && '' === $priceOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_eighth && '' === $price_half_ounce && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_quarter', true ) . ' per quarter ounce';
-		} elseif ( '' === $priceGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_eighth && '' === $price_quarter && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_halfounce', true ) . ' per half ounce';
-		} elseif ( '' === $priceGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_eighth && '' === $price_quarter && '' === $price_half_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_ounce', true ) . ' per ounce';
 		} else {
 			$pricing = '';
 		}
 
-		if ( '' === $priceGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+		if ( '' === $price_gram && '' === $price_eighth && '' === $price_quarter && '' === $price_half_ounce && '' === $price_ounce ) {
 			$pricing = ' ';
 		}
 
@@ -2391,11 +2391,11 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		/** Get the pricing for Flowers and Concentrates */
 
-		$priceGram        = get_post_meta( get_the_ID(), '_gram', true );
-		$priceEighth      = get_post_meta( get_the_ID(), '_eighth', true );
-		$priceQuarter     = get_post_meta( get_the_ID(), '_quarter', true );
-		$priceHalfOunce   = get_post_meta( get_the_ID(), '_halfounce', true );
-		$priceOunce       = get_post_meta( get_the_ID(), '_ounce', true );
+		$price_gram        = get_post_meta( get_the_ID(), '_gram', true );
+		$price_eighth      = get_post_meta( get_the_ID(), '_eighth', true );
+		$price_quarter     = get_post_meta( get_the_ID(), '_quarter', true );
+		$price_half_ounce   = get_post_meta( get_the_ID(), '_halfounce', true );
+		$price_ounce       = get_post_meta( get_the_ID(), '_ounce', true );
 
 		$wp_dispensary_options     = get_option( 'wp_dispensary_option_name' ); // Array of All Options
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
@@ -2586,15 +2586,15 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'ZWL' => '&#90;&#36;',
 		);
 
-		if ( '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+		if ( '' === $price_eighth && '' === $price_quarter && '' === $price_half_ounce && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_gram', true ) . ' per gram';
-		} elseif ( '' === $priceGram && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_quarter && '' === $price_half_ounce && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_eighth', true ) . ' per eighth';
-		} elseif ( '' === $priceGram && '' === $priceEighth && '' === $priceHalfOunce && '' === $priceOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_eighth && '' === $price_half_ounce && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_quarter', true ) . ' per quarter ounce';
-		} elseif ( '' === $priceGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_eighth && '' === $price_quarter && '' === $price_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_halfounce', true ) . ' per half ounce';
-		} elseif ( '' === $priceGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce ) {
+		} elseif ( '' === $price_gram && '' === $price_eighth && '' === $price_quarter && '' === $price_half_ounce ) {
 			$pricing = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_ounce', true ) . ' per ounce';
 		} else {
 			$pricing = '';
