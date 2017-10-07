@@ -2756,7 +2756,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		/** Growers */
-		if ( in_array( get_post_type(), array( 'growers' ) ) ) {
+		if ( 'growers' === get_post_type() ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo">' . $pricingperunit . '' . $wpdseedcount . '' . $wpdclonecount . '</span>';
 			} else {
@@ -2764,7 +2764,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			}
 		}
 		/** Topicals */
-		if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
+		if ( 'topicals' === get_post_type() ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo">' . $topicalprice . '' . $topicalsize . '' . $topicalthc . '' . $topicalcbd . '</span>';
 			} else {
@@ -2773,7 +2773,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		/** Pre-rolls */
-		if ( in_array( get_post_type(), array( 'prerolls' ) ) ) {
+		if ( 'prerolls' === get_post_type() ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo">' . $pricingeach . '</span>';
 			} else {
@@ -2781,7 +2781,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			}
 		}
 		/** Edibles */
-		if ( in_array( get_post_type(), array( 'edibles' ) ) ) {
+		if ( 'edibles' === get_post_type() ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcmg . '' . $servingcount . '</span>';
 			} else {
@@ -2789,7 +2789,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			}
 		}
 		/** Concentrates */
-		if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
+		if ( 'concentrates' === get_post_type() ) {
 			if ( empty( $pricingeach ) ) {
 				$showinfo = $halfgram . '' . $gram . '' . $twograms;
 			} else {
@@ -2797,7 +2797,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			}
 		}
 		/** Flowers */
-		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
+		if ( 'flowers' === get_post_type() ) {
 			if ( 'show' === $info ) {
 				if ( empty( $pricing ) ) {
 					$showinfo = '<span class="wpd-productinfo"><strong>' . $wpd_cost_phrase . ':</strong> ' . $pricinglow . '' . $pricingsep . '' . $pricinghigh . '</span>';
