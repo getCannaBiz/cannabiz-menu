@@ -3,6 +3,7 @@
  * Custom Post Type Class
  *
  * Used to help create custom post types for Wordpress.
+ *
  * @link http://github.com/jjgrainger/wp-custom-post-type-class/
  *
  * @author  jjgrainger
@@ -126,7 +127,7 @@ class CPT {
 			$names = array(
 				'singular',
 				'plural',
-				'slug'
+				'slug',
 			);
 
 			// Set the post type name.
@@ -141,7 +142,7 @@ class CPT {
 					// Use the user setting.
 					$this->$name = $post_type_names[ $name ];
 
-				// Else generate the name.
+					// Else generate the name.
 				} else {
 
 					// define the method to be used.
@@ -151,8 +152,6 @@ class CPT {
 					$this->$name = $this->$method();
 				}
 			}
-
-		// Else the post type name is only supplied.
 		} else {
 
 			// Apply to post type name.
@@ -166,7 +165,7 @@ class CPT {
 
 			// Set the singular name label.
 			$this->singular = $this->get_singular();
-		}
+		}// End if().
 
 		// Set the user submitted options to the object.
 		$this->options = $options;
@@ -236,7 +235,7 @@ class CPT {
 			'plural',
 			'slug',
 			'options',
-			'taxonomies'
+			'taxonomies',
 		);
 
 		// If the variable is not a reserved variable.
@@ -252,8 +251,8 @@ class CPT {
 	 *
 	 * Helper function to add add_action WordPress filters.
 	 *
-	 * @param string $action Name of the action.
-	 * @param string $function Function to hook that will run on action.
+	 * @param string  $action Name of the action.
+	 * @param string  $function Function to hook that will run on action.
 	 * @param integet $priority Order in which to execute the function, relation to other functions hooked to this action.
 	 * @param integer $accepted_args The number of arguments the function accepts.
 	 */
@@ -270,10 +269,10 @@ class CPT {
 	 *
 	 * @see http://codex.wordpress.org/Function_Reference/add_filter
 	 *
-	 * @param  string  $action           Name of the action to hook to, e.g 'init'.
-	 * @param  string  $function         Function to hook that will run on @action.
-	 * @param  int     $priority         Order in which to execute the function, relation to other function hooked to this action.
-	 * @param  int     $accepted_args    The number of arguements the function accepts.
+	 * @param  string $action           Name of the action to hook to, e.g 'init'.
+	 * @param  string $function         Function to hook that will run on @action.
+	 * @param  int    $priority         Order in which to execute the function, relation to other function hooked to this action.
+	 * @param  int    $accepted_args    The number of arguements the function accepts.
 	 */
 	function add_filter( $action, $function, $priority = 10, $accepted_args = 1 ) {
 
@@ -301,10 +300,10 @@ class CPT {
 		$name = strtolower( $name );
 
 		// Replace spaces with hyphen.
-		$name = str_replace( " ", "-", $name );
+		$name = str_replace( ' ', '-', $name );
 
 		// Replace underscore with hyphen.
-		$name = str_replace( "_", "-", $name );
+		$name = str_replace( '_', '-', $name );
 
 		return $name;
 	}
@@ -379,7 +378,7 @@ class CPT {
 		}
 
 		// Return human friendly name.
-		return ucwords( strtolower( str_replace( "-", " ", str_replace( "_", " ", $name ) ) ) );
+		return ucwords( strtolower( str_replace( '-', ' ', str_replace( '_', ' ', $name ) ) ) );
 	}
 
 	/**
@@ -408,7 +407,7 @@ class CPT {
 			'search_items'       => sprintf( __( 'Search %s', $this->textdomain ), $plural ),
 			'not_found'          => sprintf( __( 'No %s found', $this->textdomain ), $plural ),
 			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', $this->textdomain ), $plural ),
-			'parent_item_colon'  => sprintf( __( 'Parent %s:', $this->textdomain ), $singular )
+			'parent_item_colon'  => sprintf( __( 'Parent %s:', $this->textdomain ), $singular ),
 		);
 
 		// Default options.
@@ -417,7 +416,7 @@ class CPT {
 			'public' => true,
 			'rewrite' => array(
 				'slug' => $slug,
-			)
+			),
 		);
 
 		// Merge user submitted options with defaults.
@@ -451,7 +450,7 @@ class CPT {
 		$names = array(
 			'singular',
 			'plural',
-			'slug'
+			'slug',
 		);
 
 		// if an array of names are passed.
@@ -480,8 +479,6 @@ class CPT {
 
 				}
 			}
-
-			// Else if only the taxonomy_name has been supplied.
 		} else {
 
 			// Create user friendly names.
@@ -490,7 +487,7 @@ class CPT {
 			$plural   = $this->get_plural( $taxonomy_name );
 			$slug     = $this->get_slug( $taxonomy_name );
 
-		}
+		}// End if().
 
 		// Default labels.
 		$labels = array(
@@ -518,8 +515,8 @@ class CPT {
 			'labels' => $labels,
 			'hierarchical' => true,
 			'rewrite' => array(
-				'slug' => $slug
-			)
+				'slug' => $slug,
+			),
 		);
 
 		// Merge default options with user submitted options.
@@ -637,7 +634,7 @@ class CPT {
 
 			// Use user submitted columns, these are defined using the object columns() method.
 			$columns = $this->columns;
-		}
+		}// End if().
 
 		return $columns;
 	}
@@ -647,7 +644,7 @@ class CPT {
 	 *
 	 * Populate custom columns on the admin edit screen.
 	 *
-	 * @param string $column The name of the column.
+	 * @param string  $column The name of the column.
 	 * @param integer $post_id The post ID.
 	 */
 	function populate_admin_columns( $column, $post_id ) {
@@ -677,10 +674,11 @@ class CPT {
 
 							// Define link.
 							'<a href="%s">%s</a>',
-
 							// Create filter url.
-							esc_url( add_query_arg( array( 'post_type' => $post->post_type, $column => $term->slug ), 'edit.php' ) ),
-
+							esc_url( add_query_arg( array(
+								'post_type' => $post->post_type,
+								$column => $term->slug,
+							), 'edit.php' ) ),
 							// Create friendly term name.
 							esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, $column, 'display' ) )
 						);
@@ -690,7 +688,7 @@ class CPT {
 					// Join the terms, separating them with a comma.
 					echo join( ', ', $output );
 
-				// If no terms found.
+					// If no terms found.
 				} else {
 
 					// Get the taxonomy object for labels.
@@ -698,7 +696,7 @@ class CPT {
 
 					// Echo no terms.
 					printf( __( 'No %s', $this->textdomain ), $taxonomy_object->labels->name );
-				}
+				}// End if().
 
 			break;
 
@@ -717,7 +715,7 @@ class CPT {
 
 				$meta = get_post_meta( $post->ID, $x );
 
-				echo join( ", ", $meta );
+				echo join( ', ', $meta );
 
 			break;
 
@@ -725,14 +723,17 @@ class CPT {
 			case 'icon' :
 
 				// Create the edit link.
-				$link = esc_url( add_query_arg( array( 'post' => $post->ID, 'action' => 'edit' ), 'post.php' ) );
+				$link = esc_url( add_query_arg( array(
+					'post' => $post->ID,
+					'action' => 'edit',
+				), 'post.php' ) );
 
 				// If it post has a featured image.
 				if ( has_post_thumbnail() ) {
 
 					// Display post featured image with edit link.
 					echo '<a href="' . $link . '">';
-						the_post_thumbnail( array(60, 60) );
+						the_post_thumbnail( array( 60, 60 ) );
 					echo '</a>';
 
 				} else {
@@ -754,13 +755,13 @@ class CPT {
 					if ( isset( $this->custom_populate_columns[ $column ] ) && is_callable( $this->custom_populate_columns[ $column ] ) ) {
 
 						// Run the function.
-						call_user_func_array(  $this->custom_populate_columns[ $column ], array( $column, $post ) );
+						call_user_func_array( $this->custom_populate_columns[ $column ], array( $column, $post ) );
 
 					}
 				}
 
 			break;
-		} // end switch( $column )
+		} // End switch().
 	}
 
 	/**
@@ -779,7 +780,7 @@ class CPT {
 	 *  Add taxtonomy filters
 	 *
 	 * Creates select fields for filtering posts by taxonomies on admin edit screen.
-	*/
+	 */
 	function add_taxonomy_filters() {
 
 		global $typenow;
@@ -793,7 +794,7 @@ class CPT {
 
 				$filters = $this->filters;
 
-			// else default to use all taxonomies associated with the post.
+				// else default to use all taxonomies associated with the post.
 			} else {
 
 				$filters = $this->taxonomies;
@@ -810,7 +811,7 @@ class CPT {
 					// Get taxonomy terms and order by name.
 					$args = array(
 						'orderby' => 'name',
-						'hide_empty' => false
+						'hide_empty' => false,
 					);
 
 					// Get taxonomy terms.
@@ -833,7 +834,7 @@ class CPT {
 
 								printf( '<option value="%s" selected="selected">%s (%s)</option>', $term->slug, $term->name, $term->count );
 
-							// ...create option for taxonomy.
+								// ...create option for taxonomy.
 							} else {
 
 								printf( '<option value="%s">%s (%s)</option>', $term->slug, $term->name, $term->count );
@@ -842,9 +843,9 @@ class CPT {
 						// End the select field.
 						print( '</select>&nbsp;' );
 					}
-				}
-			}
-		}
+				}// End foreach().
+			}// End if().
+		}// End if().
 	}
 
 	/**
@@ -871,7 +872,7 @@ class CPT {
 	 * Define what and how to populate a speicific admin column.
 	 *
 	 * @param string $column_name The name of the column to populate.
-	 * @param mixed $callback An anonyous function or callable array to call when populating the column.
+	 * @param mixed  $callback An anonyous function or callable array to call when populating the column.
 	 */
 	function populate_column( $column_name, $callback ) {
 
@@ -904,7 +905,6 @@ class CPT {
 	 * Internal function that adds user defined sortable columns to WordPress default columns.
 	 *
 	 * @param array $columns Columns to be sortable.
-	 *
 	 */
 	function make_columns_sortable( $columns ) {
 
@@ -957,12 +957,12 @@ class CPT {
 			if ( taxonomy_exists( $meta_key ) ) {
 
 				// Sort by taxonomy.
-				$key = "taxonomy";
+				$key = 'taxonomy';
 
 			} else {
 
 				// else by meta key.
-				$key = "meta_key";
+				$key = 'meta_key';
 			}
 
 			// If the optional parameter is set and is set to true.
@@ -988,12 +988,12 @@ class CPT {
 						$vars,
 						array(
 							'meta_key' => $meta_key,
-							'orderby' => $orderby
+							'orderby' => $orderby,
 						)
 					);
 				}
 			}
-		}
+		}// End foreach().
 		return $vars;
 	}
 
@@ -1005,16 +1005,16 @@ class CPT {
 	 *
 	 * @param string $icon dashicon name.
 	 */
-	function menu_icon( $icon = "dashicons-admin-page" ) {
+	function menu_icon( $icon = 'dashicons-admin-page' ) {
 
-		if ( is_string( $icon ) && stripos( $icon, "dashicons" ) !== false ) {
+		if ( is_string( $icon ) && stripos( $icon, 'dashicons' ) !== false ) {
 
-			$this->options["menu_icon"] = $icon;
+			$this->options['menu_icon'] = $icon;
 
 		} else {
 
 			// Set a default menu icon.
-			$this->options["menu_icon"] = "dashicons-admin-page";
+			$this->options['menu_icon'] = 'dashicons-admin-page';
 		}
 	}
 
@@ -1039,7 +1039,7 @@ class CPT {
 		$post = get_post();
 		$singular = $this->singular;
 
-		$messages[$this->post_type_name] = array(
+		$messages[ $this->post_type_name ] = array(
 			0 => '',
 			1 => sprintf( __( '%s updated.', $this->textdomain ), $singular ),
 			2 => __( 'Custom field updated.', $this->textdomain ),
