@@ -559,7 +559,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			if ( null === $wp_dispensary_options['wpd_cost_phrase'] || 'Price' === $wp_dispensary_options['wpd_cost_phrase'] ) {
 				$wpd_cost = $post_type->labels->singular_name . ' Pricing';
 			} else {
-				$wpd_cost = "Donation Amount";
+				$wpd_cost = 'Donation Amount';
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
