@@ -571,7 +571,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 *
 			 * @since      1.9.5
 			 */
-			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ), true ) ) {
 				ob_start();
 				do_action( 'wpd_pricingoutput_top' );
 				$wpdpricingtop = ob_get_clean();
