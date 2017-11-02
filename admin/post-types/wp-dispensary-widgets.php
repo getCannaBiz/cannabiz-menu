@@ -701,7 +701,7 @@ function wpdispensary_edibles_register_widget() {
 add_action( 'widgets_init', 'wpdispensary_edibles_register_widget' );
 
 /**
- * WP Dispensary Pre-Rolls Widget
+ * WP Dispensary Pre-rolls Widget
  *
  * @since       1.0.0
  */
@@ -718,9 +718,9 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
 		parent::__construct(
 			'wpdispensary_prerolls_widget',
-			__( 'Recent Pre-Rolls', 'wp-dispensary' ),
+			__( 'Recent Pre-rolls', 'wp-dispensary' ),
 			array(
-				'description' => __( 'Your most recent Pre-Rolls', 'wp-dispensary' ),
+				'description' => __( 'Your most recent Pre-rolls', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
 			)
 		);
@@ -856,7 +856,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 	    $defaults = array(
-	        'title'             => 'Recent Pre-Rolls',
+	        'title'             => 'Recent Pre-rolls',
 	        'limit'             => '5',
 	        'order'             => '',
 	        'featuredimage'     => '',

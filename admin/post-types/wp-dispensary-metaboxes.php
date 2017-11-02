@@ -494,7 +494,7 @@ new WPDispensary_Growers();
 
 /**
  * Prices metabox for the following menu types:
- * Pre-Rolls, Edibles, Growers
+ * Pre-rolls, Edibles, Growers
  *
  * Adds a price metabox to all of the above custom post types
  *
