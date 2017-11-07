@@ -66,8 +66,8 @@ class WP_Dispensary_Activator {
 		/**
 		 * Flush Rewrite Rules
 		 */
-		 global $wp_rewrite;
-		 $wp_rewrite->init();
-		 $wp_rewrite->flush_rules();
+		global $wp_rewrite;
+		$wp_rewrite->init();
+		$wp_rewrite->flush_rules();
 	}
 }

@@ -90,7 +90,7 @@ run_wp_dispensary();
  *
  * @since 1.9.8
  * @param array $links	an array of links related to the plugin.
- * @return array 		updatead array of links related to the plugin.
+ * @return array updatead array of links related to the plugin.
  */
 function wpd_settings_link( $links ) {
 	$settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>';

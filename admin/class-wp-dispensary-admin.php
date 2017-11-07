@@ -51,7 +51,7 @@ class WP_Dispensary_Admin {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -118,23 +118,23 @@ class WP_Dispensary_Admin {
  * @return void
  */
 function wpdispensary_right_now_content_table_end() {
-	$args = array(
-		'public'     => true,
-		'_builtin'   => false,
+	$args       = array(
+		'public'   => true,
+		'_builtin' => false,
 	);
 	$output     = 'object';
 	$operator   = 'and';
-	$post_types = get_post_types( $args , $output , $operator );
+	$post_types = get_post_types( $args, $output, $operator );
 	foreach ( $post_types as $post_type ) {
-		$num_posts     = wp_count_posts( $post_type->name );
-		$num           = number_format_i18n( $num_posts->publish );
-		$text          = _n( $post_type->labels->singular_name, $post_type->labels->name , intval( $num_posts->publish ) );
+		$num_posts = wp_count_posts( $post_type->name );
+		$num       = number_format_i18n( $num_posts->publish );
+		$text      = _n( $post_type->labels->singular_name, $post_type->labels->name, intval( $num_posts->publish ) );
 		if ( current_user_can( 'edit_posts' ) ) {
 			$cpt_name = $post_type->name;
 		}
-		echo '<li class="'.$cpt_name.'-count"><tr><a href="edit.php?post_type='.$cpt_name.'"><td class="first b b-' . $post_type->name . '"></td>' . $num . ' <td class="t ' . $post_type->name . '">' . $text . '</td></a></tr></li>';
+		echo '<li class="' . $cpt_name . '-count"><tr><a href="edit.php?post_type=' . $cpt_name . '"><td class="first b b-' . $post_type->name . '"></td>' . $num . ' <td class="t ' . $post_type->name . '">' . $text . '</td></a></tr></li>';
 	}
 
 }
 
-add_action( 'dashboard_glance_items' , 'wpdispensary_right_now_content_table_end' );
+add_action( 'dashboard_glance_items', 'wpdispensary_right_now_content_table_end' );
