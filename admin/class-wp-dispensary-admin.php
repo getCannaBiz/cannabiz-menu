@@ -132,7 +132,7 @@ function wpdispensary_right_now_content_table_end() {
 		if ( current_user_can( 'edit_posts' ) ) {
 			$cpt_name = $post_type->name;
 		}
-		echo '<li class="' . $cpt_name . '-count"><tr><a href="edit.php?post_type=' . $cpt_name . '"><td class="first b b-' . $post_type->name . '"></td>' . $num . ' <td class="t ' . $post_type->name . '">' . $text . '</td></a></tr></li>';
+		echo '<li class="' . esc_html( $cpt_name ) . '-count"><tr><a href="edit.php?post_type=' . esc_html( $cpt_name ) . '"><td class="first b b-' . esc_html( $post_type->name ) . '"></td>' . esc_html( $num ) . ' <td class="t ' . esc_html( $post_type->name ) . '">' . esc_html( $text ) . '</td></a></tr></li>';
 	}
 
 }
