@@ -77,7 +77,7 @@ class WPDispensarySettings {
 			<div class="wpd-settings-page-ads">
 			<?php $url = plugins_url(); ?>
 			<?php if ( ! class_exists( 'WPD_Styles' ) ) { ?>
-				<a href="https://www.wpdispensary.com/downloads/menu-styles" target="_blank"><img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/ad_dispensary-menu-styles.png" /></a>
+				<a href="https://www.wpdispensary.com/downloads/styles" target="_blank"><img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/ad_dispensary-menu-styles.png" /></a>
 			<?php } ?>
 			<?php if ( ! class_exists( 'Wpd_Wooconnect' ) ) { ?>
 				<a href="https://www.wpdispensary.com/downloads/wooconnect-for-woocommerce/" target="_blank"><img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/ad_dispensary-wooconnect.png" /></a>
