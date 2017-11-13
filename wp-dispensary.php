@@ -13,7 +13,7 @@
  * Description:       The complete marijuana dispensary menu solution for WordPress
  * Version:           1.9.12
  * Author:            WP Dispensary
- * Author URI:        http://www.wpdispensary.com
+ * Author URI:        https://www.wpdispensary.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wp-dispensary
