@@ -85,7 +85,7 @@ class WPDispensarySettings {
 			</div>
 			<div class="wpd-settings-content">
 				<img src="<?php echo esc_url( $url ); ?>/wp-dispensary/admin/images/wpd-logo.png" />
-				<p>Settings &middot; <a href="https://www.wpdispensary.com/documentation/" target="_blank">Documentation</a> &middot; <a href="https://www.wpdispensary.com/add-ons/" target="_blank">Add-on's</a></p>
+				<p><?php esc_html_e( 'Settings', 'wp-dispensary' ); ?> &middot; <a href="https://www.wpdispensary.com/documentation/" target="_blank"><?php esc_html_e( 'Documentation', 'wp-dispensary' ); ?></a> &middot; <a href="https://www.wpdispensary.com/add-ons/" target="_blank"><?php esc_html_e( 'Add-on\'s', 'wp-dispensary' ); ?></a></p>
 				<?php settings_errors(); ?>
 
 				<form method="post" action="options.php">
