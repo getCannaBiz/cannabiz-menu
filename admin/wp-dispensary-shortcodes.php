@@ -2752,7 +2752,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$pricingeach    = $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true );
-			$pricingname	= '<strong>Price: </strong>';
+			$pricingname	= '<strong>' . $wpd_cost_phrase . ':</strong> ';
 		} else {
 			$pricingeach    = '';
 		}
