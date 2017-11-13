@@ -41,7 +41,7 @@ function wpdispensary_compounddetails() {
 	global $post;
 
 	/** Noncename needed to verify where the data originated */
-	echo '<input type="hidden" name="compounddetailsmeta_noncename" id="compounddetailsdmeta_noncename" value="' .
+	echo '<input type="hidden" name="compounddetailsmeta_noncename" id="compounddetailsmeta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thccbd data if its already been entered */
