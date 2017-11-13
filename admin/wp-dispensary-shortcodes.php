@@ -2730,7 +2730,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		 */
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$pricingeach = '<strong>' . $wpd_cost_phrase . ':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true ) . ' each';
+			$pricingprerolls = '<strong>' . $wpd_cost_phrase . ':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true ) . ' each';
 		}
 
 		/*
@@ -2803,7 +2803,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		/** Pre-rolls */
 		if ( in_array( get_post_type(), array( 'prerolls' ) ) ) {
 			if ( 'show' === $info ) {
-				$showinfo = '<span class="wpd-productinfo">' . $pricingeach . '</span>';
+				$showinfo = '<span class="wpd-productinfo">' . $pricingprerolls . '</span>';
 			} else {
 				$showinfo = '';
 			}
