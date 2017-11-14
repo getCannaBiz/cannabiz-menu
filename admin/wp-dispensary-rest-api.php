@@ -501,7 +501,7 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
 
 
 /**
- * Add Aroma taxonomy for the Concentrates Custom Post Type
+ * Add Vendor taxonomy for the all Custom Post Types
  */
 function wpd_vendor( $data, $post, $request ) {
 	$_data           = $data->data;
