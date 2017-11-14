@@ -24,7 +24,7 @@ add_action( 'init', 'wpdispensary_aroma', 0 );
  */
 function wpdispensary_aroma() {
 
-	  $labels = array(
+	$labels = array(
 		'name'                       => _x( 'Aromas', 'general name' ),
 		'singular_name'              => _x( 'Aroma', 'singular name' ),
 		'search_items'               => __( 'Search Aromas' ),
@@ -41,23 +41,23 @@ function wpdispensary_aroma() {
 		'choose_from_most_used'      => __( 'Choose from the most used aromas' ),
 		'not_found'                  => 'No aromas found',
 		'menu_name'                  => __( 'Aromas' ),
-	  );
+	);
 
-	  $aromataxtype = apply_filters( 'wpd_aroma_tax_type', array( 'flowers', 'concentrates' ) );
+	$aromataxtype = apply_filters( 'wpd_aroma_tax_type', array( 'flowers', 'concentrates' ) );
 
-	  register_taxonomy( 'aroma', $aromataxtype, array(
-			'hierarchical'           => false,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => false,
-			'update_count_callback'  => '_update_post_term_count',
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug' => 'aroma',
-			),
-	  ) );
+	register_taxonomy( 'aroma', $aromataxtype, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'aroma',
+		),
+	) );
 
 }
 
@@ -76,7 +76,7 @@ add_action( 'init', 'wpdispensary_flavor', 0 );
  */
 function wpdispensary_flavor() {
 
-	  $labels = array(
+	$labels = array(
 		'name'                       => _x( 'Flavors', 'general name' ),
 		'singular_name'              => _x( 'Flavor', 'singular name' ),
 		'search_items'               => __( 'Search Flavors' ),
@@ -93,23 +93,23 @@ function wpdispensary_flavor() {
 		'choose_from_most_used'      => __( 'Choose from the most used flavors' ),
 		'not_found'                  => 'No flavors found',
 		'menu_name'                  => __( 'Flavors' ),
-	  );
+	);
 
-	  $flavortaxtype = apply_filters( 'wpd_flavor_tax_type', array( 'flowers', 'concentrates' ) );
+	$flavortaxtype = apply_filters( 'wpd_flavor_tax_type', array( 'flowers', 'concentrates' ) );
 
-	  register_taxonomy( 'flavor', $flavortaxtype, array(
-			'hierarchical'           => false,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => false,
-			'update_count_callback'  => '_update_post_term_count',
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug' => 'flavor',
-			),
-	  ) );
+	register_taxonomy( 'flavor', $flavortaxtype, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'flavor',
+		),
+	) );
 }
 
 /**
@@ -127,7 +127,7 @@ add_action( 'init', 'wpdispensary_effect', 0 );
  */
 function wpdispensary_effect() {
 
-	  $labels = array(
+	$labels = array(
 		'name'                       => _x( 'Effects', 'general name' ),
 		'singular_name'              => _x( 'Effect', 'singular name' ),
 		'search_items'               => __( 'Search Effects' ),
@@ -144,23 +144,23 @@ function wpdispensary_effect() {
 		'choose_from_most_used'      => __( 'Choose from the most used effects' ),
 		'not_found'                  => 'No effects found',
 		'menu_name'                  => __( 'Effects' ),
-	  );
+	);
 
-	  $effecttaxtype = apply_filters( 'wpd_effect_tax_type', array( 'flowers', 'concentrates' ) );
+	$effecttaxtype = apply_filters( 'wpd_effect_tax_type', array( 'flowers', 'concentrates' ) );
 
-	  register_taxonomy( 'effect', $effecttaxtype, array(
-			'hierarchical'           => false,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => false,
-			'update_count_callback'  => '_update_post_term_count',
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug' => 'effect',
-			),
-	  ) );
+	register_taxonomy( 'effect', $effecttaxtype, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'effect',
+		),
+	) );
 }
 
 /**
@@ -178,7 +178,7 @@ add_action( 'init', 'wpdispensary_symptom', 0 );
  */
 function wpdispensary_symptom() {
 
-	  $labels = array(
+	$labels = array(
 		'name'                       => _x( 'Symptoms', 'general name' ),
 		'singular_name'              => _x( 'Symptom', 'singular name' ),
 		'search_items'               => __( 'Search Symptoms' ),
@@ -195,23 +195,23 @@ function wpdispensary_symptom() {
 		'choose_from_most_used'      => __( 'Choose from the most used symptoms' ),
 		'not_found'                  => 'No symptoms found',
 		'menu_name'                  => __( 'Symptoms' ),
-	  );
+	);
 
-	  $symptomtaxtype = apply_filters( 'wpd_symptom_tax_type', array( 'flowers', 'concentrates' ) );
+	$symptomtaxtype = apply_filters( 'wpd_symptom_tax_type', array( 'flowers', 'concentrates' ) );
 
-	  register_taxonomy( 'symptom', $symptomtaxtype, array(
-			'hierarchical'           => false,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => false,
-			'update_count_callback'  => '_update_post_term_count',
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug' => 'symptom',
-			),
-	  ) );
+	register_taxonomy( 'symptom', $symptomtaxtype, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'symptom',
+		),
+	) );
 }
 
 /**
@@ -229,7 +229,7 @@ add_action( 'init', 'wpdispensary_condition', 0 );
  */
 function wpdispensary_condition() {
 
-	  $labels = array(
+	$labels = array(
 		'name'                       => _x( 'Conditions', 'general name' ),
 		'singular_name'              => _x( 'Condition', 'singular name' ),
 		'search_items'               => __( 'Search Conditions' ),
@@ -246,23 +246,23 @@ function wpdispensary_condition() {
 		'choose_from_most_used'      => __( 'Choose from the most used conditions' ),
 		'not_found'                  => 'No conditions found',
 		'menu_name'                  => __( 'Conditions' ),
-	  );
+	);
 
-	  $conditiontaxtype = apply_filters( 'wpd_condition_tax_type', array( 'flowers', 'concentrates' ) );
+	$conditiontaxtype = apply_filters( 'wpd_condition_tax_type', array( 'flowers', 'concentrates' ) );
 
-	  register_taxonomy( 'condition', $conditiontaxtype, array(
-			'hierarchical'           => false,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => false,
-			'update_count_callback'  => '_update_post_term_count',
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug' => 'condition',
-			),
-	  ) );
+	register_taxonomy( 'condition', $conditiontaxtype, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'condition',
+		),
+	) );
 }
 
 /**
@@ -280,7 +280,7 @@ add_action( 'init', 'wpdispensary_ingredient', 0 );
  */
 function wpdispensary_ingredient() {
 
-	  $labels = array(
+	$labels = array(
 		'name'                       => _x( 'Ingredients', 'general name' ),
 		'singular_name'              => _x( 'Ingredient', 'singular name' ),
 		'search_items'               => __( 'Search Ingredients' ),
@@ -297,23 +297,23 @@ function wpdispensary_ingredient() {
 		'choose_from_most_used'      => __( 'Choose from the most used ingredients' ),
 		'not_found'                  => 'No ingredients found',
 		'menu_name'                  => __( 'Ingredients' ),
-	  );
+	);
 
-	  $ingredientstaxtype = apply_filters( 'wpd_ingredients_tax_type', array( 'edibles', 'topicals' ) );
+	$ingredientstaxtype = apply_filters( 'wpd_ingredients_tax_type', array( 'edibles', 'topicals' ) );
 
-	  register_taxonomy( 'ingredients', $ingredientstaxtype, array(
-			'hierarchical'           => false,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => false,
-			'update_count_callback'  => '_update_post_term_count',
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug' => 'ingredient',
-			),
-	  ) );
+	register_taxonomy( 'ingredients', $ingredientstaxtype, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'ingredient',
+		),
+	) );
 }
 
 /**
@@ -331,7 +331,7 @@ add_action( 'init', 'wpdispensary_flowercategory', 0 );
  */
 function wpdispensary_flowercategory() {
 
-	  $labels = array(
+	$labels = array(
 		'name'                       => _x( 'Flower Categories', 'taxonomy general name' ),
 		'singular_name'              => _x( 'Flower Category', 'taxonomy singular name' ),
 		'search_items'               => __( 'Search Categories' ),
@@ -344,21 +344,21 @@ function wpdispensary_flowercategory() {
 		'new_item_name'              => __( 'New Category Name' ),
 		'not_found'                  => 'No categories found',
 		'menu_name'                  => __( 'Categories' ),
-	  );
+	);
 
-	  register_taxonomy( 'flowers_category', array( 'flowers', 'prerolls' ), array(
-			'hierarchical'           => true,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => true,
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug'       => 'flowers/category',
-				'with_front' => false,
-			),
-	  ) );
+	register_taxonomy( 'flowers_category', array( 'flowers', 'prerolls' ), array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'flowers/category',
+			'with_front' => false,
+		),
+	) );
 
 }
 
@@ -377,34 +377,34 @@ add_action( 'init', 'wpdispensary_ediblecategory', 0 );
  */
 function wpdispensary_ediblecategory() {
 
-	  $labels = array(
-		'name'                       => _x( 'Edible Categories', 'taxonomy general name' ),
-		'singular_name'              => _x( 'Edible Category', 'taxonomy singular name' ),
-		'search_items'               => __( 'Search Edible Categories' ),
-		'all_items'                  => __( 'All Edible Categories' ),
-		'parent_item'                => __( 'Parent Edible Category' ),
-		'parent_item_colon'          => __( 'Parent Edible Category:' ),
-		'edit_item'                  => __( 'Edit Edible Category' ),
-		'update_item'                => __( 'Update Edible Category' ),
-		'add_new_item'               => __( 'Add New Edible Category' ),
-		'new_item_name'              => __( 'New Edible Category Name' ),
-		'not_found'                  => 'No edible categories found',
-		'menu_name'                  => __( 'Categories' ),
-	  );
+	$labels = array(
+		'name'              => _x( 'Edible Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Edible Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Edible Categories' ),
+		'all_items'         => __( 'All Edible Categories' ),
+		'parent_item'       => __( 'Parent Edible Category' ),
+		'parent_item_colon' => __( 'Parent Edible Category:' ),
+		'edit_item'         => __( 'Edit Edible Category' ),
+		'update_item'       => __( 'Update Edible Category' ),
+		'add_new_item'      => __( 'Add New Edible Category' ),
+		'new_item_name'     => __( 'New Edible Category Name' ),
+		'not_found'         => 'No edible categories found',
+		'menu_name'         => __( 'Categories' ),
+	);
 
-	  register_taxonomy( 'edibles_category', 'edibles', array(
-			'hierarchical'           => true,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => true,
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug'       => 'edibles/category',
-				'with_front' => false,
-			),
-	  ) );
+	register_taxonomy( 'edibles_category', 'edibles', array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'edibles/category',
+			'with_front' => false,
+		),
+	) );
 
 }
 
@@ -423,34 +423,34 @@ add_action( 'init', 'wpdispensary_concentratecategory', 0 );
  */
 function wpdispensary_concentratecategory() {
 
-	  $labels = array(
-		'name'                       => _x( 'Concentrate Categories', 'taxonomy general name' ),
-		'singular_name'              => _x( 'Concentrate Category', 'taxonomy singular name' ),
-		'search_items'               => __( 'Search Categories' ),
-		'all_items'                  => __( 'All Categories' ),
-		'parent_item'                => __( 'Parent Category' ),
-		'parent_item_colon'          => __( 'Parent Category:' ),
-		'edit_item'                  => __( 'Edit Category' ),
-		'update_item'                => __( 'Update Category' ),
-		'add_new_item'               => __( 'Add New Category' ),
-		'new_item_name'              => __( 'New Category Name' ),
-		'not_found'                  => 'No categories found',
-		'menu_name'                  => __( 'Categories' ),
-	  );
+	$labels = array(
+		'name'              => _x( 'Concentrate Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Concentrate Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Categories' ),
+		'all_items'         => __( 'All Categories' ),
+		'parent_item'       => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item'         => __( 'Edit Category' ),
+		'update_item'       => __( 'Update Category' ),
+		'add_new_item'      => __( 'Add New Category' ),
+		'new_item_name'     => __( 'New Category Name' ),
+		'not_found'         => 'No categories found',
+		'menu_name'         => __( 'Categories' ),
+	);
 
-	  register_taxonomy( 'concentrates_category', 'concentrates', array(
-			'hierarchical'           => true,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => true,
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug'       => 'concentrates/category',
-				'with_front' => false,
-			),
-	  ) );
+	register_taxonomy( 'concentrates_category', 'concentrates', array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'concentrates/category',
+			'with_front' => false,
+		),
+	) );
 
 }
 
@@ -469,34 +469,34 @@ add_action( 'init', 'wpdispensary_topicalcategory', 0 );
  */
 function wpdispensary_topicalcategory() {
 
-	  $labels = array(
-		'name'                       => _x( 'Topical Categories', 'taxonomy general name' ),
-		'singular_name'              => _x( 'Topical Category', 'taxonomy singular name' ),
-		'search_items'               => __( 'Search Categories' ),
-		'all_items'                  => __( 'All Categories' ),
-		'parent_item'                => __( 'Parent Category' ),
-		'parent_item_colon'          => __( 'Parent Category:' ),
-		'edit_item'                  => __( 'Edit Category' ),
-		'update_item'                => __( 'Update Category' ),
-		'add_new_item'               => __( 'Add New Category' ),
-		'new_item_name'              => __( 'New Category Name' ),
-		'not_found'                  => 'No categories found',
-		'menu_name'                  => __( 'Categories' ),
-	  );
+	$labels = array(
+		'name'              => _x( 'Topical Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Topical Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Categories' ),
+		'all_items'         => __( 'All Categories' ),
+		'parent_item'       => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item'         => __( 'Edit Category' ),
+		'update_item'       => __( 'Update Category' ),
+		'add_new_item'      => __( 'Add New Category' ),
+		'new_item_name'     => __( 'New Category Name' ),
+		'not_found'         => 'No categories found',
+		'menu_name'         => __( 'Categories' ),
+	);
 
-	  register_taxonomy( 'topicals_category', 'topicals', array(
-			'hierarchical'           => true,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => true,
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug'       => 'topicals/category',
-				'with_front' => false,
-			),
-	  ) );
+	register_taxonomy( 'topicals_category', 'topicals', array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'topicals/category',
+			'with_front' => false,
+		),
+	) );
 
 }
 
@@ -515,34 +515,34 @@ add_action( 'init', 'wpdispensary_growerscategory', 0 );
  */
 function wpdispensary_growerscategory() {
 
-	  $labels = array(
-		'name'                       => _x( 'Growers Categories', 'taxonomy general name' ),
-		'singular_name'              => _x( 'Growers Category', 'taxonomy singular name' ),
-		'search_items'               => __( 'Search Categories' ),
-		'all_items'                  => __( 'All Categories' ),
-		'parent_item'                => __( 'Parent Category' ),
-		'parent_item_colon'          => __( 'Parent Category:' ),
-		'edit_item'                  => __( 'Edit Category' ),
-		'update_item'                => __( 'Update Category' ),
-		'add_new_item'               => __( 'Add New Category' ),
-		'new_item_name'              => __( 'New Category Name' ),
-		'not_found'                  => 'No categories found',
-		'menu_name'                  => __( 'Categories' ),
-	  );
+	$labels = array(
+		'name'              => _x( 'Growers Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Growers Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Categories' ),
+		'all_items'         => __( 'All Categories' ),
+		'parent_item'       => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item'         => __( 'Edit Category' ),
+		'update_item'       => __( 'Update Category' ),
+		'add_new_item'      => __( 'Add New Category' ),
+		'new_item_name'     => __( 'New Category Name' ),
+		'not_found'         => 'No categories found',
+		'menu_name'         => __( 'Categories' ),
+	);
 
-	  register_taxonomy( 'growers_category','growers', array(
-			'hierarchical'           => true,
-			'labels'                 => $labels,
-			'show_ui'                => true,
-			'show_in_rest'           => true,
-			'show_admin_column'      => true,
-			'show_in_nav_menus'      => true,
-			'query_var'              => true,
-			'rewrite'                => array(
-				'slug'       => 'growers/category',
-				'with_front' => false,
-			),
-	  ) );
+	register_taxonomy( 'growers_category', 'growers', array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'growers/category',
+			'with_front' => false,
+		),
+	) );
 
 }
 
@@ -583,15 +583,15 @@ function wpdispensary_vendor() {
 	$vendortaxtype = apply_filters( 'wpd_vendor_tax_type', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) );
 
 	register_taxonomy( 'vendor', $vendortaxtype, array(
-		'hierarchical'           => false,
-		'labels'                 => $labels,
-		'show_ui'                => true,
-		'show_in_rest'           => true,
-		'show_admin_column'      => true,
-		'show_in_nav_menus'      => false,
-		'update_count_callback'  => '_update_post_term_count',
-		'query_var'              => true,
-		'rewrite'                => array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
 			'slug' => 'vendor',
 		),
 	) );
