@@ -20,30 +20,30 @@
  */
 function wpdispensary_concentrates() {
 
-	$labels = array(
-		'name'                => _x( 'Concentrates', 'Post Type General Name', 'wp-dispensary' ),
-		'singular_name'       => _x( 'Concentrate', 'Post Type Singular Name', 'wp-dispensary' ),
-		'menu_name'           => __( 'Concentrates', 'wp-dispensary' ),
-		'name_admin_bar'      => __( 'Concentrates', 'wp-dispensary' ),
-		'parent_item_colon'   => __( 'Parent Concentrate:', 'wp-dispensary' ),
-		'all_items'           => __( 'All Concentrates', 'wp-dispensary' ),
-		'add_new_item'        => __( 'Add New Concentrate', 'wp-dispensary' ),
-		'add_new'             => __( 'Add New', 'wp-dispensary' ),
-		'new_item'            => __( 'New Concentrate', 'wp-dispensary' ),
-		'edit_item'           => __( 'Edit Concentrate', 'wp-dispensary' ),
-		'update_item'         => __( 'Update Concentrate', 'wp-dispensary' ),
-		'view_item'           => __( 'View Concentrate', 'wp-dispensary' ),
-		'search_items'        => __( 'Search Concentrate', 'wp-dispensary' ),
-		'not_found'           => __( 'Not found', 'wp-dispensary' ),
-		'not_found_in_trash'  => __( 'Not found in Trash', 'wp-dispensary' ),
+	$labels  = array(
+		'name'               => _x( 'Concentrates', 'Post Type General Name', 'wp-dispensary' ),
+		'singular_name'      => _x( 'Concentrate', 'Post Type Singular Name', 'wp-dispensary' ),
+		'menu_name'          => __( 'Concentrates', 'wp-dispensary' ),
+		'name_admin_bar'     => __( 'Concentrates', 'wp-dispensary' ),
+		'parent_item_colon'  => __( 'Parent Concentrate:', 'wp-dispensary' ),
+		'all_items'          => __( 'All Concentrates', 'wp-dispensary' ),
+		'add_new_item'       => __( 'Add New Concentrate', 'wp-dispensary' ),
+		'add_new'            => __( 'Add New', 'wp-dispensary' ),
+		'new_item'           => __( 'New Concentrate', 'wp-dispensary' ),
+		'edit_item'          => __( 'Edit Concentrate', 'wp-dispensary' ),
+		'update_item'        => __( 'Update Concentrate', 'wp-dispensary' ),
+		'view_item'          => __( 'View Concentrate', 'wp-dispensary' ),
+		'search_items'       => __( 'Search Concentrate', 'wp-dispensary' ),
+		'not_found'          => __( 'Not found', 'wp-dispensary' ),
+		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
 	$rewrite = array(
-		'slug'                => 'concentrates',
-		'with_front'          => true,
-		'pages'               => true,
-		'feeds'               => true,
+		'slug'       => 'concentrates',
+		'with_front' => true,
+		'pages'      => true,
+		'feeds'      => true,
 	);
-	$args = array(
+	$args    = array(
 		'label'               => __( 'Concentrates', 'wp-dispensary' ),
 		'description'         => __( 'Concentrate products that our dispensary offers', 'wp-dispensary' ),
 		'labels'              => $labels,
@@ -53,7 +53,7 @@ function wpdispensary_concentrates() {
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => false,
-		'show_in_rest'		  => true,
+		'show_in_rest'        => true,
 		'menu_position'       => 10,
 		'menu_icon'           => plugin_dir_url( __FILE__ ) . ( '../images/menu-icon.png' ),
 		'show_in_admin_bar'   => true,
@@ -62,7 +62,7 @@ function wpdispensary_concentrates() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'rewrite'			  => $rewrite,
+		'rewrite'             => $rewrite,
 		'capability_type'     => 'post',
 	);
 	register_post_type( 'concentrates', $args );
