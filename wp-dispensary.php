@@ -89,7 +89,7 @@ run_wp_dispensary();
  * Add settings link on plugin page
  *
  * @since 1.9.8
- * @param array $links	an array of links related to the plugin.
+ * @param array $links an array of links related to the plugin.
  * @return array updatead array of links related to the plugin.
  */
 function wpd_settings_link( $links ) {
