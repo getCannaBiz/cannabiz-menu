@@ -255,7 +255,8 @@ class WPDispensarySettings {
 	 * @return void
 	 */
 	public function wpd_currency_callback() {
-		?> <select name="wp_dispensary_option_name[wpd_currency]" id="wpd_currency">
+	?>
+		<select name="wp_dispensary_option_name[wpd_currency]" id="wpd_currency">
 			<?php $selected = ( isset( $this->wp_dispensary_options['wpd_currency'] ) && 'AUD' === $this->wp_dispensary_options['wpd_currency'] ) ? 'selected' : ''; ?>
 			<option value="AUD" <?php echo esc_html_e( $selected ); ?>>(AUD) Australian Dollar</option>
 			<?php $selected = ( isset( $this->wp_dispensary_options['wpd_currency'] ) && 'BRL' === $this->wp_dispensary_options['wpd_currency'] ) ? 'selected' : ''; ?>
