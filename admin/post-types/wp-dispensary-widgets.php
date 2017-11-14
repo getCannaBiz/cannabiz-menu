@@ -58,18 +58,18 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		if ( ! isset( $args['id'] ) ) {
-		    $args['id'] = 'wpdispensary_flowers_widget';
+			$args['id'] = 'wpdispensary_flowers_widget';
 		}
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo $args['before_widget'];
+		echo esc_html( $args['before_widget'] );
 
 		if ( $title ) {
-		    echo $args['before_title'] . $title . $args['after_title'];
+			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		do_action('wpd_flowers_widget_before' );
+		do_action( 'wpd_flowers_widget_before' );
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
@@ -87,20 +87,21 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			array(
 				'post_type' => 'flowers',
 				'showposts' => $instance['limit'],
-				'orderby'	=> $randorder,
+				'orderby'	  => $randorder,
 			)
 		);
 
-		while ( $wpdispensary_flowers_widget->have_posts() ) : $wpdispensary_flowers_widget->the_post();
+		while ( $wpdispensary_flowers_widget->have_posts() ) :
+			$wpdispensary_flowers_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
 
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-				do_action('wpd_flowers_widget_inside_top' );
+				do_action( 'wpd_flowers_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( $instance["imagesize"] );
+					the_post_thumbnail( $instance['imagesize'] );
 				echo '</a>';
 				if ( 'on' === $instance['flowername'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -108,7 +109,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 				if ( 'on' === $instance['flowercategory'] ) {
 					echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'flowers_category' ) . "</a></span>";
 				}
-				do_action('wpd_flowers_widget_inside_bottom' );
+				do_action( 'wpd_flowers_widget_inside_bottom' );
 				echo '</div>';
 
 			} else {
@@ -129,9 +130,9 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			echo '</ul>';
 		}
 
-		do_action('wpd_flowers_widget_after' );
+		do_action( 'wpd_flowers_widget_after' );
 
-		echo $args['after_widget'];
+		echo esc_html( $args['after_widget'] );
 	}
 
 
@@ -146,17 +147,17 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
-	    $instance = $old_instance;
+		$instance = $old_instance;
 
-	    $instance['title']          = strip_tags( $new_instance['title'] );
-	    $instance['limit']          = strip_tags( $new_instance['limit'] );
-	    $instance['order']          = $new_instance['order'];
-	    $instance['featuredimage']  = $new_instance['featuredimage'];
-	    $instance['imagesize']      = $new_instance['imagesize'];
-	    $instance['flowername']     = $new_instance['flowername'];
-	    $instance['flowercategory'] = $new_instance['flowercategory'];
+		$instance['title']          = strip_tags( $new_instance['title'] );
+		$instance['limit']          = strip_tags( $new_instance['limit'] );
+		$instance['order']          = $new_instance['order'];
+		$instance['featuredimage']  = $new_instance['featuredimage'];
+		$instance['imagesize']      = $new_instance['imagesize'];
+		$instance['flowername']     = $new_instance['flowername'];
+		$instance['flowercategory'] = $new_instance['flowercategory'];
 
-	    return $instance;
+		return $instance;
 	}
 
 
@@ -170,15 +171,15 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	 * @return      void
 	 */
 	public function form( $instance ) {
-	    $defaults = array(
-	        'title'             => 'Recent Flowers',
-	        'limit'             => '5',
-	        'order'             => '',
-	        'featuredimage'     => '',
-	        'imagesize'         => 'wpdispensary-widget',
-	        'flowername'        => '',
-	        'flowercategory'    => '',
-	    );
+		$defaults = array(
+			'title'          => 'Recent Flowers',
+			'limit'          => '5',
+			'order'          => '',
+			'featuredimage'  => '',
+			'imagesize'      => 'wpdispensary-widget',
+			'flowername'     => '',
+			'flowercategory' => '',
+		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
@@ -213,21 +214,21 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	</p>
 
 	<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
-		<?php 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
+		<?php
 			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
-			if ( $terms ) {
-				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
-				foreach ( $terms as $term ) {
-					if ( esc_html( $term ) != $instance['imagesize'] ) {
-						$imagesizeinfo = '';
-					} else {
-						$imagesizeinfo = 'selected="selected"';
-					}
-					printf( '<option value="%s" '. $imagesizeinfo .'>%s</option>', esc_html( $term ), esc_html( $term ) );
+		if ( $terms ) {
+			printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+			foreach ( $terms as $term ) {
+				if ( esc_html( $term ) != $instance['imagesize'] ) {
+					$imagesizeinfo = '';
+				} else {
+					$imagesizeinfo = 'selected="selected"';
 				}
-				print( '</select>' );
+				printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
 			}
+			print( '</select>' );
+		}
 		?>
 	</p>
 
@@ -290,13 +291,13 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo $args['before_widget'];
+		echo esc_html( $args['before_widget'] );
 
 		if ( $title ) {
-		    echo $args['before_title'] . $title . $args['after_title'];
+			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
 		}
 
-		do_action('wpd_concentrates_widget_before' );
+		do_action( 'wpd_concentrates_widget_before' );
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
@@ -314,20 +315,21 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 			array(
 				'post_type' => 'concentrates',
 				'showposts' => $instance['limit'],
-				'orderby'	=> $randorder,
+				'orderby'	  => $randorder,
 			)
 		);
 
-		while ( $wpdispensary_concentrates_widget->have_posts() ) : $wpdispensary_concentrates_widget->the_post();
+		while ( $wpdispensary_concentrates_widget->have_posts() ) :
+			$wpdispensary_concentrates_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
 
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-				do_action('wpd_concentrates_widget_inside_top' );
+				do_action( 'wpd_concentrates_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( $instance["imagesize"] );
+					the_post_thumbnail( $instance['imagesize'] );
 				echo '</a>';
 				if ( 'on' === $instance['concentratename'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -335,7 +337,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 				if ( 'on' === $instance['concentratecategory'] ) {
 					echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'concentrates_category' ) . "</a></span>";
 				}
-				do_action('wpd_concentrates_widget_inside_bottom' );
+				do_action( 'wpd_concentrates_widget_inside_bottom' );
 				echo '</div>';
 
 			} else {
@@ -356,9 +358,9 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 				echo '</ul>';
 		}
 
-			do_action('wpd_concentrates_widget_after' );
+			do_action( 'wpd_concentrates_widget_after' );
 
-			echo $args['after_widget'];
+			echo esc_html( $args['after_widget'] );
 	}
 
 	/**
@@ -372,17 +374,17 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
-	    $instance = $old_instance;
+		$instance = $old_instance;
 
-	    $instance['title']                  = strip_tags( $new_instance['title'] );
-	    $instance['limit']                  = strip_tags( $new_instance['limit'] );
-	    $instance['order']                  = $new_instance['order'];
-	    $instance['featuredimage']          = $new_instance['featuredimage'];
-	    $instance['imagesize']              = $new_instance['imagesize'];
-	    $instance['concentratename']        = $new_instance['concentratename'];
-	    $instance['concentratecategory']    = $new_instance['concentratecategory'];
+		$instance['title']               = strip_tags( $new_instance['title'] );
+		$instance['limit']               = strip_tags( $new_instance['limit'] );
+		$instance['order']               = $new_instance['order'];
+		$instance['featuredimage']       = $new_instance['featuredimage'];
+		$instance['imagesize']           = $new_instance['imagesize'];
+		$instance['concentratename']     = $new_instance['concentratename'];
+		$instance['concentratecategory'] = $new_instance['concentratecategory'];
 
-	    return $instance;
+		return $instance;
 	}
 
 
@@ -397,13 +399,13 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-		    'title'                 => 'Recent Concentrates',
-		    'limit'                 => '5',
-		    'order'                 => '',
-		    'featuredimage'         => '',
-			'imagesize'             => 'wpdispensary-widget',
-		    'concentratename'       => '',
-		    'concentratercategory'  => '',
+			'title'                => 'Recent Concentrates',
+			'limit'                => '5',
+			'order'                => '',
+			'featuredimage'        => '',
+			'imagesize'            => 'wpdispensary-widget',
+			'concentratename'      => '',
+			'concentratercategory' => '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -439,21 +441,21 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	</p>
 
 	<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
-		<?php 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
+		<?php
 			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
-			if ( $terms ) {
-				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
-				foreach ( $terms as $term ) {
-					if ( esc_html( $term ) != $instance['imagesize'] ) {
-						$imagesizeinfo = '';
-					} else {
-						$imagesizeinfo = 'selected="selected"';
-					}
-					printf( '<option value="%s" '. $imagesizeinfo .'>%s</option>', esc_html( $term ), esc_html( $term ) );
+		if ( $terms ) {
+			printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+			foreach ( $terms as $term ) {
+				if ( esc_html( $term ) != $instance['imagesize'] ) {
+					$imagesizeinfo = '';
+				} else {
+					$imagesizeinfo = 'selected="selected"';
 				}
-				print( '</select>' );
+				printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
 			}
+			print( '</select>' );
+		}
 		?>
 	</p>
 
@@ -511,18 +513,18 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		if ( ! isset( $args['id'] ) ) {
-		    $args['id'] = 'wpdispensary_edibles_widget';
+			$args['id'] = 'wpdispensary_edibles_widget';
 		}
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo $args['before_widget'];
+		echo esc_html( $args['before_widget'] );
 
 		if ( $title ) {
-		    echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
 		}
 
-		do_action('wpd_edibles_widget_before' );
+		do_action( 'wpd_edibles_widget_before' );
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
@@ -533,7 +535,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 		} else {
 			$randorder = '';
 		}
-		
+
 		global $post;
 
 		$wpdispensary_edibles_widget = new WP_Query(
@@ -544,16 +546,17 @@ class wpdispensary_edibles_widget extends WP_Widget {
 			)
 		);
 
-		while ( $wpdispensary_edibles_widget->have_posts() ) : $wpdispensary_edibles_widget->the_post();
+		while ( $wpdispensary_edibles_widget->have_posts() ) :
+			$wpdispensary_edibles_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
 
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-				do_action('wpd_edibles_widget_inside_top' );
+				do_action( 'wpd_edibles_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( $instance["imagesize"] );
+					the_post_thumbnail( $instance['imagesize'] );
 				echo '</a>';
 				if ( 'on' === $instance['ediblename'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -561,7 +564,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 				if ( 'on' === $instance['ediblecategory'] ) {
 					echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'edibles_category' ) . "</a></span>";
 				}
-				do_action('wpd_edibles_widget_inside_bottom' );
+				do_action( 'wpd_edibles_widget_inside_bottom' );
 				echo '</div>';
 
 			} else {
@@ -582,9 +585,9 @@ class wpdispensary_edibles_widget extends WP_Widget {
 			echo '</ul>';
 		}
 
-		do_action('wpd_edibles_widget_after' );
+		do_action( 'wpd_edibles_widget_after' );
 
-		echo $args['after_widget'];
+		echo esc_html( $args['after_widget'] );
 	}
 
 
@@ -599,17 +602,17 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
-	    $instance = $old_instance;
+		$instance = $old_instance;
 
-	    $instance['title']          = strip_tags( $new_instance['title'] );
-	    $instance['limit']          = strip_tags( $new_instance['limit'] );
-	    $instance['order']          = $new_instance['order'];
-	    $instance['featuredimage']  = $new_instance['featuredimage'];
-	    $instance['imagesize']      = $new_instance['imagesize'];
-	    $instance['ediblename']     = $new_instance['ediblename'];
-	    $instance['ediblecategory'] = $new_instance['ediblecategory'];
+		$instance['title']          = strip_tags( $new_instance['title'] );
+		$instance['limit']          = strip_tags( $new_instance['limit'] );
+		$instance['order']          = $new_instance['order'];
+		$instance['featuredimage']  = $new_instance['featuredimage'];
+		$instance['imagesize']      = $new_instance['imagesize'];
+		$instance['ediblename']     = $new_instance['ediblename'];
+		$instance['ediblecategory'] = $new_instance['ediblecategory'];
 
-	    return $instance;
+		return $instance;
 	}
 
 
@@ -623,18 +626,18 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	 * @return      void
 	 */
 	public function form( $instance ) {
-	    $defaults = array(
-	        'title'             => 'Recent Edibles',
-	        'limit'             => '5',
-	        'order'             => '',
-	        'featuredimage'     => '',
-			'imagesize'         => 'wpdispensary-widget',
-	        'ediblename'        => '',
-	        'ediblecategory'    => '',
-	    );
+		$defaults = array(
+			'title'          => 'Recent Edibles',
+			'limit'          => '5',
+			'order'          => '',
+			'featuredimage'  => '',
+			'imagesize'      => 'wpdispensary-widget',
+			'ediblename'     => '',
+			'ediblecategory' => '',
+		);
 
-	    $instance = wp_parse_args( (array) $instance, $defaults );
-	    ?>
+		$instance = wp_parse_args( (array) $instance, $defaults );
+		?>
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>" />
@@ -666,21 +669,21 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	</p>
 
 	<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
-		<?php 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
+		<?php
 			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
-			if ( $terms ) {
-				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
-				foreach ( $terms as $term ) {
-					if ( esc_html( $term ) != $instance['imagesize'] ) {
-						$imagesizeinfo = '';
-					} else {
-						$imagesizeinfo = 'selected="selected"';
-					}
-					printf( '<option value="%s" '. $imagesizeinfo .'>%s</option>', esc_html( $term ), esc_html( $term ) );
+		if ( $terms ) {
+			printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+			foreach ( $terms as $term ) {
+				if ( esc_html( $term ) != $instance['imagesize'] ) {
+					$imagesizeinfo = '';
+				} else {
+					$imagesizeinfo = 'selected="selected"';
 				}
-				print( '</select>' );
+				printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
 			}
+			print( '</select>' );
+		}
 		?>
 	</p>
 
@@ -744,13 +747,13 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
 	    $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-	    echo $args['before_widget'];
+	    echo esc_html( $args['before_widget'] );
 
 	    if ( $title ) {
 	        echo $args['before_title'] . $title . $args['after_title'];
 	    }
 
-	    do_action('wpd_prerolls_widget_before' );
+	    do_action( 'wpd_prerolls_widget_before' );
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
@@ -779,9 +782,9 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-				do_action('wpd_prerolls_widget_inside_top' );
+				do_action( 'wpd_prerolls_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( $instance["imagesize"] );
+					the_post_thumbnail( $instance['imagesize'] );
 				echo '</a>';
 				if ( 'on' === $instance['prerollname'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -792,7 +795,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 					echo "<a href='" . esc_url( get_permalink( $prerollflower ) ) . "'>" . get_the_title( $prerollflower ) . "</a>";
 					echo '</span>';
 				}
-				do_action('wpd_prerolls_widget_inside_bottom' );
+				do_action( 'wpd_prerolls_widget_inside_bottom' );
 				echo '</div>';
 
 			} else {
@@ -813,9 +816,9 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 			echo '</ul>';
 		}
 
-		do_action('wpd_prerolls_widget_after' );
+		do_action( 'wpd_prerolls_widget_after' );
 
-		echo $args['after_widget'];
+		echo esc_html( $args['after_widget'] );
 	}
 
 
@@ -900,7 +903,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
-		<?php 
+		<?php
 			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
 			if ( $terms ) {
 				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
@@ -977,13 +980,13 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
 	    $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-	    echo $args['before_widget'];
+	    echo esc_html( $args['before_widget'] );
 
 	    if ( $title ) {
 	        echo $args['before_title'] . $title . $args['after_title'];
 	    }
 
-	    do_action('wpd_topicals_widget_before' );
+	    do_action( 'wpd_topicals_widget_before' );
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
@@ -1012,9 +1015,9 @@ class wpdispensary_topicals_widget extends WP_Widget {
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-				do_action('wpd_topicals_widget_inside_top' );
+				do_action( 'wpd_topicals_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( $instance["imagesize"] );
+					the_post_thumbnail( $instance['imagesize'] );
 				echo '</a>';
 				if ( 'on' === $instance['topicalname'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -1022,7 +1025,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 				if ( 'on' === $instance['topicalcategory'] ) {
 					echo "<span class='wpdispensary-widget-categories'>" . get_the_term_list( $post->ID, 'topicals_category' ) . "</a></span>";
 				}
-				do_action('wpd_topicals_widget_inside_bottom' );
+				do_action( 'wpd_topicals_widget_inside_bottom' );
 				echo '</div>';
 
 			} else {
@@ -1043,9 +1046,9 @@ class wpdispensary_topicals_widget extends WP_Widget {
 			echo '</ul>';
 		}
 
-		do_action('wpd_topicals_widget_after' );
+		do_action( 'wpd_topicals_widget_after' );
 
-		echo $args['after_widget'];
+		echo esc_html( $args['after_widget'] );
 	}
 
 
@@ -1128,7 +1131,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
-		<?php 
+		<?php
 			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
 			if ( $terms ) {
 				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
@@ -1204,13 +1207,13 @@ class wpdispensary_growers_widget extends WP_Widget {
 
 	    $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-	    echo $args['before_widget'];
+	    echo esc_html( $args['before_widget'] );
 
 	    if ( $title ) {
 	        echo $args['before_title'] . $title . $args['after_title'];
 	    }
 
-	    do_action('wpd_growers_widget_before' );
+	    do_action( 'wpd_growers_widget_before' );
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
@@ -1239,9 +1242,9 @@ class wpdispensary_growers_widget extends WP_Widget {
 			if ( 'on' === $instance['featuredimage'] ) {
 
 				echo "<div class='wpdispensary-widget'>";
-				do_action('wpd_growers_widget_inside_top' );
+				do_action( 'wpd_growers_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( $instance["imagesize"] );
+					the_post_thumbnail( $instance['imagesize'] );
 				echo '</a>';
 				if ( 'on' === $instance['growername'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -1252,7 +1255,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 					echo "<a href='" . esc_url( get_permalink( $growerflower ) ) . "'>" . get_the_title( $growerflower ) . "</a>";
 					echo '</span>';
 				}
-				do_action('wpd_growers_widget_inside_bottom' );
+				do_action( 'wpd_growers_widget_inside_bottom' );
 				echo '</div>';
 
 			} else {
@@ -1273,9 +1276,9 @@ class wpdispensary_growers_widget extends WP_Widget {
 			echo '</ul>';
 		}
 
-		do_action('wpd_growers_widget_after' );
+		do_action( 'wpd_growers_widget_after' );
 
-		echo $args['after_widget'];
+		echo esc_html( $args['after_widget'] );
 	}
 
 
@@ -1360,7 +1363,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php _e( 'Image size:', 'wp-dispensary' ); ?></label>
-		<?php 
+		<?php
 			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
 			if ( $terms ) {
 				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
