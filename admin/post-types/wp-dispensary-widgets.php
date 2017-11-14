@@ -975,19 +975,19 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 * @return      void
 	 */
 	public function widget( $args, $instance ) {
-	    if ( ! isset( $args['id'] ) ) {
-	        $args['id'] = 'wpdispensary_topicals_widget';
-	    }
+		if ( ! isset( $args['id'] ) ) {
+			$args['id'] = 'wpdispensary_topicals_widget';
+		}
 
-	    $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
+		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-	    echo esc_html( $args['before_widget'] );
+		echo esc_html( $args['before_widget'] );
 
-	    if ( $title ) {
-	        echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
-	    }
+		if ( $title ) {
+			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
+		}
 
-	    do_action( 'wpd_topicals_widget_before' );
+		do_action( 'wpd_topicals_widget_before' );
 
 		if ( ! 'on' === $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
@@ -1003,13 +1003,14 @@ class wpdispensary_topicals_widget extends WP_Widget {
 			array(
 				'post_type' => 'topicals',
 				'showposts' => $instance['limit'],
-				'orderby'	=> $randorder,
+				'orderby'	  => $randorder,
 			)
 		);
 
 		global $post;
 
-		while ( $wpdispensary_topicals_widget->have_posts() ) : $wpdispensary_topicals_widget->the_post();
+		while ( $wpdispensary_topicals_widget->have_posts() ) :
+			$wpdispensary_topicals_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
 
@@ -1064,17 +1065,17 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 * @return      array $instance The updated instance options
 	 */
 	public function update( $new_instance, $old_instance ) {
-	    $instance = $old_instance;
+		$instance = $old_instance;
 
-	    $instance['title']              = strip_tags( $new_instance['title'] );
-	    $instance['limit']              = strip_tags( $new_instance['limit'] );
-	    $instance['order']              = $new_instance['order'];
-	    $instance['featuredimage']      = $new_instance['featuredimage'];
-	    $instance['imagesize']          = $new_instance['imagesize'];
-	    $instance['topicalname']        = $new_instance['topicalname'];
-	    $instance['topicalcategory']    = $new_instance['topicalcategory'];
+		$instance['title']           = strip_tags( $new_instance['title'] );
+		$instance['limit']           = strip_tags( $new_instance['limit'] );
+		$instance['order']           = $new_instance['order'];
+		$instance['featuredimage']   = $new_instance['featuredimage'];
+		$instance['imagesize']       = $new_instance['imagesize'];
+		$instance['topicalname']     = $new_instance['topicalname'];
+		$instance['topicalcategory'] = $new_instance['topicalcategory'];
 
-	    return $instance;
+		return $instance;
 	}
 
 
@@ -1088,17 +1089,17 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 * @return      void
 	 */
 	public function form( $instance ) {
-	    $defaults = array(
-	        'title'             => 'Recent Topicals',
-	        'limit'             => '5',
-	        'order'             => '',
-	        'featuredimage'     => '',
-			'imagesize'         => 'wpdispensary-widget',
-	        'topicalname'       => '',
-	        'topicalcategory'   => '',
-	    );
+		$defaults = array(
+			'title'           => 'Recent Topicals',
+			'limit'           => '5',
+			'order'           => '',
+			'featuredimage'   => '',
+			'imagesize'       => 'wpdispensary-widget',
+			'topicalname'     => '',
+			'topicalcategory' => '',
+		);
 
-	    $instance = wp_parse_args( (array) $instance, $defaults );
+		$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
@@ -1134,18 +1135,18 @@ class wpdispensary_topicals_widget extends WP_Widget {
 		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
 		<?php
 			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
-			if ( $terms ) {
-				printf( '<select name="%s" id="'. $this->get_field_id( 'imagesize' ) .'" name="'. $this->get_field_name( 'imagesize' ) .'" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
-				foreach ( $terms as $term ) {
-					if ( esc_html( $term ) != $instance['imagesize'] ) {
-						$imagesizeinfo = '';
-					} else {
-						$imagesizeinfo = 'selected="selected"';
-					}
-					printf( '<option value="%s" '. $imagesizeinfo .'>%s</option>', esc_html( $term ), esc_html( $term ) );
+		if ( $terms ) {
+			printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+			foreach ( $terms as $term ) {
+				if ( esc_html( $term ) != $instance['imagesize'] ) {
+					$imagesizeinfo = '';
+				} else {
+					$imagesizeinfo = 'selected="selected"';
 				}
-				print( '</select>' );
+				printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
 			}
+			print( '</select>' );
+		}
 		?>
 	</p>
 
