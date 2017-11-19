@@ -84,7 +84,10 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['compounddetailsmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['compounddetailsmeta_noncename' ] ) || 
+		! wp_verify_nonce( $_POST['compounddetailsmeta_noncename'], plugin_basename( __FILE__ ) )
+	) {
 		return $post->ID;
 	}
 
@@ -202,7 +205,10 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['pricesmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['pricesmeta_noncename' ] ) || 		
+		! wp_verify_nonce( $_POST['pricesmeta_noncename'], plugin_basename( __FILE__ ) ) 
+	) {
 		return $post->ID;
 	}
 
@@ -315,7 +321,10 @@ function wpdispensary_save_concentrateprices_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['concentratepricesmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['concentratepricesmeta_noncename'] ) ||
+		! wp_verify_nonce( $_POST['concentratepricesmeta_noncename'], plugin_basename( __FILE__ ) )
+	) {
 		return $post->ID;
 	}
 
@@ -547,7 +556,10 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['singlepricesmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['singlepricesmeta_noncename'] ) ||	
+		! wp_verify_nonce( $_POST['singlepricesmeta_noncename'], plugin_basename( __FILE__ ) ) 
+	) {
 		return $post->ID;
 	}
 
@@ -640,7 +652,10 @@ function wpdispensary_save_seedcount_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['seedcountmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['seedcountmeta_noncename'] ) || 	
+		! wp_verify_nonce( $_POST['seedcountmeta_noncename'], plugin_basename( __FILE__ ) ) 
+	) {
 		return $post->ID;
 	}
 
@@ -733,7 +748,10 @@ function wpdispensary_save_clonecount_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['clonecountmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['clonecountmeta_noncename'] ) ||	
+		! wp_verify_nonce( $_POST['clonecountmeta_noncename'], plugin_basename( __FILE__ ) ) 
+	) {
 		return $post->ID;
 	}
 
@@ -834,7 +852,10 @@ function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['thccbdmgmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['thccbdmgmeta_noncename'] ) || 
+		! wp_verify_nonce( $_POST['thccbdmgmeta_noncename'], plugin_basename( __FILE__ ) )
+	) {
 		return $post->ID;
 	}
 
@@ -938,7 +959,10 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['thccbdtopical_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['thccbdtopical_noncename'] ) || 	
+		! wp_verify_nonce( $_POST['thccbdtopical_noncename'], plugin_basename( __FILE__ ) ) 
+	) {
 		return $post->ID;
 	}
 
@@ -1044,7 +1068,10 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! wp_verify_nonce( $_POST['clonedetailsmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( 
+		! isset( $_POST['clonedetailsmeta_noncename'] ) ||
+		! wp_verify_nonce( $_POST['clonedetailsmeta_noncename'], plugin_basename( __FILE__ ) ) 
+	) {
 		return $post->ID;
 	}
 
