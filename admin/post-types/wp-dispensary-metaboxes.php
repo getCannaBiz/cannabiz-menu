@@ -45,32 +45,32 @@ function wpdispensary_compounddetails() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thccbd data if its already been entered */
-	$thc    = get_post_meta( $post->ID, '_thc', true );
-	$thca   = get_post_meta( $post->ID, '_thca', true );
-	$cbd    = get_post_meta( $post->ID, '_cbd', true );
-	$cba    = get_post_meta( $post->ID, '_cba', true );
-	$cbn    = get_post_meta( $post->ID, '_cbn', true );
+	$thc  = get_post_meta( $post->ID, '_thc', true );
+	$thca = get_post_meta( $post->ID, '_thca', true );
+	$cbd  = get_post_meta( $post->ID, '_cbd', true );
+	$cba  = get_post_meta( $post->ID, '_cba', true );
+	$cbn  = get_post_meta( $post->ID, '_cbn', true );
 
 	/** Echo out the fields */
 	echo '<div class="compoundbox">';
 	echo '<p>THC %:</p>';
-	echo '<input type="text" name="_thc" value="' . $thc  . '" class="widefat" />';
+	echo '<input type="text" name="_thc" value="' . esc_html( $thc ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
 	echo '<p>THCA %:</p>';
-	echo '<input type="text" name="_thca" value="' . $thca  . '" class="widefat" />';
+	echo '<input type="text" name="_thca" value="' . esc_html( $thca ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
 	echo '<p>CBD %:</p>';
-	echo '<input type="text" name="_cbd" value="' . $cbd  . '" class="widefat" />';
+	echo '<input type="text" name="_cbd" value="' . esc_html( $cbd ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
 	echo '<p>CBA %:</p>';
-	echo '<input type="text" name="_cba" value="' . $cba  . '" class="widefat" />';
+	echo '<input type="text" name="_cba" value="' . esc_html( $cba ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
 	echo '<p>CBN %:</p>';
-	echo '<input type="text" name="_cbn" value="' . $cbn  . '" class="widefat" />';
+	echo '<input type="text" name="_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -98,11 +98,11 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thccbd_meta['_thc']    = $_POST['_thc'];
-	$thccbd_meta['_thca']   = $_POST['_thca'];
-	$thccbd_meta['_cbd']	= $_POST['_cbd'];
-	$thccbd_meta['_cba']    = $_POST['_cba'];
-	$thccbd_meta['_cbn']    = $_POST['_cbn'];
+	$thccbd_meta['_thc']  = $_POST['_thc'];
+	$thccbd_meta['_thca'] = $_POST['_thca'];
+	$thccbd_meta['_cbd']  = $_POST['_cbd'];
+	$thccbd_meta['_cba']  = $_POST['_cba'];
+	$thccbd_meta['_cbn']  = $_POST['_cbn'];
 
 	/** Add values of $compounddetails_meta as custom fields */
 
@@ -111,9 +111,9 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 			return;
 		}
 		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
-		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value
+		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value.
 			update_post_meta( $post->ID, $key, $value );
-		} else { // If the custom field doesn't have a value
+		} else { // If the custom field doesn't have a value.
 			add_post_meta( $post->ID, $key, $value );
 		}
 		if ( ! $value ) { /** Delete if blank */
@@ -123,7 +123,7 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_compounddetails_meta', 1, 2 ); // save the custom fields
+add_action( 'save_post', 'wpdispensary_save_compounddetails_meta', 1, 2 ); // Save the custom fields.
 
 
 /**
@@ -163,32 +163,32 @@ function wpdispensary_prices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$gram		= get_post_meta( $post->ID, '_gram', true );
-	$eighth		= get_post_meta( $post->ID, '_eighth', true );
-	$quarter	= get_post_meta( $post->ID, '_quarter', true );
-	$halfounce	= get_post_meta( $post->ID, '_halfounce', true );
-	$ounce		= get_post_meta( $post->ID, '_ounce', true );
+	$gram      = get_post_meta( $post->ID, '_gram', true );
+	$eighth    = get_post_meta( $post->ID, '_eighth', true );
+	$quarter   = get_post_meta( $post->ID, '_quarter', true );
+	$halfounce = get_post_meta( $post->ID, '_halfounce', true );
+	$ounce     = get_post_meta( $post->ID, '_ounce', true );
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>Gram:</p>';
-	echo '<input type="text" name="_gram" value="' . $gram  . '" class="widefat" />';
+	echo '<input type="text" name="_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/8 Ounce:</p>';
-	echo '<input type="text" name="_eighth" value="' . $eighth  . '" class="widefat" />';
+	echo '<input type="text" name="_eighth" value="' . esc_html( $eighth ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/4 Ounce:</p>';
-	echo '<input type="text" name="_quarter" value="' . $quarter  . '" class="widefat" />';
+	echo '<input type="text" name="_quarter" value="' . esc_html( $quarter ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/2 Ounce:</p>';
-	echo '<input type="text" name="_halfounce" value="' . $halfounce  . '" class="widefat" />';
+	echo '<input type="text" name="_halfounce" value="' . esc_html( $halfounce ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>Ounce:</p>';
-	echo '<input type="text" name="_ounce" value="' . $ounce  . '" class="widefat" />';
+	echo '<input type="text" name="_ounce" value="' . esc_html( $ounce ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -216,11 +216,11 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_gram']		= $_POST['_gram'];
-	$prices_meta['_eighth']		= $_POST['_eighth'];
-	$prices_meta['_quarter']	= $_POST['_quarter'];
-	$prices_meta['_halfounce']	= $_POST['_halfounce'];
-	$prices_meta['_ounce']		= $_POST['_ounce'];
+	$prices_meta['_gram']      = $_POST['_gram'];
+	$prices_meta['_eighth']    = $_POST['_eighth'];
+	$prices_meta['_quarter']   = $_POST['_quarter'];
+	$prices_meta['_halfounce'] = $_POST['_halfounce'];
+	$prices_meta['_ounce']     = $_POST['_ounce'];
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -281,27 +281,27 @@ function wpdispensary_concentrateprices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$priceeach       = get_post_meta( $post->ID, '_priceeach', true );
-	$halfgram        = get_post_meta( $post->ID, '_halfgram', true );
-	$gram            = get_post_meta( $post->ID, '_gram', true );
-	$twograms        = get_post_meta( $post->ID, '_twograms', true );
+	$priceeach = get_post_meta( $post->ID, '_priceeach', true );
+	$halfgram  = get_post_meta( $post->ID, '_halfgram', true );
+	$gram      = get_post_meta( $post->ID, '_gram', true );
+	$twograms  = get_post_meta( $post->ID, '_twograms', true );
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>Price Each:</p>';
-	echo '<input type="text" name="_priceeach" value="' . $priceeach  . '" class="widefat" />';
+	echo '<input type="text" name="_priceeach" value="' . esc_html( $priceeach ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/2 Gram:</p>';
-	echo '<input type="text" name="_halfgram" value="' . $halfgram  . '" class="widefat" />';
+	echo '<input type="text" name="_halfgram" value="' . esc_html( $halfgram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1 Gram:</p>';
-	echo '<input type="text" name="_gram" value="' . $gram  . '" class="widefat" />';
+	echo '<input type="text" name="_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>2 Grams:</p>';
-	echo '<input type="text" name="_twograms" value="' . $twograms  . '" class="widefat" />';
+	echo '<input type="text" name="_twograms" value="' . esc_html( $twograms ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -329,10 +329,10 @@ function wpdispensary_save_concentrateprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$concentrateprices_meta['_priceeach']        = $_POST['_priceeach'];
-	$concentrateprices_meta['_halfgram']         = $_POST['_halfgram'];
-	$concentrateprices_meta['_gram']             = $_POST['_gram'];
-	$concentrateprices_meta['_twograms']         = $_POST['_twograms'];
+	$concentrateprices_meta['_priceeach'] = $_POST['_priceeach'];
+	$concentrateprices_meta['_halfgram']  = $_POST['_halfgram'];
+	$concentrateprices_meta['_gram']      = $_POST['_gram'];
+	$concentrateprices_meta['_twograms']  = $_POST['_twograms'];
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -364,8 +364,8 @@ add_action( 'save_post', 'wpdispensary_save_concentrateprices_meta', 1, 2 ); /**
  * @since    1.0.0
  */
 class WPDispensary_Prerolls {
-	var $FOR_POST_TYPE = 'prerolls';
-	var $SELECT_POST_TYPE = 'flowers';
+	var $FOR_POST_TYPE     = 'prerolls';
+	var $SELECT_POST_TYPE  = 'flowers';
 	var $SELECT_POST_LABEL = 'Flower';
 	var $box_id;
 	var $box_label;
@@ -379,12 +379,12 @@ class WPDispensary_Prerolls {
 	function admin_init() {
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'save_post', array( $this, 'save_post' ), 10, 2 );
-		$this->meta_key     = "_selected_{$this->SELECT_POST_TYPE}";
-		$this->box_id       = "select-{$this->SELECT_POST_TYPE}-metabox";
-		$this->field_id     = "selected_{$this->SELECT_POST_TYPE}";
-		$this->field_name   = "selected_{$this->SELECT_POST_TYPE}";
-		$this->box_label    = __( 'Pre-roll Strain', 'wp-dispensary' );
-		$this->field_label  = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
+		$this->meta_key    = "_selected_{$this->SELECT_POST_TYPE}";
+		$this->box_id      = "select-{$this->SELECT_POST_TYPE}-metabox";
+		$this->field_id    = "selected_{$this->SELECT_POST_TYPE}";
+		$this->field_name  = "selected_{$this->SELECT_POST_TYPE}";
+		$this->box_label   = __( 'Pre-roll Strain', 'wp-dispensary' );
+		$this->field_label = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
 	}
 	/**
 	 * Add meta boxes
@@ -404,10 +404,10 @@ class WPDispensary_Prerolls {
 		$save_hierarchical = $wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical;
 		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = true;
 		wp_dropdown_pages( array(
-			'id' => $this->field_id,
-			'name' => $this->field_name,
-			'selected' => empty( $selected_post_id ) ? 0 : $selected_post_id,
-			'post_type' => $this->SELECT_POST_TYPE,
+			'id'               => $this->field_id,
+			'name'             => $this->field_name,
+			'selected'         => empty( $selected_post_id ) ? 0 : $selected_post_id,
+			'post_type'        => $this->SELECT_POST_TYPE,
 			'show_option_none' => $this->field_label,
 		));
 		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = $save_hierarchical;
@@ -432,8 +432,8 @@ new WPDispensary_Prerolls();
  * @since    1.7.0
  */
 class WPDispensary_Growers {
-	var $FOR_POST_TYPE = 'growers';
-	var $SELECT_POST_TYPE = 'flowers';
+	var $FOR_POST_TYPE     = 'growers';
+	var $SELECT_POST_TYPE  = 'flowers';
 	var $SELECT_POST_LABEL = 'Flower';
 	var $box_id;
 	var $box_label;
@@ -447,12 +447,12 @@ class WPDispensary_Growers {
 	function admin_init() {
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'save_post', array( $this, 'save_post' ), 10, 2 );
-		$this->meta_key     = "_selected_{$this->SELECT_POST_TYPE}";
-		$this->box_id       = "select-{$this->SELECT_POST_TYPE}-metabox";
-		$this->field_id     = "selected_{$this->SELECT_POST_TYPE}";
-		$this->field_name   = "selected_{$this->SELECT_POST_TYPE}";
-		$this->box_label    = __( 'Flower Strain', 'wp-dispensary' );
-		$this->field_label  = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
+		$this->meta_key    = "_selected_{$this->SELECT_POST_TYPE}";
+		$this->box_id      = "select-{$this->SELECT_POST_TYPE}-metabox";
+		$this->field_id    = "selected_{$this->SELECT_POST_TYPE}";
+		$this->field_name  = "selected_{$this->SELECT_POST_TYPE}";
+		$this->box_label   = __( 'Flower Strain', 'wp-dispensary' );
+		$this->field_label = __( "Choose {$this->SELECT_POST_LABEL}", 'wp-dispensary' );
 	}
 	/**
 	 * Add meta boxes
@@ -469,13 +469,13 @@ class WPDispensary_Growers {
 	function select_box( $post ) {
 		$selected_post_id = get_post_meta( $post->ID, $this->meta_key, true );
 		global $wp_post_types;
-		$save_hierarchical = $wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical;
+		$save_hierarchical                                      = $wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical;
 		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = true;
 		wp_dropdown_pages( array(
-			'id' => $this->field_id,
-			'name' => $this->field_name,
-			'selected' => empty( $selected_post_id ) ? 0 : $selected_post_id,
-			'post_type' => $this->SELECT_POST_TYPE,
+			'id'               => $this->field_id,
+			'name'             => $this->field_name,
+			'selected'         => empty( $selected_post_id ) ? 0 : $selected_post_id,
+			'post_type'        => $this->SELECT_POST_TYPE,
 			'show_option_none' => $this->field_label,
 		));
 		$wp_post_types[ $this->SELECT_POST_TYPE ]->hierarchical = $save_hierarchical;
@@ -530,11 +530,11 @@ function wpdispensary_singleprices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$priceeach	= get_post_meta( $post->ID, '_priceeach', true );
+	$priceeach = get_post_meta( $post->ID, '_priceeach', true );
 
 	/** Echo out the fields */
 	echo '<p>Price per unit:</p>';
-	echo '<input type="text" name="_priceeach" value="' . $priceeach  . '" class="widefat" />';
+	echo '<input type="text" name="_priceeach" value="' . esc_html( $priceeach ) . '" class="widefat" />';
 
 }
 
@@ -561,7 +561,7 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_priceeach']	= $_POST['_priceeach'];
+	$prices_meta['_priceeach'] = $_POST['_priceeach'];
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -623,11 +623,11 @@ function wpdispensary_seedcount() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the seed count data if its already been entered */
-	$seedcount	= get_post_meta( $post->ID, '_seedcount', true );
+	$seedcount = get_post_meta( $post->ID, '_seedcount', true );
 
 	/** Echo out the fields */
 	echo '<p>Seeds per unit:</p>';
-	echo '<input type="text" name="_seedcount" value="' . $seedcount  . '" class="widefat" />';
+	echo '<input type="text" name="_seedcount" value="' . esc_html( $seedcount ) . '" class="widefat" />';
 
 }
 
@@ -654,7 +654,7 @@ function wpdispensary_save_seedcount_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$seedcount['_seedcount']	= $_POST['_seedcount'];
+	$seedcount['_seedcount'] = $_POST['_seedcount'];
 
 	/** Add values of $seedcount as custom fields */
 
@@ -716,11 +716,11 @@ function wpdispensary_clonecount() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the clone count data if its already been entered */
-	$clonecount	= get_post_meta( $post->ID, '_clonecount', true );
+	$clonecount = get_post_meta( $post->ID, '_clonecount', true );
 
 	/** Echo out the fields */
 	echo '<p>Clones per unit:</p>';
-	echo '<input type="text" name="_clonecount" value="' . $clonecount  . '" class="widefat" />';
+	echo '<input type="text" name="_clonecount" value="' . esc_html( $clonecount ) . '" class="widefat" />';
 
 }
 
@@ -747,7 +747,7 @@ function wpdispensary_save_clonecount_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$clonecount['_clonecount']	= $_POST['_clonecount'];
+	$clonecount['_clonecount'] = $_POST['_clonecount'];
 
 	/** Add values of $clonecount as custom fields */
 
@@ -815,13 +815,13 @@ function wpdispensary_thc_cbd_mg() {
 
 	/** Echo out the fields */
 	echo '<p>THC mg per serving:</p>';
-	echo '<input type="text" name="_thcmg" value="' . $thcmg  . '" class="widefat" />';
+	echo '<input type="text" name="_thcmg" value="' . esc_html( $thcmg ) . '" class="widefat" />';
 	echo '<p>CBD mg per serving:</p>';
-	echo '<input type="text" name="_cbdmg" value="' . $cbdmg  . '" class="widefat" />';
+	echo '<input type="text" name="_cbdmg" value="' . esc_html( $cbdmg ) . '" class="widefat" />';
 	echo '<p>Servings:</p>';
-	echo '<input type="text" name="_thccbdservings" value="' . $thccbdservings  . '" class="widefat" />';
+	echo '<input type="text" name="_thccbdservings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
 	echo '<p>Net weight (grams):</p>';
-	echo '<input type="text" name="_netweight" value="' . $netweight  . '" class="widefat" />';
+	echo '<input type="text" name="_netweight" value="' . esc_html( $netweight ) . '" class="widefat" />';
 
 }
 
@@ -912,20 +912,20 @@ function wpdispensary_thccbdtopical() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thc mg data if its already been entered */
-	$pricetopicals	= get_post_meta( $post->ID, '_pricetopical', true );
-	$thctopicals	= get_post_meta( $post->ID, '_thctopical', true );
-	$cbdtopicals	= get_post_meta( $post->ID, '_cbdtopical', true );
-	$sizetopicals	= get_post_meta( $post->ID, '_sizetopical', true );
+	$pricetopicals = get_post_meta( $post->ID, '_pricetopical', true );
+	$thctopicals   = get_post_meta( $post->ID, '_thctopical', true );
+	$cbdtopicals   = get_post_meta( $post->ID, '_cbdtopical', true );
+	$sizetopicals  = get_post_meta( $post->ID, '_sizetopical', true );
 
 	/** Echo out the fields */
 	echo '<p>Price per unit:</p>';
-	echo '<input type="text" name="_pricetopical" value="' . $pricetopicals  . '" class="widefat" />';
+	echo '<input type="text" name="_pricetopical" value="' . esc_html( $pricetopicals ) . '" class="widefat" />';
 	echo '<p>Size (oz):</p>';
-	echo '<input type="text" name="_sizetopical" value="' . $sizetopicals  . '" class="widefat" />';
+	echo '<input type="text" name="_sizetopical" value="' . esc_html( $sizetopicals ) . '" class="widefat" />';
 	echo '<p>THC mg:</p>';
-	echo '<input type="text" name="_thctopical" value="' . $thctopicals  . '" class="widefat" />';
+	echo '<input type="text" name="_thctopical" value="' . esc_html( $thctopicals ) . '" class="widefat" />';
 	echo '<p>CBD mg:</p>';
-	echo '<input type="text" name="_cbdtopical" value="' . $cbdtopicals  . '" class="widefat" />';
+	echo '<input type="text" name="_cbdtopical" value="' . esc_html( $cbdtopicals ) . '" class="widefat" />';
 
 }
 
@@ -952,10 +952,10 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thcmgtopical_meta['_pricetopical']	= $_POST['_pricetopical'];
-	$thcmgtopical_meta['_thctopical']	= $_POST['_thctopical'];
-	$thcmgtopical_meta['_cbdtopical']	= $_POST['_cbdtopical'];
-	$thcmgtopical_meta['_sizetopical']	= $_POST['_sizetopical'];
+	$thcmgtopical_meta['_pricetopical'] = $_POST['_pricetopical'];
+	$thcmgtopical_meta['_thctopical']   = $_POST['_thctopical'];
+	$thcmgtopical_meta['_cbdtopical']   = $_POST['_cbdtopical'];
+	$thcmgtopical_meta['_sizetopical']  = $_POST['_sizetopical'];
 
 	/** Add values of $thcmg_meta as custom fields */
 
@@ -1015,22 +1015,22 @@ function wpdispensary_clonedetails() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the origin data if its already been entered */
-	$origin   = get_post_meta( $post->ID, '_origin', true );
-	$time     = get_post_meta( $post->ID, '_time', true );
-	$yield    = get_post_meta( $post->ID, '_yield', true );
+	$origin = get_post_meta( $post->ID, '_origin', true );
+	$time   = get_post_meta( $post->ID, '_time', true );
+	$yield  = get_post_meta( $post->ID, '_yield', true );
 
 	/** Echo out the fields */
 	echo '<div class="growerbox">';
 	echo '<p>Origin:</p>';
-	echo '<input type="text" name="_origin" value="' . $origin  . '" class="widefat" />';
+	echo '<input type="text" name="_origin" value="' . esc_html( $origin ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="growerbox">';
 	echo '<p>Grow Time:</p>';
-	echo '<input type="text" name="_time" value="' . $time  . '" class="widefat" />';
+	echo '<input type="text" name="_time" value="' . esc_html( $time ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="growerbox">';
 	echo '<p>Yield:</p>';
-	echo '<input type="text" name="_yield" value="' . $yield  . '" class="widefat" />';
+	echo '<input type="text" name="_yield" value="' . esc_html( $yield ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -1058,9 +1058,9 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	 $clonedetails_meta['_origin']  = $_POST['_origin'];
-	 $clonedetails_meta['_time']    = $_POST['_time'];
-	 $clonedetails_meta['_yield']   = $_POST['_yield'];
+	$clonedetails_meta['_origin'] = $_POST['_origin'];
+	$clonedetails_meta['_time']   = $_POST['_time'];
+	$clonedetails_meta['_yield']  = $_POST['_yield'];
 
 	/** Add values of $clonedetails_meta as custom fields */
 
@@ -1069,9 +1069,9 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 			return;
 		}
 		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
-		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value
+		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value.
 			update_post_meta( $post->ID, $key, $value );
-		} else { // If the custom field doesn't have a value
+		} else { // If the custom field doesn't have a value.
 			add_post_meta( $post->ID, $key, $value );
 		}
 		if ( ! $value ) { /** Delete if blank */
@@ -1081,4 +1081,4 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'wpdispensary_save_clonedetails_meta', 1, 2 ); // save the custom fields
+add_action( 'save_post', 'wpdispensary_save_clonedetails_meta', 1, 2 ); // Save the custom fields.
