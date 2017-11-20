@@ -146,7 +146,7 @@ function wpdispensary_effect() {
 		'menu_name'                  => __( 'Effects' ),
 	);
 
-	$effecttaxtype = apply_filters( 'wpd_effect_tax_type', array( 'flowers', 'concentrates' ) );
+	$effecttaxtype = apply_filters( 'wpd_effect_tax_type', array( 'flowers', 'concentrates', 'edibles', 'topicals' ) );
 
 	register_taxonomy( 'effect', $effecttaxtype, array(
 		'hierarchical'          => false,
@@ -197,7 +197,7 @@ function wpdispensary_symptom() {
 		'menu_name'                  => __( 'Symptoms' ),
 	);
 
-	$symptomtaxtype = apply_filters( 'wpd_symptom_tax_type', array( 'flowers', 'concentrates' ) );
+	$symptomtaxtype = apply_filters( 'wpd_symptom_tax_type', array( 'flowers', 'concentrates', 'edibles', 'topicals' ) );
 
 	register_taxonomy( 'symptom', $symptomtaxtype, array(
 		'hierarchical'          => false,
@@ -248,7 +248,7 @@ function wpdispensary_condition() {
 		'menu_name'                  => __( 'Conditions' ),
 	);
 
-	$conditiontaxtype = apply_filters( 'wpd_condition_tax_type', array( 'flowers', 'concentrates' ) );
+	$conditiontaxtype = apply_filters( 'wpd_condition_tax_type', array( 'flowers', 'concentrates', 'edibles', 'topicals' ) );
 
 	register_taxonomy( 'condition', $conditiontaxtype, array(
 		'hierarchical'          => false,
