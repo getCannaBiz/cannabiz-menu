@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.9.13
+* Added taxonomies to Edibles and Topicals in `admin/post-types/wp-dispensary-taxonomies.php`
+* Fixed Concentrates cost phrase output in `admin/wp-dispensary-shortcodes.php`
+* Fixed Carousel price output for Pre-rolls in `admin/wp-dispensary-shortcodes.php`
+* Updated misspelled ID for compound details in `admin/post-types/wp-dispensary-metaboxes.php`
+* WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
+
 ### 1.9.12
 * Added `yield` option to Growers item details in `admin/post-types/wp-dispensary-metaboxes.php`
 * Added `yield` metabox info to data output in `admin/wp-dispensary-data-output.php`
@@ -8,7 +15,7 @@
 * Added default images to shortcodes when menu items don't have a featured image added, in `admin/wp-dispensary-shortcodes.php`
 * Added default image files for the default shortcode image display in `public/images/`
 * Changed metabox title from `Clone Details` to `Grower Item Details` in `admin/post-types/wp-dispensary-metaboxes.php`
-* Fixed serveral potential global namespace errors in `admin/post-types/wp-dispensary-metaboxes.php` Thx [Luc Princen](https://twitter.com/LucP)!
+* Fixed several potential global namespace errors in `admin/post-types/wp-dispensary-metaboxes.php` Thx [Luc Princen](https://twitter.com/LucP)!
 * WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1)) Thx [William Patton](https://twitter.com/Will_Patton_88)!
 
 ### 1.9.11
