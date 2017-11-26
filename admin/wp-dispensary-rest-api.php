@@ -501,7 +501,7 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
 
 
 /**
- * Add Vendor taxonomy for the all Custom Post Types
+ * Add Vendor taxonomy for all Custom Post Types
  */
 function wpd_vendor( $data, $post, $request ) {
 	$_data           = $data->data;
