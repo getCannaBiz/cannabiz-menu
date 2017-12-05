@@ -13,7 +13,8 @@
 #wpdispensary_prices .inside,
 #wpdispensary_concentrateprices .inside,
 #wpdispensary_compounds .inside,
-#wpdispensary_clonedetails .inside {
+#wpdispensary_clonedetails .inside,
+#wpdispensary_thc_cbd_mg .inside {
     overflow: auto;
 }
 
@@ -66,6 +67,20 @@
 	margin: 10px 1%;
 	position: relative;
 	width: 31.333%;
+}
+
+
+#wpdispensary_thc_cbd_mg .inside .ediblebox {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#postbox-container-2 #wpdispensary_thc_cbd_mg .inside .ediblebox {
+	float: left;
+	margin: 10px 1%;
+	position: relative;
+	width: 23%;
 }
 
 

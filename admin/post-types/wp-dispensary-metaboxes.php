@@ -814,14 +814,22 @@ function wpdispensary_thc_cbd_mg() {
 	$netweight      = get_post_meta( $post->ID, '_netweight', true );
 
 	/** Echo out the fields */
+	echo '<div class="ediblebox">';
 	echo '<p>THC mg per serving:</p>';
 	echo '<input type="text" name="_thcmg" value="' . esc_html( $thcmg ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="ediblebox">';
 	echo '<p>CBD mg per serving:</p>';
 	echo '<input type="text" name="_cbdmg" value="' . esc_html( $cbdmg ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="ediblebox">';
 	echo '<p>Servings:</p>';
 	echo '<input type="text" name="_thccbdservings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="ediblebox">';
 	echo '<p>Net weight (grams):</p>';
 	echo '<input type="text" name="_netweight" value="' . esc_html( $netweight ) . '" class="widefat" />';
+	echo '</div>';
 
 }
 
