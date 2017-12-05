@@ -2722,6 +2722,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$pricingperunit = '<strong>' . $wpd_cost_phrase . ':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true );
+		} else {
+			$pricingperunit = '';
 		}
 
 		/*
@@ -2765,6 +2767,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$pricingprerolls = '<strong>' . $wpd_cost_phrase . ':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true ) . ' each';
+		} else {
+			$pricingprerolls = '';
 		}
 
 		/*
@@ -2780,6 +2784,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>' . $wpd_cost_phrase . ':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true );
+		} else {
+			$priceeach = '';
 		}
 
 		/** Get the pricing for Concentrates */
