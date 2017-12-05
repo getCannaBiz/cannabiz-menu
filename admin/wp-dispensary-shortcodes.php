@@ -1240,6 +1240,8 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		}
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>' . $wpd_cost_phrase . ':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true );
+		} else {
+			$priceeach = '';
 		}
 
 		/** Check shortcode options input by user */
