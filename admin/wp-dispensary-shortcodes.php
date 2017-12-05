@@ -2783,6 +2783,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		$thcsep = ' - ';
 		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
 			$servingcount = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
+		} else {
+			$servingcount = '';
 		}
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>' . $wpd_cost_phrase . ':</strong> ' . $currency_symbols[ $wpd_currency ] . '' . get_post_meta( get_the_id(), '_priceeach', true );
