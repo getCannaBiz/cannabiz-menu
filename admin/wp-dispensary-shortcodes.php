@@ -459,7 +459,9 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			if ( null !== $thumbnail_url ) {
 				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>';
 			} else {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg" alt="Menu - Flower" /></a>';
+				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu - Flower" /></a>';
 			}
 		} else {
 			$showimage = '';
@@ -913,7 +915,10 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			if ( null !== $thumbnail_url ) {
 				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Concentrate" /></a>';
 			} else {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg" alt="Menu - Concentrate" /></a>';
+				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu - Concentrate" /></a>';
+
 			}
 		} else {
 			$showimage = '';
@@ -1251,7 +1256,9 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			if ( null !== $thumbnail_url ) {
 				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Edible" /></a>';
 			} else {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg" alt="Menu - Edible" /></a>';
+				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu - Edible" /></a>';
 			}
 		} else {
 			$showimage = '';
@@ -1572,7 +1579,9 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			if ( null !== $thumbnail_url ) {
 				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Pre-roll" /></a>';
 			} else {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg" alt="Menu - Pre-roll" /></a>';
+				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu - Pre-roll" /></a>';
 			}
 		} else {
 			$showimage = '';
@@ -1912,7 +1921,9 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			if ( null !== $thumbnail_url ) {
 				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Topical" /></a>';
 			} else {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg" alt="Menu - Topical" /></a>';
+				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu - Topical" /></a>';
 			}
 		} else {
 			$showimage = '';
@@ -2256,7 +2267,9 @@ function wpdispensary_growers_shortcode( $atts ) {
 			if ( null !== $thumbnail_url ) {
 				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Grower" /></a>';
 			} else {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg" alt="Menu - Grower" /></a>';
+				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu - Grower" /></a>';
 			}
 		} else {
 			$showimage = '';
@@ -2871,9 +2884,11 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		if ( null !== $thumbnail_url ) {
-			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu - Flower" /></a>';
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu item" /></a>';
 		} else {
-			$showimage = '<a href="' . get_permalink() . '"><img src="' . site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg" alt="Menu - Flower" /></a>';
+				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu item" /></a>';
 		}
 
 		/** Shortcode display */
