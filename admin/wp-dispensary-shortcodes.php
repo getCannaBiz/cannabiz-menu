@@ -2886,9 +2886,9 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		if ( null !== $thumbnail_url ) {
 			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu item" /></a>';
 		} else {
-				$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-				$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
-				$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu item" /></a>';
+			$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
+			$defaultimg        = apply_filters( 'wpd_default_image', $wpd_default_image );
+			$showimage         = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="Menu item" /></a>';
 		}
 
 		/** Shortcode display */
