@@ -63,10 +63,10 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		do_action( 'wpd_flowers_widget_before' );
@@ -132,7 +132,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
 		do_action( 'wpd_flowers_widget_after' );
 
-		echo esc_html( $args['after_widget'] );
+		echo $args['after_widget'];
 	}
 
 
@@ -291,10 +291,10 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		do_action( 'wpd_concentrates_widget_before' );
@@ -360,7 +360,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
 			do_action( 'wpd_concentrates_widget_after' );
 
-			echo esc_html( $args['after_widget'] );
+			echo $args['after_widget'];
 	}
 
 	/**
@@ -518,10 +518,10 @@ class wpdispensary_edibles_widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		do_action( 'wpd_edibles_widget_before' );
@@ -587,7 +587,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 
 		do_action( 'wpd_edibles_widget_after' );
 
-		echo esc_html( $args['after_widget'] );
+		echo $args['after_widget'];
 	}
 
 
@@ -747,10 +747,10 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		do_action( 'wpd_prerolls_widget_before' );
@@ -819,7 +819,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
 		do_action( 'wpd_prerolls_widget_after' );
 
-		echo esc_html( $args['after_widget'] );
+		echo $args['after_widget'];
 	}
 
 
@@ -981,10 +981,10 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		do_action( 'wpd_topicals_widget_before' );
@@ -1050,7 +1050,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
 		do_action( 'wpd_topicals_widget_after' );
 
-		echo esc_html( $args['after_widget'] );
+		echo $args['after_widget'];
 	}
 
 
@@ -1209,10 +1209,10 @@ class wpdispensary_growers_widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 
-		echo esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] );
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		do_action( 'wpd_growers_widget_before' );
@@ -1281,7 +1281,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 
 		do_action( 'wpd_growers_widget_after' );
 
-		echo esc_html( $args['after_widget'] );
+		echo $args['after_widget'];
 	}
 
 
