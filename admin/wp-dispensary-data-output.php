@@ -471,7 +471,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
-				$content .= '<table class="wpdispensary-table single"><tr><td class="wpdispensary-title" colspan="6">' . $post_type->labels->singular_name . ' Details</td></tr>';
+				$content .= '<table class="wpdispensary-table single details"><tr><td class="wpdispensary-title" colspan="6">' . $post_type->labels->singular_name . ' Details</td></tr>';
 			}
 
 			/**
