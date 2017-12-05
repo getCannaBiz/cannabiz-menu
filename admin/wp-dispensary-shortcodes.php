@@ -1229,6 +1229,8 @@ function wpdispensary_edibles_shortcode( $atts ) {
 
 		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
 			$thcmg = ' - <strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
+		} else {
+			$thcmg = '';
 		}
 		$thcsep = ' - ';
 		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
