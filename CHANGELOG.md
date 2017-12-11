@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.9.14
+* Added 'details' class name to Details table in `admin/wp-dispensary-data-output.php`
+* Added filter to change default shortcode images in `admin/wp-dispensary-shortcodes.php`
+* Fixed bug in widgets that caused html output in `admin/post-types/wp-dispenssary-widgets.php`
+* Fixed various display issues for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated Edibles Product Information metabox style in `admin/css/wp-dispensary-admin.css`
+
 ### 1.9.13
 * Added taxonomies to Edibles and Topicals in `admin/post-types/wp-dispensary-taxonomies.php`
 * Fixed Concentrates cost phrase output in `admin/wp-dispensary-shortcodes.php`
