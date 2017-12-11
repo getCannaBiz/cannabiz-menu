@@ -87,7 +87,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			array(
 				'post_type' => 'flowers',
 				'showposts' => $instance['limit'],
-				'orderby'	  => $randorder,
+				'orderby'   => $randorder,
 			)
 		);
 
