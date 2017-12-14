@@ -2418,10 +2418,25 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$order    = $orderby;
 			$ordernew = 'ASC';
 	}
+
+	if ( 'flowers' === $type ) {
+		$categorytype = 'flowers_category';
+	} elseif ( 'concentrates' === $type ) {
+		$categorytype = 'concentrates_category';
+	} elseif ( 'edibles' === $type ) {
+		$categorytype = 'edibles_category';
+	} elseif ( 'prerolls' === $type ) {
+		$categorytype = 'flowers_category';
+	} elseif ( 'topicals' === $type ) {
+		$categorytype = 'topicals_category';
+	} else {
+		$categorytype = 'flowers_category';
+	}
+
 	$args = apply_filters( 'wpd_carousel_shortcode_args', array(
 		'post_type'        => explode( ', ', $type ),
 		'posts_per_page'   => $posts,
-		'flowers_category' => $category,
+		$categorytype      => $category,
 		'tax_query'        => $tax_query,
 		'orderby'          => $order,
 		'order'            => $ordernew,
