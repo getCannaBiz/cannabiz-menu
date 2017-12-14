@@ -2926,7 +2926,10 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$cbninfo = '';
 		}
 
-		if ( null !== $thumbnail_url ) {
+		if ( null === $thumbnail_url && 'full' === $imagesize ) {
+			$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
+			$showimage = '<a href="' . get_permalink() . '"><img src="' . $wpd_default_image . '" alt="Menu item" /></a>';
+		} elseif ( null !== $thumbnail_url ) {
 			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="Menu item" /></a>';
 		} else {
 			$wpd_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
