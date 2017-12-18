@@ -1000,7 +1000,7 @@ function wpdispensary_add_clonedetails_metaboxes() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_clonedetails',
-			__( 'Grower Item Details', 'wp-dispensary' ),
+			__( 'Grow Details', 'wp-dispensary' ),
 			'wpdispensary_clonedetails',
 			$screen,
 			'normal',
