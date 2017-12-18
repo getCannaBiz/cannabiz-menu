@@ -1023,9 +1023,10 @@ function wpdispensary_clonedetails() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the origin data if its already been entered */
-	$origin = get_post_meta( $post->ID, '_origin', true );
-	$time   = get_post_meta( $post->ID, '_time', true );
-	$yield  = get_post_meta( $post->ID, '_yield', true );
+	$origin     = get_post_meta( $post->ID, '_origin', true );
+	$time       = get_post_meta( $post->ID, '_time', true );
+	$yield      = get_post_meta( $post->ID, '_yield', true );
+	$difficulty = get_post_meta( $post->ID, '_difficulty', true );
 
 	/** Echo out the fields */
 	echo '<div class="growerbox">';
@@ -1039,6 +1040,10 @@ function wpdispensary_clonedetails() {
 	echo '<div class="growerbox">';
 	echo '<p>Yield:</p>';
 	echo '<input type="text" name="_yield" value="' . esc_html( $yield ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="growerbox">';
+	echo '<p>Difficulty:</p>';
+	echo '<input type="text" name="_difficulty" value="' . esc_html( $difficulty ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -1066,9 +1071,10 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$clonedetails_meta['_origin'] = $_POST['_origin'];
-	$clonedetails_meta['_time']   = $_POST['_time'];
-	$clonedetails_meta['_yield']  = $_POST['_yield'];
+	$clonedetails_meta['_origin']      = $_POST['_origin'];
+	$clonedetails_meta['_time']        = $_POST['_time'];
+	$clonedetails_meta['_yield']       = $_POST['_yield'];
+	$clonedetails_meta['_difficulty']  = $_POST['_difficulty'];
 
 	/** Add values of $clonedetails_meta as custom fields */
 
