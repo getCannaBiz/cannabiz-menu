@@ -1,5 +1,14 @@
 # Changelog
 
+### 1.9.15
+* Added 'difficulty' to Grower Details metabox in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added 'difficulty' to Grower Details table in `admin/wp-dispensary-data-output.php`
+* Added 'difficulty' to Grower information endpoint in `admin/wp-dispensary-rest-api.php`
+* Added post_type check to determine category type in `admin/wp-dispensary-shortcodes.php`
+* Added 'full' image size check to each shortcode in `admin/wp-dispensary-shortcodes.php`
+* Fixed widget display issue for list format in `admin/post-types/wp-dispensary-wigets.php`
+* Updated filter to change default shortcode images in `admin/wp-dispensary-shortcodes.php`
+
 ### 1.9.14
 * Added 'details' class name to Details table in `admin/wp-dispensary-data-output.php`
 * Added filter to change default shortcode images in `admin/wp-dispensary-shortcodes.php`

@@ -3,7 +3,7 @@ Contributors: deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, pot, mmj, mmp, menu-management, medical-marijuana, wp-dispensary
 Requires at least: 3.0.1
 Tested up to: 4.9.1
-Stable tag: 1.9.14
+Stable tag: 1.9.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,15 @@ It has a long list of options built in for customization to fit your business br
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 1.9.15 =
+* Added 'difficulty' to Grower Details metabox in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added 'difficulty' to Grower Details table in `admin/wp-dispensary-data-output.php`
+* Added 'difficulty' to Grower information endpoint in `admin/wp-dispensary-rest-api.php`
+* Added post_type check to determine category type in `admin/wp-dispensary-shortcodes.php`
+* Added 'full' image size check to each shortcode in `admin/wp-dispensary-shortcodes.php`
+* Fixed widget display issue for list format in `admin/post-types/wp-dispensary-wigets.php`
+* Updated filter name to change default shortcode images in `admin/wp-dispensary-shortcodes.php`
 
 = 1.9.14 =
 * Added 'details' class name to Details table in `admin/wp-dispensary-data-output.php`
