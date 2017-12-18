@@ -363,6 +363,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdcloneyield = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_difficulty', true ) ) {
+			$wpdclonedifficulty = '<tr><td><span>Difficulty:</span></td><td>' . get_post_meta( get_the_id(), '_difficulty', true ) . '</td></tr>';
+		} else {
+			$wpdclonedifficulty = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
 			$prerollflower = get_post_meta( get_the_id(), '_selected_flowers', true );
 			$wpdpreroll    = '<tr><td><span>Flower:</span></td><td><a href=' . get_permalink( $prerollflower ) . '>' . get_the_title( $prerollflower ) . '</a></td></tr>';
@@ -495,7 +501,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( 'growers' === get_post_type() ) {
-				$content .= $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdcloneyield . $wpdvendors;
+				$content .= $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdcloneyield . $wpdclonedifficulty . $wpdvendors;
 			}
 
 			if ( 'edibles' === get_post_type() ) {
