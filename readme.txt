@@ -11,19 +11,19 @@ The complete marijuana dispensary menu solution for WordPress
 
 == Description ==
 
-#### The complete marijuana dispensary menu management plugin for WordPress.
+### The complete marijuana menu solution for WordPress
 
-Easily manage your dispensary or delivery service menu with the WP Dispensary plugin
+WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage product menus and let patients place orders directly through their own website.
 
 ### Dispensary Menu Features
 
-WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
+WP Dispensary was built with ease of use in mind, so the [setup process](https://www.wpdispensary.com/article/installing-wp-dispensary/) of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
-*if you enjoy using this plugin, please consider giving it a [5 star rating](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
+*If you this plugin provides value for your cannabiz, please consider leaving a [5 star review](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
 
 ### Easy to use shortcodes
 
-The WP Dispensary plugin comes with 7 built in shortcodes that allow you to display your menu with any theme, however you'd like.
+The WP Dispensary plugin comes with 7 built in shortcodes that allow you to display your menu with *any* WordPress theme.
 
 You can call your menu anywhere shortcodes are accepted in your theme.
 
