@@ -166,6 +166,14 @@
 	max-width: 100%;
 }
 
+/**
+ * Featured image in menu items list
+ */
+th#featured_thumb {
+    width: 40px;
+    text-align: center;
+}
+
 /* Widget styles
 -------------------------------------------------------------- */
 

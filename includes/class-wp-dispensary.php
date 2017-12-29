@@ -164,6 +164,13 @@ class WP_Dispensary {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-data-output.php';
 
+		/**
+		 * Adding code to admin screens
+		 *
+		 * @since    1.9.16
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-admin-screens.php';
+
 		$this->loader = new WP_Dispensary_Loader();
 
 	}
