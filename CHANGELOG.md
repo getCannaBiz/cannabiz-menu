@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.9.17
+* BUGFIX error on install/update with version 1.9.16 due to missing file in `includes/class-wp-dispensary.php`
+
 ### 1.9.16
 * Added thumbnail images to all menu type screens in the admin dashboard in `admin/wp-dispensary-admin-screens.php`
 * Added CSS for new thumbnail image column in menu type screens in the admin dashboard in `admin/css/wp-dispnsary-admin.css`

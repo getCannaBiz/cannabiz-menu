@@ -71,7 +71,7 @@ class WP_Dispensary {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-dispensary';
-		$this->version     = '1.9.16';
+		$this->version     = '1.9.17';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -163,13 +163,6 @@ class WP_Dispensary {
 		 * @since    1.6.0
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-data-output.php';
-
-		/**
-		 * Adding code to admin screens
-		 *
-		 * @since    1.9.16
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-admin-screens.php';
 
 		$this->loader = new WP_Dispensary_Loader();
 
