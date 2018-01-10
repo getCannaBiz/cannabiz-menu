@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.9.16
+* Added thumbnail images to all menu type screens in the admin dashboard in `admin/wp-dispensary-admin-screens.php`
+* Added CSS for new thumbnail image column in menu type screens in the admin dashboard in `admin/css/wp-dispnsary-admin.css`
+* Added functions for updating custom endpoints via the REST API in `admin/wp-dispensary-rest-api.php`
+
 ### 1.9.15
 * Added 'difficulty' to Grower Details metabox in `admin/post-types/wp-dispensary-metaboxes.php`
 * Added 'difficulty' to Grower Details table in `admin/wp-dispensary-data-output.php`

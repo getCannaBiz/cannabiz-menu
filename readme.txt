@@ -19,7 +19,7 @@ WP Dispensary is open source canna-tech for dispensary and delivery services who
 
 WP Dispensary was built with ease of use in mind, so the [setup process](https://www.wpdispensary.com/article/installing-wp-dispensary/) of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
-*If you this plugin provides value for your cannabiz, please consider leaving a [5 star review](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
+*If WP Dispensary provides value to your cannabiz, please consider leaving a [5 star review](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
 
 ### Easy to use shortcodes
 
