@@ -32,8 +32,9 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	/* Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'     => '100',
+			'title'     => 'Flowers',
 			'class'     => '',
+			'posts'     => '100',
 			'name'      => 'show',
 			'info'      => 'show',
 			'thc'       => 'show',
@@ -41,7 +42,6 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'cbd'       => 'show',
 			'cba'       => '',
 			'cbn'       => '',
-			'title'     => 'Flowers',
 			'category'  => '',
 			'aroma'     => '',
 			'flavor'    => '',
