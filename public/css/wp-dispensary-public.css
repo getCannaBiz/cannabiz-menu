@@ -97,6 +97,11 @@ ul.wpdispensary-list li:before {
   margin-right: 10px;
 }
 
+h2.wpd-title {
+	font-size: 48px;
+	text-align: center;
+}
+
 table.wpdispensary-table {
 	background: #FFF;
 	border-width: 1px;
