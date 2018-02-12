@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.9.18
+* Added new filters for post types in data output in `admin/wp-dispensary-data-output.php`
+* Added 'view all' link options to shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Fixed nonce errors by adding isset() checks to verify_nonce() lines in `admin/post-types/wp-dispensary-metaboxes.php` - Thx [lucprincen](https://github.com/lucprincen)!
+* Updated shortcode titles to center by default in `public/css/wp-dispensary-public.css`
+
 ### 1.9.17
 * BUGFIX error on install/update with version 1.9.16 due to missing file in `includes/class-wp-dispensary.php`
 
