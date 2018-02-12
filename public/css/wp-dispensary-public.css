@@ -102,6 +102,21 @@ h2.wpd-title {
 	text-align: center;
 }
 
+span.wp-dispensary-view-all {
+    color: #AAA;
+    font-size: 16px;
+    display: block;
+}
+
+span.wp-dispensary-view-all a,
+span.wp-dispensary-view-all a:visited {
+    color: #AAA;
+}
+
+span.wp-dispensary-view-all a:hover {
+	color: #454545;
+}
+
 table.wpdispensary-table {
 	background: #FFF;
 	border-width: 1px;
