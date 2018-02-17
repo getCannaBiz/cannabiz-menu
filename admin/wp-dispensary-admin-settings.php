@@ -30,7 +30,7 @@ class WPDispensarySettings {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'admin_menu', array( $this, 'wp_dispensary_add_plugin_page' ) );
+		add_action( 'admin_menu', array( $this, 'wp_dispensary_add_plugin_page' ), 10 );
 		add_action( 'admin_init', array( $this, 'wp_dispensary_page_init' ) );
 	}
 
@@ -52,14 +52,13 @@ class WPDispensarySettings {
 			3 /** Paramater: position */
 		);
 
+		add_submenu_page( 'wpd-settings', 'WP Dispensary Settings', 'Settings', 'manage_options', 'wpd-settings' );
 		add_submenu_page( 'wpd-settings', 'Flowers', 'Flowers', 'manage_options', 'edit.php?post_type=flowers', null );
 		add_submenu_page( 'wpd-settings', 'Concentrates', 'Concentrates', 'manage_options', 'edit.php?post_type=concentrates', null );
 		add_submenu_page( 'wpd-settings', 'Edibles', 'Edibles', 'manage_options', 'edit.php?post_type=edibles', null );
 		add_submenu_page( 'wpd-settings', 'Pre-rolls', 'Pre-rolls', 'manage_options', 'edit.php?post_type=prerolls', null );
 		add_submenu_page( 'wpd-settings', 'Topicals', 'Topicals', 'manage_options', 'edit.php?post_type=topicals', null );
 		add_submenu_page( 'wpd-settings', 'Growers', 'Growers', 'manage_options', 'edit.php?post_type=growers', null );
-		add_submenu_page( 'wpd-settings', 'WP Dispensary Settings', 'Settings', 'manage_options', 'wpd-settings' );
-		remove_submenu_page( 'wpd-settings', 'wpd-settings' );
 
 	}
 
