@@ -76,15 +76,16 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 
 
 	/**
-	 * Add Fields: Display Settings
-	 * checkbox
+	 * Add Field: Details table
+	 * Field:     checkbox
+	 * Section:   wpdas_display
 	 */
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
 			'id'   => 'wpd_hide_details',
 			'type' => 'checkbox',
-			'name' => __( 'Hide Details', 'wp-dispensary' ),
+			'name' => __( 'Details table', 'wp-dispensary' ),
 			'desc' => __( 'hide the details table from data output', 'wp-dispensary' ),
 		)
 	);
