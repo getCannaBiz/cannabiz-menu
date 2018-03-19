@@ -935,10 +935,10 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$showcbd = '';
 		}
 
-		if ( 'show' === $cbda ) {
-			$showcbda = $cbdainfo;
+		if ( 'show' === $cba ) {
+			$showcba = $cbainfo;
 		} else {
-			$showcbda = '';
+			$showcba = '';
 		}
 
 		if ( 'show' === $cbn ) {
