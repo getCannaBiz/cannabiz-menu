@@ -37,7 +37,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
 		parent::__construct(
 			'wpdispensary_flowers_widget',
-			__( 'Recent Flowers', 'wp-dispensary' ),
+			__( 'Dispensary Flowers', 'wp-dispensary' ),
 			array(
 				'description' => __( 'Your most recent Flowers', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
@@ -265,7 +265,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
 		parent::__construct(
 			'wpdispensary_concentrates_widget',
-			__( 'Recent Concentrates', 'wp-dispensary' ),
+			__( 'Dispensary Concentrates', 'wp-dispensary' ),
 			array(
 				'description' => __( 'Your most recent Concentrates', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
@@ -492,7 +492,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 
 		parent::__construct(
 			'wpdispensary_edibles_widget',
-			__( 'Recent Edibles', 'wp-dispensary' ),
+			__( 'Dispensary Edibles', 'wp-dispensary' ),
 			array(
 				'description' => __( 'Your most recent Edibles', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
@@ -721,7 +721,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
 		parent::__construct(
 			'wpdispensary_prerolls_widget',
-			__( 'Recent Pre-rolls', 'wp-dispensary' ),
+			__( 'Dispensary Pre-rolls', 'wp-dispensary' ),
 			array(
 				'description' => __( 'Your most recent Pre-rolls', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
@@ -955,7 +955,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
 		parent::__construct(
 			'wpdispensary_topicals_widget',
-			__( 'Recent Topicals', 'wp-dispensary' ),
+			__( 'Dispensary Topicals', 'wp-dispensary' ),
 			array(
 				'description' => __( 'Your most recent Topicals', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
@@ -1183,7 +1183,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 
 		parent::__construct(
 			'wpdispensary_growers_widget',
-			__( 'Recent Growers', 'wp-dispensary' ),
+			__( 'Dispensary Growers', 'wp-dispensary' ),
 			array(
 				'description' => __( 'Your most recent Growers', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
