@@ -179,12 +179,12 @@ th#featured_thumb {
 
 div.widget[id*=_wpdispensary_] .widget-top,
 div.widget[id*=_wpdispensary_] .widget-top:hover {
-	border-color: #76BD1D;
+	border-color: #76bd43;
 }
 
 div.widget[id*=_wpdispensary_] .widget-title,
 div.widget[id*=_wpdispensary_] .widget-title h3 {
-	background: #76BD1D;
+	background: #76bd43;
 	color: #FFF;
 }
 
