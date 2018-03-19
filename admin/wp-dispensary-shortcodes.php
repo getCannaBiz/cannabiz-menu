@@ -59,6 +59,14 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	) );
 
 	/**
+	 * Defining variables
+	 */
+	$order    = '';
+	$ordernew = '';
+	$cba      = '';
+	$showcba  = '';
+
+	/**
 	 * Code to create shortcode for Flowers
 	 */
 	$tax_query = array(
@@ -549,6 +557,14 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 	) );
 
 	/**
+	 * Defining variables
+	 */
+	$order    = '';
+	$ordernew = '';
+	$cba      = '';
+	$showcba  = '';
+
+	/**
 	 * Code to create shortcode for Concentrates
 	 */
 	$tax_query = array(
@@ -1008,6 +1024,12 @@ function wpdispensary_edibles_shortcode( $atts ) {
 	) );
 
 	/**
+	 * Defining variables
+	 */
+	$order    = '';
+	$ordernew = '';
+
+	/**
 	 * Code to create shortcode for Edibles
 	 */
 	$tax_query = array(
@@ -1364,6 +1386,12 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	) );
 
 	/**
+	 * Defining variables
+	 */
+	$order    = '';
+	$ordernew = '';
+
+	/**
 	 * Code to create shortcode for Pre-rolls
 	 */
 	$tax_query = array(
@@ -1702,6 +1730,12 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$atts,
 		'wpd_topicals'
 	) );
+
+	/**
+	 * Defining variables
+	 */
+	$order    = '';
+	$ordernew = '';
 
 	/**
 	 * Code to create shortcode for Topicals
@@ -2063,6 +2097,12 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$atts,
 		'wpd_growers'
 	) );
+
+	/**
+	 * Defining variables
+	 */
+	$order    = '';
+	$ordernew = '';
 
 	/**
 	 * Code to create shortcode for Growers
