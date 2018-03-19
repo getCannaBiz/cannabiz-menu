@@ -405,7 +405,6 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 			'featuredimage'        => '',
 			'imagesize'            => 'wpdispensary-widget',
 			'concentratename'      => '',
-			'concentratercategory' => '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
