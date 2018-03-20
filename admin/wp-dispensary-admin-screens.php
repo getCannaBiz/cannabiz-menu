@@ -41,7 +41,7 @@ function wp_dispensary_columns_data( $column, $post_id ) {
 if( isset( $_GET['post_type'] ) ) {
     $post_type = $_GET['post_type'];
 
-    if( in_array( $post_type, array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) {
+    if( in_array( $post_type, apply_filters( 'wpd_admin_screen_thumbnails', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
         add_filter( 'manage_posts_columns' , 'wp_dispensary_columns' );
         add_action( 'manage_posts_custom_column' , 'wp_dispensary_columns_data', 10, 2 );
         add_filter( 'manage_pages_columns' , 'wp_dispensary_columns' );
