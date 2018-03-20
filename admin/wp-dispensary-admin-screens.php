@@ -17,7 +17,7 @@ $title = 'cb';
 foreach( $columns as $key => $value ) {
 	$wpd_columns[$key] = $value;
 	if ( $key==$title ) {
-		$wpd_columns['featured_thumb'] = '<span class="dashicons dashicons-format-image"></span>';
+		$wpd_columns['featured_thumb'] = '<span class="dashicons dashicons-format-image"></span><span class="wpd-admin-screen-featured-image-title">Featured image</span>';
 	}
 }
 
