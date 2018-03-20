@@ -1,7 +1,5 @@
 ![WP Dispensary logo](https://www.wpdispensary.com/wp-content/uploads/2018/02/wpd-logo-transparent.png)
 
-# WP Dispensary
-
 #### The complete marijuana dispensary menu management plugin for WordPress.
 
 **please note that the master branch is under active development.**
