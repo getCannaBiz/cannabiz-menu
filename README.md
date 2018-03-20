@@ -1,4 +1,4 @@
-![WP Dispensary logo](http://www.wpdispensary.com/wp-content/uploads/2016/05/wpdispensary-logo-updated.png)
+![WP Dispensary logo](https://www.wpdispensary.com/wp-content/uploads/2018/02/wpd-logo-transparent.png)
 
 # WP Dispensary
 
