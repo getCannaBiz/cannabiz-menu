@@ -174,6 +174,10 @@ th#featured_thumb {
 	text-align: center;
 }
 
+#featured_thumb span.wpd-admin-screen-featured-image-title {
+	display: none;
+}
+
 /* Widget styles
 -------------------------------------------------------------- */
 
