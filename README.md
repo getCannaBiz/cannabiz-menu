@@ -4,7 +4,7 @@
 
 **Please note that the master branch is under active development.**
 
-If you're looking for a stable version to use with your website, you can download [WP Dispensary](https://www.wordpress.org/plugins/wp-dispensary) from the official WordPress repository.
+Looking for a stable version to use with your website? Download [WP Dispensary](https://www.wordpress.org/plugins/wp-dispensary) from the WordPress plugin directory.
 
 ## Dispensary Menu Features
 
