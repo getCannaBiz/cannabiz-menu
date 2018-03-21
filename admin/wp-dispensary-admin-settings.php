@@ -186,7 +186,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 
     // Field: Text.
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'      => 'text',
 			'type'    => 'text',
@@ -196,7 +196,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'                => 'text_no',
 			'type'              => 'number',
@@ -207,7 +207,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'      => 'password',
 			'type'    => 'password',
@@ -216,7 +216,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'   => 'textarea',
 			'type' => 'textarea',
@@ -225,7 +225,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'   => 'checkbox',
 			'type' => 'checkbox',
@@ -234,7 +234,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'   => 'radio',
 			'type' => 'radio',
@@ -247,7 +247,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'   => 'multicheck',
 			'type' => 'multicheck',
@@ -260,7 +260,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_display',
+		'wpdas_other',
 		array(
 			'id'   => 'select',
 			'type' => 'select',
