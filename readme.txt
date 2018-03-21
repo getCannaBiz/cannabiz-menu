@@ -1,6 +1,6 @@
 === WP Dispensary Menu Management ===
 Contributors: deviodigital
-Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, pot, mmj, mmp, menu-management, medical-marijuana, wp-dispensary
+Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.4
 Stable tag: 1.9.18
