@@ -76,7 +76,101 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 
 
 	/**
-	 * Add Field: Details table
+	 * Add Field: Pricing table placement
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'      => 'wpd_pricing_table_placement',
+			'type'    => 'select',
+			'name'    => __( 'Pricing table', 'wp-dispensary' ),
+			'desc'    => __( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
+			'options' => array(
+				'above'  => 'Above Content',
+				'below'  => 'Below Content',
+			)
+		)
+	);
+
+	/**
+	 * Add Field: Currency code
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'   => 'wpd_pricing_currency_code',
+			'type' => 'select',
+			'name' => __( 'Currency code', 'wp-dispensary' ),
+			'desc' => __( 'A Dropdown description', 'wp-dispensary' ),
+			'options' => array(
+				'AUD' => '(AUD) Australian Dollar',
+				'BRL' => '(BRL) Brazilian Real',
+				'CAD' => '(CAD) Canadian Dollar',
+				'CZK' => '(CZK) Czech Koruna',
+				'DKK' => '(DKK) Danish Krone',
+				'EUR' => '(EUR) Euro',
+				'HKD' => '(HKD) Hong Kong Dollar',
+				'HUF' => '(HUF) Hungarian Forint',
+				'ILS' => '(ILS) Israeli New Sheqel',
+				'JPY' => '(JPY) Japanese Yen',
+				'MYR' => '(MYR) Malaysian Ringgit',
+				'MYR' => '(MXN) Mexican Peso',
+				'MXN' => '(NOK) Norwegian Krone',
+				'NOK' => '(NZD) New Zealand Dollar',
+				'NZD' => '(PHP) Philippine Peso',
+				'PHP' => '(PLN) Polish Zloty',
+				'PLN' => '(GBP) Pound Sterling',
+				'GBP' => '(SGD) Singapore Dollar',
+				'SGD' => '(SEK) Swedish Krona',
+				'CHF' => '(CHF) Swiss Franc',
+				'TWD' => '(TWD) Taiwan New Dollar',
+				'THB' => '(THB) Thai Baht',
+				'TRY' => '(TRY) Turkish Lira',
+				'USD' => '(USD) U.S. Dollar',
+			)
+		)
+	);
+
+	/**
+	 * Add Field: Hide pricing table
+	 * Field:     checkbox
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'   => 'wpd_hide_pricing',
+			'type' => 'checkbox',
+			'name' => __( '', 'wp-dispensary' ),
+			'desc' => __( 'hide the pricing table from data output?', 'wp-dispensary' ),
+		)
+	);
+
+	/**
+	 * Add Field: Details table placement
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'      => 'wpd_details_table_placement',
+			'type'    => 'select',
+			'name'    => __( 'Details table', 'wp-dispensary' ),
+			'desc'    => __( 'Where should the details display on single menu items?', 'wp-dispensary' ),
+			'options' => array(
+				'above'  => 'Above Content',
+				'below'  => 'Below Content',
+			)
+		)
+	);
+
+	/**
+	 * Add Field: Hide details table
 	 * Field:     checkbox
 	 * Section:   wpdas_display
 	 */
@@ -85,12 +179,10 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_hide_details',
 			'type' => 'checkbox',
-			'name' => __( 'Details table', 'wp-dispensary' ),
-			'desc' => __( 'hide the details table from data output', 'wp-dispensary' ),
+			'name' => __( '', 'wp-dispensary' ),
+			'desc' => __( 'hide the details table from data output?', 'wp-dispensary' ),
 		)
 	);
-
-
 
     // Field: Text.
 	$wpdas_obj->add_field(
