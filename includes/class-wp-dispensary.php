@@ -125,6 +125,8 @@ class WP_Dispensary {
 
 		/**
 		 * The functions responsible for building the custom post types
+		 *
+		 * @since    1.0.0
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-taxonomies.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-metaboxes.php';
