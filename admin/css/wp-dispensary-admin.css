@@ -133,6 +133,14 @@ th#featured_thumb {
 	display: none;
 }
 
+/**
+ * Settings page
+ */
+.wpd-settings-wrap img {	
+	width: 240px;	
+	max-width: 420px;	
+}
+
 /* Widget styles
 -------------------------------------------------------------- */
 
