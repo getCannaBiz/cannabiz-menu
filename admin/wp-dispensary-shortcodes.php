@@ -1648,6 +1648,14 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		/**
+		 * Price output - if no prices have been added
+		 */
+
+		if ( '' === $priceGram && '' === $priceEighth && '' === $priceQuarter && '' === $priceHalfOunce && '' === $priceOunce ) {
+			$pricing = ' ';
+		}
+
+		/**
 		 * Price output - low amount
 		 */
 
