@@ -224,8 +224,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'name' => __( 'Price phrase', 'wp-dispensary' ),
 			'desc' => __( 'Choose the phrase you would like used in the table title', 'wp-dispensary' ),
 			'options' => array(
-				'Price'    => 'Price',
-				'Donation' => 'Donation',
+				'Price'    => 'Prices',
+				'Donation' => 'Donations',
 			)
 		)
 	);
