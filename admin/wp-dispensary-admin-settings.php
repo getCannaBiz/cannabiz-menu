@@ -171,6 +171,25 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	);
 
 	/**
+	 * Add Field: Pricing phrase
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'   => 'wpd_pricing_phrase',
+			'type' => 'select',
+			'name' => __( 'Title', 'wp-dispensary' ),
+			'desc' => __( 'Choose the title you would like used', 'wp-dispensary' ),
+			'options' => array(
+				'Price'    => 'Prices',
+				'Donation' => 'Donations',
+				'Custom'   => 'Custom',
+			)
+		)
+	);
+
 	 * Add Field: Currency code
 	 * Field:     select
 	 * Section:   wpdas_display
@@ -207,25 +226,6 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'THB' => '(THB) Thai Baht',
 				'TRY' => '(TRY) Turkish Lira',
 				'USD' => '(USD) U.S. Dollar',
-			)
-		)
-	);
-
-	/**
-	 * Add Field: Pricing phrase
-	 * Field:     select
-	 * Section:   wpdas_display
-	 */
-	$wpdas_obj->add_field(
-		'wpdas_display',
-		array(
-			'id'   => 'wpd_pricing_phrase',
-			'type' => 'select',
-			'name' => __( 'Price phrase', 'wp-dispensary' ),
-			'desc' => __( 'Choose the phrase you would like used in the table title', 'wp-dispensary' ),
-			'options' => array(
-				'Price'    => 'Prices',
-				'Donation' => 'Donations',
 			)
 		)
 	);
