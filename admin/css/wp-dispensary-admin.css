@@ -137,8 +137,41 @@ th#featured_thumb {
  * Settings page
  */
 .wpd-settings-wrap img {	
-	width: 240px;	
-	max-width: 420px;	
+	width: 280px;	
+	max-width: 280px;	
+}
+
+.wpd-settings-separator {
+	background: #ccc;
+	border: 0;
+	color: #ccc;
+	height: 1px;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	max-width: 100%;
+}
+
+.metabox-holder .group form h2:first-of-type {
+	display: none;
+}
+
+.metabox-holder .group .form-table h1 {
+	font-weight: 700;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 0;
+}
+
+.wrap.wpd-settings-wrap h1.settings-logo {
+	position: relative;
+}
+
+.wrap.wpd-settings-wrap span.wpd-settings-version {
+	font-size: 50%;
+	margin-left: 10px;
+	position: absolute;
+	top: 24px;
 }
 
 /* Widget styles
