@@ -425,8 +425,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$newcontent = $wpd_details_above . $wpd_pricing_above . $original . $wpd_details_below . $wpd_pricing_below;
 
 			return $newcontent;
+		} else {
+			return $content;
 		}
+
 	}
 	add_filter( 'the_content', 'wpd_data_output_content' );
 
-}
+}
