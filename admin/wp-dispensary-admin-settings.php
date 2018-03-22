@@ -200,7 +200,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'   => 'wpd_pricing_currency_code',
 			'type' => 'select',
 			'name' => __( 'Currency', 'wp-dispensary' ),
-			'desc' => __( 'A Dropdown description', 'wp-dispensary' ),
+			'desc' => __( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
 			'options' => array(
 				'AUD' => '(AUD) Australian Dollar',
 				'BRL' => '(BRL) Brazilian Real',
