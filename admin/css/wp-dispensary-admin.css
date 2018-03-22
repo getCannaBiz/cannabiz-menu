@@ -157,10 +157,19 @@ th#featured_thumb {
 }
 
 .metabox-holder .group .form-table h1 {
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 18px;
-	text-transform: uppercase;
 	padding: 0;
+}
+
+.metabox-holder .group .form-table h1:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 24px;
+    height: 3px;
+    background: #ccc;
+    margin-top: 0px;
 }
 
 .wrap.wpd-settings-wrap h1.settings-logo {
@@ -168,6 +177,7 @@ th#featured_thumb {
 }
 
 .wrap.wpd-settings-wrap span.wpd-settings-version {
+	color: #AAA;
 	font-size: 50%;
 	margin-left: 10px;
 	position: absolute;
