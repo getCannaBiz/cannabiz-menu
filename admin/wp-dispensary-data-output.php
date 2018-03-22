@@ -30,6 +30,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 */
 		$wpd_settings = get_option( 'wpdas_display' );
 
+		// Hide details.
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
