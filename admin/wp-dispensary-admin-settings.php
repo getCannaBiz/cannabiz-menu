@@ -91,6 +91,25 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	);
 
 	/**
+	 * Add Field: Details phrase
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'   => 'wpd_details_phrase',
+			'type' => 'select',
+			'name' => __( 'Details phrase', 'wp-dispensary' ),
+			'desc' => __( 'Choose the phrase you would like used in the table title', 'wp-dispensary' ),
+			'options' => array(
+				'Details'     => 'Details',
+				'Information' => 'Information',
+			)
+		)
+	);
+
+	/**
 	 * Add Field: Details table placement
 	 * Field:     select
 	 * Section:   wpdas_display
