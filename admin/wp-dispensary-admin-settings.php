@@ -75,18 +75,33 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
     );
 
 
+
 	/**
-	 * Add Field: Pricing table placement
+	 * Add Field: Display a title to help separate fields
+	 * Field:     title
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'      => 'wpd_settings_details_table_title',
+			'type'    => 'title',
+			'name'    => '<h1>Details Table</h1>',
+		)
+	);
+
+	/**
+	 * Add Field: Details table placement
 	 * Field:     select
 	 * Section:   wpdas_display
 	 */
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'      => 'wpd_pricing_table_placement',
+			'id'      => 'wpd_details_table_placement',
 			'type'    => 'select',
-			'name'    => __( 'Pricing table', 'wp-dispensary' ),
-			'desc'    => __( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
+			'name'    => __( 'Details table', 'wp-dispensary' ),
+			'desc'    => __( 'Where should the details display on single menu items?', 'wp-dispensary' ),
 			'options' => array(
 				'above'  => 'Above Content',
 				'below'  => 'Below Content',
@@ -95,21 +110,44 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	);
 
 	/**
-	 * Add Field: Pricing phrase
-	 * Field:     select
+	 * Add Field: Hide details table
+	 * Field:     checkbox
 	 * Section:   wpdas_display
 	 */
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'   => 'wpd_pricing_phrase',
-			'type' => 'select',
-			'name' => __( 'Pricing phrase', 'wp-dispensary' ),
-			'desc' => __( 'Choose the phrase you would like used.', 'wp-dispensary' ),
-			'options' => array(
-				'Price'    => 'Price',
-				'Donation' => 'Donation',
-			)
+			'id'   => 'wpd_hide_details',
+			'type' => 'checkbox',
+			'name' => __( 'Hide', 'wp-dispensary' ),
+			'desc' => __( 'Remove the details table from data output?', 'wp-dispensary' ),
+		)
+	);
+
+	/**
+	 * Add Field: Separator between fields
+	 * Field:     separator
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'      => 'wpd_settings_separator',
+			'type'    => 'separator',
+		)
+	);
+
+	/**
+	 * Add Field: Display a title to help separate fields
+	 * Field:     title
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'      => 'wpd_settings_pricing_table_title',
+			'type'    => 'title',
+			'name'    => '<h1>Price Table</h1>',
 		)
 	);
 
@@ -155,6 +193,44 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	);
 
 	/**
+	 * Add Field: Pricing phrase
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'   => 'wpd_pricing_phrase',
+			'type' => 'select',
+			'name' => __( 'Price phrase', 'wp-dispensary' ),
+			'desc' => __( 'Choose the phrase you would like used in the table title', 'wp-dispensary' ),
+			'options' => array(
+				'Price'    => 'Price',
+				'Donation' => 'Donation',
+			)
+		)
+	);
+
+	/**
+	 * Add Field: Pricing table placement
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'      => 'wpd_pricing_table_placement',
+			'type'    => 'select',
+			'name'    => __( 'Placement', 'wp-dispensary' ),
+			'desc'    => __( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
+			'options' => array(
+				'above'  => 'Above Content',
+				'below'  => 'Below Content',
+			)
+		)
+	);
+
+	/**
 	 * Add Field: Hide pricing table
 	 * Field:     checkbox
 	 * Section:   wpdas_display
@@ -164,53 +240,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_hide_pricing',
 			'type' => 'checkbox',
-			'name' => __( '', 'wp-dispensary' ),
-			'desc' => __( 'hide the pricing table from data output?', 'wp-dispensary' ),
-		)
-	);
-
-	$wpdas_obj->add_field(
-		'wpdas_display',
-		array(
-			'id'      => 'wpd_settings_separator',
-			'type'    => 'separator',
-			'name'    => __( '<hr />', 'wp-dispensary' ),
-			'desc'    => __( '<hr />', 'wp-dispensary' ),
-			'default' => '',
-		)
-	);
-
-	/**
-	 * Add Field: Details table placement
-	 * Field:     select
-	 * Section:   wpdas_display
-	 */
-	$wpdas_obj->add_field(
-		'wpdas_display',
-		array(
-			'id'      => 'wpd_details_table_placement',
-			'type'    => 'select',
-			'name'    => __( 'Details table', 'wp-dispensary' ),
-			'desc'    => __( 'Where should the details display on single menu items?', 'wp-dispensary' ),
-			'options' => array(
-				'above'  => 'Above Content',
-				'below'  => 'Below Content',
-			)
-		)
-	);
-
-	/**
-	 * Add Field: Hide details table
-	 * Field:     checkbox
-	 * Section:   wpdas_display
-	 */
-	$wpdas_obj->add_field(
-		'wpdas_display',
-		array(
-			'id'   => 'wpd_hide_details',
-			'type' => 'checkbox',
-			'name' => __( '', 'wp-dispensary' ),
-			'desc' => __( 'hide the details table from data output?', 'wp-dispensary' ),
+			'name' => __( 'Hide', 'wp-dispensary' ),
+			'desc' => __( 'Remove the price table from data output', 'wp-dispensary' ),
 		)
 	);
 
