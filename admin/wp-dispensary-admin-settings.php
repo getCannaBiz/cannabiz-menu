@@ -190,6 +190,18 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'          => 'wpd_pricing_phrase_other',
+			'type'        => 'text',
+			'name'        => __( '', 'wp-dispensary' ),
+			'desc'        => __( 'Add custom title text', 'wp-dispensary' ),
+			'placeholder' => __( '', 'wp-dispensary' ),
+		)
+	);
+
+	/**
 	 * Add Field: Currency code
 	 * Field:     select
 	 * Section:   wpdas_display
