@@ -95,6 +95,25 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	);
 
 	/**
+	 * Add Field: Pricing phrase
+	 * Field:     select
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'   => 'wpd_pricing_phrase',
+			'type' => 'select',
+			'name' => __( 'Pricing phrase', 'wp-dispensary' ),
+			'desc' => __( 'Choose the phrase you would like used.', 'wp-dispensary' ),
+			'options' => array(
+				'Pricing'  => 'Pricing',
+				'Donation' => 'Donation',
+			)
+		)
+	);
+
+	/**
 	 * Add Field: Currency code
 	 * Field:     select
 	 * Section:   wpdas_display
