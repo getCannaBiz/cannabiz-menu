@@ -25,7 +25,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 	 */
 	function wpd_data_output_content( $content ) {
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' );
+		/**
+		 * Access all settings
+		 */
+		$wpd_settings = get_option( 'wpdas_display' );
+
 		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
 			$wpd_hide_details = '';
 		} else {
@@ -42,7 +46,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		if ( ! isset( $wpd_settings['wpd_content_placement'] ) ) {
 			$wpd_content_placement = '';
 		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
+			$wpd_content_placement = $wpd_settings['wpd_content_placement'];
 		}
 
 		if ( null === $wp_dispensary_options['wpd_cost_phrase'] || 'Price' === $wp_dispensary_options['wpd_cost_phrase'] ) {
