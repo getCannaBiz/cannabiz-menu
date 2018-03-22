@@ -105,7 +105,24 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'options' => array(
 				'Details'     => 'Details',
 				'Information' => 'Information',
+				'Custom'      => 'Custom',
 			)
+		)
+	);
+
+	/**
+	 * Add Field: Custom title
+	 * Field:     text
+	 * Section:   wpdas_display
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'          => 'wpd_details_phrase_other',
+			'type'        => 'text',
+			'name'        => __( '', 'wp-dispensary' ),
+			'desc'        => __( 'Add a custom title', 'wp-dispensary' ),
+			'placeholder' => __( '', 'wp-dispensary' ),
 		)
 	);
 
@@ -190,13 +207,18 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
+	/**
+	 * Add Field: Custom title
+	 * Field:     text
+	 * Section:   wpdas_display
+	 */
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
 			'id'          => 'wpd_pricing_phrase_other',
 			'type'        => 'text',
 			'name'        => __( '', 'wp-dispensary' ),
-			'desc'        => __( 'Add custom title text', 'wp-dispensary' ),
+			'desc'        => __( 'Add a custom title', 'wp-dispensary' ),
 			'placeholder' => __( '', 'wp-dispensary' ),
 		)
 	);
