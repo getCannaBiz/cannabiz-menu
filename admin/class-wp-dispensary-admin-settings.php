@@ -399,6 +399,8 @@ class WPD_ADMIN_SETTINGS {
 				$options           = isset( $field['options'] ) ? $field['options'] : '';
 				// Standard default value.
 				$default           = isset( $field['default'] ) ? $field['default'] : '';
+				// Standard default placeholder.
+				$placeholder       = isset( $field['placeholder'] ) ? $field['placeholder'] : '';
 				// Sanitize Callback.
 				$sanitize_callback = isset( $field['sanitize_callback'] ) ? $field['sanitize_callback'] : '';
 	            $args = array(
@@ -411,6 +413,7 @@ class WPD_ADMIN_SETTINGS {
 					'size'              => $size,
 					'options'           => $options,
 					'std'               => $default,
+					'placeholder'       => $placeholder,
 					'sanitize_callback' => $sanitize_callback
 	            );
 	            /**
@@ -535,10 +538,10 @@ class WPD_ADMIN_SETTINGS {
 	 * @param array   $args settings field args
 	 */
 	function callback_text( $args ) {
-	    $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+	    $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'], $args['placeholder'] ) );
 	    $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
 	    $type  = isset( $args['type'] ) ? $args['type'] : 'text';
-	    $html  = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"/>', $type, $size, $args['section'], $args['id'], $value );
+	    $html  = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s" placeholder="%6$s"/>', $type, $size, $args['section'], $args['id'], $value, $args['placeholder'] );
 	    $html .= $this->get_field_description( $args );
 	    echo $html;
 	}
