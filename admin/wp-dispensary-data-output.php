@@ -49,7 +49,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpd_content_placement = $wpd_settings['wpd_content_placement'];
 		}
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] || 'Price' === $wp_dispensary_options['wpd_cost_phrase'] ) {
+		if ( null === $wpd_settings['wpd_cost_phrase'] || 'Price' === $wpd_settings['wpd_cost_phrase'] ) {
 			$wpd_cost_phrase = 'Pricing';
 		} else {
 			$wpd_cost_phrase = 'Donation';
@@ -403,7 +403,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$content         .= $wpdpricingbefore;
 			}
 
-			if ( null === $wp_dispensary_options['wpd_cost_phrase'] || 'Price' === $wp_dispensary_options['wpd_cost_phrase'] ) {
+			if ( null === $wpd_settings['wpd_cost_phrase'] || 'Price' === $wpd_settings['wpd_cost_phrase'] ) {
 				$wpd_cost = $post_type->labels->singular_name . ' Pricing';
 			} else {
 				$wpd_cost = 'Donation Amount';
