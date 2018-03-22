@@ -107,7 +107,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'name' => __( 'Pricing phrase', 'wp-dispensary' ),
 			'desc' => __( 'Choose the phrase you would like used.', 'wp-dispensary' ),
 			'options' => array(
-				'Pricing'  => 'Pricing',
+				'Price'    => 'Price',
 				'Donation' => 'Donation',
 			)
 		)
