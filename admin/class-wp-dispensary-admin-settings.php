@@ -502,8 +502,20 @@ class WPD_ADMIN_SETTINGS {
 	    echo $html;
 	}
 
+	/**
+	 * Displays a title field for a settings field
+	 *
+	 * @param array   $args settings field args
+	 */
+	function callback_title( $args ) {
+	    $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+		if( '' !== $args['name'] ) {
+		$name  = $args['name'];
+		} else {};
+	    $type  = isset( $args['type'] ) ? $args['type'] : 'title';
 	    echo $html;
 	}
+
 	/**
 	 * Displays a text field for a settings field
 	 *
