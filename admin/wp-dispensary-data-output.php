@@ -242,7 +242,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_title_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-				$wpd_details_table_top .= '<table class="wpdispensary-table single details"><tr><td class="wpdispensary-title" colspan="6">' . $post_type->labels->singular_name . '&nbsp;' . $wpd_details_phrase . '</td></tr>';
+				$wpd_details_table_top .= '<table class="wpdispensary-table single details"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_details_phrase . '</td></tr>';
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
@@ -348,9 +348,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( null === $wpd_settings['wpd_pricing_phrase'] || 'Price' === $wpd_settings['wpd_pricing_phrase'] ) {
-				$wpd_price_phrase = $post_type->labels->singular_name . ' Prices';
+				$wpd_price_phrase = 'Prices';
 			} else {
-				$wpd_price_phrase = 'Donation Amounts';
+				$wpd_price_phrase = 'Donations';
 			}
 
 
@@ -438,4 +438,5 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 	}
 	add_filter( 'the_content', 'wpd_data_output_content' );
 
-}
+}
+
