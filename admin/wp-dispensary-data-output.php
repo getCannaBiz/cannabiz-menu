@@ -59,7 +59,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		global $post;
 
 		/**
-		 * Setting up WP Dispensary menu item data
+		 * Adding the WP Dispensary menu item data
 		 */
 		if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
 			$wpdaroma = '<tr><td><span>Aromas:</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
