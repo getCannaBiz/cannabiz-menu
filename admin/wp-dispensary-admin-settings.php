@@ -129,7 +129,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	);
 
 	/**
-	 * Add Field: Hide details table
+	 * Add Field: Display details table
 	 * Field:     checkbox
 	 * Section:   wpdas_display
 	 */
