@@ -184,6 +184,10 @@ th#featured_thumb {
 	top: 24px;
 }
 
+.metabox-holder .group form select {
+    min-width: 25em;
+}
+
 /* Widget styles
 -------------------------------------------------------------- */
 
