@@ -150,6 +150,17 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
+	$wpdas_obj->add_field(
+		'wpdas_display',
+		array(
+			'id'      => 'wpd_settings_separator',
+			'type'    => 'separator',
+			'name'    => __( '<hr />', 'wp-dispensary' ),
+			'desc'    => __( '<hr />', 'wp-dispensary' ),
+			'default' => '',
+		)
+	);
+
 	/**
 	 * Add Field: Details table placement
 	 * Field:     select

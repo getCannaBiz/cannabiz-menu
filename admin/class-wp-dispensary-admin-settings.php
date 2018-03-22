@@ -488,6 +488,21 @@ class WPD_ADMIN_SETTINGS {
 	    }
 	    return $desc;
 	}
+
+	/**
+	 * Displays a separator field for a settings field
+	 *
+	 * Can use <hr /> for the name, and it displays a clean line to separate sections on each page.
+	 *
+	 * @param array   $args settings field args
+	 */
+	function callback_separator( $args ) {
+	    $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+	    $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
+	    $type  = isset( $args['type'] ) ? $args['type'] : 'separator';
+	    $html .= $this->get_field_description( $args );
+	    echo $html;
+	}
 	/**
 	 * Displays a text field for a settings field
 	 *
