@@ -45,236 +45,6 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 		global $post;
 
-		/**
-		 * Adding the WP Dispensary menu item data
-		 */
-		if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
-			$wpdaroma = '<tr><td><span>Aromas:</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdaroma = '';
-		}
-
-		if ( get_the_term_list( $post->ID, 'flavor', true ) ) {
-			$wpdflavor = '<tr><td><span>Flavors:</span></td><td>' . get_the_term_list( $post->ID, 'flavor', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdflavor = '';
-		}
-
-		if ( get_the_term_list( $post->ID, 'effect', true ) ) {
-			$wpdeffect = '<tr><td><span>Effects:</span></td><td>' . get_the_term_list( $post->ID, 'effect', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdeffect = '';
-		}
-
-		if ( get_the_term_list( $post->ID, 'symptom', true ) ) {
-			$wpdsymptom = '<tr><td><span>Symptoms:</span></td><td>' . get_the_term_list( $post->ID, 'symptom', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdsymptom = '';
-		}
-
-		if ( get_the_term_list( $post->ID, 'condition', true ) ) {
-			$wpdcondition = '<tr><td><span>Conditions:</span></td><td>' . get_the_term_list( $post->ID, 'condition', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdcondition = '';
-		}
-
-		if ( get_the_term_list( $post->ID, 'ingredients', true ) ) {
-			$wpdingredients = '<tr><td><span>Ingredients:</span></td><td>' . get_the_term_list( $post->ID, 'ingredients', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdingredients = '';
-		}
-
-		if ( get_the_term_list( $post->ID, 'vendor', true ) ) {
-			$wpdvendors = '<tr><td><span>Vendor:</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdvendors = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
-			$wpdthc = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thc', true ) . '%</td></tr>';
-		} else {
-			$wpdthc = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
-			$wpdthca = '<tr><td><span>THCA:</span></td><td>' . get_post_meta( get_the_id(), '_thca', true ) . '%</td></tr>';
-		} else {
-			$wpdthca = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
-			$wpdcbd = '<tr><td><span>CBD:</span></td><td>' . get_post_meta( get_the_id(), '_cbd', true ) . '%</td></tr>';
-		} else {
-			$wpdcbd = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
-			$wpdcba = '<tr><td><span>CBA:</span></td><td>' . get_post_meta( get_the_id(), '_cba', true ) . '%</td></tr>';
-		} else {
-			$wpdcba = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
-			$wpdcbn = '<tr><td><span>CBN:</span></td><td>' . get_post_meta( get_the_id(), '_cbn', true ) . '%</td></tr>';
-		} else {
-			$wpdcbn = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
-			$wpdthcmg = '<tr><td><span>THC mg per serving:</span></td><td>' . get_post_meta( get_the_id(), '_thcmg', true ) . '</td></tr>';
-		} else {
-			$wpdthcmg = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbdmg', true ) ) {
-			$wpdcbdmg = '<tr><td><span>CBD mg per serving:</span></td><td>' . get_post_meta( get_the_id(), '_cbdmg', true ) . '</td></tr>';
-		} else {
-			$wpdcbdmg = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
-			$wpdservings = '<tr><td><span>Servings:</span></td><td>' . get_post_meta( get_the_id(), '_thccbdservings', true ) . '</td></tr>';
-		} else {
-			$wpdservings = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_netweight', true ) ) {
-			$wpdnetweight = '<tr><td><span>Net weight:</span></td><td>' . get_post_meta( get_the_id(), '_netweight', true ) . 'g</td></tr>';
-		} else {
-			$wpdnetweight = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
-			$wpdthctopical = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thctopical', true ) . 'mg</td></tr>';
-		} else {
-			$wpdthctopical = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
-			$wpdcbdtopical = '<tr><td><span>CBD:</span></td><td>' . get_post_meta( get_the_id(), '_cbdtopical', true ) . 'mg</td></tr>';
-		} else {
-			$wpdcbdtopical = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
-			$wpdsizetopical = '<tr><td><span>Size:</span></td><td>' . get_post_meta( get_the_id(), '_sizetopical', true ) . ' (oz)</td></tr>';
-		} else {
-			$wpdsizetopical = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
-			$wpdseedcount = '<tr><td><span>Seeds per unit:</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) . '</td></tr>';
-		} else {
-			$wpdseedcount = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
-			$wpdclonecount = '<tr><td><span>Clones per unit:</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) . '</td></tr>';
-		} else {
-			$wpdclonecount = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_origin', true ) ) {
-			$wpdcloneorigin = '<tr><td><span>Origin:</span></td><td>' . get_post_meta( get_the_id(), '_origin', true ) . '</td></tr>';
-		} else {
-			$wpdcloneorigin = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_time', true ) ) {
-			$wpdclonetime = '<tr><td><span>Grow Time:</span></td><td>' . get_post_meta( get_the_id(), '_time', true ) . '</td></tr>';
-		} else {
-			$wpdclonetime = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_yield', true ) ) {
-			$wpdcloneyield = '<tr><td><span>Yield:</span></td><td>' . get_post_meta( get_the_id(), '_yield', true ) . '</td></tr>';
-		} else {
-			$wpdcloneyield = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_difficulty', true ) ) {
-			$wpdclonedifficulty = '<tr><td><span>Difficulty:</span></td><td>' . get_post_meta( get_the_id(), '_difficulty', true ) . '</td></tr>';
-		} else {
-			$wpdclonedifficulty = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
-			$prerollflower = get_post_meta( get_the_id(), '_selected_flowers', true );
-			$wpdpreroll    = '<tr><td><span>Flower:</span></td><td><a href=' . get_permalink( $prerollflower ) . '>' . get_the_title( $prerollflower ) . '</a></td></tr>';
-		} else {
-			$wpdpreroll = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
-			$growerflower = get_post_meta( get_the_id(), '_selected_flowers', true );
-			$wpdgrower    = '<tr><td><span>Flower:</span></td><td><a href=' . get_permalink( $growerflower ) . '>' . get_the_title( $growerflower ) . '</a></td></tr>';
-		} else {
-			$wpdgrower = '';
-		}
-
-		/**
-		 * Setting up WP Dispensary menu pricing data
-		 */
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceeach = '<tr class="priceeach"><td><span>Price Each:</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
-		} else {
-			$wpdpriceeach = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceperunit = '<tr class="priceeach"><td><span>Price Each:</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
-		} else {
-			$wpdpriceperunit = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
-			$wpdpricetopical = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
-		} else {
-			$wpdpricetopical = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			$wpdhalfgram = '<td><span>1/2 g:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_halfgram', true ) . '</td>';
-		} else {
-			$wpdhalfgram = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$wpdgram = '<td><span>1 g:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_gram', true ) . '</td>';
-		} else {
-			$wpdgram = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
-			$wpdtwograms = '<td><span>2 g:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_twograms', true ) . '</td>';
-		} else {
-			$wpdtwograms = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			$wpdeighth = '<td><span>1/8 oz:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_eighth', true ) . '</td>';
-		} else {
-			$wpdeighth = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			$wpdquarter = '<td><span>1/4 oz:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_quarter', true ) . '</td>';
-		} else {
-			$wpdquarter = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$wpdhalfounce = '<td><span>1/2 oz:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_halfounce', true ) . '</td>';
-		} else {
-			$wpdhalfounce = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			$wpdounce = '<td><span>1 oz:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_ounce', true ) . '</td>';
-		} else {
-			$wpdounce = '';
-		}
-
 		$post_type = get_post_type_object( get_post_type( $post ) );
 
 		/**
@@ -292,6 +62,173 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Adding Details table
 		 */
 		if ( 'on' !== $wpd_hide_details ) {
+
+			/**
+			 * Setting up WP Dispensary menu item data
+			 */
+			if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
+				$wpdaroma = '<tr><td><span>Aromas:</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdaroma = '';
+			}
+
+			if ( get_the_term_list( $post->ID, 'flavor', true ) ) {
+				$wpdflavor = '<tr><td><span>Flavors:</span></td><td>' . get_the_term_list( $post->ID, 'flavor', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdflavor = '';
+			}
+
+			if ( get_the_term_list( $post->ID, 'effect', true ) ) {
+				$wpdeffect = '<tr><td><span>Effects:</span></td><td>' . get_the_term_list( $post->ID, 'effect', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdeffect = '';
+			}
+
+			if ( get_the_term_list( $post->ID, 'symptom', true ) ) {
+				$wpdsymptom = '<tr><td><span>Symptoms:</span></td><td>' . get_the_term_list( $post->ID, 'symptom', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdsymptom = '';
+			}
+
+			if ( get_the_term_list( $post->ID, 'condition', true ) ) {
+				$wpdcondition = '<tr><td><span>Conditions:</span></td><td>' . get_the_term_list( $post->ID, 'condition', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdcondition = '';
+			}
+
+			if ( get_the_term_list( $post->ID, 'ingredients', true ) ) {
+				$wpdingredients = '<tr><td><span>Ingredients:</span></td><td>' . get_the_term_list( $post->ID, 'ingredients', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdingredients = '';
+			}
+
+			if ( get_the_term_list( $post->ID, 'vendor', true ) ) {
+				$wpdvendors = '<tr><td><span>Vendor:</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdvendors = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
+				$wpdthc = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thc', true ) . '%</td></tr>';
+			} else {
+				$wpdthc = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+				$wpdthca = '<tr><td><span>THCA:</span></td><td>' . get_post_meta( get_the_id(), '_thca', true ) . '%</td></tr>';
+			} else {
+				$wpdthca = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
+				$wpdcbd = '<tr><td><span>CBD:</span></td><td>' . get_post_meta( get_the_id(), '_cbd', true ) . '%</td></tr>';
+			} else {
+				$wpdcbd = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+				$wpdcba = '<tr><td><span>CBA:</span></td><td>' . get_post_meta( get_the_id(), '_cba', true ) . '%</td></tr>';
+			} else {
+				$wpdcba = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+				$wpdcbn = '<tr><td><span>CBN:</span></td><td>' . get_post_meta( get_the_id(), '_cbn', true ) . '%</td></tr>';
+			} else {
+				$wpdcbn = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
+				$wpdthcmg = '<tr><td><span>THC mg per serving:</span></td><td>' . get_post_meta( get_the_id(), '_thcmg', true ) . '</td></tr>';
+			} else {
+				$wpdthcmg = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_cbdmg', true ) ) {
+				$wpdcbdmg = '<tr><td><span>CBD mg per serving:</span></td><td>' . get_post_meta( get_the_id(), '_cbdmg', true ) . '</td></tr>';
+			} else {
+				$wpdcbdmg = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
+				$wpdservings = '<tr><td><span>Servings:</span></td><td>' . get_post_meta( get_the_id(), '_thccbdservings', true ) . '</td></tr>';
+			} else {
+				$wpdservings = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_netweight', true ) ) {
+				$wpdnetweight = '<tr><td><span>Net weight:</span></td><td>' . get_post_meta( get_the_id(), '_netweight', true ) . 'g</td></tr>';
+			} else {
+				$wpdnetweight = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
+				$wpdthctopical = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thctopical', true ) . 'mg</td></tr>';
+			} else {
+				$wpdthctopical = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
+				$wpdcbdtopical = '<tr><td><span>CBD:</span></td><td>' . get_post_meta( get_the_id(), '_cbdtopical', true ) . 'mg</td></tr>';
+			} else {
+				$wpdcbdtopical = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
+				$wpdsizetopical = '<tr><td><span>Size:</span></td><td>' . get_post_meta( get_the_id(), '_sizetopical', true ) . ' (oz)</td></tr>';
+			} else {
+				$wpdsizetopical = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
+				$wpdseedcount = '<tr><td><span>Seeds per unit:</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) . '</td></tr>';
+			} else {
+				$wpdseedcount = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
+				$wpdclonecount = '<tr><td><span>Clones per unit:</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) . '</td></tr>';
+			} else {
+				$wpdclonecount = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_origin', true ) ) {
+				$wpdcloneorigin = '<tr><td><span>Origin:</span></td><td>' . get_post_meta( get_the_id(), '_origin', true ) . '</td></tr>';
+			} else {
+				$wpdcloneorigin = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_time', true ) ) {
+				$wpdclonetime = '<tr><td><span>Grow Time:</span></td><td>' . get_post_meta( get_the_id(), '_time', true ) . '</td></tr>';
+			} else {
+				$wpdclonetime = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_yield', true ) ) {
+				$wpdcloneyield = '<tr><td><span>Yield:</span></td><td>' . get_post_meta( get_the_id(), '_yield', true ) . '</td></tr>';
+			} else {
+				$wpdcloneyield = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_difficulty', true ) ) {
+				$wpdclonedifficulty = '<tr><td><span>Difficulty:</span></td><td>' . get_post_meta( get_the_id(), '_difficulty', true ) . '</td></tr>';
+			} else {
+				$wpdclonedifficulty = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
+				$prerollflower = get_post_meta( get_the_id(), '_selected_flowers', true );
+				$wpdpreroll    = '<tr><td><span>Flower:</span></td><td><a href=' . get_permalink( $prerollflower ) . '>' . get_the_title( $prerollflower ) . '</a></td></tr>';
+			} else {
+				$wpdpreroll = '';
+			}
+
+			if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
+				$growerflower = get_post_meta( get_the_id(), '_selected_flowers', true );
+				$wpdgrower    = '<tr><td><span>Flower:</span></td><td><a href=' . get_permalink( $growerflower ) . '>' . get_the_title( $growerflower ) . '</a></td></tr>';
+			} else {
+				$wpdgrower = '';
+			}
 
 			/**
 			 * Details Table Before Action Hook
@@ -371,7 +308,8 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				do_action( 'wpd_dataoutput_after' );
 				$wpddataafter = ob_get_clean();
 				$content     .= $wpddataafter;
-			}
+			}		
+				
 		}
 
 		/**
