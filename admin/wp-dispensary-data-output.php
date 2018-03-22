@@ -31,12 +31,15 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		} else {
 			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
 		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
+
+		// Hide pricing.
+		if ( 'show' !== $wpd_settings['wpd_hide_pricing'] ) {
+			$wpd_hide_pricing = $wpd_settings['wpd_hide_pricing'];
 		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
+			$wpd_hide_pricing = '';
 		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
+
+		if ( ! isset( $wpd_settings['wpd_content_placement'] ) ) {
 			$wpd_content_placement = '';
 		} else {
 			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
@@ -382,7 +385,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Adding Pricing table
 		 */
-		if ( 'wpd_hide_pricing' !== $wpd_hide_pricing ) {
+		if ( 'on' !== $wpd_hide_pricing ) {
 
 			/**
 			 * Pricing Table Before Action Hook
