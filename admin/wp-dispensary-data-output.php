@@ -303,7 +303,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Adding Details table
 		 */
-		if ( 'wpd_hide_details' !== $wpd_hide_details ) {
+		if ( 'on' !== $wpd_hide_details ) {
 
 			/**
 			 * Details Table Before Action Hook
