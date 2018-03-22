@@ -100,7 +100,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_details_phrase',
 			'type' => 'select',
-			'name' => __( 'Details phrase', 'wp-dispensary' ),
+			'name' => __( 'Title', 'wp-dispensary' ),
 			'desc' => __( 'Choose the phrase you would like used in the table title', 'wp-dispensary' ),
 			'options' => array(
 				'Details'     => 'Details',
@@ -138,7 +138,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_hide_details',
 			'type' => 'checkbox',
-			'name' => __( 'Display', 'wp-dispensary' ),
+			'name' => __( 'Hide?', 'wp-dispensary' ),
 			'desc' => __( 'Remove the details table from data output?', 'wp-dispensary' ),
 		)
 	);
@@ -199,7 +199,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_pricing_currency_code',
 			'type' => 'select',
-			'name' => __( 'Currency code', 'wp-dispensary' ),
+			'name' => __( 'Currency', 'wp-dispensary' ),
 			'desc' => __( 'A Dropdown description', 'wp-dispensary' ),
 			'options' => array(
 				'AUD' => '(AUD) Australian Dollar',
@@ -259,7 +259,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_hide_pricing',
 			'type' => 'checkbox',
-			'name' => __( 'Hide', 'wp-dispensary' ),
+			'name' => __( 'Hide?', 'wp-dispensary' ),
 			'desc' => __( 'Remove the price table from data output', 'wp-dispensary' ),
 		)
 	);
