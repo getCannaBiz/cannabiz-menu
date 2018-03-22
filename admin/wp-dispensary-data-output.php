@@ -348,9 +348,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( null === $wpd_settings['wpd_pricing_phrase'] || 'Price' === $wpd_settings['wpd_pricing_phrase'] ) {
-				$wpd_cost = $post_type->labels->singular_name . ' Pricing';
+				$wpd_price_phrase = $post_type->labels->singular_name . ' Prices';
 			} else {
-				$wpd_cost = 'Donation Amount';
+				$wpd_price_phrase = 'Donation Amounts';
 			}
 
 
@@ -358,7 +358,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 * Starting to build the Pricing table
 			 */
 			if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-				$wpd_pricing_table_top = '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_cost . '</td></tr>';
+				$wpd_pricing_table_top = '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_price_phrase . '</td></tr>';
 			}
 			if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
 				$wpd_pricing_table_flowers = '<tr>' . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
