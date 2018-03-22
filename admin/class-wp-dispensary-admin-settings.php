@@ -196,17 +196,25 @@ class WPD_ADMIN_SETTINGS {
 	        jQuery(document).ready(function($) {
 	            //Initiate Color Picker
 	            // $('.wp-color-picker-field').wpColorPicker();
+
 	            // Switches option sections
 	            $('.group').hide();
 	            var activetab = '';
+
+				// Tab activetab.
+
 	            if (typeof(localStorage) != 'undefined' ) {
 	                activetab = localStorage.getItem("activetab");
 	            }
+
+				// Tab fadeIn.
+
 	            if (activetab != '' && $(activetab).length ) {
 	                $(activetab).fadeIn();
 	            } else {
 	                $('.group:first').fadeIn();
 	            }
+
 	            $('.group .collapsed').each(function(){
 	                $(this).find('input:checked').parent().parent().parent().nextAll().each(
 	                function(){
@@ -217,12 +225,16 @@ class WPD_ADMIN_SETTINGS {
 	                    $(this).filter('.hidden').removeClass('hidden');
 	                });
 	            });
+
+				// Nav tabs.
+
 	            if (activetab != '' && $(activetab + '-tab').length ) {
 	                $(activetab + '-tab').addClass('nav-tab-active');
 	            }
 	            else {
 	                $('.nav-tab-wrapper a:first').addClass('nav-tab-active');
 	            }
+
 	            $('.nav-tab-wrapper a').click(function(evt) {
 	                $('.nav-tab-wrapper a').removeClass('nav-tab-active');
 	                $(this).addClass('nav-tab-active').blur();
@@ -234,6 +246,7 @@ class WPD_ADMIN_SETTINGS {
 	                $(clicked_group).fadeIn();
 	                evt.preventDefault();
 	            });
+
 	            $('.wpds-browse').on('click', function (event) {
 	                event.preventDefault();
 	                var self = $(this);
