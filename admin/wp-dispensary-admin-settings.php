@@ -119,7 +119,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'      => 'wpd_details_table_placement',
 			'type'    => 'select',
-			'name'    => __( 'Details table', 'wp-dispensary' ),
+			'name'    => __( 'Placement', 'wp-dispensary' ),
 			'desc'    => __( 'Where should the details display on single menu items?', 'wp-dispensary' ),
 			'options' => array(
 				'above'  => 'Above Content',
@@ -138,7 +138,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_hide_details',
 			'type' => 'checkbox',
-			'name' => __( 'Hide', 'wp-dispensary' ),
+			'name' => __( 'Display', 'wp-dispensary' ),
 			'desc' => __( 'Remove the details table from data output?', 'wp-dispensary' ),
 		)
 	);
