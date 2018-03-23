@@ -5,9 +5,7 @@
 
 WP Dispensary is the complete marijuana dispensary menu management solution for WordPress.
 
-## :raised_hand: WAIT!
-
-This repo is under active development.
+:raised_hand: **WAIT!** This repo is under active development.
  
 Download the latest stable release at [v1.9.18](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
 
