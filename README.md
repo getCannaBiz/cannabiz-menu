@@ -1,9 +1,7 @@
-![Marijuana WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
-
 # WP Dispensary Menu Management Software
 **The #1 Marijuana WordPress Plugin.** Make sure you :star: and :eyes: this repository!
 
-WP Dispensary is the complete marijuana dispensary menu management solution for WordPress.
+![Marijuana WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
 :raised_hand: **WAIT!** This repo is under active development.
  
