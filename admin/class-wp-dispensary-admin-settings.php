@@ -54,12 +54,23 @@ class WPD_ADMIN_SETTINGS {
 	 * @since 2.0
 	 */
 	public function admin_scripts() {
+
 		// jQuery is needed.
 		wp_enqueue_script( 'jquery' );
-		// Color Picker
-		wp_enqueue_style( 'wp-color-picker' );
+
+		// Color Picker.
+		wp_enqueue_script(
+			'iris',
+			admin_url( 'js/iris.min.js' ),
+			array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ),
+			false,
+			1
+		);
+
+
 		// Media Uploader.
 		wp_enqueue_media();
+
 	}
 	/**
 	 * Set Sections.
@@ -105,7 +116,6 @@ class WPD_ADMIN_SETTINGS {
 		$this->fields_array = $fields;
 		return $this;
 	}
-
 	/**
 	 * Add submenu page to the Settings main menu.
 	 *
@@ -185,6 +195,7 @@ class WPD_ADMIN_SETTINGS {
 	    <?php
 	    $this->script();
 	}
+
 	/**
 	 * Tabbable JavaScript codes & Initiate Color Picker
 	 *
@@ -195,7 +206,15 @@ class WPD_ADMIN_SETTINGS {
 	    <script>
 	        jQuery(document).ready(function($) {
 	            //Initiate Color Picker
-	            // $('.wp-color-picker-field').wpColorPicker();
+				$('.color-picker').iris({
+					width: 240,
+					target: false,
+					palettes: ['#125', '#459', '#78b', '#ab0', '#de3', '#f0f'],
+					change: function(event, ui) {
+						// change the headline color
+						$(".wpds-color-picker-display").css( 'background-color', ui.color.toString());
+					}
+				});
 
 	            // Switches option sections
 	            $('.group').hide();
@@ -280,7 +299,6 @@ class WPD_ADMIN_SETTINGS {
 	    </style>
 	    <?php
 	}
-
 	/**
 	 * Add a single field.
 	 *
@@ -359,6 +377,7 @@ class WPD_ADMIN_SETTINGS {
 	         */
 	        add_settings_section( $section['id'], $section['title'], $callback, $section['id'] );
 	    } // foreach ended.
+
 		/**
 		 * Register settings fields.
 		 *
@@ -452,6 +471,7 @@ class WPD_ADMIN_SETTINGS {
 	        register_setting( $section['id'], $section['id'], array( $this, 'sanitize_fields' ) );
 	    } // foreach ended.
 	} // admin_init() ended.
+
 	/**
 	 * Sanitize callback for Settings API fields.
 	 *
@@ -468,6 +488,7 @@ class WPD_ADMIN_SETTINGS {
 		}
 		return $fields;
 	}
+
 	/**
 	 * Get sanitization callback for given option slug
 	 *
@@ -491,6 +512,7 @@ class WPD_ADMIN_SETTINGS {
 	    }
 	    return false;
 	}
+
 	/**
 	 * Get field description for display
 	 *
