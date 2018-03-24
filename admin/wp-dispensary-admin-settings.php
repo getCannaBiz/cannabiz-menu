@@ -101,7 +101,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'   => 'wpd_details_phrase',
 			'type' => 'select',
 			'name' => __( 'Title', 'wp-dispensary' ),
-			'desc' => __( 'Choose the phrase you would like used in the table title', 'wp-dispensary' ),
+			'desc' => __( 'Choose the title you would like used', 'wp-dispensary' ),
 			'options' => array(
 				'Details'     => 'Details',
 				'Information' => 'Information',
@@ -121,7 +121,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'          => 'wpd_details_phrase_other',
 			'type'        => 'text',
 			'name'        => __( '', 'wp-dispensary' ),
-			'desc'        => __( 'Add a custom title', 'wp-dispensary' ),
+			'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
 			'placeholder' => __( '', 'wp-dispensary' ),
 		)
 	);
@@ -156,7 +156,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'   => 'wpd_hide_details',
 			'type' => 'checkbox',
 			'name' => __( '', 'wp-dispensary' ),
-			'desc' => __( 'Remove the details table from data output?', 'wp-dispensary' ),
+			'desc' => __( 'Remove the details table from data output', 'wp-dispensary' ),
 		)
 	);
 
@@ -259,7 +259,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'          => 'wpd_pricing_phrase_other',
 			'type'        => 'text',
 			'name'        => __( '', 'wp-dispensary' ),
-			'desc'        => __( 'Add a custom title', 'wp-dispensary' ),
+			'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
 			'placeholder' => __( '', 'wp-dispensary' ),
 		)
 	);
