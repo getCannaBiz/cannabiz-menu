@@ -105,7 +105,6 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'options' => array(
 				'Details'     => 'Details',
 				'Information' => 'Information',
-				'Custom'      => 'Custom',
 			)
 		)
 	);
@@ -243,7 +242,6 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'options' => array(
 				'Price'    => 'Prices',
 				'Donation' => 'Donations',
-				'Custom'   => 'Custom',
 			)
 		)
 	);
