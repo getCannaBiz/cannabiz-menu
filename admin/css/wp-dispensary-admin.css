@@ -188,6 +188,10 @@ th#featured_thumb {
     min-width: 25em;
 }
 
+.group .form-table input.color-picker {
+	max-width: 100px;
+}
+
 /* Widget styles
 -------------------------------------------------------------- */
 
