@@ -307,10 +307,11 @@ class WPD_ADMIN_SETTINGS {
 	public function add_field( $section, $field_array ) {
 		// Set the defaults
 		$defaults = array(
-			'id'   => '',
-			'name' => '',
-			'desc' => '',
-			'type' => 'text'
+			'id'          => '',
+			'name'        => '',
+			'desc'        => '',
+			'type'        => 'text',
+			'placeholder' => '',
 		);
 		// Combine the defaults with user's arguements.
 		$arg = wp_parse_args( $field_array, $defaults );
@@ -744,11 +745,13 @@ class WPD_ADMIN_SETTINGS {
 	 * @param array   $args settings field args
 	 */
 	function callback_color( $args ) {
-	    $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-	    $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
-	    $html  = sprintf( '<input type="text" class="%1$s-text wp-color-picker-field" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" />', $size, $args['section'], $args['id'], $value, $args['std'] );
-	    $html .= $this->get_field_description( $args );
-	    echo $html;
+		$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'], $args['placeholder'] ) );
+		$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
+
+		$html  = sprintf( '<input type="text" class="%1$s-text color-picker" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" placeholder="%6$s" />', $size, $args['section'], $args['id'], $value, $args['std'], $args['placeholder'] );
+		$html .= $this->get_field_description( $args );
+
+		echo $html;
 	}
 	/**
 	 * Get the value of a settings field

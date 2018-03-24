@@ -411,10 +411,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
-			'id'   => 'color',
-			'type' => 'color',
-			'name' => __( 'Color', 'wp-dispensary' ),
-			'desc' => __( 'Color description', 'wp-dispensary' ),
+			'id'          => 'color',
+			'type'        => 'color',
+			'name'        => __( 'Color', 'wp-dispensary' ),
+			'desc'        => __( 'Color description', 'wp-dispensary' ),
+			'placeholder' => __( '#5F4B8B', 'wp-dispensary' ),
 		)
 	);
 	$wpdas_obj->add_field(
