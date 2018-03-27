@@ -10,6 +10,7 @@
  * @subpackage WP_Dispensary/admin/css
  */
 
+/** Metaboxes */
 #wpdispensary_prices .inside,
 #wpdispensary_concentrateprices .inside,
 #wpdispensary_compounds .inside,
@@ -69,7 +70,6 @@
 	width: 23%;
 }
 
-
 #wpdispensary_thc_cbd_mg .inside .ediblebox {
 	float: left;
 	position: relative;
@@ -83,6 +83,20 @@
 	width: 23%;
 }
 
+/** Metaboxes `select` width */
+
+select#selected_flowers,
+select#selected_concentrates,
+select#selected_edibles,
+select#selected_prerolls,
+select#selected_topicals,
+select#selected_growers,
+select#selected_gear,
+select#selected_tinctures {
+    width: 100%;
+}
+
+/** Dashboard icons */
 
 #dashboard_right_now .flowers-count a:before,
 #dashboard_right_now .flowers-count span:before,
@@ -95,7 +109,13 @@
 #dashboard_right_now .topicals-count a:before,
 #dashboard_right_now .topicals-count span:before,
 #dashboard_right_now .growers-count a:before,
-#dashboard_right_now .growers-count span:before {
+#dashboard_right_now .growers-count span:before,
+#dashboard_right_now .gear-count a:before,
+#dashboard_right_now .gear-count span:before,
+#dashboard_right_now .tinctures-count a:before,
+#dashboard_right_now .tinctures-count span:before,
+#dashboard_right_now .coupons-count a:before,
+#dashboard_right_now .coupons-count span:before {
     background: url(../images/glance-icon.png) no-repeat 2px 0px;
     content: "";
     height: 20px;
