@@ -149,16 +149,17 @@ th#featured_thumb {
 	text-align: center;
 }
 
-#featured_thumb span.wpd-admin-screen-featured-image-title {
+#featured_thumb span.wpd-admin-screen-featured-image-title,
+.wpd-admin-screen-featured-image-title {
 	display: none;
 }
 
 /**
  * Settings page
  */
-.wpd-settings-wrap img {	
-	width: 280px;	
-	max-width: 280px;	
+.wpd-settings-wrap img {
+	width: 280px;
+	max-width: 280px;
 }
 
 .wpd-settings-separator {
