@@ -200,7 +200,6 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 		 * This code uses localstorage for displaying active tabs
 		 */
 		function script() {
-			$wpd_settings = get_option( 'wpdas_other' );
 			?>
 			<script>
 				jQuery(document).ready(function($) {
@@ -286,38 +285,19 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 					})).change();
 
 					$(".color-picker").after("<div class='wpds-color-picker-display'></div>");
-					});
-					</script>
-
-			<?php
-			if ( null === $wpd_settings['color'] || '' === $wpd_settings['color'] ) {
-				$bgcolor = 'transparent';
-			} else {
-				$bgcolor = $wpd_settings['color'];
-			}
-			?>
+				});
+			</script>
 
 			<style type="text/css">
 			/** WordPress 3.8 Fix **/
 			.form-table th { padding: 20px 10px; }
 			#wpbody-content .metabox-holder { padding-top: 5px; }
 			.wpds-image-preview img { height: auto; max-width: 70px; }
-			.wpds-color-picker-display {
-				display: inline-block;
-				border: 1px solid #DDD;
-				margin-left: 5px;
-				width: 25px;
-				height: 25px;
-				background: <?php echo $bgcolor; ?>;
-				position: absolute;
-				margin-top: 1px;
-			}
 			@media screen and (max-width: 782px) {
 				.form-table td input[type=text].color-picker {
 					width: 100px;
 					display: inline-block;
 				}
-				.wpds-color-picker-display { width: 38px; height: 38px; }
 			}
 			</style>
 				<?php
@@ -533,6 +513,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 		 */
 		function callback_separator( $args ) {
 			$type  = isset( $args['type'] ) ? $args['type'] : 'separator';
+			$html  = '';
 			$html .= '<div class="wpd-settings-separator"></div>';
 			echo $html;
 		}
@@ -550,7 +531,6 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 
 			};
 			$type = isset( $args['type'] ) ? $args['type'] : 'title';
-			echo $html;
 		}
 
 		/**
