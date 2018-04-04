@@ -334,21 +334,6 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 			/**
 			* Register the sections.
 			*
-			* Sections array is like this:
-			*
-			* $sections_array = array (
-			*   $section_array,
-			*   $section_array,
-			*   $section_array,
-			* );
-			*
-			* Section array is like this:
-			*
-			* $section_array = array (
-			*   'id'    => 'section_id',
-			*   'title' => 'Section Title'
-			* );
-			*
 			* @since 2.0
 			*/
 			foreach ( $this->sections_array as $section ) {
