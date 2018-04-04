@@ -242,35 +242,51 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_title_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-				$wpd_details_table_top .= '<table class="wpdispensary-table single details"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_details_phrase . '</td></tr>';
+				$wpd_details_table_top = '<table class="wpdispensary-table single details"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_details_phrase . '</td></tr>';
+			} else {
+				$wpd_details_table_top = '';
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
 				$wpd_details_flowers_concentrates = $wpdaroma . $wpdflavor . $wpdeffect . $wpdsymptom . $wpdcondition . $wpdvendors;
+			} else {
+				$wpd_details_flowers_concentrates = '';
 			}
 
 			if ( 'prerolls' === get_post_type() ) {
 				$wpd_details_prerolls = $wpdpreroll . $wpdvendors;
+			} else {
+				$wpd_details_prerolls = '';
 			}
 
 			if ( 'growers' === get_post_type() ) {
 				$wpd_details_growers = $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdcloneyield . $wpdclonedifficulty . $wpdvendors;
+			} else {
+				$wpd_details_growers = '';
 			}
 
 			if ( 'edibles' === get_post_type() ) {
 				$wpd_details_edibles = $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients . $wpdvendors;
+			} else {
+				$wpd_details_edibles = '';
 			}
 
 			if ( 'topicals' === get_post_type() ) {
 				$wpd_details_topicals = $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients . $wpdvendors;
+			} else {
+				$wpd_details_topicals = '';
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
 				$wpd_details_compounds = $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn;
+			} else {
+				$wpd_details_compounds = '';
 			}
 
 			if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_end_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
 				$wpd_details_table_bottom = '</table>';
+			} else {
+				$wpd_details_table_bottom = '';
 			}
 
 			/**
@@ -358,9 +374,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			 */
 			if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
 				$wpd_pricing_table_top = '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_price_phrase . '</td></tr>';
+			} else {
+				$wpd_pricing_table_top = '';
 			}
+
 			if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
 				$wpd_pricing_table_flowers = '<tr>' . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
+			} else {
+				$wpd_pricing_table_flowers = '';
 			}
 
 			if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
@@ -369,22 +390,32 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				} else {
 					$wpd_pricing_table_concentrates = '<tr>' . $wpdpriceperunit . '</tr>';
 				}
+			} else {
+				$wpd_pricing_table_concentrates = '';
 			}
 
 			if ( in_array( get_post_type(), array( 'prerolls', 'edibles' ) ) ) {
 				$wpd_pricing_table_prerolls_edibles = $wpdpriceeach;
+			} else {
+				$wpd_pricing_table_prerolls_edibles = '';
 			}
 
 			if ( in_array( get_post_type(), array( 'growers' ) ) ) {
 				$wpd_pricing_table_growers = $wpdpriceperunit;
+			} else {
+				$wpd_pricing_table_growers = '';
 			}
 
 			if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
 				$wpd_pricing_table_topicals = $wpdpricetopical;
+			} else {
+				$wpd_pricing_table_topicals = '';
 			}
 
 			if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
 				$wpd_pricing_table_bottom = '</table>';
+			} else {
+				$wpd_pricing_table_bottom = '';
 			}
 
 			/**
