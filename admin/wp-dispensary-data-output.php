@@ -238,7 +238,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				ob_start();
 				do_action( 'wpd_dataoutput_before' );
 				$wpddatabefore = ob_get_clean();
-				$content .= $wpddatabefore;
+				$content      .= $wpddatabefore;
 			}
 
 			if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_title_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
@@ -353,7 +353,6 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpd_price_phrase = 'Donations';
 			}
 
-
 			/**
 			 * Starting to build the Pricing table
 			 */
@@ -383,11 +382,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
 				$wpd_pricing_table_topicals = $wpdpricetopical;
 			}
-			
+
 			if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
 				$wpd_pricing_table_bottom = '</table>';
 			}
-			
+
 			/**
 			 * Price table build
 			 */
@@ -400,27 +399,28 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * item pricing above or below the_content
 		 */
 		if ( in_array( get_post_type(), apply_filters( 'wpd_pricing_table_placement_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-			// Placement.
+			// Pricing Placement.
 			if ( 'above' !== $wpd_settings['wpd_pricing_table_placement'] ) {
 				$wpd_pricing_below = $wpd_table_pricing;
 			} else {
 				$wpd_pricing_below = '';
 			}
 
+			// Pricing Placement.
 			if ( 'below' !== $wpd_settings['wpd_pricing_table_placement'] ) {
 				$wpd_pricing_above = $wpd_table_pricing;
 			} else {
 				$wpd_pricing_above = '';
 			}
 
-
-			// Placement.
+			// Details Placement.
 			if ( 'above' !== $wpd_settings['wpd_details_table_placement'] ) {
 				$wpd_details_below = $wpd_table_details;
 			} else {
 				$wpd_details_below = '';
 			}
 
+			// Details Placement.
 			if ( 'below' !== $wpd_settings['wpd_details_table_placement'] ) {
 				$wpd_details_above = $wpd_table_details;
 			} else {

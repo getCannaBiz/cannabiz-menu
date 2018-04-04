@@ -181,7 +181,7 @@ function wpd_currency_code() {
 		'ZMK' => '&#90;&#75;', // ?
 		'ZWL' => '&#90;&#36;',
 	);
-	
+
 	return $currency_symbols[ $wpd_currency ];
 
 }

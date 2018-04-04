@@ -16,16 +16,16 @@
  */
 // Plugin version.
 if ( ! defined( 'WPD_ADMIN_SETTINGS_VERSION' ) ) {
-  define( 'WPD_ADMIN_SETTINGS_VERSION', '2.0' );
+	define( 'WPD_ADMIN_SETTINGS_VERSION', '2.0' );
 }
 if ( ! defined( 'WPDS_NAME' ) ) {
-  define( 'WPDS_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
+	define( 'WPDS_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
 }
 if ( ! defined( 'WPDS_DIR' ) ) {
-  define( 'WPDS_DIR', WP_PLUGIN_DIR . '/' . WPDS_NAME );
+	define( 'WPDS_DIR', WP_PLUGIN_DIR . '/' . WPDS_NAME );
 }
 if ( ! defined( 'WPDS_URL' ) ) {
-  define( 'WPDS_URL', WP_PLUGIN_URL . '/' . WPDS_NAME );
+	define( 'WPDS_URL', WP_PLUGIN_URL . '/' . WPDS_NAME );
 }
 
 /**
@@ -40,7 +40,7 @@ if ( ! defined( 'WPDS_URL' ) ) {
  *
  * @since 2.0
  */
- require_once( WPDS_DIR . '/class-wp-dispensary-admin-settings.php' );
+require_once( WPDS_DIR . '/class-wp-dispensary-admin-settings.php' );
 /**
  * Actions/Filters
  *
@@ -56,23 +56,21 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	 */
 	$wpdas_obj = new WPD_ADMIN_SETTINGS();
 
-  // Section: Display Settings.
-  $wpdas_obj->add_section(
-	  array(
-  	   'id'     => 'wpdas_display',
-  	    'title' => __( 'Display Settings', 'wp-dispensary' ),
-    ),
-  );
+	// Section: Display Settings.
+	$wpdas_obj->add_section(
+		array(
+			'id'    => 'wpdas_display',
+			'title' => __( 'Display Settings', 'wp-dispensary' ),
+		)
+	);
 
-  // Section: Other Settings.
-  $wpdas_obj->add_section(
-  	array(
-  	   'id'     => 'wpdas_other',
-  	    'title' => __( 'Other Settings', 'wp-dispensary' ),
-    ),
-  );
-
-
+	// Section: Other Settings.
+	$wpdas_obj->add_section(
+		array(
+			'id'    => 'wpdas_other',
+			'title' => __( 'Other Settings', 'wp-dispensary' ),
+		)
+	);
 
 	/**
 	 * Add Field: Display a title to help separate fields
@@ -294,7 +292,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
-  // Field: Text.
+	// Field: Text.
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(

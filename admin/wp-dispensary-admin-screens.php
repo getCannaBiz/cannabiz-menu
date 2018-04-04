@@ -31,7 +31,7 @@ function wp_dispensary_columns_data( $column, $post_id ) {
 	switch ( $column ) {
 		case 'featured_thumb':
 			echo '<a href="' . get_edit_post_link() . '">';
-			echo the_post_thumbnail( array( 40,40 ) );
+			echo the_post_thumbnail( array( 40, 40 ) );
 			echo '</a>';
 			break;
 	}
@@ -39,7 +39,6 @@ function wp_dispensary_columns_data( $column, $post_id ) {
 
 if ( isset( $_GET['post_type'] ) ) {
 	$post_type = $_GET['post_type'];
-
 	if ( in_array( $post_type, apply_filters( 'wpd_admin_screen_thumbnails', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
 		add_filter( 'manage_posts_columns', 'wp_dispensary_columns' );
 		add_action( 'manage_posts_custom_column', 'wp_dispensary_columns_data', 10, 2 );

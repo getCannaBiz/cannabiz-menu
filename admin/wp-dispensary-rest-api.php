@@ -299,7 +299,7 @@ function slug_get_prices( $object, $field_name, $request ) {
  * Update Prices
  */
 function slug_update_prices( $value, $object, $field_name ) {
-    return update_post_meta( $object[ 'id' ], $field_name, $value );
+	return update_post_meta( $object['id'], $field_name, $value );
 }
 
 /**
@@ -340,7 +340,7 @@ function slug_get_concentrateprices( $object, $field_name, $request ) {
  * Update Prices
  */
 function slug_update_concentrateprices( $value, $object, $field_name ) {
-    return update_post_meta( $object[ 'id' ], $field_name, $value );
+	return update_post_meta( $object['id'], $field_name, $value );
 }
 
 /**
@@ -381,7 +381,7 @@ function slug_get_edibleinfo( $object, $field_name, $request ) {
  * Update Edible info
  */
 function slug_update_edibleinfo( $value, $object, $field_name ) {
-    return update_post_meta( $object[ 'id' ], $field_name, $value );
+	return update_post_meta( $object['id'], $field_name, $value );
 }
 
 /**
@@ -422,7 +422,7 @@ function slug_get_prerollinfo( $object, $field_name, $request ) {
  * Update Pre-roll info
  */
 function slug_update_prerollinfo( $value, $object, $field_name ) {
-    return update_post_meta( $object[ 'id' ], $field_name, $value );
+	return update_post_meta( $object['id'], $field_name, $value );
 }
 
 /**
@@ -463,7 +463,7 @@ function slug_get_compounds( $object, $field_name, $request ) {
  * Update Compound info
  */
 function slug_update_compounds( $value, $object, $field_name ) {
-    return update_post_meta( $object[ 'id' ], $field_name, $value );
+	return update_post_meta( $object['id'], $field_name, $value );
 }
 
 /**
@@ -504,7 +504,7 @@ function slug_get_topicalinfo( $object, $field_name, $request ) {
  * Update Topical info
  */
 function slug_update_topicalinfo( $value, $object, $field_name ) {
-    return update_post_meta( $object[ 'id' ], $field_name, $value );
+	return update_post_meta( $object['id'], $field_name, $value );
 }
 
 /**
@@ -545,7 +545,7 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
  * Update Grower info
  */
 function slug_update_growerinfo( $value, $object, $field_name ) {
-    return update_post_meta( $object[ 'id' ], $field_name, $value );
+	return update_post_meta( $object['id'], $field_name, $value );
 }
 
 
