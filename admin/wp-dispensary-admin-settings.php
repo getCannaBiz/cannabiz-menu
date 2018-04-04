@@ -16,16 +16,16 @@
  */
 // Plugin version.
 if ( ! defined( 'WPD_ADMIN_SETTINGS_VERSION' ) ) {
-    define( 'WPD_ADMIN_SETTINGS_VERSION', '2.0' );
+  define( 'WPD_ADMIN_SETTINGS_VERSION', '2.0' );
 }
 if ( ! defined( 'WPDS_NAME' ) ) {
-    define( 'WPDS_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
+  define( 'WPDS_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
 }
-if ( ! defined('WPDS_DIR' ) ) {
-    define( 'WPDS_DIR', WP_PLUGIN_DIR . '/' . WPDS_NAME );
+if ( ! defined( 'WPDS_DIR' ) ) {
+  define( 'WPDS_DIR', WP_PLUGIN_DIR . '/' . WPDS_NAME );
 }
-if ( ! defined('WPDS_URL' ) ) {
-    define( 'WPDS_URL', WP_PLUGIN_URL . '/' . WPDS_NAME );
+if ( ! defined( 'WPDS_URL' ) ) {
+  define( 'WPDS_URL', WP_PLUGIN_URL . '/' . WPDS_NAME );
 }
 
 /**
@@ -33,16 +33,14 @@ if ( ! defined('WPDS_URL' ) ) {
  *
  * Initializes the WP-OOP-Settings-API.
  *
- * @since 	2.0
+ * @since 2.0
  */
 /**
  * Class `WPD_ADMIN_SETTINGS`.
  *
  * @since 2.0
  */
-// if ( file_exists( WPDS_DIR . '/admin/class-wp-dispensary-admin-settings.php' ) ) {
-    require_once( WPDS_DIR . '/class-wp-dispensary-admin-settings.php' );
-// }
+ require_once( WPDS_DIR . '/class-wp-dispensary-admin-settings.php' );
 /**
  * Actions/Filters
  *
@@ -58,21 +56,21 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	 */
 	$wpdas_obj = new WPD_ADMIN_SETTINGS();
 
-    // Section: Display Settings.
-    $wpdas_obj->add_section(
-    	array(
-			'id'    => 'wpdas_display',
-			'title' => __( 'Display Settings', 'wp-dispensary' ),
-		)
-    );
+  // Section: Display Settings.
+  $wpdas_obj->add_section(
+	  array(
+  	   'id'     => 'wpdas_display',
+  	    'title' => __( 'Display Settings', 'wp-dispensary' ),
+    ),
+  );
 
-    // Section: Other Settings.
-    $wpdas_obj->add_section(
-    	array(
-			'id'    => 'wpdas_other',
-			'title' => __( 'Other Settings', 'wp-dispensary' ),
-		)
-    );
+  // Section: Other Settings.
+  $wpdas_obj->add_section(
+  	array(
+  	   'id'     => 'wpdas_other',
+  	    'title' => __( 'Other Settings', 'wp-dispensary' ),
+    ),
+  );
 
 
 
@@ -84,9 +82,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'      => 'wpd_settings_details_table_title',
-			'type'    => 'title',
-			'name'    => '<h1>Details table</h1>',
+			'id'   => 'wpd_settings_details_table_title',
+			'type' => 'title',
+			'name' => '<h1>Details table</h1>',
 		)
 	);
 
@@ -98,14 +96,14 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'   => 'wpd_details_phrase',
-			'type' => 'select',
-			'name' => __( 'Title', 'wp-dispensary' ),
-			'desc' => __( 'Choose the title you would like used', 'wp-dispensary' ),
+			'id'      => 'wpd_details_phrase',
+			'type'    => 'select',
+			'name'    => __( 'Title', 'wp-dispensary' ),
+			'desc'    => __( 'Choose the title you would like used', 'wp-dispensary' ),
 			'options' => array(
 				'Details'     => 'Details',
 				'Information' => 'Information',
-			)
+			),
 		)
 	);
 
@@ -138,9 +136,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'name'    => __( 'Display', 'wp-dispensary' ),
 			'desc'    => __( 'Where should the details display on single menu items?', 'wp-dispensary' ),
 			'options' => array(
-				'above'  => 'Above Content',
-				'below'  => 'Below Content',
-			)
+				'above' => 'Above Content',
+				'below' => 'Below Content',
+			),
 		)
 	);
 
@@ -167,8 +165,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'      => 'wpd_settings_separator',
-			'type'    => 'separator',
+			'id'   => 'wpd_settings_separator',
+			'type' => 'separator',
 		)
 	);
 
@@ -180,9 +178,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'      => 'wpd_settings_pricing_table_title',
-			'type'    => 'title',
-			'name'    => '<h1>Prices table</h1>',
+			'id'   => 'wpd_settings_pricing_table_title',
+			'type' => 'title',
+			'name' => '<h1>Prices table</h1>',
 		)
 	);
 
@@ -194,10 +192,10 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'   => 'wpd_pricing_currency_code',
-			'type' => 'select',
-			'name' => __( 'Currency', 'wp-dispensary' ),
-			'desc' => __( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
+			'id'      => 'wpd_pricing_currency_code',
+			'type'    => 'select',
+			'name'    => __( 'Currency', 'wp-dispensary' ),
+			'desc'    => __( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
 			'options' => array(
 				'AUD' => '(AUD) Australian Dollar',
 				'BRL' => '(BRL) Brazilian Real',
@@ -223,7 +221,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'THB' => '(THB) Thai Baht',
 				'TRY' => '(TRY) Turkish Lira',
 				'USD' => '(USD) U.S. Dollar',
-			)
+			),
 		)
 	);
 
@@ -235,14 +233,14 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'   => 'wpd_pricing_phrase',
-			'type' => 'select',
-			'name' => __( 'Title', 'wp-dispensary' ),
-			'desc' => __( 'Choose the title you would like used', 'wp-dispensary' ),
+			'id'      => 'wpd_pricing_phrase',
+			'type'    => 'select',
+			'name'    => __( 'Title', 'wp-dispensary' ),
+			'desc'    => __( 'Choose the title you would like used', 'wp-dispensary' ),
 			'options' => array(
 				'Price'    => 'Prices',
 				'Donation' => 'Donations',
-			)
+			),
 		)
 	);
 
@@ -275,9 +273,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'name'    => __( 'Display', 'wp-dispensary' ),
 			'desc'    => __( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
 			'options' => array(
-				'above'  => 'Above Content',
-				'below'  => 'Below Content',
-			)
+				'above' => 'Above Content',
+				'below' => 'Below Content',
+			),
 		)
 	);
 
@@ -296,7 +294,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
-    // Field: Text.
+  // Field: Text.
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
@@ -315,16 +313,16 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'name'              => __( 'Number Input', 'wp-dispensary' ),
 			'desc'              => __( 'Number field with validation callback `intval`', 'wp-dispensary' ),
 			'default'           => 1,
-			'sanitize_callback' => 'intval'
+			'sanitize_callback' => 'intval',
 		)
 	);
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
-			'id'      => 'password',
-			'type'    => 'password',
-			'name'    => __( 'Password Input', 'wp-dispensary' ),
-			'desc'    => __( 'Password field description', 'wp-dispensary' ),
+			'id'   => 'password',
+			'type' => 'password',
+			'name' => __( 'Password Input', 'wp-dispensary' ),
+			'desc' => __( 'Password field description', 'wp-dispensary' ),
 		)
 	);
 	$wpdas_obj->add_field(
@@ -348,64 +346,64 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
-			'id'   => 'radio',
-			'type' => 'radio',
-			'name' => __( 'Radio', 'wp-dispensary' ),
-			'desc' => __( 'Radio Button', 'wp-dispensary' ),
+			'id'      => 'radio',
+			'type'    => 'radio',
+			'name'    => __( 'Radio', 'wp-dispensary' ),
+			'desc'    => __( 'Radio Button', 'wp-dispensary' ),
 			'options' => array(
 				'yes' => 'Yes',
-				'no'  => 'No'
-			)
+				'no'  => 'No',
+			),
 		)
 	);
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
-			'id'   => 'multicheck',
-			'type' => 'multicheck',
-			'name' => __( 'Multile checkbox', 'wp-dispensary' ),
-			'desc' => __( 'Multile checkbox description', 'wp-dispensary' ),
+			'id'      => 'multicheck',
+			'type'    => 'multicheck',
+			'name'    => __( 'Multile checkbox', 'wp-dispensary' ),
+			'desc'    => __( 'Multile checkbox description', 'wp-dispensary' ),
 			'options' => array(
 				'yes' => 'Yes',
-				'no'  => 'No'
-			)
+				'no'  => 'No',
+			),
 		)
 	);
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
-			'id'   => 'select',
-			'type' => 'select',
-			'name' => __( 'A Dropdown', 'wp-dispensary' ),
-			'desc' => __( 'A Dropdown description', 'wp-dispensary' ),
+			'id'      => 'select',
+			'type'    => 'select',
+			'name'    => __( 'A Dropdown', 'wp-dispensary' ),
+			'desc'    => __( 'A Dropdown description', 'wp-dispensary' ),
 			'options' => array(
 				'yes' => 'Yes',
-				'no'  => 'No'
-			)
+				'no'  => 'No',
+			),
 		)
 	);
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
-			'id'   => 'image',
-			'type' => 'image',
-			'name' => __( 'Image', 'wp-dispensary' ),
-			'desc' => __( 'Image description', 'wp-dispensary' ),
+			'id'      => 'image',
+			'type'    => 'image',
+			'name'    => __( 'Image', 'wp-dispensary' ),
+			'desc'    => __( 'Image description', 'wp-dispensary' ),
 			'options' => array(
-				'button_label' => 'Choose Image'
-			)
+				'button_label' => 'Choose Image',
+			),
 		)
 	);
 	$wpdas_obj->add_field(
 		'wpdas_other',
 		array(
-			'id'   => 'file',
-			'type' => 'file',
-			'name' => __( 'File', 'wp-dispensary' ),
-			'desc' => __( 'File description', 'wp-dispensary' ),
+			'id'      => 'file',
+			'type'    => 'file',
+			'name'    => __( 'File', 'wp-dispensary' ),
+			'desc'    => __( 'File description', 'wp-dispensary' ),
 			'options' => array(
-				'button_label' => 'Choose file'
-			)
+				'button_label' => 'Choose file',
+			),
 		)
 	);
 	$wpdas_obj->add_field(
