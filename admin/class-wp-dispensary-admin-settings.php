@@ -243,52 +243,51 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 					});
 
 					// Nav tabs.
+					if (activetab != '' && $(activetab + '-tab').length ) {
+						$(activetab + '-tab').addClass('nav-tab-active');
+					}
+					else {
+						$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
+					}
 
-								if (activetab != '' && $(activetab + '-tab').length ) {
-									$(activetab + '-tab').addClass('nav-tab-active');
-								}
-								else {
-									$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
-								}
+					$('.nav-tab-wrapper a').click(function(evt) {
+					$('.nav-tab-wrapper a').removeClass('nav-tab-active');
+					$(this).addClass('nav-tab-active').blur();
+					var clicked_group = $(this).attr('href');
+					if (typeof(localStorage) != 'undefined' ) {
+						localStorage.setItem("activetab", $(this).attr('href'));
+					}
+					$('.group').hide();
+					$(clicked_group).fadeIn();
+					evt.preventDefault();
+					});
 
-								$('.nav-tab-wrapper a').click(function(evt) {
-								$('.nav-tab-wrapper a').removeClass('nav-tab-active');
-								$(this).addClass('nav-tab-active').blur();
-								var clicked_group = $(this).attr('href');
-								if (typeof(localStorage) != 'undefined' ) {
-									localStorage.setItem("activetab", $(this).attr('href'));
-								}
-								$('.group').hide();
-								$(clicked_group).fadeIn();
-								evt.preventDefault();
-								});
+					$('.wpds-browse').on('click', function (event) {
+					event.preventDefault();
+					var self = $(this);
+					// Create the media frame.
+					var file_frame = wp.media.frames.file_frame = wp.media({
+						title: self.data('uploader_title'),
+						button: {
+							text: self.data('uploader_button_text'),
+						},
+						multiple: false
+					});
+					file_frame.on('select', function () {
+						attachment = file_frame.state().get('selection').first().toJSON();
+						self.prev('.wpds-url').val(attachment.url).change();
+					});
+					// Finally, open the modal
+					file_frame.open();
+					});
+					$('input.wpds-url').on( 'change keyup paste input', (function() {
+					var self = $(this);
+					self.next().parent().children( '.wpds-image-preview' ).children( 'img' ).attr( 'src', self.val() );
+					})).change();
 
-								$('.wpds-browse').on('click', function (event) {
-								event.preventDefault();
-								var self = $(this);
-								// Create the media frame.
-								var file_frame = wp.media.frames.file_frame = wp.media({
-									title: self.data('uploader_title'),
-									button: {
-										text: self.data('uploader_button_text'),
-									},
-									multiple: false
-								);
-								file_frame.on('select', function () {
-									attachment = file_frame.state().get('selection').first().toJSON();
-									self.prev('.wpds-url').val(attachment.url).change();
-								});
-								// Finally, open the modal
-								file_frame.open();
-								});
-								$('input.wpds-url').on( 'change keyup paste input', (function() {
-								var self = $(this);
-								self.next().parent().children( '.wpds-image-preview' ).children( 'img' ).attr( 'src', self.val() );
-								})).change();
-
-								$(".color-picker").after("<div class='wpds-color-picker-display'></div>");
-								});
-								</script>
+					$(".color-picker").after("<div class='wpds-color-picker-display'></div>");
+					});
+					</script>
 
 			<?php
 			if ( null === $wpd_settings['color'] || '' === $wpd_settings['color'] ) {
