@@ -253,28 +253,28 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpd_details_flowers_concentrates = '';
 			}
 
-			if ( 'prerolls' === get_post_type() ) {
-				$wpd_details_prerolls = $wpdpreroll . $wpdvendors;
-			} else {
-				$wpd_details_prerolls = '';
-			}
-
-			if ( 'growers' === get_post_type() ) {
-				$wpd_details_growers = $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdcloneyield . $wpdclonedifficulty . $wpdvendors;
-			} else {
-				$wpd_details_growers = '';
-			}
-
 			if ( 'edibles' === get_post_type() ) {
 				$wpd_details_edibles = $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients . $wpdvendors;
 			} else {
 				$wpd_details_edibles = '';
 			}
 
+			if ( 'prerolls' === get_post_type() ) {
+				$wpd_details_prerolls = $wpdpreroll . $wpdvendors;
+			} else {
+				$wpd_details_prerolls = '';
+			}
+
 			if ( 'topicals' === get_post_type() ) {
 				$wpd_details_topicals = $wpdsizetopical . $wpdthctopical . $wpdcbdtopical . $wpdingredients . $wpdvendors;
 			} else {
 				$wpd_details_topicals = '';
+			}
+
+			if ( 'growers' === get_post_type() ) {
+				$wpd_details_growers = $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdcloneyield . $wpdclonedifficulty . $wpdvendors;
+			} else {
+				$wpd_details_growers = '';
 			}
 
 			if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
@@ -400,16 +400,16 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpd_pricing_table_prerolls_edibles = '';
 			}
 
-			if ( in_array( get_post_type(), array( 'growers' ) ) ) {
-				$wpd_pricing_table_growers = $wpdpriceperunit;
-			} else {
-				$wpd_pricing_table_growers = '';
-			}
-
 			if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
 				$wpd_pricing_table_topicals = $wpdpricetopical;
 			} else {
 				$wpd_pricing_table_topicals = '';
+			}
+
+			if ( in_array( get_post_type(), array( 'growers' ) ) ) {
+				$wpd_pricing_table_growers = $wpdpriceperunit;
+			} else {
+				$wpd_pricing_table_growers = '';
 			}
 
 			if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
@@ -470,4 +470,3 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 	add_filter( 'the_content', 'wpd_data_output_content' );
 
 }
-
