@@ -212,7 +212,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		/**
 		 * Price output - low amount
 		 */
-
+		$pricinglow = '';
 		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
 			$pricinglow = wpd_currency_code() . '' . get_post_meta( get_the_id(), '_gram', true );
 		} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
@@ -229,7 +229,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		/**
 		 * Price output - high amount
 		 */
-
+		$pricinghigh = '';
 		if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
 			$pricinghigh = wpd_currency_code() . '' . get_post_meta( get_the_id(), '_ounce', true );
 		} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
