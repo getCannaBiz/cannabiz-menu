@@ -149,6 +149,10 @@ th#featured_thumb {
 	text-align: center;
 }
 
+.manage-column.column-featured_thumb {
+  text-align: center;
+}
+
 #featured_thumb span.wpd-admin-screen-featured-image-title,
 .wpd-admin-screen-featured-image-title {
 	display: none;
