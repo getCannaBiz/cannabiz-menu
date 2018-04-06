@@ -9,35 +9,11 @@
 
 WP Dispensary was built with ease of use in mind, so the setup process of the plugin is as simple as adding and activating the plugin, adding your content and sitting back to bask in the glory of how easy it was to set up.
 
-Read the full list of [features](https://www.wpdispensary.com/features/).
-
 ### Easy to use shortcodes
 
 The WP Dispensary plugin comes with built in shortcodes which allow you to display your menu with any theme, however you'd like.
 
-You can call your menu anywhere shortcodes are accepted in your theme.
-
-Samples of the shortcodes are below. See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
-
-`[wpd-flowers posts="6"]`
-
-`[wpd-concentrates posts="6"]`
-
-`[wpd-edibles posts="6"]`
-
-`[wpd-prerolls posts="6"]`
-
-`[wpd-topicals posts="6"]`
-
-`[wpd-growers posts="6"]`
-
-`[wpd-carousel posts="6"]`
-
-## 100% Open Source
-
-WP Dispensary is free to use with no license restrictions or expensive setup fees. It's as simple as downloading the plugin, installing it on your WordPress powered website, and adding content.
-
-We believe in the power of open source, and this plugin is a shining example of that. Not only can you download and freely use this plugin as you see fit, developers are free to open an [issue](https://www.github.com/deviodigital/wp-dispensary/issues) or submit a [pull request](https://www.github.com/deviodigital/wp-dispensary/pulls)
+See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
 
 ## Extend WP Dispensary
 
