@@ -101,7 +101,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 				echo "<div class='wpdispensary-widget'>";
 				do_action( 'wpd_flowers_widget_inside_top' );
 				echo "<a href='" . esc_url( get_permalink( $post->ID ) ) . "'>";
-					the_post_thumbnail( $instance['imagesize'] );
+				the_post_thumbnail( $instance['imagesize'] );
 				echo '</a>';
 				if ( 'on' === $instance['flowername'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";

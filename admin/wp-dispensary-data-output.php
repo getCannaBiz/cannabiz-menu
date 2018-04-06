@@ -25,18 +25,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 	 */
 	function wpd_data_output_content( $content ) {
 
+		global $post;
+
 		/**
 		 * Access all settings
 		 */
 		$wpd_settings = get_option( 'wpdas_display' );
-
-		if ( null === $wpd_settings['wpd_pricing_phrase'] || 'Price' === $wpd_settings['wpd_pricing_phrase'] ) {
-			$wpd_cost_phrase = 'Pricing';
-		} else {
-			$wpd_cost_phrase = 'Donation';
-		}
-
-		global $post;
 
 		$post_type = get_post_type_object( get_post_type( $post ) );
 

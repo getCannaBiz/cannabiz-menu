@@ -46,3 +46,73 @@ if ( isset( $_GET['post_type'] ) ) {
 		add_action( 'manage_pages_custom_column', 'wp_dispensary_columns_data', 10, 2 );
 	}
 }
+
+// Hide specific metaboxes by default.
+add_filter( 'default_hidden_meta_boxes', 'hide_meta_box', 10, 2 );
+function hide_meta_box( $hidden, $screen ) {
+	//make sure we are dealing with the correct screen.
+	if ( ( 'post' == $screen->base ) && ( 'flowers' == $screen->id ) ) {
+		$hidden = array( 'postexcerpt','slugdiv','postcustom','trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv', 'tagsdiv-aroma', 'tagsdiv-flavor', 'tagsdiv-effect', 'tagsdiv-condition', 'tagsdiv-symptom', 'tagsdiv-vendor' );
+		$hidden[] ='my_custom_meta_box';//for custom meta box, enter the id used in the add_meta_box() function.
+	} elseif ( ( 'post' == $screen->base ) && ( 'concentrates' == $screen->id ) ) {
+		$hidden = array( 'postexcerpt','slugdiv','postcustom','trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv', 'tagsdiv-aroma', 'tagsdiv-flavor', 'tagsdiv-effect', 'tagsdiv-condition', 'tagsdiv-symptom', 'tagsdiv-vendor' );
+		$hidden[] ='my_custom_meta_box';//for custom meta box, enter the id used in the add_meta_box() function.
+	} elseif ( ( 'post' == $screen->base ) && ( 'edibles' == $screen->id ) ) {
+		$hidden = array( 'postexcerpt','slugdiv','postcustom','trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv', 'tagsdiv-aroma', 'tagsdiv-flavor', 'tagsdiv-effect', 'tagsdiv-condition', 'tagsdiv-symptom', 'tagsdiv-vendor' );
+		$hidden[] ='my_custom_meta_box';//for custom meta box, enter the id used in the add_meta_box() function.
+	} elseif ( ( 'post' == $screen->base ) && ( 'prerolls' == $screen->id ) ) {
+		$hidden = array( 'slugdiv', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'tagsdiv-vendor', 'flowers_categorydiv' );
+		$hidden[] ='my_custom_meta_box';//for custom meta box, enter the id used in the add_meta_box() function.
+	} elseif ( ( 'post' == $screen->base ) && ( 'topicals' == $screen->id ) ) {
+		$hidden = array( 'slugdiv', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'tagsdiv-ingredients', 'tagsdiv-effect', 'tagsdiv-condition', 'tagsdiv-symptom', 'tagsdiv-vendor', 'flowers_categorydiv' );
+		$hidden[] ='my_custom_meta_box';//for custom meta box, enter the id used in the add_meta_box() function.
+	} elseif ( ( 'post' == $screen->base ) && ( 'growers' == $screen->id ) ) {
+		$hidden = array( 'slugdiv', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'tagsdiv-vendor', 'flowers_categorydiv' );
+		$hidden[] ='my_custom_meta_box';//for custom meta box, enter the id used in the add_meta_box() function.
+	} else {}
+	return $hidden;
+}
+
+// Rearrange metabox order on Edibles edit screen.
+add_filter( 'get_user_option_meta-box-order_edibles', 'edibles_metabox_order' );
+function edibles_metabox_order( $order ) {
+	return array(
+		'side' => join(
+			",",
+			array(
+				'submitdiv',
+				'wpdispensary_singleprices',
+			)
+		),
+	);
+}
+
+// Rearrange metabox order on Pre-rolls edit screen.
+add_filter( 'get_user_option_meta-box-order_prerolls', 'prerolls_metabox_order' );
+function prerolls_metabox_order( $order ) {
+	return array(
+		'side' => join(
+			",",
+			array(
+				'submitdiv',
+				'wpdispensary_singleprices',
+				'select-flowers-metabox',
+			)
+		),
+	);
+}
+
+// Rearrange metabox order on Pre-rolls edit screen.
+add_filter( 'get_user_option_meta-box-order_growers', 'growers_metabox_order' );
+function growers_metabox_order( $order ) {
+	return array(
+		'side' => join(
+			",",
+			array(
+				'submitdiv',
+				'wpdispensary_singleprices',
+				'select-flowers-metabox',
+			)
+		),
+	);
+}
