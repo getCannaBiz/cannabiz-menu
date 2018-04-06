@@ -2,7 +2,7 @@
 Contributors: deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 4.9.4
+Tested up to: 4.9.5
 Stable tag: 1.9.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,7 +11,7 @@ The complete marijuana dispensary menu solution for WordPress
 
 == Description ==
 
-### The complete marijuana menu solution for WordPress
+### #1 Marijuana WordPress plugin
 
 WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage product menus and let patients place orders directly through their own website.
 
@@ -28,22 +28,6 @@ Add your favorite [extensions](https://www.wpdispensary.com/add-ons/) and custom
 The WP Dispensary plugin comes with 7 built in shortcodes that allow you to display your menu with *any* WordPress theme.
 
 You can call your menu anywhere shortcodes are accepted in your theme.
-
-Samples of the shortcodes are below.
-
-`[wpd-flowers posts="6"]`
-
-`[wpd-concentrates posts="6"]`
-
-`[wpd-edibles posts="6"]`
-
-`[wpd-prerolls posts="6"]`
-
-`[wpd-topicals posts="6"]`
-
-`[wpd-growers posts="6"]`
-
-`[wpd-carousel posts="6"]`
 
 See all shortcode options in the [documentation](https://www.wpdispensary.com/article/introduction-to-shortcodes/)
 
@@ -73,6 +57,9 @@ It has a long list of options built in for customization to fit your business br
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 2.0 =
+* 
 
 = 1.9.18 =
 * Added new filters for post types in data output in `admin/wp-dispensary-data-output.php`

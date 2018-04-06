@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.0
+* 
+
 ### 1.9.18
 * Added new filters for post types in data output in `admin/wp-dispensary-data-output.php`
 * Added 'view all' link options to shortcodes in `admin/wp-dispensary-shortcodes.php`
