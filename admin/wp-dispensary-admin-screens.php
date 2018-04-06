@@ -116,7 +116,7 @@ function prerolls_metabox_order( $order ) {
 	);
 }
 
-// Rearrange metabox order on Pre-rolls edit screen.
+// Rearrange metabox order on Growers edit screen.
 add_filter( 'get_user_option_meta-box-order_growers', 'growers_metabox_order' );
 function growers_metabox_order( $order ) {
 	return array(
