@@ -16,7 +16,8 @@
 #wpdispensary_compounds .inside,
 #wpdispensary_clonedetails .inside,
 #wpdispensary_thc_cbd_mg .inside,
-#wpdispensary_thccbdtopical .inside {
+#wpdispensary_thccbdtopical .inside,
+#wpdispensary_grower_product_details .inside {
     overflow: auto;
 }
 
@@ -58,6 +59,7 @@
     margin: 0 1%;
 }
 
+#wpdispensary_grower_product_details .inside .growerbox,
 #wpdispensary_clonedetails .inside .growerbox {
 	float: left;
 	position: relative;
@@ -70,6 +72,14 @@
 	position: relative;
 	width: 23%;
 }
+
+#postbox-container-2 #wpdispensary_grower_product_details .inside .growerbox {
+	float: left;
+	margin: 10px 1%;
+	position: relative;
+	width: 48%;
+}
+
 
 #wpdispensary_thc_cbd_mg .inside .ediblebox {
 	float: left;
