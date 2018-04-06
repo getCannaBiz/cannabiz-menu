@@ -73,6 +73,20 @@ function hide_meta_box( $hidden, $screen ) {
 	return $hidden;
 }
 
+// Rearrange metabox order on Flowers edit screen.
+add_filter( 'get_user_option_meta-box-order_flowers', 'flowers_metabox_order' );
+function flowers_metabox_order( $order ) {
+	return array(
+		'normal' => join(
+			",",
+			array(
+				'wpdispensary_prices',
+				'wpdispensary_compounds',
+			)
+		),
+	);
+}
+
 // Rearrange metabox order on Edibles edit screen.
 add_filter( 'get_user_option_meta-box-order_edibles', 'edibles_metabox_order' );
 function edibles_metabox_order( $order ) {
