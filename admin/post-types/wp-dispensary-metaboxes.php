@@ -50,6 +50,7 @@ function wpdispensary_compounddetails() {
 	$cbd  = get_post_meta( $post->ID, '_cbd', true );
 	$cba  = get_post_meta( $post->ID, '_cba', true );
 	$cbn  = get_post_meta( $post->ID, '_cbn', true );
+	$cbg  = get_post_meta( $post->ID, '_cbg', true );
 
 	/** Echo out the fields */
 	echo '<div class="compoundbox">';
@@ -71,6 +72,10 @@ function wpdispensary_compounddetails() {
 	echo '<div class="compoundbox">';
 	echo '<p>CBN %:</p>';
 	echo '<input type="text" name="_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>CBG %:</p>';
+	echo '<input type="text" name="_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -106,6 +111,7 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 	$thccbd_meta['_cbd']  = $_POST['_cbd'];
 	$thccbd_meta['_cba']  = $_POST['_cba'];
 	$thccbd_meta['_cbn']  = $_POST['_cbn'];
+	$thccbd_meta['_cbg']  = $_POST['_cbg'];
 
 	/** Add values of $compounddetails_meta as custom fields */
 

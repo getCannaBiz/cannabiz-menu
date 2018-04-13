@@ -82,7 +82,7 @@ function run_wp_dispensary() {
 
 }
 
-/** Runs WPDispensary */
+/** Runs WP Dispensary */
 run_wp_dispensary();
 
 /**

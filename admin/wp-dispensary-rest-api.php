@@ -438,7 +438,7 @@ add_action( 'rest_api_init', 'slug_register_compounds' );
  * Register compound details info
  */
 function slug_register_compounds() {
-	$compounds = array( '_thc', '_thca', '_cbd', '_cba', '_cbn' );
+	$compounds = array( '_thc', '_thca', '_cbd', '_cba', '_cbn', '_cbg' );
 	foreach ( $compounds as $compound ) {
 		register_rest_field(
 			array( 'flowers', 'concentrates' ),

@@ -56,19 +56,19 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	 */
 	$wpdas_obj = new WPD_ADMIN_SETTINGS();
 
-	// Section: Display Settings.
+	// Section: General.
 	$wpdas_obj->add_section(
 		array(
-			'id'    => 'wpdas_display',
-			'title' => __( 'Display Settings', 'wp-dispensary' ),
+			'id'    => 'wpdas_general',
+			'title' => __( 'General', 'wp-dispensary' ),
 		)
 	);
 
-	// Section: Other Settings.
+	// Section: Display.
 	$wpdas_obj->add_section(
 		array(
-			'id'    => 'wpdas_other',
-			'title' => __( 'Other Settings', 'wp-dispensary' ),
+			'id'    => 'wpdas_display',
+			'title' => __( 'Display', 'wp-dispensary' ),
 		)
 	);
 
@@ -113,7 +113,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'          => 'wpd_details_phrase_other',
+			'id'          => 'wpd_details_phrase_settings',
 			'type'        => 'text',
 			'name'        => __( '', 'wp-dispensary' ),
 			'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
@@ -179,47 +179,6 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'   => 'wpd_settings_pricing_table_title',
 			'type' => 'title',
 			'name' => '<h1>Prices table</h1>',
-		)
-	);
-
-	/**
-	 * Add Field: Currency code
-	 * Field:     select
-	 * Section:   wpdas_display
-	 */
-	$wpdas_obj->add_field(
-		'wpdas_display',
-		array(
-			'id'      => 'wpd_pricing_currency_code',
-			'type'    => 'select',
-			'name'    => __( 'Currency', 'wp-dispensary' ),
-			'desc'    => __( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
-			'options' => array(
-				'AUD' => '(AUD) Australian Dollar',
-				'BRL' => '(BRL) Brazilian Real',
-				'CAD' => '(CAD) Canadian Dollar',
-				'CZK' => '(CZK) Czech Koruna',
-				'DKK' => '(DKK) Danish Krone',
-				'EUR' => '(EUR) Euro',
-				'HKD' => '(HKD) Hong Kong Dollar',
-				'HUF' => '(HUF) Hungarian Forint',
-				'ILS' => '(ILS) Israeli New Sheqel',
-				'JPY' => '(JPY) Japanese Yen',
-				'MYR' => '(MYR) Malaysian Ringgit',
-				'MYR' => '(MXN) Mexican Peso',
-				'MXN' => '(NOK) Norwegian Krone',
-				'NOK' => '(NZD) New Zealand Dollar',
-				'NZD' => '(PHP) Philippine Peso',
-				'PHP' => '(PLN) Polish Zloty',
-				'PLN' => '(GBP) Pound Sterling',
-				'GBP' => '(SGD) Singapore Dollar',
-				'SGD' => '(SEK) Swedish Krona',
-				'CHF' => '(CHF) Swiss Franc',
-				'TWD' => '(TWD) Taiwan New Dollar',
-				'THB' => '(THB) Thai Baht',
-				'TRY' => '(TRY) Turkish Lira',
-				'USD' => '(USD) U.S. Dollar',
-			),
 		)
 	);
 
@@ -292,9 +251,50 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
+	/**
+	 * Add Field: Currency code
+	 * Field:     select
+	 * Section:   wpdas_general
+	 */
+	$wpdas_obj->add_field(
+		'wpdas_general',
+		array(
+			'id'      => 'wpd_pricing_currency_code',
+			'type'    => 'select',
+			'name'    => __( 'Currency', 'wp-dispensary' ),
+			'desc'    => __( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
+			'options' => array(
+				'AUD' => '(AUD) Australian Dollar',
+				'BRL' => '(BRL) Brazilian Real',
+				'CAD' => '(CAD) Canadian Dollar',
+				'CZK' => '(CZK) Czech Koruna',
+				'DKK' => '(DKK) Danish Krone',
+				'EUR' => '(EUR) Euro',
+				'HKD' => '(HKD) Hong Kong Dollar',
+				'HUF' => '(HUF) Hungarian Forint',
+				'ILS' => '(ILS) Israeli New Sheqel',
+				'JPY' => '(JPY) Japanese Yen',
+				'MYR' => '(MYR) Malaysian Ringgit',
+				'MYR' => '(MXN) Mexican Peso',
+				'MXN' => '(NOK) Norwegian Krone',
+				'NOK' => '(NZD) New Zealand Dollar',
+				'NZD' => '(PHP) Philippine Peso',
+				'PHP' => '(PLN) Polish Zloty',
+				'PLN' => '(GBP) Pound Sterling',
+				'GBP' => '(SGD) Singapore Dollar',
+				'SGD' => '(SEK) Swedish Krona',
+				'CHF' => '(CHF) Swiss Franc',
+				'TWD' => '(TWD) Taiwan New Dollar',
+				'THB' => '(THB) Thai Baht',
+				'TRY' => '(TRY) Turkish Lira',
+				'USD' => '(USD) U.S. Dollar',
+			),
+		)
+	);
+
 	// Field: Text.
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'      => 'text',
 			'type'    => 'text',
@@ -304,7 +304,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'                => 'text_no',
 			'type'              => 'number',
@@ -315,7 +315,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'   => 'password',
 			'type' => 'password',
@@ -324,7 +324,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'   => 'textarea',
 			'type' => 'textarea',
@@ -333,7 +333,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'   => 'checkbox',
 			'type' => 'checkbox',
@@ -342,7 +342,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'      => 'radio',
 			'type'    => 'radio',
@@ -355,7 +355,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'      => 'multicheck',
 			'type'    => 'multicheck',
@@ -368,7 +368,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'      => 'select',
 			'type'    => 'select',
@@ -381,7 +381,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'      => 'image',
 			'type'    => 'image',
@@ -393,7 +393,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'      => 'file',
 			'type'    => 'file',
@@ -405,7 +405,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'          => 'color',
 			'type'        => 'color',
@@ -415,7 +415,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 	$wpdas_obj->add_field(
-		'wpdas_other',
+		'wpdas_general',
 		array(
 			'id'   => 'wysiwyg',
 			'type' => 'wysiwyg',

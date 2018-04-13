@@ -124,6 +124,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdcbn = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
+			$wpdcbg = '<tr><td><span>CBG:</span></td><td>' . get_post_meta( get_the_id(), '_cbg', true ) . '%</td></tr>';
+		} else {
+			$wpdcbg = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
 			$wpdthcmg = '<tr><td><span>THC mg per serving:</span></td><td>' . get_post_meta( get_the_id(), '_thcmg', true ) . '</td></tr>';
 		} else {
@@ -281,7 +287,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
-			$wpd_details_compounds = $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn;
+			$wpd_details_compounds = $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn . $wpdcbg;
 		} else {
 			$wpd_details_compounds = '';
 		}
