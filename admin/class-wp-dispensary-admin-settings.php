@@ -727,31 +727,37 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 	} // WPD_ADMIN_SETTINGS ended.
 endif;
 
+// Adds Flowers admin submenu link.
 add_action( 'admin_menu', 'wpd_admin_menu_flowers', 1 );
 function wpd_admin_menu_flowers(  ) {
 	add_submenu_page( 'wpd-settings', 'Flowers', 'Flowers', 'manage_options', 'edit.php?post_type=flowers', null );
 }
 
+// Adds Concentrates admin submenu link.
 add_action( 'admin_menu', 'wpd_admin_menu_concentrates', 2 );
 function wpd_admin_menu_concentrates( ) {
 	add_submenu_page( 'wpd-settings', 'Concentrates', 'Concentrates', 'manage_options', 'edit.php?post_type=concentrates', null );
 }
 
+// Adds Edibles admin submenu link.
 add_action( 'admin_menu', 'wpd_admin_menu_edibles', 4 );
 function wpd_admin_menu_edibles( ) {
 	add_submenu_page( 'wpd-settings', 'Edibles', 'Edibles', 'manage_options', 'edit.php?post_type=edibles', null );
 }
 
+// Adds Pre-rolls admin submenu link.
 add_action( 'admin_menu', 'wpd_admin_menu_prerolls', 5 );
 function wpd_admin_menu_prerolls( ) {
 	add_submenu_page( 'wpd-settings', 'Pre-rolls', 'Pre-rolls', 'manage_options', 'edit.php?post_type=prerolls', null );
 }
 
+// Adds Topcials admin submenu link.
 add_action( 'admin_menu', 'wpd_admin_menu_topicals', 6 );
 function wpd_admin_menu_topicals() {
 	add_submenu_page( 'wpd-settings', 'Topicals', 'Topicals', 'manage_options', 'edit.php?post_type=topicals', null );
 }
 
+// Adds Growers admin submenu link.
 add_action( 'admin_menu', 'wpd_admin_menu_growers', 7 );
 function wpd_admin_menu_growers() {
 	add_submenu_page( 'wpd-settings', 'Growers', 'Growers', 'manage_options', 'edit.php?post_type=growers', null );
