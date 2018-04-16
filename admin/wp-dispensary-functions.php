@@ -12,12 +12,12 @@
 
 function wpd_currency_code() {
 
-	$wp_dispensary_options = get_option( 'wp_dispensary_option_name' );
+	$wpd_settings = get_option( 'wpdas_general' );
 
-	if ( null === $wp_dispensary_options['wpd_currency'] ) {
+	if ( ! isset ( $wpd_settings['wpd_pricing_currency_code'] ) ) {
 		$wpd_currency = 'USD';
 	} else {
-		$wpd_currency = $wp_dispensary_options['wpd_currency'];
+		$wpd_currency = $wpd_settings['wpd_pricing_currency_code'];
 	}
 
 	$currency_symbols = array(
