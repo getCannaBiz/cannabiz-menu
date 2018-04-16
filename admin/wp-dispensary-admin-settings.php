@@ -3,7 +3,7 @@
  * Adding the Admin Settings Page
  *
  * @link       https://www.wpdispensary.com
- * @since      1.6.0
+ * @since      2.0.0
  *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
@@ -28,13 +28,6 @@ if ( ! defined( 'WPDS_URL' ) ) {
 	define( 'WPDS_URL', WP_PLUGIN_URL . '/' . WPDS_NAME );
 }
 
-/**
- * WP-OOP-Settings-API Initializer
- *
- * Initializes the WP-OOP-Settings-API.
- *
- * @since 2.0
- */
 /**
  * Class `WPD_ADMIN_SETTINGS`.
  *
