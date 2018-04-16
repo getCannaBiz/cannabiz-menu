@@ -22,9 +22,9 @@
 class WP_Dispensary_Activator {
 
 	/**
-	 * Short Description. (use period)
+	 * Activatior.
 	 *
-	 * Long Description.
+	 * The following codes are run on plugin activation.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -70,5 +70,27 @@ class WP_Dispensary_Activator {
 		global $wp_rewrite;
 		$wp_rewrite->init();
 		$wp_rewrite->flush_rules();
+
+		/**
+		 * Create "Dispensary Menu" page with shortcodes
+		 *
+		 * @since 2.0
+		 */
+		if ( ! current_user_can( 'activate_plugins' ) ) return;
+		global $wpdb;
+		if ( null === $wpdb->get_row( "SELECT post_name FROM {$wpdb->prefix}posts WHERE post_name = 'dispensary-menu'", 'ARRAY_A' ) ) {
+			$current_user = wp_get_current_user();
+			// create post object
+			$page = array(
+				'post_title'   => __( 'Dispensary Menu' ),
+				'post_status'  => 'publish',
+				'post_author'  => $current_user->ID,
+				'post_type'    => 'page',
+				'post_content' => '[wpd-flowers]<br /><br />[wpd-concentrates]<br /><br />[wpd-edibles]<br /><br />[wpd-prerolls]<br /><br />[wpd-topicals]<br /><br />[wpd-growers]',
+			);
+
+			// insert the post into the database
+			wp_insert_post( $page );
+		}
 	}
 }
