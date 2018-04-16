@@ -332,8 +332,8 @@ add_action( 'init', 'wpdispensary_flowercategory', 0 );
 function wpdispensary_flowercategory() {
 
 	$labels = array(
-		'name'              => _x( 'Flower Categories', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Flower Category', 'taxonomy singular name' ),
+		'name'              => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
 		'search_items'      => __( 'Search Categories' ),
 		'all_items'         => __( 'All Categories' ),
 		'parent_item'       => __( 'Parent Category' ),
@@ -378,17 +378,17 @@ add_action( 'init', 'wpdispensary_ediblecategory', 0 );
 function wpdispensary_ediblecategory() {
 
 	$labels = array(
-		'name'              => _x( 'Edible Categories', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Edible Category', 'taxonomy singular name' ),
-		'search_items'      => __( 'Search Edible Categories' ),
-		'all_items'         => __( 'All Edible Categories' ),
-		'parent_item'       => __( 'Parent Edible Category' ),
-		'parent_item_colon' => __( 'Parent Edible Category:' ),
-		'edit_item'         => __( 'Edit Edible Category' ),
-		'update_item'       => __( 'Update Edible Category' ),
-		'add_new_item'      => __( 'Add New Edible Category' ),
-		'new_item_name'     => __( 'New Edible Category Name' ),
-		'not_found'         => 'No edible categories found',
+		'name'              => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Categories' ),
+		'all_items'         => __( 'All Categories' ),
+		'parent_item'       => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item'         => __( 'Edit Category' ),
+		'update_item'       => __( 'Update Category' ),
+		'add_new_item'      => __( 'Add New Category' ),
+		'new_item_name'     => __( 'New Category Name' ),
+		'not_found'         => 'No categories found',
 		'menu_name'         => __( 'Categories' ),
 	);
 
@@ -424,8 +424,8 @@ add_action( 'init', 'wpdispensary_concentratecategory', 0 );
 function wpdispensary_concentratecategory() {
 
 	$labels = array(
-		'name'              => _x( 'Concentrate Categories', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Concentrate Category', 'taxonomy singular name' ),
+		'name'              => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
 		'search_items'      => __( 'Search Categories' ),
 		'all_items'         => __( 'All Categories' ),
 		'parent_item'       => __( 'Parent Category' ),
@@ -470,8 +470,8 @@ add_action( 'init', 'wpdispensary_topicalcategory', 0 );
 function wpdispensary_topicalcategory() {
 
 	$labels = array(
-		'name'              => _x( 'Topical Categories', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Topical Category', 'taxonomy singular name' ),
+		'name'              => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
 		'search_items'      => __( 'Search Categories' ),
 		'all_items'         => __( 'All Categories' ),
 		'parent_item'       => __( 'Parent Category' ),
@@ -516,8 +516,8 @@ add_action( 'init', 'wpdispensary_growerscategory', 0 );
 function wpdispensary_growerscategory() {
 
 	$labels = array(
-		'name'              => _x( 'Growers Categories', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Growers Category', 'taxonomy singular name' ),
+		'name'              => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
 		'search_items'      => __( 'Search Categories' ),
 		'all_items'         => __( 'All Categories' ),
 		'parent_item'       => __( 'Parent Category' ),
