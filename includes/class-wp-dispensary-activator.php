@@ -17,7 +17,7 @@
  * @since      1.0.0
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes
- * @author     Robert DeVore <me@robertdevore.com>
+ * @author     Robert DeVore <deviodigital@gmail.com>
  */
 class WP_Dispensary_Activator {
 
@@ -80,7 +80,7 @@ class WP_Dispensary_Activator {
 		global $wpdb;
 		if ( null === $wpdb->get_row( "SELECT post_name FROM {$wpdb->prefix}posts WHERE post_name = 'dispensary-menu'", 'ARRAY_A' ) ) {
 			$current_user = wp_get_current_user();
-			// create post object
+			// create post object.
 			$page = array(
 				'post_title'   => __( 'Dispensary Menu' ),
 				'post_status'  => 'publish',
@@ -89,7 +89,7 @@ class WP_Dispensary_Activator {
 				'post_content' => '[wpd-flowers]<br /><br />[wpd-concentrates]<br /><br />[wpd-edibles]<br /><br />[wpd-prerolls]<br /><br />[wpd-topicals]<br /><br />[wpd-growers]',
 			);
 
-			// insert the post into the database
+			// insert the page into the database.
 			wp_insert_post( $page );
 		}
 	}
