@@ -202,7 +202,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'          => 'wpd_details_phrase_other',
+			'id'          => 'wpd_details_phrase_custom',
 			'type'        => 'text',
 			'name'        => __( '', 'wp-dispensary' ),
 			'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
