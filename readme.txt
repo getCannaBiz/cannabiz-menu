@@ -1,6 +1,6 @@
 === WP Dispensary Menu Management ===
 Contributors: deviodigital
-Tags: cannabis, dispensary, menu, marijuana, weed, cannabis, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
+Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.5
 Stable tag: 1.9.18
@@ -59,7 +59,34 @@ It has a long list of options built in for customization to fit your business br
 == Changelog ==
 
 = 2.0 =
-* 
+* Added "Dispensary Menu" page creation (with default shortcodes) on plugin activation in ` includes/class-wp-dispensary-activator.php`
+* Added featured image title for admin menu type screens in `admin/wp-dispensary-admin-screens.php`
+* Added post type filter for admin menu type screen thumbnails in `admin/wp-dispensary-admin-screens.php`
+* Added new file to house all custom functions in `admin/wp-dispensary-functions.php`
+* Added CBG to list of compound details in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added CBG to list of compound details in `admin/wp-dispensary-data-output.php`
+* Added CBG to list of compound details in `admin/wp-dispensary-rest-api.php`
+* Added vendor taxonomy to flush rewrite rules on plugin activation in `includes/wp-dispensary-activator.php`
+* Fixed various debug errors for undefined variables in `admin/wp-dispensary-shortcodes.php`
+* Fixed depreciated string value in get_bloginfo function in `admin/wp-dispensary-shortcodes.php`
+* Fixed bug in CBA variable names in `admin/wp-dispensary-shortcodes.php`
+* Fixed bug in Concentrates widget form category default `admin/post-types/wp-dispensary-widgets.php`
+* Updated undefined variables for Details and Pricing tables in `admin/wp-dispensary-data-output.php`
+* Rebuilt the admin Settings for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
+* Updated the admin WP Dispensary sub-menu link order in `admin/wp-dispensary-admin-settings.php`
+* Updated default variable values for pricinglow & pricinghigh in `admin/wp-dispensary-shortcodes.php`
+* Updated default order for taxonomies & metaboxes in Edit screens in `admin/wp-dispensary-admin-screens.php`
+* Updated Seed & Clone count metaboxes to be together in 1 metabox in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated default widget title's in `admin/post-types/wp-dispensary-widgets.php`
+* Updated Category taxonomy name updates in `admin/post-types/wp-dispensary-taxonomies.php`
+* Updated widget title background color in admin dashboard in `admin/css/wp-dispensary-admin.css`
+* Updated code to use new wpd_currency_code function in `admin/wp-dispensary-data-output.php`
+* Updated price output for carousel if all prices are empty in `admin/wp-dispensary-shortcodes.php`
+* Updated $content for non-WPD post types in `admin/wp-dispensary-data-output.php`
+* Updated CSS styles for WPD metaboxes in Woo + At a Glance box updates in `admin/css/wp-dispensary-admin.css`
+* Removed data tables from archive view by default in `admin/wp-dispensary-data-output.php`
+* Removed unncessary file to help reduce plugin size in `admin/post-types/wp-dispensary-build.php`
+* WordPress Coding Standards Updates throughout the entire plugin
 
 = 1.9.18 =
 * Added new filters for post types in data output in `admin/wp-dispensary-data-output.php`
