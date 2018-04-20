@@ -24,7 +24,7 @@
  * @since      1.0.0
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes
- * @author     Robert DeVore <me@robertdevore.com>
+ * @author     Robert DeVore <deviodigital@gmail.com>
  */
 class WP_Dispensary {
 
@@ -71,7 +71,7 @@ class WP_Dispensary {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-dispensary';
-		$this->version     = '1.9.18';
+		$this->version     = '2.0';
 
 		$this->load_dependencies();
 		$this->set_locale();
