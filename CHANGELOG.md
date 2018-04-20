@@ -13,12 +13,12 @@
 * Fixed depreciated string value in get_bloginfo function in `admin/wp-dispensary-shortcodes.php`
 * Fixed bug in CBA variable names in `admin/wp-dispensary-shortcodes.php`
 * Fixed bug in Concentrates widget form category default `admin/post-types/wp-dispensary-widgets.php`
-* Updated undefined variables for Details and Pricing tables in `admin/wp-dispensary-data-output.php`
 * Rebuilt the admin Settings for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
+* Updated undefined variables for Details and Pricing tables in `admin/wp-dispensary-data-output.php`
 * Updated the admin WP Dispensary sub-menu link order in `admin/wp-dispensary-admin-settings.php`
 * Updated default variable values for pricinglow & pricinghigh in `admin/wp-dispensary-shortcodes.php`
 * Updated default order for taxonomies & metaboxes in Edit screens in `admin/wp-dispensary-admin-screens.php`
-* Updated Seed & Clone count metaboxes to be together in 1 metabox in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated Seed & Clone counts to be in a single metabox in `admin/post-types/wp-dispensary-metaboxes.php`
 * Updated default widget title's in `admin/post-types/wp-dispensary-widgets.php`
 * Updated Category taxonomy name updates in `admin/post-types/wp-dispensary-taxonomies.php`
 * Updated widget title background color in admin dashboard in `admin/css/wp-dispensary-admin.css`
