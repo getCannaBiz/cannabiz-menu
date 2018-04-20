@@ -49,19 +49,19 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	 */
 	$wpdas_obj = new WPD_ADMIN_SETTINGS();
 
-	// Section: General.
-	$wpdas_obj->add_section(
-		array(
-			'id'    => 'wpdas_general',
-			'title' => __( 'General', 'wp-dispensary' ),
-		)
-	);
-
 	// Section: Display.
 	$wpdas_obj->add_section(
 		array(
 			'id'    => 'wpdas_display',
 			'title' => __( 'Display', 'wp-dispensary' ),
+		)
+	);
+
+	// Section: General.
+	$wpdas_obj->add_section(
+		array(
+			'id'    => 'wpdas_general',
+			'title' => __( 'General', 'wp-dispensary' ),
 		)
 	);
 
