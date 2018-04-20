@@ -222,10 +222,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdgrower = '';
 		}
 
-		if ( isset ( $wpd_settings['wpd_details_phrase'] ) && 'Details' === $wpd_settings['wpd_details_phrase'] ) {
-			$wpd_details_phrase = 'Details';
-		} else {
+		if ( isset ( $wpd_settings['wpd_details_phrase_custom'] ) && '' !== $wpd_settings['wpd_details_phrase_custom'] ) {
+			$wpd_details_phrase = $wpd_settings['wpd_details_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_details_phrase'] ) && 'Information' === $wpd_settings['wpd_details_phrase'] ) {
 			$wpd_details_phrase = 'Information';
+		} else {
+			$wpd_details_phrase = 'Details';
 		}
 
 		/**
@@ -383,10 +385,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdounce = '';
 		}
 
-		if ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Price' === $wpd_settings['wpd_pricing_phrase'] ) {
-			$wpd_price_phrase = 'Prices';
-		} else {
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_price_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donations' === $wpd_settings['wpd_pricing_phrase'] ) {
 			$wpd_price_phrase = 'Donations';
+		} else {
+			$wpd_price_phrase = 'Prices';
 		}
 
 		/**
