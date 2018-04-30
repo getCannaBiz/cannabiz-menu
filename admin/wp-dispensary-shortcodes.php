@@ -183,7 +183,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
 		}
 
-		$wpd_currency = '$';
+		$wpd_currency = 'wpd_currency_code()';
 
 		/**
 		 * Price output - if only one price has been added

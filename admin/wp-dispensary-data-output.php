@@ -326,7 +326,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Setting up WP Dispensary menu pricing data
 		 */
 
-		$wpd_currency = '$';
+		$wpd_currency = wpd_currency_code();
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$wpdpriceeach = '<tr class="priceeach"><td><span>Price Each:</span></td><td>' . $wpd_currency . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
