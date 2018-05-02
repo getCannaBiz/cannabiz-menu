@@ -172,7 +172,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-			'title'          => 'Recent Flowers',
+			'title'          => 'Flowers',
 			'limit'          => '5',
 			'order'          => '',
 			'featuredimage'  => '',
@@ -399,7 +399,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-			'title'                => 'Recent Concentrates',
+			'title'                => 'Concentrates',
 			'limit'                => '5',
 			'order'                => '',
 			'featuredimage'        => '',
@@ -627,7 +627,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-			'title'          => 'Recent Edibles',
+			'title'          => 'Edibles',
 			'limit'          => '5',
 			'order'          => '',
 			'featuredimage'  => '',
@@ -860,7 +860,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-			'title'           => 'Recent Pre-rolls',
+			'title'           => 'Pre-rolls',
 			'limit'           => '5',
 			'order'           => '',
 			'featuredimage'   => '',
@@ -1090,7 +1090,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-			'title'           => 'Recent Topicals',
+			'title'           => 'Topicals',
 			'limit'           => '5',
 			'order'           => '',
 			'featuredimage'   => '',
@@ -1322,7 +1322,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$defaults = array(
-			'title'          => 'Recent Growers',
+			'title'          => 'Growers',
 			'limit'          => '5',
 			'order'          => '',
 			'featuredimage'  => '',
