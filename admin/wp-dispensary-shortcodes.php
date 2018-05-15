@@ -1508,6 +1508,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'cbd'       => 'show',
 			'cba'       => '',
 			'cbn'       => '',
+			'cbg'       => '',
 			'title'     => 'Dispensary Menu',
 			'category'  => '',
 			'aroma'     => '',
@@ -1742,6 +1743,12 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$cbninfo = '<span class="wpd-productinfo cbn"><strong>CBN: </strong>' . get_post_meta( get_the_id(), '_cbn', true ) . '%</span>';
 		} else {
 			$cbninfo = '';
+		}
+
+		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
+			$cbginfo = '<span class="wpd-productinfo cbg"><strong>CBG: </strong>' . get_post_meta( get_the_id(), '_cbg', true ) . '%</span>';
+		} else {
+			$cbginfo = '';
 		}
 
 		/*
