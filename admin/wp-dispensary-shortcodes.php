@@ -161,27 +161,15 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		$priceHalfOunce = get_post_meta( get_the_ID(), '_halfounce', true );
 		$priceOunce     = get_post_meta( get_the_ID(), '_ounce', true );
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
-		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
-			$wpd_hide_details = '';
-		} else {
-			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
-		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
-			$wpd_content_placement = '';
-		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		}
+		// Access all WP Dispensary Display Settings.
+		$wpd_settings = get_option( 'wpdas_display' );
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
-			$wpd_cost_phrase = 'Price';
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_cost_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
+			$wpd_cost_phrase = 'Donation';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
+			$wpd_cost_phrase = 'Price';
 		}
 
 		/**
@@ -516,27 +504,15 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		$thumbnail_url       = $thumbnail_url_array[0];
 		$querytitle          = get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
-		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
-			$wpd_hide_details = '';
-		} else {
-			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
-		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
-			$wpd_content_placement = '';
-		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		}
+		// Access all WP Dispensary Display Settings.
+		$wpd_settings = get_option( 'wpdas_display' );
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
-			$wpd_cost_phrase = 'Price';
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_cost_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
+			$wpd_cost_phrase = 'Donation';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
+			$wpd_cost_phrase = 'Price';
 		}
 
 		/** Get the pricing for Concentrates */
@@ -798,27 +774,15 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		$thumbnail_url       = $thumbnail_url_array[0];
 		$querytitle          = get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
-		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
-			$wpd_hide_details = '';
-		} else {
-			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
-		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
-			$wpd_content_placement = '';
-		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		}
+		// Access all WP Dispensary Display Settings.
+		$wpd_settings = get_option( 'wpdas_display' );
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
-			$wpd_cost_phrase = 'Price';
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_cost_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
+			$wpd_cost_phrase = 'Donation';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
+			$wpd_cost_phrase = 'Price';
 		}
 
 		/*
@@ -986,27 +950,15 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		$thumbnail_url       = $thumbnail_url_array[0];
 		$querytitle          = get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
-		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
-			$wpd_hide_details = '';
-		} else {
-			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
-		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
-			$wpd_content_placement = '';
-		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		}
+		// Access all WP Dispensary Display Settings.
+		$wpd_settings = get_option( 'wpdas_display' );
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
-			$wpd_cost_phrase = 'Price';
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_cost_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
+			$wpd_cost_phrase = 'Donation';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
+			$wpd_cost_phrase = 'Price';
 		}
 
 		/*
@@ -1175,27 +1127,15 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$thumbnail_url       = $thumbnail_url_array[0];
 		$querytitle          = get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
-		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
-			$wpd_hide_details = '';
-		} else {
-			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
-		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
-			$wpd_content_placement = '';
-		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		}
+		// Access all WP Dispensary Display Settings.
+		$wpd_settings = get_option( 'wpdas_display' );
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
-			$wpd_cost_phrase = 'Price';
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_cost_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
+			$wpd_cost_phrase = 'Donation';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
+			$wpd_cost_phrase = 'Price';
 		}
 
 		/** Get the pricing for Topicals */
@@ -1368,27 +1308,15 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$thumbnail_url       = $thumbnail_url_array[0];
 		$querytitle          = get_the_title();
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
-		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
-			$wpd_hide_details = '';
-		} else {
-			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
-		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
-			$wpd_content_placement = '';
-		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		}
+		// Access all WP Dispensary Display Settings.
+		$wpd_settings = get_option( 'wpdas_display' );
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
-			$wpd_cost_phrase = 'Price';
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_cost_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
+			$wpd_cost_phrase = 'Donation';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
+			$wpd_cost_phrase = 'Price';
 		}
 
 		/*
@@ -1639,27 +1567,15 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		$priceHalfOunce = get_post_meta( get_the_ID(), '_halfounce', true );
 		$priceOunce     = get_post_meta( get_the_ID(), '_ounce', true );
 
-		$wp_dispensary_options = get_option( 'wp_dispensary_option_name' ); // Array of All Options.
-		if ( ! isset( $wp_dispensary_options['wpd_hide_details'] ) ) {
-			$wpd_hide_details = '';
-		} else {
-			$wpd_hide_details = $wp_dispensary_options['wpd_hide_details'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_hide_pricing'] ) ) {
-			$wpd_hide_pricing = '';
-		} else {
-			$wpd_hide_pricing = $wp_dispensary_options['wpd_hide_pricing'];
-		}
-		if ( ! isset( $wp_dispensary_options['wpd_content_placement'] ) ) {
-			$wpd_content_placement = '';
-		} else {
-			$wpd_content_placement = $wp_dispensary_options['wpd_content_placement'];
-		}
+		// Access all WP Dispensary Display Settings.
+		$wpd_settings = get_option( 'wpdas_display' );
 
-		if ( null === $wp_dispensary_options['wpd_cost_phrase'] ) {
-			$wpd_cost_phrase = 'Price';
+		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
+			$wpd_cost_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
+			$wpd_cost_phrase = 'Donation';
 		} else {
-			$wpd_cost_phrase = $wp_dispensary_options['wpd_cost_phrase']; // costphrase.
+			$wpd_cost_phrase = 'Price';
 		}
 
 		/**
