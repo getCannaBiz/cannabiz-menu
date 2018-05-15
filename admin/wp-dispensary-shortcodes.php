@@ -1753,12 +1753,15 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
 			$topicalprice = '<strong>' . $wpd_cost_phrase . ':</strong> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '';
 		}
+
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
 			$topicalsize = ' - <strong>Size:</strong> ' . get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz';
 		}
+
 		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
 			$topicalthc = ' - <strong>THC:</strong> ' . get_post_meta( get_the_id(), '_thctopical', true ) . 'mg';
 		}
+
 		if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
 			$topicalcbd = ' - <strong>CBD:</strong> ' . get_post_meta( get_the_id(), '_cbdtopical', true ) . 'mg';
 		}
@@ -1782,12 +1785,15 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		} else {
 			$thcmg = '';
 		}
+
 		$thcsep = ' - ';
+
 		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
 			$servingcount = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
 		} else {
 			$servingcount = '';
 		}
+
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>' . $wpd_cost_phrase . ':</strong> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true );
 		} else {
@@ -1837,6 +1843,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				$showinfo = '';
 			}
 		}
+
 		/** Topicals */
 		if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
 			if ( 'show' === $info ) {
@@ -1854,6 +1861,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				$showinfo = '';
 			}
 		}
+
 		/** Edibles */
 		if ( in_array( get_post_type(), array( 'edibles' ) ) ) {
 			if ( 'show' === $info ) {
@@ -1862,6 +1870,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				$showinfo = '';
 			}
 		}
+
 		/** Concentrates */
 		if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
 			if ( empty( $pricingeach ) ) {
@@ -1870,6 +1879,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				$showinfo = '<span class="wpd-productinfo pricing">' . $pricingname . '' . $pricingeach . '</span>';
 			}
 		}
+
 		/** Flowers */
 		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
 			if ( 'show' === $info ) {
