@@ -1526,6 +1526,12 @@ function wpdispensary_carousel_shortcode( $atts ) {
 	) );
 
 	/**
+	 * Defining variables
+	 */
+	$order    = '';
+	$ordernew = '';
+
+	/**
 	 * Code to create shortcode
 	 */
 	$tax_query = array(
@@ -1785,18 +1791,26 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
 			$topicalprice = '<strong>' . $wpd_cost_phrase . ':</strong> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '';
+		} else {
+			$topicalprice = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
 			$topicalsize = ' - <strong>Size:</strong> ' . get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz';
+		} else {
+			$topicalsize = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
 			$topicalthc = ' - <strong>THC:</strong> ' . get_post_meta( get_the_id(), '_thctopical', true ) . 'mg';
+		} else {
+			$topicalthc = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
 			$topicalcbd = ' - <strong>CBD:</strong> ' . get_post_meta( get_the_id(), '_cbdtopical', true ) . 'mg';
+		} else {
+			$topicalcbd = '';
 		}
 
 		/*
