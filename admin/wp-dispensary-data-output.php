@@ -387,7 +387,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
 			$wpd_price_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
-		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donations' === $wpd_settings['wpd_pricing_phrase'] ) {
+		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
 			$wpd_price_phrase = 'Donations';
 		} else {
 			$wpd_price_phrase = 'Prices';
