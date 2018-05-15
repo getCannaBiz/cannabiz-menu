@@ -1923,6 +1923,12 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$cbninfo = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
+			$cbginfo = '<span class="wpd-productinfo cbn"><strong>CBG: </strong>' . get_post_meta( get_the_id(), '_cbg', true ) . '%</span>';
+		} else {
+			$cbginfo = '';
+		}
+
 		if ( null === $thumbnail_url && 'full' === $imagesize ) {
 			$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
 			$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
@@ -1959,7 +1965,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$wpd_shortcode_bottom_carousel = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . '' . $showinfo . '' . $thcinfo . '' . $thcainfo . '' . $cbdinfo . '' . $cbainfo . '' . $cbninfo . '' . $wpd_shortcode_inside_bottom . '' . $wpd_shortcode_bottom_carousel . '</div>';
+		$wpdposts .= $showname . '' . $showinfo . '' . $thcinfo . '' . $thcainfo . '' . $cbdinfo . '' . $cbainfo . '' . $cbninfo . '' . $cbginfo . '' . $wpd_shortcode_inside_bottom . '' . $wpd_shortcode_bottom_carousel . '</div>';
 
 	endwhile;
 
