@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.0.1
+* Added CBG% options to Flowers, Concentrates and Carousel shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added 'pricing' CSS class to span tags for various shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added missing ajax loader image in `public/images/`
+* Fixed bug in compound details REST API in `admin/wp-dispensary-rest-api.php`
+* Fixed bug with shortcode cost phrase not using WPD Settings option in `admin/wp-dispensary-shortcodes.php`
+* Fixed bug with Donations title display if selected as WPD Settings option in `admin/wp-dispensary-data-output.php`
+
 ### 2.0
 * Added "Dispensary Menu" page creation (with default shortcodes) on plugin activation in ` includes/class-wp-dispensary-activator.php`
 * Added featured image title for admin menu type screens in `admin/wp-dispensary-admin-screens.php`
