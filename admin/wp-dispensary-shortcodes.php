@@ -390,6 +390,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'cbd'       => 'show',
 			'cba'       => '',
 			'cbn'       => '',
+			'cbg'       => '',
 			'title'     => 'Concentrates',
 			'category'  => '',
 			'aroma'     => '',
@@ -584,6 +585,12 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$cbninfo = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
+			$cbginfo = '<span class="wpd-productinfo cbg"><strong>CBG: </strong>' . get_post_meta( get_the_id(), '_cbg', true ) . '%</span>';
+		} else {
+			$cbginfo = '';
+		}
+
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -632,6 +639,12 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$showcbn = '';
 		}
 
+		if ( 'show' === $cbg ) {
+			$showcbg = $cbginfo;
+		} else {
+			$showcbg = '';
+		}
+
 		if ( 'show' === $image ) {
 			if ( null === $thumbnail_url && 'full' === $imagesize ) {
 				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
@@ -672,7 +685,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$wpd_shortcode_bottom_concentrates = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . '' . $showinfo . '' . $showthc . '' . $showthca . '' . $showcbd . '' . $showcba . '' . $showcbn . '' . $wpd_shortcode_inside_bottom . '' . $wpd_shortcode_bottom_concentrates . '</div>';
+		$wpdposts .= $showname . '' . $showinfo . '' . $showthc . '' . $showthca . '' . $showcbd . '' . $showcba . '' . $showcbn . '' . $showcbg . '' . $wpd_shortcode_inside_bottom . '' . $wpd_shortcode_bottom_concentrates . '</div>';
 
 	endwhile;
 
