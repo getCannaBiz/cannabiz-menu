@@ -27,4 +27,4 @@ It has a long list of options built in for customization to fit your business br
 
 ## Changelog
 
-View [CHANGELOG.md](https://github.com/deviodigital/wp-dispensary/blob/master/CHANGELOG.md)
+View [CHANGELOG.md](https://github.com/wpdispensary/wp-dispensary/blob/master/CHANGELOG.md)
