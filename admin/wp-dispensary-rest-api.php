@@ -442,7 +442,7 @@ function slug_register_compounds() {
 	foreach ( $compounds as $compound ) {
 		register_rest_field(
 			array( 'flowers', 'concentrates' ),
-			$size,
+			$compound,
 			array(
 				'get_callback'    => 'slug_get_compounds',
 				'update_callback' => 'slug_update_compounds',
