@@ -45,7 +45,7 @@ function wpdispensary_topicals() {
 	);
 	$args    = array(
 		'label'               => __( 'Topicals', 'wp-dispensary' ),
-		'description'         => __( 'Topical products that our dispensary offers', 'wp-dispensary' ),
+		'description'         => __( 'Topicals that our dispensary offers', 'wp-dispensary' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
 		'taxonomies'          => array(),

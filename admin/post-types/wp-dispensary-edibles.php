@@ -45,7 +45,7 @@ function wpdispensary_edibles() {
 	);
 	$args    = array(
 		'label'               => __( 'Edibles', 'wp-dispensary' ),
-		'description'         => __( 'Edible products that our dispensary offers', 'wp-dispensary' ),
+		'description'         => __( 'Edibles that our dispensary offers', 'wp-dispensary' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
 		'taxonomies'          => array(),

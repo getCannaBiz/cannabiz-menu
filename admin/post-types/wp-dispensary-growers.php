@@ -45,7 +45,7 @@ function wpdispensary_growers() {
 	);
 	$args    = array(
 		'label'               => __( 'Growers', 'wp-dispensary' ),
-		'description'         => __( 'Grower products that our dispensary offers', 'wp-dispensary' ),
+		'description'         => __( 'Seeds and Clones that our dispensary offers', 'wp-dispensary' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
 		'taxonomies'          => array(),

@@ -45,7 +45,7 @@ function wpdispensary_concentrates() {
 	);
 	$args    = array(
 		'label'               => __( 'Concentrates', 'wp-dispensary' ),
-		'description'         => __( 'Concentrate products that our dispensary offers', 'wp-dispensary' ),
+		'description'         => __( 'Concentrates that our dispensary offers', 'wp-dispensary' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
 		'taxonomies'          => array(),

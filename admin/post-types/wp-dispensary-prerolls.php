@@ -21,19 +21,19 @@
 function wpdispensary_prerolls() {
 
 	$labels  = array(
-		'name'               => _x( 'Pre-Rolls', 'Post Type General Name', 'wp-dispensary' ),
-		'singular_name'      => _x( 'Pre-Roll', 'Post Type Singular Name', 'wp-dispensary' ),
-		'menu_name'          => __( 'Pre-Rolls', 'wp-dispensary' ),
-		'name_admin_bar'     => __( 'Pre-Rolls', 'wp-dispensary' ),
-		'parent_item_colon'  => __( 'Parent Pre-Roll:', 'wp-dispensary' ),
-		'all_items'          => __( 'All Pre-Rolls', 'wp-dispensary' ),
-		'add_new_item'       => __( 'Add New Pre-Roll', 'wp-dispensary' ),
+		'name'               => _x( 'Pre-rolls', 'Post Type General Name', 'wp-dispensary' ),
+		'singular_name'      => _x( 'Pre-roll', 'Post Type Singular Name', 'wp-dispensary' ),
+		'menu_name'          => __( 'Pre-rolls', 'wp-dispensary' ),
+		'name_admin_bar'     => __( 'Pre-rolls', 'wp-dispensary' ),
+		'parent_item_colon'  => __( 'Parent Pre-roll:', 'wp-dispensary' ),
+		'all_items'          => __( 'All Pre-rolls', 'wp-dispensary' ),
+		'add_new_item'       => __( 'Add New Pre-roll', 'wp-dispensary' ),
 		'add_new'            => __( 'Add New', 'wp-dispensary' ),
-		'new_item'           => __( 'New Pre-Roll', 'wp-dispensary' ),
-		'edit_item'          => __( 'Edit Pre-Roll', 'wp-dispensary' ),
-		'update_item'        => __( 'Update Pre-Roll', 'wp-dispensary' ),
-		'view_item'          => __( 'View Pre-Roll', 'wp-dispensary' ),
-		'search_items'       => __( 'Search Pre-Rolls', 'wp-dispensary' ),
+		'new_item'           => __( 'New Pre-roll', 'wp-dispensary' ),
+		'edit_item'          => __( 'Edit Pre-roll', 'wp-dispensary' ),
+		'update_item'        => __( 'Update Pre-roll', 'wp-dispensary' ),
+		'view_item'          => __( 'View Pre-roll', 'wp-dispensary' ),
+		'search_items'       => __( 'Search Pre-rolls', 'wp-dispensary' ),
 		'not_found'          => __( 'Not found', 'wp-dispensary' ),
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
@@ -44,8 +44,8 @@ function wpdispensary_prerolls() {
 		'feeds'      => true,
 	);
 	$args    = array(
-		'label'               => __( 'Pre-Rolls', 'wp-dispensary' ),
-		'description'         => __( 'Pre-Roll products that our dispensary offers', 'wp-dispensary' ),
+		'label'               => __( 'Pre-rolls', 'wp-dispensary' ),
+		'description'         => __( 'Pre-rolls that our dispensary offers', 'wp-dispensary' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
 		'taxonomies'          => array(),

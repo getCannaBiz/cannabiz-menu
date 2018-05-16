@@ -45,7 +45,7 @@ function wpdispensary_flowers() {
 	);
 	$args    = array(
 		'label'               => __( 'Flowers', 'wp-dispensary' ),
-		'description'         => __( 'Flower products that our dispensary offers', 'wp-dispensary' ),
+		'description'         => __( 'Flowers that our dispensary offers', 'wp-dispensary' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
 		'taxonomies'          => array(),
