@@ -33,7 +33,7 @@ function wpdispensary_topicals() {
 		'edit_item'          => __( 'Edit Topical', 'wp-dispensary' ),
 		'update_item'        => __( 'Update Topical', 'wp-dispensary' ),
 		'view_item'          => __( 'View Topical', 'wp-dispensary' ),
-		'search_items'       => __( 'Search Topical', 'wp-dispensary' ),
+		'search_items'       => __( 'Search Topicals', 'wp-dispensary' ),
 		'not_found'          => __( 'Not found', 'wp-dispensary' ),
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);

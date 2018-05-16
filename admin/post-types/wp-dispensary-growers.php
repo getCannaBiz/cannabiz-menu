@@ -33,7 +33,7 @@ function wpdispensary_growers() {
 		'edit_item'          => __( 'Edit Grower', 'wp-dispensary' ),
 		'update_item'        => __( 'Update Grower', 'wp-dispensary' ),
 		'view_item'          => __( 'View Grower', 'wp-dispensary' ),
-		'search_items'       => __( 'Search Grower', 'wp-dispensary' ),
+		'search_items'       => __( 'Search Growers', 'wp-dispensary' ),
 		'not_found'          => __( 'Not found', 'wp-dispensary' ),
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);

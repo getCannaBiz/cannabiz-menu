@@ -33,7 +33,7 @@ function wpdispensary_prerolls() {
 		'edit_item'          => __( 'Edit Pre-Roll', 'wp-dispensary' ),
 		'update_item'        => __( 'Update Pre-Roll', 'wp-dispensary' ),
 		'view_item'          => __( 'View Pre-Roll', 'wp-dispensary' ),
-		'search_items'       => __( 'Search Pre-Roll', 'wp-dispensary' ),
+		'search_items'       => __( 'Search Pre-Rolls', 'wp-dispensary' ),
 		'not_found'          => __( 'Not found', 'wp-dispensary' ),
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);

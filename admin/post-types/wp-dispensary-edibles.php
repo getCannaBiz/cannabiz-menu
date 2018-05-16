@@ -33,7 +33,7 @@ function wpdispensary_edibles() {
 		'edit_item'          => __( 'Edit Edible', 'wp-dispensary' ),
 		'update_item'        => __( 'Update Edible', 'wp-dispensary' ),
 		'view_item'          => __( 'View Edible', 'wp-dispensary' ),
-		'search_items'       => __( 'Search Edible', 'wp-dispensary' ),
+		'search_items'       => __( 'Search Edibles', 'wp-dispensary' ),
 		'not_found'          => __( 'Not found', 'wp-dispensary' ),
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);

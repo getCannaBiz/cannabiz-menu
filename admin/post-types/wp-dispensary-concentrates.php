@@ -33,7 +33,7 @@ function wpdispensary_concentrates() {
 		'edit_item'          => __( 'Edit Concentrate', 'wp-dispensary' ),
 		'update_item'        => __( 'Update Concentrate', 'wp-dispensary' ),
 		'view_item'          => __( 'View Concentrate', 'wp-dispensary' ),
-		'search_items'       => __( 'Search Concentrate', 'wp-dispensary' ),
+		'search_items'       => __( 'Search Concentrates', 'wp-dispensary' ),
 		'not_found'          => __( 'Not found', 'wp-dispensary' ),
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
