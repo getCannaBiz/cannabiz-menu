@@ -16,7 +16,7 @@
  */
 // Plugin version.
 if ( ! defined( 'WPD_ADMIN_SETTINGS_VERSION' ) ) {
-	define( 'WPD_ADMIN_SETTINGS_VERSION', '2.0' );
+	define( 'WPD_ADMIN_SETTINGS_VERSION', '2.0.1' );
 }
 if ( ! defined( 'WPDS_NAME' ) ) {
 	define( 'WPDS_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
