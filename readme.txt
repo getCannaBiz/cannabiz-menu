@@ -15,33 +15,45 @@ The complete marijuana dispensary menu solution for WordPress
 
 WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage product menus and let patients place orders directly through their own website.
 
-### Dispensary Menu Features
+## Dispensary Menu Features
 
-WP Dispensary was built with ease of use in mind, so the [setup process](https://www.wpdispensary.com/article/installing-wp-dispensary/) of the plugin is a breeze.
+WP Dispensary is packed with features to enhance the online presence of your cannabis business.
 
-Add your favorite [extensions](https://www.wpdispensary.com/add-ons/) and customize the style to match your brand, taking complete control over your online cannabis menu.
+With WP Dispensary you are able to easily create an online menu for your patients to browse, and with the commercial add-on's offered, you can allow patients to place orders directly through your website!
 
 *If WP Dispensary provides value to your cannabiz, please consider leaving a [5 star review](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
 
-### Easy to use shortcodes
+### Auto-creation of Dispensary Menu page
 
-The WP Dispensary plugin comes with 7 built in shortcodes that allow you to display your menu with *any* WordPress theme.
+WP Dispensary version 2.0+ automatically creates a new "Dispensary Menu" page for you, pre-populated with each of the shortcodes that are available, giving you an instant starting point for building your menu.
 
-You can call your menu anywhere shortcodes are accepted in your theme.
+See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
 
-See all shortcode options in the [documentation](https://www.wpdispensary.com/article/introduction-to-shortcodes/)
+## Define your dispensary style
 
-### Extend WP Dispensary
+[CannaBiz](https://www.wpdispensary.com/downloads/cannabiz) is a commercial WordPress theme for the cannabis industry. Along with full integration for WP Dispensary and all of it's add-on's, CannaBiz focuses on speed and customization.
 
-With our free and commercial add-on's, you can connect your menu items to WooCommerce, manage your inventory, create top sellers lists, add coupons and more.
+You can easily define your brand style through the theme Customizer, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
 
-Our add-on's help you extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
+## Extending WP Dispensary
 
-Check out all of our [extensions](https://www.wpdispensary.com/add-ons) and customize your menu to suit your needs.
+With our add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
 
-We also have a dispensary WordPress theme for the cannabis industry, [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz), giving you even further creative control over your marijuana menu.
+WordPress.org is home to some amazing free extensions for WP Dispensary, including:
 
-It has a long list of options built in for customization to fit your business branding and is 100% integrated with WP Dispensary and it's add-ons.
+* [Dispensary Age Verification](https://wordpress.org/plugins/dispensary-age-verification)
+* [Dispensary Coupons](https://wordpress.org/plugins/dispensary-coupons)
+* [Dispensary Tinctures](https://wordpress.org/plugins/dispensary-tinctures)
+* [Dispensary Gear](https://wordpress.org/plugins/dispensary-gear)
+
+Looking to take things even further? Our commercial extensions provide you with the capabilities you need to turn your online menu into a powerhouse sales machine.
+
+* [Connect for WooCommerce](https://www.wpdispensary.com/product/wooconnect-for-woocommerce/)
+* [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/)
+* [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
+* [Menu Styles](https://www.wpdispensary.com/product/styles/)
+
+Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything you're capable of and all that's possible with premium WP Dispensary extensions.
 
 == Installation ==
 
