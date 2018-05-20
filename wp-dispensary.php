@@ -26,6 +26,11 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
+ * Current plugin version.
+ */
+define( 'WP_DISPENSARY_VERSION', '2.0.1' );
+
+/**
  * The code that runs during plugin activation.
  *
  * This action is documented in includes/class-wp-dispensary-activator.php
