@@ -645,7 +645,20 @@ function slug_update_growerinfo( $value, $object, $field_name ) {
 }
 
 /**
- * Add 'categories' endpoint for the Edibles Custom Post Type
+ * Add Category taxonomy for the Growers Custom Post Type
+ *
+ * @since 2.1
+ */
+function growers_category( $data, $post, $request ) {
+	$_data                     = $data->data;
+	$_data['growers_category'] = get_the_term_list( $post->ID, 'growers_category', '', ' ', '' );
+	$data->data                = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_growers', 'growers_category', 10, 3 );
+
+/**
+ * Add 'categories' endpoint for the Growers Custom Post Type
  *
  * @since 2.1
  */
