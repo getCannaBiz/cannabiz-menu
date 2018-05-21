@@ -108,6 +108,30 @@ function flowers_category( $data, $post, $request ) {
 add_filter( 'rest_prepare_flowers', 'flowers_category', 10, 3 );
 
 /**
+ * Add 'categories' endpoint for the Flowers Custom Post Type
+ *
+ * @since 2.1
+ */
+function flowers_category_numbers( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$items = wp_get_post_terms( $post->ID, 'flowers_category' );
+
+	foreach ( $items as $item=>$value ) {
+		$_data['categories'][$item]['id']          = $value->term_id;
+		$_data['categories'][$item]['slug']        = $value->slug;
+		$_data['categories'][$item]['title']       = $value->name;
+		$_data['categories'][$item]['description'] = $value->description;
+		$_data['categories'][$item]['count']       = $value->count;
+	}
+
+	$data->data = $_data;
+	//print_r( $flowers );
+	return $data;
+}
+add_filter( 'rest_prepare_flowers', 'flowers_category_numbers', 10, 3 );
+
+/**
  * Add Aroma taxonomy for the Flowers Custom Post Type
  */
 function flowers_aroma( $data, $post, $request ) {
@@ -172,6 +196,30 @@ function concentrates_category( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_category', 10, 3 );
+
+/**
+ * Add 'categories' endpoint for the Concentrates Custom Post Type
+ *
+ * @since 2.1
+ */
+function concentrates_category_numbers( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$items = wp_get_post_terms( $post->ID, 'concentrates_category' );
+
+	foreach ( $items as $item=>$value ) {
+		$_data['categories'][$item]['id']          = $value->term_id;
+		$_data['categories'][$item]['slug']        = $value->slug;
+		$_data['categories'][$item]['title']       = $value->name;
+		$_data['categories'][$item]['description'] = $value->description;
+		$_data['categories'][$item]['count']       = $value->count;
+	}
+
+	$data->data = $_data;
+	//print_r( $items );
+	return $data;
+}
+add_filter( 'rest_prepare_concentrates', 'concentrates_category_numbers', 10, 3 );
 
 /**
  * Add Aroma taxonomy for the Concentrates Custom Post Type
@@ -240,6 +288,30 @@ function edibles_category( $data, $post, $request ) {
 add_filter( 'rest_prepare_edibles', 'edibles_category', 10, 3 );
 
 /**
+ * Add 'categories' endpoint for the Edibles Custom Post Type
+ *
+ * @since 2.1
+ */
+function edibles_category_numbers( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$items = wp_get_post_terms( $post->ID, 'edibles_category' );
+
+	foreach ( $items as $item=>$value ) {
+		$_data['categories'][$item]['id']          = $value->term_id;
+		$_data['categories'][$item]['slug']        = $value->slug;
+		$_data['categories'][$item]['title']       = $value->name;
+		$_data['categories'][$item]['description'] = $value->description;
+		$_data['categories'][$item]['count']       = $value->count;
+	}
+
+	$data->data = $_data;
+	//print_r( $items );
+	return $data;
+}
+add_filter( 'rest_prepare_edibles', 'edibles_category_numbers', 10, 3 );
+
+/**
  * Add Ingredients taxonomy for the Edibles Custom Post Type
  */
 function edibles_ingredients( $data, $post, $request ) {
@@ -260,6 +332,30 @@ function topicals_category( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_topicals', 'topicals_category', 10, 3 );
+
+/**
+ * Add 'categories' endpoint for the Topicals Custom Post Type
+ *
+ * @since 2.1
+ */
+function topicals_category_numbers( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$items = wp_get_post_terms( $post->ID, 'topicals_category' );
+
+	foreach ( $items as $item=>$value ) {
+		$_data['categories'][$item]['id']          = $value->term_id;
+		$_data['categories'][$item]['slug']        = $value->slug;
+		$_data['categories'][$item]['title']       = $value->name;
+		$_data['categories'][$item]['description'] = $value->description;
+		$_data['categories'][$item]['count']       = $value->count;
+	}
+
+	$data->data = $_data;
+	//print_r( $items );
+	return $data;
+}
+add_filter( 'rest_prepare_topicals', 'topicals_category_numbers', 10, 3 );
 
 /**
  * This adds the wpdispensary_prices metafields to the
@@ -547,6 +643,30 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
 function slug_update_growerinfo( $value, $object, $field_name ) {
 	return update_post_meta( $object['id'], $field_name, $value );
 }
+
+/**
+ * Add 'categories' endpoint for the Edibles Custom Post Type
+ *
+ * @since 2.1
+ */
+function growers_category_numbers( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$items = wp_get_post_terms( $post->ID, 'growers_category' );
+
+	foreach ( $items as $item=>$value ) {
+		$_data['categories'][$item]['id']          = $value->term_id;
+		$_data['categories'][$item]['slug']        = $value->slug;
+		$_data['categories'][$item]['title']       = $value->name;
+		$_data['categories'][$item]['description'] = $value->description;
+		$_data['categories'][$item]['count']       = $value->count;
+	}
+
+	$data->data = $_data;
+	//print_r( $items );
+	return $data;
+}
+add_filter( 'rest_prepare_growers', 'growers_category_numbers', 10, 3 );
 
 
 /**
