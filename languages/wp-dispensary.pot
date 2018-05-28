@@ -465,7 +465,7 @@ msgstr ""
 
 #: admin/post-types/wp-dispensary-prerolls.php:24
 msgctxt "Post Type General Name"
-msgid "Pre-Rolls"
+msgid "Pre-rolls"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-prerolls.php:25
@@ -476,7 +476,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-prerolls.php:26
 #: admin/post-types/wp-dispensary-prerolls.php:27
 #: admin/post-types/wp-dispensary-prerolls.php:47
-msgid "Pre-Rolls"
+msgid "Pre-rolls"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-prerolls.php:28
@@ -484,7 +484,7 @@ msgid "Parent Pre-Roll:"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-prerolls.php:29
-msgid "All Pre-Rolls"
+msgid "All Pre-rolls"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-prerolls.php:30
@@ -1134,11 +1134,11 @@ msgid "Display edible category?"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:721
-msgid "Recent Pre-Rolls"
+msgid "Recent Pre-rolls"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:723
-msgid "Your most recent Pre-Rolls"
+msgid "Your most recent Pre-rolls"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:877

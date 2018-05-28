@@ -1,8 +1,8 @@
 <?php
 /**
- * Pre-Rolls post type
+ * Pre-rolls post type
  *
- * This file is used to create the 'Pre-Rolls' custom post type.
+ * This file is used to create the 'Pre-rolls' custom post type.
  *
  * @link       http://www.wpdispensary.com
  * @since      1.0.0
@@ -12,9 +12,9 @@
  */
 
 /**
- * Pre-Rolls post type
+ * Pre-rolls post type
  *
- * Add custom type for Pre-Rolls
+ * Add custom type for Pre-rolls
  *
  * @since    1.0.0
  */
