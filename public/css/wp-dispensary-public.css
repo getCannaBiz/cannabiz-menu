@@ -35,7 +35,7 @@
 span.wpdispensary-widget-title {
   font-size: 16px;
 	font-weight: 600;
-	line-hehgit: 1.2;
+	line-height: 1.2;
 }
 
 span.wpdispensary-widget-categories {
@@ -77,6 +77,7 @@ ul.wpdispensary-list li:before {
 .wpdshortcode {
   float: left;
   margin: 12px 0;
+  position: relative;
   width: 31.333%;
 }
 
@@ -308,7 +309,6 @@ table.wpdispensary-table td span {
 	display: none;
 }
 
-@charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list
 {
