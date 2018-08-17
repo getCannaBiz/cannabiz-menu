@@ -180,7 +180,7 @@ function wpdispensary_prices() {
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
-	echo '<p>Gram:</p>';
+	echo '<p>1 Gram:</p>';
 	echo '<input type="text" name="_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
@@ -196,7 +196,7 @@ function wpdispensary_prices() {
 	echo '<input type="text" name="_halfounce" value="' . esc_html( $halfounce ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>Ounce:</p>';
+	echo '<p>1 Ounce:</p>';
 	echo '<input type="text" name="_ounce" value="' . esc_html( $ounce ) . '" class="widefat" />';
 	echo '</div>';
 
