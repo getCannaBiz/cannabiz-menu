@@ -2,8 +2,8 @@
 Contributors: deviodigital, wpdispensary
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 4.9.6
-Stable tag: 2.0.1
+Tested up to: 4.9.8
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,12 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 2.0.2 =
+* Added new categories endpoint to the REST API in `admin/wp-dispensary-rest-api.php`
+* Updated Growers category REST API endpoint in `admin/wp-dispensary-rest-api.php`
+* Updated public CSS to fix a couple of issues in `public/css/wp-dispensary-public.css`
+* Updated spelling/capitalization in various areas throughout the entire plugin
 
 = 2.0.1 =
 * Added CBG% options to Flowers, Concentrates and Carousel shortcodes in `admin/wp-dispensary-shortcodes.php`

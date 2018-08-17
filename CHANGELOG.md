@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.0.2
+* Added new categories endpoint to the REST API in `admin/wp-dispensary-rest-api.php`
+* Updated Growers category REST API endpoint in `admin/wp-dispensary-rest-api.php`
+* Updated public CSS to fix a couple of issues in `public/css/wp-dispensary-public.css`
+* Updated spelling/capitalization in various areas throughout the entire plugin
+
 ### 2.0.1
 * Added CBG% options to Flowers, Concentrates and Carousel shortcodes in `admin/wp-dispensary-shortcodes.php`
 * Added 'pricing' CSS class to span tags for various shortcodes in `admin/wp-dispensary-shortcodes.php`
