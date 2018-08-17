@@ -110,7 +110,7 @@ add_filter( 'rest_prepare_flowers', 'flowers_category', 10, 3 );
 /**
  * Add 'categories' endpoint for the Flowers Custom Post Type
  *
- * @since 2.1
+ * @since 2.0.2
  */
 function flowers_category_numbers( $data, $post, $request ) {
 
@@ -200,7 +200,7 @@ add_filter( 'rest_prepare_concentrates', 'concentrates_category', 10, 3 );
 /**
  * Add 'categories' endpoint for the Concentrates Custom Post Type
  *
- * @since 2.1
+ * @since 2.0.2
  */
 function concentrates_category_numbers( $data, $post, $request ) {
 
@@ -290,7 +290,7 @@ add_filter( 'rest_prepare_edibles', 'edibles_category', 10, 3 );
 /**
  * Add 'categories' endpoint for the Edibles Custom Post Type
  *
- * @since 2.1
+ * @since 2.0.2
  */
 function edibles_category_numbers( $data, $post, $request ) {
 
@@ -336,7 +336,7 @@ add_filter( 'rest_prepare_topicals', 'topicals_category', 10, 3 );
 /**
  * Add 'categories' endpoint for the Topicals Custom Post Type
  *
- * @since 2.1
+ * @since 2.0.2
  */
 function topicals_category_numbers( $data, $post, $request ) {
 
@@ -647,7 +647,7 @@ function slug_update_growerinfo( $value, $object, $field_name ) {
 /**
  * Add Category taxonomy for the Growers Custom Post Type
  *
- * @since 2.1
+ * @since 2.0.2
  */
 function growers_category( $data, $post, $request ) {
 	$_data                     = $data->data;
@@ -660,7 +660,7 @@ add_filter( 'rest_prepare_growers', 'growers_category', 10, 3 );
 /**
  * Add 'categories' endpoint for the Growers Custom Post Type
  *
- * @since 2.1
+ * @since 2.0.2
  */
 function growers_category_numbers( $data, $post, $request ) {
 
