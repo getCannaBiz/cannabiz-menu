@@ -46,7 +46,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 			// Hook it up.
 			add_action( 'admin_init', array( $this, 'admin_init' ) );
 			// Menu.
-			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+			add_action( 'admin_menu', array( $this, 'wpd_admin_menu' ) );
 		}
 		/**
 		 * Admin Scripts.
@@ -126,7 +126,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 		 * @author WP Dispensary
 		 * @since  2.0
 		 */
-		public function admin_menu() {
+		public function wpd_admin_menu() {
 			// Add menu page.
 			add_menu_page(
 				'WP Dispensary', /** Paramater: page_title */

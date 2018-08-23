@@ -34,6 +34,7 @@ if ( ! defined( 'WPDS_URL' ) ) {
  * @since 2.0
  */
 require_once( WPDS_DIR . '/class-wp-dispensary-admin-settings.php' );
+
 /**
  * Actions/Filters
  *
