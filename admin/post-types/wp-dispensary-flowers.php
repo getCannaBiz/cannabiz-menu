@@ -27,7 +27,7 @@ function wpdispensary_flowers() {
 		'name_admin_bar'     => __( 'Flowers', 'wp-dispensary' ),
 		'parent_item_colon'  => __( 'Parent Flower:', 'wp-dispensary' ),
 		'all_items'          => __( 'All Flowers', 'wp-dispensary' ),
-		'add_new_item'       => __( 'Add New Flower', 'wp-dispensary' ),
+		'add_new_item'       => __( 'Add Flower', 'wp-dispensary' ),
 		'add_new'            => __( 'Add New', 'wp-dispensary' ),
 		'new_item'           => __( 'New Flower', 'wp-dispensary' ),
 		'edit_item'          => __( 'Edit Flower', 'wp-dispensary' ),

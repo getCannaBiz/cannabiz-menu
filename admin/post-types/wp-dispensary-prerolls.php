@@ -27,7 +27,7 @@ function wpdispensary_prerolls() {
 		'name_admin_bar'     => __( 'Pre-rolls', 'wp-dispensary' ),
 		'parent_item_colon'  => __( 'Parent Pre-roll:', 'wp-dispensary' ),
 		'all_items'          => __( 'All Pre-rolls', 'wp-dispensary' ),
-		'add_new_item'       => __( 'Add New Pre-roll', 'wp-dispensary' ),
+		'add_new_item'       => __( 'Add Pre-roll', 'wp-dispensary' ),
 		'add_new'            => __( 'Add New', 'wp-dispensary' ),
 		'new_item'           => __( 'New Pre-roll', 'wp-dispensary' ),
 		'edit_item'          => __( 'Edit Pre-roll', 'wp-dispensary' ),

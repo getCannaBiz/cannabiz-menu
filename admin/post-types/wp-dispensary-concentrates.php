@@ -27,7 +27,7 @@ function wpdispensary_concentrates() {
 		'name_admin_bar'     => __( 'Concentrates', 'wp-dispensary' ),
 		'parent_item_colon'  => __( 'Parent Concentrate:', 'wp-dispensary' ),
 		'all_items'          => __( 'All Concentrates', 'wp-dispensary' ),
-		'add_new_item'       => __( 'Add New Concentrate', 'wp-dispensary' ),
+		'add_new_item'       => __( 'Add Concentrate', 'wp-dispensary' ),
 		'add_new'            => __( 'Add New', 'wp-dispensary' ),
 		'new_item'           => __( 'New Concentrate', 'wp-dispensary' ),
 		'edit_item'          => __( 'Edit Concentrate', 'wp-dispensary' ),

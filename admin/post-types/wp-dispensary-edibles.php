@@ -27,7 +27,7 @@ function wpdispensary_edibles() {
 		'name_admin_bar'     => __( 'Edibles', 'wp-dispensary' ),
 		'parent_item_colon'  => __( 'Parent Edible:', 'wp-dispensary' ),
 		'all_items'          => __( 'All Edibles', 'wp-dispensary' ),
-		'add_new_item'       => __( 'Add New Edible', 'wp-dispensary' ),
+		'add_new_item'       => __( 'Add Edible', 'wp-dispensary' ),
 		'add_new'            => __( 'Add New', 'wp-dispensary' ),
 		'new_item'           => __( 'New Edible', 'wp-dispensary' ),
 		'edit_item'          => __( 'Edit Edible', 'wp-dispensary' ),

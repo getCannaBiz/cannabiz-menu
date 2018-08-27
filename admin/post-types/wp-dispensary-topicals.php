@@ -27,7 +27,7 @@ function wpdispensary_topicals() {
 		'name_admin_bar'     => __( 'Topicals', 'wp-dispensary' ),
 		'parent_item_colon'  => __( 'Parent Topical:', 'wp-dispensary' ),
 		'all_items'          => __( 'All Topicals', 'wp-dispensary' ),
-		'add_new_item'       => __( 'Add New Topical', 'wp-dispensary' ),
+		'add_new_item'       => __( 'Add Topical', 'wp-dispensary' ),
 		'add_new'            => __( 'Add New', 'wp-dispensary' ),
 		'new_item'           => __( 'New Topical', 'wp-dispensary' ),
 		'edit_item'          => __( 'Edit Topical', 'wp-dispensary' ),
