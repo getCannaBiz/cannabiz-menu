@@ -3,7 +3,7 @@
 
 ![Cannabis Dispensary WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.0.1](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.0.2](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
 
 ## Dispensary Menu Features
 
@@ -41,7 +41,7 @@ Looking to take things even further? Our commercial extensions provide you with 
 * [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
 * [Menu Styles](https://www.wpdispensary.com/product/styles/)
 
-Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything you're capable of and all that's possible with premium WP Dispensary extensions.
+Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
 
 ## Changelog
 

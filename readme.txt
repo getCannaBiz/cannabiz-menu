@@ -53,7 +53,7 @@ Looking to take things even further? Our commercial extensions provide you with 
 * [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
 * [Menu Styles](https://www.wpdispensary.com/product/styles/)
 
-Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything you're capable of and all that's possible with premium WP Dispensary extensions.
+Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything you're that's possible with our premium WP Dispensary extensions.
 
 == Installation ==
 
