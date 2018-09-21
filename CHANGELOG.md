@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.1
+* Added new "Shelf Type" taxonomy in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added new "Shelf Type" taxonomy to shortcode options in `admin/wp-dispensary-shortcodes.php`
+* Added new "Shelf Type" taxonomy REST API endpoints in `admin/wp-dispensary-rest-api.php`
+* Updated admin menu function name prefix in `admin/class-wp-dispensary-admin-settings.php`
+* Updated display text for menu type admin screens in various files
+ 
 ### 2.0.2
 * Added new categories endpoint to the REST API in `admin/wp-dispensary-rest-api.php`
 * Updated Growers category REST API endpoint in `admin/wp-dispensary-rest-api.php`
