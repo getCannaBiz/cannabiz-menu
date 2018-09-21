@@ -597,3 +597,49 @@ function wpdispensary_vendor() {
 	) );
 
 }
+
+/**
+ * Shelf Type
+ *
+ * Adds the Shelf Type taxonomy to all custom post types
+ *
+ * @since    2.1.0
+ */
+
+add_action( 'init', 'wpdispensary_shelf_type', 0 );
+
+/**
+ * Shelf Type
+ */
+function wpdispensary_shelf_type() {
+
+	$labels = array(
+		'name'              => _x( 'Shelf Type', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Shelf Type', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Shelf Types' ),
+		'all_items'         => __( 'All Shelf Types' ),
+		'parent_item'       => __( 'Parent Shelf Type' ),
+		'parent_item_colon' => __( 'Parent Shelf Type:' ),
+		'edit_item'         => __( 'Edit Shelf Type' ),
+		'update_item'       => __( 'Update Shelf Type' ),
+		'add_new_item'      => __( 'Add New Shelf Type' ),
+		'new_item_name'     => __( 'New Shelf Type Name' ),
+		'not_found'         => 'No shelf types found',
+		'menu_name'         => __( 'Shelf Type' ),
+	);
+
+	register_taxonomy( 'wpd_array_shelf_type', array( 'flowers', 'prerolls' ), array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'shelf-type',
+			'with_front' => false,
+		),
+	) );
+
+}

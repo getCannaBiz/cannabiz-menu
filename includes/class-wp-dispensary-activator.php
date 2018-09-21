@@ -54,6 +54,7 @@ class WP_Dispensary_Activator {
 		wpdispensary_condition();
 		wpdispensary_ingredient();
 		wpdispensary_vendor();
+		wpdispensary_shelf_type();
 
 		/**
 		 * Custom Categories

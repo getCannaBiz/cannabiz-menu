@@ -697,3 +697,15 @@ add_filter( 'rest_prepare_edibles', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_prerolls', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_topicals', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_growers', 'wpd_vendor', 10, 3 );
+
+/**
+ * Add Shelf Type taxonomy for Custom Post Types
+ */
+function wpd_shelf_type( $data, $post, $request ) {
+	$_data               = $data->data;
+	$_data['shelf_type'] = get_the_term_list( $post->ID, 'shelf-type', '', ' ', '' );
+	$data->data          = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_flowers', 'wpd_shelf_type', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_shelf_type', 10, 3 );
