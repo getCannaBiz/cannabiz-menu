@@ -20,6 +20,12 @@
  */
 function wpdispensary_concentrates() {
 
+	$wpd_concentrates_slug = get_option( 'wpd_concentrates_slug' );
+
+	if ( '' == $wpd_concentrates_slug ) {
+		$wpd_concentrates_slug = 'concentrates';
+	}
+
 	$labels  = array(
 		'name'               => _x( 'Concentrates', 'Post Type General Name', 'wp-dispensary' ),
 		'singular_name'      => _x( 'Concentrate', 'Post Type Singular Name', 'wp-dispensary' ),
@@ -38,7 +44,7 @@ function wpdispensary_concentrates() {
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
 	$rewrite = array(
-		'slug'       => 'concentrates',
+		'slug'       => $wpd_concentrates_slug,
 		'with_front' => true,
 		'pages'      => true,
 		'feeds'      => true,

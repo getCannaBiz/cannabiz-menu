@@ -20,6 +20,12 @@
  */
 function wpdispensary_growers() {
 
+	$wpd_growers_slug = get_option( 'wpd_growers_slug' );
+
+	if ( '' == $wpd_growers_slug ) {
+		$wpd_growers_slug = 'growers';
+	}
+
 	$labels  = array(
 		'name'               => _x( 'Growers', 'Post Type General Name', 'wp-dispensary' ),
 		'singular_name'      => _x( 'Grower', 'Post Type Singular Name', 'wp-dispensary' ),
@@ -38,7 +44,7 @@ function wpdispensary_growers() {
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
 	$rewrite = array(
-		'slug'       => 'growers',
+		'slug'       => $wpd_growers_slug,
 		'with_front' => true,
 		'pages'      => true,
 		'feeds'      => true,

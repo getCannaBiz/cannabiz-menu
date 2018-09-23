@@ -20,6 +20,12 @@
  */
 function wpdispensary_edibles() {
 
+	$wpd_edibles_slug = get_option( 'wpd_edibles_slug' );
+
+	if ( '' == $wpd_edibles_slug ) {
+		$wpd_edibles_slug = 'edibles';
+	}
+
 	$labels  = array(
 		'name'               => _x( 'Edibles', 'Post Type General Name', 'wp-dispensary' ),
 		'singular_name'      => _x( 'Edible', 'Post Type Singular Name', 'wp-dispensary' ),
@@ -38,7 +44,7 @@ function wpdispensary_edibles() {
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
 	$rewrite = array(
-		'slug'       => 'edibles',
+		'slug'       => $wpd_edibles_slug,
 		'with_front' => true,
 		'pages'      => true,
 		'feeds'      => true,

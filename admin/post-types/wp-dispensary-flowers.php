@@ -20,6 +20,12 @@
  */
 function wpdispensary_flowers() {
 
+	$wpd_flowers_slug = get_option( 'wpd_flowers_slug' );
+
+	if ( '' == $wpd_flowers_slug ) {
+		$wpd_flowers_slug = 'flowers';
+	}
+
 	$labels  = array(
 		'name'               => _x( 'Flowers', 'Post Type General Name', 'wp-dispensary' ),
 		'singular_name'      => _x( 'Flower', 'Post Type Singular Name', 'wp-dispensary' ),
@@ -38,7 +44,7 @@ function wpdispensary_flowers() {
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
 	$rewrite = array(
-		'slug'       => 'flowers',
+		'slug'       => $wpd_flowers_slug,
 		'with_front' => true,
 		'pages'      => true,
 		'feeds'      => true,

@@ -20,6 +20,12 @@
  */
 function wpdispensary_prerolls() {
 
+	$wpd_prerolls_slug = get_option( 'wpd_prerolls_slug' );
+
+	if ( '' == $wpd_prerolls_slug ) {
+		$wpd_prerolls_slug = 'prerolls';
+	}
+
 	$labels  = array(
 		'name'               => _x( 'Pre-rolls', 'Post Type General Name', 'wp-dispensary' ),
 		'singular_name'      => _x( 'Pre-roll', 'Post Type Singular Name', 'wp-dispensary' ),
@@ -38,7 +44,7 @@ function wpdispensary_prerolls() {
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
 	$rewrite = array(
-		'slug'       => 'prerolls',
+		'slug'       => $wpd_prerolls_slug,
 		'with_front' => true,
 		'pages'      => true,
 		'feeds'      => true,

@@ -185,6 +185,13 @@ class WP_Dispensary {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-admin-screens.php';
 
+		/**
+		 * Adding the Class responsible for defining custom permalink settings
+		 *
+		 * @since    2.2
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-permalink-settings.php';
+
 		$this->loader = new WP_Dispensary_Loader();
 
 	}

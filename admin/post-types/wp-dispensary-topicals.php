@@ -20,6 +20,12 @@
  */
 function wpdispensary_topicals() {
 
+	$wpd_topicals_slug = get_option( 'wpd_topicals_slug' );
+
+	if ( '' == $wpd_topicals_slug ) {
+		$wpd_topicals_slug = 'topicals';
+	}
+
 	$labels  = array(
 		'name'               => _x( 'Topicals', 'Post Type General Name', 'wp-dispensary' ),
 		'singular_name'      => _x( 'Topical', 'Post Type Singular Name', 'wp-dispensary' ),
@@ -38,7 +44,7 @@ function wpdispensary_topicals() {
 		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
 	);
 	$rewrite = array(
-		'slug'       => 'topicals',
+		'slug'       => $wpd_topicals_slug,
 		'with_front' => true,
 		'pages'      => true,
 		'feeds'      => true,
