@@ -72,8 +72,8 @@ class WP_Dispensary {
 
 		$this->plugin_name = 'wp-dispensary';
 
-		if ( defined( 'WPD_DISPENSARY_VERSION' ) ) {
-			$this->version = WPD_DISPENSARY_VERSION;
+		if ( defined( 'WP_DISPENSARY_VERSION' ) ) {
+			$this->version = WP_DISPENSARY_VERSION;
 		} else {
 			$this->version = '2.1';
 		}
