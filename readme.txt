@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.8
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ With WP Dispensary you are able to easily create an online menu for your patient
 
 WP Dispensary version 2.0+ automatically creates a new "Dispensary Menu" page for you, pre-populated with each of the shortcodes that are available, giving you an instant starting point for building your menu.
 
-See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
+See all shortcode options in the [documentation](https://www.wpdispensary.com/section/shortcodes/)
 
 ## Define your dispensary style
 
@@ -57,7 +57,7 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 
 == Installation ==
 
-1. Go to `Plugins - Add New` in your WordPress admin panel and search for "WP Dispensary"
+1. Go to `Plugins - Add New` in your WordPress admin panel and search for **WP Dispensary**
 2. Install and activate the plugin directly in your admin panel
 3. Pat yourself on the back for a job well done :)
 
@@ -69,6 +69,17 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 2.2 =
+* Added updates to `.pot` file for localization in `languages/wp-dispensary.pot`
+* Added all default WP Dispensary menu types to the Permalinks Settings page in `admin/class-wp-dispensary-permalink-settings.php`
+* Bugfix with the `WP_Dispensary_Version` name in `includes/class-wp-dispensary.php`
+* Updated permalink base codes for the `flowers` permalink base in `admin/post-types/wp-dispensary-flowers.php`
+* Updated permalink base codes for the `concentrates` permalink base in `admin/post-types/wp-dispensary-concentrates.php`
+* Updated permalink base codes for the `edibles` permalink base in `admin/post-types/wp-dispensary-edibles.php`
+* Updated permalink base codes for the `prerolls` permalink base in `admin/post-types/wp-dispensary-prerolls.php`
+* Updated permalink base codes for the `topicals` permalink base in `admin/post-types/wp-dispensary-topicals.php`
+* Updated permalink base codes for the `growers` permalink base in `admin/post-types/wp-dispensary-growers.php`
 
 = 2.1 =
 * Added new "Shelf Type" taxonomy in `admin/post-types/wp-dispensary-taxonomies.php`
