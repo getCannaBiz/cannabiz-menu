@@ -11,7 +11,7 @@
  * Plugin Name:       WP Dispensary
  * Plugin URI:        https://www.wpdispensary.com
  * Description:       The complete marijuana dispensary menu solution for WordPress
- * Version:           2.1
+ * Version:           2.2
  * Author:            WP Dispensary
  * Author URI:        https://www.wpdispensary.com
  * License:           GPL-2.0+
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Current plugin version.
  */
-define( 'WP_DISPENSARY_VERSION', '2.1' );
+define( 'WP_DISPENSARY_VERSION', '2.2' );
 
 /**
  * The code that runs during plugin activation.
