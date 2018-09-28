@@ -130,3 +130,29 @@ function growers_metabox_order( $order ) {
 		),
 	);
 }
+
+/**
+ * Remove specific taxonomies from columns on menu type screen.
+ * 
+ * @since 2.3
+ */
+function wpd_remove_taxonomies_from_admin_columns( $columns ) {
+    // remove aroma taxonomy column.
+    unset( $columns['taxonomy-aroma'] );
+    // remove flavor taxonomy column.
+    unset( $columns['taxonomy-flavor'] );
+    // remove effect taxonomy column.
+    unset( $columns['taxonomy-effect'] );
+    // remove symptom taxonomy column.
+    unset( $columns['taxonomy-symptom'] );
+    // remove condition taxonomy column.
+    unset( $columns['taxonomy-condition'] );
+    // remove ingredients taxonomy column.
+    unset( $columns['taxonomy-ingredients'] );
+
+	return $columns;
+}
+add_filter( 'manage_edit-flowers_columns', 'wpd_remove_taxonomies_from_admin_columns' );
+add_filter( 'manage_edit-concentrates_columns', 'wpd_remove_taxonomies_from_admin_columns' );
+add_filter( 'manage_edit-edibles_columns', 'wpd_remove_taxonomies_from_admin_columns' );
+add_filter( 'manage_edit-topicals_columns', 'wpd_remove_taxonomies_from_admin_columns' );

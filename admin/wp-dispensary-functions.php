@@ -1,6 +1,6 @@
 <?php
 /**
- * Adding the Functions that are used throughout
+ * Adding the functions that are used throughout
  * various areas of the plugin
  *
  * @link       https://www.wpdispensary.com

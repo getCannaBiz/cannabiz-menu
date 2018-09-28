@@ -136,5 +136,4 @@ function wpdispensary_right_now_content_table_end() {
 	}
 
 }
-
 add_action( 'dashboard_glance_items', 'wpdispensary_right_now_content_table_end' );
