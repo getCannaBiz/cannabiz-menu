@@ -3,7 +3,7 @@
 
 ![Cannabis Dispensary WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.1](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.2](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
 
 ## Dispensary Menu Features
 
@@ -19,13 +19,15 @@ See all shortcode options in the [documentation](http://www.wpdispensary.com/sec
 
 ## Define your dispensary style
 
-[CannaBiz](https://www.wpdispensary.com/downloads/cannabiz) is a commercial WordPress theme for the cannabis industry. Along with full integration for WP Dispensary and all of it's add-on's, CannaBiz focuses on speed and customization.
+[CannaBiz](https://www.wpdispensary.com/downloads/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
 
-You can easily define your brand style through the theme Customizer, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
+Along with full integration for WP Dispensary and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
+
+You can define your brand style through the theme Customizer by choosing the right colors and fonts, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
 
 ## Extending WP Dispensary
 
-With our add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
+With our add-on's you can extend the functionality of the core WP Dispensary plugin, giving your website a competitive edge in the growing medical marijuana market.
 
 WordPress.org is home to some amazing free extensions for WP Dispensary, including:
 

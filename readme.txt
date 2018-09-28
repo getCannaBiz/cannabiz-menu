@@ -31,13 +31,15 @@ See all shortcode options in the [documentation](https://www.wpdispensary.com/se
 
 ## Define your dispensary style
 
-[CannaBiz](https://www.wpdispensary.com/downloads/cannabiz) is a commercial WordPress theme for the cannabis industry. Along with full integration for WP Dispensary and all of it's add-on's, CannaBiz focuses on speed and customization.
+[CannaBiz](https://www.wpdispensary.com/downloads/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
 
-You can easily define your brand style through the theme Customizer, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
+Along with full integration for WP Dispensary and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
+
+You can define your brand style through the theme Customizer by choosing the right colors and fonts, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
 
 ## Extending WP Dispensary
 
-With our add-on's, you'll be able to extend the functionality of the WP Dispensary menu plugin, giving your website the competitive edge in the growing medical marijuana market.
+With our add-on's you can extend the functionality of the core WP Dispensary plugin, giving your website a competitive edge in the growing medical marijuana market.
 
 WordPress.org is home to some amazing free extensions for WP Dispensary, including:
 
