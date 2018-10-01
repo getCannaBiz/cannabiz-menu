@@ -643,3 +643,51 @@ function wpdispensary_shelf_type() {
 	) );
 
 }
+
+/**
+ * Strain Type
+ *
+ * Adds the Strain Type taxonomy to specific custom post types
+ *
+ * @since    2.3.0
+ */
+
+add_action( 'init', 'wpdispensary_strain_type', 0 );
+
+/**
+ * Strain Type
+ */
+function wpdispensary_strain_type() {
+
+	$labels = array(
+		'name'              => _x( 'Strain Type', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Strain Type', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Strain Types' ),
+		'all_items'         => __( 'All Strain Types' ),
+		'parent_item'       => __( 'Parent Strain Type' ),
+		'parent_item_colon' => __( 'Parent Strain Type:' ),
+		'edit_item'         => __( 'Edit Strain Type' ),
+		'update_item'       => __( 'Update Strain Type' ),
+		'add_new_item'      => __( 'Add New Strain Type' ),
+		'new_item_name'     => __( 'New Strain Type Name' ),
+		'not_found'         => 'No strain types found',
+		'menu_name'         => __( 'Strain Type' ),
+	);
+
+	$straintaxtype = apply_filters( 'wpd_tax_strain_type', array( 'flowers', 'concentrates', 'prerolls' ) );
+
+	register_taxonomy( 'strain_type', $straintaxtype, array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'strain-type',
+			'with_front' => false,
+		),
+	) );
+
+}
