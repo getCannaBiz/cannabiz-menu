@@ -708,4 +708,17 @@ function wpd_shelf_type( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_flowers', 'wpd_shelf_type', 10, 3 );
-add_filter( 'rest_prepare_prerolls', 'wpd_shelf_type', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_shelf_type', 10, 3 );/**
+ * Add Strain Type taxonomy for Custom Post Types
+ * 
+ * @since 2.3.0
+ */
+function wpd_strain_type( $data, $post, $request ) {
+	$_data                = $data->data;
+	$_data['strain_type'] = get_the_term_list( $post->ID, 'strain_type', '', ' ', '' );
+	$data->data           = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_flowers', 'wpd_strain_type', 10, 3 );
+add_filter( 'rest_prepare_concentrates', 'wpd_strain_type', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_strain_type', 10, 3 );
