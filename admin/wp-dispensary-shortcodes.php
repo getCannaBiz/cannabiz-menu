@@ -118,7 +118,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	}
 	if ( '' !== $shelf_type ) {
 		$tax_query[] = array(
-			'taxonomy' => 'shelf-type',
+			'taxonomy' => 'shelf_type',
 			'field'    => 'slug',
 			'terms'    => $shelf_type,
 		);
@@ -924,7 +924,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	}
 	if ( '' !== $shelf_type ) {
 		$tax_query[] = array(
-			'taxonomy' => 'shelf-type',
+			'taxonomy' => 'shelf_type',
 			'field'    => 'slug',
 			'terms'    => $shelf_type,
 		);

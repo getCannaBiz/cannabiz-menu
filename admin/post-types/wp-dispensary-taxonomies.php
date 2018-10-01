@@ -601,7 +601,7 @@ function wpdispensary_vendor() {
 /**
  * Shelf Type
  *
- * Adds the Shelf Type taxonomy to all custom post types
+ * Adds the Shelf Type taxonomy to specific custom post types
  *
  * @since    2.1.0
  */
