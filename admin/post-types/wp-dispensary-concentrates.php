@@ -20,38 +20,55 @@
  */
 function wpdispensary_concentrates() {
 
+	// Get permalink base for Concentrates.
 	$wpd_concentrates_slug = get_option( 'wpd_concentrates_slug' );
 
+	// If custom base is empty, set default.
 	if ( '' == $wpd_concentrates_slug ) {
 		$wpd_concentrates_slug = 'concentrates';
 	}
 
-	$labels  = array(
-		'name'               => _x( 'Concentrates', 'Post Type General Name', 'wp-dispensary' ),
-		'singular_name'      => _x( 'Concentrate', 'Post Type Singular Name', 'wp-dispensary' ),
-		'menu_name'          => __( 'Concentrates', 'wp-dispensary' ),
-		'name_admin_bar'     => __( 'Concentrates', 'wp-dispensary' ),
-		'parent_item_colon'  => __( 'Parent Concentrate:', 'wp-dispensary' ),
-		'all_items'          => __( 'All Concentrates', 'wp-dispensary' ),
-		'add_new_item'       => __( 'Add Concentrate', 'wp-dispensary' ),
-		'add_new'            => __( 'Add New', 'wp-dispensary' ),
-		'new_item'           => __( 'New Concentrate', 'wp-dispensary' ),
-		'edit_item'          => __( 'Edit Concentrate', 'wp-dispensary' ),
-		'update_item'        => __( 'Update Concentrate', 'wp-dispensary' ),
-		'view_item'          => __( 'View Concentrate', 'wp-dispensary' ),
-		'search_items'       => __( 'Search Concentrates', 'wp-dispensary' ),
-		'not_found'          => __( 'Not found', 'wp-dispensary' ),
-		'not_found_in_trash' => __( 'Not found in Trash', 'wp-dispensary' ),
-	);
+	// Capitalize first letter of new slug.
+	$wpd_concentrates_slug_cap = ucfirst( $wpd_concentrates_slug );
+
 	$rewrite = array(
 		'slug'       => $wpd_concentrates_slug,
 		'with_front' => true,
 		'pages'      => true,
 		'feeds'      => true,
 	);
-	$args    = array(
-		'label'               => __( 'Concentrates', 'wp-dispensary' ),
-		'description'         => __( 'Concentrates that our dispensary offers', 'wp-dispensary' ),
+
+	$labels = array(
+		'name'                  => sprintf( esc_html__( '%s', 'Post Type General Name', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'singular_name'         => sprintf( esc_html__( '%s', 'Post Type Singular Name', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'menu_name'             => sprintf( esc_html__( '%s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'name_admin_bar'        => sprintf( esc_html__( '%s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'archives'              => sprintf( esc_html__( '%s Archives', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'parent_item_colon'     => sprintf( esc_html__( 'Parent %s:', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'all_items'             => sprintf( esc_html__( 'All %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'add_new_item'          => sprintf( esc_html__( 'Add New %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'add_new'               => __( 'Add New', 'wp-dispensary' ),
+		'new_item'              => sprintf( esc_html__( 'New %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'edit_item'             => sprintf( esc_html__( 'Edit %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'update_item'           => sprintf( esc_html__( 'Update %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'view_item'             => sprintf( esc_html__( 'View %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'search_items'          => sprintf( esc_html__( 'Search %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'not_found'             => __( 'Not found', 'wp-dispensary' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'wp-dispensary' ),
+		'featured_image'        => __( 'Featured Image', 'wp-dispensary' ),
+		'set_featured_image'    => __( 'Set featured image', 'wp-dispensary' ),
+		'remove_featured_image' => __( 'Remove featured image', 'wp-dispensary' ),
+		'use_featured_image'    => __( 'Use as featured image', 'wp-dispensary' ),
+		'insert_into_item'      => sprintf( esc_html__( 'Insert into %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'uploaded_to_this_item' => sprintf( esc_html__( 'Uploaded to this %s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'items_list'            => sprintf( esc_html__( '%s list', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'items_list_navigation' => sprintf( esc_html__( '%s list navigation', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'filter_items_list'     => sprintf( esc_html__( 'Filter %s list', 'wp-dispensary' ), $wpd_concentrates_slug ),
+	);
+
+	$args = array(
+		'label'               => sprintf( esc_html__( '%s', 'wp-dispensary' ), $wpd_concentrates_slug_cap ),
+		'description'         => sprintf( esc_html__( 'Display the %s from your menu', 'wp-dispensary' ), $wpd_concentrates_slug ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
 		'taxonomies'          => array(),
