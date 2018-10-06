@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.8
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ The complete marijuana dispensary menu solution for WordPress
 
 == Description ==
 
-### #1 Marijuana WordPress plugin
+### The complete marijuana dispensary menu solution for WordPress
 
 WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage product menus and let patients place orders directly through their own website.
 
@@ -71,6 +71,35 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 2.3 =
+* Added Strain Type taxonomy in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added Strain Type to activator permalink flush in `includes/class-wp-dispensary-activator.php`
+* Added REST API endpoint for Strain Types in `admin/wp-dispensary-rest-api.php`
+* Added Allergens taxonomy for Edibles in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added Allergens taxonomy to data output in `admin/wp-dispensary-data-output.php`
+* Added Allergens to activator permalink flush in `includes/class-wp-dispensary-activator.php`
+* Added REST API endpoint for Allergens in `admin/wp-dispensary-rest-api.php`
+* Added Edibles shortcode options for servings, THC mg & total THC in `admin/wp-dispensary-shortcodes.php`
+* Added shortcode options for ordering by `meta_key` in `admin/wp-dispensary-shortcodes.php`
+* Added `wpd_topicals_shortcode_args` filter for Topicals shortcode `$args` in `admin/wp-dispensary-shortcodes.php`
+* Added `per unit` pricing for Edibles, Pre-rolls and Growers in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added `per unit` pricing to Edibles, Pre-rolls and Growers data output in `admin/wp-dispensary-data-output.php`
+* Added `per unit` pricing to Edibles, Pre-rolls and Growers shortcode output in `admin/wp-dispensary-shortcodes.php`
+* Added REST API endpoints for `per unit` pricing in `admin/wp-dispensary-rest-api.php`
+* Added Pre-roll weight metabox for Pre-rolls in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added Pre-roll weight to data output for Pre-rolls in `admin/wp-dispensary-data-output.php`
+* Added Pre-roll weight to shortcode details for Pre-rolls in `admin/wp-dispensary-shortcodes.php`
+* Added REST API endpoint for Pre-roll weight in `admin/wp-dispensary-rest-api.php`
+* Added 2g and 5g prices for Flowers in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added 2g and 5g prices to data output for Flowers in `admin/wp-dispensary-data-output.php`
+* Added 2g and 5g prices to shortcode details for Flowers in `admin/wp-dispensary-shortcodes.php`
+* Added REST API endpoints for Flowers 2g and 5g prices in `admin/wp-dispensary-rest-api.php`
+* Updated columns on edit screens to clean up what data displays for each menu type in `admin/wp-dispensary-admin-screens.php`
+* Updated Shelf Type taxonomy name and filter in `admin/post-types/wp-dispensary-taxonomies.php`
+* Updated how Compound Details display in data output in `admin/wp-dispensary-data-output.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+* Updated code for various text strings to be translatable in various files
 
 = 2.2 =
 * Added updates to `.pot` file for localization in `languages/wp-dispensary.pot`
