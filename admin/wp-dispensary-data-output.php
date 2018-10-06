@@ -214,6 +214,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdclonedifficulty = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_preroll_weight', true ) ) {
+			$wpdprerollweight = '<tr><td><span>Weight:</span></td><td>' . get_post_meta( get_the_id(), '_preroll_weight', true ) . 'g</td></tr>';
+		} else {
+			$wpdprerollweight = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_selected_flowers', true ) ) {
 			$prerollflower = get_post_meta( get_the_id(), '_selected_flowers', true );
 			$wpdpreroll    = '<tr><td><span>Flower:</span></td><td><a href=' . get_permalink( $prerollflower ) . '>' . get_the_title( $prerollflower ) . '</a></td></tr>';
@@ -277,7 +283,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'prerolls' === get_post_type() ) {
-			$wpd_details_prerolls = $wpdpreroll . $wpdvendors;
+			$wpd_details_prerolls = $wpdpreroll . $wpdprerollweight . $wpdvendors;
 		} else {
 			$wpd_details_prerolls = '';
 		}

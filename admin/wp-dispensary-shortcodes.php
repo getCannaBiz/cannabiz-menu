@@ -928,6 +928,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'shelf_type' => '',
 			'orderby'    => '',
 			'meta_key'   => '',
+			'weight'     => 'show',
 			'image'      => 'show',
 			'imgsize'    => 'dispensary-image',
 			'viewall'    => '',
@@ -1026,6 +1027,15 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			$pricingperpack = '';
 		}
 
+		/*
+		 * Get the weight for Pre-rolls
+		 */
+		if ( get_post_meta( get_the_ID(), '_preroll_weight', true ) ) {
+			$prerollweight = ' <strong>' . __( 'Weight:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), '_preroll_weight', true ) . 'g';
+		} else {
+			$prerollweight = '';
+		}
+
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -1035,7 +1045,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = '<span class="wpd-productinfo pricing">' . $pricingeach . '' . $pricingperpack . '</span>';
+			$showinfo = '<span class="wpd-productinfo pricing">' . $pricingeach . '' . $pricingperpack . '' . $prerollweight . '</span>';
 		} else {
 			$showinfo = '';
 		}

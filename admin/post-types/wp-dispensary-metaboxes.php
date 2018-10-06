@@ -1068,3 +1068,99 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'wpdispensary_save_clonedetails_meta', 1, 2 ); // Save the custom fields.
+
+/**
+ * Pre-rolls Weight metabox
+ *
+ * Adds the weight metabox to specific custom post types
+ *
+ * @since    2.4.0
+ */
+function wpdispensary_add_preroll_weight_metaboxes() {
+
+	$screens = apply_filters( 'wpd_preroll_weight_screens', array( 'prerolls' ) );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_preroll_weight',
+			__( 'Pre-roll weight', 'wp-dispensary' ),
+			'wpdispensary_preroll_weight',
+			$screen,
+			'side',
+			'default'
+		);
+	}
+
+}
+
+add_action( 'add_meta_boxes', 'wpdispensary_add_preroll_weight_metaboxes' );
+
+/**
+ * Building the metabox
+ */
+function wpdispensary_preroll_weight() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="preroll_weightmeta_noncename" id="preroll_weightmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the origin data if its already been entered */
+	$preroll_weight = get_post_meta( $post->ID, '_preroll_weight', true );
+
+	/** Echo out the fields */
+	echo '<div class="weightbox">';
+	echo '<p>Weight (g):</p>';
+	echo '<input type="text" name="_preroll_weight" value="' . esc_html( $preroll_weight ) . '" class="widefat" />';
+	echo '</div>';
+
+}
+
+/**
+ * Save the Metabox Data
+ */
+function wpdispensary_save_preroll_weight_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if (
+		! isset( $_POST['preroll_weightmeta_noncename'] ) ||
+		! wp_verify_nonce( $_POST['preroll_weightmeta_noncename'], plugin_basename( __FILE__ ) )
+	) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	$preroll_weight_meta['_preroll_weight'] = $_POST['_preroll_weight'];
+
+	/** Add values of $preroll_weight_meta as custom fields */
+
+	foreach ( $preroll_weight_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
+		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value.
+			update_post_meta( $post->ID, $key, $value );
+		} else { // If the custom field doesn't have a value.
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+
+add_action( 'save_post', 'wpdispensary_save_preroll_weight_meta', 1, 2 ); // Save the custom fields.

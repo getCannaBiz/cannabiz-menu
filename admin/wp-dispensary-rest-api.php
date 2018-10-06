@@ -493,7 +493,7 @@ add_action( 'rest_api_init', 'slug_register_prerollinfo' );
  * Register Pre-roll info
  */
 function slug_register_prerollinfo() {
-	$prerollinformation = array( '_priceeach', '_selected_flowers', '_unitsperpack', 'priceperpack' );
+	$prerollinformation = array( '_priceeach', '_selected_flowers', '_unitsperpack', 'priceperpack', '_preroll_weight' );
 	foreach ( $prerollinformation as $prerollinfo ) {
 		register_rest_field(
 			'prerolls',
