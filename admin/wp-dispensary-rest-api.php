@@ -452,7 +452,7 @@ add_action( 'rest_api_init', 'slug_register_edibleinfo' );
  * Register Edible information
  */
 function slug_register_edibleinfo() {
-	$edibleinformation = array( '_thcmg', '_thcservings', '_priceeach' );
+	$edibleinformation = array( '_thcmg', '_thcservings', '_priceeach', '_unitsperpack', 'priceperpack' );
 	foreach ( $edibleinformation as $edibleinfo ) {
 		register_rest_field(
 			'edibles',
@@ -493,7 +493,7 @@ add_action( 'rest_api_init', 'slug_register_prerollinfo' );
  * Register Pre-roll info
  */
 function slug_register_prerollinfo() {
-	$prerollinformation = array( '_priceeach', '_selected_flowers' );
+	$prerollinformation = array( '_priceeach', '_selected_flowers', '_unitsperpack', 'priceperpack' );
 	foreach ( $prerollinformation as $prerollinfo ) {
 		register_rest_field(
 			'prerolls',
@@ -616,7 +616,7 @@ add_action( 'rest_api_init', 'slug_register_growerinfo' );
  * Register Grower info
  */
 function slug_register_growerinfo() {
-	$growerinformation = array( '_priceeach', '_selected_flowers', '_seedcount', '_clonecount', '_time', '_origin', '_yield', '_difficulty' );
+	$growerinformation = array( '_priceeach', '_unitsperpack', 'priceperpack', '_selected_flowers', '_seedcount', '_clonecount', '_time', '_origin', '_yield', '_difficulty' );
 	foreach ( $growerinformation as $growerinfo ) {
 		register_rest_field(
 			'growers',
