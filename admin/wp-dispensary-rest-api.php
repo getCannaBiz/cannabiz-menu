@@ -370,7 +370,7 @@ add_action( 'rest_api_init', 'slug_register_prices' );
  * Registering Prices
  */
 function slug_register_prices() {
-	$productsizes = array( '_gram', '_eighth', '_quarter', '_halfounce', '_ounce' );
+	$productsizes = array( '_gram', '_twograms', '_eighth', '_fivegrams', '_quarter', '_halfounce', '_ounce' );
 	foreach ( $productsizes as $size ) {
 		register_rest_field(
 			array( 'flowers' ),

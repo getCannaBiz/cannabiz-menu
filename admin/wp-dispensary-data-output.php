@@ -385,6 +385,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdeighth = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
+			$wpdfivegrams = '<td><span>5 g:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_fivegrams', true ) . '</td>';
+		} else {
+			$wpdfivegrams = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
 			$wpdquarter = '<td><span>1/4 oz:</span> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_quarter', true ) . '</td>';
 		} else {
@@ -443,7 +449,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
-			$wpd_pricing_table_flowers = '<tr>' . $wpdgram . $wpdeighth . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
+			$wpd_pricing_table_flowers = '<tr>' . $wpdgram . $wpdtwograms . $wpdeighth . $wpdfivegrams . $wpdquarter . $wpdhalfounce . $wpdounce . '</tr>';
 		} else {
 			$wpd_pricing_table_flowers = '';
 		}

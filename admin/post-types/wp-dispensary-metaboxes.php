@@ -173,7 +173,9 @@ function wpdispensary_prices() {
 
 	/** Get the prices data if its already been entered */
 	$gram      = get_post_meta( $post->ID, '_gram', true );
+	$twograms  = get_post_meta( $post->ID, '_twograms', true );
 	$eighth    = get_post_meta( $post->ID, '_eighth', true );
+	$fivegrams = get_post_meta( $post->ID, '_fivegrams', true );
 	$quarter   = get_post_meta( $post->ID, '_quarter', true );
 	$halfounce = get_post_meta( $post->ID, '_halfounce', true );
 	$ounce     = get_post_meta( $post->ID, '_ounce', true );
@@ -184,8 +186,16 @@ function wpdispensary_prices() {
 	echo '<input type="text" name="_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
+	echo '<p>2 Grams:</p>';
+	echo '<input type="text" name="_twograms" value="' . esc_html( $twograms ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="pricebox">';
 	echo '<p>1/8 Ounce:</p>';
 	echo '<input type="text" name="_eighth" value="' . esc_html( $eighth ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="pricebox">';
+	echo '<p>5 Grams:</p>';
+	echo '<input type="text" name="_fivegrams" value="' . esc_html( $fivegrams ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>1/4 Ounce:</p>';
@@ -229,7 +239,9 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	 */
 
 	$prices_meta['_gram']      = $_POST['_gram'];
+	$prices_meta['_twograms']  = $_POST['_twograms'];
 	$prices_meta['_eighth']    = $_POST['_eighth'];
+	$prices_meta['_fivegrams'] = $_POST['_fivegrams'];
 	$prices_meta['_quarter']   = $_POST['_quarter'];
 	$prices_meta['_halfounce'] = $_POST['_halfounce'];
 	$prices_meta['_ounce']     = $_POST['_ounce'];
