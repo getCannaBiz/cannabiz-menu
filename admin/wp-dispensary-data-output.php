@@ -332,19 +332,25 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Setting up WP Dispensary menu pricing data
 		 */
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceeach = '<tr class="priceeach"><td><span>Price Each:</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			$wpdpriceeach = '<tr class="priceeach"><td><span>' . __( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 		} else {
 			$wpdpriceeach = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_priceperpack', true ) ) {
+			$wpdpriceperpack = '<tr class="priceeach"><td><span>' . get_post_meta( get_the_ID(), '_unitsperpack', true ) . ' ' . __( 'per pack:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_ID(), '_priceperpack', true ) . '</td></tr>';
+		} else {
+			$wpdpriceperpack = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$wpdpriceperunit = '<tr class="priceeach"><td><span>Price Each:</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+			$wpdpriceperunit = '<tr class="priceeach"><td><span>' . __( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
 		} else {
 			$wpdpriceperunit = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
-			$wpdpricetopical = '<tr class="priceeach"><td><span>Price per unit:</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
+			$wpdpricetopical = '<tr class="priceeach"><td><span>' . __( 'Price per unit:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
 		} else {
 			$wpdpricetopical = '';
 		}
@@ -447,7 +453,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'prerolls', 'edibles' ) ) ) {
-			$wpd_pricing_table_prerolls_edibles = $wpdpriceeach;
+			$wpd_pricing_table_prerolls_edibles = $wpdpriceeach . $wpdpriceperpack;
 		} else {
 			$wpd_pricing_table_prerolls_edibles = '';
 		}
@@ -459,7 +465,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'growers' ) ) ) {
-			$wpd_pricing_table_growers = $wpdpriceperunit;
+			$wpd_pricing_table_growers = $wpdpriceperunit . $wpdpriceperpack;
 		} else {
 			$wpd_pricing_table_growers = '';
 		}

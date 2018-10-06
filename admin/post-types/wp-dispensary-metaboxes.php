@@ -522,10 +522,10 @@ function wpdispensary_add_singleprices_metaboxes() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_singleprices',
-			__( 'Product Price', 'wp-dispensary' ),
+			__( 'Product Pricing', 'wp-dispensary' ),
 			'wpdispensary_singleprices',
 			$screen,
-			'side',
+			'normal',
 			'default'
 		);
 	}
@@ -545,11 +545,27 @@ function wpdispensary_singleprices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$priceeach = get_post_meta( $post->ID, '_priceeach', true );
+	$priceeach    = get_post_meta( $post->ID, '_priceeach', true );
+	$priceperpack = get_post_meta( $post->ID, '_priceperpack', true );
+	$unitsperpack = get_post_meta( $post->ID, '_unitsperpack', true );
 
 	/** Echo out the fields */
-	echo '<p>Price per unit:</p>';
+	echo '<div class="pricebox">';
+	echo '<p>' . __( 'Price per unit:', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="_priceeach" value="' . esc_html( $priceeach ) . '" class="widefat" />';
+	echo '</div>';
+
+	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>' . __( 'Price per pack:', 'wp-dispensary' ) . '</p>';
+	echo '<input type="text" name="_priceperpack" value="' . esc_html( $priceperpack ) . '" class="widefat" />';
+	echo '</div>';
+
+	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>' . __( 'Units per pack:', 'wp-dispensary' ) . '</p>';
+	echo '<input type="number" name="_unitsperpack" value="' . esc_html( $unitsperpack ) . '" class="widefat" />';
+	echo '</div>';
 
 }
 
@@ -579,7 +595,9 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_priceeach'] = $_POST['_priceeach'];
+	$prices_meta['_priceeach']    = $_POST['_priceeach'];
+	$prices_meta['_priceperpack'] = $_POST['_priceperpack'];
+	$prices_meta['_unitsperpack'] = $_POST['_unitsperpack'];
 
 	/** Add values of $prices_meta as custom fields */
 

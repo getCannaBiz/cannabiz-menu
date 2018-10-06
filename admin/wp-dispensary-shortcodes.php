@@ -840,6 +840,12 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$priceeach = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_priceperpack', true ) ) {
+			$pricingperpack = ' &middot; ' . get_post_meta( get_the_id(), '_unitsperpack', true ) . ' ' . __( 'for', 'wp-dispensary' ) . ' ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceperpack', true );
+		} else {
+			$pricingperpack = '';
+		}
+
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -849,7 +855,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thc . '' . $servingcount . '' . $totalthc . '</span>';
+			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $pricingperpack . '' . $thc . '' . $servingcount . '' . $totalthc . '</span>';
 		} else {
 			$showinfo = '';
 		}
@@ -1014,6 +1020,11 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		} else {
 			$pricingeach = '';
 		}
+		if ( get_post_meta( get_the_ID(), '_priceperpack', true ) ) {
+			$pricingperpack = ' &middot; ' . get_post_meta( get_the_id(), '_unitsperpack', true ) . ' ' . __( 'for', 'wp-dispensary' ) . ' ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceperpack', true );
+		} else {
+			$pricingperpack = '';
+		}
 
 		/** Check shortcode options input by user */
 
@@ -1024,7 +1035,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = '<span class="wpd-productinfo pricing">' . $pricingeach . '</span>';
+			$showinfo = '<span class="wpd-productinfo pricing">' . $pricingeach . '' . $pricingperpack . '</span>';
 		} else {
 			$showinfo = '';
 		}
@@ -1377,6 +1388,12 @@ function wpdispensary_growers_shortcode( $atts ) {
 			$pricingperunit = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), '_priceperpack', true ) ) {
+			$pricingperpack = ' &middot; ' . get_post_meta( get_the_id(), '_unitsperpack', true ) . ' ' . __( 'for', 'wp-dispensary' ) . ' ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceperpack', true );
+		} else {
+			$pricingperpack = '';
+		}
+
 		/*
 		 * Get the seed count for Growers
 		 */
@@ -1406,7 +1423,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = '<span class="wpd-productinfo">' . $pricingperunit . '' . $wpdseedcount . '' . $wpdclonecount . '</span>';
+			$showinfo = '<span class="wpd-productinfo">' . $pricingperunit . '' . $pricingperpack . '' . $wpdseedcount . '' . $wpdclonecount . '</span>';
 		} else {
 			$showinfo = '';
 		}
