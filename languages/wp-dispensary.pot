@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Dispensary\n"
-"POT-Creation-Date: 2018-10-01 10:36-0400\n"
-"PO-Revision-Date: 2018-10-01 10:34-0400\n"
+"POT-Creation-Date: 2018-10-05 23:36-0400\n"
+"PO-Revision-Date: 2018-10-05 23:36-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -900,6 +900,60 @@ msgstr ""
 msgid "Strain Type"
 msgstr ""
 
+#: admin/post-types/wp-dispensary-taxonomies.php:713
+msgctxt "general name"
+msgid "Allergens"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:714
+msgctxt "singular name"
+msgid "Allergen"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:715
+msgid "Search Allergens"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:716
+msgid "Popular Allergens"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:717
+msgid "All Allergens"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:720
+msgid "Edit Allergen"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:721
+msgid "Update Allergen"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:722
+msgid "Add New Allergen"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:723
+msgid "New Allergen Name"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:724
+msgid "Separate allergens with commas"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:725
+msgid "Add or remove allergens"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:726
+msgid "Choose from the most used allergens"
+msgstr ""
+
+#: admin/post-types/wp-dispensary-taxonomies.php:728
+msgid "Allergens"
+msgstr ""
+
 #: admin/post-types/wp-dispensary-widgets.php:40
 msgid "Dispensary Flowers"
 msgstr ""
@@ -1101,7 +1155,153 @@ msgstr ""
 msgid "Select the currency symbol you would like to use"
 msgstr ""
 
-#: includes/class-wp-dispensary-activator.php:87
+#: admin/wp-dispensary-shortcodes.php:145
+#: admin/wp-dispensary-shortcodes.php:498
+#: admin/wp-dispensary-shortcodes.php:773
+#: admin/wp-dispensary-shortcodes.php:976
+#: admin/wp-dispensary-shortcodes.php:1155
+#: admin/wp-dispensary-shortcodes.php:1338
+msgid "(view all)"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:180
+#: admin/wp-dispensary-shortcodes.php:525
+#: admin/wp-dispensary-shortcodes.php:800
+#: admin/wp-dispensary-shortcodes.php:1003
+#: admin/wp-dispensary-shortcodes.php:1182
+#: admin/wp-dispensary-shortcodes.php:1365
+#: admin/wp-dispensary-shortcodes.php:1626
+msgid "Donation"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:182
+#: admin/wp-dispensary-shortcodes.php:527
+#: admin/wp-dispensary-shortcodes.php:802
+#: admin/wp-dispensary-shortcodes.php:1005
+#: admin/wp-dispensary-shortcodes.php:1184
+#: admin/wp-dispensary-shortcodes.php:1367
+#: admin/wp-dispensary-shortcodes.php:1628
+msgid "Price"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:245
+#: admin/wp-dispensary-shortcodes.php:560
+#: admin/wp-dispensary-shortcodes.php:823
+#: admin/wp-dispensary-shortcodes.php:833
+#: admin/wp-dispensary-shortcodes.php:1691
+#: admin/wp-dispensary-shortcodes.php:1797
+#: admin/wp-dispensary-shortcodes.php:1910
+msgid "THC: "
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:251
+#: admin/wp-dispensary-shortcodes.php:566
+#: admin/wp-dispensary-shortcodes.php:1697
+#: admin/wp-dispensary-shortcodes.php:1916
+msgid "THCA: "
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:257
+#: admin/wp-dispensary-shortcodes.php:572
+#: admin/wp-dispensary-shortcodes.php:1703
+#: admin/wp-dispensary-shortcodes.php:1922
+msgid "CBD: "
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:263
+#: admin/wp-dispensary-shortcodes.php:578
+#: admin/wp-dispensary-shortcodes.php:1709
+#: admin/wp-dispensary-shortcodes.php:1928
+msgid "CBA: "
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:269
+#: admin/wp-dispensary-shortcodes.php:584
+#: admin/wp-dispensary-shortcodes.php:1715
+#: admin/wp-dispensary-shortcodes.php:1934
+msgid "CBN: "
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:275
+#: admin/wp-dispensary-shortcodes.php:590
+#: admin/wp-dispensary-shortcodes.php:1721
+#: admin/wp-dispensary-shortcodes.php:1940
+msgid "CBG: "
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:340
+#: admin/wp-dispensary-shortcodes.php:342
+#: admin/wp-dispensary-shortcodes.php:346
+msgid "Menu - Flower"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:653
+#: admin/wp-dispensary-shortcodes.php:655
+#: admin/wp-dispensary-shortcodes.php:659
+msgid "Menu - Concentrate"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:812
+#: admin/wp-dispensary-shortcodes.php:1805
+msgid "Servings: "
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:861
+#: admin/wp-dispensary-shortcodes.php:863
+#: admin/wp-dispensary-shortcodes.php:867
+msgid "Menu - Edible"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1036
+#: admin/wp-dispensary-shortcodes.php:1038
+#: admin/wp-dispensary-shortcodes.php:1042
+msgid "Menu - Pre-roll"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1195
+#: admin/wp-dispensary-shortcodes.php:1765
+msgid "Size:"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1200
+#: admin/wp-dispensary-shortcodes.php:1771
+msgid "THC:"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1205
+#: admin/wp-dispensary-shortcodes.php:1777
+msgid "CBD:"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1228
+#: admin/wp-dispensary-shortcodes.php:1230
+#: admin/wp-dispensary-shortcodes.php:1234
+msgid "Menu - Topical"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1385
+#: admin/wp-dispensary-shortcodes.php:1741
+msgid "Seeds:"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1395
+#: admin/wp-dispensary-shortcodes.php:1751
+msgid "Clones:"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1418
+#: admin/wp-dispensary-shortcodes.php:1420
+#: admin/wp-dispensary-shortcodes.php:1424
+msgid "Menu - Grower"
+msgstr ""
+
+#: admin/wp-dispensary-shortcodes.php:1948
+#: admin/wp-dispensary-shortcodes.php:1950
+#: admin/wp-dispensary-shortcodes.php:1954
+msgid "Menu item"
+msgstr ""
+
+#: includes/class-wp-dispensary-activator.php:88
 msgid "Dispensary Menu"
 msgstr ""
 
