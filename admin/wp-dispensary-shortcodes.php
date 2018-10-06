@@ -52,6 +52,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'vendor'     => '',
 			'shelf_type' => '',
 			'orderby'    => '',
+			'meta_key'   => '',
 			'image'      => 'show',
 			'imgsize'    => 'dispensary-image',
 			'viewall'    => '',
@@ -134,6 +135,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		'tax_query'        => $tax_query,
 		'orderby'          => $order,
 		'order'            => $ordernew,
+		'meta_key'         => $meta_key,
 	) );
 
 	$wpdquery = new WP_Query( $args );
@@ -409,6 +411,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'condition' => '',
 			'vendor'    => '',
 			'orderby'   => '',
+			'meta_key'   => '',
 			'image'     => 'show',
 			'imgsize'   => 'dispensary-image',
 			'viewall'   => '',
@@ -485,6 +488,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		'tax_query'             => $tax_query,
 		'orderby'               => $order,
 		'order'                 => $ordernew,
+		'meta_key'              => $meta_key,
 	) );
 
 	$wpdquery = new WP_Query( $args );
@@ -713,6 +717,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'thcmg'      => '',
 			'servings'   => '',
 			'orderby'    => '',
+			'meta_key'   => '',
 			'image'      => 'show',
 			'imgsize'    => 'dispensary-image',
 			'viewall'    => '',
@@ -758,6 +763,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		'tax_query'        => $tax_query,
 		'orderby'          => $order,
 		'order'            => $ordernew,
+		'meta_key'         => $meta_key,
 	) );
 
 	$wpdquery = new WP_Query( $args );
@@ -915,6 +921,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'vendor'     => '',
 			'shelf_type' => '',
 			'orderby'    => '',
+			'meta_key'   => '',
 			'image'      => 'show',
 			'imgsize'    => 'dispensary-image',
 			'viewall'    => '',
@@ -959,6 +966,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		'tax_query'      => $tax_query,
 		'orderby'        => $order,
 		'order'          => $ordernew,
+		'meta_key'       => $metakey,
 	) );
 
 	$wpdquery = new WP_Query( $args );
@@ -1090,6 +1098,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			'ingredient' => '',
 			'vendor'     => '',
 			'orderby'    => '',
+			'meta_key'   => '',
 			'image'      => 'show',
 			'imgsize'    => 'dispensary-image',
 			'viewall'    => '',
@@ -1136,6 +1145,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		'tax_query'         => $tax_query,
 		'orderby'           => $order,
 		'order'             => $ordernew,
+		'meta_key'          => $meta_key,
 	);
 
 	$wpdquery = new WP_Query( $args );
@@ -1279,6 +1289,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			'category' => '',
 			'vendor'   => '',
 			'orderby'  => '',
+			'meta_key' => '',
 			'image'    => 'show',
 			'imgsize'  => 'dispensary-image',
 			'viewall'  => '',
@@ -1317,6 +1328,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		'growers_category' => $category,
 		'orderby'          => $order,
 		'order'            => $ordernew,
+		'meta_key'         => $meta_key
 	) );
 
 	$wpdquery = new WP_Query( $args );
@@ -1482,6 +1494,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'condition' => '',
 			'vendor'    => '',
 			'orderby'   => '',
+			'meta_key'  => '',
 			'type'      => "flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers'",
 			'imgsize'   => 'dispensary-image',
 		),
@@ -1569,6 +1582,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		'tax_query'      => $tax_query,
 		'orderby'        => $order,
 		'order'          => $ordernew,
+		'meta_key'       => $meta_key,
 	) );
 
 	$wpdquery = new WP_Query( $args );
