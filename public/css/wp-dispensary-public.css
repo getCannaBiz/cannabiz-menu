@@ -158,6 +158,10 @@ table.wpdispensary-table.pricing tr.priceeach td {
 	width: 50%;
 }
 
+table.wpdispensary-table.compound-details td {
+	width: auto;
+}
+
 table.wpdispensary-table td span {
 	color: #454545;
 	font-weight: 600;
