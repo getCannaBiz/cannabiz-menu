@@ -1138,7 +1138,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			$order    = $orderby;
 			$ordernew = 'ASC';
 	}
-	$args = array(
+	$args = apply_filters( 'wpd_topicals_shortcode_args', array(
 		'post_type'         => 'topicals',
 		'posts_per_page'    => $posts,
 		'topicals_category' => $category,
@@ -1146,7 +1146,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		'orderby'           => $order,
 		'order'             => $ordernew,
 		'meta_key'          => $meta_key,
-	);
+	) );
 
 	$wpdquery = new WP_Query( $args );
 
