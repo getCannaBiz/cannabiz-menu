@@ -693,3 +693,56 @@ function wpdispensary_strain_type() {
 	) );
 
 }
+
+/**
+ * Allergens Taxonomy
+ *
+ * Adds the Allergens taxonomy to specific custom post types
+ *
+ * @since    2.3.0
+ */
+
+add_action( 'init', 'wpdispensary_allergens', 0 );
+
+/**
+ * Allergen
+ */
+function wpdispensary_allergens() {
+
+	$labels = array(
+		'name'                       => _x( 'Allergens', 'general name' ),
+		'singular_name'              => _x( 'Allergen', 'singular name' ),
+		'search_items'               => __( 'Search Allergens' ),
+		'popular_items'              => __( 'Popular Allergens' ),
+		'all_items'                  => __( 'All Allergens' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Allergen' ),
+		'update_item'                => __( 'Update Allergen' ),
+		'add_new_item'               => __( 'Add New Allergen' ),
+		'new_item_name'              => __( 'New Allergen Name' ),
+		'separate_items_with_commas' => __( 'Separate allergens with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove allergens' ),
+		'choose_from_most_used'      => __( 'Choose from the most used allergens' ),
+		'not_found'                  => 'No allergens found',
+		'menu_name'                  => __( 'Allergens' ),
+	);
+
+	$allergenstaxtype = apply_filters( 'wpd_allergens_tax_type', array( 'edibles' ) );
+
+	register_taxonomy( 'allergens', $allergenstaxtype, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => false,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'allergens',
+		),
+	) );
+
+}
+

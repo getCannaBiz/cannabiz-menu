@@ -56,6 +56,7 @@ class WP_Dispensary_Activator {
 		wpdispensary_vendor();
 		wpdispensary_shelf_type();
 		wpdispensary_strain_type();
+		wpdispensary_allergens();
 
 		/**
 		 * Custom Categories

@@ -94,6 +94,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdvendors = '';
 		}
 
+		if ( get_the_term_list( $post->ID, 'allergens', true ) ) {
+			$wpdallergens = '<tr><td><span>Allergens:</span></td><td>' . get_the_term_list( $post->ID, 'allergens', '', ', ', '' ) . '</td></tr>';
+		} else {
+			$wpdallergens = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
 			$wpdthc = '<tr><td><span>THC:</span></td><td>' . get_post_meta( get_the_id(), '_thc', true ) . '%</td></tr>';
 		} else {
@@ -265,7 +271,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'edibles' === get_post_type() ) {
-			$wpd_details_edibles = $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients . $wpdvendors;
+			$wpd_details_edibles = $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients . $wpdallergens . $wpdvendors;
 		} else {
 			$wpd_details_edibles = '';
 		}
