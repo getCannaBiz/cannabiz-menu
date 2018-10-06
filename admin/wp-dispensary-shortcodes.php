@@ -709,6 +709,9 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			'category'   => '',
 			'ingredient' => '',
 			'vendor'     => '',
+			'totalthc'   => 'show',
+			'thcmg'      => '',
+			'servings'   => '',
 			'orderby'    => '',
 			'image'      => 'show',
 			'imgsize'    => 'dispensary-image',
@@ -797,17 +800,34 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		 * Get the pricing for Edibles
 		 */
 
-		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
-			$thcmg = ' - <strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
-		} else {
-			$thcmg = '';
-		}
-		$thcsep = ' - ';
+		// Serving Count.
 		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
-			$servingcount = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
+			if ( 'show' === $servings ) {
+				$servingcount = ' - <strong>Servings: </strong>' . get_post_meta( get_the_id(), '_thccbdservings', true );
+			} else {
+				$servingcount = '';
+			}
 		} else {
 			$servingcount = '';
 		}
+
+		// THC mg.
+		if ( get_post_meta( get_the_ID(), '_thcmg', true ) ) {
+			if ( 'show' === $thcmg ) {
+				$thc = ' - <strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) . 'mg';
+			} else {
+				$thc = '';
+			}
+		} else {
+			$thc = '';
+		}
+
+		// Total THC (Servings X THC).
+		if ( 'show' === $totalthc ) {
+			$totalthc = ' - <strong>THC: </strong>' . get_post_meta( get_the_id(), '_thcmg', true ) * get_post_meta( get_the_id(), '_thccbdservings', true ) . 'mg';
+		}
+
+		// Price.
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$priceeach = '<strong>' . $wpd_cost_phrase . ':</strong> ' . wpd_currency_code() . '' . get_post_meta( get_the_id(), '_priceeach', true );
 		} else {
@@ -823,7 +843,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thcmg . '' . $servingcount . '</span>';
+			$showinfo = '<span class="wpd-productinfo">' . $priceeach . '' . $thc . '' . $servingcount . '' . $totalthc . '</span>';
 		} else {
 			$showinfo = '';
 		}
