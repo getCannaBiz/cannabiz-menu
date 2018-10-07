@@ -182,31 +182,31 @@ function wpdispensary_prices() {
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
-	echo '<p>1 Gram:</p>';
+	echo '<p>1 g</p>';
 	echo '<input type="text" name="_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>2 Grams:</p>';
+	echo '<p>2 g</p>';
 	echo '<input type="text" name="_twograms" value="' . esc_html( $twograms ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>1/8 Ounce:</p>';
+	echo '<p>1/8 oz</p>';
 	echo '<input type="text" name="_eighth" value="' . esc_html( $eighth ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>5 Grams:</p>';
+	echo '<p>5 g</p>';
 	echo '<input type="text" name="_fivegrams" value="' . esc_html( $fivegrams ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>1/4 Ounce:</p>';
+	echo '<p>1/4 oz</p>';
 	echo '<input type="text" name="_quarter" value="' . esc_html( $quarter ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>1/2 Ounce:</p>';
+	echo '<p>1/2 oz</p>';
 	echo '<input type="text" name="_halfounce" value="' . esc_html( $halfounce ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
-	echo '<p>1 Ounce:</p>';
+	echo '<p>1 oz</p>';
 	echo '<input type="text" name="_ounce" value="' . esc_html( $ounce ) . '" class="widefat" />';
 	echo '</div>';
 
