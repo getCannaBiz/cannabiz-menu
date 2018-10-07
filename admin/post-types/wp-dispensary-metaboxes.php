@@ -54,27 +54,27 @@ function wpdispensary_compounddetails() {
 
 	/** Echo out the fields */
 	echo '<div class="compoundbox">';
-	echo '<p>THC %:</p>';
+	echo '<p>' . __( 'THC', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_thc" value="' . esc_html( $thc ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>THCA %:</p>';
+	echo '<p>' . __( 'THCA', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_thca" value="' . esc_html( $thca ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>CBD %:</p>';
+	echo '<p>' . __( 'CBD', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cbd" value="' . esc_html( $cbd ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>CBA %:</p>';
+	echo '<p>' . __( 'CBA', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cba" value="' . esc_html( $cba ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>CBN %:</p>';
+	echo '<p>' . __( 'CBN', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>CBG %:</p>';
+	echo '<p>' . __( 'CBG', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
 	echo '</div>';
 
