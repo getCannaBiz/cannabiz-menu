@@ -301,7 +301,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
-			$wpd_details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . __( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn . $wpdcbg . '</tr></table>';
+			if ( empty( $wpdthc ) && empty( $wpdthca ) && empty( $wpdcbd ) && empty( $wpdtha ) && empty( $wpdcbn ) && empty( $wpdcbg ) ) {
+				$wpd_compound_details = '';
+			} else {
+				$wpd_details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . __( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn . $wpdcbg . '</tr></table>';
+			}
 		} else {
 			$wpd_details_compounds = '';
 		}
