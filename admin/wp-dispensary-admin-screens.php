@@ -158,6 +158,8 @@ function wpd_remove_taxonomies_from_admin_columns( $columns ) {
     unset( $columns['taxonomy-condition'] );
     // remove ingredients taxonomy column.
     unset( $columns['taxonomy-ingredients'] );
+    // remove allergens taxonomy column.
+    unset( $columns['taxonomy-allergens'] );
 
 	return $columns;
 }
