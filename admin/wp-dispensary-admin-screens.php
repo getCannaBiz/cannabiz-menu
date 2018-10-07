@@ -88,6 +88,11 @@ function edibles_metabox_order( $order ) {
 			",",
 			array(
 				'submitdiv',
+			)
+		),
+		'normal' => join(
+			",",
+			array(
 				'wpdispensary_singleprices',
 			)
 		),
@@ -102,8 +107,13 @@ function prerolls_metabox_order( $order ) {
 			",",
 			array(
 				'submitdiv',
-				'wpdispensary_singleprices',
 				'select-flowers-metabox',
+			)
+		),
+		'normal' => join(
+			",",
+			array(
+				'wpdispensary_singleprices',
 			)
 		),
 	);
@@ -117,8 +127,13 @@ function growers_metabox_order( $order ) {
 			",",
 			array(
 				'submitdiv',
-				'wpdispensary_singleprices',
 				'select-flowers-metabox',
+			)
+		),
+		'normal' => join(
+			",",
+			array(
+				'wpdispensary_singleprices',
 			)
 		),
 	);
