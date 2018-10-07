@@ -13,15 +13,13 @@ The complete marijuana dispensary menu solution for WordPress
 
 ### The complete marijuana dispensary menu solution for WordPress
 
-WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage product menus and let patients place orders directly through their own website.
+WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage online product menus and let patients place orders directly through their own website.
 
 ## Dispensary Menu Features
 
 WP Dispensary is packed with features to enhance the online presence of your cannabis business.
 
 With WP Dispensary you are able to easily create an online menu for your patients to browse, and with the commercial add-on's offered, you can allow patients to place orders directly through your website!
-
-*If WP Dispensary provides value to your cannabiz, please consider leaving a [5 star review](https://wordpress.org/support/plugin/wp-dispensary/reviews/?filter=5)*
 
 ### Auto-creation of Dispensary Menu page
 
