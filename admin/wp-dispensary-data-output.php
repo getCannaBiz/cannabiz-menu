@@ -277,7 +277,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'edibles' === get_post_type() ) {
-			$wpd_details_edibles = $wpdthcmg . $wpdcbdmg . $wpdservings . $wpdnetweight . $wpdingredients . $wpdallergens . $wpdvendors;
+			$wpd_details_edibles = $wpdservings . $wpdthcmg . $wpdcbdmg . $wpdnetweight . $wpdingredients . $wpdallergens . $wpdvendors;
 		} else {
 			$wpd_details_edibles = '';
 		}
