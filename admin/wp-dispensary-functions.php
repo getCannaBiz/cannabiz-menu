@@ -10,6 +10,11 @@
  * @subpackage WP_Dispensary/admin
  */
 
+/**
+ * Currency Code
+ * 
+ * @since 2.0
+ */
 function wpd_currency_code() {
 
 	$wpd_settings = get_option( 'wpdas_general' );
@@ -183,5 +188,109 @@ function wpd_currency_code() {
 	);
 
 	return $currency_symbols[ $wpd_currency ];
+
+}
+
+/**
+ * Flowers Prices - Simple
+ * 
+ * @since 2.4
+ */
+function wpd_flowers_prices_simple() {
+
+	// Get currency code.
+	$currency_code = wpd_currency_code();
+
+	// Get prices.
+	$price_half_gram     = get_post_meta( get_the_ID(), '_halfgram', true );
+	$price_one_gram      = get_post_meta( get_the_ID(), '_gram', true );
+	$price_two_grams     = get_post_meta( get_the_ID(), '_twograms', true );
+	$price_eighth        = get_post_meta( get_the_ID(), '_eighth', true );
+	$price_five_grams    = get_post_meta( get_the_ID(), '_fivegrams', true );
+	$price_quarter_ounce = get_post_meta( get_the_ID(), '_quarter', true );
+	$price_half_ounce    = get_post_meta( get_the_ID(), '_halfounce', true );
+	$price_one_ounce     = get_post_meta( get_the_ID(), '_ounce', true );
+
+	/**
+	 * Price output - if only one price has been added
+	 */
+	if ( '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
+		$pricing = $currency_code . $price_one_gram;
+	} elseif ( '' === $price_one_gram && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
+		$pricing = $currency_code . $price_two_grams;
+	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
+		$pricing = $currency_code . $price_eighth;
+	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
+		$pricing = $currency_code . $price_five_grams;
+	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_half_ounce && '' === $price_one_ounce ) {
+		$pricing = $currency_code . $price_quarter_ounce;
+	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_one_ounce ) {
+		$pricing = $currency_code . $price_half_ounce;
+	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce ) {
+		$pricing = $currency_code . $price_one_ounce;
+	} else {
+		$pricing = '';
+	}
+
+	/**
+	 * Price output - if no prices have been added
+	 */
+	if ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
+		$pricing = ' ';
+	}
+
+	/**
+	 * Price output - high amount
+	 */
+	$pricinglow = '';
+
+	if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+		$pricinglow = $currency_code . $price_one_gram;
+	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+		$pricinglow = $currency_code . $price_two_grams;
+	} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
+		$pricinglow = $currency_code . $price_eighth;
+	} elseif ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
+		$pricinglow = $currency_code . $price_five_grams;
+	} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
+		$pricinglow = $currency_code . $price_quarter_ounce;
+	} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+		$pricinglow = $currency_code . $price_half_ounce;
+	}
+
+	// Separator.
+	$pricingsep = ' - ';
+
+	/**
+	 * Price output - high amount
+	 */
+	$pricinghigh = '';
+
+	if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
+		$pricinghigh = $currency_code . $price_one_ounce;
+	} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+		$pricinghigh = $currency_code . $price_half_ounce;
+	} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
+		$pricinghigh = $currency_code . $price_quarter_ounce;
+	} elseif ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
+		$pricinghigh = $currency_code . $price_five_grams;
+	} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
+		$pricinghigh = $currency_code . $price_eighth;
+	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+		$pricinghigh = $currency_code . $price_two_grams;
+	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+		$pricinghigh = $currency_code . $price_one_gram;
+	}
+
+	/**
+	 * Return Pricing Prices.
+	 */
+	if ( empty( $pricing ) ) {
+		return $pricinglow . $pricingsep . $pricinghigh;
+	} elseif ( ' ' === $pricing ) {
+		return '';
+	} else {
+		return $pricing;
+	}
 
 }
