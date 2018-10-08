@@ -265,7 +265,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_title_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-			$wpd_details_table_top = $wpddatabefore . '<table class="wpdispensary-table single details"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_details_phrase . '</td></tr>' . $wpddatatop;
+			$wpd_details_table_top = $wpddatabefore . '<table class="wpdispensary-table single details"><thead><tr><td class="wpdispensary-title" colspan="7">' . $wpd_details_phrase . '</td></tr></thead><tbody class="wpdispensary-details">' . $wpddatatop;
 		} else {
 			$wpd_details_table_top = '';
 		}
@@ -322,7 +322,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_end_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-			$wpd_details_table_bottom = $wpddatabottom . '</table>';
+			$wpd_details_table_bottom = $wpddatabottom . '</tbody></table>';
 		} else {
 			$wpd_details_table_bottom = '';
 		}
@@ -447,7 +447,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Starting to build the Pricing table
 		 */
 		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-			$wpd_pricing_table_top = $wpdpricingbefore . '<table class="wpdispensary-table single pricing"><tr><td class="wpdispensary-title" colspan="6">' . $wpd_price_phrase . '</td></tr>' . $wpdpricingtop;
+			$wpd_pricing_table_top = $wpdpricingbefore . '<table class="wpdispensary-table single pricing"><thead><tr><td class="wpdispensary-title" colspan="7">' . $wpd_price_phrase . '</td></tr></thead><tbody class="wpdispensary-prices">' . $wpdpricingtop;
 		} else {
 			$wpd_pricing_table_top = '';
 		}
@@ -509,7 +509,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-			$wpd_pricing_table_bottom = $wpdpricingbottom . '</table>' . $wpdpricingafter;
+			$wpd_pricing_table_bottom = $wpdpricingbottom . '</tbody></table>' . $wpdpricingafter;
 		} else {
 			$wpd_pricing_table_bottom = '';
 		}
