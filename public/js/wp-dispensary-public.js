@@ -447,3 +447,27 @@ $('.wpd-carousel').slick({
   ]
 });
 });
+
+/**
+ * Hide Prices table if empty.
+ * 
+ * @since 2.4
+ */
+jQuery(document).ready(function ($) {
+    $('table.wpdispensary-prices tr').each(function(){
+        $(this).html($.trim($(this).html()))
+    });
+    $('tr:empty').parents('table').hide();
+});
+
+/**
+ * Hide Details table if empty.
+ * 
+ * @since 2.4
+ */
+jQuery(document).ready(function ($) {
+    $('tbody').each(function(){
+        $(this).html($.trim($(this).html()))
+    });
+    $('tbody:empty').parents('table').hide();
+});
