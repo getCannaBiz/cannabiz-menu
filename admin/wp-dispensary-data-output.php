@@ -413,14 +413,6 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdounce = '';
 		}
 
-		if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
-			$wpd_price_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
-		} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
-			$wpd_price_phrase = 'Donations';
-		} else {
-			$wpd_price_phrase = 'Prices';
-		}
-
 		/**
 		 * Pricing Table Before Action Hook
 		 *
@@ -447,7 +439,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Starting to build the Pricing table
 		 */
 		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-			$wpd_pricing_table_top = $wpdpricingbefore . '<table class="wpdispensary-table single pricing"><thead><tr><td class="wpdispensary-title" colspan="7">' . $wpd_price_phrase . '</td></tr></thead><tbody class="wpdispensary-prices">' . $wpdpricingtop;
+			$wpd_pricing_table_top = $wpdpricingbefore . '<table class="wpdispensary-table single pricing"><thead><tr><td class="wpdispensary-title" colspan="7">' . wpd_pricing_phrase() . '</td></tr></thead><tbody class="wpdispensary-prices">' . $wpdpricingtop;
 		} else {
 			$wpd_pricing_table_top = '';
 		}
