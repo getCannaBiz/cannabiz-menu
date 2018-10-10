@@ -10,7 +10,7 @@
  *
  * Plugin Name:       WP Dispensary
  * Plugin URI:        https://www.wpdispensary.com
- * Description:       The complete marijuana dispensary menu solution for WordPress
+ * Description:       The complete marijuana menu solution for dispensaries and delivery services
  * Version:           2.3
  * Author:            WP Dispensary
  * Author URI:        https://www.wpdispensary.com

@@ -1,4 +1,4 @@
-=== WP Dispensary Menu Management ===
+=== WP Dispensary ===
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
@@ -11,7 +11,7 @@ The complete marijuana dispensary menu solution for WordPress
 
 == Description ==
 
-### The complete marijuana dispensary menu solution for WordPress
+### The complete online menu solution for dispensaries
 
 WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage online product menus and let patients place orders directly through their own website.
 
