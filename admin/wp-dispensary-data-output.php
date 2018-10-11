@@ -292,11 +292,26 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpd_details_growers = '';
 		}
 
+		// Compounds table.
 		if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
 			if ( empty( $wpdthc ) && empty( $wpdthca ) && empty( $wpdcbd ) && empty( $wpdtha ) && empty( $wpdcbn ) && empty( $wpdcbg ) ) {
-				$wpd_compound_details = '';
+				$wpd_details_compounds = '';
 			} else {
-				$wpd_details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . __( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $wpdthc . $wpdthca . $wpdcbd . $wpdcba . $wpdcbn . $wpdcbg . '</tr></table>';
+				// Get compounds.
+				$compounds = wpd_compounds_simple( $type = '%', $compound_array );
+
+				// Create empty variable.
+				$showcompounds = '';
+
+				// Loop through each compound, and append it to variable.
+				foreach ( $compounds as $compound => $value ) {
+					$showcompounds .= '<td><span>' . __( $compound, 'wp-dispensary' ) . '</span> ' . $value . '</td>';
+				}
+
+				// Combine compounds into one variable.
+				$showcompounds = $showcompounds;
+
+				$wpd_details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . __( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $showcompounds . '</tr></table>';
 			}
 		} else {
 			$wpd_details_compounds = '';
