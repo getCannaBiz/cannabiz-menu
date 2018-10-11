@@ -171,42 +171,6 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		$thumbnail_url       = $thumbnail_url_array[0];
 		$querytitle          = get_the_title();
 
-		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
-			$thcinfo = '<span class="wpd-productinfo thc"><strong>' . __( 'THC: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_thc', true ) . '%</span>';
-		} else {
-			$thcinfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
-			$thcainfo = '<span class="wpd-productinfo thca"><strong>' . __( 'THCA: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_thca', true ) . '%</span>';
-		} else {
-			$thcainfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
-			$cbdinfo = '<span class="wpd-productinfo cbd"><strong>' . __( 'CBD: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cbd', true ) . '%</span>';
-		} else {
-			$cbdinfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
-			$cbainfo = '<span class="wpd-productinfo cba"><strong>' . __( 'CBA: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cba', true ) . '%</span>';
-		} else {
-			$cbainfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
-			$cbninfo = '<span class="wpd-productinfo cbn"><strong>' . __( 'CBN: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cbn', true ) . '%</span>';
-		} else {
-			$cbninfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
-			$cbginfo = '<span class="wpd-productinfo cbg"><strong>' . __( 'CBG: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cbg', true ) . '%</span>';
-		} else {
-			$cbginfo = '';
-		}
-
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -216,46 +180,34 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_flowers_prices_simple() . '</span>';
+			$showinfo = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_flowers_prices_simple() . '</span>';
 		} else {
 			$showinfo = '';
 		}
 
-		if ( 'show' === $thc ) {
-			$showthc = $thcinfo;
-		} else {
-			$showthc = '';
+		// Make array of compounds shortcode options.
+		$compound_array = array(
+			'thc'  => $thc,
+			'thca' => $thca,
+			'cbd'  => $cbd,
+			'cba'  => $cba,
+			'cbn'  => $cbn,
+			'cbg'  => $cbg
+		);
+
+		// Get compounds.
+		$compounds = wpd_compounds_simple( $type = '%', $compound_array );
+
+		// Create empty variable.
+		$showcompounds = '';
+
+		// Loop through each compound, and append it to variable.
+		foreach ( $compounds as $compound => $value ) {
+			$showcompounds .= '<span class="wpd-productinfo ' . $compound . '"><strong>' . __( $compound, 'wp-dispensary' ) . '</strong> ' . $value . '</span>';
 		}
 
-		if ( 'show' === $thca ) {
-			$showthca = $thcainfo;
-		} else {
-			$showthca = '';
-		}
-
-		if ( 'show' === $cbd ) {
-			$showcbd = $cbdinfo;
-		} else {
-			$showcbd = '';
-		}
-
-		if ( 'show' === $cba ) {
-			$showcba = $cbainfo;
-		} else {
-			$showcba = '';
-		}
-
-		if ( 'show' === $cbn ) {
-			$showcbn = $cbninfo;
-		} else {
-			$showcbn = '';
-		}
-
-		if ( 'show' === $cbg ) {
-			$showcbg = $cbginfo;
-		} else {
-			$showcbg = '';
-		}
+		// Combine compounds into one variable.
+		$showcompounds = $showcompounds;
 
 		if ( 'show' === $image ) {
 			if ( null === $thumbnail_url && 'full' === $imagesize ) {
@@ -297,7 +249,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$wpd_shortcode_bottom_flowers = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $showthc . $showthca . $showcbd . $showcba . $showcbn . $showcbg . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_flowers . '</div>';
+		$wpdposts .= $showname . $showinfo . $showcompounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_flowers . '</div>';
 
 	endwhile;
 
