@@ -347,3 +347,88 @@ function wpd_details_phrase() {
 	return $wpd_details_phrase;
 }
 
+/**
+ * Compounds details - simple
+ * 
+ * @since 2.4
+ */
+function wpd_compounds_simple( $type, $compound_array ) {
+
+	// Set the type.
+	if ( 'mg' == $type ) {
+		$type = 'mg';
+	} elseif ( '%' == $type ) {
+		$type = '%';
+	} else {
+		$type = '';
+	}
+
+	// Set compounds.
+	$compounds = array();
+
+	// THC.
+	if ( 'show' === $compound_array['thc'] || null === $compound_array['thc'] ) {
+		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
+			$compounds['THC'] = get_post_meta( get_the_id(), '_thc', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// THCA.
+	if ( 'show' === $compound_array['thca'] || null === $compound_array['thca'] ) {
+		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+			$compounds['THCA'] = get_post_meta( get_the_id(), '_thca', true ) . $type;
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBD.
+	if ( 'show' === $compound_array['cbd'] || null === $compound_array['cbd'] ) {
+		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
+			$compounds['CBD'] = get_post_meta( get_the_id(), '_cbd', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBA.
+	if ( 'show' === $compound_array['cba'] || null === $compound_array['cba'] ) {
+		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+			$compounds['CBA'] = get_post_meta( get_the_id(), '_cba', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBD.
+	if ( 'show' === $compound_array['cbn'] || null === $compound_array['cbn'] ) {
+		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+			$compounds['CBN'] = get_post_meta( get_the_id(), '_cbn', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBG.
+	if ( 'show' === $compound_array['cbg'] || null === $compound_array['cbg'] ) {
+		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
+			$compounds['CBG'] = get_post_meta( get_the_id(), '_cbg', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	return $compounds;
+}
