@@ -32,30 +32,31 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	/* Attributes */
 	extract( shortcode_atts(
 		array(
-			'title'      => 'Flowers',
-			'class'      => '',
-			'posts'      => '100',
-			'name'       => 'show',
-			'info'       => 'show',
-			'thc'        => 'show',
-			'thca'       => '',
-			'cbd'        => 'show',
-			'cba'        => '',
-			'cbn'        => '',
-			'cbg'        => '',
-			'category'   => '',
-			'aroma'      => '',
-			'flavor'     => '',
-			'effect'     => '',
-			'symptom'    => '',
-			'condition'  => '',
-			'vendor'     => '',
-			'shelf_type' => '',
-			'orderby'    => '',
-			'meta_key'   => '',
-			'image'      => 'show',
-			'imgsize'    => 'dispensary-image',
-			'viewall'    => '',
+			'title'       => 'Flowers',
+			'class'       => '',
+			'posts'       => '100',
+			'name'        => 'show',
+			'info'        => 'show',
+			'thc'         => '',
+			'thca'        => '',
+			'cbd'         => '',
+			'cba'         => '',
+			'cbn'         => '',
+			'cbg'         => '',
+			'category'    => '',
+			'aroma'       => '',
+			'flavor'      => '',
+			'effect'      => '',
+			'symptom'     => '',
+			'condition'   => '',
+			'vendor'      => '',
+			'shelf_type'  => '',
+			'strain_type' => '',
+			'orderby'     => '',
+			'meta_key'    => '',
+			'image'       => 'show',
+			'imgsize'     => 'dispensary-image',
+			'viewall'     => '',
 		),
 		$atts,
 		'wpd_flowers'
@@ -122,6 +123,13 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			'taxonomy' => 'shelf_type',
 			'field'    => 'slug',
 			'terms'    => $shelf_type,
+		);
+	}
+	if ( '' !== $strain_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'strain_type',
+			'field'    => 'slug',
+			'terms'    => $strain_type,
 		);
 	}
 	if ( '' !== $orderby ) {
@@ -308,29 +316,31 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 	/** Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'     => '100',
-			'class'     => '',
-			'name'      => 'show',
-			'info'      => 'show',
-			'thc'       => 'show',
-			'thca'      => '',
-			'cbd'       => 'show',
-			'cba'       => '',
-			'cbn'       => '',
-			'cbg'       => '',
-			'title'     => 'Concentrates',
-			'category'  => '',
-			'aroma'     => '',
-			'flavor'    => '',
-			'effect'    => '',
-			'symptom'   => '',
-			'condition' => '',
-			'vendor'    => '',
-			'orderby'   => '',
-			'meta_key'   => '',
-			'image'     => 'show',
-			'imgsize'   => 'dispensary-image',
-			'viewall'   => '',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'thc'         => 'show',
+			'thca'        => '',
+			'cbd'         => 'show',
+			'cba'         => '',
+			'cbn'         => '',
+			'cbg'         => '',
+			'title'       => 'Concentrates',
+			'category'    => '',
+			'aroma'       => '',
+			'flavor'      => '',
+			'effect'      => '',
+			'symptom'     => '',
+			'condition'   => '',
+			'vendor'      => '',
+			'shelf_type'  => '',
+			'strain_type' => '',
+			'orderby'     => '',
+			'meta_key'    => '',
+			'image'       => 'show',
+			'imgsize'     => 'dispensary-image',
+			'viewall'     => '',
 		),
 		$atts,
 		'wpd_concentrates'
@@ -391,6 +401,20 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 				'field'    => 'slug',
 				'terms'    => $vendor,
 			);
+	}
+	if ( '' !== $shelf_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'shelf_type',
+			'field'    => 'slug',
+			'terms'    => $shelf_type,
+		);
+	}
+	if ( '' !== $strain_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'strain_type',
+			'field'    => 'slug',
+			'terms'    => $strain_type,
+		);
 	}
 	if ( '' !== $orderby ) {
 			$order    = $orderby;
@@ -813,19 +837,20 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	/** Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'      => '100',
-			'class'      => '',
-			'name'       => 'show',
-			'info'       => 'show',
-			'title'      => 'Pre-rolls',
-			'vendor'     => '',
-			'shelf_type' => '',
-			'orderby'    => '',
-			'meta_key'   => '',
-			'weight'     => 'show',
-			'image'      => 'show',
-			'imgsize'    => 'dispensary-image',
-			'viewall'    => '',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'title'       => 'Pre-rolls',
+			'vendor'      => '',
+			'shelf_type'  => '',
+			'strain_type' => '',
+			'orderby'     => '',
+			'meta_key'    => '',
+			'weight'      => 'show',
+			'image'       => 'show',
+			'imgsize'     => 'dispensary-image',
+			'viewall'     => '',
 		),
 		$atts,
 		'wpd_prerolls'
@@ -855,6 +880,13 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			'taxonomy' => 'shelf_type',
 			'field'    => 'slug',
 			'terms'    => $shelf_type,
+		);
+	}
+	if ( '' !== $strain_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'strain_type',
+			'field'    => 'slug',
+			'terms'    => $strain_type,
 		);
 	}
 	if ( '' !== $orderby ) {
@@ -1362,28 +1394,30 @@ function wpdispensary_carousel_shortcode( $atts ) {
 	/* Attributes */
 	extract( shortcode_atts(
 		array(
-			'posts'     => '100',
-			'class'     => '',
-			'name'      => 'show',
-			'info'      => 'show',
-			'thc'       => 'show',
-			'thca'      => '',
-			'cbd'       => 'show',
-			'cba'       => '',
-			'cbn'       => '',
-			'cbg'       => '',
-			'title'     => 'Dispensary Menu',
-			'category'  => '',
-			'aroma'     => '',
-			'flavor'    => '',
-			'effect'    => '',
-			'symptom'   => '',
-			'condition' => '',
-			'vendor'    => '',
-			'orderby'   => '',
-			'meta_key'  => '',
-			'type'      => "flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers'",
-			'imgsize'   => 'dispensary-image',
+			'posts'       => '100',
+			'class'       => '',
+			'name'        => 'show',
+			'info'        => 'show',
+			'thc'         => '',
+			'thca'        => '',
+			'cbd'         => '',
+			'cba'         => '',
+			'cbn'         => '',
+			'cbg'         => '',
+			'title'       => 'Dispensary Menu',
+			'category'    => '',
+			'aroma'       => '',
+			'flavor'      => '',
+			'effect'      => '',
+			'symptom'     => '',
+			'condition'   => '',
+			'vendor'      => '',
+			'shelf_type'  => '',
+			'strain_type' => '',
+			'orderby'     => '',
+			'meta_key'    => '',
+			'type'        => "flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers'",
+			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
 		'wpd_carousel'
@@ -1442,6 +1476,20 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'field'    => 'slug',
 				'terms'    => $vendor,
 			);
+	}
+	if ( '' !== $shelf_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'shelf_type',
+			'field'    => 'slug',
+			'terms'    => $shelf_type,
+		);
+	}
+	if ( '' !== $strain_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'strain_type',
+			'field'    => 'slug',
+			'terms'    => $strain_type,
+		);
 	}
 	if ( '' !== $orderby ) {
 			$order    = $orderby;
