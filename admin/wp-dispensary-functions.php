@@ -296,19 +296,31 @@ function wpd_flowers_prices_simple() {
 }
 
 /**
- * Price phrase
+ * Pricing phrase
+ * 
+ * @since 2.4
  */
-function wpd_pricing_phrase() {
+function wpd_pricing_phrase( $singular ) {
 	// Access all WP Dispensary Display Settings.
 	$wpd_settings = get_option( 'wpdas_display' );
 
+	// Check pricing phrase settings.
 	if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
 		$wpd_pricing_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
 	} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
-		$wpd_pricing_phrase = __( 'Donation', 'wp-dispensary' );
+		if ( $singular == true ) {
+			$wpd_pricing_phrase = __( 'Donation', 'wp-dispensary' );
+		} else {
+			$wpd_pricing_phrase = __( 'Donations', 'wp-dispensary' );
+		}
 	} else {
-		$wpd_pricing_phrase = __( 'Price', 'wp-dispensary' );
+		if ( $singular == true ) {
+			$wpd_pricing_phrase = __( 'Price', 'wp-dispensary' );
+		} else {
+			$wpd_pricing_phrase = __( 'Prices', 'wp-dispensary' );
+		}
 	}
-	
+
+	// Return the pricing phrase.
 	return $wpd_pricing_phrase;
 }
