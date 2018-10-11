@@ -296,7 +296,7 @@ function wpd_flowers_prices_simple() {
 }
 
 /**
- * Pricing phrase
+ * WPD Admin Settings - Pricing phrase
  * 
  * @since 2.4
  */
@@ -324,3 +324,26 @@ function wpd_pricing_phrase( $singular ) {
 	// Return the pricing phrase.
 	return $wpd_pricing_phrase;
 }
+
+/**
+ * WPD Admin Settings - Details phrase
+ * 
+ * @since 2.4
+ */
+function wpd_details_phrase() {
+	// Access all WP Dispensary Display Settings.
+	$wpd_settings = get_option( 'wpdas_display' );
+
+	// Check details phrase settings.
+	if ( isset ( $wpd_settings['wpd_details_phrase_custom'] ) && '' !== $wpd_settings['wpd_details_phrase_custom'] ) {
+		$wpd_details_phrase = $wpd_settings['wpd_details_phrase_custom'];
+	} elseif ( isset ( $wpd_settings['wpd_details_phrase'] ) && 'Information' === $wpd_settings['wpd_details_phrase'] ) {
+		$wpd_details_phrase = __( 'Information', 'wp-dispensary' );
+	} else {
+		$wpd_details_phrase = __( 'Details', 'wp-dispensary' );
+	}
+
+	// Return the details phrase.
+	return $wpd_details_phrase;
+}
+

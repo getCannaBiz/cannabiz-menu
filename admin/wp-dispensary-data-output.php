@@ -234,14 +234,6 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdgrower = '';
 		}
 
-		if ( isset ( $wpd_settings['wpd_details_phrase_custom'] ) && '' !== $wpd_settings['wpd_details_phrase_custom'] ) {
-			$wpd_details_phrase = $wpd_settings['wpd_details_phrase_custom'];
-		} elseif ( isset ( $wpd_settings['wpd_details_phrase'] ) && 'Information' === $wpd_settings['wpd_details_phrase'] ) {
-			$wpd_details_phrase = __( 'Information', 'wp-dispensary' );
-		} else {
-			$wpd_details_phrase = __( 'Details', 'wp-dispensary' );
-		}
-
 		/**
 		 * Details Table Before Action Hook
 		 *
@@ -265,7 +257,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_title_array', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) ) ) ) {
-			$wpd_details_table_top = $wpddatabefore . '<table class="wpdispensary-table single details"><thead><tr><td class="wpdispensary-title" colspan="7">' . $wpd_details_phrase . '</td></tr></thead><tbody class="wpdispensary-details">' . $wpddatatop;
+			$wpd_details_table_top = $wpddatabefore . '<table class="wpdispensary-table single details"><thead><tr><td class="wpdispensary-title" colspan="7">' . wpd_details_phrase() . '</td></tr></thead><tbody class="wpdispensary-details">' . $wpddatatop;
 		} else {
 			$wpd_details_table_top = '';
 		}
