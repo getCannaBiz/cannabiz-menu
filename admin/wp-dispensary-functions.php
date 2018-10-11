@@ -408,7 +408,7 @@ function wpd_compounds_simple( $type, $compound_array ) {
 		// Do nothing.
 	}
 
-	// CBD.
+	// CBN.
 	if ( 'show' === $compound_array['cbn'] || null === $compound_array['cbn'] ) {
 		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
 			$compounds['CBN'] = get_post_meta( get_the_id(), '_cbn', true ) . $type;

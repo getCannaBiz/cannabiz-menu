@@ -219,7 +219,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 		// Loop through each compound, and append it to variable.
 		foreach ( $compounds as $compound => $value ) {
-			$showcompounds .= '<span class="wpd-productinfo ' . $compound . '"><strong>' . __( $compound, 'wp-dispensary' ) . '</strong> ' . $value . '</span>';
+			$showcompounds .= '<span class="wpd-productinfo ' . $compound . '"><strong>' . __( $compound, 'wp-dispensary' ) . ':</strong> ' . $value . '</span>';
 		}
 
 		// Combine compounds into one variable.
