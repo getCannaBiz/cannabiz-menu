@@ -1,5 +1,29 @@
 # Changelog
 
+### 2.4
+* Added thead and tbody tags to tables in `admin/wp-dispensary-data-output.php`
+* Added `wpd_details_phrase` helper function in `admin/wp-dispensary-functions.php`
+* Added `wpd_pricing_phrase` helper function in `admin/wp-dispensary-functions.php`
+* Added `wpd_flowers_prices_simple` helper function in admin/wp-dispensary-functions.php`
+* Added `wpd_compounds_simple` helper function in `admin/wp-dispensary-functions.php`
+* Added `strain_type` to shortcode options for Flowers, Concentrates and Pre-rolls in `admin/wp-dispensary-shortcodes.php`
+* Remove Allergens taxonomy from admin columns in `admin/wp-dispensary-admin-screens.php`
+* Updated Edibles details order in `admin/wp-dispensary-data-output.php`
+* Updated compounds table `wpd_compounds_simple` function in `admin/wp-dispensary-data-output.php`
+* Updated code to use the new `wpd_details_phrase` function in `admin/wp-dispensary-data-output.php`
+* Updated code to use the new `wpd_pricing_phrase` function in `admin/wp-dispensary-data-output.php`
+* Updated code to use the new `wpd_pricing_phrase` function in `admin/wp-dispensary-shortcodes.php`
+* Updated flowers shortcode with `wpd_compounds_simple` function in `admin/wp-dispensary-shortcodes.php`
+* Updated shortcode product details in `admin/wp-dispensary-shortcodes.php`
+* Updated `wpd-carousel` shortcode display updates in multuple areas in `admin/wp-dispensary-shortcodes.php`
+* Updated Prices and Details tables to not display if empty in `public/js/wp-dispensary-public.js`
+* Updated Compounds table to not display if no compounds are added in  `admin/wp-dispensary-data-output`
+* Updated metabox order for Edibles, Pre-rolls and Growers in `admin/wp-dispensary-admin-screens.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+* Updated Flower prices weight display text in metabox in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated code for various text strings to be translatable in various files
+* General code cleanup throughout various files in the plugin
+
 ### 2.3
 * Added Strain Type taxonomy in `admin/post-types/wp-dispensary-taxonomies.php`
 * Added Strain Type to activator permalink flush in `includes/class-wp-dispensary-activator.php`
