@@ -295,6 +295,231 @@ function wpd_flowers_prices_simple() {
 
 }
 
+
+/**
+ * Concentrates Prices - Simple
+ * 
+ * @since 2.5
+ */
+function wpd_concentrates_prices_simple() {
+
+	// Get currency code.
+	$currency_code = wpd_currency_code();
+
+	// Get prices.
+	$price_each      = get_post_meta( get_the_ID(), '_priceeach', true );
+	$price_half_gram = get_post_meta( get_the_ID(), '_halfgram', true );
+	$price_one_gram  = get_post_meta( get_the_ID(), '_gram', true );
+	$price_two_grams = get_post_meta( get_the_ID(), '_twograms', true );
+
+	/**
+	 * Price output - if only one price has been added
+	 */
+	if ( '' === $price_one_gram && '' === $price_two_grams ) {
+		$pricing = $currency_code . $price_half_gram;
+	} elseif ( '' === $price_half_gram && '' === $price_two_grams ) {
+		$pricing = $currency_code . $price_one_gram;
+	} elseif ( '' === $price_half_gram && '' === $price_one_gram ) {
+		$pricing = $currency_code . $price_two_grams;
+	} else {
+		$pricing = '';
+	}
+
+	/**
+	 * Price output - if no prices have been added
+	 */
+	if ( '' === $price_half_gram && '' === $price_one_gram && '' === $price_two_grams ) {
+		$pricing = ' ';
+	}
+
+	/**
+	 * Price output - low amount
+	 */
+	$pricinglow = '';
+
+	if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
+		$pricinglow = $currency_code . $price_half_gram;
+	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+		$pricinglow = $currency_code . $price_one_gram;
+	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+		$pricinglow = $currency_code . $price_two_grams;
+	}
+
+	// Separator.
+	$pricingsep = ' - ';
+
+	/**
+	 * Price output - high amount
+	 */
+	$pricinghigh = '';
+
+	if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+		$pricinghigh = $currency_code . $price_two_grams;
+	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+		$pricinghigh = $currency_code . $price_one_gram;
+	} elseif ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
+		$pricinghigh = $currency_code . $price_half_gram;
+	}
+
+	/**
+	 * Price output - if price each is filled in
+	 */
+	if ( '' != $price_each ) {
+		$pricing = $currency_code . $price_each;
+	}
+
+	/**
+	 * Return Pricing Prices.
+	 */
+	if ( empty( $pricing ) ) {
+		return $pricinglow . $pricingsep . $pricinghigh;
+	} elseif ( ' ' === $pricing ) {
+		return '';
+	} else {
+		return $pricing;
+	}
+
+}
+
+
+/**
+ * Edibles Prices - Simple
+ * 
+ * @since 2.5
+ */
+function wpd_edibles_prices_simple() {
+
+	// Get currency code.
+	$currency_code = wpd_currency_code();
+
+	// Get prices.
+	$price_each     = get_post_meta( get_the_ID(), '_priceeach', true );
+	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
+
+	/**
+	 * Price output - if only one price has been added
+	 */
+	if ( '' === $price_each && '' != $price_per_pack ) {
+		$pricing = $currency_code . $price_per_pack;
+	} elseif ( '' != $price_each && '' === $price_per_pack ) {
+		$pricing = $currency_code . $price_each;
+	} else {
+		$pricing = '';
+	}
+
+	/**
+	 * Price output - if no prices have been added
+	 */
+	if ( '' === $price_each && '' === $price_per_pack ) {
+		$pricing = ' ';
+	}
+
+	/**
+	 * Return Pricing Prices.
+	 */
+	if ( '' != $price_each && '' != $price_per_pack ) {
+		return $currency_code . $price_each . ' - ' . $currency_code . $price_per_pack;
+	} elseif ( ' ' === $pricing ) {
+		return '';
+	} else {
+		return $pricing;
+	}
+
+}
+
+
+/**
+ * Pre-rolls Prices - Simple
+ * 
+ * @since 2.5
+ */
+function wpd_prerolls_prices_simple() {
+
+	// Get currency code.
+	$currency_code = wpd_currency_code();
+
+	// Get prices.
+	$price_each     = get_post_meta( get_the_ID(), '_priceeach', true );
+	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
+
+	/**
+	 * Price output - if only one price has been added
+	 */
+	if ( '' === $price_each && '' != $price_per_pack ) {
+		$pricing = $currency_code . $price_per_pack;
+	} elseif ( '' != $price_each && '' === $price_per_pack ) {
+		$pricing = $currency_code . $price_each;
+	} else {
+		$pricing = '';
+	}
+
+	/**
+	 * Price output - if no prices have been added
+	 */
+	if ( '' === $price_each && '' === $price_per_pack ) {
+		$pricing = ' ';
+	}
+
+	/**
+	 * Return Pricing Prices.
+	 */
+	if ( '' != $price_each && '' != $price_per_pack ) {
+		return $currency_code . $price_each . ' - ' . $currency_code . $price_per_pack;
+	} elseif ( ' ' === $pricing ) {
+		return '';
+	} else {
+		return $pricing;
+	}
+
+}
+
+
+/**
+ * Topicals Prices - Simple
+ * 
+ * @since 2.5
+ */
+function wpd_topicals_prices_simple() {
+
+	// Get currency code.
+	$currency_code = wpd_currency_code();
+
+	// Get prices.
+	$price_each     = get_post_meta( get_the_ID(), '_pricetopical', true );
+	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
+
+	/**
+	 * Price output - if only one price has been added
+	 */
+	if ( '' === $price_each && '' != $price_per_pack ) {
+		$pricing = $currency_code . $price_per_pack;
+	} elseif ( '' != $price_each && '' === $price_per_pack ) {
+		$pricing = $currency_code . $price_each;
+	} else {
+		$pricing = '';
+	}
+
+	/**
+	 * Price output - if no prices have been added
+	 */
+	if ( '' === $price_each && '' === $price_per_pack ) {
+		$pricing = ' ';
+	}
+
+	/**
+	 * Return Pricing Prices.
+	 */
+	if ( '' != $price_each && '' != $price_per_pack ) {
+		return $currency_code . $price_each . ' - ' . $currency_code . $price_per_pack;
+	} elseif ( ' ' === $pricing ) {
+		return '';
+	} else {
+		return $pricing;
+	}
+
+}
+
+
 /**
  * WPD Admin Settings - Pricing phrase
  * 
