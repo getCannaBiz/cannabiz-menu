@@ -634,6 +634,120 @@ add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** Save
 
 
 /**
+ * Prices metabox for the following menu types:
+ * Topicals
+ *
+ * Adds a price metabox to all of the above custom post types
+ *
+ * @since    1.0.0
+ */
+function wpdispensary_add_topicalprices_metaboxes() {
+
+	$screens = apply_filters( 'wpd_topicalprices_screens', array( 'topicals' ) );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_topicalprices',
+			__( 'Product Pricing', 'wp-dispensary' ),
+			'wpdispensary_topicalprices',
+			$screen,
+			'normal',
+			'default'
+		);
+	}
+
+}
+
+add_action( 'add_meta_boxes', 'wpdispensary_add_topicalprices_metaboxes' );
+
+/**
+ * Single Prices
+ */
+function wpdispensary_topicalprices() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="topicalpricesmeta_noncename" id="topicalpricesmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the prices data if its already been entered */
+	$priceeach    = get_post_meta( $post->ID, '_pricetopical', true );
+	$priceperpack = get_post_meta( $post->ID, '_priceperpack', true );
+	$unitsperpack = get_post_meta( $post->ID, '_unitsperpack', true );
+
+	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>' . __( 'Price per unit:', 'wp-dispensary' ) . '</p>';
+	echo '<input type="text" name="_pricetopical" value="' . esc_html( $priceeach ) . '" class="widefat" />';
+	echo '</div>';
+
+	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>' . __( 'Price per pack:', 'wp-dispensary' ) . '</p>';
+	echo '<input type="text" name="_priceperpack" value="' . esc_html( $priceperpack ) . '" class="widefat" />';
+	echo '</div>';
+
+	/** Echo out the fields */
+	echo '<div class="pricebox">';
+	echo '<p>' . __( 'Units per pack:', 'wp-dispensary' ) . '</p>';
+	echo '<input type="number" name="_unitsperpack" value="' . esc_html( $unitsperpack ) . '" class="widefat" />';
+	echo '</div>';
+
+}
+
+/**
+ * Save the Metabox Data
+ */
+function wpdispensary_save_topicalprices_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if (
+		! isset( $_POST['topicalpricesmeta_noncename'] ) ||
+		! wp_verify_nonce( $_POST['topicalpricesmeta_noncename'], plugin_basename( __FILE__ ) )
+	) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	$prices_meta['_pricetopical'] = $_POST['_pricetopical'];
+	$prices_meta['_priceperpack'] = $_POST['_priceperpack'];
+	$prices_meta['_unitsperpack'] = $_POST['_unitsperpack'];
+
+	/** Add values of $prices_meta as custom fields */
+
+	foreach ( $prices_meta as $key => $value ) { /** Cycle through the $prices_meta array! */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+
+add_action( 'save_post', 'wpdispensary_save_topicalprices_meta', 1, 2 ); /** Save the custom fields */
+
+
+/**
  * Grower Product Details metabox for the following menu types:
  * Growers
  *
@@ -890,16 +1004,11 @@ function wpdispensary_thccbdtopical() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thc mg data if its already been entered */
-	$pricetopicals = get_post_meta( $post->ID, '_pricetopical', true );
 	$thctopicals   = get_post_meta( $post->ID, '_thctopical', true );
 	$cbdtopicals   = get_post_meta( $post->ID, '_cbdtopical', true );
 	$sizetopicals  = get_post_meta( $post->ID, '_sizetopical', true );
 
 	/** Echo out the fields */
-	echo '<div class="topicalbox">';
-	echo '<p>Price per unit:</p>';
-	echo '<input type="text" name="_pricetopical" value="' . esc_html( $pricetopicals ) . '" class="widefat" />';
-	echo '</div>';
 	echo '<div class="topicalbox">';
 	echo '<p>Size (oz):</p>';
 	echo '<input type="text" name="_sizetopical" value="' . esc_html( $sizetopicals ) . '" class="widefat" />';
@@ -941,7 +1050,6 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thcmgtopical_meta['_pricetopical'] = $_POST['_pricetopical'];
 	$thcmgtopical_meta['_thctopical']   = $_POST['_thctopical'];
 	$thcmgtopical_meta['_cbdtopical']   = $_POST['_cbdtopical'];
 	$thcmgtopical_meta['_sizetopical']  = $_POST['_sizetopical'];

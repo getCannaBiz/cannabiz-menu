@@ -13,6 +13,7 @@
 /** Metaboxes */
 #wpdispensary_prices .inside,
 #wpdispensary_singleprices .inside,
+#wpdispensary_topicalprices .inside,
 #wpdispensary_concentrateprices .inside,
 #wpdispensary_compounds .inside,
 #wpdispensary_clonedetails .inside,
@@ -35,12 +36,14 @@
 	width: 12.27%;
 }
 
-#wpdispensary_singleprices .inside .pricebox {
+#wpdispensary_singleprices .inside .pricebox,
+#wpdispensary_topicalprices .inside .pricebox {
 	float: left;
 	position: relative;
 	width: 100%;
 }
 
+#postbox-container-2 #wpdispensary_topicalprices .inside .pricebox,
 #postbox-container-2 #wpdispensary_singleprices .inside .pricebox {
 	float: left;
 	margin: 10px 1%;
@@ -119,7 +122,7 @@
 	float: left;
 	margin: 10px 1%;
 	position: relative;
-	width: 23%;
+	width: 31.333%;
 }
 
 /** Metaboxes `select` width */
