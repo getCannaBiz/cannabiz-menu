@@ -92,6 +92,9 @@ class wpdispensary_flowers_widget extends WP_Widget {
 		);
 
 		while ( $wpdispensary_flowers_widget->have_posts() ) :
+
+			do_action( 'wpd_flowers_widget_inside_loop_before' );
+
 			$wpdispensary_flowers_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
@@ -121,6 +124,8 @@ class wpdispensary_flowers_widget extends WP_Widget {
 				echo '</li>';
 
 			}
+
+		do_action( 'wpd_flowers_widget_inside_loop_after' );
 
 		endwhile; // End loop.
 
@@ -320,6 +325,9 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 		);
 
 		while ( $wpdispensary_concentrates_widget->have_posts() ) :
+
+			do_action( 'wpd_concentrates_widget_inside_loop_before' );
+
 			$wpdispensary_concentrates_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
@@ -349,6 +357,8 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 				echo '</li>';
 
 			}
+
+		do_action( 'wpd_concentrates_widget_inside_loop_after' );
 
 		endwhile; // End loop.
 
@@ -547,6 +557,9 @@ class wpdispensary_edibles_widget extends WP_Widget {
 		);
 
 		while ( $wpdispensary_edibles_widget->have_posts() ) :
+
+			do_action( 'wpd_edibles_widget_inside_loop_before' );
+
 			$wpdispensary_edibles_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
@@ -576,6 +589,8 @@ class wpdispensary_edibles_widget extends WP_Widget {
 				echo '</li>';
 
 			}
+
+		do_action( 'wpd_edibles_widget_inside_loop_after' );
 
 		endwhile; // End loop.
 
@@ -776,6 +791,9 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 		);
 
 		while ( $wpdispensary_edibles_widget->have_posts() ) :
+
+			do_action( 'wpd_prerolls_widget_inside_loop_before' );
+
 			$wpdispensary_edibles_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
@@ -808,6 +826,8 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 				echo '</li>';
 
 			}
+
+			do_action( 'wpd_prerolls_widget_inside_loop_after' );
 
 		endwhile; // End loop.
 
@@ -1010,6 +1030,9 @@ class wpdispensary_topicals_widget extends WP_Widget {
 		global $post;
 
 		while ( $wpdispensary_topicals_widget->have_posts() ) :
+
+			do_action( 'wpd_topicals_widget_inside_loop_before' );
+
 			$wpdispensary_topicals_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
@@ -1039,6 +1062,8 @@ class wpdispensary_topicals_widget extends WP_Widget {
 				echo '</li>';
 
 			}
+
+			do_action( 'wpd_topicals_widget_inside_loop_after' );
 
 		endwhile; // End loop.
 
@@ -1238,6 +1263,9 @@ class wpdispensary_growers_widget extends WP_Widget {
 		);
 
 		while ( $wpdispensary_edibles_widget->have_posts() ) :
+
+			do_action( 'wpd_growers_widget_inside_loop_before' );
+
 			$wpdispensary_edibles_widget->the_post();
 
 			$do_not_duplicate = $post->ID;
@@ -1270,6 +1298,8 @@ class wpdispensary_growers_widget extends WP_Widget {
 				echo '</li>';
 
 			}
+
+			do_action( 'wpd_growers_widget_inside_loop_after' );
 
 		endwhile; // End loop.
 
