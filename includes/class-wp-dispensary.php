@@ -131,9 +131,10 @@ class WP_Dispensary {
 		/**
 		 * Adding in custom functions that are used throughout the rest of the plugin
 		 *
-		 * @since    2.0.0
+		 * @since    2.0.0 - last updated in version 2.5
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-functions.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-pricing-functions.php';
 
 		/**
 		 * The functions responsible for building the custom post types
