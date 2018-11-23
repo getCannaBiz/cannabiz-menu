@@ -580,9 +580,10 @@ function wpdispensary_vendor() {
 		'menu_name'                  => __( 'Vendors', 'wp-dispensary' ),
 	);
 
-	$vendortaxtype = apply_filters( 'wpd_vendor_tax_type', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers' ) );
+	$menu_types_simple = wpd_menu_types_simple( TRUE );
+	$vendor_tax_type   = apply_filters( 'wpd_vendor_tax_type', $menu_types_simple );
 
-	register_taxonomy( 'vendor', $vendortaxtype, array(
+	register_taxonomy( 'vendor', $vendor_tax_type, array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
