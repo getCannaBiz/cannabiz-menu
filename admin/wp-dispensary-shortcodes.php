@@ -197,34 +197,59 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_flowers_prices_simple() . '</span>';
+			$showinfo = get_wpd_flowers_prices_simple( NULL, TRUE );
 		} else {
 			$showinfo = '';
 		}
 
-		// Make array of compounds shortcode options.
-		$compound_array = array(
-			'thc'  => $thc,
-			'thca' => $thca,
-			'cbd'  => $cbd,
-			'cba'  => $cba,
-			'cbn'  => $cbn,
-			'cbg'  => $cbg
-		);
+		/**
+		 * Add compounds to array, if shortcode option is set to "show".
+		 */
+		if ( 'show' === $thc ) {
+			$compounds_new[] = 'thc';
+		}
+
+		if ( 'show' === $cbd ) {
+			$compounds_new[] = 'cbd';
+		}
+
+		if ( 'show' === $thca ) {
+			$compounds_new[] = 'thca';
+		}
+
+		if ( 'show' === $cba ) {
+			$compounds_new[] = 'cba';
+		}
+
+		if ( 'show' === $cbn ) {
+			$compounds_new[] = 'cbn';
+		}
+
+		if ( 'show' === $cbg ) {
+			$compounds_new[] = 'cbg';
+		}
 
 		// Get compounds.
-		$compounds = wpd_compounds_simple( $type = '%', $compound_array );
+		$compounds = get_wpd_compounds_simple( NULL, $compounds_new );
 
+		/*
+		echo "<pre>";
+		print_r( $compounds );
+		echo "</pre>";
+		*/
+		
 		// Create empty variable.
 		$showcompounds = '';
 
+		/*
 		// Loop through each compound, and append it to variable.
-		foreach ( $compounds as $compound => $value ) {
-			$showcompounds .= '<span class="wpd-productinfo ' . $compound . '"><strong>' . __( $compound, 'wp-dispensary' ) . ':</strong> ' . $value . '</span>';
+		foreach ( $compounds as $compound ) {
+			$showcompounds .= '<span class="wpd-productinfo ' . $compound . '"><strong>' . __( $compound, 'wp-dispensary' ) . ':</strong> ' . $compound . '</span>';
 		}
+		*/
 
 		// Combine compounds into one variable.
-		$showcompounds = $showcompounds;
+		$showcompounds = $compounds;
 
 		/** Shortcode display */
 
@@ -410,71 +435,6 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		$thumbnail_url       = $thumbnail_url_array[0];
 		$querytitle          = get_the_title();
 
-		/** Get the pricing for Concentrates */
-
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$pricingeach = wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true );
-			$pricingname = '<strong>' . wpd_pricing_phrase( $singular = true ) . ': </strong>';
-		} else {
-			$pricingeach = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			$halfgram = '<span class="wpd-productinfo pricing"><strong>1/2g: </strong>' . wpd_currency_code() . get_post_meta( get_the_id(), '_halfgram', true ) . '</span>';
-		} else {
-			$halfgram = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$gram = '<span class="wpd-productinfo pricing"><strong>1g: </strong>' . wpd_currency_code() . get_post_meta( get_the_id(), '_gram', true ) . '</span>';
-		} else {
-			$gram = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
-			$twograms = '<span class="wpd-productinfo pricing"><strong>2g: </strong>' . wpd_currency_code() . get_post_meta( get_the_id(), '_twograms', true ) . '</span>';
-		} else {
-			$twograms = '';
-		}
-
-		$pricingsep = ' - ';
-
-		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
-			$thcinfo = '<span class="wpd-productinfo thc"><strong>' . __( 'THC: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_thc', true ) . '%</span>';
-		} else {
-			$thcinfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
-			$thcainfo = '<span class="wpd-productinfo thca"><strong>' . __( 'THCA: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_thca', true ) . '%</span>';
-		} else {
-			$thcainfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
-			$cbdinfo = '<span class="wpd-productinfo cbd"><strong>' . __( 'CBD: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cbd', true ) . '%</span>';
-		} else {
-			$cbdinfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
-			$cbainfo = '<span class="wpd-productinfo cba"><strong>' . __( 'CBA: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cba', true ) . '%</span>';
-		} else {
-			$cbainfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
-			$cbninfo = '<span class="wpd-productinfo cbn"><strong>' . __( 'CBN: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cbn', true ) . '%</span>';
-		} else {
-			$cbninfo = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
-			$cbginfo = '<span class="wpd-productinfo cbg"><strong>' . __( 'CBG: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_cbg', true ) . '%</span>';
-		} else {
-			$cbginfo = '';
-		}
-
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -484,50 +444,43 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			if ( empty( $pricingeach ) ) {
-				$showinfo = $halfgram . $gram . $twograms;
-			} else {
-				$showinfo = '<span class="wpd-productinfo pricing">' . $pricingname . $pricingeach . '</span>';
-			}
+			$showinfo = get_wpd_concentrates_prices_simple( NULL, TRUE );
 		} else {
 			$showinfo = '';
 		}
 
+		/**
+		 * Add compounds to array, if shortcode option is set to "show".
+		 */
 		if ( 'show' === $thc ) {
-			$showthc = $thcinfo;
-		} else {
-			$showthc = '';
-		}
-
-		if ( 'show' === $thca ) {
-			$showthca = $thcainfo;
-		} else {
-			$showthca = '';
+			$compounds_new[] = 'thc';
 		}
 
 		if ( 'show' === $cbd ) {
-			$showcbd = $cbdinfo;
-		} else {
-			$showcbd = '';
+			$compounds_new[] = 'cbd';
+		}
+
+		if ( 'show' === $thca ) {
+			$compounds_new[] = 'thca';
 		}
 
 		if ( 'show' === $cba ) {
-			$showcba = $cbainfo;
-		} else {
-			$showcba = '';
+			$compounds_new[] = 'cba';
 		}
 
 		if ( 'show' === $cbn ) {
-			$showcbn = $cbninfo;
-		} else {
-			$showcbn = '';
+			$compounds_new[] = 'cbn';
 		}
 
 		if ( 'show' === $cbg ) {
-			$showcbg = $cbginfo;
-		} else {
-			$showcbg = '';
+			$compounds_new[] = 'cbg';
 		}
+
+		// Get compounds.
+		$compounds = get_wpd_compounds_simple( NULL, $compounds_new );
+
+		// Combine compounds into one variable.
+		$showcompounds = $compounds;
 
 		if ( 'show' === $image ) {
 			if ( null === $thumbnail_url && 'full' === $imagesize ) {
@@ -569,7 +522,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$wpd_shortcode_bottom_concentrates = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $showthc . $showthca . $showcbd . $showcba . $showcbn . $showcbg . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_concentrates . '</div>';
+		$wpdposts .= $showname . $showinfo . $showcompounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_concentrates . '</div>';
 
 	endwhile;
 
@@ -703,7 +656,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		}
 
 		// Price.
-		$ediblepricing = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_edibles_prices_simple() . '</span>';
+		$ediblepricing = get_wpd_edibles_prices_simple( NULL, TRUE );
 
 		/** Check shortcode options input by user */
 
@@ -872,7 +825,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		/*
 		 * Get the pricing for Pre-rolls
 		 */
-		$prerollpricing = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_prerolls_prices_simple() . '</span>';
+		$prerollpricing = get_wpd_prerolls_prices_simple( NULL, TRUE );
 
 		/*
 		 * Get the weight for Pre-rolls
@@ -1043,7 +996,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$querytitle          = get_the_title();
 
 		// Price.
-		$topicalpricing = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_topicals_prices_simple() . '</span>';
+		$topicalpricing = get_wpd_topicals_prices_simple( NULL, TRUE );
 
 		// Size.
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
@@ -1219,17 +1172,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		 * Get the pricing for Growers
 		 */
 
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$pricingperunit = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . '</span>';
-		} else {
-			$pricingperunit = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_priceperpack', true ) ) {
-			$pricingperpack = '<span class="wpd-productinfo per-pack">' . get_post_meta( get_the_id(), '_unitsperpack', true ) . ' ' . __( 'for', 'wp-dispensary' ) . ' ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceperpack', true ) . '</span>';
-		} else {
-			$pricingperpack = '';
-		}
+		$growerspricing = get_wpd_growers_prices_simple( NULL, TRUE );
 
 		/*
 		 * Get the seed count for Growers
@@ -1260,7 +1203,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		}
 
 		if ( 'show' === $info ) {
-			$showinfo = $pricingperunit . $pricingperpack . $wpdseedcount . $wpdclonecount;
+			$showinfo = $growerspricing . $wpdseedcount . $wpdclonecount;
 		} else {
 			$showinfo = '';
 		}
@@ -1546,7 +1489,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		 */
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$pricingperunit = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . '</span>';
+			$pricingperunit = '<span class="wpd-productinfo pricing"><strong>' . esc_html( wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . '</span>';
 		} else {
 			$pricingperunit = '';
 		}
@@ -1574,7 +1517,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		/** Get the pricing for Topicals */
 
 		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
-			$topicalprice = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_pricetopical', true ) . '</span>';
+			$topicalprice = '<span class="wpd-productinfo pricing"><strong>' . esc_html( wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_pricetopical', true ) . '</span>';
 		} else {
 			$topicalprice = '';
 		}
@@ -1602,7 +1545,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		 */
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$pricingprerolls = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . ' each</span>';
+			$pricingprerolls = '<span class="wpd-productinfo pricing"><strong>' . esc_html( wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . ' each</span>';
 		} else {
 			$pricingprerolls = '';
 		}
@@ -1639,7 +1582,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$priceeach = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . '</span>';
+			$priceeach = '<span class="wpd-productinfo pricing"><strong>' . esc_html( wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . '</span>';
 		} else {
 			$priceeach = '';
 		}
@@ -1648,7 +1591,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
 			$pricingeach = wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true );
-			$pricingname = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong></span>';
+			$pricingname = '<span class="wpd-productinfo pricing"><strong>' . esc_html( wpd_pricing_phrase( $singular = true ) ) . ':</strong></span>';
 		} else {
 			$pricingeach = '';
 		}
@@ -1727,7 +1670,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		/** Flowers */
 		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
 			if ( 'show' === $info ) {
-				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . wpd_pricing_phrase( $singular = true ) . ':</strong> ' . wpd_flowers_prices_simple() . '</span>';
+				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . esc_html( wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . esc_html( get_wpd_growers_prices_simple() ) . '</span>';
 			} else {
 				$showinfo = '';
 			}
