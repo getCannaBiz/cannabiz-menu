@@ -14,6 +14,7 @@
  * Currency Code
  * 
  * @since 2.0
+ * @return string
  */
 function wpd_currency_code() {
 
@@ -191,371 +192,14 @@ function wpd_currency_code() {
 
 }
 
-/**
- * Flowers Prices - Simple
- * 
- * @since 2.4
- */
-function wpd_flowers_prices_simple() {
-
-	// Get currency code.
-	$currency_code = wpd_currency_code();
-
-	// Get prices.
-	$price_half_gram     = get_post_meta( get_the_ID(), '_halfgram', true );
-	$price_one_gram      = get_post_meta( get_the_ID(), '_gram', true );
-	$price_two_grams     = get_post_meta( get_the_ID(), '_twograms', true );
-	$price_eighth        = get_post_meta( get_the_ID(), '_eighth', true );
-	$price_five_grams    = get_post_meta( get_the_ID(), '_fivegrams', true );
-	$price_quarter_ounce = get_post_meta( get_the_ID(), '_quarter', true );
-	$price_half_ounce    = get_post_meta( get_the_ID(), '_halfounce', true );
-	$price_one_ounce     = get_post_meta( get_the_ID(), '_ounce', true );
-
-	/**
-	 * Price output - if only one price has been added
-	 */
-	if ( '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
-		$pricing = $currency_code . $price_one_gram;
-	} elseif ( '' === $price_one_gram && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
-		$pricing = $currency_code . $price_two_grams;
-	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
-		$pricing = $currency_code . $price_eighth;
-	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
-		$pricing = $currency_code . $price_five_grams;
-	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_half_ounce && '' === $price_one_ounce ) {
-		$pricing = $currency_code . $price_quarter_ounce;
-	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_one_ounce ) {
-		$pricing = $currency_code . $price_half_ounce;
-	} elseif ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce ) {
-		$pricing = $currency_code . $price_one_ounce;
-	} else {
-		$pricing = '';
-	}
-
-	/**
-	 * Price output - if no prices have been added
-	 */
-	if ( '' === $price_one_gram && '' === $price_two_grams && '' === $price_eighth && '' === $price_five_grams && '' === $price_quarter_ounce && '' === $price_half_ounce && '' === $price_one_ounce ) {
-		$pricing = ' ';
-	}
-
-	/**
-	 * Price output - high amount
-	 */
-	$pricinglow = '';
-
-	if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-		$pricinglow = $currency_code . $price_one_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
-		$pricinglow = $currency_code . $price_two_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-		$pricinglow = $currency_code . $price_eighth;
-	} elseif ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
-		$pricinglow = $currency_code . $price_five_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-		$pricinglow = $currency_code . $price_quarter_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-		$pricinglow = $currency_code . $price_half_ounce;
-	}
-
-	// Separator.
-	$pricingsep = ' - ';
-
-	/**
-	 * Price output - high amount
-	 */
-	$pricinghigh = '';
-
-	if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-		$pricinghigh = $currency_code . $price_one_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-		$pricinghigh = $currency_code . $price_half_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-		$pricinghigh = $currency_code . $price_quarter_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
-		$pricinghigh = $currency_code . $price_five_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-		$pricinghigh = $currency_code . $price_eighth;
-	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
-		$pricinghigh = $currency_code . $price_two_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-		$pricinghigh = $currency_code . $price_one_gram;
-	}
-
-	/**
-	 * Return Pricing Prices.
-	 */
-	if ( empty( $pricing ) ) {
-		return $pricinglow . $pricingsep . $pricinghigh;
-	} elseif ( ' ' === $pricing ) {
-		return '';
-	} else {
-		return $pricing;
-	}
-
-}
-
-
-/**
- * Concentrates Prices - Simple
- * 
- * @since 2.5
- */
-function wpd_concentrates_prices_simple() {
-
-	// Get currency code.
-	$currency_code = wpd_currency_code();
-
-	// Get prices.
-	$price_each      = get_post_meta( get_the_ID(), '_priceeach', true );
-	$price_half_gram = get_post_meta( get_the_ID(), '_halfgram', true );
-	$price_one_gram  = get_post_meta( get_the_ID(), '_gram', true );
-	$price_two_grams = get_post_meta( get_the_ID(), '_twograms', true );
-
-	/**
-	 * Price output - if only one price has been added
-	 */
-	if ( '' === $price_one_gram && '' === $price_two_grams ) {
-		$pricing = $currency_code . $price_half_gram;
-	} elseif ( '' === $price_half_gram && '' === $price_two_grams ) {
-		$pricing = $currency_code . $price_one_gram;
-	} elseif ( '' === $price_half_gram && '' === $price_one_gram ) {
-		$pricing = $currency_code . $price_two_grams;
-	} else {
-		$pricing = '';
-	}
-
-	/**
-	 * Price output - if no prices have been added
-	 */
-	if ( '' === $price_half_gram && '' === $price_one_gram && '' === $price_two_grams ) {
-		$pricing = ' ';
-	}
-
-	/**
-	 * Price output - low amount
-	 */
-	$pricinglow = '';
-
-	if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-		$pricinglow = $currency_code . $price_half_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-		$pricinglow = $currency_code . $price_one_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
-		$pricinglow = $currency_code . $price_two_grams;
-	}
-
-	// Separator.
-	$pricingsep = ' - ';
-
-	/**
-	 * Price output - high amount
-	 */
-	$pricinghigh = '';
-
-	if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
-		$pricinghigh = $currency_code . $price_two_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-		$pricinghigh = $currency_code . $price_one_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-		$pricinghigh = $currency_code . $price_half_gram;
-	}
-
-	/**
-	 * Price output - if price each is filled in
-	 */
-	if ( '' != $price_each ) {
-		$pricing = $currency_code . $price_each;
-	}
-
-	/**
-	 * Return Pricing Prices.
-	 */
-	if ( empty( $pricing ) ) {
-		return $pricinglow . $pricingsep . $pricinghigh;
-	} elseif ( ' ' === $pricing ) {
-		return '';
-	} else {
-		return $pricing;
-	}
-
-}
-
-
-/**
- * Edibles Prices - Simple
- * 
- * @since 2.5
- */
-function wpd_edibles_prices_simple() {
-
-	// Get currency code.
-	$currency_code = wpd_currency_code();
-
-	// Get prices.
-	$price_each     = get_post_meta( get_the_ID(), '_priceeach', true );
-	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
-
-	/**
-	 * Price output - if only one price has been added
-	 */
-	if ( '' === $price_each && '' != $price_per_pack ) {
-		$pricing = $currency_code . $price_per_pack;
-	} elseif ( '' != $price_each && '' === $price_per_pack ) {
-		$pricing = $currency_code . $price_each;
-	} else {
-		$pricing = '';
-	}
-
-	/**
-	 * Price output - if no prices have been added
-	 */
-	if ( '' === $price_each && '' === $price_per_pack ) {
-		$pricing = ' ';
-	}
-
-	/**
-	 * Return Pricing Prices.
-	 */
-	if ( '' != $price_each && '' != $price_per_pack ) {
-		return $currency_code . $price_each . ' - ' . $currency_code . $price_per_pack;
-	} elseif ( ' ' === $pricing ) {
-		return '';
-	} else {
-		return $pricing;
-	}
-
-}
-
-
-/**
- * Pre-rolls Prices - Simple
- * 
- * @since 2.5
- */
-function wpd_prerolls_prices_simple() {
-
-	// Get currency code.
-	$currency_code = wpd_currency_code();
-
-	// Get prices.
-	$price_each     = get_post_meta( get_the_ID(), '_priceeach', true );
-	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
-
-	/**
-	 * Price output - if only one price has been added
-	 */
-	if ( '' === $price_each && '' != $price_per_pack ) {
-		$pricing = $currency_code . $price_per_pack;
-	} elseif ( '' != $price_each && '' === $price_per_pack ) {
-		$pricing = $currency_code . $price_each;
-	} else {
-		$pricing = '';
-	}
-
-	/**
-	 * Price output - if no prices have been added
-	 */
-	if ( '' === $price_each && '' === $price_per_pack ) {
-		$pricing = ' ';
-	}
-
-	/**
-	 * Return Pricing Prices.
-	 */
-	if ( '' != $price_each && '' != $price_per_pack ) {
-		return $currency_code . $price_each . ' - ' . $currency_code . $price_per_pack;
-	} elseif ( ' ' === $pricing ) {
-		return '';
-	} else {
-		return $pricing;
-	}
-
-}
-
-
-/**
- * Topicals Prices - Simple
- * 
- * @since 2.5
- */
-function wpd_topicals_prices_simple() {
-
-	// Get currency code.
-	$currency_code = wpd_currency_code();
-
-	// Get prices.
-	$price_each     = get_post_meta( get_the_ID(), '_pricetopical', true );
-	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
-
-	/**
-	 * Price output - if only one price has been added
-	 */
-	if ( '' === $price_each && '' != $price_per_pack ) {
-		$pricing = $currency_code . $price_per_pack;
-	} elseif ( '' != $price_each && '' === $price_per_pack ) {
-		$pricing = $currency_code . $price_each;
-	} else {
-		$pricing = '';
-	}
-
-	/**
-	 * Price output - if no prices have been added
-	 */
-	if ( '' === $price_each && '' === $price_per_pack ) {
-		$pricing = ' ';
-	}
-
-	/**
-	 * Return Pricing Prices.
-	 */
-	if ( '' != $price_each && '' != $price_per_pack ) {
-		return $currency_code . $price_each . ' - ' . $currency_code . $price_per_pack;
-	} elseif ( ' ' === $pricing ) {
-		return '';
-	} else {
-		return $pricing;
-	}
-
-}
-
-
-/**
- * WPD Admin Settings - Pricing phrase
- * 
- * @since 2.4
- */
-function wpd_pricing_phrase( $singular ) {
-	// Access all WP Dispensary Display Settings.
-	$wpd_settings = get_option( 'wpdas_display' );
-
-	// Check pricing phrase settings.
-	if ( isset ( $wpd_settings['wpd_pricing_phrase_custom'] ) && '' !== $wpd_settings['wpd_pricing_phrase_custom'] ) {
-		$wpd_pricing_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
-	} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
-		if ( $singular == true ) {
-			$wpd_pricing_phrase = __( 'Donation', 'wp-dispensary' );
-		} else {
-			$wpd_pricing_phrase = __( 'Donations', 'wp-dispensary' );
-		}
-	} else {
-		if ( $singular == true ) {
-			$wpd_pricing_phrase = __( 'Price', 'wp-dispensary' );
-		} else {
-			$wpd_pricing_phrase = __( 'Prices', 'wp-dispensary' );
-		}
-	}
-
-	// Return the pricing phrase.
-	return $wpd_pricing_phrase;
-}
 
 /**
  * WPD Admin Settings - Details phrase
  * 
- * @since 2.4
+ * @since 2.5
+ * @return string
  */
-function wpd_details_phrase() {
+function get_wpd_details_phrase() {
 	// Access all WP Dispensary Display Settings.
 	$wpd_settings = get_option( 'wpdas_display' );
 
@@ -573,26 +217,66 @@ function wpd_details_phrase() {
 }
 
 /**
- * Compounds details - simple
+ * Compounds details - Simple
  * 
- * @since 2.4
+ * @see get_wpd_compounds_simple()
+ * @since 2.5
+ * @return string
  */
-function wpd_compounds_simple( $type, $compound_array ) {
+function wpd_compounds_simple(  $type = NULL, $compound_array = NULL ) {
+    // Filters the displayed flowers prices.
+    echo esc_html( apply_filters( 'wpd_compounds_simple', get_wpd_compounds_simple( $type, $compound_array ) ) );
+}
 
-	// Set the type.
-	if ( 'mg' == $type ) {
-		$type = 'mg';
-	} elseif ( '%' == $type ) {
-		$type = '%';
+
+/**
+ * Compounds details - Get Simple
+ * 
+ * @since 2.5
+ * @return string
+ */
+function get_wpd_compounds_simple( $type = NULL, $compound_array = NULL ) {
+
+	if ( $type ) {
+		$type = $type;
 	} else {
-		$type = '';
+		$type = NULL;
+	}
+
+	// Get post type.
+	$post_type = get_post_type();
+
+    // Create post type variables.
+    if ( $post_type ) {
+        $post_type_data = get_post_type_object( $post_type );
+        $post_type_name = $post_type_data->label;
+        $post_type_slug = $post_type_data->rewrite['slug'];
+        //echo $post_type_slug;
+		//echo $post_type_name;
+	}
+
+
+	/**
+	 * @todo this needs filtered for Tinctures/Gear.
+	 */
+
+	if ( 'flowers' == $post_type || 'concentrates' == $post_type || 'prerolls' == $post_type ) {
+		$type = '%';
+	}
+
+	if ( 'edibles' == $post_type || 'topicals' == $post_type ) {
+		$type = 'mg';
 	}
 
 	// Set compounds.
 	$compounds = array();
 
+	//echo $post_type;
+
+	// print_r( $compound_array );
+
 	// THC.
-	if ( 'show' === $compound_array['thc'] || null === $compound_array['thc'] ) {
+	if ( NULL != $compound_array && in_array( 'thc', $compound_array ) ) {
 		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
 			$compounds['THC'] = get_post_meta( get_the_id(), '_thc', true ) . $type;
 		} else {
@@ -603,7 +287,7 @@ function wpd_compounds_simple( $type, $compound_array ) {
 	}
 
 	// THCA.
-	if ( 'show' === $compound_array['thca'] || null === $compound_array['thca'] ) {
+	if ( NULL != $compound_array && in_array( 'thca', $compound_array ) ) {
 		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
 			$compounds['THCA'] = get_post_meta( get_the_id(), '_thca', true ) . $type;
 		}
@@ -612,7 +296,7 @@ function wpd_compounds_simple( $type, $compound_array ) {
 	}
 
 	// CBD.
-	if ( 'show' === $compound_array['cbd'] || null === $compound_array['cbd'] ) {
+	if ( NULL != $compound_array && in_array( 'cbd', $compound_array ) ) {
 		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
 			$compounds['CBD'] = get_post_meta( get_the_id(), '_cbd', true ) . $type;
 		} else {
@@ -623,7 +307,7 @@ function wpd_compounds_simple( $type, $compound_array ) {
 	}
 
 	// CBA.
-	if ( 'show' === $compound_array['cba'] || null === $compound_array['cba'] ) {
+	if ( NULL != $compound_array && in_array( 'cba', $compound_array ) ) {
 		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
 			$compounds['CBA'] = get_post_meta( get_the_id(), '_cba', true ) . $type;
 		} else {
@@ -634,7 +318,7 @@ function wpd_compounds_simple( $type, $compound_array ) {
 	}
 
 	// CBN.
-	if ( 'show' === $compound_array['cbn'] || null === $compound_array['cbn'] ) {
+	if ( NULL != $compound_array && in_array( 'cbn', $compound_array ) ) {
 		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
 			$compounds['CBN'] = get_post_meta( get_the_id(), '_cbn', true ) . $type;
 		} else {
@@ -645,7 +329,132 @@ function wpd_compounds_simple( $type, $compound_array ) {
 	}
 
 	// CBG.
-	if ( 'show' === $compound_array['cbg'] || null === $compound_array['cbg'] ) {
+	if ( NULL != $compound_array && in_array( 'cbg', $compound_array ) ) {
+		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
+			$compounds['CBG'] = get_post_meta( get_the_id(), '_cbg', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	foreach ( $compounds as $compound=>$value ) {
+		$str .= "<span class='wpd-productinfo " . $compound . "'><strong>" . $compound . ":</strong> " . $value . '</span>';
+	}
+
+	return $str;
+}
+
+/**
+ * Compounds details - Array
+ * 
+ * @see get_wpd_compounds_array()
+ * @since 2.5
+ * @return string
+ */
+function wpd_compounds_array(  $type = NULL, $compound_array = NULL ) {
+    // Filters the displayed compounds.
+    echo esc_html( apply_filters( 'wpd_compounds_array', get_wpd_compounds_array( $type, $compound_array ) ) );
+}
+
+
+/**
+ * Compounds details - Get Array
+ * 
+ * @since 2.5
+ * @return string
+ */
+function get_wpd_compounds_array( $type = NULL, $compound_array = NULL ) {
+
+	if ( $type ) {
+		$type = $type;
+	} else {
+		$type = NULL;
+	}
+
+	// Get post type.
+	$post_type = get_post_type();
+
+    // Create post type variables.
+    if ( $post_type ) {
+        $post_type_data = get_post_type_object( $post_type );
+        $post_type_name = $post_type_data->label;
+        $post_type_slug = $post_type_data->rewrite['slug'];
+        //echo $post_type_slug;
+		//echo $post_type_name;
+	}
+
+	if ( 'flowers' == $post_type || 'concentrates' == $post_type || 'prerolls' == $post_type || 'tinctures' == $post_type ) {
+		$type = '%';
+	}
+
+	if ( 'edibles' == $post_type || 'topicals' == $post_type ) {
+		$type = 'mg';
+	}
+
+	// Set compounds.
+	$compounds = array();
+
+	//echo $post_type;
+
+	// print_r( $compound_array );
+
+	// THC.
+	if ( in_array( 'thc', $compound_array ) ) {
+		if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
+			$compounds['THC'] = get_post_meta( get_the_id(), '_thc', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// THCA.
+	if ( in_array( 'thca', $compound_array ) ) {
+		if ( get_post_meta( get_the_ID(), '_thca', true ) ) {
+			$compounds['THCA'] = get_post_meta( get_the_id(), '_thca', true ) . $type;
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBD.
+	if ( in_array( 'cbd', $compound_array ) ) {
+		if ( get_post_meta( get_the_ID(), '_cbd', true ) ) {
+			$compounds['CBD'] = get_post_meta( get_the_id(), '_cbd', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBA.
+	if ( in_array( 'cba', $compound_array ) ) {
+		if ( get_post_meta( get_the_ID(), '_cba', true ) ) {
+			$compounds['CBA'] = get_post_meta( get_the_id(), '_cba', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBN.
+	if ( in_array( 'cbn', $compound_array ) ) {
+		if ( get_post_meta( get_the_ID(), '_cbn', true ) ) {
+			$compounds['CBN'] = get_post_meta( get_the_id(), '_cbn', true ) . $type;
+		} else {
+			// Do nothing.
+		}
+	} else {
+		// Do nothing.
+	}
+
+	// CBG.
+	if ( in_array( 'cbg', $compound_array ) ) {
 		if ( get_post_meta( get_the_ID(), '_cbg', true ) ) {
 			$compounds['CBG'] = get_post_meta( get_the_id(), '_cbg', true ) . $type;
 		} else {
@@ -657,3 +466,171 @@ function wpd_compounds_simple( $type, $compound_array ) {
 
 	return $compounds;
 }
+
+/**
+ * Get all menu types
+ *
+ * @since 2.5
+ * @return array
+ */
+function wpd_menu_types() {
+	$menu_types = array(
+		'wpd-flowers'      => __( 'Flowers', 'wp-dispensary' ),
+		'wpd-concentrates' => __( 'Concentrates', 'wp-dispensary' ),
+		'wpd-edibles'      => __( 'Edibles', 'wp-dispensary' ),
+		'wpd-prerolls'     => __( 'Pre-rolls', 'wp-dispensary' ),
+		'wpd-topicals'     => __( 'Topicals', 'wp-dispensary' ),
+		'wpd-growers'      => __( 'Growers', 'wp-dispensary' ),
+	);
+	return apply_filters( 'wpd_menu_types', $menu_types );
+}
+
+/**
+ * Get all menu types - Simple
+ *
+ * @since 2.5
+ * @return array
+ */
+function wpd_menu_types_simple( $lowercase = NULL ) {
+
+	// Get menu types.
+	$menu_types = wpd_menu_types();
+
+	// Create simple array.
+	$menu_types_simple = array();
+
+	// Loop through menu types.
+	foreach ( $menu_types as $key=>$value ) {
+		// Add items to simple array.
+		if ( $lowercase ) {
+			$menu_types_simple[] = strtolower( $value );
+		} else {
+			$menu_types_simple[] = $value;
+		}
+	}
+
+	return apply_filters( 'wpd_menu_types_simple', $menu_types_simple );
+}
+
+/**
+ * Get all flower prices.
+ *
+ * @since 2.5
+ * @return array
+ */
+function wpd_flowers_prices_array( $id, $flower_prices = NULL ) {
+	$flower_prices = array(
+		'1 g'    => esc_html( get_post_meta( $id, '_gram', true ) ),
+		'2 g'    => esc_html( get_post_meta( $id, '_twograms', true ) ),
+		'1/8 oz' => esc_html( get_post_meta( $id, '_eighth', true ) ),
+		'5 g'    => esc_html( get_post_meta( $id, '_fivegrams', true ) ),
+		'1/4 oz' => esc_html( get_post_meta( $id, '_quarter', true ) ),
+		'1/2 oz' => esc_html( get_post_meta( $id, '_halfounce', true ) ),
+		'1 oz'   => esc_html( get_post_meta( $id, '_ounce', true ) ),
+	);
+	return apply_filters( 'wpd_flowers_prices_array', $flower_prices );
+}
+
+
+/**
+ * Update messages for product types.
+ * 
+ * @since 2.5
+ */
+function wpd_product_updated_messages( $messages ) {
+    if ( 'flowers' === get_post_type() ) {
+        $messages['post'] = array(
+            0 => '', // Unused. Messages start at index 1.
+            1 => sprintf( __( 'Flower updated. <a href="%s">View flower</a>'), esc_url( get_permalink( $post_ID ) ) ),
+            2 => __( 'Custom field updated.' ),
+            3 => __( 'Custom field deleted.' ),
+            4 => __( 'Flower updated.' ),
+            5 => isset( $_GET['revision'] ) ? sprintf( __( 'Flower restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6 => sprintf( __( 'Flower published. <a href="%s">View flower</a>' ), esc_url( get_permalink( $post_ID ) ) ),
+            7 => __( 'Flower saved.' ),
+            8 => sprintf( __( 'Flower submitted. <a target="_blank" href="%s">Preview flower</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+            9 => sprintf( __( 'Flower scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview flower</a>' ),
+            date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+            10 => sprintf( __( 'Flower draft updated. <a target="_blank" href="%s">Preview flower</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+        );
+    } elseif ( 'concentrates' === get_post_type() ) {
+        $messages['post'] = array(
+            0 => '', // Unused. Messages start at index 1.
+            1 => sprintf( __( 'Concentrate updated. <a href="%s">View concentrate</a>'), esc_url( get_permalink( $post_ID ) ) ),
+            2 => __( 'Custom field updated.' ),
+            3 => __( 'Custom field deleted.' ),
+            4 => __( 'Concentrate updated.' ),
+            5 => isset( $_GET['revision'] ) ? sprintf( __( 'Concentrate restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6 => sprintf( __( 'Concentrate published. <a href="%s">View concentrate</a>' ), esc_url( get_permalink( $post_ID ) ) ),
+            7 => __( 'Concentrate saved.' ),
+            8 => sprintf( __( 'Concentrate submitted. <a target="_blank" href="%s">Preview concentrate</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+            9 => sprintf( __( 'Concentrate scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview concentrate</a>' ),
+            date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+            10 => sprintf( __( 'Concentrate draft updated. <a target="_blank" href="%s">Preview concentrate</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+        );
+    } elseif ( 'edibles' === get_post_type() ) {
+        $messages['post'] = array(
+            0 => '', // Unused. Messages start at index 1.
+            1 => sprintf( __( 'Edible updated. <a href="%s">View edible</a>'), esc_url( get_permalink( $post_ID ) ) ),
+            2 => __( 'Custom field updated.' ),
+            3 => __( 'Custom field deleted.' ),
+            4 => __( 'Edible updated.' ),
+            5 => isset( $_GET['revision'] ) ? sprintf( __( 'Edible restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6 => sprintf( __( 'Edible published. <a href="%s">View edible</a>' ), esc_url( get_permalink( $post_ID ) ) ),
+            7 => __( 'Edible saved.' ),
+            8 => sprintf( __( 'Edible submitted. <a target="_blank" href="%s">Preview edible</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+            9 => sprintf( __( 'Edible scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview edible</a>' ),
+            date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+            10 => sprintf( __( 'Edible draft updated. <a target="_blank" href="%s">Preview edible</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+        );
+    } elseif ( 'prerolls' === get_post_type() ) {
+        $messages['post'] = array(
+            0 => '', // Unused. Messages start at index 1.
+            1 => sprintf( __( 'Pre-roll updated. <a href="%s">View pre-roll</a>'), esc_url( get_permalink( $post_ID ) ) ),
+            2 => __( 'Custom field updated.' ),
+            3 => __( 'Custom field deleted.' ),
+            4 => __( 'Pre-roll updated.' ),
+            5 => isset( $_GET['revision'] ) ? sprintf( __( 'Pre-roll restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6 => sprintf( __( 'Pre-roll published. <a href="%s">View pre-roll</a>' ), esc_url( get_permalink( $post_ID ) ) ),
+            7 => __( 'Pre-roll saved.' ),
+            8 => sprintf( __( 'Pre-roll submitted. <a target="_blank" href="%s">Preview pre-roll</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+            9 => sprintf( __( 'Pre-roll scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview pre-roll</a>' ),
+            date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+            10 => sprintf( __( 'Pre-roll draft updated. <a target="_blank" href="%s">Preview pre-roll</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+        );
+    } elseif ( 'topicals' === get_post_type() ) {
+        $messages['post'] = array(
+            0 => '', // Unused. Messages start at index 1.
+            1 => sprintf( __( 'Topical updated. <a href="%s">View topical</a>'), esc_url( get_permalink( $post_ID ) ) ),
+            2 => __( 'Custom field updated.' ),
+            3 => __( 'Custom field deleted.' ),
+            4 => __( 'Topical updated.' ),
+            5 => isset( $_GET['revision'] ) ? sprintf( __( 'Topical restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6 => sprintf( __( 'Topical published. <a href="%s">View topical</a>' ), esc_url( get_permalink( $post_ID ) ) ),
+            7 => __( 'Topical saved.' ),
+            8 => sprintf( __( 'Topical submitted. <a target="_blank" href="%s">Preview topical</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+            9 => sprintf( __( 'Topical scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview topical</a>' ),
+            date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+            10 => sprintf( __( 'Topical draft updated. <a target="_blank" href="%s">Preview topical</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+        );
+    } elseif ( 'growers' === get_post_type() ) {
+        $messages['post'] = array(
+            0 => '', // Unused. Messages start at index 1.
+            1 => sprintf( __( 'Item updated. <a href="%s">View item</a>'), esc_url( get_permalink( $post_ID ) ) ),
+            2 => __( 'Custom field updated.' ),
+            3 => __( 'Custom field deleted.' ),
+            4 => __( 'Item updated.' ),
+            5 => isset( $_GET['revision'] ) ? sprintf( __( 'Item restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6 => sprintf( __( 'Item published. <a href="%s">View item</a>' ), esc_url( get_permalink( $post_ID ) ) ),
+            7 => __( 'Item saved.' ),
+            8 => sprintf( __( 'Item submitted. <a target="_blank" href="%s">Preview item</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+            9 => sprintf( __( 'Item scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview item</a>' ),
+            date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+            10 => sprintf( __( 'Item draft updated. <a target="_blank" href="%s">Preview item</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+        );
+    } else {
+		// Do nothing.
+	}
+    return $messages;
+}
+add_filter( 'post_updated_messages', 'wpd_product_updated_messages' );
