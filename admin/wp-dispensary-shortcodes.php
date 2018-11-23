@@ -34,6 +34,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		array(
 			'title'       => 'Flowers',
 			'class'       => '',
+			'id'          => '',
 			'posts'       => '100',
 			'name'        => 'show',
 			'info'        => 'show',
@@ -154,8 +155,8 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	} else {
 		$viewflowers = '';
 	}
-
-	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">' . $title . $viewflowers . '</h2>';
+  
+	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewflowers . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -270,6 +271,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		array(
 			'posts'       => '100',
 			'class'       => '',
+			'id'          => '',
 			'name'        => 'show',
 			'info'        => 'show',
 			'thc'         => '',
@@ -392,7 +394,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		$viewconcentrates = '';
 	}
 
-	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">' . $title . $viewconcentrates . '</h2>';
+	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewconcentrates . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -588,6 +590,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		array(
 			'posts'      => '100',
 			'class'      => '',
+			'id'         => '',
 			'name'       => 'show',
 			'info'       => 'show',
 			'title'      => 'Edibles',
@@ -656,7 +659,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		$viewedibles = '';
 	}
 
-	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">' . $title . $viewedibles . '</h2>';
+	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewedibles . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -777,6 +780,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		array(
 			'posts'       => '100',
 			'class'       => '',
+			'id'          => '',
 			'name'        => 'show',
 			'info'        => 'show',
 			'title'       => 'Pre-rolls',
@@ -849,7 +853,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		$viewprerolls = '';
 	}
 
-	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">' . $title . $viewprerolls . '</h2>';
+	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewprerolls . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -955,6 +959,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		array(
 			'posts'      => '100',
 			'class'      => '',
+			'id'         => '',
 			'name'       => 'show',
 			'info'       => 'show',
 			'title'      => 'Topicals',
@@ -1021,7 +1026,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$viewtopicals = '';
 	}
 
-	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">' . $title . $viewtopicals . '</h2>';
+	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewtopicals . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -1136,6 +1141,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		array(
 			'posts'    => '100',
 			'class'    => '',
+			'id'       => '',
 			'name'     => 'show',
 			'info'     => 'show',
 			'title'    => 'Growers',
@@ -1193,7 +1199,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$viewgrowers = '';
 	}
 
-	$wpdposts = '<div class="wpdispensary"><h2 class="wpd-title">' . $title . $viewgrowers . '</h2>';
+	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewgrowers . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -1325,6 +1331,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		array(
 			'posts'       => '100',
 			'class'       => '',
+			'id'          => '',
 			'name'        => 'show',
 			'info'        => 'show',
 			'thc'         => '',
@@ -1459,7 +1466,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		$showtitle = '<h2 class="wpd-title">' . $title . '</h2>';
 	}
 
-	$wpdposts = '<div class="wpdispensary">' . $showtitle . '<div class="wpd-carousel">';
+	$wpdposts = '<div id="' . $id . '" class="wpdispensary">' . $showtitle . '<div class="wpd-carousel">';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
