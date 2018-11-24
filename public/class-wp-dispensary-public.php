@@ -117,3 +117,43 @@ function wpd_oembed_styles() {
 
 }
 add_action( 'enqueue_embed_scripts', 'wpd_oembed_styles' );
+
+/**
+ * Add wp-dispensary body class to related pages.
+ * 
+ * @since 2.5
+ */
+function wp_dispensary_body_class( $classes ) {
+
+	if ( is_page( 'dispensary-menu' ) ) {
+		$classes[] = 'wp-dispensary';
+		$classes[] = 'dispensary-menu';
+	}
+	if ( is_singular( 'flowers' ) || is_post_type_archive( 'flowers' ) ) {
+		$classes[] = 'wp-dispensary';
+		$classes[] = 'wpd-flowers';
+	}
+	if ( is_singular( 'concentrates' ) || is_post_type_archive( 'concentrates' ) ) {
+		$classes[] = 'wp-dispensary';
+		$classes[] = 'wpd-concentrates';
+	}
+	if ( is_singular( 'edibles' ) || is_post_type_archive( 'edibles' ) ) {
+		$classes[] = 'wp-dispensary';
+		$classes[] = 'wpd-edibles';
+	}
+	if ( is_singular( 'prerolls' ) || is_post_type_archive( 'prerolls' ) ) {
+		$classes[] = 'wp-dispensary';
+		$classes[] = 'wpd-prerolls';
+	}
+	if ( is_singular( 'topicals' ) || is_post_type_archive( 'topicals' ) ) {
+		$classes[] = 'wp-dispensary';
+		$classes[] = 'wpd-topicals';
+	}
+	if ( is_singular( 'growers' ) || is_post_type_archive( 'growers' ) ) {
+		$classes[] = 'wp-dispensary';
+		$classes[] = 'wpd-growers';
+	}
+
+	return $classes; 
+}
+add_filter( 'body_class', 'wp_dispensary_body_class' );
