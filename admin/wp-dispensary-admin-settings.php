@@ -28,6 +28,9 @@ if ( ! defined( 'WPDS_URL' ) ) {
 	define( 'WPDS_URL', WP_PLUGIN_URL . '/' . WPDS_NAME );
 }
 
+// Required for is_plugin_active function.
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 /**
  * Class `WPD_ADMIN_SETTINGS`.
  *
@@ -66,6 +69,124 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
+	// Check if WPD eCommerce is active.
+	if ( is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+		// Section: Payments.
+		$wpdas_obj->add_section(
+			array(
+				'id'    => 'wpdas_payments',
+				'title' => __( 'Payments', 'wp-dispensary' ),
+			)
+		);
+
+		// Section: Pages.
+		$wpdas_obj->add_section(
+			array(
+				'id'    => 'wpdas_pages',
+				'title' => __( 'Pages', 'wp-dispensary' ),
+			)
+		);
+	}
+
+	// Check if WPD eCommerce is active.
+	if ( ! is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_display',
+			array(
+				'id'   => 'wpd_settings_pricing_table_title',
+				'type' => 'title',
+				'name' => '<h1>Prices table</h1>',
+			)
+		);
+
+		/**
+		 * Add Field: Pricing phrase
+		 * Field:     select
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_display',
+			array(
+				'id'      => 'wpd_pricing_phrase',
+				'type'    => 'select',
+				'name'    => __( 'Title', 'wp-dispensary' ),
+				'desc'    => __( 'Choose the title you would like used', 'wp-dispensary' ),
+				'options' => array(
+					'Price'    => 'Prices',
+					'Donation' => 'Donations',
+				),
+			)
+		);
+
+		/**
+		 * Add Field: Custom title
+		 * Field:     text
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_display',
+			array(
+				'id'          => 'wpd_pricing_phrase_custom',
+				'type'        => 'text',
+				'name'        => __( '', 'wp-dispensary' ),
+				'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
+				'placeholder' => __( '', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Pricing table display
+		 * Field:     select
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_display',
+			array(
+				'id'      => 'wpd_pricing_table_placement',
+				'type'    => 'select',
+				'name'    => __( 'Display', 'wp-dispensary' ),
+				'desc'    => __( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
+				'options' => array(
+					'above' => 'Above Content',
+					'below' => 'Below Content',
+				),
+			)
+		);
+
+		/**
+		 * Add Field: Hide pricing table
+		 * Field:     checkbox
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_display',
+			array(
+				'id'   => 'wpd_hide_pricing',
+				'type' => 'checkbox',
+				'name' => __( '', 'wp-dispensary' ),
+				'desc' => __( 'Remove the price table from data output', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Separator between fields
+		 * Field:     separator
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_display',
+			array(
+				'id'   => 'wpd_settings_separator',
+				'type' => 'separator',
+			)
+		);
+	}
+
 	/**
 	 * Add Field: Display a title to help separate fields
 	 * Field:     title
@@ -74,59 +195,26 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'   => 'wpd_settings_pricing_table_title',
+			'id'   => 'wpd_settings_compounds_table_title',
 			'type' => 'title',
-			'name' => '<h1>Prices table</h1>',
+			'name' => '<h1>Compounds table</h1>',
 		)
 	);
 
 	/**
-	 * Add Field: Pricing phrase
+	 * Add Field: Details table placement
 	 * Field:     select
 	 * Section:   wpdas_display
+	 * 
+	 * @todo make the options filterable for WPD eCommerce to add and set an option on install.
 	 */
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'      => 'wpd_pricing_phrase',
-			'type'    => 'select',
-			'name'    => __( 'Title', 'wp-dispensary' ),
-			'desc'    => __( 'Choose the title you would like used', 'wp-dispensary' ),
-			'options' => array(
-				'Price'    => 'Prices',
-				'Donation' => 'Donations',
-			),
-		)
-	);
-
-	/**
-	 * Add Field: Custom title
-	 * Field:     text
-	 * Section:   wpdas_display
-	 */
-	$wpdas_obj->add_field(
-		'wpdas_display',
-		array(
-			'id'          => 'wpd_pricing_phrase_custom',
-			'type'        => 'text',
-			'name'        => __( '', 'wp-dispensary' ),
-			'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
-			'placeholder' => __( '', 'wp-dispensary' ),
-		)
-	);
-
-	/**
-	 * Add Field: Pricing table display
-	 * Field:     select
-	 * Section:   wpdas_display
-	 */
-	$wpdas_obj->add_field(
-		'wpdas_display',
-		array(
-			'id'      => 'wpd_pricing_table_placement',
+			'id'      => 'wpd_compounds_table_placement',
 			'type'    => 'select',
 			'name'    => __( 'Display', 'wp-dispensary' ),
-			'desc'    => __( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
+			'desc'    => __( 'Where should the compounds display on single menu items?', 'wp-dispensary' ),
 			'options' => array(
 				'above' => 'Above Content',
 				'below' => 'Below Content',
@@ -135,17 +223,17 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	);
 
 	/**
-	 * Add Field: Hide pricing table
+	 * Add Field: Display compounds table
 	 * Field:     checkbox
 	 * Section:   wpdas_display
 	 */
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'   => 'wpd_hide_pricing',
+			'id'   => 'wpd_hide_compounds',
 			'type' => 'checkbox',
 			'name' => __( '', 'wp-dispensary' ),
-			'desc' => __( 'Remove the price table from data output', 'wp-dispensary' ),
+			'desc' => __( 'Remove the compounds table from data output', 'wp-dispensary' ),
 		)
 	);
 
@@ -157,7 +245,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_field(
 		'wpdas_display',
 		array(
-			'id'   => 'wpd_settings_separator',
+			'id'   => 'wpd_settings_separator_compounds',
 			'type' => 'separator',
 		)
 	);
@@ -245,6 +333,23 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		)
 	);
 
+	// Check if WPD eCommerce is active.
+	if ( is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'   => 'wpd_settings_store_general',
+				'type' => 'title',
+				'name' => '<h1>General</h1>',
+			)
+		);
+	}
+
 	/**
 	 * Add Field: Currency code
 	 * Field:     select
@@ -285,4 +390,250 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			),
 		)
 	);
-}
+
+	// Check if WPD eCommerce is active.
+	if ( is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'   => 'wpd_settings_store_taxes',
+				'type' => 'title',
+				'name' => '<h1>Taxes</h1>',
+			)
+		);
+
+		/**
+		 * Add Field: Sales tax
+		 * Field:     select
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'      => 'wpd_ecommerce_sales_tax',
+				'type'    => 'text',
+				'name'    => __( 'Sales tax', 'wp-dispensary' ),
+				'desc'    => __( 'Apply sales tax to orders (%)', 'wp-dispensary' ),
+				'placeholder' => __( '6', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Excise tax
+		 * Field:     text
+		 * Section:   wpdas_display
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'      => 'wpd_ecommerce_excise_tax',
+				'type'        => 'text',
+				'name'        => __( 'Excise tax', 'wp-dispensary' ),
+				'desc'        => __( 'Apply excise tax to orders (%)', 'wp-dispensary' ),
+				'placeholder' => __( '10', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'   => 'wpd_settings_checkout_options',
+				'type' => 'title',
+				'name' => '<h1>Checkout</h1>',
+			)
+		);
+
+		/**
+		 * Add Field: Checkout coupons
+		 * Field:     checkbox
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'   => 'wpd_ecommerce_checkout_coupons',
+				'type' => 'checkbox',
+				'name' => __( 'Coupons', 'wp-dispensary' ),
+				'desc' => __( 'Allow patients to apply a coupon to their order', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Checkout payment options
+		 * 
+		 * @todo make this filterable.
+		 * @since 2.5
+		 */
+		$checkout_payments = array(
+			'cod'    => __( 'Cash on delivery', 'wp-dispensary' ),
+			'pop'    => __( 'Pay on pickup', 'wp-dispensary' ),
+			'ground' => __( 'Ground shipping', 'wp-dispensary' ),
+		);
+
+		foreach ( $checkout_payments as $id=>$value ) {
+
+			/**
+			 * Add Field: Display a title to help separate fields
+			 * Field:     title
+			 * Section:   wpdas_payments
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_payments',
+				array(
+					'id'   => 'wpd_settings_payment_options_' . $id,
+					'type' => 'title',
+					'name' => '<h1>' . $value . '</h1>',
+				)
+			);
+
+			/**
+			 * Add Field: Checkout payments
+			 * Field:     checkbox
+			 * Section:   wpdas_payments
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_payments',
+				array(
+					'id'   => 'wpd_ecommerce_checkout_payments_' . $id . '_checkbox',
+					'type' => 'checkbox',
+					'name' => 'Enable/Disable',
+					'desc' => __( 'Enable ' . $value, 'wp-dispensary' ),
+				)
+			);
+
+			/**
+			 * Add Field: Checkout payments
+			 * Field:     text
+			 * Section:   wpdas_payments
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_payments',
+				array(
+					'id'          => 'wpd_ecommerce_checkout_payments_' . $id,
+					'type'        => 'text',
+					'name'        => __( 'Charge', 'wp-dispensary' ),
+					'placeholder' => __( '0', 'wp-dispensary' ),
+				)
+			);
+
+		} // foreach
+
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_pages',
+			array(
+				'id'   => 'wpd_settings_checkout_options',
+				'type' => 'title',
+				'name' => '<h1>' . __( 'Page Setup', 'wp-dispensary' ) . '</h1>',
+			)
+		);
+
+		// Args for pages.
+		$args = array(
+			'sort_order'   => 'asc',
+			'sort_column'  => 'post_title',
+			'hierarchical' => 1,
+			'exclude'      => '',
+			'include'      => '',
+			'meta_key'     => '',
+			'meta_value'   => '',
+			'authors'      => '',
+			'child_of'     => 0,
+			'parent'       => -1,
+			'exclude_tree' => '',
+			'number'       => '',
+			'offset'       => 0,
+			'post_type'    => 'page',
+			'post_status'  => 'publish'
+		);
+
+		// Get all pages.
+		$pages = get_pages( $args );
+		// Loop through pages.
+		foreach ( $pages as $page ) {
+			$pages_array[$page->post_name] = $page->post_title;
+		}
+
+		//print_r( $pages_array );
+
+		/**
+		 * Add Field: Menu page
+		 * Field:     select
+		 * Section:   wpdas_pages
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_pages',
+			array(
+				'id'      => 'wpd_pages_setup_menu_page',
+				'type'    => 'select',
+				'name'    => __( 'Menu page', 'wp-dispensary' ),
+				'desc'    => __( 'Page contents [wpd_menu]', 'wp-dispensary' ),
+				'options' => $pages_array,
+			)
+		);
+
+		/**
+		 * Add Field: Cart page
+		 * Field:     select
+		 * Section:   wpdas_pages
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_pages',
+			array(
+				'id'      => 'wpd_pages_setup_cart_page',
+				'type'    => 'select',
+				'name'    => __( 'Cart page', 'wp-dispensary' ),
+				'desc'    => __( 'Page contents [wpd_cart]', 'wp-dispensary' ),
+				'options' => $pages_array,
+			)
+		);
+
+		/**
+		 * Add Field: Checkout page
+		 * Field:     select
+		 * Section:   wpdas_pages
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_pages',
+			array(
+				'id'      => 'wpd_pages_setup_checkout_page',
+				'type'    => 'select',
+				'name'    => __( 'Checkout page', 'wp-dispensary' ),
+				'desc'    => __( 'Page contents [wpd_checkout]', 'wp-dispensary' ),
+				'options' => $pages_array,
+			)
+		);
+
+		/**
+		 * Add Field: Account page
+		 * Field:     select
+		 * Section:   wpdas_pages
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_pages',
+			array(
+				'id'      => 'wpd_pages_setup_account_page',
+				'type'    => 'select',
+				'name'    => __( 'Account page', 'wp-dispensary' ),
+				'desc'    => __( 'Page contents [wpd_account]', 'wp-dispensary' ),
+				'options' => $pages_array,
+			)
+		);
+
+	}
+
+} // end WPD_ADMIN_SETTINGS check
