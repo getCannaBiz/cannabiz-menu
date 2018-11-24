@@ -69,7 +69,7 @@ ul.wpdispensary-list li:before {
 /* Shortcodes */
 
 .wpdispensary {
-  float: left;
+  display: inline-block;
   position: relative;
   width: 100%;
 }
@@ -78,11 +78,11 @@ ul.wpdispensary-list li:before {
   float: left;
   margin: 12px 0;
   position: relative;
-  width: 31.333%;
+  width: 32%;
 }
 
 .wpdshortcode:nth-child(3n+3) {
-	margin: 12px 3%;
+	margin: 12px 2%;
 }
 
 .wpdshortcode p {
@@ -90,9 +90,9 @@ ul.wpdispensary-list li:before {
   padding: 0;
 }
 
-.wpdshortcode span.wpd-pricing,
-.wpdshortcode span.wpd-thc,
-.wpdshortcode span.wpd-productinfo {
+span.wpd-pricing,
+span.wpd-thc,
+span.wpd-productinfo {
   color: #AAA;
   font-size: 13px;
   margin-right: 10px;
