@@ -93,7 +93,16 @@ class WP_Dispensary_Activator {
 			);
 
 			// insert the page into the database.
-			wp_insert_post( $page );
+			wp_insert_post( $page );		
 		}
+
+		// Set default currency code.
+		$wpdas_general = array(
+			'wpd_pricing_currency_code' => 'USD',
+		);
+
+		// Update default currency code in settings.
+		update_option( 'wpdas_general', $wpdas_general );
+
 	}
 }
