@@ -439,34 +439,37 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			)
 		);
 
-		/**
-		 * Add Field: Display a title to help separate fields
-		 * Field:     title
-		 * Section:   wpdas_general
-		 */
-		$wpdas_obj->add_field(
-			'wpdas_general',
-			array(
-				'id'   => 'wpd_settings_checkout_options',
-				'type' => 'title',
-				'name' => '<h1>Checkout</h1>',
-			)
-		);
+		// Check if Coupons add-on is active.
+		if ( is_plugin_active( 'dispensary-coupons/dispensary-coupons.php' ) ) {
+			/**
+			 * Add Field: Display a title to help separate fields
+			 * Field:     title
+			 * Section:   wpdas_general
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_general',
+				array(
+					'id'   => 'wpd_settings_checkout_options',
+					'type' => 'title',
+					'name' => '<h1>Checkout</h1>',
+				)
+			);
 
-		/**
-		 * Add Field: Checkout coupons
-		 * Field:     checkbox
-		 * Section:   wpdas_general
-		 */
-		$wpdas_obj->add_field(
-			'wpdas_general',
-			array(
-				'id'   => 'wpd_ecommerce_checkout_coupons',
-				'type' => 'checkbox',
-				'name' => __( 'Coupons', 'wp-dispensary' ),
-				'desc' => __( 'Allow patients to apply a coupon to their order', 'wp-dispensary' ),
-			)
-		);
+			/**
+			 * Add Field: Checkout coupons
+			 * Field:     checkbox
+			 * Section:   wpdas_general
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_general',
+				array(
+					'id'   => 'wpd_ecommerce_checkout_coupons',
+					'type' => 'checkbox',
+					'name' => __( 'Coupons', 'wp-dispensary' ),
+					'desc' => __( 'Allow patients to apply a coupon to their order', 'wp-dispensary' ),
+				)
+			);
+		}
 
 		/**
 		 * Checkout payment options
