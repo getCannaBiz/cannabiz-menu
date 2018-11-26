@@ -1,5 +1,15 @@
 # Changelog
 
+### 2.5
+* Added multiple helper functions in `admin/wp-dispensary-functions.php`
+* Added multiple helper functions for pricing in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added 12 action hooks in product type widgets in `admin/post-types/wp-dispensary-widgets.php`
+* Added ID option for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added body class names for WPD specific pages in `public/class-wp-dispensary-public.php`
+* Added admin settings options for eCommerce add-on in `admin/wp-dispensary-admin-settings.php`
+* Updated Topicals prices and details metaboxes in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated admin settings to set USD as default currency code on activation in `includes/class-wp-dispensary-activator.php`
+
 ### 2.4
 * Added thead and tbody tags to tables in `admin/wp-dispensary-data-output.php`
 * Added `wpd_details_phrase` helper function in `admin/wp-dispensary-functions.php`

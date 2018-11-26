@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.8
-Stable tag: 2.4
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,16 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 2.5 =
+* Added multiple helper functions in `admin/wp-dispensary-functions.php`
+* Added multiple helper functions for pricing in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added 12 action hooks in product type widgets in `admin/post-types/wp-dispensary-widgets.php`
+* Added ID option for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Added Body class names for WPD specific pages in `public/class-wp-dispensary-public.php`
+* Added admin settings options for eCommerce add-on in `admin/wp-dispensary-admin-settings.php`
+* Updated Topicals prices and details metaboxes in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated admin settings to set USD as default currency code on activation in `includes/class-wp-dispensary-activator.php`
 
 = 2.4 =
 * Added thead and tbody tags to tables in `admin/wp-dispensary-data-output.php`
