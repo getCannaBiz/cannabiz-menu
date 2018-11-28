@@ -133,9 +133,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'          => 'wpd_pricing_phrase_custom',
 				'type'        => 'text',
-				'name'        => __( '', 'wp-dispensary' ),
+				'name'        => '',
 				'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
-				'placeholder' => __( '', 'wp-dispensary' ),
+				'placeholder' => '',
 			)
 		);
 
@@ -168,7 +168,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_hide_pricing',
 				'type' => 'checkbox',
-				'name' => __( '', 'wp-dispensary' ),
+				'name' => '',
 				'desc' => __( 'Remove the price table from data output', 'wp-dispensary' ),
 			)
 		);
@@ -232,7 +232,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_hide_compounds',
 			'type' => 'checkbox',
-			'name' => __( '', 'wp-dispensary' ),
+			'name' => '',
 			'desc' => __( 'Remove the compounds table from data output', 'wp-dispensary' ),
 		)
 	);
@@ -260,7 +260,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_settings_details_table_title',
 			'type' => 'title',
-			'name' => '<h1>Details table</h1>',
+			'name' => '<h1>' . __( 'Details table', 'wp-dispensary' ) . '</h1>',
 		)
 	);
 
@@ -293,9 +293,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'          => 'wpd_details_phrase_custom',
 			'type'        => 'text',
-			'name'        => __( '', 'wp-dispensary' ),
+			'name'        => '',
 			'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
-			'placeholder' => __( '', 'wp-dispensary' ),
+			'placeholder' => '',
 		)
 	);
 
@@ -328,7 +328,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_hide_details',
 			'type' => 'checkbox',
-			'name' => __( '', 'wp-dispensary' ),
+			'name' => '',
 			'desc' => __( 'Remove the details table from data output', 'wp-dispensary' ),
 		)
 	);
@@ -345,7 +345,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_store_general',
 				'type' => 'title',
-				'name' => '<h1>General</h1>',
+				'name' => '<h1>' . __( 'General', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 	}
@@ -403,7 +403,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_store_taxes',
 				'type' => 'title',
-				'name' => '<h1>Taxes</h1>',
+				'name' => '<h1>' . __( 'Taxes', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -451,7 +451,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				array(
 					'id'   => 'wpd_settings_checkout_options',
 					'type' => 'title',
-					'name' => '<h1>Checkout</h1>',
+					'name' => '<h1>' . __( 'Checkout', 'wp-dispensary' ) . '</h1>',
 				)
 			);
 
