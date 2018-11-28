@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.8
-Stable tag: 2.5
+Stable tag: 2.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,12 +48,12 @@ WordPress.org is home to some amazing free extensions for WP Dispensary, includi
 
 Looking to take things even further? Our commercial extensions provide you with the capabilities you need to turn your online menu into a powerhouse sales machine.
 
-* [Connect for WooCommerce](https://www.wpdispensary.com/product/wooconnect-for-woocommerce/)
-* [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/)
+* [eCommerce](https://www.wpdispensary.com/product/ecommerce/)
 * [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
 * [Menu Styles](https://www.wpdispensary.com/product/styles/)
+* [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/)
 
-Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything you're that's possible with our premium WP Dispensary extensions.
+Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
 
 == Installation ==
 
@@ -69,6 +69,12 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 2.5.1 =
+* Bug fix in the carousel shortcode product pricing display in `admin/wp-dispensary-shortcodes.php`
+* Bug fix in the carousel shortcode product total THC display for Edibles in `admin/wp-dispensary-shortcodes.php`
+* Updated text strings for localization in `admin/wp-dispensary-admin-settings.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
 
 = 2.5 =
 * Added multiple helper functions in `admin/wp-dispensary-functions.php`

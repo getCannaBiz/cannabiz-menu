@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.5.1
+* Bug fix in the carousel shortcode product pricing display in `admin/wp-dispensary-shortcodes.php`
+* Bug fix in the carousel shortcode product total THC display for Edibles in `admin/wp-dispensary-shortcodes.php`
+* Updated text strings for localization in `admin/wp-dispensary-admin-settings.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+
 ### 2.5
 * Added multiple helper functions in `admin/wp-dispensary-functions.php`
 * Added multiple helper functions for pricing in `includes/functions/wp-dispensary-pricing-functions.php`
