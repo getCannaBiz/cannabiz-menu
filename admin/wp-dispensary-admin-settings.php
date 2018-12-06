@@ -79,6 +79,14 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			)
 		);
 
+		// Section: Patients.
+		$wpdas_obj->add_section(
+			array(
+				'id'    => 'wpdas_patients',
+				'title' => __( 'Patients', 'wp-dispensary' ),
+			)
+		);
+
 		// Section: Pages.
 		$wpdas_obj->add_section(
 			array(
@@ -546,6 +554,80 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			);
 
 		} // foreach
+
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_patients
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_patients',
+			array(
+				'id'   => 'wpd_settings_patients_verification_title',
+				'type' => 'title',
+				'name' => '<h1>' . __( 'Patient Verification', 'wp-dispensary' ) . '</h1>',
+			)
+		);
+
+		/**
+		 * Add Field: Hide drivers license upload
+		 * Field:     checkbox
+		 * Section:   wpdas_patients
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_patients',
+			array(
+				'id'   => 'wpd_settings_patients_verification_drivers_license',
+				'type' => 'checkbox',
+				'name' => 'Drivers license',
+				'desc' => __( 'Hide the drivers license upload from account details', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Hide doctor recommendation upload
+		 * Field:     checkbox
+		 * Section:   wpdas_patients
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_patients',
+			array(
+				'id'   => 'wpd_settings_patients_verification_recommendation_doc',
+				'type' => 'checkbox',
+				'name' => 'Doctor recommendation',
+				'desc' => __( 'Hide the doctor recommendation upload from account details', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Hide recommendation number
+		 * Field:     checkbox
+		 * Section:   wpdas_patients
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_patients',
+			array(
+				'id'   => 'wpd_settings_patients_verification_recommendation_num',
+				'type' => 'checkbox',
+				'name' => 'Recommendation number',
+				'desc' => __( 'Hide the recommendation number from account details', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Hide expiration date
+		 * Field:     checkbox
+		 * Section:   wpdas_patients
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_patients',
+			array(
+				'id'   => 'wpd_settings_patients_verification_recommendation_exp',
+				'type' => 'checkbox',
+				'name' => 'Expiration date',
+				'desc' => __( 'Hide the expiration date from account details', 'wp-dispensary' ),
+			)
+		);
 
 		/**
 		 * Add Field: Display a title to help separate fields
