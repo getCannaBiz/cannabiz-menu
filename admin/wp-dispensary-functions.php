@@ -513,26 +513,6 @@ function wpd_menu_types_simple( $lowercase = NULL ) {
 }
 
 /**
- * Get all flower prices.
- *
- * @since 2.5
- * @return array
- */
-function wpd_flowers_prices_array( $id, $flower_prices = NULL ) {
-	$flower_prices = array(
-		'1 g'    => esc_html( get_post_meta( $id, '_gram', true ) ),
-		'2 g'    => esc_html( get_post_meta( $id, '_twograms', true ) ),
-		'1/8 oz' => esc_html( get_post_meta( $id, '_eighth', true ) ),
-		'5 g'    => esc_html( get_post_meta( $id, '_fivegrams', true ) ),
-		'1/4 oz' => esc_html( get_post_meta( $id, '_quarter', true ) ),
-		'1/2 oz' => esc_html( get_post_meta( $id, '_halfounce', true ) ),
-		'1 oz'   => esc_html( get_post_meta( $id, '_ounce', true ) ),
-	);
-	return apply_filters( 'wpd_flowers_prices_array', $flower_prices );
-}
-
-
-/**
  * Update messages for product types.
  * 
  * @since 2.5
