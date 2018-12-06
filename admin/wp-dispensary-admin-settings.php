@@ -439,22 +439,38 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			)
 		);
 
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'   => 'wpd_settings_checkout_options',
+				'type' => 'title',
+				'name' => '<h1>' . __( 'Checkout', 'wp-dispensary' ) . '</h1>',
+			)
+		);
+
+		/**
+		 * Add Field: Minimum order
+		 * Field:     text
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'          => 'wpd_ecommerce_checkout_minimum_order',
+				'type'        => 'text',
+				'name'        => __( 'Minimum order', 'wp-dispensary' ),
+				'desc'        => __( 'Require a minimum order amount before checkout', 'wp-dispensary' ),
+				'placeholder' => 'ex: 50',
+			)
+		);
+
 		// Check if Coupons add-on is active.
 		if ( is_plugin_active( 'dispensary-coupons/dispensary-coupons.php' ) ) {
-			/**
-			 * Add Field: Display a title to help separate fields
-			 * Field:     title
-			 * Section:   wpdas_general
-			 */
-			$wpdas_obj->add_field(
-				'wpdas_general',
-				array(
-					'id'   => 'wpd_settings_checkout_options',
-					'type' => 'title',
-					'name' => '<h1>' . __( 'Checkout', 'wp-dispensary' ) . '</h1>',
-				)
-			);
-
 			/**
 			 * Add Field: Checkout coupons
 			 * Field:     checkbox
