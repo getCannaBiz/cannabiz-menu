@@ -239,6 +239,10 @@ th#featured_thumb {
     margin-top: 0px;
 }
 
+.wrap.wpd-settings-wrap {
+    position: relative;
+}
+
 .wrap.wpd-settings-wrap h1.settings-logo {
 	position: relative;
 }
@@ -248,7 +252,7 @@ th#featured_thumb {
 	font-size: 50%;
 	margin-left: 10px;
 	position: absolute;
-	top: 24px;
+	top: 12px;
 }
 
 .metabox-holder .group form select {
