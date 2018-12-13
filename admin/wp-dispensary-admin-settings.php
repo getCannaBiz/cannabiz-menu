@@ -504,7 +504,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$checkout_payments = array(
 			'cod'    => __( 'Cash on delivery', 'wp-dispensary' ),
 			'pop'    => __( 'Pay on pickup', 'wp-dispensary' ),
-			'ground' => __( 'Ground shipping', 'wp-dispensary' ),
+			//'ground' => __( 'Ground shipping', 'wp-dispensary' ),
 		);
 
 		foreach ( $checkout_payments as $id=>$value ) {
