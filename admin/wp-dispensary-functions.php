@@ -614,3 +614,37 @@ function wpd_product_updated_messages( $messages ) {
     return $messages;
 }
 add_filter( 'post_updated_messages', 'wpd_product_updated_messages' );
+
+/**
+ * Get all flower weights.
+ *
+ * @since 2.6
+ * @return array
+ */
+function wpd_flowers_weights_array() {
+	$flower_weights = array(
+		'1 g'    => '_gram',
+		'2 g'    => '_twograms',
+		'1/8 oz' => '_eighth',
+		'5 g'    => '_fivegrams',
+		'1/4 oz' => '_quarter',
+		'1/2 oz' => '_halfounce',
+		'1 oz'   => '_ounce',
+	);
+	return apply_filters( 'wpd_flowers_weights_array', $flower_weights );
+}
+
+/**
+ * Get all concentrate weights.
+ *
+ * @since 2.6
+ * @return array
+ */
+function wpd_concentrates_weights_array() {
+	$concentrates_weights = array(
+		'1/2 g' => '_halfgram',
+		'1 g'   => '_gram',
+		'2 g'   => '_twograms',
+	);
+	return apply_filters( 'wpd_concentrates_weights_array', $concentrates_weights );
+}
