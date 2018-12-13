@@ -168,6 +168,12 @@ table.wpdispensary-table td span {
 	margin-right: 10px;
 }
 
+table.wpdispensary-table.single.details.compound-details td {
+    color: #454545;
+}
+
+/** Ingredients */
+
 .ingredientlist {
 	border: 1px solid #DDD;
 	float: left;
