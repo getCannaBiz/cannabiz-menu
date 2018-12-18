@@ -521,13 +521,13 @@ function wpd_product_updated_messages( $messages ) {
     if ( 'flowers' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
-            1 => sprintf( __( 'Flower updated. <a href="%s">View flower</a>'), esc_url( get_permalink( $post_ID ) ) ),
-            2 => __( 'Custom field updated.' ),
-            3 => __( 'Custom field deleted.' ),
-            4 => __( 'Flower updated.' ),
+            1 => sprintf( __( 'Flower updated. <a href="%s">View flower</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            2 => __( 'Flower updated.', 'wp-dispensary' ),
+            3 => __( 'Flower deleted.', 'wp-dispensary' ),
+            4 => __( 'Flower updated.', 'wp-dispensary' ),
             5 => isset( $_GET['revision'] ) ? sprintf( __( 'Flower restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-            7 => __( 'Flower saved.' ),
             6 => sprintf( __( 'Flower published. <a href="%s">View flower</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            7 => __( 'Flower saved.', 'wp-dispensary' ),
             8 => sprintf( __( 'Flower submitted. <a target="_blank" href="%s">Preview flower</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ) ),
             9 => sprintf( __( 'Flower scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview flower</a>' ),
             date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( get_the_ID() ) ) ),
@@ -536,13 +536,13 @@ function wpd_product_updated_messages( $messages ) {
     } elseif ( 'concentrates' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
-            2 => __( 'Custom field updated.' ),
-            3 => __( 'Custom field deleted.' ),
-            4 => __( 'Concentrate updated.' ),
             1 => sprintf( __( 'Concentrate updated. <a href="%s">View concentrate</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            2 => __( 'Concentrate updated.', 'wp-dispensary' ),
+            3 => __( 'Concentrate deleted.', 'wp-dispensary' ),
+            4 => __( 'Concentrate updated.', 'wp-dispensary' ),
             5 => isset( $_GET['revision'] ) ? sprintf( __( 'Concentrate restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-            7 => __( 'Concentrate saved.' ),
             6 => sprintf( __( 'Concentrate published. <a href="%s">View concentrate</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            7 => __( 'Concentrate saved.', 'wp-dispensary' ),
             8 => sprintf( __( 'Concentrate submitted. <a target="_blank" href="%s">Preview concentrate</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ) ),
             9 => sprintf( __( 'Concentrate scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview concentrate</a>' ),
             date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( get_the_ID() ) ) ),
@@ -551,13 +551,13 @@ function wpd_product_updated_messages( $messages ) {
     } elseif ( 'edibles' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
-            2 => __( 'Custom field updated.' ),
-            3 => __( 'Custom field deleted.' ),
-            4 => __( 'Edible updated.' ),
             1 => sprintf( __( 'Edible updated. <a href="%s">View edible</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            2 => __( 'Edible updated.', 'wp-dispensary' ),
+            3 => __( 'Edible deleted.', 'wp-dispensary' ),
+            4 => __( 'Edible updated.', 'wp-dispensary' ),
             5 => isset( $_GET['revision'] ) ? sprintf( __( 'Edible restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-            7 => __( 'Edible saved.' ),
             6 => sprintf( __( 'Edible published. <a href="%s">View edible</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            7 => __( 'Edible saved.', 'wp-dispensary' ),
             8 => sprintf( __( 'Edible submitted. <a target="_blank" href="%s">Preview edible</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ) ),
             9 => sprintf( __( 'Edible scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview edible</a>' ),
             date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( get_the_ID() ) ) ),
@@ -566,13 +566,13 @@ function wpd_product_updated_messages( $messages ) {
     } elseif ( 'prerolls' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
-            2 => __( 'Custom field updated.' ),
-            3 => __( 'Custom field deleted.' ),
-            4 => __( 'Pre-roll updated.' ),
             1 => sprintf( __( 'Pre-roll updated. <a href="%s">View pre-roll</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            2 => __( 'Pre-roll updated.', 'wp-dispensary' ),
+            3 => __( 'Pre-roll deleted.', 'wp-dispensary' ),
+            4 => __( 'Pre-roll updated.', 'wp-dispensary' ),
             5 => isset( $_GET['revision'] ) ? sprintf( __( 'Pre-roll restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-            7 => __( 'Pre-roll saved.' ),
             6 => sprintf( __( 'Pre-roll published. <a href="%s">View pre-roll</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            7 => __( 'Pre-roll saved.', 'wp-dispensary' ),
             8 => sprintf( __( 'Pre-roll submitted. <a target="_blank" href="%s">Preview pre-roll</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ) ),
             9 => sprintf( __( 'Pre-roll scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview pre-roll</a>' ),
             date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( get_the_ID() ) ) ),
@@ -581,13 +581,13 @@ function wpd_product_updated_messages( $messages ) {
     } elseif ( 'topicals' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
-            2 => __( 'Custom field updated.' ),
-            3 => __( 'Custom field deleted.' ),
-            4 => __( 'Topical updated.' ),
             1 => sprintf( __( 'Topical updated. <a href="%s">View topical</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            2 => __( 'Topical updated.', 'wp-dispensary' ),
+            3 => __( 'Topical deleted.', 'wp-dispensary' ),
+            4 => __( 'Topical updated.', 'wp-dispensary' ),
             5 => isset( $_GET['revision'] ) ? sprintf( __( 'Topical restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-            7 => __( 'Topical saved.' ),
             6 => sprintf( __( 'Topical published. <a href="%s">View topical</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            7 => __( 'Topical saved.', 'wp-dispensary' ),
             8 => sprintf( __( 'Topical submitted. <a target="_blank" href="%s">Preview topical</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ) ),
             9 => sprintf( __( 'Topical scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview topical</a>' ),
             date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( get_the_ID() ) ) ),
@@ -596,13 +596,13 @@ function wpd_product_updated_messages( $messages ) {
     } elseif ( 'growers' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
-            2 => __( 'Custom field updated.' ),
-            3 => __( 'Custom field deleted.' ),
-            4 => __( 'Item updated.' ),
             1 => sprintf( __( 'Item updated. <a href="%s">View item</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            2 => __( 'Item updated.', 'wp-dispensary' ),
+            3 => __( 'Item deleted.', 'wp-dispensary' ),
+            4 => __( 'Item updated.', 'wp-dispensary' ),
             5 => isset( $_GET['revision'] ) ? sprintf( __( 'Item restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-            7 => __( 'Item saved.' ),
             6 => sprintf( __( 'Item published. <a href="%s">View item</a>' ), esc_url( get_permalink( get_the_ID() ) ) ),
+            7 => __( 'Item saved.', 'wp-dispensary' ),
             8 => sprintf( __( 'Item submitted. <a target="_blank" href="%s">Preview item</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( get_the_ID() ) ) ) ),
             9 => sprintf( __( 'Item scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview item</a>' ),
             date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( get_the_ID() ) ) ),
@@ -618,7 +618,6 @@ add_filter( 'post_updated_messages', 'wpd_product_updated_messages' );
 /**
  * Get all flower weights.
  *
- * @since 2.6
  * @since 2.5.2
  * @return array
  */
@@ -638,7 +637,6 @@ function wpd_flowers_weights_array() {
 /**
  * Get all concentrate weights.
  *
- * @since 2.6
  * @since 2.5.2
  * @return array
  */
