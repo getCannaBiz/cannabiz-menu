@@ -580,8 +580,18 @@ function wpdispensary_vendor() {
 		'menu_name'                  => __( 'Vendors', 'wp-dispensary' ),
 	);
 
-	$menu_types_simple = wpd_menu_types_simple( TRUE );
-	$vendor_tax_type   = apply_filters( 'wpd_vendor_tax_type', $menu_types_simple );
+	$menu_types        = wpd_menu_types();
+	$menu_types_names  = array();
+
+	// Loop through menu types
+	foreach ( $menu_types as $key=>$value ) {
+		// Strip wpd- from the menu type name.
+		$name = str_replace( "wpd-", "", $key );
+		// Add menu type name to new array.
+		$menu_types_names[] = $name;
+	}
+
+	$vendor_tax_type   = apply_filters( 'wpd_vendor_tax_type', $menu_types_names );
 
 	register_taxonomy( 'vendor', $vendor_tax_type, array(
 		'hierarchical'          => false,

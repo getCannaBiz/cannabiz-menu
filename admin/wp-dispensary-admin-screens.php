@@ -39,7 +39,17 @@ function wp_dispensary_columns_data( $column, $post_id ) {
 
 if ( isset( $_GET['post_type'] ) ) {
 	$post_type         = $_GET['post_type'];
-	$menu_types_simple = wpd_menu_types_simple( TRUE );
+	$menu_types        = wpd_menu_types();
+	$menu_types_names  = array();
+
+	// Loop through menu types.
+	foreach ( $menu_types as $key=>$value ) {
+		// Strip wpd- from the menu type name.
+		$name = str_replace( "wpd-", "", $key );
+		// Add menu type name to new array.
+		$menu_types_simple[] = $name;
+	}
+
 	if ( in_array( $post_type, apply_filters( 'wpd_admin_screen_thumbnails', $menu_types_simple ) ) ) {
 		add_filter( 'manage_posts_columns', 'wp_dispensary_columns' );
 		add_action( 'manage_posts_custom_column', 'wp_dispensary_columns_data', 10, 2 );
