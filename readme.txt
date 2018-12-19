@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 4.9.8
-Stable tag: 2.5.1
+Tested up to: 4.9.9
+Stable tag: 2.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,19 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
 
 == Changelog ==
+
+= 2.5.2 =
+* Added `wpd_flowers_weights_array` and `wpd_concentrates_weights_array` functions in `admin/wp-dispensary-functions.php`
+* Added minimum order requirement to checkout with eCommerce add-on in `admin/wp-dispensary-admin-settings.php`
+* Added Patients tab + 4 options in admin settings page with eCommerce add-on in `admin/wp-dispensary-admin-settings.php`
+* Bug fix in menu type filter that output `pre-rolls` instead of `prerolls` in `admin/post-types/wp-dispensary-taxonomies.php`
+* Bug fix in menu type filter that output `pre-rolls` instead of `prerolls` in `admin/wp-dispensary-screens.php`
+* Bug fix in menu type filter that output `pre-rolls` instead of `prerolls` in `admin/wp-dispensary-data-output.php`
+* Updated WPD Settings version number styles in `admin/css/wp-dispensary-admin.css`
+* Updated checkout payment options with eCommerce add-on in `admin/wp-dispensary-admin-settings.php`
+* Updated text strings for localization in `admin/wp-dispensary-functions.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup throughout various files in the plugin
 
 = 2.5.1 =
 * Bug fix in the carousel shortcode product pricing display in `admin/wp-dispensary-shortcodes.php`
