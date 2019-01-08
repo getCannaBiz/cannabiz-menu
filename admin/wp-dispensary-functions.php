@@ -339,6 +339,10 @@ function get_wpd_compounds_simple( $type = NULL, $compound_array = NULL ) {
 		// Do nothing.
 	}
 
+	// Create empty variable.
+	$str = '';
+
+	// Add each compound to variable.
 	foreach ( $compounds as $compound=>$value ) {
 		$str .= "<span class='wpd-productinfo " . $compound . "'><strong>" . $compound . ":</strong> " . $value . '</span>';
 	}
