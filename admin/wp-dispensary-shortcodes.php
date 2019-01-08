@@ -796,7 +796,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		'tax_query'      => $tax_query,
 		'orderby'        => $order,
 		'order'          => $ordernew,
-		'meta_key'       => $metakey,
+		'meta_key'       => $meta_key,
 	) );
 
 	$wpdquery = new WP_Query( $args );
