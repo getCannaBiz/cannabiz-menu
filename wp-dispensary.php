@@ -98,8 +98,8 @@ run_wp_dispensary();
  * @return array updatead array of links related to the plugin.
  */
 function wpd_settings_link( $links ) {
-	$pro_link      = '<a href="https://www.wpdispensary.com/product/pro-package/" target="_blank" style="font-weight:700;">Go Pro</a>';
-	$settings_link = '<a href="admin.php?page=wpd-settings">Settings</a>';
+	$pro_link      = '<a href="https://www.wpdispensary.com/product/pro-package/" target="_blank" style="font-weight:700;">' . __( 'Go Pro', 'wp-dispensary' ) . '</a>';
+	$settings_link = '<a href="admin.php?page=wpd-settings">' . __( 'Settings', 'wp-dispensary' ) . '</a>';
 	array_unshift( $links, $settings_link );
 	array_unshift( $links, $pro_link );
 	return $links;
