@@ -38,10 +38,10 @@ WordPress.org is home to some amazing free extensions for WP Dispensary, includi
 
 Looking to take things even further? Our commercial extensions provide you with the capabilities you need to turn your online menu into a powerhouse sales machine.
 
-* [Connect for WooCommerce](https://www.wpdispensary.com/product/wooconnect-for-woocommerce/)
-* [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/)
-* [Menu Styles](https://www.wpdispensary.com/product/styles/)
+* [eCommerce](https://www.wpdispensary.com/product/ecommerce/)
 * [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
+* [Menu Styles](https://www.wpdispensary.com/product/styles/)
+* [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/)
 
 Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
 
