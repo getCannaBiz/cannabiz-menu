@@ -29,7 +29,7 @@ See all shortcode options in the [documentation](https://www.wpdispensary.com/se
 
 ## Define your dispensary style
 
-[CannaBiz](https://www.wpdispensary.com/downloads/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
+[CannaBiz](https://www.wpdispensary.com/product/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
 
 Along with full integration for WP Dispensary and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
 
@@ -63,10 +63,10 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 
 == Screenshots ==
 
-1. WP Dispensary shortcode display, using our [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
+1. WP Dispensary shortcode display, using our [CannaBiz](https://www.wpdispensary.com/product/cannabiz/) theme
 2. WP Dispensary "Flowers" menu type
 3. WP Dispensary Settings page
-4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/) theme
+4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/product/cannabiz/) theme
 
 == Changelog ==
 
