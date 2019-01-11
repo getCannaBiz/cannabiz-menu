@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.9
-Stable tag: 2.5.2
+Stable tag: 2.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,15 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/product/cannabiz/) theme
 
 == Changelog ==
+
+= 2.5.3 =
+* Bug fix for empty variable notices for compounds in `admin/wp-dispensary=functions.php`
+* Bug fix misspelled `meta_key` variable name for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated mobile display for Edit screen in admin dashboard in `admin/css/wp-dispensary-admin.css`
+* Updated product updated messages with global `$post` variable in `admin/wp-dispensary-functions.php`
+* Updated text strings for localization in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup throughout various files in the plugin
 
 = 2.5.2 =
 * Added `wpd_flowers_weights_array` and `wpd_concentrates_weights_array` functions in `admin/wp-dispensary-functions.php`

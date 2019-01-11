@@ -1,5 +1,14 @@
 # Changelog
 
+### 2.5.3
+* Bug fix for empty variable notices for compounds in `admin/wp-dispensary=functions.php`
+* Bug fix misspelled `meta_key` variable name for shortcodes in `admin/wp-dispensary-shortcodes.php`
+* Updated mobile display for Edit screen in admin dashboard in `admin/css/wp-dispensary-admin.css`
+* Updated product updated messages with global `$post` variable in `admin/wp-dispensary-functions.php`
+* Updated text strings for localization in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup throughout various files in the plugin
+
 ### 2.5.2
 * Added `wpd_flowers_weights_array` and `wpd_concentrates_weights_array` functions in `admin/wp-dispensary-functions.php`
 * Added minimum order requirement to checkout with eCommerce add-on in `admin/wp-dispensary-admin-settings.php`
