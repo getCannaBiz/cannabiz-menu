@@ -522,6 +522,7 @@ function wpd_menu_types_simple( $lowercase = NULL ) {
  * @since 2.5
  */
 function wpd_product_updated_messages( $messages ) {
+	global $post;
     if ( 'flowers' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
