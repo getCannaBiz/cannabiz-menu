@@ -284,3 +284,23 @@ div.widget[id*=_wpdispensary_] .widget-title .in-widget-title {
 div.widget[id*=_wpdispensary_] .widget-action {
 	color: #FFF;
 }
+
+/* View All screen (mobile table layout)
+-------------------------------------------------------------- */
+
+@media screen and (max-width: 782px) {
+	.wp-list-table tr.type-flowers:not(.inline-edit-row):not(.no-items) td:not(.check-column),
+	.wp-list-table tr.type-concentrates:not(.inline-edit-row):not(.no-items) td:not(.check-column),
+	.wp-list-table tr.type-edibles:not(.inline-edit-row):not(.no-items) td:not(.check-column),
+	.wp-list-table tr.type-prerolls:not(.inline-edit-row):not(.no-items) td:not(.check-column),
+	.wp-list-table tr.type-topicals:not(.inline-edit-row):not(.no-items) td:not(.check-column),
+	.wp-list-table tr.type-growers:not(.inline-edit-row):not(.no-items) td:not(.check-column),
+	.wp-list-table tr.type-gear:not(.inline-edit-row):not(.no-items) td:not(.check-column),
+	.wp-list-table tr.type-tinctures:not(.inline-edit-row):not(.no-items) td:not(.check-column) {
+	    display: table-cell;
+	}
+
+	.wp-list-table tr:not(.inline-edit-row):not(.no-items) td.featured_thumb:not(.column-primary)::before {
+		display: none;
+	}
+}
