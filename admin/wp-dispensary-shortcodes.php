@@ -1412,6 +1412,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 	// If category="" isn't empty, add to $cat_tax_query.
 	if ( ! empty( $category ) ) {
+
 		// Add flowers categories to $cat_tax_query.
 		if ( in_array( 'flowers', $array_type ) ) {
 			$cat_tax_query[] = array(

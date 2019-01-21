@@ -220,22 +220,19 @@ table.wpdispensary-table.single.details.compound-details td {
 	-webkit-tap-highlight-color: transparent;
 }
 
-.slick-list
-{
+.slick-list {
 	position: relative;
-
 	display: block;
 	overflow: hidden;
-
-	margin: 0;
+	margin: 0 0 24px 0;
 	padding: 0;
 }
-.slick-list:focus
-{
+
+.slick-list:focus {
 	outline: none;
 }
-.slick-list.dragging
-{
+
+.slick-list.dragging {
 	cursor: pointer;
 	cursor: hand;
 }
@@ -439,23 +436,18 @@ table.wpdispensary-table.single.details.compound-details td {
 	margin-bottom: 30px;
 }
 
-.slick-dots
-{
+.slick-dots {
 	position: absolute;
 	bottom: -25px;
-
 	display: block;
-
 	width: 100%;
-	padding: 0;
+	padding: 24px 0 0 0 !important;
 	margin: 0;
-
 	list-style: none;
-
 	text-align: center;
 }
-.slick-dots li
-{
+
+.slick-dots li {
 	list-style: none;
 	position: relative;
 	display: inline-block;
@@ -463,13 +455,14 @@ table.wpdispensary-table.single.details.compound-details td {
 	height: 20px;
 	margin: 0 5px;
 	padding: 0;
-
 	cursor: pointer;
 }
+
 .slick-dots li:before,
 .slick-dots li:after {
 	display: none !important;
 }
+
 .slick-dots li button
 {
 	font-size: 0;
@@ -545,6 +538,11 @@ table.wpdispensary-table.single.details.compound-details td {
 
 .carousel-item span.wpd-productinfo span.wpd-productinfo.pricing {
     margin-right: 0;
+}
+
+.carousel-item span.wpd-topsellers-icon {
+    top: 0;
+    right: 0;
 }
 
 /* Mobile responsive CSS */
