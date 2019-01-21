@@ -1299,7 +1299,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'weight'      => 'show',
 			'orderby'     => '',
 			'meta_key'    => '',
-			'type'        => "flowers', 'concentrates', 'edibles', 'topicals', 'prerolls', 'growers'",
+			'type'        => "flowers, concentrates, edibles, prerolls, topicals, growers",
 			'imgsize'     => 'dispensary-image',
 		),
 		$atts,
@@ -1315,9 +1315,13 @@ function wpdispensary_carousel_shortcode( $atts ) {
 	/**
 	 * Code to create shortcode
 	 */
+
+	// Create $tax_query variable.
 	$tax_query = array(
 		'relation' => 'AND',
 	);
+
+	// Add aromas to $tax_query.
 	if ( '' !== $aroma ) {
 			$tax_query[] = array(
 				'taxonomy' => 'aroma',
@@ -1325,6 +1329,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'terms'    => $aroma,
 			);
 	}
+
+	// Add flavors to $tax_query.
 	if ( '' !== $flavor ) {
 			$tax_query[] = array(
 				'taxonomy' => 'flavor',
@@ -1332,6 +1338,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'terms'    => $flavor,
 			);
 	}
+
+	// Add effects to $tax_query.
 	if ( '' !== $effect ) {
 			$tax_query[] = array(
 				'taxonomy' => 'effect',
@@ -1339,6 +1347,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'terms'    => $effect,
 			);
 	}
+
+	// Add symptoms to $tax_query.
 	if ( '' !== $symptom ) {
 			$tax_query[] = array(
 				'taxonomy' => 'symptom',
@@ -1346,6 +1356,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'terms'    => $symptom,
 			);
 	}
+
+	// Add conditions to $tax_query.
 	if ( '' !== $condition ) {
 			$tax_query[] = array(
 				'taxonomy' => 'condition',
@@ -1353,6 +1365,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'terms'    => $condition,
 			);
 	}
+
+	// Add vendors to $tax_query.
 	if ( '' !== $vendor ) {
 			$tax_query[] = array(
 				'taxonomy' => 'vendor',
@@ -1360,6 +1374,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'terms'    => $vendor,
 			);
 	}
+
+	// Add shelf types to $tax_query.
 	if ( '' !== $shelf_type ) {
 		$tax_query[] = array(
 			'taxonomy' => 'shelf_type',
@@ -1367,6 +1383,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'terms'    => $shelf_type,
 		);
 	}
+
+	// Add strain types to $tax_query.
 	if ( '' !== $strain_type ) {
 		$tax_query[] = array(
 			'taxonomy' => 'strain_type',
@@ -1374,35 +1392,95 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'terms'    => $strain_type,
 		);
 	}
+
+	// Order by.
 	if ( '' !== $orderby ) {
 			$order    = $orderby;
 			$ordernew = 'ASC';
 	}
 
-	if ( 'flowers' === $type ) {
-		$categorytype = 'flowers_category';
-	} elseif ( 'concentrates' === $type ) {
-		$categorytype = 'concentrates_category';
-	} elseif ( 'edibles' === $type ) {
-		$categorytype = 'edibles_category';
-	} elseif ( 'prerolls' === $type ) {
-		$categorytype = 'flowers_category';
-	} elseif ( 'topicals' === $type ) {
-		$categorytype = 'topicals_category';
-	} else {
-		$categorytype = 'flowers_category';
+	// Create $cat_tax_query variable.
+	$cat_tax_query = array(
+		'relation' => 'OR',
+	);
+
+	// Turn shortcode type="" input into an array.
+	$array_type = explode( ', ', $type );
+
+	// Turn shortcode category="" input into an array.
+	$new_category = explode( ', ', $category );
+
+	// If category="" isn't empty, add to $cat_tax_query.
+	if ( ! empty( $category ) ) {
+		// Add flowers categories to $cat_tax_query.
+		if ( in_array( 'flowers', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'flowers_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add concentrates categories to $cat_tax_query.
+		if ( in_array( 'concentrates', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'concentrates_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add edibles categories to $cat_tax_query.
+		if ( in_array( 'edibles', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'edibles_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add flowers categories to $cat_tax_query.
+		if ( in_array( 'prerolls', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'flowers_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add topicals categories to $cat_tax_query.
+		if ( in_array( 'topicals', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'topicals_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+
+		// Add growers categories to $cat_tax_query.
+		if ( in_array( 'growers', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'growers_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
 	}
 
+	// Create new tax query.
+	$new_tax_query = array_merge( $tax_query, $cat_tax_query );
+
+	// Create WP_Query args.
 	$args = apply_filters( 'wpd_carousel_shortcode_args', array(
 		'post_type'      => explode( ', ', $type ),
 		'posts_per_page' => $posts,
-		$categorytype    => $category,
-		'tax_query'      => $tax_query,
+		'tax_query'      => $new_tax_query,
 		'orderby'        => $order,
 		'order'          => $ordernew,
 		'meta_key'       => $meta_key,
 	) );
 
+	// Create new WP_Query.
 	$wpdquery = new WP_Query( $args );
 
 	if ( '' === $title ) {
