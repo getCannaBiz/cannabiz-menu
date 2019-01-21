@@ -543,6 +543,10 @@ table.wpdispensary-table.single.details.compound-details td {
   margin-right: 10px;
 }
 
+.carousel-item span.wpd-productinfo span.wpd-productinfo.pricing {
+    margin-right: 0;
+}
+
 /* Mobile responsive CSS */
 
 @media screen and (max-width: 1199px) {
