@@ -63,10 +63,10 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 
 == Screenshots ==
 
-1. WP Dispensary shortcode display, using our [CannaBiz](https://www.wpdispensary.com/product/cannabiz/) theme
+1. WP Dispensary menu display
 2. WP Dispensary "Flowers" menu type
 3. WP Dispensary Settings page
-4. WP Dispensary single menu item display, using [CannaBiz](https://www.wpdispensary.com/product/cannabiz/) theme
+4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
 
 == Changelog ==
 
