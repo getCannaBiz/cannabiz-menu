@@ -1210,7 +1210,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 			'wpdispensary_growers_widget',
 			__( 'Dispensary Growers', 'wp-dispensary' ),
 			array(
-				'description' => __( 'Your most recent Growers', 'wp-dispensary' ),
+				'description' => __( 'Your most recent Clones and Seeds', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
 			)
 		);
