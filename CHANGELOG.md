@@ -1,5 +1,15 @@
 # Changelog
 
+### 2.5.4
+* Bug fix for category option in carousel shortcode args to work with multiple types in `admin/wp-dispensary-shortcodes.php`
+* Updated carousel shortcode CSS to remove extra right margin on pricing in `public/css/wp-dispensary-public.css`
+* Updated additional CSS for the carousel shortcode in `public/css/wp-dispensary-public.css`
+* Updated Topical REST API endpoints to include two new fields in `admin/post-types/wp-dispensary-rest-api.php`
+* Updated text strings for localization in `admin/post-types/wp-dispensary-widgets.php`
+* Updated text strings for localization in `admin/post-types/wp-dispensary-data-output.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup throughout various files in the plugin
+
 ### 2.5.3
 * Bug fix for empty variable notices for compounds in `admin/wp-dispensary=functions.php`
 * Bug fix misspelled `meta_key` variable name for shortcodes in `admin/wp-dispensary-shortcodes.php`

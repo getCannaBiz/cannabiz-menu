@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 4.9.9
-Stable tag: 2.5.3
+Stable tag: 2.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,10 @@ The complete marijuana dispensary menu solution for WordPress
 ### The complete online menu solution for dispensaries
 
 WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage online product menus and let patients place orders directly through their own website.
+
+**DEMO**
+
+View a live demo of WP Dispensary - (https://www.wpdispensary.com/demo/)[view demo].
 
 ## Dispensary Menu Features
 
@@ -69,6 +73,16 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
 
 == Changelog ==
+
+= 2.5.4 =
+* Bug fix for category option in carousel shortcode args to work with multiple types in `admin/wp-dispensary-shortcodes.php`
+* Updated carousel shortcode CSS to remove extra right margin on pricing in `public/css/wp-dispensary-public.css`
+* Updated additional CSS for the carousel shortcode in `public/css/wp-dispensary-public.css`
+* Updated Topical REST API endpoints to include two new fields in `admin/post-types/wp-dispensary-rest-api.php`
+* Updated text strings for localization in `admin/post-types/wp-dispensary-widgets.php`
+* Updated text strings for localization in `admin/post-types/wp-dispensary-data-output.php`
+* Updated `.pot` file with new text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup throughout various files in the plugin
 
 = 2.5.3 =
 * Bug fix for empty variable notices for compounds in `admin/wp-dispensary=functions.php`
