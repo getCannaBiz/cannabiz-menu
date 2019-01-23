@@ -575,7 +575,10 @@ add_action( 'rest_api_init', 'slug_register_topicalinfo' );
  * Register Topical info
  */
 function slug_register_topicalinfo() {
-	$topicalinformation = array( '_pricetopical', '_thctopical', '_cbdtopical', '_sizetopical' );
+	/**
+	 * @todo add filter to array.
+	 */
+	$topicalinformation = array( '_pricetopical', '_unitsperpack', 'priceperpack', '_thctopical', '_cbdtopical', '_sizetopical' );
 	foreach ( $topicalinformation as $topicalinfo ) {
 		register_rest_field(
 			'topicals',
