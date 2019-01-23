@@ -164,6 +164,10 @@ add_action( 'add_meta_boxes', 'wpdispensary_add_prices_metaboxes' );
 function wpdispensary_prices() {
 	global $post;
 
+	/**
+	 * @todo add filters for Heavyweights add-on to use.
+	 */
+
 	/** Noncename needed to verify where the data originated */
 	echo '<input type="hidden" name="pricesmeta_noncename" id="pricesmeta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
@@ -294,6 +298,10 @@ add_action( 'add_meta_boxes', 'wpdispensary_add_concentrateprices_metaboxes' );
  */
 function wpdispensary_concentrateprices() {
 	global $post;
+
+	/**
+	 * @todo add filter for Heavyweights add-on.
+	 */
 
 	/** Noncename needed to verify where the data originated */
 	echo '<input type="hidden" name="concentratepricesmeta_noncename" id="concentratepricesmeta_noncename" value="' .
@@ -976,7 +984,6 @@ function wpdispensary_add_thccbdtopical_metaboxes() {
 	}
 
 }
-
 add_action( 'add_meta_boxes', 'wpdispensary_add_thccbdtopical_metaboxes' );
 
 /**
@@ -1195,7 +1202,6 @@ function wpdispensary_add_preroll_weight_metaboxes() {
 	}
 
 }
-
 add_action( 'add_meta_boxes', 'wpdispensary_add_preroll_weight_metaboxes' );
 
 /**

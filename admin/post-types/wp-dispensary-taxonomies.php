@@ -580,8 +580,8 @@ function wpdispensary_vendor() {
 		'menu_name'                  => __( 'Vendors', 'wp-dispensary' ),
 	);
 
-	$menu_types        = wpd_menu_types();
-	$menu_types_names  = array();
+	$menu_types       = wpd_menu_types();
+	$menu_types_names = array();
 
 	// Loop through menu types
 	foreach ( $menu_types as $key=>$value ) {

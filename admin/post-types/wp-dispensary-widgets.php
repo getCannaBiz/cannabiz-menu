@@ -925,7 +925,11 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
 		<?php
-			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
+		/**
+		 * @todo add filter to $terms.
+		 */
+		$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
+
 		if ( $terms ) {
 			printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
 			foreach ( $terms as $term ) {
@@ -1159,7 +1163,10 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
 		<?php
-			$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
+		/**
+		 * @todo add filter to $terms.
+		 */
+		$terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
 		if ( $terms ) {
 			printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
 			foreach ( $terms as $term ) {

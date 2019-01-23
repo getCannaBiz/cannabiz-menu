@@ -37,10 +37,11 @@ function wp_dispensary_columns_data( $column, $post_id ) {
 	}
 }
 
+// Add thumbnails to post_type screen for WPD menu types.
 if ( isset( $_GET['post_type'] ) ) {
-	$post_type         = $_GET['post_type'];
-	$menu_types        = wpd_menu_types();
-	$menu_types_names  = array();
+	$post_type        = $_GET['post_type'];
+	$menu_types       = wpd_menu_types();
+	$menu_types_names = array();
 
 	// Loop through menu types.
 	foreach ( $menu_types as $key=>$value ) {

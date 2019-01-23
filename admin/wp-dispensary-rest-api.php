@@ -370,6 +370,9 @@ add_action( 'rest_api_init', 'slug_register_prices' );
  * Registering Prices
  */
 function slug_register_prices() {
+	/**
+	 * @todo add filter to array.
+	 */
 	$productsizes = array( '_gram', '_twograms', '_eighth', '_fivegrams', '_quarter', '_halfounce', '_ounce' );
 	foreach ( $productsizes as $size ) {
 		register_rest_field(
@@ -411,6 +414,9 @@ add_action( 'rest_api_init', 'slug_register_concentrateprices' );
  * Registering Prices
  */
 function slug_register_concentrateprices() {
+	/**
+	 * @todo add filter to array.
+	 */
 	$productsizes = array( '_priceeach', '_halfgram', '_gram', '_twograms' );
 	foreach ( $productsizes as $size ) {
 		register_rest_field(
@@ -452,6 +458,9 @@ add_action( 'rest_api_init', 'slug_register_edibleinfo' );
  * Register Edible information
  */
 function slug_register_edibleinfo() {
+	/**
+	 * @todo add filter to array.
+	 */
 	$edibleinformation = array( '_thcmg', '_thcservings', '_priceeach', '_unitsperpack', 'priceperpack' );
 	foreach ( $edibleinformation as $edibleinfo ) {
 		register_rest_field(
@@ -493,6 +502,9 @@ add_action( 'rest_api_init', 'slug_register_prerollinfo' );
  * Register Pre-roll info
  */
 function slug_register_prerollinfo() {
+	/**
+	 * @todo add filter to array.
+	 */
 	$prerollinformation = array( '_priceeach', '_selected_flowers', '_unitsperpack', 'priceperpack', '_preroll_weight' );
 	foreach ( $prerollinformation as $prerollinfo ) {
 		register_rest_field(
@@ -534,6 +546,9 @@ add_action( 'rest_api_init', 'slug_register_compounds' );
  * Register compound details info
  */
 function slug_register_compounds() {
+	/**
+	 * @todo add function instead of array.
+	 */
 	$compounds = array( '_thc', '_thca', '_cbd', '_cba', '_cbn', '_cbg' );
 	foreach ( $compounds as $compound ) {
 		register_rest_field(
@@ -619,6 +634,9 @@ add_action( 'rest_api_init', 'slug_register_growerinfo' );
  * Register Grower info
  */
 function slug_register_growerinfo() {
+	/**
+	 * @todo add filter to array.
+	 */
 	$growerinformation = array( '_priceeach', '_unitsperpack', 'priceperpack', '_selected_flowers', '_seedcount', '_clonecount', '_time', '_origin', '_yield', '_difficulty' );
 	foreach ( $growerinformation as $growerinfo ) {
 		register_rest_field(
