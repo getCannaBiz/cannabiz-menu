@@ -17,7 +17,7 @@ WP Dispensary is open source canna-tech for dispensary and delivery services who
 
 **DEMO**
 
-View a live demo of WP Dispensary - (https://www.wpdispensary.com/demo/)[view demo].
+View a live demo of WP Dispensary - [view demo](https://www.wpdispensary.com/demo/).
 
 ## Dispensary Menu Features
 
