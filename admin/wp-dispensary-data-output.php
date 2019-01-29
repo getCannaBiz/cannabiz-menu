@@ -288,7 +288,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
-			$wpd_details_flowers_concentrates = $wpdaroma . $wpdflavor . $wpdeffect . $wpdsymptom . $wpdcondition . $wpdvendors;
+			$wpd_details_flowers_concentrates = $wpdshelftype . $wpdstraintype . $wpdaroma . $wpdflavor . $wpdeffect . $wpdsymptom . $wpdcondition . $wpdvendors;
 		} else {
 			$wpd_details_flowers_concentrates = '';
 		}
@@ -300,7 +300,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'prerolls' === get_post_type() ) {
-			$wpd_details_prerolls = $wpdpreroll . $wpdprerollweight . $wpdvendors;
+			$wpd_details_prerolls = $wpdshelftype . $wpdstraintype . $wpdpreroll . $wpdprerollweight . $wpdvendors;
 		} else {
 			$wpd_details_prerolls = '';
 		}
