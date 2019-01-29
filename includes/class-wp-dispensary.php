@@ -5,7 +5,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://www.wpdispensary.com
+ * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
  * @package    WP_Dispensary
@@ -75,7 +75,7 @@ class WP_Dispensary {
 		if ( defined( 'WP_DISPENSARY_VERSION' ) ) {
 			$this->version = WP_DISPENSARY_VERSION;
 		} else {
-			$this->version = '2.5.4';
+			$this->version = '2.5.5';
 		}
 
 		$this->load_dependencies();

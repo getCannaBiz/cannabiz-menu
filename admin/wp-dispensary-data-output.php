@@ -2,7 +2,7 @@
 /**
  * Adding metaboxes and taxonomy data output in the_content
  *
- * @link       http://www.wpdispensary.com
+ * @link       https://www.wpdispensary.com
  * @since      1.6.0
  *
  * @package    WP_Dispensary

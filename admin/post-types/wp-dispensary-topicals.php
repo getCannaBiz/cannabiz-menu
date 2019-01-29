@@ -4,7 +4,7 @@
  *
  * This file is used to create the 'Topicals' custom post type.
  *
- * @link       http://www.wpdispensary.com
+ * @link       https://www.wpdispensary.com
  * @since      1.4.0
  *
  * @package    WP_Dispensary

@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.5.5
+* Added `strain_type` to the Growers menu type in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added `strain_type` to Growers `Details` table in `admin/post-types/wp-dispensary-data-output.php`
+* Added `shelf_type` and `strain_type` to menu item data output in `admin/post-types/wp-dispensary-data-output.php`
+* Added `shelf_type` and `strain_type` to Flowers, Concentrates and Pre-rolls `Details` table in `admin/post-types/wp-dispensary-data-output.php`
+* Updated Vendor spelling in Details table in `admin/post-types/wp-dispensary-data-output.php`
+
 ### 2.5.4
 * Bug fix for category option in carousel shortcode args to work with multiple types in `admin/wp-dispensary-shortcodes.php`
 * Updated carousel shortcode CSS to remove extra right margin on pricing in `public/css/wp-dispensary-public.css`

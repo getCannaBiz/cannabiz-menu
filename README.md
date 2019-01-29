@@ -15,7 +15,7 @@ With WP Dispensary you are able to easily create an online menu for your patient
 
 WP Dispensary version 2.0+ automatically creates a new "Dispensary Menu" page for you, pre-populated with each of the shortcodes that are available, giving you an instant starting point for building your menu.
 
-See all shortcode options in the [documentation](http://www.wpdispensary.com/section/shortcodes/)
+See all shortcode options in the [documentation](https://www.wpdispensary.com/section/shortcodes/)
 
 ## Define your dispensary style
 
