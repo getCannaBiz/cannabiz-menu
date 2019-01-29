@@ -102,7 +102,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( get_the_term_list( $post->ID, 'vendor', true ) ) {
-			$wpdvendors = '<tr><td><span>' . __( 'Vendors', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
+			$wpdvendors = '<tr><td><span>' . __( 'Vendor', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdvendors = '';
 		}
