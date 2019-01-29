@@ -312,7 +312,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'growers' === get_post_type() ) {
-			$wpd_details_growers = $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdcloneyield . $wpdclonedifficulty . $wpdvendors;
+			$wpd_details_growers = $wpdstraintype . $wpdseedcount . $wpdclonecount . $wpdcloneorigin . $wpdclonetime . $wpdcloneyield . $wpdclonedifficulty . $wpdvendors;
 		} else {
 			$wpd_details_growers = '';
 		}
