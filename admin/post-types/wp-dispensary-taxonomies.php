@@ -687,7 +687,7 @@ function wpdispensary_strain_type() {
 		'menu_name'         => __( 'Strain Type', 'wp-dispensary' ),
 	);
 
-	$straintaxtype = apply_filters( 'wpd_tax_strain_type', array( 'flowers', 'concentrates', 'prerolls' ) );
+	$straintaxtype = apply_filters( 'wpd_tax_strain_type', array( 'flowers', 'concentrates', 'prerolls', 'growers' ) );
 
 	register_taxonomy( 'strain_type', $straintaxtype, array(
 		'hierarchical'      => true,
