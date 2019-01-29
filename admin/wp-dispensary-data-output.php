@@ -65,7 +65,19 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Setting up WP Dispensary menu item data
 		 */
-		if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
+		if ( get_the_term_list( $post->ID, 'shelf_type', true ) ) {
+			$wpdshelftype = '<tr><td><span>' . __( 'Shelf', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_type', '', ', ', '' ) . '</td></tr>';
+		} else {
+			$wpdshelftype = '';
+		}
+
+		if ( get_the_term_list( $post->ID, 'strain_type', true ) ) {
+			$wpdstraintype = '<tr><td><span>' . __( 'Strain', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_type', '', ', ', '' ) . '</td></tr>';
+		} else {
+			$wpdstraintype = '';
+		}
+
+		 if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
 			$wpdaroma = '<tr><td><span>' . __( 'Aromas', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdaroma = '';
