@@ -636,12 +636,12 @@ add_filter( 'rest_prepare_growers', 'growers_category_numbers', 10, 3 );
 
 
 /**
- * Add Vendor taxonomy for all Custom Post Types
+ * Add Vendors taxonomy for all Custom Post Types
  */
 function wpd_vendor( $data, $post, $request ) {
-	$_data           = $data->data;
-	$_data['vendor'] = get_the_term_list( $post->ID, 'vendor', '', ' ', '' );
-	$data->data      = $_data;
+	$_data            = $data->data;
+	$_data['vendors'] = get_the_term_list( $post->ID, 'vendor', '', ' ', '' );
+	$data->data       = $_data;
 	return $data;
 }
 add_filter( 'rest_prepare_flowers', 'wpd_vendor', 10, 3 );
