@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 4.9.9
-Stable tag: 2.5.5
+Tested up to: 5.0.3
+Stable tag: 2.5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,12 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
 
 == Changelog ==
+
+= 2.5.6 =
+* Removed custom REST API codes for menu type Categories, Shelf and Strain type endpoints in `admin/wp-dispensary-rest-api.php`
+* Updated the order of taxonomies for Shelf type, Strain type and Vendors in `admin/post-types/wp-dispensary-taxonomies.php`
+* Updated widgets to check `display name` option by default in `admin/post-types/wp-dispensary-widgets.php`
+* WordPress Coding Standards Updates in `admin/post-types/wp-dispensary-widgets.php`
 
 = 2.5.5 =
 * Added `strain_type` to the Growers menu type in `admin/post-types/wp-dispensary-taxonomies.php`

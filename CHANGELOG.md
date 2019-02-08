@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.5.6
+* Removed custom REST API codes for menu type Categories, Shelf and Strain type endpoints in `admin/wp-dispensary-rest-api.php`
+* Updated the order of taxonomies for Shelf type, Strain type and Vendors in `admin/post-types/wp-dispensary-taxonomies.php`
+* Updated widgets to check `display name` option by default in `admin/post-types/wp-dispensary-widgets.php`
+* WordPress Coding Standards Updates in `admin/post-types/wp-dispensary-widgets.php`
+
 ### 2.5.5
 * Added `strain_type` to the Growers menu type in `admin/post-types/wp-dispensary-taxonomies.php`
 * Added `strain_type` to Growers `Details` table in `admin/post-types/wp-dispensary-data-output.php`
