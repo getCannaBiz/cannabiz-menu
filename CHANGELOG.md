@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.5.7
+* Removed custom REST API codes for Ingredients, Allergens and Vendor REST API endpoints in `admin/wp-dispensary-rest-api.php`
+
 ### 2.5.6
 * Removed custom REST API codes for menu type Categories, Shelf and Strain type endpoints in `admin/wp-dispensary-rest-api.php`
 * Updated the order of taxonomies for Shelf type, Strain type and Vendors in `admin/post-types/wp-dispensary-taxonomies.php`
