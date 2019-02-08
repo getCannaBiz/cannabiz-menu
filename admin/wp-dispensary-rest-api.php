@@ -279,17 +279,6 @@ function edibles_category_numbers( $data, $post, $request ) {
 add_filter( 'rest_prepare_edibles', 'edibles_category_numbers', 10, 3 );
 
 /**
- * Add Ingredients taxonomy for the Edibles Custom Post Type
- */
-function edibles_ingredients( $data, $post, $request ) {
-	$_data                = $data->data;
-	$_data['ingredients'] = get_the_term_list( $post->ID, 'ingredients', '', ' ', '' );
-	$data->data           = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_edibles', 'edibles_ingredients', 10, 3 );
-
-/**
  * Add 'categories' endpoint for the Topicals Custom Post Type
  *
  * @since 2.0.2
