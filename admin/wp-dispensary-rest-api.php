@@ -650,16 +650,3 @@ add_filter( 'rest_prepare_edibles', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_prerolls', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_topicals', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_growers', 'wpd_vendor', 10, 3 );
-
-/**
- * Add allergens taxonomy for Custom Post Types
- * 
- * @since 2.3.0
- */
-function wpd_allergens( $data, $post, $request ) {
-	$_data              = $data->data;
-	$_data['allergens'] = get_the_term_list( $post->ID, 'allergens', '', ' ', '' );
-	$data->data         = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_edibles', 'wpd_allergens', 10, 3 );
