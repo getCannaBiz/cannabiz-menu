@@ -182,7 +182,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			'order'          => '',
 			'featuredimage'  => '',
 			'imagesize'      => 'wpdispensary-widget',
-			'flowername'     => '',
+			'flowername'     => 'on',
 			'flowercategory' => '',
 		);
 
@@ -414,6 +414,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 			'order'               => '',
 			'featuredimage'       => '',
 			'imagesize'           => 'wpdispensary-widget',
+			'concentratename'     => 'on',
 			'concentratecategory' => '',
 		);
 
@@ -646,7 +647,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 			'order'          => '',
 			'featuredimage'  => '',
 			'imagesize'      => 'wpdispensary-widget',
-			'ediblename'     => '',
+			'ediblename'     => 'on',
 			'ediblecategory' => '',
 		);
 
@@ -884,7 +885,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 			'order'           => '',
 			'featuredimage'   => '',
 			'imagesize'       => 'wpdispensary-widget',
-			'prerollname'     => '',
+			'prerollname'     => 'on',
 			'prerollcategory' => '',
 			'prerollflower'   => '',
 		);
@@ -1123,7 +1124,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 			'order'           => '',
 			'featuredimage'   => '',
 			'imagesize'       => 'wpdispensary-widget',
-			'topicalname'     => '',
+			'topicalname'     => 'on',
 			'topicalcategory' => '',
 		);
 
@@ -1363,7 +1364,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 			'order'          => '',
 			'featuredimage'  => '',
 			'imagesize'      => 'wpdispensary-widget',
-			'growername'     => '',
+			'growername'     => 'on',
 			'growercategory' => '',
 			'growerflower'   => '',
 		);
