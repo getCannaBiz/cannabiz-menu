@@ -97,17 +97,6 @@ function growers_featuredimage( $data, $post, $request ) {
 add_filter( 'rest_prepare_growers', 'growers_featuredimage', 10, 3 );
 
 /**
- * Add Category taxonomy for the Flowers Custom Post Type
- */
-function flowers_category( $data, $post, $request ) {
-	$_data                     = $data->data;
-	$_data['flowers_category'] = get_the_term_list( $post->ID, 'flowers_category', '', ' ', '' );
-	$data->data                = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_flowers', 'flowers_category', 10, 3 );
-
-/**
  * Add 'categories' endpoint for the Flowers Custom Post Type
  *
  * @since 2.0.2
@@ -185,17 +174,6 @@ function flowers_condition( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_flowers', 'flowers_condition', 10, 3 );
-
-/**
- * Add Category taxonomy for the Concentrates Custom Post Type
- */
-function concentrates_category( $data, $post, $request ) {
-	$_data                          = $data->data;
-	$_data['concentrates_category'] = get_the_term_list( $post->ID, 'concentrates_category', '', ' ', '' );
-	$data->data                     = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_concentrates', 'concentrates_category', 10, 3 );
 
 /**
  * Add 'categories' endpoint for the Concentrates Custom Post Type
@@ -277,17 +255,6 @@ function concentrates_condition( $data, $post, $request ) {
 add_filter( 'rest_prepare_concentrates', 'concentrates_condition', 10, 3 );
 
 /**
- * Add Category taxonomy for the Edibles Custom Post Type
- */
-function edibles_category( $data, $post, $request ) {
-	$_data                     = $data->data;
-	$_data['edibles_category'] = get_the_term_list( $post->ID, 'edibles_category', '', ' ', '' );
-	$data->data                = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_edibles', 'edibles_category', 10, 3 );
-
-/**
  * Add 'categories' endpoint for the Edibles Custom Post Type
  *
  * @since 2.0.2
@@ -321,17 +288,6 @@ function edibles_ingredients( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_edibles', 'edibles_ingredients', 10, 3 );
-
-/**
- * Add Category taxonomy for the Topicals Custom Post Type
- */
-function topicals_category( $data, $post, $request ) {
-	$_data                      = $data->data;
-	$_data['topicals_category'] = get_the_term_list( $post->ID, 'topicals_category', '', ' ', '' );
-	$data->data                 = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_topicals', 'topicals_category', 10, 3 );
 
 /**
  * Add 'categories' endpoint for the Topicals Custom Post Type
@@ -666,19 +622,6 @@ function slug_update_growerinfo( $value, $object, $field_name ) {
 }
 
 /**
- * Add Category taxonomy for the Growers Custom Post Type
- *
- * @since 2.0.2
- */
-function growers_category( $data, $post, $request ) {
-	$_data                     = $data->data;
-	$_data['growers_category'] = get_the_term_list( $post->ID, 'growers_category', '', ' ', '' );
-	$data->data                = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_growers', 'growers_category', 10, 3 );
-
-/**
  * Add 'categories' endpoint for the Growers Custom Post Type
  *
  * @since 2.0.2
@@ -718,36 +661,6 @@ add_filter( 'rest_prepare_edibles', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_prerolls', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_topicals', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_growers', 'wpd_vendor', 10, 3 );
-
-/**
- * Add Shelf Type taxonomy for Custom Post Types
- * 
- * @since 2.1.0
- */
-function wpd_shelf_type( $data, $post, $request ) {
-	$_data               = $data->data;
-	$_data['shelf_type'] = get_the_term_list( $post->ID, 'shelf_type', '', ' ', '' );
-	$data->data          = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_flowers', 'wpd_shelf_type', 10, 3 );
-add_filter( 'rest_prepare_concentrates', 'wpd_shelf_type', 10, 3 );
-add_filter( 'rest_prepare_prerolls', 'wpd_shelf_type', 10, 3 );
-
-/**
- * Add Strain Type taxonomy for Custom Post Types
- * 
- * @since 2.3.0
- */
-function wpd_strain_type( $data, $post, $request ) {
-	$_data                = $data->data;
-	$_data['strain_type'] = get_the_term_list( $post->ID, 'strain_type', '', ' ', '' );
-	$data->data           = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_flowers', 'wpd_strain_type', 10, 3 );
-add_filter( 'rest_prepare_concentrates', 'wpd_strain_type', 10, 3 );
-add_filter( 'rest_prepare_prerolls', 'wpd_strain_type', 10, 3 );
 
 /**
  * Add allergens taxonomy for Custom Post Types
