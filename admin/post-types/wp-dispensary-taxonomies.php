@@ -10,6 +10,165 @@
  */
 
 /**
+ * Shelf Type
+ *
+ * Adds the Shelf Type taxonomy to specific custom post types
+ *
+ * @since    2.1.0
+ */
+
+add_action( 'init', 'wpdispensary_shelf_type', 0 );
+
+/**
+ * Shelf Type
+ */
+function wpdispensary_shelf_type() {
+
+	$labels = array(
+		'name'              => _x( 'Shelf Type', 'taxonomy general name', 'wp-dispensary' ),
+		'singular_name'     => _x( 'Shelf Type', 'taxonomy singular name', 'wp-dispensary' ),
+		'search_items'      => __( 'Search Shelf Types', 'wp-dispensary' ),
+		'all_items'         => __( 'All Shelf Types', 'wp-dispensary' ),
+		'parent_item'       => __( 'Parent Shelf Type', 'wp-dispensary' ),
+		'parent_item_colon' => __( 'Parent Shelf Type:', 'wp-dispensary' ),
+		'edit_item'         => __( 'Edit Shelf Type', 'wp-dispensary' ),
+		'update_item'       => __( 'Update Shelf Type', 'wp-dispensary' ),
+		'add_new_item'      => __( 'Add New Shelf Type', 'wp-dispensary' ),
+		'new_item_name'     => __( 'New Shelf Type Name', 'wp-dispensary' ),
+		'not_found'         => __( 'No shelf types found', 'wp-dispensary' ),
+		'menu_name'         => __( 'Shelf Type', 'wp-dispensary' ),
+	);
+
+	$shelftaxtype = apply_filters( 'wpd_tax_shelf_type', array( 'flowers', 'concentrates', 'prerolls' ) );
+
+	register_taxonomy( 'shelf_type', $shelftaxtype, array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'shelf-type',
+			'with_front' => false,
+		),
+	) );
+
+}
+
+/**
+ * Strain Type
+ *
+ * Adds the Strain Type taxonomy to specific custom post types
+ *
+ * @since    2.3.0
+ */
+
+add_action( 'init', 'wpdispensary_strain_type', 0 );
+
+/**
+ * Strain Type
+ */
+function wpdispensary_strain_type() {
+
+	$labels = array(
+		'name'              => _x( 'Strain Type', 'taxonomy general name', 'wp-dispensary' ),
+		'singular_name'     => _x( 'Strain Type', 'taxonomy singular name', 'wp-dispensary' ),
+		'search_items'      => __( 'Search Strain Types', 'wp-dispensary' ),
+		'all_items'         => __( 'All Strain Types', 'wp-dispensary' ),
+		'parent_item'       => __( 'Parent Strain Type', 'wp-dispensary' ),
+		'parent_item_colon' => __( 'Parent Strain Type:', 'wp-dispensary' ),
+		'edit_item'         => __( 'Edit Strain Type', 'wp-dispensary' ),
+		'update_item'       => __( 'Update Strain Type', 'wp-dispensary' ),
+		'add_new_item'      => __( 'Add New Strain Type', 'wp-dispensary' ),
+		'new_item_name'     => __( 'New Strain Type Name', 'wp-dispensary' ),
+		'not_found'         => __( 'No strain types found', 'wp-dispensary' ),
+		'menu_name'         => __( 'Strain Type', 'wp-dispensary' ),
+	);
+
+	$straintaxtype = apply_filters( 'wpd_tax_strain_type', array( 'flowers', 'concentrates', 'prerolls', 'growers' ) );
+
+	register_taxonomy( 'strain_type', $straintaxtype, array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'strain-type',
+			'with_front' => false,
+		),
+	) );
+
+}
+
+/**
+ * Vendor Taxonomy
+ *
+ * Adds the Vendor taxonomy to all custom post types
+ *
+ * @since    1.9.11
+ */
+
+add_action( 'init', 'wpdispensary_vendor', 0 );
+
+/**
+ * Vendor
+ */
+function wpdispensary_vendor() {
+
+	$labels = array(
+		'name'                       => _x( 'Vendors', 'general name', 'wp-dispensary' ),
+		'singular_name'              => _x( 'Vendor', 'singular name', 'wp-dispensary' ),
+		'search_items'               => __( 'Search Vendors', 'wp-dispensary' ),
+		'popular_items'              => __( 'Popular Vendors', 'wp-dispensary' ),
+		'all_items'                  => __( 'All Vendors', 'wp-dispensary' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Vendor', 'wp-dispensary' ),
+		'update_item'                => __( 'Update Vendor', 'wp-dispensary' ),
+		'add_new_item'               => __( 'Add New Vendor', 'wp-dispensary' ),
+		'new_item_name'              => __( 'New Vendor Name', 'wp-dispensary' ),
+		'separate_items_with_commas' => __( 'Separate vendors with commas', 'wp-dispensary' ),
+		'add_or_remove_items'        => __( 'Add or remove vendors', 'wp-dispensary' ),
+		'choose_from_most_used'      => __( 'Choose from the most used vendors', 'wp-dispensary' ),
+		'not_found'                  => __( 'No vendors found', 'wp-dispensary' ),
+		'menu_name'                  => __( 'Vendors', 'wp-dispensary' ),
+	);
+
+	$menu_types       = wpd_menu_types();
+	$menu_types_names = array();
+
+	// Loop through menu types
+	foreach ( $menu_types as $key=>$value ) {
+		// Strip wpd- from the menu type name.
+		$name = str_replace( "wpd-", "", $key );
+		// Add menu type name to new array.
+		$menu_types_names[] = $name;
+	}
+
+	$vendor_tax_type   = apply_filters( 'wpd_vendor_tax_type', $menu_types_names );
+
+	register_taxonomy( 'vendor', $vendor_tax_type, array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'show_in_nav_menus'     => false,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array(
+			'slug' => 'vendor',
+		),
+	) );
+
+}
+
+/**
  * Aroma Taxonomy
  *
  * Adds the Aroma taxonomy to all custom post types
@@ -540,165 +699,6 @@ function wpdispensary_growerscategory() {
 		'query_var'         => true,
 		'rewrite'           => array(
 			'slug'       => 'growers/category',
-			'with_front' => false,
-		),
-	) );
-
-}
-
-/**
- * Vendor Taxonomy
- *
- * Adds the Vendor taxonomy to all custom post types
- *
- * @since    1.9.11
- */
-
-add_action( 'init', 'wpdispensary_vendor', 0 );
-
-/**
- * Vendor
- */
-function wpdispensary_vendor() {
-
-	$labels = array(
-		'name'                       => _x( 'Vendors', 'general name', 'wp-dispensary' ),
-		'singular_name'              => _x( 'Vendor', 'singular name', 'wp-dispensary' ),
-		'search_items'               => __( 'Search Vendors', 'wp-dispensary' ),
-		'popular_items'              => __( 'Popular Vendors', 'wp-dispensary' ),
-		'all_items'                  => __( 'All Vendors', 'wp-dispensary' ),
-		'parent_item'                => null,
-		'parent_item_colon'          => null,
-		'edit_item'                  => __( 'Edit Vendor', 'wp-dispensary' ),
-		'update_item'                => __( 'Update Vendor', 'wp-dispensary' ),
-		'add_new_item'               => __( 'Add New Vendor', 'wp-dispensary' ),
-		'new_item_name'              => __( 'New Vendor Name', 'wp-dispensary' ),
-		'separate_items_with_commas' => __( 'Separate vendors with commas', 'wp-dispensary' ),
-		'add_or_remove_items'        => __( 'Add or remove vendors', 'wp-dispensary' ),
-		'choose_from_most_used'      => __( 'Choose from the most used vendors', 'wp-dispensary' ),
-		'not_found'                  => __( 'No vendors found', 'wp-dispensary' ),
-		'menu_name'                  => __( 'Vendors', 'wp-dispensary' ),
-	);
-
-	$menu_types       = wpd_menu_types();
-	$menu_types_names = array();
-
-	// Loop through menu types
-	foreach ( $menu_types as $key=>$value ) {
-		// Strip wpd- from the menu type name.
-		$name = str_replace( "wpd-", "", $key );
-		// Add menu type name to new array.
-		$menu_types_names[] = $name;
-	}
-
-	$vendor_tax_type   = apply_filters( 'wpd_vendor_tax_type', $menu_types_names );
-
-	register_taxonomy( 'vendor', $vendor_tax_type, array(
-		'hierarchical'          => false,
-		'labels'                => $labels,
-		'show_ui'               => true,
-		'show_in_rest'          => true,
-		'show_admin_column'     => true,
-		'show_in_nav_menus'     => false,
-		'update_count_callback' => '_update_post_term_count',
-		'query_var'             => true,
-		'rewrite'               => array(
-			'slug' => 'vendor',
-		),
-	) );
-
-}
-
-/**
- * Shelf Type
- *
- * Adds the Shelf Type taxonomy to specific custom post types
- *
- * @since    2.1.0
- */
-
-add_action( 'init', 'wpdispensary_shelf_type', 0 );
-
-/**
- * Shelf Type
- */
-function wpdispensary_shelf_type() {
-
-	$labels = array(
-		'name'              => _x( 'Shelf Type', 'taxonomy general name', 'wp-dispensary' ),
-		'singular_name'     => _x( 'Shelf Type', 'taxonomy singular name', 'wp-dispensary' ),
-		'search_items'      => __( 'Search Shelf Types', 'wp-dispensary' ),
-		'all_items'         => __( 'All Shelf Types', 'wp-dispensary' ),
-		'parent_item'       => __( 'Parent Shelf Type', 'wp-dispensary' ),
-		'parent_item_colon' => __( 'Parent Shelf Type:', 'wp-dispensary' ),
-		'edit_item'         => __( 'Edit Shelf Type', 'wp-dispensary' ),
-		'update_item'       => __( 'Update Shelf Type', 'wp-dispensary' ),
-		'add_new_item'      => __( 'Add New Shelf Type', 'wp-dispensary' ),
-		'new_item_name'     => __( 'New Shelf Type Name', 'wp-dispensary' ),
-		'not_found'         => __( 'No shelf types found', 'wp-dispensary' ),
-		'menu_name'         => __( 'Shelf Type', 'wp-dispensary' ),
-	);
-
-	$shelftaxtype = apply_filters( 'wpd_tax_shelf_type', array( 'flowers', 'concentrates', 'prerolls' ) );
-
-	register_taxonomy( 'shelf_type', $shelftaxtype, array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_in_rest'      => true,
-		'show_admin_column' => true,
-		'show_in_nav_menus' => true,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'shelf-type',
-			'with_front' => false,
-		),
-	) );
-
-}
-
-/**
- * Strain Type
- *
- * Adds the Strain Type taxonomy to specific custom post types
- *
- * @since    2.3.0
- */
-
-add_action( 'init', 'wpdispensary_strain_type', 0 );
-
-/**
- * Strain Type
- */
-function wpdispensary_strain_type() {
-
-	$labels = array(
-		'name'              => _x( 'Strain Type', 'taxonomy general name', 'wp-dispensary' ),
-		'singular_name'     => _x( 'Strain Type', 'taxonomy singular name', 'wp-dispensary' ),
-		'search_items'      => __( 'Search Strain Types', 'wp-dispensary' ),
-		'all_items'         => __( 'All Strain Types', 'wp-dispensary' ),
-		'parent_item'       => __( 'Parent Strain Type', 'wp-dispensary' ),
-		'parent_item_colon' => __( 'Parent Strain Type:', 'wp-dispensary' ),
-		'edit_item'         => __( 'Edit Strain Type', 'wp-dispensary' ),
-		'update_item'       => __( 'Update Strain Type', 'wp-dispensary' ),
-		'add_new_item'      => __( 'Add New Strain Type', 'wp-dispensary' ),
-		'new_item_name'     => __( 'New Strain Type Name', 'wp-dispensary' ),
-		'not_found'         => __( 'No strain types found', 'wp-dispensary' ),
-		'menu_name'         => __( 'Strain Type', 'wp-dispensary' ),
-	);
-
-	$straintaxtype = apply_filters( 'wpd_tax_strain_type', array( 'flowers', 'concentrates', 'prerolls', 'growers' ) );
-
-	register_taxonomy( 'strain_type', $straintaxtype, array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_in_rest'      => true,
-		'show_admin_column' => true,
-		'show_in_nav_menus' => true,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'strain-type',
 			'with_front' => false,
 		),
 	) );
