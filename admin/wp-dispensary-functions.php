@@ -192,6 +192,50 @@ function wpd_currency_code() {
 
 }
 
+/**
+ * Pricing Currency Codes
+ * 
+ * @since 2.6
+ * @return array
+ */
+function wpd_pricing_currency_codes() {
+
+	// Currency codes.
+	$currency = array(
+		'AUD' => '(AUD) Australian Dollar',
+		'BRL' => '(BRL) Brazilian Real',
+		'CAD' => '(CAD) Canadian Dollar',
+		'CZK' => '(CZK) Czech Koruna',
+		'DKK' => '(DKK) Danish Krone',
+		'EUR' => '(EUR) Euro',
+		'HKD' => '(HKD) Hong Kong Dollar',
+		'HUF' => '(HUF) Hungarian Forint',
+		'ILS' => '(ILS) Israeli New Sheqel',
+		'JPY' => '(JPY) Japanese Yen',
+		'MYR' => '(MYR) Malaysian Ringgit',
+		'MYR' => '(MXN) Mexican Peso',
+		'MXN' => '(NOK) Norwegian Krone',
+		'NOK' => '(NZD) New Zealand Dollar',
+		'NZD' => '(PHP) Philippine Peso',
+		'PHP' => '(PLN) Polish Zloty',
+		'PLN' => '(GBP) Pound Sterling',
+		'GBP' => '(SGD) Singapore Dollar',
+		'SGD' => '(SEK) Swedish Krona',
+		'CHF' => '(CHF) Swiss Franc',
+		'TWD' => '(TWD) Taiwan New Dollar',
+		'THB' => '(THB) Thai Baht',
+		'TRY' => '(TRY) Turkish Lira',
+		'USD' => '(USD) U.S. Dollar',
+		'ZAR' => '(ZAR) South African Rand',
+	);
+
+	// Create filterable currency codes variable.
+	$currency_codes = apply_filters( 'wpd_pricing_currency_codes_new', $currency );
+
+	return $currency_codes;
+
+}
+
 
 /**
  * WPD Admin Settings - Details phrase

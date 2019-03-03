@@ -370,32 +370,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'type'    => 'select',
 			'name'    => __( 'Currency', 'wp-dispensary' ),
 			'desc'    => __( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
-			'options' => array(
-				'AUD' => '(AUD) Australian Dollar',
-				'BRL' => '(BRL) Brazilian Real',
-				'CAD' => '(CAD) Canadian Dollar',
-				'CZK' => '(CZK) Czech Koruna',
-				'DKK' => '(DKK) Danish Krone',
-				'EUR' => '(EUR) Euro',
-				'HKD' => '(HKD) Hong Kong Dollar',
-				'HUF' => '(HUF) Hungarian Forint',
-				'ILS' => '(ILS) Israeli New Sheqel',
-				'JPY' => '(JPY) Japanese Yen',
-				'MYR' => '(MYR) Malaysian Ringgit',
-				'MYR' => '(MXN) Mexican Peso',
-				'MXN' => '(NOK) Norwegian Krone',
-				'NOK' => '(NZD) New Zealand Dollar',
-				'NZD' => '(PHP) Philippine Peso',
-				'PHP' => '(PLN) Polish Zloty',
-				'PLN' => '(GBP) Pound Sterling',
-				'GBP' => '(SGD) Singapore Dollar',
-				'SGD' => '(SEK) Swedish Krona',
-				'CHF' => '(CHF) Swiss Franc',
-				'TWD' => '(TWD) Taiwan New Dollar',
-				'THB' => '(THB) Thai Baht',
-				'TRY' => '(TRY) Turkish Lira',
-				'USD' => '(USD) U.S. Dollar',
-			),
+			'options' => wpd_pricing_currency_codes()
 		)
 	);
 
