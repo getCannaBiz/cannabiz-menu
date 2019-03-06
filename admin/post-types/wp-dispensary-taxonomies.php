@@ -17,11 +17,6 @@
  * @since    2.1.0
  */
 
-add_action( 'init', 'wpdispensary_shelf_type', 0 );
-
-/**
- * Shelf Type
- */
 function wpdispensary_shelf_type() {
 
 	$labels = array(
@@ -56,6 +51,7 @@ function wpdispensary_shelf_type() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_shelf_type', 0 );
 
 /**
  * Strain Type
@@ -63,12 +59,6 @@ function wpdispensary_shelf_type() {
  * Adds the Strain Type taxonomy to specific custom post types
  *
  * @since    2.3.0
- */
-
-add_action( 'init', 'wpdispensary_strain_type', 0 );
-
-/**
- * Strain Type
  */
 function wpdispensary_strain_type() {
 
@@ -104,6 +94,7 @@ function wpdispensary_strain_type() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_strain_type', 0 );
 
 /**
  * Vendor Taxonomy
@@ -111,12 +102,6 @@ function wpdispensary_strain_type() {
  * Adds the Vendor taxonomy to all custom post types
  *
  * @since    1.9.11
- */
-
-add_action( 'init', 'wpdispensary_vendor', 0 );
-
-/**
- * Vendor
  */
 function wpdispensary_vendor() {
 
@@ -167,6 +152,7 @@ function wpdispensary_vendor() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_vendor', 0 );
 
 /**
  * Aroma Taxonomy
@@ -174,12 +160,6 @@ function wpdispensary_vendor() {
  * Adds the Aroma taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_aroma', 0 );
-
-/**
- * Aroma
  */
 function wpdispensary_aroma() {
 
@@ -219,6 +199,7 @@ function wpdispensary_aroma() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_aroma', 0 );
 
 /**
  * Flavor Taxonomy
@@ -226,12 +207,6 @@ function wpdispensary_aroma() {
  * Adds the Flavor taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_flavor', 0 );
-
-/**
- * Flavor
  */
 function wpdispensary_flavor() {
 
@@ -270,6 +245,7 @@ function wpdispensary_flavor() {
 		),
 	) );
 }
+add_action( 'init', 'wpdispensary_flavor', 0 );
 
 /**
  * Effect Taxonomy
@@ -277,12 +253,6 @@ function wpdispensary_flavor() {
  * Adds the Effect taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_effect', 0 );
-
-/**
- * Effect
  */
 function wpdispensary_effect() {
 
@@ -321,6 +291,7 @@ function wpdispensary_effect() {
 		),
 	) );
 }
+add_action( 'init', 'wpdispensary_effect', 0 );
 
 /**
  * Symptom Taxonomy
@@ -328,12 +299,6 @@ function wpdispensary_effect() {
  * Adds the Symptom taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_symptom', 0 );
-
-/**
- * Symptom
  */
 function wpdispensary_symptom() {
 
@@ -372,6 +337,7 @@ function wpdispensary_symptom() {
 		),
 	) );
 }
+add_action( 'init', 'wpdispensary_symptom', 0 );
 
 /**
  * Condition Taxonomy
@@ -379,12 +345,6 @@ function wpdispensary_symptom() {
  * Adds the Condition taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_condition', 0 );
-
-/**
- * Condition
  */
 function wpdispensary_condition() {
 
@@ -423,6 +383,7 @@ function wpdispensary_condition() {
 		),
 	) );
 }
+add_action( 'init', 'wpdispensary_condition', 0 );
 
 /**
  * Ingredient Taxonomy
@@ -430,12 +391,6 @@ function wpdispensary_condition() {
  * Adds the Ingredient taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_ingredient', 0 );
-
-/**
- * Ingredient
  */
 function wpdispensary_ingredient() {
 
@@ -474,6 +429,7 @@ function wpdispensary_ingredient() {
 		),
 	) );
 }
+add_action( 'init', 'wpdispensary_ingredient', 0 );
 
 /**
  * Flower Category Taxonomy
@@ -481,12 +437,6 @@ function wpdispensary_ingredient() {
  * Adds the Flower Category taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_flowercategory', 0 );
-
-/**
- * Flower category
  */
 function wpdispensary_flowercategory() {
 
@@ -520,6 +470,7 @@ function wpdispensary_flowercategory() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_flowercategory', 0 );
 
 /**
  * Edible Category Taxonomy
@@ -527,12 +478,6 @@ function wpdispensary_flowercategory() {
  * Adds the Edible Category taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_ediblecategory', 0 );
-
-/**
- * Edible category
  */
 function wpdispensary_ediblecategory() {
 
@@ -566,6 +511,7 @@ function wpdispensary_ediblecategory() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_ediblecategory', 0 );
 
 /**
  * Concentrate Category Taxonomy
@@ -573,12 +519,6 @@ function wpdispensary_ediblecategory() {
  * Adds the Concentrate Category taxonomy to all custom post types
  *
  * @since    1.0.0
- */
-
-add_action( 'init', 'wpdispensary_concentratecategory', 0 );
-
-/**
- * Concentrate category
  */
 function wpdispensary_concentratecategory() {
 
@@ -612,6 +552,7 @@ function wpdispensary_concentratecategory() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_concentratecategory', 0 );
 
 /**
  * Topical Category Taxonomy
@@ -619,12 +560,6 @@ function wpdispensary_concentratecategory() {
  * Adds the Topical Category taxonomy to all custom post types
  *
  * @since    1.4.0
- */
-
-add_action( 'init', 'wpdispensary_topicalcategory', 0 );
-
-/**
- * Topical category
  */
 function wpdispensary_topicalcategory() {
 
@@ -658,6 +593,7 @@ function wpdispensary_topicalcategory() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_topicalcategory', 0 );
 
 /**
  * Grower Category Taxonomy
@@ -665,12 +601,6 @@ function wpdispensary_topicalcategory() {
  * Adds the Grower Category taxonomy to all custom post types
  *
  * @since    1.7.0
- */
-
-add_action( 'init', 'wpdispensary_growerscategory', 0 );
-
-/**
- * Growers category
  */
 function wpdispensary_growerscategory() {
 
@@ -704,6 +634,7 @@ function wpdispensary_growerscategory() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_growerscategory', 0 );
 
 /**
  * Allergens Taxonomy
@@ -711,12 +642,6 @@ function wpdispensary_growerscategory() {
  * Adds the Allergens taxonomy to specific custom post types
  *
  * @since    2.3.0
- */
-
-add_action( 'init', 'wpdispensary_allergens', 0 );
-
-/**
- * Allergen
  */
 function wpdispensary_allergens() {
 
@@ -756,3 +681,4 @@ function wpdispensary_allergens() {
 	) );
 
 }
+add_action( 'init', 'wpdispensary_allergens', 0 );

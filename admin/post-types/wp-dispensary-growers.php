@@ -88,6 +88,7 @@ function wpdispensary_growers() {
 		'rewrite'             => $rewrite,
 		'capability_type'     => 'post',
 	);
+
 	register_post_type( 'growers', $args );
 
 }

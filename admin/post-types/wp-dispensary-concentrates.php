@@ -88,6 +88,7 @@ function wpdispensary_concentrates() {
 		'rewrite'             => $rewrite,
 		'capability_type'     => 'post',
 	);
+
 	register_post_type( 'concentrates', $args );
 
 }

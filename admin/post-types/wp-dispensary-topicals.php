@@ -88,6 +88,7 @@ function wpdispensary_topicals() {
 		'rewrite'             => $rewrite,
 		'capability_type'     => 'post',
 	);
+
 	register_post_type( 'topicals', $args );
 
 }

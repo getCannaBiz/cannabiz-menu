@@ -1154,10 +1154,10 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$clonedetails_meta['_origin']      = $_POST['_origin'];
-	$clonedetails_meta['_time']        = $_POST['_time'];
-	$clonedetails_meta['_yield']       = $_POST['_yield'];
-	$clonedetails_meta['_difficulty']  = $_POST['_difficulty'];
+	$clonedetails_meta['_origin']     = $_POST['_origin'];
+	$clonedetails_meta['_time']       = $_POST['_time'];
+	$clonedetails_meta['_yield']      = $_POST['_yield'];
+	$clonedetails_meta['_difficulty'] = $_POST['_difficulty'];
 
 	/** Add values of $clonedetails_meta as custom fields */
 

@@ -365,7 +365,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 		wp_reset_postdata();
 
 		if ( 'on' !== $instance['featuredimage'] ) {
-				echo '</ul>';
+			echo '</ul>';
 		}
 
 		do_action( 'wpd_concentrates_widget_after' );

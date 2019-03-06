@@ -92,6 +92,7 @@ function wpdispensary_prerolls() {
 		'rewrite'             => $rewrite,
 		'capability_type'     => 'post',
 	);
+
 	register_post_type( 'prerolls', $args );
 
 }

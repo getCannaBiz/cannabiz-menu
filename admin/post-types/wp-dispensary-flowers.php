@@ -38,7 +38,7 @@ function wpdispensary_flowers() {
 		'feeds'      => true,
 	);
 
-	$labels  = array(
+	$labels = array(
 		'name'                  => sprintf( esc_html__( '%s', 'Post Type General Name', 'wp-dispensary' ), $wpd_flowers_slug_cap ),
 		'singular_name'         => sprintf( esc_html__( '%s', 'Post Type Singular Name', 'wp-dispensary' ), $wpd_flowers_slug_cap ),
 		'menu_name'             => sprintf( esc_html__( '%s', 'wp-dispensary' ), $wpd_flowers_slug_cap ),
@@ -65,7 +65,8 @@ function wpdispensary_flowers() {
 		'items_list_navigation' => sprintf( esc_html__( '%s list navigation', 'wp-dispensary' ), $wpd_flowers_slug_cap ),
 		'filter_items_list'     => sprintf( esc_html__( 'Filter %s list', 'wp-dispensary' ), $wpd_flowers_slug ),
 	);
-	$args    = array(
+
+	$args = array(
 		'label'               => sprintf( esc_html__( '%s', 'wp-dispensary' ), $wpd_flowers_slug_cap ),
 		'description'         => sprintf( esc_html__( 'Display the %s from your menu', 'wp-dispensary' ), $wpd_flowers_slug ),
 		'labels'              => $labels,
@@ -87,6 +88,7 @@ function wpdispensary_flowers() {
 		'rewrite'             => $rewrite,
 		'capability_type'     => 'post',
 	);
+
 	register_post_type( 'flowers', $args );
 
 }

@@ -88,6 +88,7 @@ function wpdispensary_edibles() {
 		'rewrite'             => $rewrite,
 		'capability_type'     => 'post',
 	);
+
 	register_post_type( 'edibles', $args );
 
 }
