@@ -71,7 +71,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
 		do_action( 'wpd_flowers_widget_before' );
 
-		if ( ! 'on' == $instance['featuredimage'] ) {
+		if ( 'on' !== $instance['featuredimage'] ) {
 			echo "<ul class='wpdispensary-list'>";
 		}
 
