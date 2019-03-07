@@ -39,14 +39,14 @@ function wp_dispensary_columns_data( $column, $post_id ) {
 
 // Add thumbnails to post_type screen for WPD menu types.
 if ( isset( $_GET['post_type'] ) ) {
-	$post_type        = $_GET['post_type'];
+	$post_type        = esc_html( $_GET['post_type'] );
 	$menu_types       = wpd_menu_types();
 	$menu_types_names = array();
 
 	// Loop through menu types.
 	foreach ( $menu_types as $key=>$value ) {
 		// Strip wpd- from the menu type name.
-		$name = str_replace( "wpd-", "", $key );
+		$name = str_replace( 'wpd-', '', $key );
 		// Add menu type name to new array.
 		$menu_types_simple[] = $name;
 	}
@@ -83,7 +83,7 @@ add_filter( 'default_hidden_meta_boxes', 'hide_meta_box', 10, 2 );
 function flowers_metabox_order( $order ) {
 	return array(
 		'normal' => join(
-			",",
+			',',
 			array(
 				'wpdispensary_prices',
 				'wpdispensary_compounds',
@@ -97,13 +97,13 @@ add_filter( 'get_user_option_meta-box-order_flowers', 'flowers_metabox_order' );
 function edibles_metabox_order( $order ) {
 	return array(
 		'side' => join(
-			",",
+			',',
 			array(
 				'submitdiv',
 			)
 		),
 		'normal' => join(
-			",",
+			',',
 			array(
 				'wpdispensary_singleprices',
 			)
@@ -116,14 +116,14 @@ add_filter( 'get_user_option_meta-box-order_edibles', 'edibles_metabox_order' );
 function prerolls_metabox_order( $order ) {
 	return array(
 		'side' => join(
-			",",
+			',',
 			array(
 				'submitdiv',
 				'select-flowers-metabox',
 			)
 		),
 		'normal' => join(
-			",",
+			',',
 			array(
 				'wpdispensary_singleprices',
 			)
@@ -136,14 +136,14 @@ add_filter( 'get_user_option_meta-box-order_prerolls', 'prerolls_metabox_order' 
 function growers_metabox_order( $order ) {
 	return array(
 		'side' => join(
-			",",
+			',',
 			array(
 				'submitdiv',
 				'select-flowers-metabox',
 			)
 		),
 		'normal' => join(
-			",",
+			',',
 			array(
 				'wpdispensary_singleprices',
 			)
