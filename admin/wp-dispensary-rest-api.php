@@ -315,10 +315,7 @@ add_action( 'rest_api_init', 'slug_register_prices' );
  * Registering Prices
  */
 function slug_register_prices() {
-	/**
-	 * @todo add filter to array.
-	 */
-	$productsizes = array( '_gram', '_twograms', '_eighth', '_fivegrams', '_quarter', '_halfounce', '_ounce' );
+	$productsizes = apply_filters( 'wpd_rest_api_register_flowers_prices', array( '_gram', '_twograms', '_eighth', '_fivegrams', '_quarter', '_halfounce', '_ounce' ) );
 	foreach ( $productsizes as $size ) {
 		register_rest_field(
 			array( 'flowers' ),
@@ -359,10 +356,7 @@ add_action( 'rest_api_init', 'slug_register_concentrateprices' );
  * Registering Prices
  */
 function slug_register_concentrateprices() {
-	/**
-	 * @todo add filter to array.
-	 */
-	$productsizes = array( '_priceeach', '_halfgram', '_gram', '_twograms' );
+	$productsizes = apply_filters( 'wpd_rest_api_register_concentrates_prices', array( '_priceeach', '_halfgram', '_gram', '_twograms' ) );
 	foreach ( $productsizes as $size ) {
 		register_rest_field(
 			array( 'concentrates' ),
@@ -403,10 +397,7 @@ add_action( 'rest_api_init', 'slug_register_edibleinfo' );
  * Register Edible information
  */
 function slug_register_edibleinfo() {
-	/**
-	 * @todo add filter to array.
-	 */
-	$edibleinformation = array( '_thcmg', '_thcservings', '_priceeach', '_unitsperpack', 'priceperpack' );
+	$edibleinformation = apply_filters( 'wpd_rest_api_register_edibles_info', array( '_thcmg', '_thcservings', '_priceeach', '_unitsperpack', 'priceperpack' ) );
 	foreach ( $edibleinformation as $edibleinfo ) {
 		register_rest_field(
 			'edibles',
@@ -447,10 +438,7 @@ add_action( 'rest_api_init', 'slug_register_prerollinfo' );
  * Register Pre-roll info
  */
 function slug_register_prerollinfo() {
-	/**
-	 * @todo add filter to array.
-	 */
-	$prerollinformation = array( '_priceeach', '_selected_flowers', '_unitsperpack', 'priceperpack', '_preroll_weight' );
+	$prerollinformation = apply_filters( 'wpd_rest_api_register_prerolls_info', array( '_priceeach', '_selected_flowers', '_unitsperpack', 'priceperpack', '_preroll_weight' ) );
 	foreach ( $prerollinformation as $prerollinfo ) {
 		register_rest_field(
 			'prerolls',
@@ -535,10 +523,7 @@ add_action( 'rest_api_init', 'slug_register_topicalinfo' );
  * Register Topical info
  */
 function slug_register_topicalinfo() {
-	/**
-	 * @todo add filter to array.
-	 */
-	$topicalinformation = array( '_pricetopical', '_unitsperpack', 'priceperpack', '_thctopical', '_cbdtopical', '_sizetopical' );
+	$topicalinformation = apply_filters( 'wpd_rest_api_register_topicals_info', array( '_pricetopical', '_unitsperpack', 'priceperpack', '_thctopical', '_cbdtopical', '_sizetopical' ) );
 	foreach ( $topicalinformation as $topicalinfo ) {
 		register_rest_field(
 			'topicals',
@@ -579,10 +564,7 @@ add_action( 'rest_api_init', 'slug_register_growerinfo' );
  * Register Grower info
  */
 function slug_register_growerinfo() {
-	/**
-	 * @todo add filter to array.
-	 */
-	$growerinformation = array( '_priceeach', '_unitsperpack', 'priceperpack', '_selected_flowers', '_seedcount', '_clonecount', '_time', '_origin', '_yield', '_difficulty' );
+	$growerinformation = apply_filters( 'wpd_rest_api_register_growers_info', array( '_priceeach', '_unitsperpack', 'priceperpack', '_selected_flowers', '_seedcount', '_clonecount', '_time', '_origin', '_yield', '_difficulty' ) );
 	foreach ( $growerinformation as $growerinfo ) {
 		register_rest_field(
 			'growers',

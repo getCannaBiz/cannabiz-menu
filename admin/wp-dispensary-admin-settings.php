@@ -482,7 +482,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 
 		$checkout_payment_options = apply_filters( 'wpd_ecommerce_checkout_payment_options', $checkout_payments );
 
-		foreach ( $checkout_payments_options as $id=>$value ) {
+		foreach ( $checkout_payment_options as $id=>$value ) {
 
 			/**
 			 * Add Field: Display a title to help separate fields
