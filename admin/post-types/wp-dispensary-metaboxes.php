@@ -239,13 +239,13 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_gram']      = $_POST['_gram'];
-	$prices_meta['_twograms']  = $_POST['_twograms'];
-	$prices_meta['_eighth']    = $_POST['_eighth'];
-	$prices_meta['_fivegrams'] = $_POST['_fivegrams'];
-	$prices_meta['_quarter']   = $_POST['_quarter'];
-	$prices_meta['_halfounce'] = $_POST['_halfounce'];
-	$prices_meta['_ounce']     = $_POST['_ounce'];
+	$prices_meta['_gram']      = esc_html( $_POST['_gram'] );
+	$prices_meta['_twograms']  = esc_html( $_POST['_twograms'] );
+	$prices_meta['_eighth']    = esc_html( $_POST['_eighth'] );
+	$prices_meta['_fivegrams'] = esc_html( $_POST['_fivegrams'] );
+	$prices_meta['_quarter']   = esc_html( $_POST['_quarter'] );
+	$prices_meta['_halfounce'] = esc_html( $_POST['_halfounce'] );
+	$prices_meta['_ounce']     = esc_html( $_POST['_ounce'] );
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -359,10 +359,10 @@ function wpdispensary_save_concentrateprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$concentrateprices_meta['_priceeach'] = $_POST['_priceeach'];
-	$concentrateprices_meta['_halfgram']  = $_POST['_halfgram'];
-	$concentrateprices_meta['_gram']      = $_POST['_gram'];
-	$concentrateprices_meta['_twograms']  = $_POST['_twograms'];
+	$concentrateprices_meta['_priceeach'] = esc_html( $_POST['_priceeach'] );
+	$concentrateprices_meta['_halfgram']  = esc_html( $_POST['_halfgram'] );
+	$concentrateprices_meta['_gram']      = esc_html( $_POST['_gram'] );
+	$concentrateprices_meta['_twograms']  = esc_html( $_POST['_twograms'] );
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -608,9 +608,9 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_priceeach']    = $_POST['_priceeach'];
-	$prices_meta['_priceperpack'] = $_POST['_priceperpack'];
-	$prices_meta['_unitsperpack'] = $_POST['_unitsperpack'];
+	$prices_meta['_priceeach']    = esc_html( $_POST['_priceeach'] );
+	$prices_meta['_priceperpack'] = esc_html( $_POST['_priceperpack'] );
+	$prices_meta['_unitsperpack'] = esc_html( $_POST['_unitsperpack'] );
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -720,9 +720,9 @@ function wpdispensary_save_topicalprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_pricetopical'] = $_POST['_pricetopical'];
-	$prices_meta['_priceperpack'] = $_POST['_priceperpack'];
-	$prices_meta['_unitsperpack'] = $_POST['_unitsperpack'];
+	$prices_meta['_pricetopical'] = esc_html( $_POST['_pricetopical'] );
+	$prices_meta['_priceperpack'] = esc_html( $_POST['_priceperpack'] );
+	$prices_meta['_unitsperpack'] = esc_html( $_POST['_unitsperpack'] );
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -824,8 +824,8 @@ function wpdispensary_save_grower_product_details_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	 $grower_product_details['_clonecount'] = $_POST['_clonecount'];
-	 $grower_product_details['_seedcount']  = $_POST['_seedcount'];
+	 $grower_product_details['_clonecount'] = esc_html( $_POST['_clonecount'] );
+	 $grower_product_details['_seedcount']  = esc_html( $_POST['_seedcount'] );
 
 	/** Add values of $clonecount as custom fields */
 
@@ -935,10 +935,10 @@ function wpdispensary_save_thc_cbd_mg_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thc_cbd_mg_meta['_thcmg']          = $_POST['_thcmg'];
-	$thc_cbd_mg_meta['_cbdmg']          = $_POST['_cbdmg'];
-	$thc_cbd_mg_meta['_thccbdservings'] = $_POST['_thccbdservings'];
-	$thc_cbd_mg_meta['_netweight']      = $_POST['_netweight'];
+	$thc_cbd_mg_meta['_thcmg']          = esc_html( $_POST['_thcmg'] );
+	$thc_cbd_mg_meta['_cbdmg']          = esc_html( $_POST['_cbdmg'] );
+	$thc_cbd_mg_meta['_thccbdservings'] = esc_html( $_POST['_thccbdservings'] );
+	$thc_cbd_mg_meta['_netweight']      = esc_html( $_POST['_netweight'] );
 
 	/** Add values of $thccbdmg_meta as custom fields */
 
@@ -1043,9 +1043,9 @@ function wpdispensary_save_thccbdtopical_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thcmgtopical_meta['_thctopical']  = $_POST['_thctopical'];
-	$thcmgtopical_meta['_cbdtopical']  = $_POST['_cbdtopical'];
-	$thcmgtopical_meta['_sizetopical'] = $_POST['_sizetopical'];
+	$thcmgtopical_meta['_thctopical']  = esc_html( $_POST['_thctopical'] );
+	$thcmgtopical_meta['_cbdtopical']  = esc_html( $_POST['_cbdtopical'] );
+	$thcmgtopical_meta['_sizetopical'] = esc_html( $_POST['_sizetopical'] );
 
 	/** Add values of $thcmg_meta as custom fields */
 
@@ -1154,10 +1154,10 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$clonedetails_meta['_origin']     = $_POST['_origin'];
-	$clonedetails_meta['_time']       = $_POST['_time'];
-	$clonedetails_meta['_yield']      = $_POST['_yield'];
-	$clonedetails_meta['_difficulty'] = $_POST['_difficulty'];
+	$clonedetails_meta['_origin']     = esc_html( $_POST['_origin'] );
+	$clonedetails_meta['_time']       = esc_html( $_POST['_time'] );
+	$clonedetails_meta['_yield']      = esc_html( $_POST['_yield'] );
+	$clonedetails_meta['_difficulty'] = esc_html( $_POST['_difficulty'] );
 
 	/** Add values of $clonedetails_meta as custom fields */
 
@@ -1251,7 +1251,7 @@ function wpdispensary_save_preroll_weight_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$preroll_weight_meta['_preroll_weight'] = $_POST['_preroll_weight'];
+	$preroll_weight_meta['_preroll_weight'] = esc_html( $_POST['_preroll_weight'] );
 
 	/** Add values of $preroll_weight_meta as custom fields */
 
