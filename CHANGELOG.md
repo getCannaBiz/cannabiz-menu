@@ -1,5 +1,17 @@
 # Changelog
 
+### 2.5.8
+* Added Pricing Currency Codes helper function in `admin/wp-dispensary-functions.php`
+* Added filter for widget image sizes in `admin/post-types/wp-dispensary-widgets.php`
+* Added filter for eCommerce checkout payment options in `admin/wp-dispensary-admin-settings.php`
+* Added 6 filters for REST API endpoint details in `admin/wp-dispensary-rest-api.php`
+* Bug fixed for mixmatched currency codes in `wpd_pricing_currency_codes` helper function in `admin/wp-dispensary-functions.php`
+* Updated Currency Codes option in WPD Settings to use the new helper function in `admin/wp-dispensary-admin-settings.php`
+* Updated `$_POST` values for metaboxes with `esc_html` in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated data output to hide vendors, strain type & shelf type if eCommerce add-on is active in `admin/wp-dispensary-data-output.php`
+* WordPress Coding Standards updates throughout various files in the plugin
+* General code cleanup throughout various files in the plugin
+
 ### 2.5.7
 * Removed custom REST API codes for Ingredients, Allergens and Vendor REST API endpoints in `admin/wp-dispensary-rest-api.php`
 
