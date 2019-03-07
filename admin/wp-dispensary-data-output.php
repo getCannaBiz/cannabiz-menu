@@ -65,19 +65,35 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Setting up WP Dispensary menu item data
 		 */
-		if ( get_the_term_list( $post->ID, 'shelf_type', true ) ) {
-			$wpdshelftype = '<tr><td><span>' . __( 'Shelf', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_type', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdshelftype = '';
-		}
+		// Required for is_plugin_active function.
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-		if ( get_the_term_list( $post->ID, 'strain_type', true ) ) {
-			$wpdstraintype = '<tr><td><span>' . __( 'Strain', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_type', '', ', ', '' ) . '</td></tr>';
-		} else {
+		// Check if WPD eCommerce is active.
+		if ( is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+			// Make variables empty since they're displayed elsewhere in the eCommerce plugin.
+			$wpdshelftype  = '';
 			$wpdstraintype = '';
+			$wpdvendors    = '';
+		} else {
+			if ( get_the_term_list( $post->ID, 'shelf_type', true ) ) {
+				$wpdshelftype = '<tr><td><span>' . __( 'Shelf', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_type', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdshelftype = '';
+			}
+
+			if ( get_the_term_list( $post->ID, 'strain_type', true ) ) {
+				$wpdstraintype = '<tr><td><span>' . __( 'Strain', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_type', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdstraintype = '';
+			}
+			if ( get_the_term_list( $post->ID, 'vendor', true ) ) {
+				$wpdvendors = '<tr><td><span>' . __( 'Vendor', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
+			} else {
+				$wpdvendors = '';
+			}
 		}
 
-		 if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
+		if ( get_the_term_list( $post->ID, 'aroma', true ) ) {
 			$wpdaroma = '<tr><td><span>' . __( 'Aromas', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdaroma = '';
@@ -111,12 +127,6 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpdingredients = '<tr><td><span>' . __( 'Ingredients', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'ingredients', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpdingredients = '';
-		}
-
-		if ( get_the_term_list( $post->ID, 'vendor', true ) ) {
-			$wpdvendors = '<tr><td><span>' . __( 'Vendor', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
-		} else {
-			$wpdvendors = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'allergens', true ) ) {
