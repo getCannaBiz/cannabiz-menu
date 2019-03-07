@@ -473,16 +473,16 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		/**
 		 * Checkout payment options
 		 * 
-		 * @todo make this filterable.
 		 * @since 2.5
 		 */
 		$checkout_payments = array(
 			'cod'    => __( 'Cash on delivery', 'wp-dispensary' ),
 			'pop'    => __( 'Pay on pickup', 'wp-dispensary' ),
-			//'ground' => __( 'Ground shipping', 'wp-dispensary' ),
 		);
 
-		foreach ( $checkout_payments as $id=>$value ) {
+		$checkout_payment_options = apply_filters( 'wpd_ecommerce_checkout_payment_options', $checkout_payments );
+
+		foreach ( $checkout_payments_options as $id=>$value ) {
 
 			/**
 			 * Add Field: Display a title to help separate fields
