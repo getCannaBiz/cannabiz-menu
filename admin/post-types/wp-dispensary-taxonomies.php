@@ -34,7 +34,7 @@ function wpdispensary_shelf_type() {
 		'menu_name'         => __( 'Shelf Type', 'wp-dispensary' ),
 	);
 
-	$shelftaxtype = apply_filters( 'wpd_tax_shelf_type', array( 'flowers', 'concentrates', 'prerolls' ) );
+	$shelftaxtype = apply_filters( 'wpd_tax_shelf_type', array( 'flowers', 'concentrates', 'prerolls', 'growers' ) );
 
 	register_taxonomy( 'shelf_type', $shelftaxtype, array(
 		'hierarchical'      => true,
