@@ -75,21 +75,23 @@ class WP_Dispensary_Activator {
 		$wp_rewrite->flush_rules();
 
 		/**
-		 * Create "Dispensary Menu" page with shortcodes
+		 * Create "Menu" page with shortcodes
 		 *
-		 * @since 2.0
+		 * @since 2.0 - last updated 2.6
 		 */
 		if ( ! current_user_can( 'activate_plugins' ) ) return;
+
 		global $wpdb;
+
 		if ( null === $wpdb->get_row( "SELECT post_name FROM {$wpdb->prefix}posts WHERE post_name = 'dispensary-menu'", 'ARRAY_A' ) ) {
 			$current_user = wp_get_current_user();
 			// create post object.
 			$page = array(
-				'post_title'   => __( 'Dispensary Menu' ),
+				'post_title'   => __( 'Menu' ),
 				'post_status'  => 'publish',
 				'post_author'  => $current_user->ID,
 				'post_type'    => 'page',
-				'post_content' => '[wpd-flowers]<br /><br />[wpd-concentrates]<br /><br />[wpd-edibles]<br /><br />[wpd-prerolls]<br /><br />[wpd-topicals]<br /><br />[wpd-growers]',
+				'post_content' => '[wpd_menu]',
 			);
 
 			// insert the page into the database.
