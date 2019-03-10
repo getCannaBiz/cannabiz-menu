@@ -614,6 +614,8 @@ function get_wpd_growers_prices_simple( $id = NULL, $phrase = NULL ) {
 function get_wpd_all_prices_simple( $phrase = NULL ) {
 
 	global $post;
+
+	$str = '';
 	
 	if ( 'flowers' == get_post_type( $post->ID ) ) {
 		$str .= get_wpd_flowers_prices_simple( $phrase = NULL );
