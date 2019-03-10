@@ -641,7 +641,7 @@ function get_wpd_all_prices_simple( $phrase = NULL ) {
 		$str .= get_wpd_growers_prices_simple( $phrase = NULL );
 	}
 
-	return $str;
+	return apply_filters( 'get_wpd_all_prices_simple', $str );
 }
 
 /**
