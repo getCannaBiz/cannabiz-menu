@@ -68,24 +68,28 @@ ul.wpdispensary-list li:before {
 
 /* Shortcodes */
 
-.wpdispensary {
+.wpdispensary,
+.wpd-menu {
   display: inline-block;
   position: relative;
   width: 100%;
 }
 
-.wpdshortcode {
+.wpdshortcode,
+.wpd-menu-item {
   float: left;
   margin: 12px 0;
   position: relative;
   width: 32%;
 }
 
-.wpdshortcode:nth-child(3n+3) {
+.wpdshortcode:nth-child(3n+3),
+.wpd-menu-item:nth-child(3n+2) {
 	margin: 12px 2%;
 }
 
-.wpdshortcode p {
+.wpdshortcode p,
+.wpd-menu-item p.wpd-producttitle {
   margin: 12px 0 0 0;
   padding: 0;
 }
@@ -96,6 +100,10 @@ span.wpd-productinfo {
   color: #AAA;
   font-size: 13px;
   margin-right: 10px;
+}
+
+span.wpd-productinfo span.wpd-productinfo.pricing {
+	margin-right: 0;
 }
 
 h2.wpd-title {

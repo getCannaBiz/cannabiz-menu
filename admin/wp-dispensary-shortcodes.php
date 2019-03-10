@@ -1744,3 +1744,389 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 }
 add_shortcode( 'wpd-carousel', 'wpdispensary_carousel_shortcode' );
+
+/**
+ * WP Dispensary Menu Shortcode
+ *
+ * @access public
+ *
+ * @return string HTML markup.
+ * 
+ * @since 2.6
+ */
+function wp_dispensary_menu_shortcode( $atts ) {
+
+	// Menu types (array).
+	$array_types = wpd_menu_types();
+
+	// Loop through menu types.
+	foreach ( $array_types as $key=>$value ) {
+		// Strip wpd- from the menu type name.
+		$name = str_replace( 'wpd-', '', $key );
+		// Add menu type name to new array.
+		$menu_types_simple[] = $name;
+	}
+
+	// Menu types (string).
+	$menu_types = implode ( ', ', $menu_types_simple );
+
+	// Attributes.
+	extract( shortcode_atts(
+		array(
+			'title'       => 'show',
+			'posts'       => '100',
+			'id'          => '',
+			'class'       => '',
+			'name'        => 'show',
+			'price'       => 'show',
+			'thc'         => 'show',
+			'thca'        => '',
+			'cbd'         => '',
+			'cba'         => '',
+			'cbn'         => '',
+			'cbg'         => '',
+			'thcmg'       => '',
+			'thc_topical' => '',
+			'aroma'       => '',
+			'flavor'      => '',
+			'effect'      => '',
+			'symptom'     => '',
+			'condition'   => '',
+			'vendor'      => '',
+			'category'    => '',
+			'shelf_type'  => '',
+			'strain_type' => '',
+			'total_thc'   => 'show',
+			'weight'      => 'show',
+			'seed_count'  => 'show',
+			'clone_count' => 'show',
+			'size'        => 'show',
+			'servings'    => '',
+			'orderby'     => '',
+			'meta_key'    => '',
+			'type'        => $menu_types,
+			'image_size'  => 'wpd-small',
+		),
+		$atts,
+		'wpd_menu'
+	) );
+
+	// Default variables.
+	$order     = '';
+	$order_new = '';
+
+	// Create $tax_query variable.
+	$tax_query = array(
+		'relation' => 'AND',
+	);
+
+	// Add aromas to $tax_query.
+	if ( '' !== $aroma ) {
+			$tax_query[] = array(
+				'taxonomy' => 'aroma',
+				'field'    => 'slug',
+				'terms'    => $aroma,
+			);
+	}
+
+	// Add flavors to $tax_query.
+	if ( '' !== $flavor ) {
+			$tax_query[] = array(
+				'taxonomy' => 'flavor',
+				'field'    => 'slug',
+				'terms'    => $flavor,
+			);
+	}
+
+	// Add effects to $tax_query.
+	if ( '' !== $effect ) {
+			$tax_query[] = array(
+				'taxonomy' => 'effect',
+				'field'    => 'slug',
+				'terms'    => $effect,
+			);
+	}
+
+	// Add symptoms to $tax_query.
+	if ( '' !== $symptom ) {
+			$tax_query[] = array(
+				'taxonomy' => 'symptom',
+				'field'    => 'slug',
+				'terms'    => $symptom,
+			);
+	}
+
+	// Add conditions to $tax_query.
+	if ( '' !== $condition ) {
+			$tax_query[] = array(
+				'taxonomy' => 'condition',
+				'field'    => 'slug',
+				'terms'    => $condition,
+			);
+	}
+
+	// Add vendors to $tax_query.
+	if ( '' !== $vendor ) {
+			$tax_query[] = array(
+				'taxonomy' => 'vendor',
+				'field'    => 'slug',
+				'terms'    => $vendor,
+			);
+	}
+
+	// Add shelf types to $tax_query.
+	if ( '' !== $shelf_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'shelf_type',
+			'field'    => 'slug',
+			'terms'    => $shelf_type,
+		);
+	}
+
+	// Add strain types to $tax_query.
+	if ( '' !== $strain_type ) {
+		$tax_query[] = array(
+			'taxonomy' => 'strain_type',
+			'field'    => 'slug',
+			'terms'    => $strain_type,
+		);
+	}
+
+	// Order by.
+	if ( '' !== $orderby ) {
+		$order    = $orderby;
+		$order_new = 'ASC';
+	}
+
+	// Create $cat_tax_query variable.
+	$cat_tax_query = array(
+		'relation' => 'OR',
+	);
+
+	// Turn shortcode type="" input into an array.
+	$array_type = explode( ', ', $type );
+
+	// Turn shortcode category="" input into an array.
+	$new_category = explode( ', ', $category );
+
+	// If category="" isn't empty, add to $cat_tax_query.
+	if ( ! empty( $category ) ) {
+
+		// Add flowers categories to $cat_tax_query.
+		if ( in_array( 'flowers', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'flowers_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add concentrates categories to $cat_tax_query.
+		if ( in_array( 'concentrates', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'concentrates_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add edibles categories to $cat_tax_query.
+		if ( in_array( 'edibles', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'edibles_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add flowers categories to $cat_tax_query.
+		if ( in_array( 'prerolls', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'flowers_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+		
+		// Add topicals categories to $cat_tax_query.
+		if ( in_array( 'topicals', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'topicals_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+
+		// Add growers categories to $cat_tax_query.
+		if ( in_array( 'growers', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'growers_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+
+		// Add topicals categories to $cat_tax_query.
+		if ( in_array( 'topicals', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'topicals_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+
+		// Add tinctures categories to $cat_tax_query.
+		if ( in_array( 'tinctures', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'wpd_tinctures_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+
+		// Add gear categories to $cat_tax_query.
+		if ( in_array( 'gear', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'wpd_gear_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+	}
+
+	// Create new tax query.
+	$new_tax_query = array_merge( $tax_query, $cat_tax_query );
+
+	// Products.
+	$wpd_products = '';
+
+	// Menu types.
+	$menu_types = apply_filters( 'wpd_shortcode_menu_types', $array_type );
+
+	// Loop through menu types.
+	foreach ( $menu_types as $key=>$value ) {
+	
+		// Create WP_Query args.
+		$args = apply_filters( 'wpd_menu_shortcode_args', array(
+			'post_type'      => $value,
+			'posts_per_page' => $posts,
+			'tax_query'      => $new_tax_query,
+			'orderby'        => $order,
+			'order'          => $order_new,
+			'meta_key'       => $meta_key,
+		) );
+
+		// Create new WP_Query.
+		$wpd_query = new WP_Query( $args );
+
+		// Get post type name.
+		$post_type_data = get_post_type_object( $value );
+		$post_type_name = $post_type_data->label;
+		$post_type_slug = $post_type_data->rewrite['slug'];
+
+		// Menu type name.
+		$menu_type_name = $post_type_name;
+
+		// Image size.
+		if ( '' === $image_size ) {
+			$img_size = 'dispensary-image';
+		} else {
+			$img_size = $image_size;
+		}
+
+		// Product details.
+		$product_details = array(
+			'thc'         => $thc,
+			'thca'        => $thca,
+			'cbd'         => $cbd,
+			'cba'         => $cba,
+			'cbn'         => $cbn,
+			'cbg'         => $cbg,
+			'seed_count'  => $seed_count,
+			'clone_count' => $clone_count,
+			'total_thc'   => $total_thc,
+			'size'        => $size,
+			'servings'    => $servings,
+			'weight'      => $weight
+		);
+
+		// Display Title.
+		if ( 'show' === $title ) {
+			$show_title = '<h2 class="wpd-title">' . $menu_type_name . '</h2>';
+		} else {
+			$show_title = '';
+		}
+
+		// Product wrap start.
+		$wpd_products .= '<div id="' . $id . '" class="wp-dispensary">' . $show_title . '<div class="wpd-menu">';
+
+		// Product loop.
+		while ( $wpd_query->have_posts() ) :
+			$wpd_query->the_post();
+
+			// Show name.
+			if ( 'show' === $name ) {
+				$show_name = '<p class="wpd-producttitle"><strong><a href="' . get_permalink() . '">' . get_the_title() . '</a></strong></p>';
+			} else {
+				$show_name = '';
+			}
+
+			// Show Price.
+			if ( 'show' === $price ) {
+				$show_price = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_all_prices_simple() . '</span>';
+			} else {
+				$show_price = '';
+			}
+
+			// Show info.
+			$show_info = get_wpd_product_details( get_the_ID(), $product_details );
+
+			// Shortcode inside top action hook.
+			ob_start();
+				do_action( 'wpd_shortcode_inside_top' );
+				$wpd_shortcode_inside_top = ob_get_contents();
+			ob_end_clean();
+
+			// Shortcode menu top action hook.
+			ob_start();
+				do_action( 'wpd_shortcode_menu_top' );
+				$wpd_shortcode_menu_top = ob_get_contents();
+			ob_end_clean();
+
+			// Shortcode item start.
+			$wpd_products .= '<div class="wpd-menu-item ' . $class . '">' . $wpd_shortcode_menu_top . $wpd_shortcode_inside_top . get_wpd_product_image( $img_size );
+
+			// Shortcode inside bottom action hook.
+			ob_start();
+				do_action( 'wpd_shortcode_inside_bottom' );
+				$wpd_shortcode_inside_bottom = ob_get_contents();
+			ob_end_clean();
+
+			// Shortcode menu top action hook.
+			ob_start();
+				do_action( 'wpd_shortcode_menu_bottom' );
+				$wpd_shortcode_menu_bottom = ob_get_contents();
+			ob_end_clean();
+
+			// Shortcode item.
+			$wpd_products .= $show_name . $show_price . $show_info . $wpd_shortcode_inside_bottom . $wpd_shortcode_menu_bottom;
+
+			// Shortcode item end.
+			$wpd_products .= '</div>';
+
+		endwhile;
+
+		wp_reset_postdata();
+
+		// Shortcode inside top action hook.
+		$wpd_products .= '</div>';
+
+	}
+
+	// Product wrap end.
+	$wpd_products .= '</div>';
+
+	return $wpd_products;
+
+}
+add_shortcode( 'wpd_menu', 'wp_dispensary_menu_shortcode' );

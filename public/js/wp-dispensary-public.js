@@ -388,6 +388,10 @@ jQuery(document).ready(function ($) {
     $('.wpdshortcode').matchHeight();
 });
 
+jQuery(document).ready(function ($) {
+    $('.wpd-menu-item').matchHeight();
+});
+
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
