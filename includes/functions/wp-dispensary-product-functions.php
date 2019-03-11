@@ -29,6 +29,8 @@ function get_wpd_product_details( $product_id, $product_details ) {
 
     $str = '';
 
+    $compounds_new = array();
+
     // Loop through required product details.
     foreach ( $product_details as $product=>$value ) {
 
