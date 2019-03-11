@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 5.1
-Stable tag: 2.5.8
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,9 +25,9 @@ WP Dispensary is packed with features to enhance the online presence of your can
 
 With WP Dispensary you are able to easily create an online menu for your patients to browse, and with the commercial add-on's offered, you can allow patients to place orders directly through your website!
 
-### Auto-creation of Dispensary Menu page
+### Menu page auto-created on Installation
 
-WP Dispensary version 2.0+ automatically creates a new "Dispensary Menu" page for you, pre-populated with each of the shortcodes that are available, giving you an instant starting point for building your menu.
+When you install and activate WP Dispensary, a new "Menu" page is automatically created for you, pre-populated with the default `[wpd_menu]` shortcode.
 
 See all shortcode options in the [documentation](https://www.wpdispensary.com/section/shortcodes/)
 
@@ -55,7 +55,7 @@ Looking to take things even further? Our commercial extensions provide you with 
 * [eCommerce](https://www.wpdispensary.com/product/ecommerce/)
 * [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
 * [Menu Styles](https://www.wpdispensary.com/product/styles/)
-* [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/)
+* [Top Sellers](https://www.wpdispensary.com/product/dispensary-top-sellers/)
 
 Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
 
@@ -73,6 +73,16 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
 
 == Changelog ==
+
+= 2.6 =
+* Added new `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added growers to shelf tax type array in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added 4 new product helper functions in `includes/functions/wp-dispensary-product-functions.php`
+* Added new get_wpd_all_prices_simple filter in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added default $str variable for `get_wpd_all_prices_simple` function in `includes/functions/wp-dispensary-pricing-functions.php`
+* Updated widget images to use new helper function in `admin/post-types/wp-dispensary-widgets.php`
+* Updated title and shortcode for Menu page created on plugin activation in `includes/class-wp-dispensary-activator.php`
+* General code cleanup
 
 = 2.5.8 =
 * Added Pricing Currency Codes helper function in `admin/wp-dispensary-functions.php`

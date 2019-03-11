@@ -1,5 +1,15 @@
 # Changelog
 
+### 2.6
+* Added new `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
+* Added growers to shelf tax type array in `admin/post-types/wp-dispensary-taxonomies.php`
+* Added 4 new product helper functions in `includes/functions/wp-dispensary-product-functions.php`
+* Added new get_wpd_all_prices_simple filter in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added default $str variable for `get_wpd_all_prices_simple` function in `includes/functions/wp-dispensary-pricing-functions.php`
+* Updated widget images to use new helper function in `admin/post-types/wp-dispensary-widgets.php`
+* Updated title and shortcode for Menu page created on plugin activation in `includes/class-wp-dispensary-activator.php`
+* General code cleanup
+
 ### 2.5.8
 * Added Pricing Currency Codes helper function in `admin/wp-dispensary-functions.php`
 * Added filter for widget image sizes in `admin/post-types/wp-dispensary-widgets.php`
