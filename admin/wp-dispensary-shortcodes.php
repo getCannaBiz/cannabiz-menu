@@ -2073,7 +2073,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 
 			// Show Price.
 			if ( 'show' === $price ) {
-				$show_price = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_all_prices_simple() . '</span>';
+				$show_price = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_all_prices_simple( get_the_ID() ) . '</span>';
 			} else {
 				$show_price = '';
 			}
@@ -2094,7 +2094,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			ob_end_clean();
 
 			// Shortcode item start.
-			$wpd_products .= '<div class="wpd-menu-item ' . $class . '">' . $wpd_shortcode_menu_top . $wpd_shortcode_inside_top . get_wpd_product_image( $img_size );
+			$wpd_products .= '<div class="wpd-menu-item ' . $class . '">' . $wpd_shortcode_menu_top . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $img_size );
 
 			// Shortcode inside bottom action hook.
 			ob_start();
