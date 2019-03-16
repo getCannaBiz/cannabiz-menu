@@ -338,6 +338,44 @@ function flowers_condition( $data, $post, $request ) {
 add_filter( 'rest_prepare_flowers', 'flowers_condition', 10, 3 );
 
 /**
+ * Add 'details' endpoint for the Custom Post Types
+ *
+ * @since 2.7
+ */
+function wpd_product_details_all( $data, $post, $request ) {
+
+	// Display product details.
+	$product_details = array(
+		'thc'         => 'show',
+		'thca'        => '',
+		'cbd'         => '',
+		'cba'         => '',
+		'cbn'         => '',
+		'cbg'         => '',
+		'seed_count'  => 'show',
+		'clone_count' => 'show',
+		'total_thc'   => 'show',
+		'size'        => 'show',
+		'servings'    => 'show',
+		'weight'      => 'show'
+	);
+
+	$details = apply_filters( 'wpd_product_details_all', $product_details );
+
+	$_data            = $data->data;
+	$_data['details'] = get_wpd_product_details( $post->ID, $details );
+	$data->data       = $_data;
+	return $data;
+
+}
+add_filter( 'rest_prepare_flowers', 'wpd_product_details_all', 10, 3 );
+add_filter( 'rest_prepare_concentrates', 'wpd_product_details_all', 10, 3 );
+add_filter( 'rest_prepare_edibles', 'wpd_product_details_all', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_product_details_all', 10, 3 );
+add_filter( 'rest_prepare_topicals', 'wpd_product_details_all', 10, 3 );
+add_filter( 'rest_prepare_growers', 'wpd_product_details_all', 10, 3 );
+
+/**
  * Add 'categories' endpoint for the Concentrates Custom Post Type
  *
  * @since 2.0.2
