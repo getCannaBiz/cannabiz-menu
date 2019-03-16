@@ -12,9 +12,9 @@
  * @since 2.4
  * @return string
  */
-function wpd_flowers_prices_simple( $id = NULL, $phrase = NULL ) {
+function wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
     // Filters the displayed flowers prices.
-    echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $id, $phrase ) );
+    echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase ) );
 }
 
 
@@ -24,9 +24,9 @@ function wpd_flowers_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_concentrates_prices_simple( $id = NULL, $phrase = NULL ) {
+function wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
     // Filters the displayed concentrates prices.
-    echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $id, $phrase ) );
+    echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase ) );
 }
 
 
@@ -36,9 +36,9 @@ function wpd_concentrates_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_edibles_prices_simple( $id = NULL, $phrase = NULL ) {
+function wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
     // Filters the displayed edibless prices.
-    echo apply_filters( 'wpd_edibless_prices_simple', get_wpd_edibles_prices_simple( $id, $phrase ) );
+    echo apply_filters( 'wpd_edibless_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase ) );
 }
 
 
@@ -48,9 +48,9 @@ function wpd_edibles_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_prerolls_prices_simple( $id = NULL, $phrase = NULL ) {
+function wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
     // Filters the displayed prerolls prices.
-    echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $id, $phrase ) );
+    echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase ) );
 }
 
 
@@ -60,9 +60,9 @@ function wpd_prerolls_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_topicals_prices_simple( $id = NULL, $phrase = NULL ) {
+function wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
     // Filters the displayed topicals prices.
-    echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $id, $phrase ) );
+    echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase ) );
 }
 
 
@@ -72,9 +72,9 @@ function wpd_topicals_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_growers_prices_simple( $id = NULL, $phrase = NULL ) {
+function wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
     // Filters the displayed growers prices.
-    echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $id, $phrase ) );
+    echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase ) );
 }
 
 
@@ -84,41 +84,41 @@ function wpd_growers_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_all_prices_simple( $id = NULL, $phrase = NULL ) {
+function wpd_all_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 	global $post;
 
-		if ( 'flowers' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $id, $phrase ) );
-		}
-	
-		if ( 'concentrates' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $id, $phrase ) );
-		}
-	
-		if ( 'edibles' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_edibles_prices_simple', get_wpd_edibles_prices_simple( $id, $phrase ) );
-		}
-	
-		if ( 'prerolls' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $id, $phrase ) );
-		}
-	
-		if ( 'topicals' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $id, $phrase ) );
-		}
-	
-		if ( 'growers' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $id, $phrase ) );
-		}
-	
-		if ( 'gear' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $id, $phrase ) );
-		}
-	
-		if ( 'tinctures' == get_post_type( $post->ID ) ) {
-			echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $id, $phrase ) );
-		}
+	if ( 'flowers' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'concentrates' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'edibles' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_edibles_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'prerolls' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'topicals' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'growers' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'gear' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'tinctures' == get_post_type( $product_id ) ) {
+		echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
+	}
 }
 
 
@@ -129,7 +129,7 @@ function wpd_all_prices_simple( $id = NULL, $phrase = NULL ) {
  * @return string
  */
 function wpd_pricing_phrase( $singular ) {
-	echo esc_html( apply_filters( 'wpd_pricing_phrase', get_wpd_pricing_phrase( $id, $phrase ) ) );
+	echo esc_html( apply_filters( 'wpd_pricing_phrase', get_wpd_pricing_phrase( $product_id, $phrase ) ) );
 }
 
 /**
@@ -171,7 +171,7 @@ function get_wpd_pricing_phrase( $singular ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_flowers_prices_simple( $id = NULL, $phrase = NULL ) {
+function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
     global $post;
 
@@ -179,14 +179,14 @@ function get_wpd_flowers_prices_simple( $id = NULL, $phrase = NULL ) {
 	$currency_code = wpd_currency_code();
 
 	// Get prices.
-	$price_half_gram     = get_post_meta( get_the_ID(), '_halfgram', true );
-	$price_one_gram      = get_post_meta( get_the_ID(), '_gram', true );
-	$price_two_grams     = get_post_meta( get_the_ID(), '_twograms', true );
-	$price_eighth        = get_post_meta( get_the_ID(), '_eighth', true );
-	$price_five_grams    = get_post_meta( get_the_ID(), '_fivegrams', true );
-	$price_quarter_ounce = get_post_meta( get_the_ID(), '_quarter', true );
-	$price_half_ounce    = get_post_meta( get_the_ID(), '_halfounce', true );
-	$price_one_ounce     = get_post_meta( get_the_ID(), '_ounce', true );
+	$price_half_gram     = get_post_meta( $product_id, '_halfgram', true );
+	$price_one_gram      = get_post_meta( $product_id, '_gram', true );
+	$price_two_grams     = get_post_meta( $product_id, '_twograms', true );
+	$price_eighth        = get_post_meta( $product_id, '_eighth', true );
+	$price_five_grams    = get_post_meta( $product_id, '_fivegrams', true );
+	$price_quarter_ounce = get_post_meta( $product_id, '_quarter', true );
+	$price_half_ounce    = get_post_meta( $product_id, '_halfounce', true );
+	$price_one_ounce     = get_post_meta( $product_id, '_ounce', true );
 
 	/**
 	 * Price output - if only one price has been added
@@ -221,17 +221,17 @@ function get_wpd_flowers_prices_simple( $id = NULL, $phrase = NULL ) {
 	 */
 	$pricinglow = '';
 
-	if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+	if ( get_post_meta( $product_id, '_gram', true ) ) {
 		$pricinglow = $currency_code . $price_one_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_twograms', true ) ) {
 		$pricinglow = $currency_code . $price_two_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_eighth', true ) ) {
 		$pricinglow = $currency_code . $price_eighth;
-	} elseif ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_fivegrams', true ) ) {
 		$pricinglow = $currency_code . $price_five_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_quarter', true ) ) {
 		$pricinglow = $currency_code . $price_quarter_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_halfounce', true ) ) {
 		$pricinglow = $currency_code . $price_half_ounce;
 	}
 
@@ -243,19 +243,19 @@ function get_wpd_flowers_prices_simple( $id = NULL, $phrase = NULL ) {
 	 */
 	$pricinghigh = '';
 
-	if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
+	if ( get_post_meta( $product_id, '_ounce', true ) ) {
 		$pricinghigh = $currency_code . $price_one_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_halfounce', true ) ) {
 		$pricinghigh = $currency_code . $price_half_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_quarter', true ) ) {
 		$pricinghigh = $currency_code . $price_quarter_ounce;
-	} elseif ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_fivegrams', true ) ) {
 		$pricinghigh = $currency_code . $price_five_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_eighth', true ) ) {
 		$pricinghigh = $currency_code . $price_eighth;
-	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_twograms', true ) ) {
 		$pricinghigh = $currency_code . $price_two_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_gram', true ) ) {
 		$pricinghigh = $currency_code . $price_one_gram;
 	}
 
@@ -291,7 +291,7 @@ function get_wpd_flowers_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_concentrates_prices_simple( $id = NULL, $phrase = NULL ) {
+function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
     global $post;
 
@@ -299,10 +299,10 @@ function get_wpd_concentrates_prices_simple( $id = NULL, $phrase = NULL ) {
 	$currency_code = wpd_currency_code();
 
 	// Get prices.
-	$price_each      = get_post_meta( get_the_ID(), '_priceeach', true );
-	$price_half_gram = get_post_meta( get_the_ID(), '_halfgram', true );
-	$price_one_gram  = get_post_meta( get_the_ID(), '_gram', true );
-	$price_two_grams = get_post_meta( get_the_ID(), '_twograms', true );
+	$price_each      = get_post_meta( $product_id, '_priceeach', true );
+	$price_half_gram = get_post_meta( $product_id, '_halfgram', true );
+	$price_one_gram  = get_post_meta( $product_id, '_gram', true );
+	$price_two_grams = get_post_meta( $product_id, '_twograms', true );
 
 	/**
 	 * Price output - if only one price has been added
@@ -329,11 +329,11 @@ function get_wpd_concentrates_prices_simple( $id = NULL, $phrase = NULL ) {
 	 */
 	$pricinglow = '';
 
-	if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
+	if ( get_post_meta( $product_id, '_halfgram', true ) ) {
 		$pricinglow = $currency_code . $price_half_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_gram', true ) ) {
 		$pricinglow = $currency_code . $price_one_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_twograms', true ) ) {
 		$pricinglow = $currency_code . $price_two_grams;
 	}
 
@@ -345,11 +345,11 @@ function get_wpd_concentrates_prices_simple( $id = NULL, $phrase = NULL ) {
 	 */
 	$pricinghigh = '';
 
-	if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
+	if ( get_post_meta( $product_id, '_twograms', true ) ) {
 		$pricinghigh = $currency_code . $price_two_grams;
-	} elseif ( get_post_meta( get_the_ID(), '_gram', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_gram', true ) ) {
 		$pricinghigh = $currency_code . $price_one_gram;
-	} elseif ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
+	} elseif ( get_post_meta( $product_id, '_halfgram', true ) ) {
 		$pricinghigh = $currency_code . $price_half_gram;
 	}
 
@@ -392,7 +392,7 @@ function get_wpd_concentrates_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_edibles_prices_simple( $id = NULL, $phrase = NULL ) {
+function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
     global $post;
 
@@ -400,8 +400,8 @@ function get_wpd_edibles_prices_simple( $id = NULL, $phrase = NULL ) {
 	$currency_code = wpd_currency_code();
 
 	// Get prices.
-	$price_each     = get_post_meta( get_the_ID(), '_priceeach', true );
-	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
+	$price_each     = get_post_meta( $product_id, '_priceeach', true );
+	$price_per_pack = get_post_meta( $product_id, '_priceperpack', true );
 	$pricingsep     = '-';
 
 	// Check if phrase is set in function.
@@ -447,7 +447,7 @@ function get_wpd_edibles_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_prerolls_prices_simple( $id = NULL, $phrase = NULL ) {
+function get_wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 	global $post;
 
@@ -455,8 +455,8 @@ function get_wpd_prerolls_prices_simple( $id = NULL, $phrase = NULL ) {
 	$currency_code = wpd_currency_code();
 
 	// Get prices.
-	$price_each     = get_post_meta( get_the_ID(), '_priceeach', true );
-	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
+	$price_each     = get_post_meta( $product_id, '_priceeach', true );
+	$price_per_pack = get_post_meta( $product_id, '_priceperpack', true );
 	$pricingsep     = '-';
 
 	// Check if phrase is set in function.
@@ -502,7 +502,7 @@ function get_wpd_prerolls_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_topicals_prices_simple( $id = NULL, $phrase = NULL ) {
+function get_wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 	global $post;
 
@@ -510,8 +510,8 @@ function get_wpd_topicals_prices_simple( $id = NULL, $phrase = NULL ) {
 	$currency_code = wpd_currency_code();
 
 	// Get prices.
-	$price_each     = get_post_meta( get_the_ID(), '_pricetopical', true );
-	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
+	$price_each     = get_post_meta( $product_id, '_pricetopical', true );
+	$price_per_pack = get_post_meta( $product_id, '_priceperpack', true );
 	$pricingsep     = '-';
 
 	// Check if phrase is set in function.
@@ -557,7 +557,7 @@ function get_wpd_topicals_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_growers_prices_simple( $id = NULL, $phrase = NULL ) {
+function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 	global $post;
 
@@ -565,8 +565,8 @@ function get_wpd_growers_prices_simple( $id = NULL, $phrase = NULL ) {
 	$currency_code = wpd_currency_code();
 
 	// Get prices.
-	$price_each     = get_post_meta( get_the_ID(), '_priceeach', true );
-	$price_per_pack = get_post_meta( get_the_ID(), '_priceperpack', true );
+	$price_each     = get_post_meta( $product_id, '_priceeach', true );
+	$price_per_pack = get_post_meta( $product_id, '_priceperpack', true );
 	$pricingsep     = '-';
 
 	// Check if phrase is set in function.
@@ -611,34 +611,42 @@ function get_wpd_growers_prices_simple( $id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_all_prices_simple( $phrase = NULL ) {
+function get_wpd_all_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 	global $post;
 
 	$str = '';
 	
-	if ( 'flowers' == get_post_type( $post->ID ) ) {
-		$str .= get_wpd_flowers_prices_simple( $phrase = NULL );
+	if ( 'flowers' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase ) );
 	}
 
-	if ( 'concentrates' == get_post_type( $post->ID ) ) {
-		$str .= get_wpd_concentrates_prices_simple( $phrase = NULL );
+	if ( 'concentrates' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase ) );
 	}
 
-	if ( 'edibles' == get_post_type( $post->ID ) ) {
-		$str .= get_wpd_edibles_prices_simple( $phrase = NULL );
+	if ( 'edibles' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_edibles_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase ) );
 	}
 
-	if ( 'prerolls' == get_post_type( $post->ID ) ) {
-		$str .= get_wpd_prerolls_prices_simple( $phrase = NULL );
+	if ( 'prerolls' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase ) );
 	}
 
-	if ( 'topicals' == get_post_type( $post->ID ) ) {
-		$str .= get_wpd_topicals_prices_simple( $phrase = NULL );
+	if ( 'topicals' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase ) );
 	}
 
-	if ( 'growers' == get_post_type( $post->ID ) ) {
-		$str .= get_wpd_growers_prices_simple( $phrase = NULL );
+	if ( 'growers' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'gear' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $product_id, $phrase ) );
+	}
+
+	if ( 'tinctures' == get_post_type( $product_id ) ) {
+		$str .= apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
 	}
 
 	return apply_filters( 'get_wpd_all_prices_simple', $str );
@@ -650,15 +658,15 @@ function get_wpd_all_prices_simple( $phrase = NULL ) {
  * @since 2.5
  * @return array
  */
-function wpd_flowers_prices_array( $id, $flower_prices = NULL ) {
+function wpd_flowers_prices_array( $product_id, $flower_prices = NULL ) {
 	$flower_prices = array(
-		'1 g'    => esc_html( get_post_meta( $id, '_gram', true ) ),
-		'2 g'    => esc_html( get_post_meta( $id, '_twograms', true ) ),
-		'1/8 oz' => esc_html( get_post_meta( $id, '_eighth', true ) ),
-		'5 g'    => esc_html( get_post_meta( $id, '_fivegrams', true ) ),
-		'1/4 oz' => esc_html( get_post_meta( $id, '_quarter', true ) ),
-		'1/2 oz' => esc_html( get_post_meta( $id, '_halfounce', true ) ),
-		'1 oz'   => esc_html( get_post_meta( $id, '_ounce', true ) ),
+		'1 g'    => esc_html( get_post_meta( $product_id, '_gram', true ) ),
+		'2 g'    => esc_html( get_post_meta( $product_id, '_twograms', true ) ),
+		'1/8 oz' => esc_html( get_post_meta( $product_id, '_eighth', true ) ),
+		'5 g'    => esc_html( get_post_meta( $product_id, '_fivegrams', true ) ),
+		'1/4 oz' => esc_html( get_post_meta( $product_id, '_quarter', true ) ),
+		'1/2 oz' => esc_html( get_post_meta( $product_id, '_halfounce', true ) ),
+		'1 oz'   => esc_html( get_post_meta( $product_id, '_ounce', true ) ),
 	);
 	return apply_filters( 'wpd_flowers_prices_array', $flower_prices );
 }
