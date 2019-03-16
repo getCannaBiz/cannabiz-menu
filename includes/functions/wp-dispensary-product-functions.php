@@ -61,15 +61,14 @@ function get_wpd_product_details( $product_id, $product_details ) {
     }
 
     // Get compounds.
-    $compounds = get_wpd_compounds_simple( NULL, $compounds_new );
+	$compounds = get_wpd_compounds_simple( $product_id, NULL, $compounds_new );
 
     // Add compounds.
     $str .= $compounds;
 
-
     // Loop through required product details.
     foreach ( $product_details as $product=>$value ) {
-
+	
 		// Total THC (Servings X THC).
 		if ( 'show' === $value && 'total_thc' === $product ) {
 			if ( '' != get_post_meta( $product_id, '_thcmg', true ) && '' != get_post_meta( $product_id, '_thccbdservings', true ) ) {
@@ -189,7 +188,14 @@ function wpd_product_details( $product_id, $product_details ) {
 }
 
 
-function get_wpd_product_image( $image_size ) {
+function get_wpd_product_image( $product_id = NULL, $image_size ) {
+
+    // Set product ID.
+    if ( NULL === $product_id ) {
+        $prod_id = get_the_ID();
+    } else {
+        $prod_id = $product_id;
+    }
 
     // Set image size.
     if ( NULL === $image_size ) {
@@ -198,7 +204,7 @@ function get_wpd_product_image( $image_size ) {
         $img_size = $image_size;
     }
 
-    $thumbnail_id        = get_post_thumbnail_id();
+	$thumbnail_id        = get_post_thumbnail_id( $prod_id );
     $thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $img_size, false );
     $thumbnail_url       = $thumbnail_url_array[0];
 
@@ -206,13 +212,13 @@ function get_wpd_product_image( $image_size ) {
     if ( null === $thumbnail_url && 'full' === $image_size ) {
         $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
-        $show_image  = '<a href="' . get_permalink() . '"><img src="' . $default_img . '" alt="' . get_the_title() . '" /></a>';
+        $show_image  = '<a href="' . get_permalink( $product_id ) . '"><img src="' . $default_img . '" alt="' . get_the_title() . '" /></a>';
     } elseif ( null !== $thumbnail_url ) {
-        $show_image = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . get_the_title() . '" /></a>';
+        $show_image = '<a href="' . get_permalink( $product_id ) . '"><img src="' . $thumbnail_url . '" alt="' . get_the_title() . '" /></a>';
     } else {
         $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $image_size . '.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
-        $show_image  = '<a href="' . get_permalink() . '"><img src="' . $default_img . '" alt="' . get_the_title() . '" /></a>';
+        $show_image  = '<a href="' . get_permalink( $product_id ) . '"><img src="' . $default_img . '" alt="' . get_the_title() . '" /></a>';
     }
 
     return $show_image;
@@ -225,6 +231,6 @@ function get_wpd_product_image( $image_size ) {
  * @since 2.6
  * @return string
  */
-function wpd_product_image( $image_size ) {
-    echo apply_filters( 'wpd_product_image', get_wpd_product_image( $image_size ) );
+function wpd_product_image( $product_id, $image_size ) {
+    echo apply_filters( 'wpd_product_image', get_wpd_product_image( $product_id, $image_size ) );
 }
