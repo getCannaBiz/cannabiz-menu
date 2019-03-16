@@ -283,6 +283,25 @@ function flowers_category_numbers( $data, $post, $request ) {
 add_filter( 'rest_prepare_flowers', 'flowers_category_numbers', 10, 3 );
 
 /**
+ * Add 'prices' endpoint for the Custom Post Types
+ *
+ * @since 2.7
+ */
+function wpd_product_prices_all( $data, $post, $request ) {
+	$_data           = $data->data;
+	$_data['prices'] = get_wpd_all_prices_simple( $post->ID, TRUE );
+	$data->data      = $_data;
+	return $data;
+
+}
+add_filter( 'rest_prepare_flowers', 'wpd_product_prices_all', 10, 3 );
+add_filter( 'rest_prepare_concentrates', 'wpd_product_prices_all', 10, 3 );
+add_filter( 'rest_prepare_edibles', 'wpd_product_prices_all', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_product_prices_all', 10, 3 );
+add_filter( 'rest_prepare_topicals', 'wpd_product_prices_all', 10, 3 );
+add_filter( 'rest_prepare_growers', 'wpd_product_prices_all', 10, 3 );
+
+/**
  * Add Aroma taxonomy for the Flowers Custom Post Type
  */
 function flowers_aroma( $data, $post, $request ) {
