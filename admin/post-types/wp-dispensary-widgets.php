@@ -105,7 +105,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
 				do_action( 'wpd_flowers_widget_inside_top' );
 
-				wpd_product_image( $instance['imagesize'] );
+				wpd_product_image( $post->ID, $instance['imagesize'] );
 
 				if ( 'on' === $instance['flowername'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -341,7 +341,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
 				do_action( 'wpd_concentrates_widget_inside_top' );
 
-				wpd_product_image( $instance['imagesize'] );
+				wpd_product_image( $post->ID, $instance['imagesize'] );
 
 				if ( 'on' === $instance['concentratename'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -576,7 +576,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 
 				do_action( 'wpd_edibles_widget_inside_top' );
 
-				wpd_product_image( $instance['imagesize'] );
+				wpd_product_image( $post->ID, $instance['imagesize'] );
 
 				if ( 'on' === $instance['ediblename'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -814,7 +814,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
 				do_action( 'wpd_prerolls_widget_inside_top' );
 
-				wpd_product_image( $instance['imagesize'] );
+				wpd_product_image( $post->ID, $instance['imagesize'] );
 
 				if ( 'on' === $instance['prerollname'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -1057,7 +1057,7 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
 				do_action( 'wpd_topicals_widget_inside_top' );
 
-				wpd_product_image( $instance['imagesize'] );
+				wpd_product_image( $post->ID, $instance['imagesize'] );
 
 				if ( 'on' === $instance['topicalname'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
@@ -1293,7 +1293,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 
 				do_action( 'wpd_growers_widget_inside_top' );
 
-				wpd_product_image( $instance['imagesize'] );
+				wpd_product_image( $post->ID, $instance['imagesize'] );
 
 				if ( 'on' === $instance['growername'] ) {
 					echo "<span class='wpdispensary-widget-title'><a href='" . esc_url( get_permalink( $post->ID ) ) . "'>" . get_the_title( $post->ID ) . "</a></span>";
