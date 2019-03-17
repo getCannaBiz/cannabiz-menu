@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 5.1
-Stable tag: 2.6
+Stable tag: 2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,16 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
 
 == Changelog ==
+
+= 2.7 =
+* Added featured image endpoints for all menu types in `admin/wp-dispensary-rest-api.php`
+* Added details REST API endpoint for all menu types in `admin/wp-dispensary-rest-api.php`
+* Added prices REST API endpoint for all menu types in `admin/wp-dispensary-rest-api.php`
+* Updated $id to $product_id for all functions in `includes/functions/wp-dispensary-pricing-functions.php`
+* Updated functions to pass the $product_id in `includes/functions/wp-dispensary-product-functions.php`
+* Updated functions to pass the $product_id in `admin/wp-dispensary-shortcodes.php`
+* Updated functions to pass the $product_id in `admin/wp-dispensary-functions.php`
+* Updated functions to pass the $product_id in `admin/post-types/wp-dispensary-wigets.php`
 
 = 2.6 =
 * Added new `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`

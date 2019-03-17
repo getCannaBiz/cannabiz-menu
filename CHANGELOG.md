@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.7
+* Added featured image endpoints for all menu types in `admin/wp-dispensary-rest-api.php`
+* Added details REST API endpoint for all menu types in `admin/wp-dispensary-rest-api.php`
+* Added prices REST API endpoint for all menu types in `admin/wp-dispensary-rest-api.php`
+* Updated $id to $product_id for all functions in `includes/functions/wp-dispensary-pricing-functions.php`
+* Updated functions to pass the $product_id in `includes/functions/wp-dispensary-product-functions.php`
+* Updated functions to pass the $product_id in `admin/wp-dispensary-shortcodes.php`
+* Updated functions to pass the $product_id in `admin/wp-dispensary-functions.php`
+* Updated functions to pass the $product_id in `admin/post-types/wp-dispensary-wigets.php`
+
 ### 2.6
 * Added new `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
 * Added growers to shelf tax type array in `admin/post-types/wp-dispensary-taxonomies.php`
