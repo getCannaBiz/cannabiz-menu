@@ -333,7 +333,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpd_details_compounds = '';
 			} else {
 				// Get compounds.
-				$compounds = get_wpd_compounds_array( $type = '%', array( 'thc', 'thca', 'cbd', 'cba', 'cbn', 'cbg' ) );
+				$compounds = get_wpd_compounds_array( get_the_ID(), $type = '%', array( 'thc', 'thca', 'cbd', 'cba', 'cbn', 'cbg' ) );
 
 				//print_r( $compounds );
 
