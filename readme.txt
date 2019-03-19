@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 5.1
-Stable tag: 2.7
+Stable tag: 2.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,7 @@ With our add-on's you can extend the functionality of the core WP Dispensary plu
 
 WordPress.org is home to some amazing free extensions for WP Dispensary, including:
 
+* [Dispensary Blocks](https://wordpress.org/plugins/dispensary-blocks)
 * [Dispensary Age Verification](https://wordpress.org/plugins/dispensary-age-verification)
 * [Dispensary Coupons](https://wordpress.org/plugins/dispensary-coupons)
 * [Dispensary Tinctures](https://wordpress.org/plugins/dispensary-tinctures)
@@ -73,6 +74,11 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
 
 == Changelog ==
+
+= 2.7.1 =
+* Added empty array for $compounds_new variable by default in `admin/wp-dispensary-shortcodes.php`
+* Bug fix pass the missing ID argument to compounds helper function in `admin/wp-dispensary-data-output.php`
+* Bug fix pass the missing ID argument to prices and compounds helper functions in `admin/wp-dispensary-shortcodes.php`
 
 = 2.7 =
 * Added featured image endpoints for all menu types in `admin/wp-dispensary-rest-api.php`

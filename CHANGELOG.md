@@ -1,6 +1,11 @@
 # Changelog
 
-## 2.7
+### 2.7.1
+* Added empty array for $compounds_new variable by default in `admin/wp-dispensary-shortcodes.php`
+* Bug fix pass the missing ID argument to compounds helper function in `admin/wp-dispensary-data-output.php`
+* Bug fix pass the missing ID argument to prices and compounds helper functions in `admin/wp-dispensary-shortcodes.php`
+
+### 2.7
 * Added featured image endpoints for all menu types in `admin/wp-dispensary-rest-api.php`
 * Added details REST API endpoint for all menu types in `admin/wp-dispensary-rest-api.php`
 * Added prices REST API endpoint for all menu types in `admin/wp-dispensary-rest-api.php`
