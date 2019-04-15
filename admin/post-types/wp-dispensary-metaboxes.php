@@ -25,7 +25,7 @@ function wpdispensary_add_compounddetails_metaboxes() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_compounds',
-			__( 'Compound Details', 'wp-dispensary' ),
+			__( 'Compound details', 'wp-dispensary' ),
 			'wpdispensary_compounddetails',
 			$screen,
 			'normal',
