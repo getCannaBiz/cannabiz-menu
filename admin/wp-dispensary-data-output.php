@@ -327,8 +327,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpd_details_growers = '';
 		}
 
+		// Menu types that display compounds.
+		$compounds_table = array( 'flowers', 'concentrates', 'prerolls' );
+
+		// Filter menu types that display compounds.
+		$compounds_table = apply_filters( 'wpd_data_output_compounds_table', $compounds_table );
+
 		// Compounds table.
-		if ( in_array( get_post_type(), array( 'flowers', 'concentrates' ) ) ) {
+		if ( in_array( get_post_type(), $compounds_table ) ) {
 			if ( empty( $wpdthc ) && empty( $wpdthca ) && empty( $wpdcbd ) && empty( $wpdtha ) && empty( $wpdcbn ) && empty( $wpdcbg ) ) {
 				$wpd_details_compounds = '';
 			} else {
