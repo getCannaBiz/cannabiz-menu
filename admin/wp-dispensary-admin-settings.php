@@ -430,6 +430,35 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_field(
 			'wpdas_general',
 			array(
+				'id'   => 'wpd_settings_cart_options',
+				'type' => 'title',
+				'name' => '<h1>' . __( 'Cart', 'wp-dispensary' ) . '</h1>',
+			)
+		);
+
+		/**
+		 * Add Field: Hide cart functionality for non-logged in users
+		 * Field:     text
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
+				'id'          => 'wpd_ecommerce_cart_require_login_to_shop',
+				'type'        => 'checkbox',
+				'name'        => __( 'Require login to shop', 'wp-dispensary' ),
+				'desc'        => __( 'Hide the add to cart functionality for non-logged in users', 'wp-dispensary' ),
+			)
+		);
+
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_general
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_general',
+			array(
 				'id'   => 'wpd_settings_checkout_options',
 				'type' => 'title',
 				'name' => '<h1>' . __( 'Checkout', 'wp-dispensary' ) . '</h1>',
