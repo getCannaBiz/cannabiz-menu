@@ -351,6 +351,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 					$showcompounds .= '<td><strong>' . $compound . '</strong> ' . $value . '</td>';
 				}
 
+				// Add total compounds.
+				if ( get_post_meta( get_the_ID(), '_total_compounds', TRUE ) ) {
+					$showcompounds .= '<td><strong>' . __( 'TOTAL', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_ID(), '_total_compounds', TRUE ) . '%</td>';
+				}
+
 				// Combine compounds into one variable.
 				$showcompounds = $showcompounds;
 
