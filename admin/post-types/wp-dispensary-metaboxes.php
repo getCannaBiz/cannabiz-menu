@@ -47,12 +47,13 @@ function wpdispensary_compounddetails() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thccbd data if its already been entered */
-	$thc  = get_post_meta( $post->ID, '_thc', true );
-	$thca = get_post_meta( $post->ID, '_thca', true );
-	$cbd  = get_post_meta( $post->ID, '_cbd', true );
-	$cba  = get_post_meta( $post->ID, '_cba', true );
-	$cbn  = get_post_meta( $post->ID, '_cbn', true );
-	$cbg  = get_post_meta( $post->ID, '_cbg', true );
+	$thc   = get_post_meta( $post->ID, '_thc', true );
+	$thca  = get_post_meta( $post->ID, '_thca', true );
+	$cbd   = get_post_meta( $post->ID, '_cbd', true );
+	$cba   = get_post_meta( $post->ID, '_cba', true );
+	$cbn   = get_post_meta( $post->ID, '_cbn', true );
+	$cbg   = get_post_meta( $post->ID, '_cbg', true );
+	$total = get_post_meta( $post->ID, '_total_compounds', true );
 
 	/** Echo out the fields */
 	echo '<div class="compoundbox">';
@@ -78,6 +79,10 @@ function wpdispensary_compounddetails() {
 	echo '<div class="compoundbox">';
 	echo '<p>' . __( 'CBG', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>' . __( 'Total', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_total_compounds" value="' . esc_html( $total ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -108,12 +113,13 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thccbd_meta['_thc']  = $_POST['_thc'];
-	$thccbd_meta['_thca'] = $_POST['_thca'];
-	$thccbd_meta['_cbd']  = $_POST['_cbd'];
-	$thccbd_meta['_cba']  = $_POST['_cba'];
-	$thccbd_meta['_cbn']  = $_POST['_cbn'];
-	$thccbd_meta['_cbg']  = $_POST['_cbg'];
+	$thccbd_meta['_thc']             = $_POST['_thc'];
+	$thccbd_meta['_thca']            = $_POST['_thca'];
+	$thccbd_meta['_cbd']             = $_POST['_cbd'];
+	$thccbd_meta['_cba']             = $_POST['_cba'];
+	$thccbd_meta['_cbn']             = $_POST['_cbn'];
+	$thccbd_meta['_cbg']             = $_POST['_cbg'];
+	$thccbd_meta['_total_compounds'] = $_POST['_total_compounds'];
 
 	/** Add values of $compounddetails_meta as custom fields */
 
