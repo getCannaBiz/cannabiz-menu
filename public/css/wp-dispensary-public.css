@@ -89,8 +89,11 @@ ul.wpdispensary-list li:before {
 }
 
 .wpdshortcode p,
-.wpd-menu-item p.wpd-producttitle {
-  margin: 12px 0 0 0;
+.wpd-menu-item p.wpd-producttitle,
+.wpd-menu-item h2.wpd-producttitle,
+.carousel-item h2.wpd-producttitle {
+	font-size: 24px;
+	margin-top: 0;
   padding: 0;
 }
 
