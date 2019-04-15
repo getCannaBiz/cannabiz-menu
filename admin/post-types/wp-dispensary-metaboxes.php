@@ -17,7 +17,10 @@
  * @since    1.9.9
  */
 function wpdispensary_add_compounddetails_metaboxes() {
-	$screens = apply_filters( 'wpd_compound_details_screens', array( 'flowers', 'concentrates' ) );
+	// Default screens array.
+	$screens = array( 'flowers', 'concentrates', 'prerolls' );
+	// Filter screens array.
+	$screens = apply_filters( 'wpd_compound_details_screens', $screens );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
