@@ -198,6 +198,9 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 		if ( 'show' === $info ) {
 			$showinfo = get_wpd_flowers_prices_simple( get_the_ID(), TRUE );
+
+			// Filtered price.
+			$showinfo = apply_filters( 'wpd_shortcodes_product_price', $showinfo );
 		} else {
 			$showinfo = '';
 		}
@@ -447,6 +450,9 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 		if ( 'show' === $info ) {
 			$showinfo = get_wpd_concentrates_prices_simple( get_the_ID(), TRUE );
+
+			// Filtered price.
+			$showinfo = apply_filters( 'wpd_shortcodes_product_price', $showinfo );
 		} else {
 			$showinfo = '';
 		}
@@ -664,6 +670,9 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		// Price.
 		$ediblepricing = get_wpd_edibles_prices_simple( get_the_ID(), TRUE );
 
+		// Filtered price.
+		$ediblepricing = apply_filters( 'wpd_shortcodes_product_price', $ediblepricing );
+
 		/** Check shortcode options input by user */
 
 		if ( 'show' === $name ) {
@@ -832,6 +841,9 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		 * Get the pricing for Pre-rolls
 		 */
 		$prerollpricing = get_wpd_prerolls_prices_simple( get_the_ID(), TRUE );
+
+		// Filtered price.
+		$prerollpricing = apply_filters( 'wpd_shortcodes_product_price', $prerollpricing );
 
 		/*
 		 * Get the weight for Pre-rolls
@@ -1003,6 +1015,9 @@ function wpdispensary_topicals_shortcode( $atts ) {
 
 		// Price.
 		$topicalpricing = get_wpd_topicals_prices_simple( get_the_ID(), TRUE );
+
+		// Filtered price.
+		$topicalpricing = apply_filters( 'wpd_shortcodes_product_price', $topicalpricing );
 
 		// Size.
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
@@ -1179,6 +1194,9 @@ function wpdispensary_growers_shortcode( $atts ) {
 		 */
 
 		$growerspricing = get_wpd_growers_prices_simple( get_the_ID(), TRUE );
+
+		// Filtered price.
+		$growerspricing = apply_filters( 'wpd_shortcodes_product_price', $growerspricing );
 
 		/*
 		 * Get the seed count for Growers
@@ -1702,6 +1720,9 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			}
 		}
 
+		// Filtered single price.
+		$showinfo = apply_filters( 'wpd_shortcodes_product_price', $showinfo );
+
 		if ( null === $thumbnail_url && 'full' === $imagesize ) {
 			$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
 			$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
@@ -2078,6 +2099,10 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			// Show Price.
 			if ( 'show' === $price ) {
 				$show_price = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_all_prices_simple( get_the_ID() ) . '</span>';
+
+				// Filter price.
+				$show_price = apply_filters( 'wpd_shortcodes_product_price', $show_price );
+
 			} else {
 				$show_price = '';
 			}
