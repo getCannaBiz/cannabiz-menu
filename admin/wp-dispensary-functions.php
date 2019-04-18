@@ -268,7 +268,7 @@ function get_wpd_details_phrase() {
  * @return string
  */
 function wpd_compounds_simple( $product_id, $type = NULL, $compound_array = NULL ) {
-    // Filters the displayed flowers prices.
+    // Filters the displayed compound details.
     echo esc_html( apply_filters( 'wpd_compounds_simple', get_wpd_compounds_simple( $product_id, $type, $compound_array ) ) );
 }
 
@@ -671,7 +671,7 @@ add_filter( 'post_updated_messages', 'wpd_product_updated_messages' );
  * @return array
  */
 function wpd_flowers_weights_array() {
-	$flower_weights = array(
+	$flowers_weights = array(
 		'1 g'    => '_gram',
 		'2 g'    => '_twograms',
 		'1/8 oz' => '_eighth',
@@ -680,7 +680,7 @@ function wpd_flowers_weights_array() {
 		'1/2 oz' => '_halfounce',
 		'1 oz'   => '_ounce',
 	);
-	return apply_filters( 'wpd_flowers_weights_array', $flower_weights );
+	return apply_filters( 'wpd_flowers_weights_array', $flowers_weights );
 }
 
 /**
