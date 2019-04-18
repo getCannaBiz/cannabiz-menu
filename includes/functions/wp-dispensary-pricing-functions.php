@@ -367,7 +367,12 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 		$pricinghigh = $currency_code . $price_one_gram;
 	} elseif ( get_post_meta( $product_id, '_halfgram', true ) ) {
 		$pricinghigh = $currency_code . $price_half_gram;
+	} else {
+		// Do nothing.
 	}
+
+	// Filter the high prices.
+	$pricinghigh = apply_filters( 'wpd_concentrates_pricing_high', $pricinghigh );
 
 	/**
 	 * Price output - if price each is filled in
