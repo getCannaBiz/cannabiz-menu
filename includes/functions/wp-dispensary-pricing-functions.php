@@ -345,7 +345,13 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 		$pricinglow = $currency_code . $price_one_gram;
 	} elseif ( get_post_meta( $product_id, '_twograms', true ) ) {
 		$pricinglow = $currency_code . $price_two_grams;
+	} else {
+		//Do nothing.
 	}
+
+	// Filter the low prices.
+	$pricinglow = apply_filters( 'wpd_concentrates_pricing_low', $pricinglow );
+
 
 	// Separator.
 	$pricingsep = '-';
