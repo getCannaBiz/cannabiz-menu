@@ -262,7 +262,12 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricinghigh = $currency_code . $price_two_grams;
 	} elseif ( get_post_meta( $product_id, '_gram', true ) ) {
 		$pricinghigh = $currency_code . $price_one_gram;
+	} else {
+		// Do nothing.
 	}
+
+	// Filter the high prices.
+	$pricinghigh = apply_filters( 'wpd_flowers_pricing_high', $pricinghigh );
 
 	if ( TRUE == $phrase ) {
 		$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
