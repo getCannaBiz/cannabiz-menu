@@ -217,7 +217,7 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	}
 
 	/**
-	 * Price output - high amount
+	 * Price output - low amount
 	 */
 	$pricinglow = '';
 
@@ -233,7 +233,12 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricinglow = $currency_code . $price_quarter_ounce;
 	} elseif ( get_post_meta( $product_id, '_halfounce', true ) ) {
 		$pricinglow = $currency_code . $price_half_ounce;
+	} else {
+		//Do nothing.
 	}
+
+	// Filter the low prices.
+	$pricinglow = apply_filters( 'wpd_flowers_pricing_low', $pricinglow );
 
 	// Separator.
 	$pricingsep = '-';
