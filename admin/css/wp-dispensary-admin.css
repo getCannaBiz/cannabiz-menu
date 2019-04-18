@@ -36,6 +36,12 @@
 	width: 12.27%;
 }
 
+@media screen and (max-width: 767px) {
+	#postbox-container-2 #wpdispensary_prices .inside .pricebox {
+		width: 23%;
+	}
+}
+
 #wpdispensary_singleprices .inside .pricebox,
 #wpdispensary_topicalprices .inside .pricebox {
 	float: left;
@@ -50,7 +56,6 @@
 	position: relative;
 	width: 31.333%;
 }
-
 
 #wpdispensary_concentrateprices .inside .pricebox {
 	float: left;
@@ -77,6 +82,17 @@
     margin: 0 1%;
 }
 
+@media screen and (max-width: 768px) {
+	#postbox-container-2 #wpdispensary_compounds .inside .compoundbox {
+		width: 23%;
+		float: left;
+		margin: 0 1%;
+	}
+	#postbox-container-2 #wpdispensary_compounds .inside .compoundbox:last-child {
+		width: 48%;
+	}
+}
+
 #wpdispensary_grower_product_details .inside .growerbox,
 #wpdispensary_clonedetails .inside .growerbox {
 	float: left;
@@ -91,13 +107,18 @@
 	width: 23%;
 }
 
+@media screen and (max-width: 767px) {
+	#postbox-container-2 #wpdispensary_clonedetails .inside .growerbox {
+		width: 48%;
+	}
+}
+
 #postbox-container-2 #wpdispensary_grower_product_details .inside .growerbox {
 	float: left;
 	margin: 10px 1%;
 	position: relative;
 	width: 48%;
 }
-
 
 #wpdispensary_thc_cbd_mg .inside .ediblebox {
 	float: left;
@@ -110,6 +131,12 @@
 	margin: 10px 1%;
 	position: relative;
 	width: 23%;
+}
+
+@media screen and (max-width: 767px) {
+	#postbox-container-2 #wpdispensary_thc_cbd_mg .inside .ediblebox {
+		width: 48%;
+	}
 }
 
 #wpdispensary_thccbdtopical .inside .topicalbox {
