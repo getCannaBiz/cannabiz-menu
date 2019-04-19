@@ -3,7 +3,7 @@
 
 ![Cannabis Dispensary WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.7.1](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.8](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
 
 ## Dispensary Menu Features
 
@@ -41,9 +41,13 @@ Looking to take things even further? Our commercial extensions provide you with 
 * [eCommerce](https://www.wpdispensary.com/product/ecommerce/)
 * [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
 * [Menu Styles](https://www.wpdispensary.com/product/styles/)
-* [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/)
+* [Top Sellers](https://www.wpdispensary.com/product/dispensary-top-sellers/)
 
 Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
+
+### Looking for a WooCommerce solution?
+
+We've also released the [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/) plugin that adds all of the required cannabis related details to your WooCommerce store.
 
 ## Changelog
 

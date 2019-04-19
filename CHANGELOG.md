@@ -1,5 +1,23 @@
 # Changelog
 
+### 2.8
+* Added setting to WPD Settings for eCommerce add-on require login to shop in `admin/wp-dispensary-admin-settings.php`
+* Added `wpd_data_output_compounds_table` filter in `admin/wp-dispensary-data-output.php`
+* Added `wpd_shortcodes_product_price` filter in `admin/wp-dispensary-shortcodes.php`
+* Added `wpd_flowers_pricing_low` filter in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added `wpd_flowers_pricing_high` filter in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added `wpd_concentrates_pricing_low` filter in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added `wpd_concentrates_pricing_high` filter in `includes/functions/wp-dispensary-pricing-functions.php`
+* Added Total compounds to compound details metabox in `admin/post-types/wp-dispensary-metaboxes.php`
+* Added Total compounds to data output table in `admin/wp-dispensary-data-output.php`
+* Updated the `the wpd_compound_details_screens` filter in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated the `wpd_compound_details_screens` filter in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated Compound details metabox title in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated Pre-roll strain metabox title in `admin/post-types/wp-dispensary-metaboxes.php`
+* Updated shortcode product title from p to h2 in `admin/wp-dispensary-shortcodes.php`
+* Updated multiple metabox width on mobile devices in `admin/css/wp-dispensary-admin.css`
+* Updated flowers_weights variable name in `admin/wp-dispensary-functions.php`
+
 ### 2.7.1
 * Added empty array for $compounds_new variable by default in `admin/wp-dispensary-shortcodes.php`
 * Bug fix pass the missing ID argument to compounds helper function in `admin/wp-dispensary-data-output.php`
