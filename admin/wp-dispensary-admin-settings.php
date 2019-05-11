@@ -507,6 +507,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$checkout_payments = array(
 			'cod'    => __( 'Cash on delivery', 'wp-dispensary' ),
 			'pop'    => __( 'Pay on pickup', 'wp-dispensary' ),
+			'ground' => __( 'Ground shipping', 'wp-dispensary' ),
 		);
 
 		$checkout_payment_options = apply_filters( 'wpd_ecommerce_checkout_payment_options', $checkout_payments );
@@ -558,6 +559,21 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			);
 
 		} // foreach
+
+		/**
+		 * Add Field: Ground shipping instructions
+		 * Field:     text
+		 * Section:   wpdas_payments
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_payments',
+			array(
+				'id'   => 'wpd_ecommerce_checkout_payments_ground_textarea',
+				'type' => 'textarea',
+				'name' => __( 'Instructions', 'wp-dispensary' ),
+				'desc' => __( 'Let the user know how to send payment for the order.', 'wp-dispensary' ),
+			)
+		);
 
 		/**
 		 * Add Field: Display a title to help separate fields
