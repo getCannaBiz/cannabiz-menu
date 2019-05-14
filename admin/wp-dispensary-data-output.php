@@ -575,10 +575,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Price table build
 		 */
-		if ( ! isset( $wpd_settings['wpd_hide_pricing'] ) ) {
-			$wpd_table_pricing = $wpd_pricing_table_top . $wpd_pricing_table_flowers . $wpd_pricing_table_concentrates . $wpd_pricing_table_prerolls_edibles . $wpd_pricing_table_growers . $wpd_pricing_table_topicals . $wpd_pricing_table_bottom;
-		} elseif ( isset( $wpd_settings['wpd_hide_pricing'] ) && 'on' !== $wpd_settings['wpd_hide_pricing'] ) {
-			$wpd_table_pricing = $wpd_pricing_table_top . $wpd_pricing_table_flowers . $wpd_pricing_table_concentrates . $wpd_pricing_table_prerolls_edibles . $wpd_pricing_table_growers . $wpd_pricing_table_topicals . $wpd_pricing_table_bottom;
+		if ( ! is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+			if ( ! isset( $wpd_settings['wpd_hide_pricing'] ) ) {
+				$wpd_table_pricing = $wpd_pricing_table_top . $wpd_pricing_table_flowers . $wpd_pricing_table_concentrates . $wpd_pricing_table_prerolls_edibles . $wpd_pricing_table_growers . $wpd_pricing_table_topicals . $wpd_pricing_table_bottom;
+			} elseif ( isset( $wpd_settings['wpd_hide_pricing'] ) && 'on' !== $wpd_settings['wpd_hide_pricing'] ) {
+				$wpd_table_pricing = $wpd_pricing_table_top . $wpd_pricing_table_flowers . $wpd_pricing_table_concentrates . $wpd_pricing_table_prerolls_edibles . $wpd_pricing_table_growers . $wpd_pricing_table_topicals . $wpd_pricing_table_bottom;
+			} else {
+				$wpd_table_pricing = '';
+			}
 		} else {
 			$wpd_table_pricing = '';
 		}
