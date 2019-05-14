@@ -361,7 +361,16 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				// Combine compounds into one variable.
 				$showcompounds = $showcompounds;
 
+				// Create compounds table.
 				$wpd_details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . __( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $showcompounds . '</tr></table>';
+
+				if ( ! isset( $wpd_settings['wpd_hide_compounds'] ) ) {
+					$wpd_details_compounds = $wpd_details_compounds;
+				} elseif ( isset( $wpd_settings['wpd_hide_compounds'] ) && 'on' !== $wpd_settings['wpd_hide_compounds'] ) {
+					$wpd_details_compounds = $wpd_details_compounds;
+				} else {
+					$wpd_details_compounds = '';
+				}
 			}
 		} else {
 			$wpd_details_compounds = '';
@@ -388,9 +397,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Details table build
 		 */
 		if ( ! isset( $wpd_settings['wpd_hide_details'] ) ) {
-			$wpd_table_details = $wpd_details_compounds . $wpd_details_table_top . $wpd_details_flowers_concentrates . $wpd_details_prerolls . $wpd_details_growers . $wpd_details_edibles . $wpd_details_topicals . $wpd_details_table_bottom;
+			$wpd_table_details = $wpd_details_table_top . $wpd_details_flowers_concentrates . $wpd_details_prerolls . $wpd_details_growers . $wpd_details_edibles . $wpd_details_topicals . $wpd_details_table_bottom;
 		} elseif ( isset( $wpd_settings['wpd_hide_details'] ) && 'on' !== $wpd_settings['wpd_hide_details'] ) {
-			$wpd_table_details = $wpd_details_compounds . $wpd_details_table_top . $wpd_details_flowers_concentrates . $wpd_details_prerolls . $wpd_details_growers . $wpd_details_edibles . $wpd_details_topicals . $wpd_details_table_bottom;
+			$wpd_table_details = $wpd_details_table_top . $wpd_details_flowers_concentrates . $wpd_details_prerolls . $wpd_details_growers . $wpd_details_edibles . $wpd_details_topicals . $wpd_details_table_bottom;
 		} else {
 			$wpd_table_details = '';
 		}
@@ -596,7 +605,23 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpd_pricing_above = '';
 			}
 
-			// Details Placement.
+			// Compounds Placement (below).
+			if ( ! isset( $wpd_settings['wpd_compounds_table_placement'] ) ) {
+				$wpd_compound_details_below = $wpd_details_compounds;
+			} elseif ( isset( $wpd_settings['wpd_compounds_table_placement'] ) && 'above' !== $wpd_settings['wpd_compounds_table_placement'] ) {
+				$wpd_compound_details_below = $wpd_details_compounds;
+			} else {
+				$wpd_compound_details_below = '';
+			}
+
+			// Compounds Placement (above).
+			if ( isset( $wpd_settings['wpd_compounds_table_placement'] ) && 'below' !== $wpd_settings['wpd_compounds_table_placement'] ) {
+				$wpd_compound_details_above = $wpd_details_compounds;
+			} else {
+				$wpd_compound_details_above = '';
+			}
+
+			// Details Placement (below).
 			if ( ! isset( $wpd_settings['wpd_details_table_placement'] ) ) {
 				$wpd_details_below = $wpd_table_details;
 			} elseif ( isset( $wpd_settings['wpd_details_table_placement'] ) && 'above' !== $wpd_settings['wpd_details_table_placement'] ) {
@@ -605,7 +630,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$wpd_details_below = '';
 			}
 
-			// Details Placement.
+			// Details Placement (above).
 			if ( isset( $wpd_settings['wpd_details_table_placement'] ) && 'below' !== $wpd_settings['wpd_details_table_placement'] ) {
 				$wpd_details_above = $wpd_table_details;
 			} else {
@@ -613,7 +638,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 
 			// Apply before.
-			$newcontent = $wpd_pricing_above . $wpd_details_above . $original . $wpd_pricing_below . $wpd_details_below;
+			$newcontent = $wpd_pricing_above . $wpd_compound_details_above . $wpd_details_above . $original . $wpd_pricing_below . $wpd_compound_details_below . $wpd_details_below;
 
 			return $newcontent;
 		} else {
