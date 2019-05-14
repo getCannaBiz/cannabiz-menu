@@ -33,9 +33,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		$wpd_settings = get_option( 'wpdas_display' );
 
 		// Get post type.
-		$post_type         = get_post_type_object( get_post_type( $post ) );
+		$post_type = get_post_type_object( get_post_type( $post ) );
+
 		// Get menu types.
-		$menu_types        = wpd_menu_types();
+		$menu_types = wpd_menu_types();
+
 		// Create new menu type array.
 		$menu_types_simple = array();
 	
