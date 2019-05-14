@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.9
+* Added ground shipping payment method and instructions box in `admin/wp-dispensary-admin-settings.php`
+* Updated menu types simple function to remove `-` from `pre-rolls` in `admin/wp-dispensary-functions.php`
+* Updated Compounds table placement/display based on admin settings in `admin/wp-dispensary-data-output.php`
+* Updated pricing table to be completely removed from data output if eCommerce add-on is active in `admin/wp-dispensary-data-output.php`
+* Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup
+
 ### 2.8
 * Added setting to WPD Settings for eCommerce add-on require login to shop in `admin/wp-dispensary-admin-settings.php`
 * Added `wpd_data_output_compounds_table` filter in `admin/wp-dispensary-data-output.php`

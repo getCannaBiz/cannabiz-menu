@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 5.1
-Stable tag: 2.8
+Tested up to: 5.2
+Stable tag: 2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,14 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
 
 == Changelog ==
+
+= 2.9 =
+* Added ground shipping payment method and instructions box in `admin/wp-dispensary-admin-settings.php`
+* Updated menu types simple function to remove `-` from `pre-rolls` in `admin/wp-dispensary-functions.php`
+* Updated Compounds table placement/display based on admin settings in `admin/wp-dispensary-data-output.php`
+* Updated pricing table to be completely removed from data output if eCommerce add-on is active in `admin/wp-dispensary-data-output.php`
+* Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup
 
 = 2.8 =
 * Added setting to WPD Settings for eCommerce add-on require login to shop in `admin/wp-dispensary-admin-settings.php`
