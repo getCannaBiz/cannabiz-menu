@@ -80,10 +80,9 @@ class CSVExport {
      */
     public function export_products() {
         echo '<div class="wrap">';
-        echo '<div id="icon-tools" class="icon32"></div>';
-        echo '<h2>' . __( 'Download Report', 'wp-dispensary' ) . '</h2>';
-        echo '<p>' . __( 'Export WP Dispensary products', 'wp-dispensary' ) . '</p>';
-        echo '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' .__( 'Export', 'wp-dispensary' ) . '</a></p>';
+        echo '<h2>' . __( 'WP Dispensary\'s Product Export', 'wp-dispensary' ) . '</h2>';
+        echo '<p>' . __( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'wp-dispensary' ) . '</p>';
+        echo '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . __( 'Export', 'wp-dispensary' ) . '</a></p>';
 
         $cat_id           = '';
         $category_name    = get_the_terms( '79', 'flowers_category' );
