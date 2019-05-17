@@ -41,7 +41,7 @@ class CSVExport {
             exit;
         }
 
-        // Add extra menu items for admins
+        // Add extra menu items for admins.
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
         // Create end-points
@@ -76,7 +76,7 @@ class CSVExport {
     }
 
     /**
-     * Download report
+     * Download products
      */
     public function export_products() {
         echo '<div class="wrap">';
