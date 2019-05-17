@@ -34,7 +34,7 @@ class CSVExport {
             header( "Cache-Control: must-revalidate, post-check=0, pre-check=0" );
             header( "Cache-Control: private", false );
             header( "Content-Type: application/octet-stream" );
-            header( "Content-Disposition: attachment; filename=\"report.csv\";" );
+            header( "Content-Disposition: attachment; filename=\"wp-dispensary-products.csv\";" );
             header( "Content-Transfer-Encoding: binary" );
 
             echo $csv;
