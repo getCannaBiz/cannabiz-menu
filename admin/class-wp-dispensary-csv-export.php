@@ -76,7 +76,7 @@ class CSVExport {
     }
 
     /**
-     * Download products
+     * Export WP Dispensary products
      */
     public function export_products() {
         echo '<div class="wrap">';
