@@ -290,6 +290,12 @@ th#featured_thumb {
 	max-width: 100px;
 }
 
+@media screen and (max-width: 782px) {
+	.pricebox input[type=number] {
+		height: auto;
+	}
+}
+
 /* Widget styles
 -------------------------------------------------------------- */
 
