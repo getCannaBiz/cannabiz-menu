@@ -104,7 +104,9 @@ function wpd_settings_link( $links ) {
 	$pro_link      = '<a href="https://www.wpdispensary.com/product/pro-package/" target="_blank" style="font-weight:700;">' . __( 'Go Pro', 'wp-dispensary' ) . '</a>';
 	$settings_link = '<a href="admin.php?page=wpd-settings">' . __( 'Settings', 'wp-dispensary' ) . '</a>';
 	array_unshift( $links, $settings_link );
-	array_unshift( $links, $pro_link );
+	if ( ! function_exists( 'wpd_ecommerce' ) ) {
+		array_unshift( $links, $pro_link );
+	}
 	return $links;
 }
 add_filter( "plugin_action_links_$plugin_name", 'wpd_settings_link' );
