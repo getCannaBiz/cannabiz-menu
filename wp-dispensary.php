@@ -87,8 +87,11 @@ function run_wp_dispensary() {
 
 }
 
-/** Runs WP Dispensary */
+// Runs WP Dispensary.
 run_wp_dispensary();
+
+// Plugin base name.
+$plugin_name = plugin_basename( __FILE__ );
 
 /**
  * Add settings link on plugin page
@@ -104,9 +107,7 @@ function wpd_settings_link( $links ) {
 	array_unshift( $links, $pro_link );
 	return $links;
 }
-
-$pluginname = plugin_basename( __FILE__ );
-add_filter( "plugin_action_links_$pluginname", 'wpd_settings_link' );
+add_filter( "plugin_action_links_$plugin_name", 'wpd_settings_link' );
 
 /**
  * Returns the custom excerpt for oEmbeds.
