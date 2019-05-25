@@ -1521,7 +1521,7 @@ class WP_Dispensary_Widget extends WP_Widget {
 
             // Set the post type selected by user.
 			if ( 'all' == $type ) {
-				$post_type = apply_filters( 'wpd_widgets_post_types', array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers', 'gear', 'tinctures' ) );
+				$post_type = apply_filters( 'wpd_widgets_post_types', wpd_menu_types_simple( TRUE ) );
 			} else {
 				$post_type = $type;
 			}
