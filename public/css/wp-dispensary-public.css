@@ -10,29 +10,34 @@
  * @subpackage WP_Dispensary/public/css
  */
 
-.wpdispensary-widget {
-  display: inline-block;
-  margin: 12px 0;
-  max-width: 100%;
-  position: relative;
-  width: 100%;
+.wpdispensary-widget,
+div.wp-dispensary-widget-product {
+	display: inline-block;
+	margin: 12px 0;
+	max-width: 100%;
+	position: relative;
+	width: 100%;
 }
 
-.wpdispensary-widget:first-child {
-  margin-top: 0;
+.wpdispensary-widget:first-child,
+div.wp-dispensary-widget-product:first-child {
+	margin-top: 0;
 }
 
-.wpdispensary-widget:last-child {
+.wpdispensary-widget:last-child,
+div.wp-dispensary-widget-product:last-child {
 	margin-bottom: 0;
 }
 
-.wpdispensary-widget img {
+.wpdispensary-widget img,
+div.wp-dispensary-widget-product img {
 	height: auto;
   margin-bottom: 12px;
 	width: 100%;
 }
 
-span.wpdispensary-widget-title {
+span.wpdispensary-widget-title,
+span.wp-dispensary-widget-title {
   font-size: 16px;
 	font-weight: 600;
 	line-height: 1.2;
@@ -64,6 +69,26 @@ ul.wpdispensary-list li:before {
   font-family: 'FontAwesome';
   margin-right: 6px;
   -webkit-font-smoothing: antialiased;
+}
+
+ul.wp-dispensary-list li img {
+	margin-right: 10px;
+}
+
+.wp-dispensary-widget-product span.wpd-productinfo.pricing {
+	display: block;
+	margin: 0;
+}
+
+li.wp-dispensary-widget-product {
+	float: left;
+	margin-bottom: 6px;
+	width: 100%;
+}
+
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-image,
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
+	float: left;
 }
 
 /* Shortcodes */
