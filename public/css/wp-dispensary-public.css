@@ -91,6 +91,14 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 	float: left;
 }
 
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-image {
+	max-width: 20%;
+}
+
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
+	max-width: 80%;
+}
+
 /* Shortcodes */
 
 .wpdispensary,
