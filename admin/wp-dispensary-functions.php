@@ -551,7 +551,7 @@ function wpd_menu_types_simple( $lowercase = NULL ) {
 	foreach ( $menu_types as $key=>$value ) {
 		// Add items to simple array.
 		if ( $lowercase ) {
-			$menu_types_simple[] = str_replace( '-','', strtolower( $value ) );
+			$menu_types_simple[] = str_replace( '-', '', strtolower( $value ) );
 		} else {
 			$menu_types_simple[] = $value;
 		}
