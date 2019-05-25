@@ -697,3 +697,21 @@ function wpd_concentrates_weights_array() {
 	);
 	return apply_filters( 'wpd_concentrates_weights_array', $concentrates_weights );
 }
+
+/**
+ * Get all featured image sizes
+ *
+ * @since    3.0
+ * @return   array
+ */
+function wpd_featured_image_sizes() {
+	$image_sizes = array(
+		'wpdispensary-widget',
+		'dispensary-image',
+		'wpd-thumbnail',
+		'wpd-small',
+		'wpd-medium',
+		'wpd-large',
+	);
+	return apply_filters( 'wpd_featured_image_sizes', $image_sizes );
+}
