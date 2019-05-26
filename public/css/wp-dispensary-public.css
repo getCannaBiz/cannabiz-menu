@@ -273,6 +273,14 @@ table.wpdispensary-table.single.details.compound-details td {
 	padding: 0;
 }
 
+.wpd-carousel-widget .slick-list {
+	margin-bottom: 0;
+}
+
+.wpd-carousel-widget .slick-dots li {
+	margin: 0;
+}
+
 .slick-list:focus {
 	outline: none;
 }

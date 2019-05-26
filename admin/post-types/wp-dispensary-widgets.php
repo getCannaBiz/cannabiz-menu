@@ -1507,6 +1507,10 @@ class WP_Dispensary_Widget extends WP_Widget {
 
 			if ( 'wpd-thumbnail' == $instance['imagesize'] ) {
 				echo "<ul class='wp-dispensary-list'>";
+			} else {
+				if ( 'on' == $instance['carousel'] ) {
+					echo '<div class="wpd-carousel-widget">';
+				}
 			}
 
 			// Set random order if selected by user.
@@ -1542,7 +1546,7 @@ class WP_Dispensary_Widget extends WP_Widget {
 				
 				do_action( 'wp_dispensary_widget_product_before' );
 
-				echo "<div class='wp-dispensary-widget-product'>";
+				echo '<div class="wp-dispensary-widget-product">';
 
 				do_action( 'wp_dispensary_widget_product_inside_top' );
 
@@ -1581,7 +1585,11 @@ class WP_Dispensary_Widget extends WP_Widget {
 			endwhile; // end loop
 
 			if ( 'wpd-thumbnail' == $instance['imagesize'] ) {
-				echo "</ul>";
+				echo '</ul>';
+			} else {
+				if ( 'on' == $instance['carousel'] ) {
+					echo '</div>';
+				}
 			}
 
         do_action( 'wp_dispensary_after_widget' );
@@ -1609,6 +1617,7 @@ class WP_Dispensary_Widget extends WP_Widget {
         $instance['order']     = $new_instance['order'];
         $instance['itemname']  = $new_instance['itemname'];
         $instance['itemprice'] = $new_instance['itemprice'];
+        $instance['carousel']  = $new_instance['carousel'];
 		$instance['imagesize'] = $new_instance['imagesize'];
 
         return $instance;
@@ -1631,7 +1640,8 @@ class WP_Dispensary_Widget extends WP_Widget {
 	        'type'      => '',
             'order'     => '',
             'itemname'  => 'on',
-            'itemprice' => 'on',
+			'itemprice' => 'on',
+			'carousel'  => '',
 			'imagesize' => 'wpd-thumbnail',
         );
 
@@ -1675,6 +1685,11 @@ class WP_Dispensary_Widget extends WP_Widget {
 	    <p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['itemprice'], 'on' ); ?> id="<?php echo $this->get_field_id( 'itemprice' ); ?>" name="<?php echo $this->get_field_name( 'itemprice' ); ?>" />
 			<label for="<?php echo esc_attr( $this->get_field_id( 'itemprice' ) ); ?>"><?php _e( 'Display item price?', 'wp-dispensary' ); ?></label>
+        </p>
+
+	    <p>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['carousel'], 'on' ); ?> id="<?php echo $this->get_field_id( 'carousel' ); ?>" name="<?php echo $this->get_field_name( 'carousel' ); ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'carousel' ) ); ?>"><?php _e( 'Display products in carousel?', 'wp-dispensary' ); ?></label>
         </p>
 
         <p>
