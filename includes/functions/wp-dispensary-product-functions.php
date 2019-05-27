@@ -9,12 +9,16 @@
  * @subpackage WP_Dispensary/includes
  */
 
- 
-    // Filter in product details, like this.
-    $product_details = array(
-        'thc'  => 'show', // 'show' can be substituted for $thc when in shortcodes.
-        'thca' => 'show',
-    );
+if ( ! function_exists( 'is_product' ) ) {
+	/**
+	 * Is_product - Returns true when viewing a single product.
+	 *
+	 * @return bool
+	 */
+	function is_product() {
+		return is_singular( wpd_menu_types_simple( TRUE ) );
+	}
+}
 
 /**
  * Product Details
