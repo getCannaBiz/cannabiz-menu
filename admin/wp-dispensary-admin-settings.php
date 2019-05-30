@@ -108,7 +108,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_pricing_table_title',
 				'type' => 'title',
-				'name' => '<h1>Prices table</h1>',
+				'name' => '<h1>' . __( 'Prices table', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -205,7 +205,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_settings_compounds_table_title',
 			'type' => 'title',
-			'name' => '<h1>Compounds table</h1>',
+			'name' => '<h1>' . __( 'Compounds table', 'wp-dispensary' ) . '</h1>',
 		)
 	);
 
