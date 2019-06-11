@@ -3,7 +3,7 @@
 
 ![Cannabis Dispensary WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.8](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v2.9](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
 
 ## Dispensary Menu Features
 
