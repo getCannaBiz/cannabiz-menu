@@ -599,7 +599,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_verification_drivers_license',
 				'type' => 'checkbox',
-				'name' => 'Drivers license',
+				'name' => __( 'Drivers license / Valid ID', 'wp-dispensary' ),
 				'desc' => __( 'Hide the drivers license upload from account details', 'wp-dispensary' ),
 			)
 		);
