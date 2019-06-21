@@ -34,8 +34,8 @@ function wpd_settings_display_compounds_table_placement() {
 function wpd_settings_display_hide_compounds() {
     $setting = get_option( 'wpdas_display' );
 
-    if ( isset( $setting['wpd_hide_compounds'] ) && '' !== $setting['wpd_hide_compounds'] ) {
-        $hide = $setting['wpd_hide_compounds'];
+    if ( isset( $setting['wpd_hide_compounds'] ) && 'off' !== $setting['wpd_hide_compounds'] ) {
+        $hide = TRUE;
     } else {
         $hide = FALSE;
     }
