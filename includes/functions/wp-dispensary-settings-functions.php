@@ -108,7 +108,7 @@ function wpd_settings_patients_registration_redirect() {
     $setting = get_option( 'wpdas_patients' );
 
     if ( isset( $setting['wpd_settings_patients_registration_redirect'] ) && 0 !== $setting['wpd_settings_patients_registration_redirect'] ) {
-        $redirect_url = $setting['wpd_settings_patients_registration_redirect'];
+        $redirect_url = home_url() . '/' . $setting['wpd_settings_patients_registration_redirect'];
     } else {
         $redirect_url = FALSE;
     }
