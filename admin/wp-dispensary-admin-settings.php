@@ -46,6 +46,35 @@ require_once( WPDS_DIR . '/class-wp-dispensary-admin-settings.php' );
  * @since  2.0
  */
 if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
+
+	// Args for pages.
+	$args = array(
+		'sort_order'   => 'asc',
+		'sort_column'  => 'post_title',
+		'hierarchical' => 1,
+		'exclude'      => '',
+		'include'      => '',
+		'meta_key'     => '',
+		'meta_value'   => '',
+		'authors'      => '',
+		'child_of'     => 0,
+		'parent'       => -1,
+		'exclude_tree' => '',
+		'number'       => '',
+		'offset'       => 0,
+		'post_type'    => 'page',
+		'post_status'  => 'publish'
+	);
+
+	// Get all pages.
+	$pages = get_pages( $args );
+	// Loop through pages.
+	foreach ( $pages as $page ) {
+		$pages_array[$page->post_name] = $page->post_title;
+	}
+
+	//print_r( $pages_array );
+
 	/**
 	 * Object Instantiation.
 	 *
@@ -662,34 +691,6 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'name' => '<h1>' . __( 'Page Setup', 'wp-dispensary' ) . '</h1>',
 			)
 		);
-
-		// Args for pages.
-		$args = array(
-			'sort_order'   => 'asc',
-			'sort_column'  => 'post_title',
-			'hierarchical' => 1,
-			'exclude'      => '',
-			'include'      => '',
-			'meta_key'     => '',
-			'meta_value'   => '',
-			'authors'      => '',
-			'child_of'     => 0,
-			'parent'       => -1,
-			'exclude_tree' => '',
-			'number'       => '',
-			'offset'       => 0,
-			'post_type'    => 'page',
-			'post_status'  => 'publish'
-		);
-
-		// Get all pages.
-		$pages = get_pages( $args );
-		// Loop through pages.
-		foreach ( $pages as $page ) {
-			$pages_array[$page->post_name] = $page->post_title;
-		}
-
-		//print_r( $pages_array );
 
 		/**
 		 * Add Field: Menu page
