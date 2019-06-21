@@ -612,6 +612,40 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_field(
 			'wpdas_patients',
 			array(
+				'id'   => 'wpd_settings_patients_registration_title',
+				'type' => 'title',
+				'name' => '<h1>' . __( 'Patient Registration', 'wp-dispensary' ) . '</h1>',
+			)
+		);
+
+		// Update pages array.
+		$redirect_pages = $pages_array;
+		array_unshift( $redirect_pages, __( 'Select a page', 'wp-dispensary' ) );
+
+		/**
+		 * Add Field: Redirect after registration
+		 * Field:     select
+		 * Section:   wpdas_patients
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_patients',
+			array(
+				'id'      => 'wpd_settings_patients_registration_redirect',
+				'type'    => 'select',
+				'name'    => __( 'Redirect after registration', 'wp-dispensary' ),
+				'desc'    => __( 'Choose the page patients will be redirected to when registering.', 'wp-dispensary' ),
+				'options' => $redirect_pages,
+			)
+		);
+
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_patients
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_patients',
+			array(
 				'id'   => 'wpd_settings_patients_verification_title',
 				'type' => 'title',
 				'name' => '<h1>' . __( 'Patient Verification', 'wp-dispensary' ) . '</h1>',
