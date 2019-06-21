@@ -44,6 +44,62 @@ function wpd_settings_display_hide_compounds() {
 }
 
 /**
+ * Display - Details table placement
+ *
+ * @return string|bool
+ */
+function wpd_settings_display_details_table_placement() {
+    $setting = get_option( 'wpdas_display' );
+
+    if ( isset( $setting['wpd_details_table_placement'] ) && '' !== $setting['wpd_details_table_placement'] ) {
+        $placement = $setting['wpd_details_table_placement'];
+    } else {
+        $placement = 'above';
+    }
+
+	return apply_filters( 'wpd_settings_display_details_table_placement', $placement );
+}
+
+/**
+ * Display - Details table display
+ *
+ * @return string|bool
+ */
+function wpd_settings_display_hide_details() {
+    $setting = get_option( 'wpdas_display' );
+
+    if ( isset( $setting['wpd_hide_details'] ) && 'off' !== $setting['wpd_hide_details'] ) {
+        $hide = TRUE;
+    } else {
+        $hide = FALSE;
+    }
+
+	return apply_filters( 'wpd_settings_display_hide_details', $hide );
+}
+
+/**
+ * Display - Details phrase
+ *
+ * @return string|bool
+ */
+function wpd_settings_display_details_phrase() {
+    $setting = get_option( 'wpdas_display' );
+
+    if ( isset( $setting['wpd_details_phrase_custom'] ) && '' !== $setting['wpd_details_phrase_custom'] ) {
+        // Custom title phrase.
+        $phrase = $setting['wpd_details_phrase_custom'];
+    } elseif ( isset( $setting['wpd_details_phrase'] ) && '' !== $setting['wpd_details_phrase'] ) {
+        // Select title phrase.
+        $phrase = $setting['wpd_details_phrase'];
+    } else {
+        // Default title phrase.
+        $phrase = __( 'Details', 'wp-dispensary' );
+    }
+
+	return apply_filters( 'wpd_settings_display_details_phrase', $phrase );
+}
+
+/**
  * Patients - Registration Redirect
  *
  * @return string|bool
