@@ -299,10 +299,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 		//echo $post_type_name;
 	}
 
-	/**
-	 * @todo this needs filtered for Tinctures/Gear.
-	 */
-
 	if ( 'flowers' == $post_type || 'concentrates' == $post_type || 'prerolls' == $post_type || 'tinctures' == $post_type ) {
 		$type = '%';
 	}
