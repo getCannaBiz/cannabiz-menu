@@ -8,10 +8,12 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
  */
-// Exit if accessed directly.
+
+ // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 /**
  * WPD_ADMIN_SETTINGS.
  *
