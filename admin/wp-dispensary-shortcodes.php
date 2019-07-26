@@ -162,34 +162,8 @@ function wpdispensary_flowers_shortcode( $atts ) {
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
 
-		if ( '' === $imgsize ) {
-			$imagesize = 'dispensary-image';
-		} else {
-			$imagesize = $imgsize;
-		}
-
-		$thumbnail_id        = get_post_thumbnail_id();
-		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $imagesize, false );
-		$thumbnail_url       = $thumbnail_url_array[0];
-		$querytitle          = get_the_title();
-
-		/** Check shortcode options input by user */
-
-		if ( 'show' === $image ) {
-			if ( null === $thumbnail_url && 'full' === $imagesize ) {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Flower', 'wp-dispensary' ) . '" /></a>';
-			} elseif ( null !== $thumbnail_url ) {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . __( 'Menu - Flower', 'wp-dispensary' ) . '" /></a>';
-			} else {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Flower', 'wp-dispensary' ) . '" /></a>';
-			}
-		} else {
-			$showimage = '';
-		}
+		// The title.
+		$querytitle = get_the_title();
 
 		if ( 'show' === $name ) {
 			$showname = '<h2 class="wpd-producttitle"><a href="' . get_permalink() . '">' . $querytitle . '</a></h2>';
@@ -269,7 +243,8 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$wpd_shortcode_top_flowers = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class . '">' . $wpd_shortcode_top_flowers .$wpd_shortcode_inside_top . $showimage;
+		// Product wrapper.
+		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class . '">' . $wpd_shortcode_top_flowers . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -430,18 +405,8 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
 
-		if ( '' === $imgsize ) {
-			$imagesize = 'dispensary-image';
-		} else {
-			$imagesize = $imgsize;
-		}
-
-		$thumbnail_id        = get_post_thumbnail_id();
-		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $imagesize, false );
-		$thumbnail_url       = $thumbnail_url_array[0];
-		$querytitle          = get_the_title();
-
-		/** Check shortcode options input by user */
+		// Product title.
+		$querytitle = get_the_title();
 
 		if ( 'show' === $name ) {
 			$showname = '<h2 class="wpd-producttitle"><a href="' . get_permalink() . '">' . $querytitle . '</a></h2>';
@@ -493,22 +458,6 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		// Combine compounds into one variable.
 		$showcompounds = $compounds;
 
-		if ( 'show' === $image ) {
-			if ( null === $thumbnail_url && 'full' === $imagesize ) {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Concentrate', 'wp-dispensary' ) . '" /></a>';
-			} elseif ( null !== $thumbnail_url ) {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . __( 'Menu - Concentrate', 'wp-dispensary' ) . '" /></a>';
-			} else {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Concentrate', 'wp-dispensary' ) . '" /></a>';
-			}
-		} else {
-			$showimage = '';
-		}
-
 		/** Shortcode display */
 
 		ob_start();
@@ -521,7 +470,8 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$wpd_shortcode_top_concentrates = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class . '">' . $wpd_shortcode_top_concentrates . $wpd_shortcode_inside_top . $showimage;
+		// Product wrapper.
+		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class . '">' . $wpd_shortcode_top_concentrates . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -628,16 +578,8 @@ function wpdispensary_edibles_shortcode( $atts ) {
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
 
-		if ( '' === $imgsize ) {
-			$imagesize = 'dispensary-image';
-		} else {
-			$imagesize = $imgsize;
-		}
-
-		$thumbnail_id        = get_post_thumbnail_id();
-		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $imagesize, false );
-		$thumbnail_url       = $thumbnail_url_array[0];
-		$querytitle          = get_the_title();
+		// Product title.
+		$querytitle = get_the_title();
 
 		// Serving Count.
 		if ( get_post_meta( get_the_ID(), '_thccbdservings', true ) ) {
@@ -688,22 +630,6 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
-		if ( 'show' === $image ) {
-			if ( null === $thumbnail_url && 'full' === $imagesize ) {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Edible', 'wp-dispensary' ) . '" /></a>';
-			} elseif ( null !== $thumbnail_url ) {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . __( 'Menu - Edible', 'wp-dispensary' ) . '" /></a>';
-			} else {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Edible', 'wp-dispensary' ) . '" /></a>';
-			}
-		} else {
-			$showimage = '';
-		}
-
 		/** Shortcode display */
 
 		ob_start();
@@ -716,7 +642,8 @@ function wpdispensary_edibles_shortcode( $atts ) {
 			$wpd_shortcode_top_edibles = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class . '">' . $wpd_shortcode_top_edibles . $wpd_shortcode_inside_top . $showimage;
+		// Product wrapper.
+		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class . '">' . $wpd_shortcode_top_edibles . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -827,16 +754,8 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
 
-		if ( '' === $imgsize ) {
-			$imagesize = 'dispensary-image';
-		} else {
-			$imagesize = $imgsize;
-		}
-
-		$thumbnail_id        = get_post_thumbnail_id();
-		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $imagesize, false );
-		$thumbnail_url       = $thumbnail_url_array[0];
-		$querytitle          = get_the_title();
+		// Product title.
+		$querytitle = get_the_title();
 
 		/*
 		 * Get the pricing for Pre-rolls
@@ -869,22 +788,6 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
-		if ( 'show' === $image ) {
-			if ( null === $thumbnail_url && 'full' === $imagesize ) {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Pre-roll', 'wp-dispensary' ) . '" /></a>';
-			} elseif ( null !== $thumbnail_url ) {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . __( 'Menu - Pre-roll', 'wp-dispensary' ) . '" /></a>';
-			} else {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Pre-roll', 'wp-dispensary' ) . '" /></a>';
-			}
-		} else {
-			$showimage = '';
-		}
-
 		/** Shortcode display */
 
 		ob_start();
@@ -897,7 +800,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 			$wpd_shortcode_top_prerolls = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class . '">' . $wpd_shortcode_top_prerolls . $wpd_shortcode_inside_top . $showimage;
+		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class . '">' . $wpd_shortcode_top_prerolls . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -1003,16 +906,8 @@ function wpdispensary_topicals_shortcode( $atts ) {
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
 
-		if ( '' === $imgsize ) {
-			$imagesize = 'dispensary-image';
-		} else {
-			$imagesize = $imgsize;
-		}
-
-		$thumbnail_id        = get_post_thumbnail_id();
-		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $imagesize, false );
-		$thumbnail_url       = $thumbnail_url_array[0];
-		$querytitle          = get_the_title();
+		// Product title.
+		$querytitle = get_the_title();
 
 		// Price.
 		$topicalpricing = get_wpd_topicals_prices_simple( get_the_ID(), TRUE );
@@ -1054,22 +949,6 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
-		if ( 'show' === $image ) {
-			if ( null === $thumbnail_url && 'full' === $imagesize ) {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Topical', 'wp-dispensary' ) . '" /></a>';
-			} elseif ( null !== $thumbnail_url ) {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . __( 'Menu - Topical', 'wp-dispensary' ) . '" /></a>';
-			} else {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Topical', 'wp-dispensary' ) . '" /></a>';
-			}
-		} else {
-			$showimage = '';
-		}
-
 		/** Shortcode display */
 
 		ob_start();
@@ -1082,7 +961,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 			$wpd_shortcode_top_topicals = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class . '">' . $wpd_shortcode_top_topicals . $wpd_shortcode_inside_top . $showimage;
+		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class . '">' . $wpd_shortcode_top_topicals . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -1179,20 +1058,8 @@ function wpdispensary_growers_shortcode( $atts ) {
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
 
-		if ( '' === $imgsize ) {
-			$imagesize = 'dispensary-image';
-		} else {
-			$imagesize = $imgsize;
-		}
-
-		$thumbnail_id        = get_post_thumbnail_id();
-		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $imagesize, false );
-		$thumbnail_url       = $thumbnail_url_array[0];
-		$querytitle          = get_the_title();
-
-		/*
-		 * Get the pricing for Growers
-		 */
+		// Product title.
+		$querytitle = get_the_title();
 
 		$growerspricing = get_wpd_growers_prices_simple( get_the_ID(), TRUE );
 
@@ -1233,22 +1100,6 @@ function wpdispensary_growers_shortcode( $atts ) {
 			$showinfo = '';
 		}
 
-		if ( 'show' === $image ) {
-			if ( null === $thumbnail_url && 'full' === $imagesize ) {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Grower', 'wp-dispensary' ) . '" /></a>';
-			} elseif ( null !== $thumbnail_url ) {
-				$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . __( 'Menu - Grower', 'wp-dispensary' ) . '" /></a>';
-			} else {
-				$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-				$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-				$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu - Grower', 'wp-dispensary' ) . '" /></a>';
-			}
-		} else {
-			$showimage = '';
-		}
-
 		/** Shortcode display */
 
 		ob_start();
@@ -1261,7 +1112,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 			$wpd_shortcode_top_growers = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class . '">' . $wpd_shortcode_top_growers . $wpd_shortcode_inside_top . $showimage;
+		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class . '">' . $wpd_shortcode_top_growers . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
@@ -1518,16 +1369,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
 
-		if ( '' === $imgsize ) {
-			$imagesize = 'dispensary-image';
-		} else {
-			$imagesize = $imgsize;
-		}
-
-		$thumbnail_id        = get_post_thumbnail_id();
-		$thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $imagesize, false );
-		$thumbnail_url       = $thumbnail_url_array[0];
-		$querytitle          = get_the_title();
+		// Product title.
+		$querytitle = get_the_title();
 
 		if ( 'show' === $thc ) {
 			if ( get_post_meta( get_the_ID(), '_thc', true ) ) {
@@ -1724,18 +1567,6 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		// Filtered single price.
 		$showinfo = apply_filters( 'wpd_shortcodes_product_price', $showinfo );
 
-		if ( null === $thumbnail_url && 'full' === $imagesize ) {
-			$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
-			$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-			$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu item', 'wp-dispensary' ) . '" /></a>';
-		} elseif ( null !== $thumbnail_url ) {
-			$showimage = '<a href="' . get_permalink() . '"><img src="' . $thumbnail_url . '" alt="' . __( 'Menu item', 'wp-dispensary' ) . '" /></a>';
-		} else {
-			$wpd_shortcodes_default_image = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $imagesize . '.jpg';
-			$defaultimg                   = apply_filters( 'wpd_shortcodes_default_image', $wpd_shortcodes_default_image );
-			$showimage                    = '<a href="' . get_permalink() . '"><img src="' . $defaultimg . '" alt="' . __( 'Menu item', 'wp-dispensary' ) . '" /></a>';
-		}
-
 		/** Shortcode display */
 
 		ob_start();
@@ -1748,7 +1579,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			$wpd_shortcode_top_carousel = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="carousel-item ' . $class . '">' . $wpd_shortcode_top_carousel . $wpd_shortcode_inside_top . $showimage;
+		$wpdposts .= '<div class="carousel-item ' . $class . '">' . $wpd_shortcode_top_carousel . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
