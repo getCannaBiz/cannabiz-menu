@@ -917,6 +917,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		// Size.
 		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
 			$topicalsize = '<span class="wpd-productinfo size"><strong>' . __( 'Size:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz</span>';
+		} else {
 			$topicalsize = '';
 		}
 
