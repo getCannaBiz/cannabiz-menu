@@ -87,7 +87,7 @@ function get_wpd_product_details( $product_id, $product_details ) {
 		// Seed count.
 		if ( 'show' === $value && 'seed_count' === $product ) {
             if ( get_post_meta( $product_id, '_seedcount', true ) ) {
-                $str .= '<span class="wpd-productinfo seeds"><strong>' . __( 'Seeds:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( $product_id, '_seedcount', true );
+                $str .= '<span class="wpd-productinfo seeds"><strong>' . __( 'Seeds:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( $product_id, '_seedcount', true ) . '</span>';
 			} else {
 				// Do nothing.
 			}
@@ -98,7 +98,7 @@ function get_wpd_product_details( $product_id, $product_details ) {
 		// Clone count.
 		if ( 'show' === $value && 'clone_count' === $product ) {
             if ( get_post_meta( $product_id, '_clonecount', true ) ) {
-                $str .= '<span class="wpd-productinfo clones"><strong>' . __( 'Clones:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( $product_id, '_clonecount', true );
+                $str .= '<span class="wpd-productinfo clones"><strong>' . __( 'Clones:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( $product_id, '_clonecount', true ) . '</span>';
 			} else {
 				// Do nothing.
 			}
