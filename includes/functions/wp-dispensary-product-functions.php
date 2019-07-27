@@ -191,7 +191,15 @@ function wpd_product_details( $product_id, $product_details ) {
     echo apply_filters( 'wpd_product_details', get_wpd_product_details( $product_id, $product_details ) );
 }
 
-
+/**
+ * Product Image
+ * 
+ * Get the featured image of the product
+ *
+ * @param  string $product_id
+ * @param  string  $image_size
+ * @return void
+ */
 function get_wpd_product_image( $product_id = NULL, $image_size ) {
 
     // Set product ID.
