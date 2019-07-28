@@ -96,27 +96,27 @@ class CSVExport {
 
         // Set the headers.
         $header_row = array(
-            'ID',
-            'Type',
-            'Title',
-            'Content',
-            'Slug',
-            'Date',
-            'Author',
-            '1/2 gram',
-            '1 gram',
-            '2 grams',
-            '1/8 ounce',
-            '5 grams',
-            '1/4 ounce',
-            '1/2 ounce',
-            '1 ounce',
-            'Price each',
-            'Price per pack',
-            'Units per pack',
-            'Inventory',
-            'Categories',
-            'Featured Image'
+            __( 'ID', 'wp-dispensary' ),
+            __( 'Type', 'wp-dispensary' ),
+            __( 'Title', 'wp-dispensary' ),
+            __( 'Content', 'wp-dispensary' ),
+            __( 'Slug', 'wp-dispensary' ),
+            __( 'Date', 'wp-dispensary' ),
+            __( 'Author', 'wp-dispensary' ),
+            __( '.5 g', 'wp-dispensary' ),
+            __( '1 g', 'wp-dispensary' ),
+            __( '2 g', 'wp-dispensary' ),
+            __( '1/8 oz', 'wp-dispensary' ),
+            __( '5 g', 'wp-dispensary' ),
+            __( '1/4 oz', 'wp-dispensary' ),
+            __( '1/2 oz', 'wp-dispensary' ),
+            __( '1 oz', 'wp-dispensary' ),
+            __( 'Price each', 'wp-dispensary' ),
+            __( 'Price per pack', 'wp-dispensary' ),
+            __( 'Units per pack', 'wp-dispensary' ),
+            __( 'Inventory', 'wp-dispensary' ),
+            __( 'Categories', 'wp-dispensary' ),
+            __( 'Featured image', 'wp-dispensary' )
         );
 
         // Filter headers.
