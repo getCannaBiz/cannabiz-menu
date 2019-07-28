@@ -83,22 +83,6 @@ class CSVExport {
         echo '<h2>' . __( 'WP Dispensary\'s Product Export', 'wp-dispensary' ) . '</h2>';
         echo '<p>' . __( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'wp-dispensary' ) . '</p>';
         echo '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . __( 'Export', 'wp-dispensary' ) . '</a></p>';
-
-        $cat_id           = '';
-        $category_name    = get_the_terms( '79', 'flowers_category' );
-        $category_name    = wp_get_post_terms( '79', 'flowers_category', array( 'fields' => 'ids' ) );
-
-        print_r( $category_name );
-
-        if ( $category_name && ! is_wp_error( $category_name ) ) {
-            foreach ( $category_name as $cat=>$value ) {
-                $cat_id .= $value . ', ';
-            }
-        }
-
-        print_r( $category_name );
-
-        echo '<strong>' . $cat_id . '</strong>';
     }
 
     /**
