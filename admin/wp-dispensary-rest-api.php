@@ -10,6 +10,11 @@
  * @subpackage WP_Dispensary/admin
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 /**
  * Adding featured image URL's to Flowers Custom Post Type
  *

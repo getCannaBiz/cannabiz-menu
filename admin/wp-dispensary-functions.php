@@ -10,6 +10,11 @@
  * @subpackage WP_Dispensary/admin
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 /**
  * Currency Code
  * 
@@ -189,7 +194,6 @@ function wpd_currency_code() {
 	);
 
 	return $currency_symbols[ $wpd_currency ];
-
 }
 
 /**
@@ -233,9 +237,7 @@ function wpd_pricing_currency_codes() {
 	$currency_codes = apply_filters( 'wpd_pricing_currency_codes_new', $currency );
 
 	return $currency_codes;
-
 }
-
 
 /**
  * WPD Admin Settings - Details phrase
@@ -272,7 +274,6 @@ function wpd_compounds_simple( $product_id, $type = NULL, $compound_array = NULL
     echo esc_html( apply_filters( 'wpd_compounds_simple', get_wpd_compounds_simple( $product_id, $type, $compound_array ) ) );
 }
 
-
 /**
  * Compounds details - Get Simple
  * 
@@ -280,7 +281,7 @@ function wpd_compounds_simple( $product_id, $type = NULL, $compound_array = NULL
  * @return string
  */
 function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = NULL ) {
-
+	// Set compound type.
 	if ( $type ) {
 		$type = $type;
 	} else {
@@ -295,8 +296,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
         $post_type_data = get_post_type_object( $post_type );
         $post_type_name = $post_type_data->label;
         $post_type_slug = $post_type_data->rewrite['slug'];
-        //echo $post_type_slug;
-		//echo $post_type_name;
 	}
 
 	if ( 'flowers' == $post_type || 'concentrates' == $post_type || 'prerolls' == $post_type || 'tinctures' == $post_type ) {
@@ -309,10 +308,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// Set compounds.
 	$compounds = array();
-
-	//echo $post_type;
-
-	// print_r( $compound_array );
 
 	// THC.
 	if ( NULL != $compound_array && in_array( 'thc', $compound_array ) ) {
@@ -409,7 +404,7 @@ function wpd_compounds_array( $product_id, $type = NULL, $compound_array = NULL 
  * @return string
  */
 function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = NULL ) {
-
+	// Set compound type.
 	if ( $type ) {
 		$type = $type;
 	} else {
@@ -424,8 +419,6 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
         $post_type_data = get_post_type_object( $post_type );
         $post_type_name = $post_type_data->label;
         $post_type_slug = $post_type_data->rewrite['slug'];
-        //echo $post_type_slug;
-		//echo $post_type_name;
 	}
 
 	if ( 'flowers' == $post_type || 'concentrates' == $post_type || 'prerolls' == $post_type || 'tinctures' == $post_type ) {
@@ -438,10 +431,6 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
 
 	// Set compounds.
 	$compounds = array();
-
-	//echo $post_type;
-
-	// print_r( $compound_array );
 
 	// THC.
 	if ( in_array( 'thc', $compound_array ) ) {

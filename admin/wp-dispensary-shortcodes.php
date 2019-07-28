@@ -214,12 +214,6 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		// Get compounds.
 		$compounds = get_wpd_compounds_simple( get_the_ID(), NULL, $compounds_new );
 
-		/*
-		echo "<pre>";
-		print_r( $compounds );
-		echo "</pre>";
-		*/
-		
 		// Create empty variable.
 		$show_compounds = '';
 
@@ -313,6 +307,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 	$tax_query = array(
 		'relation' => 'AND',
 	);
+
 	if ( '' !== $aroma ) {
 		$tax_query[] = array(
 			'taxonomy' => 'aroma',
@@ -320,6 +315,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $aroma,
 		);
 	}
+
 	if ( '' !== $flavor ) {
 		$tax_query[] = array(
 			'taxonomy' => 'flavor',
@@ -327,6 +323,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $flavor,
 		);
 	}
+
 	if ( '' !== $effect ) {
 		$tax_query[] = array(
 			'taxonomy' => 'effect',
@@ -334,6 +331,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $effect,
 		);
 	}
+
 	if ( '' !== $symptom ) {
 		$tax_query[] = array(
 			'taxonomy' => 'symptom',
@@ -341,6 +339,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $symptom,
 		);
 	}
+
 	if ( '' !== $condition ) {
 		$tax_query[] = array(
 			'taxonomy' => 'condition',
@@ -348,6 +347,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $condition,
 		);
 	}
+
 	if ( '' !== $vendor ) {
 		$tax_query[] = array(
 			'taxonomy' => 'vendor',
@@ -355,6 +355,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $vendor,
 		);
 	}
+
 	if ( '' !== $shelf_type ) {
 		$tax_query[] = array(
 			'taxonomy' => 'shelf_type',
@@ -362,6 +363,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $shelf_type,
 		);
 	}
+
 	if ( '' !== $strain_type ) {
 		$tax_query[] = array(
 			'taxonomy' => 'strain_type',
@@ -369,6 +371,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			'terms'    => $strain_type,
 		);
 	}
+
 	if ( '' !== $orderby ) {
 		$order    = $orderby;
 		$ordernew = 'ASC';
