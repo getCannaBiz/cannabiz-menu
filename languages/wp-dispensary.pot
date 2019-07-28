@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Dispensary\n"
-"POT-Creation-Date: 2019-06-21 09:46-0400\n"
-"PO-Revision-Date: 2019-06-21 09:40-0400\n"
+"POT-Creation-Date: 2019-07-28 12:40-0400\n"
+"PO-Revision-Date: 2019-07-28 12:39-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,26 +21,138 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: admin/class-wp-dispensary-admin-settings.php:663
+#: admin/class-wp-dispensary-admin-settings.php:665
 msgid "Choose File"
 msgstr ""
 
-#: admin/class-wp-dispensary-admin-settings.php:680
+#: admin/class-wp-dispensary-admin-settings.php:682
 msgid "Choose Image"
 msgstr ""
 
-#: admin/class-wp-dispensary-csv-export.php:83
+#: admin/class-wp-dispensary-csv-export.php:82
 msgid "WP Dispensary's Product Export"
 msgstr ""
 
-#: admin/class-wp-dispensary-csv-export.php:84
+#: admin/class-wp-dispensary-csv-export.php:83
 msgid ""
 "Export your WP Dispensary products as a CSV file by clicking the button "
 "below."
 msgstr ""
 
-#: admin/class-wp-dispensary-csv-export.php:85
+#: admin/class-wp-dispensary-csv-export.php:84
 msgid "Export"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:98
+msgid "ID"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:99
+msgid "Type"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:100
+#: admin/wp-dispensary-admin-settings.php:154
+#: admin/wp-dispensary-admin-settings.php:314
+msgid "Title"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:101
+msgid "Content"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:102
+msgid "Slug"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:103
+msgid "Date"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:104
+msgid "Author"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:105
+msgid ".5 g"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:106
+#: admin/post-types/wp-dispensary-metaboxes.php:195
+#: admin/post-types/wp-dispensary-metaboxes.php:335
+#: admin/wp-dispensary-data-output.php:441
+msgid "1 g"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:107
+#: admin/post-types/wp-dispensary-metaboxes.php:199
+#: admin/post-types/wp-dispensary-metaboxes.php:339
+#: admin/wp-dispensary-data-output.php:447
+msgid "2 g"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:108
+#: admin/post-types/wp-dispensary-metaboxes.php:203
+#: admin/wp-dispensary-data-output.php:453
+msgid "1/8 oz"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:109
+#: admin/post-types/wp-dispensary-metaboxes.php:207
+#: admin/wp-dispensary-data-output.php:459
+msgid "5 g"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:110
+#: admin/post-types/wp-dispensary-metaboxes.php:211
+#: admin/wp-dispensary-data-output.php:465
+msgid "1/4 oz"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:111
+#: admin/post-types/wp-dispensary-metaboxes.php:215
+#: admin/wp-dispensary-data-output.php:471
+msgid "1/2 oz"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:112
+#: admin/post-types/wp-dispensary-metaboxes.php:219
+#: admin/wp-dispensary-data-output.php:477
+msgid "1 oz"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:113
+#: admin/post-types/wp-dispensary-metaboxes.php:327
+msgid "Price each"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:114
+#: admin/post-types/wp-dispensary-metaboxes.php:582
+#: admin/post-types/wp-dispensary-metaboxes.php:694
+msgid "Price per pack"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:115
+#: admin/post-types/wp-dispensary-metaboxes.php:588
+#: admin/post-types/wp-dispensary-metaboxes.php:700
+msgid "Units per pack"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:116
+msgid "Inventory"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:117
+#: admin/post-types/wp-dispensary-taxonomies.php:455
+#: admin/post-types/wp-dispensary-taxonomies.php:496
+#: admin/post-types/wp-dispensary-taxonomies.php:537
+#: admin/post-types/wp-dispensary-taxonomies.php:578
+#: admin/post-types/wp-dispensary-taxonomies.php:619
+msgid "Categories"
+msgstr ""
+
+#: admin/class-wp-dispensary-csv-export.php:118
+msgid "Featured image"
 msgstr ""
 
 #: admin/class-wp-dispensary-permalink-settings.php:38
@@ -358,49 +470,8 @@ msgstr ""
 msgid "Flower Prices"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-metaboxes.php:195
-#: admin/post-types/wp-dispensary-metaboxes.php:335
-#: admin/wp-dispensary-data-output.php:441
-msgid "1 g"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:199
-#: admin/post-types/wp-dispensary-metaboxes.php:339
-#: admin/wp-dispensary-data-output.php:447
-msgid "2 g"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:203
-#: admin/wp-dispensary-data-output.php:453
-msgid "1/8 oz"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:207
-#: admin/wp-dispensary-data-output.php:459
-msgid "5 g"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:211
-#: admin/wp-dispensary-data-output.php:465
-msgid "1/4 oz"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:215
-#: admin/wp-dispensary-data-output.php:471
-msgid "1/2 oz"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:219
-#: admin/wp-dispensary-data-output.php:477
-msgid "1 oz"
-msgstr ""
-
 #: admin/post-types/wp-dispensary-metaboxes.php:294
 msgid "Concentrate Prices"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:327
-msgid "Price each"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-metaboxes.php:331
@@ -424,16 +495,6 @@ msgstr ""
 #: admin/post-types/wp-dispensary-metaboxes.php:576
 #: admin/post-types/wp-dispensary-metaboxes.php:688
 msgid "Price per unit"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:582
-#: admin/post-types/wp-dispensary-metaboxes.php:694
-msgid "Price per pack"
-msgstr ""
-
-#: admin/post-types/wp-dispensary-metaboxes.php:588
-#: admin/post-types/wp-dispensary-metaboxes.php:700
-msgid "Units per pack"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-metaboxes.php:772
@@ -1123,14 +1184,6 @@ msgstr ""
 msgid "No categories found"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-taxonomies.php:455
-#: admin/post-types/wp-dispensary-taxonomies.php:496
-#: admin/post-types/wp-dispensary-taxonomies.php:537
-#: admin/post-types/wp-dispensary-taxonomies.php:578
-#: admin/post-types/wp-dispensary-taxonomies.php:619
-msgid "Categories"
-msgstr ""
-
 #: admin/post-types/wp-dispensary-taxonomies.php:649
 msgctxt "general name"
 msgid "Allergens"
@@ -1201,10 +1254,10 @@ msgstr ""
 #: admin/post-types/wp-dispensary-widgets.php:195
 #: admin/post-types/wp-dispensary-widgets.php:430
 #: admin/post-types/wp-dispensary-widgets.php:666
-#: admin/post-types/wp-dispensary-widgets.php:909
-#: admin/post-types/wp-dispensary-widgets.php:1147
-#: admin/post-types/wp-dispensary-widgets.php:1389
-#: admin/post-types/wp-dispensary-widgets.php:1651
+#: admin/post-types/wp-dispensary-widgets.php:908
+#: admin/post-types/wp-dispensary-widgets.php:1145
+#: admin/post-types/wp-dispensary-widgets.php:1387
+#: admin/post-types/wp-dispensary-widgets.php:1649
 msgid "Widget Title:"
 msgstr ""
 
@@ -1215,10 +1268,10 @@ msgstr ""
 #: admin/post-types/wp-dispensary-widgets.php:206
 #: admin/post-types/wp-dispensary-widgets.php:441
 #: admin/post-types/wp-dispensary-widgets.php:677
-#: admin/post-types/wp-dispensary-widgets.php:920
-#: admin/post-types/wp-dispensary-widgets.php:1158
-#: admin/post-types/wp-dispensary-widgets.php:1400
-#: admin/post-types/wp-dispensary-widgets.php:1677
+#: admin/post-types/wp-dispensary-widgets.php:919
+#: admin/post-types/wp-dispensary-widgets.php:1156
+#: admin/post-types/wp-dispensary-widgets.php:1398
+#: admin/post-types/wp-dispensary-widgets.php:1675
 msgid "Randomize output?"
 msgstr ""
 
@@ -1233,15 +1286,15 @@ msgstr ""
 #: admin/post-types/wp-dispensary-widgets.php:221
 #: admin/post-types/wp-dispensary-widgets.php:456
 #: admin/post-types/wp-dispensary-widgets.php:692
-#: admin/post-types/wp-dispensary-widgets.php:935
-#: admin/post-types/wp-dispensary-widgets.php:1173
-#: admin/post-types/wp-dispensary-widgets.php:1415
+#: admin/post-types/wp-dispensary-widgets.php:934
+#: admin/post-types/wp-dispensary-widgets.php:1171
+#: admin/post-types/wp-dispensary-widgets.php:1413
 msgid "Display featured image?"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:225
 #: admin/post-types/wp-dispensary-widgets.php:696
-#: admin/post-types/wp-dispensary-widgets.php:1696
+#: admin/post-types/wp-dispensary-widgets.php:1694
 msgid "Image size:"
 msgstr ""
 
@@ -1285,137 +1338,137 @@ msgstr ""
 msgid "Display edible category?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:749
+#: admin/post-types/wp-dispensary-widgets.php:748
 msgid "Dispensary Pre-rolls"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:751
+#: admin/post-types/wp-dispensary-widgets.php:750
 msgid "Your most recent Pre-rolls"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:914
+#: admin/post-types/wp-dispensary-widgets.php:913
 msgid "Amount of pre-rolls to show:"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:925
+#: admin/post-types/wp-dispensary-widgets.php:924
 msgid "Display pre-roll name?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:930
+#: admin/post-types/wp-dispensary-widgets.php:929
 msgid "Display pre-roll flower?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:992
+#: admin/post-types/wp-dispensary-widgets.php:990
 msgid "Dispensary Topicals"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:994
+#: admin/post-types/wp-dispensary-widgets.php:992
 msgid "Your most recent Topicals"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1152
+#: admin/post-types/wp-dispensary-widgets.php:1150
 msgid "Amount of topicals to show:"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1163
+#: admin/post-types/wp-dispensary-widgets.php:1161
 msgid "Display topical name?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1168
+#: admin/post-types/wp-dispensary-widgets.php:1166
 msgid "Display topical category?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1228
+#: admin/post-types/wp-dispensary-widgets.php:1226
 msgid "Dispensary Growers"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1230
+#: admin/post-types/wp-dispensary-widgets.php:1228
 msgid "Your most recent Clones and Seeds"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1394
+#: admin/post-types/wp-dispensary-widgets.php:1392
 msgid "Amount of growers to show:"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1405
+#: admin/post-types/wp-dispensary-widgets.php:1403
 msgid "Display grower name?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1410
+#: admin/post-types/wp-dispensary-widgets.php:1408
 msgid "Display flower type?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1471
+#: admin/post-types/wp-dispensary-widgets.php:1469
 msgid "Dispensary Products"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1473
+#: admin/post-types/wp-dispensary-widgets.php:1471
 msgid "Your WP Dispensary products"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1638
+#: admin/post-types/wp-dispensary-widgets.php:1636
 msgid "Products"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1656
+#: admin/post-types/wp-dispensary-widgets.php:1654
 msgid "Menu item type:"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1658
+#: admin/post-types/wp-dispensary-widgets.php:1656
 msgid "All types"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1659
-#: admin/wp-dispensary-functions.php:526
+#: admin/post-types/wp-dispensary-widgets.php:1657
+#: admin/wp-dispensary-functions.php:510
 msgid "Flowers"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1660
-#: admin/wp-dispensary-functions.php:527
+#: admin/post-types/wp-dispensary-widgets.php:1658
+#: admin/wp-dispensary-functions.php:511
 msgid "Concentrates"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1661
-#: admin/wp-dispensary-functions.php:528
+#: admin/post-types/wp-dispensary-widgets.php:1659
+#: admin/wp-dispensary-functions.php:512
 msgid "Edibles"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1662
-#: admin/wp-dispensary-functions.php:529
+#: admin/post-types/wp-dispensary-widgets.php:1660
+#: admin/wp-dispensary-functions.php:513
 msgid "Pre-rolls"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1663
-#: admin/wp-dispensary-functions.php:530
+#: admin/post-types/wp-dispensary-widgets.php:1661
+#: admin/wp-dispensary-functions.php:514
 msgid "Topicals"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1664
-#: admin/wp-dispensary-functions.php:531
+#: admin/post-types/wp-dispensary-widgets.php:1662
+#: admin/wp-dispensary-functions.php:515
 msgid "Growers"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1665
+#: admin/post-types/wp-dispensary-widgets.php:1663
 msgid "Gear"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1666
+#: admin/post-types/wp-dispensary-widgets.php:1664
 msgid "Tinctures"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1671
+#: admin/post-types/wp-dispensary-widgets.php:1669
 msgid "Amount of items to show:"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1682
+#: admin/post-types/wp-dispensary-widgets.php:1680
 msgid "Display item name?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1687
+#: admin/post-types/wp-dispensary-widgets.php:1685
 msgid "Display item price?"
 msgstr ""
 
-#: admin/post-types/wp-dispensary-widgets.php:1692
+#: admin/post-types/wp-dispensary-widgets.php:1690
 msgid "Display products in carousel?"
 msgstr ""
 
@@ -1445,11 +1498,6 @@ msgstr ""
 
 #: admin/wp-dispensary-admin-settings.php:140
 msgid "Prices table"
-msgstr ""
-
-#: admin/wp-dispensary-admin-settings.php:154
-#: admin/wp-dispensary-admin-settings.php:314
-msgid "Title"
 msgstr ""
 
 #: admin/wp-dispensary-admin-settings.php:155
@@ -1720,414 +1768,373 @@ msgstr ""
 msgid "Price per unit:"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:254
+#: admin/wp-dispensary-functions.php:256
 msgid "Information"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:256
+#: admin/wp-dispensary-functions.php:258
+#: includes/functions/wp-dispensary-settings-functions.php:96
 msgid "Details"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:573
+#: admin/wp-dispensary-functions.php:557
 #, php-format
 msgid "Flower updated. <a href=\"%s\">View flower</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:574 admin/wp-dispensary-functions.php:576
+#: admin/wp-dispensary-functions.php:558 admin/wp-dispensary-functions.php:560
 msgid "Flower updated."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:575
+#: admin/wp-dispensary-functions.php:559
 msgid "Flower deleted."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:577
+#: admin/wp-dispensary-functions.php:561
 #, php-format
 msgid "Flower restored to revision from %s"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:578
+#: admin/wp-dispensary-functions.php:562
 #, php-format
 msgid "Flower published. <a href=\"%s\">View flower</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:579
+#: admin/wp-dispensary-functions.php:563
 msgid "Flower saved."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:580
+#: admin/wp-dispensary-functions.php:564
 #, php-format
 msgid "Flower submitted. <a target=\"_blank\" href=\"%s\">Preview flower</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:581
+#: admin/wp-dispensary-functions.php:565
 #, php-format
 msgid ""
 "Flower scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
 "\">Preview flower</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:582 admin/wp-dispensary-functions.php:597
-#: admin/wp-dispensary-functions.php:612 admin/wp-dispensary-functions.php:627
-#: admin/wp-dispensary-functions.php:642 admin/wp-dispensary-functions.php:657
+#: admin/wp-dispensary-functions.php:566 admin/wp-dispensary-functions.php:581
+#: admin/wp-dispensary-functions.php:596 admin/wp-dispensary-functions.php:611
+#: admin/wp-dispensary-functions.php:626 admin/wp-dispensary-functions.php:641
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:583
+#: admin/wp-dispensary-functions.php:567
 #, php-format
 msgid ""
 "Flower draft updated. <a target=\"_blank\" href=\"%s\">Preview flower</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:588
+#: admin/wp-dispensary-functions.php:572
 #, php-format
 msgid "Concentrate updated. <a href=\"%s\">View concentrate</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:589 admin/wp-dispensary-functions.php:591
+#: admin/wp-dispensary-functions.php:573 admin/wp-dispensary-functions.php:575
 msgid "Concentrate updated."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:590
+#: admin/wp-dispensary-functions.php:574
 msgid "Concentrate deleted."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:592
+#: admin/wp-dispensary-functions.php:576
 #, php-format
 msgid "Concentrate restored to revision from %s"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:593
+#: admin/wp-dispensary-functions.php:577
 #, php-format
 msgid "Concentrate published. <a href=\"%s\">View concentrate</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:594
+#: admin/wp-dispensary-functions.php:578
 msgid "Concentrate saved."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:595
+#: admin/wp-dispensary-functions.php:579
 #, php-format
 msgid ""
 "Concentrate submitted. <a target=\"_blank\" href=\"%s\">Preview concentrate</"
 "a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:596
+#: admin/wp-dispensary-functions.php:580
 #, php-format
 msgid ""
 "Concentrate scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
 "\"%2$s\">Preview concentrate</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:598
+#: admin/wp-dispensary-functions.php:582
 #, php-format
 msgid ""
 "Concentrate draft updated. <a target=\"_blank\" href=\"%s\">Preview "
 "concentrate</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:603
+#: admin/wp-dispensary-functions.php:587
 #, php-format
 msgid "Edible updated. <a href=\"%s\">View edible</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:604 admin/wp-dispensary-functions.php:606
+#: admin/wp-dispensary-functions.php:588 admin/wp-dispensary-functions.php:590
 msgid "Edible updated."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:605
+#: admin/wp-dispensary-functions.php:589
 msgid "Edible deleted."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:607
+#: admin/wp-dispensary-functions.php:591
 #, php-format
 msgid "Edible restored to revision from %s"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:608
+#: admin/wp-dispensary-functions.php:592
 #, php-format
 msgid "Edible published. <a href=\"%s\">View edible</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:609
+#: admin/wp-dispensary-functions.php:593
 msgid "Edible saved."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:610
+#: admin/wp-dispensary-functions.php:594
 #, php-format
 msgid "Edible submitted. <a target=\"_blank\" href=\"%s\">Preview edible</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:611
+#: admin/wp-dispensary-functions.php:595
 #, php-format
 msgid ""
 "Edible scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
 "\">Preview edible</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:613
+#: admin/wp-dispensary-functions.php:597
 #, php-format
 msgid ""
 "Edible draft updated. <a target=\"_blank\" href=\"%s\">Preview edible</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:618
+#: admin/wp-dispensary-functions.php:602
 #, php-format
 msgid "Pre-roll updated. <a href=\"%s\">View pre-roll</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:619 admin/wp-dispensary-functions.php:621
+#: admin/wp-dispensary-functions.php:603 admin/wp-dispensary-functions.php:605
 msgid "Pre-roll updated."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:620
+#: admin/wp-dispensary-functions.php:604
 msgid "Pre-roll deleted."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:622
+#: admin/wp-dispensary-functions.php:606
 #, php-format
 msgid "Pre-roll restored to revision from %s"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:623
+#: admin/wp-dispensary-functions.php:607
 #, php-format
 msgid "Pre-roll published. <a href=\"%s\">View pre-roll</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:624
+#: admin/wp-dispensary-functions.php:608
 msgid "Pre-roll saved."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:625
+#: admin/wp-dispensary-functions.php:609
 #, php-format
 msgid ""
 "Pre-roll submitted. <a target=\"_blank\" href=\"%s\">Preview pre-roll</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:626
+#: admin/wp-dispensary-functions.php:610
 #, php-format
 msgid ""
 "Pre-roll scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
 "\"%2$s\">Preview pre-roll</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:628
+#: admin/wp-dispensary-functions.php:612
 #, php-format
 msgid ""
 "Pre-roll draft updated. <a target=\"_blank\" href=\"%s\">Preview pre-roll</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:633
+#: admin/wp-dispensary-functions.php:617
 #, php-format
 msgid "Topical updated. <a href=\"%s\">View topical</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:634 admin/wp-dispensary-functions.php:636
+#: admin/wp-dispensary-functions.php:618 admin/wp-dispensary-functions.php:620
 msgid "Topical updated."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:635
+#: admin/wp-dispensary-functions.php:619
 msgid "Topical deleted."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:637
+#: admin/wp-dispensary-functions.php:621
 #, php-format
 msgid "Topical restored to revision from %s"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:638
+#: admin/wp-dispensary-functions.php:622
 #, php-format
 msgid "Topical published. <a href=\"%s\">View topical</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:639
+#: admin/wp-dispensary-functions.php:623
 msgid "Topical saved."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:640
+#: admin/wp-dispensary-functions.php:624
 #, php-format
 msgid "Topical submitted. <a target=\"_blank\" href=\"%s\">Preview topical</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:641
+#: admin/wp-dispensary-functions.php:625
 #, php-format
 msgid ""
 "Topical scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
 "\"%2$s\">Preview topical</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:643
+#: admin/wp-dispensary-functions.php:627
 #, php-format
 msgid ""
 "Topical draft updated. <a target=\"_blank\" href=\"%s\">Preview topical</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:648
+#: admin/wp-dispensary-functions.php:632
 #, php-format
 msgid "Item updated. <a href=\"%s\">View item</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:649 admin/wp-dispensary-functions.php:651
+#: admin/wp-dispensary-functions.php:633 admin/wp-dispensary-functions.php:635
 msgid "Item updated."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:650
+#: admin/wp-dispensary-functions.php:634
 msgid "Item deleted."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:652
+#: admin/wp-dispensary-functions.php:636
 #, php-format
 msgid "Item restored to revision from %s"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:653
+#: admin/wp-dispensary-functions.php:637
 #, php-format
 msgid "Item published. <a href=\"%s\">View item</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:654
+#: admin/wp-dispensary-functions.php:638
 msgid "Item saved."
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:655
+#: admin/wp-dispensary-functions.php:639
 #, php-format
 msgid "Item submitted. <a target=\"_blank\" href=\"%s\">Preview item</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:656
+#: admin/wp-dispensary-functions.php:640
 #, php-format
 msgid ""
 "Item scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
 "\">Preview item</a>"
 msgstr ""
 
-#: admin/wp-dispensary-functions.php:658
+#: admin/wp-dispensary-functions.php:642
 #, php-format
 msgid "Item draft updated. <a target=\"_blank\" href=\"%s\">Preview item</a>"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:155
-#: admin/wp-dispensary-shortcodes.php:423
-#: admin/wp-dispensary-shortcodes.php:621
-#: admin/wp-dispensary-shortcodes.php:820
-#: admin/wp-dispensary-shortcodes.php:996
-#: admin/wp-dispensary-shortcodes.php:1172
+#: admin/wp-dispensary-shortcodes.php:154
+#: admin/wp-dispensary-shortcodes.php:394
+#: admin/wp-dispensary-shortcodes.php:570
+#: admin/wp-dispensary-shortcodes.php:746
+#: admin/wp-dispensary-shortcodes.php:894
+#: admin/wp-dispensary-shortcodes.php:1047
 msgid "(view all)"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:182
-#: admin/wp-dispensary-shortcodes.php:184
-#: admin/wp-dispensary-shortcodes.php:188
-msgid "Menu - Flower"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:500
-#: admin/wp-dispensary-shortcodes.php:502
-#: admin/wp-dispensary-shortcodes.php:506
-msgid "Menu - Concentrate"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:645
-#: admin/wp-dispensary-shortcodes.php:1657
+#: admin/wp-dispensary-shortcodes.php:586
+#: admin/wp-dispensary-shortcodes.php:1485
 #: includes/functions/wp-dispensary-product-functions.php:167
 msgid "Servings: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:656
-#: admin/wp-dispensary-shortcodes.php:666
-#: admin/wp-dispensary-shortcodes.php:1534
-#: admin/wp-dispensary-shortcodes.php:1583
-#: admin/wp-dispensary-shortcodes.php:1649
+#: admin/wp-dispensary-shortcodes.php:597
+#: admin/wp-dispensary-shortcodes.php:607
+#: admin/wp-dispensary-shortcodes.php:1368
+#: admin/wp-dispensary-shortcodes.php:1422
+#: admin/wp-dispensary-shortcodes.php:1478
 #: includes/functions/wp-dispensary-product-functions.php:79
 #: includes/functions/wp-dispensary-product-functions.php:156
 msgid "THC: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:695
-#: admin/wp-dispensary-shortcodes.php:697
-#: admin/wp-dispensary-shortcodes.php:701
-msgid "Menu - Edible"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:853
-#: admin/wp-dispensary-shortcodes.php:1636
+#: admin/wp-dispensary-shortcodes.php:767
+#: admin/wp-dispensary-shortcodes.php:1468
 #: includes/functions/wp-dispensary-product-functions.php:145
 msgid "Weight:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:876
-#: admin/wp-dispensary-shortcodes.php:878
-#: admin/wp-dispensary-shortcodes.php:882
-msgid "Menu - Pre-roll"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:1025
-#: admin/wp-dispensary-shortcodes.php:1614
+#: admin/wp-dispensary-shortcodes.php:915
+#: admin/wp-dispensary-shortcodes.php:1446
 #: includes/functions/wp-dispensary-product-functions.php:112
 msgid "Size:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1031
-#: admin/wp-dispensary-shortcodes.php:1620
+#: admin/wp-dispensary-shortcodes.php:922
+#: admin/wp-dispensary-shortcodes.php:1453
 #: includes/functions/wp-dispensary-product-functions.php:123
 msgid "THC:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1038
-#: admin/wp-dispensary-shortcodes.php:1626
+#: admin/wp-dispensary-shortcodes.php:929
+#: admin/wp-dispensary-shortcodes.php:1460
 #: includes/functions/wp-dispensary-product-functions.php:134
 msgid "CBD:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1061
-#: admin/wp-dispensary-shortcodes.php:1063
-#: admin/wp-dispensary-shortcodes.php:1067
-msgid "Menu - Topical"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:1207
-#: admin/wp-dispensary-shortcodes.php:1596
+#: admin/wp-dispensary-shortcodes.php:1068
+#: admin/wp-dispensary-shortcodes.php:1432
 #: includes/functions/wp-dispensary-product-functions.php:90
 msgid "Seeds:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1217
-#: admin/wp-dispensary-shortcodes.php:1606
+#: admin/wp-dispensary-shortcodes.php:1075
+#: admin/wp-dispensary-shortcodes.php:1439
 #: includes/functions/wp-dispensary-product-functions.php:101
 msgid "Clones:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1240
-#: admin/wp-dispensary-shortcodes.php:1242
-#: admin/wp-dispensary-shortcodes.php:1246
-msgid "Menu - Grower"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:1542
+#: admin/wp-dispensary-shortcodes.php:1377
 msgid "THCA: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1550
+#: admin/wp-dispensary-shortcodes.php:1386
 msgid "CBD: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1558
+#: admin/wp-dispensary-shortcodes.php:1395
 msgid "CBA: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1566
+#: admin/wp-dispensary-shortcodes.php:1404
 msgid "CBN: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1574
+#: admin/wp-dispensary-shortcodes.php:1413
 msgid "CBG: "
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:1730
-#: admin/wp-dispensary-shortcodes.php:1732
-#: admin/wp-dispensary-shortcodes.php:1736
-msgid "Menu item"
 msgstr ""
 
 #: includes/class-wp-dispensary-activator.php:90
