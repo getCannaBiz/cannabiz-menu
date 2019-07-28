@@ -118,6 +118,11 @@ class CSVExport {
             'Categories',
             'Featured Image'
         );
+
+        // Filter headers.
+        $header_row = apply_filters( 'wpd_csv_export_header_row', $header_row );
+
+        // Data rows.
         $data_rows = array();
 
         global $wpdb;
