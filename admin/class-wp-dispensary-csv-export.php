@@ -42,7 +42,7 @@ class CSVExport {
         }
 
         // Add extra menu items for admins.
-        add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+        add_action( 'admin_menu', array( $this, 'admin_menu' ), 99 );
 
         // Create end-points
         add_filter( 'query_vars', array( $this, 'query_vars' ) );
