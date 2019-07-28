@@ -53,8 +53,8 @@ class CSVExport {
     * Add extra menu items for admins
     */
     public function admin_menu() {
-        //add_submenu_page( 'wpd-settings', 'Export Products', 'Export Products', 'manage_options', 'admin.php?page=export_products', null );
-        add_menu_page( 'Export Products', 'Export Products', 'manage_options', 'export_products', array( $this, 'export_products' ) );
+        add_submenu_page( 'wpd-settings', 'Export Products', 'Export Products', 'manage_options', 'export_products', array( $this, 'export_products' ) );
+        //add_menu_page( 'Export Products', 'Export Products', 'manage_options', 'export_products', array( $this, 'export_products' ) );
     }
 
     /**
