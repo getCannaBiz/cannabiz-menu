@@ -221,17 +221,10 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		*/
 		
 		// Create empty variable.
-		$showcompounds = '';
-
-		/*
-		// Loop through each compound, and append it to variable.
-		foreach ( $compounds as $compound ) {
-			$showcompounds .= '<span class="wpd-productinfo ' . $compound . '"><strong>' . __( $compound, 'wp-dispensary' ) . ':</strong> ' . $compound . '</span>';
-		}
-		*/
+		$show_compounds = '';
 
 		// Combine compounds into one variable.
-		$showcompounds = $compounds;
+		$show_compounds = $compounds;
 
 		/** Shortcode display */
 
@@ -258,7 +251,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 			$wpd_shortcode_bottom_flowers = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $showcompounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_flowers . '</div>';
+		$wpdposts .= $showname . $showinfo . $show_compounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_flowers . '</div>';
 
 	endwhile;
 
@@ -459,7 +452,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		$compounds = get_wpd_compounds_simple( get_the_ID(), NULL, $compounds_new );
 
 		// Combine compounds into one variable.
-		$showcompounds = $compounds;
+		$show_compounds = $compounds;
 
 		/** Shortcode display */
 
@@ -486,7 +479,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 			$wpd_shortcode_bottom_concentrates = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $showcompounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_concentrates . '</div>';
+		$wpdposts .= $showname . $showinfo . $show_compounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_concentrates . '</div>';
 
 	endwhile;
 
