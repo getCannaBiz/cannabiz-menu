@@ -245,7 +245,7 @@ class CSVExport {
                 $cat_id,
                 get_post_thumbnail_id( $product['ID'] ),
             );
-            $data_rows[] = $row;
+            $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row );
         }
 
         $fh = @fopen( 'php://output', 'w' );
