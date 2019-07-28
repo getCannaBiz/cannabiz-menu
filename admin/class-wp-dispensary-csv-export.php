@@ -41,10 +41,10 @@ class CSVExport {
             exit;
         }
 
-        // Add extra menu items for admins.
+        // Add submenu link to the WP Dispensary settings menu tab..
         add_action( 'admin_menu', array( $this, 'admin_menu' ), 99 );
 
-        // Create end-points
+        // Create end-points.
         add_filter( 'query_vars', array( $this, 'query_vars' ) );
         add_action( 'parse_request', array( $this, 'parse_request' ) );
     }
@@ -54,7 +54,6 @@ class CSVExport {
     */
     public function admin_menu() {
         add_submenu_page( 'wpd-settings', 'Export Products', 'Export Products', 'manage_options', 'export_products', array( $this, 'export_products' ) );
-        //add_menu_page( 'Export Products', 'Export Products', 'manage_options', 'export_products', array( $this, 'export_products' ) );
     }
 
     /**
