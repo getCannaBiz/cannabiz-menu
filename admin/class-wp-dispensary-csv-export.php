@@ -133,8 +133,7 @@ class CSVExport {
         // Set the rows (matches headers).
         foreach ( $products as $product ) {
 
-            //print_r( $product );
-
+            // Cat ID.
             $cat_id = '';
 
             if ( 'flowers' == $product['post_type'] ) {
