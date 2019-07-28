@@ -696,7 +696,6 @@ class wpdispensary_edibles_widget extends WP_Widget {
 			<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
 			<?php
 				$terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
-
 				if ( $terms ) {
 					printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
 					foreach ( $terms as $term ) {
@@ -938,20 +937,19 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
 			<?php
-			$terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
-
-			if ( $terms ) {
-				printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
-				foreach ( $terms as $term ) {
-					if ( esc_html( $term ) != $instance['imagesize'] ) {
-						$imagesizeinfo = '';
-					} else {
-						$imagesizeinfo = 'selected="selected"';
+				$terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
+				if ( $terms ) {
+					printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+					foreach ( $terms as $term ) {
+						if ( esc_html( $term ) != $instance['imagesize'] ) {
+							$imagesizeinfo = '';
+						} else {
+							$imagesizeinfo = 'selected="selected"';
+						}
+						printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
 					}
-					printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
+					print( '</select>' );
 				}
-				print( '</select>' );
-			}
 			?>
 		</p>
 
@@ -1176,19 +1174,19 @@ class wpdispensary_topicals_widget extends WP_Widget {
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
 		<?php
-		$terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
-		if ( $terms ) {
-			printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
-			foreach ( $terms as $term ) {
-				if ( esc_html( $term ) != $instance['imagesize'] ) {
-					$imagesizeinfo = '';
-				} else {
-					$imagesizeinfo = 'selected="selected"';
+			$terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
+			if ( $terms ) {
+				printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'imagesize' ) ) . '" name="' . esc_html( $this->get_field_name( 'imagesize' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'imagesize' ) ) );
+				foreach ( $terms as $term ) {
+					if ( esc_html( $term ) != $instance['imagesize'] ) {
+						$imagesizeinfo = '';
+					} else {
+						$imagesizeinfo = 'selected="selected"';
+					}
+					printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
 				}
-				printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $term ), esc_html( $term ) );
+				print( '</select>' );
 			}
-			print( '</select>' );
-		}
 		?>
 	</p>
 
