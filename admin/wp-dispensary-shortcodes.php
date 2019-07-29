@@ -11,7 +11,9 @@
  */
 
 /**
- * Shortcode images
+ * Add custom image sizes.
+ * 
+ * @since 1.0
  */
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'dispensary-image', 360, 250, true );
