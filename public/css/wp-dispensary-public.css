@@ -598,7 +598,9 @@ table.wpdispensary-table.single.details.compound-details td {
 	}
 
 	.wpdshortcode,
-	.wpdshortcode:nth-child(3n+3) {
+	.wpdshortcode:nth-child(3n+3),
+	.wpd-menu-item,
+	.wpd-menu-item:nth-child(3n+2) {
 		margin: 12px 0;
 		width: 100%;
 	}
