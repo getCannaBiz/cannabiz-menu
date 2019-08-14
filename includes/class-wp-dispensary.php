@@ -75,7 +75,7 @@ class WP_Dispensary {
 		if ( defined( 'WP_DISPENSARY_VERSION' ) ) {
 			$this->version = WP_DISPENSARY_VERSION;
 		} else {
-			$this->version = '2.9';
+			$this->version = '3.0';
 		}
 
 		$this->load_dependencies();
@@ -200,7 +200,7 @@ class WP_Dispensary {
 		 *
 		 * @since    3.0
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-csv-export.php';
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-csv-export.php';
 
 		$this->loader = new WP_Dispensary_Loader();
 

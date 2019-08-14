@@ -1,5 +1,29 @@
 # Changelog
 
+### 3.0
+* Added `Dispensary Products` default widget in `admin/post-types/wp-dispensary-widgets.php`
+* Added `wpd-thumbnail` image size in `admin/wp-dispensary-shortcodes.php`
+* Added Tinctures to post type check for mg/% in `admin/wp-dispensary-functions.php`
+* Added `wpd_featured_image_sizes` helper function in `admin/wp-dispensary-functions.php`
+* Added `is_product` helper function in `includes/functions/wp-dispensary-product-functions.php`
+* Added 6 helper functions with a new admin settings file in `includes/functions/wp-dispensary-settings-functions.php`
+* Added eCommerce patient registration redirection setting in `admin/wp-dispensary-admin-settings.php`
+* Added styles for the new `Dispensary Products` widget in `public/css/wp-dispensary-public.css`
+* Bugfix shortcodes topical size variable check in `admin/wp-dispensary-shortcodes.php`
+* Bugfix added closing span tags for clones and seeds in `admin/wp-dispensary-shortcodes.php`
+* Updated margins for product titles in shortcodes in `public/css/wp-dispensary-public.css`
+* Updated mobile wpd_menu shortcode display as one item per row in `public/css/wp-dispensary-public.css`
+* Updated pricebox number input field style in `admin/css/wp-dispensary-admin.css`
+* Updated widgets to use helper function for menu types in `admin/post-types/wp-dispensary-widgets.php`
+* Updated drivers license setting name in `admin/wp-dispensary-admin-settings.php`
+* Updated hide compounds function to return TRUE/FALSE in `includes/functions/wp-dispensary-settings-functions.php`
+* Updated the redirect_url full with included home_url() in `includes/functions/wp-dispensary-settings-functions.php`
+* Updated shortcodes to use the `get_wpd_product_image` function in `admin/wp-dispensary-shortcodes.php`
+* Updated select options for featured image sizes in `admin/post-types/wp-dispensary-widgets.php`
+* Updated plugin links function name in `wp-dispensary.php`
+* Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+* General code cleanup throughout various files in the plugin
+
 ### 2.9
 * Added ground shipping payment method and instructions box in `admin/wp-dispensary-admin-settings.php`
 * Updated menu types simple function to remove `-` from `pre-rolls` in `admin/wp-dispensary-functions.php`
