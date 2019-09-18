@@ -220,7 +220,7 @@ function get_wpd_product_image( $product_id = NULL, $image_size ) {
     $thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $img_size, false );
     $thumbnail_url       = $thumbnail_url_array[0];
 
-    // Show Image.
+    // Show image.
     if ( null === $thumbnail_url && 'full' === $image_size ) {
         $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
