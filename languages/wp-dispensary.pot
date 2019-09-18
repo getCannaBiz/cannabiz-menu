@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Dispensary\n"
-"POT-Creation-Date: 2019-08-12 20:46-0400\n"
-"PO-Revision-Date: 2019-08-12 20:42-0400\n"
+"POT-Creation-Date: 2019-09-18 15:13-0400\n"
+"PO-Revision-Date: 2019-09-18 15:13-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -433,6 +433,9 @@ msgstr ""
 #: admin/post-types/wp-dispensary-metaboxes.php:60
 #: admin/wp-dispensary-data-output.php:141
 #: admin/wp-dispensary-data-output.php:201
+#: includes/functions/wp-dispensary-product-functions.php:79
+#: includes/functions/wp-dispensary-product-functions.php:123
+#: includes/functions/wp-dispensary-product-functions.php:156
 msgid "THC"
 msgstr ""
 
@@ -444,6 +447,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-metaboxes.php:68
 #: admin/wp-dispensary-data-output.php:153
 #: admin/wp-dispensary-data-output.php:207
+#: includes/functions/wp-dispensary-product-functions.php:134
 msgid "CBD"
 msgstr ""
 
@@ -527,6 +531,7 @@ msgstr ""
 
 #: admin/post-types/wp-dispensary-metaboxes.php:911
 #: admin/wp-dispensary-data-output.php:189
+#: includes/functions/wp-dispensary-product-functions.php:167
 msgid "Servings"
 msgstr ""
 
@@ -1244,7 +1249,7 @@ msgid "Allergens"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:40
-msgid "Dispensary Flowers"
+msgid "WPD Flowers"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:42
@@ -1299,7 +1304,7 @@ msgid "Image size:"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:276
-msgid "Dispensary Concentrates"
+msgid "WPD Concentrates"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:278
@@ -1319,7 +1324,7 @@ msgid "Display concentrate category?"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:511
-msgid "Dispensary Edibles"
+msgid "WPD Edibles"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:513
@@ -1339,7 +1344,7 @@ msgid "Display edible category?"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:748
-msgid "Dispensary Pre-rolls"
+msgid "WPD Pre-rolls"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:750
@@ -1359,7 +1364,7 @@ msgid "Display pre-roll flower?"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:990
-msgid "Dispensary Topicals"
+msgid "WPD Topicals"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:992
@@ -1379,7 +1384,7 @@ msgid "Display topical category?"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:1226
-msgid "Dispensary Growers"
+msgid "WPD Growers"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-widgets.php:1228
@@ -1735,10 +1740,12 @@ msgid "Net weight"
 msgstr ""
 
 #: admin/wp-dispensary-data-output.php:213
+#: includes/functions/wp-dispensary-product-functions.php:112
 msgid "Size"
 msgstr ""
 
 #: admin/wp-dispensary-data-output.php:255
+#: includes/functions/wp-dispensary-product-functions.php:145
 msgid "Weight"
 msgstr ""
 
@@ -2067,7 +2074,6 @@ msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:588
 #: admin/wp-dispensary-shortcodes.php:1487
-#: includes/functions/wp-dispensary-product-functions.php:167
 msgid "Servings: "
 msgstr ""
 
@@ -2076,44 +2082,36 @@ msgstr ""
 #: admin/wp-dispensary-shortcodes.php:1370
 #: admin/wp-dispensary-shortcodes.php:1424
 #: admin/wp-dispensary-shortcodes.php:1480
-#: includes/functions/wp-dispensary-product-functions.php:79
-#: includes/functions/wp-dispensary-product-functions.php:156
 msgid "THC: "
 msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:769
 #: admin/wp-dispensary-shortcodes.php:1470
-#: includes/functions/wp-dispensary-product-functions.php:145
 msgid "Weight:"
 msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:917
 #: admin/wp-dispensary-shortcodes.php:1448
-#: includes/functions/wp-dispensary-product-functions.php:112
 msgid "Size:"
 msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:924
 #: admin/wp-dispensary-shortcodes.php:1455
-#: includes/functions/wp-dispensary-product-functions.php:123
 msgid "THC:"
 msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:931
 #: admin/wp-dispensary-shortcodes.php:1462
-#: includes/functions/wp-dispensary-product-functions.php:134
 msgid "CBD:"
 msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:1070
 #: admin/wp-dispensary-shortcodes.php:1434
-#: includes/functions/wp-dispensary-product-functions.php:90
 msgid "Seeds:"
 msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:1077
 #: admin/wp-dispensary-shortcodes.php:1441
-#: includes/functions/wp-dispensary-product-functions.php:101
 msgid "Clones:"
 msgstr ""
 
@@ -2155,6 +2153,14 @@ msgstr ""
 
 #: includes/functions/wp-dispensary-pricing-functions.php:158
 msgid "Prices"
+msgstr ""
+
+#: includes/functions/wp-dispensary-product-functions.php:90
+msgid "Seeds"
+msgstr ""
+
+#: includes/functions/wp-dispensary-product-functions.php:101
+msgid "Clones"
 msgstr ""
 
 #: wp-dispensary.php:104
