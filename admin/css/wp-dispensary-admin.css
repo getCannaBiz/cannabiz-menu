@@ -299,22 +299,22 @@ th#featured_thumb {
 /* Widget styles
 -------------------------------------------------------------- */
 
-div.widget[id*=_wpdispensary_] .widget-top,
-div.widget[id*=_wpdispensary_] .widget-top:hover {
+div.widget[id*=_wp_dispensary_] .widget-top,
+div.widget[id*=_wp_dispensary_] .widget-top:hover {
 	border-color: #76bd43;
 }
 
-div.widget[id*=_wpdispensary_] .widget-title,
-div.widget[id*=_wpdispensary_] .widget-title h3 {
+div.widget[id*=_wp_dispensary_] .widget-title,
+div.widget[id*=_wp_dispensary_] .widget-title h3 {
 	background: #76bd43;
 	color: #FFF;
 }
 
-div.widget[id*=_wpdispensary_] .widget-title .in-widget-title {
+div.widget[id*=_wp_dispensary_] .widget-title .in-widget-title {
 	color: rgba(255,255,255,0.6);
 }
 
-div.widget[id*=_wpdispensary_] .widget-action {
+div.widget[id*=_wp_dispensary_] .widget-action {
 	color: #FFF;
 }
 
