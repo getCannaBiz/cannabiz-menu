@@ -864,3 +864,35 @@ add_filter( 'rest_prepare_edibles', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_prerolls', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_topicals', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_growers', 'wpd_vendor', 10, 3 );
+
+/**
+ * Add Shelf Type taxonomy for specific Custom Post Types
+ * 
+ * @since 3.1
+ */
+function wpd_rest_shelf_type( $data, $post, $request ) {
+	$_data               = $data->data;
+	$_data['shelf_type'] = get_the_term_list( $post->ID, 'shelf_type', '', ' ', '' );
+	$data->data          = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_flowers', 'wpd_rest_shelf_type', 10, 3 );
+add_filter( 'rest_prepare_concentrates', 'wpd_rest_shelf_type', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_rest_shelf_type', 10, 3 );
+add_filter( 'rest_prepare_growers', 'wpd_rest_shelf_type', 10, 3 );
+
+/**
+ * Add Strain Type taxonomy for specific Custom Post Types
+ * 
+ * @since 3.1
+ */
+function wpd_rest_strain_type( $data, $post, $request ) {
+	$_data                = $data->data;
+	$_data['strain_type'] = get_the_term_list( $post->ID, 'strain_type', '', ' ', '' );
+	$data->data           = $_data;
+	return $data;
+}
+add_filter( 'rest_prepare_flowers', 'wpd_rest_strain_type', 10, 3 );
+add_filter( 'rest_prepare_concentrates', 'wpd_rest_strain_type', 10, 3 );
+add_filter( 'rest_prepare_prerolls', 'wpd_rest_strain_type', 10, 3 );
+add_filter( 'rest_prepare_growers', 'wpd_rest_strain_type', 10, 3 );
