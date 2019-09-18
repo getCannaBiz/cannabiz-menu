@@ -1005,10 +1005,10 @@ function wpdispensary_thccbdtopical() {
 	echo '<input type="hidden" name="thccbdtopical_noncename" id="thccbdtopical_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-	/** Get the thc mg data if its already been entered */
-	$thctopicals   = get_post_meta( $post->ID, '_thctopical', true );
-	$cbdtopicals   = get_post_meta( $post->ID, '_cbdtopical', true );
-	$sizetopicals  = get_post_meta( $post->ID, '_sizetopical', true );
+	/** Get the topical data if its already been entered */
+	$thctopicals  = get_post_meta( $post->ID, '_thctopical', true );
+	$cbdtopicals  = get_post_meta( $post->ID, '_cbdtopical', true );
+	$sizetopicals = get_post_meta( $post->ID, '_sizetopical', true );
 
 	/** Echo out the fields */
 	echo '<div class="topicalbox">';

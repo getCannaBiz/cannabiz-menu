@@ -1808,15 +1808,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			);
 		}
 
-		// Add topicals categories to $cat_tax_query.
-		if ( in_array( 'topicals', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'topicals_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
 		// Add tinctures categories to $cat_tax_query.
 		if ( in_array( 'tinctures', $array_type ) ) {
 			$cat_tax_query[] = array(
@@ -1919,7 +1910,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 
 				// Filter price.
 				$show_price = apply_filters( 'wpd_shortcodes_product_price', $show_price );
-
 			} else {
 				$show_price = '';
 			}

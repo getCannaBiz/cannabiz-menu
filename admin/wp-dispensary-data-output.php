@@ -75,7 +75,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			// Make variables empty since they're displayed elsewhere in the eCommerce plugin.
 			$wpd_shelf_type  = '';
 			$wpd_strain_type = '';
-			$wpd_vendors    = '';
+			$wpd_vendors     = '';
 		} else {
 			if ( get_the_term_list( $post->ID, 'shelf_type', true ) ) {
 				$wpd_shelf_type = '<tr><td><span>' . __( 'Shelf', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_type', '', ', ', '' ) . '</td></tr>';
