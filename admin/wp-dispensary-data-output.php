@@ -44,7 +44,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		// Loop through menu types
 		foreach ( $menu_types as $key=>$value ) {
 			// Strip wpd- from the menu type name.
-			$name = str_replace( "wpd-", "", $key );
+			$name = str_replace( 'wpd-', '', $key );
 			// Add menu type name to new array.
 			$menu_types_simple[] = $name;
 		}

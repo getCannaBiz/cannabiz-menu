@@ -275,8 +275,8 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricing_phrase = '';
 	}
 
-	$phrase_lowhigh = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . "</span>";
-	$phrase_single  = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+	$phrase_lowhigh = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . '</span>';
+	$phrase_single  = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	$phrase_final        = $phrase_lowhigh;
 	$phrase_single_final = $phrase_single;
@@ -387,8 +387,8 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 		$pricing_phrase = '';
 	}
 
-	$phrase_lowhigh = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . "</span>";
-	$phrase_single  = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+	$phrase_lowhigh = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . '</span>';
+	$phrase_single  = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	$phrase_final        = $phrase_lowhigh;
 	$phrase_single_final = $phrase_single;
@@ -438,17 +438,17 @@ function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} else {
 		$phrase_final = '';
@@ -493,17 +493,17 @@ function get_wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} else {
 		$phrase_final = '';
@@ -548,17 +548,17 @@ function get_wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} else {
 		$phrase_final = '';
@@ -603,17 +603,17 @@ function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} else {
 		$phrase_final = '';

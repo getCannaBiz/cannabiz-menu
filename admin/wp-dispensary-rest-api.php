@@ -282,7 +282,7 @@ function flowers_category_numbers( $data, $post, $request ) {
 	}
 
 	$data->data = $_data;
-	//print_r( $flowers );
+
 	return $data;
 }
 add_filter( 'rest_prepare_flowers', 'flowers_category_numbers', 10, 3 );
@@ -297,7 +297,6 @@ function wpd_product_prices_all( $data, $post, $request ) {
 	$_data['prices'] = get_wpd_all_prices_simple( $post->ID, TRUE );
 	$data->data      = $_data;
 	return $data;
-
 }
 add_filter( 'rest_prepare_flowers', 'wpd_product_prices_all', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_product_prices_all', 10, 3 );
@@ -497,7 +496,6 @@ function edibles_category_numbers( $data, $post, $request ) {
 	}
 
 	$data->data = $_data;
-	//print_r( $items );
 	return $data;
 }
 add_filter( 'rest_prepare_edibles', 'edibles_category_numbers', 10, 3 );
@@ -521,7 +519,6 @@ function topicals_category_numbers( $data, $post, $request ) {
 	}
 
 	$data->data = $_data;
-	//print_r( $items );
 	return $data;
 }
 add_filter( 'rest_prepare_topicals', 'topicals_category_numbers', 10, 3 );
