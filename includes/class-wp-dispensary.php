@@ -75,7 +75,7 @@ class WP_Dispensary {
 		if ( defined( 'WP_DISPENSARY_VERSION' ) ) {
 			$this->version = WP_DISPENSARY_VERSION;
 		} else {
-			$this->version = '3.0';
+			$this->version = '3.1';
 		}
 
 		$this->load_dependencies();

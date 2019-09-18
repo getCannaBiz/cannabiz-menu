@@ -1,5 +1,14 @@
 # Changelog
 
+### 3.1
+* Added `wpd-thumbnail` size to featured images REST API data in `admin/wp-dispensary-rest-api.php`
+* Added `strain_type` and `shelf_type` to the products REST API data in `admin/wp-dispensary-rest-api.php`
+* Updated widget title strings for localization in `admin/post-types/wp-dispensary-widgets.php`
+* Updated widgets in admin dash to only color new Products widget in `admin/css/wp-dispensary-admin.css`
+* Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+* WordPress Coding Standards updates throughout various files in the plugin
+* General code cleanup throughout various files in the plugin
+
 ### 3.0
 * Added `Dispensary Products` default widget in `admin/post-types/wp-dispensary-widgets.php`
 * Added `wpd-thumbnail` image size in `admin/wp-dispensary-shortcodes.php`
