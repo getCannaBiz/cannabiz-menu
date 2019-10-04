@@ -1,5 +1,5 @@
 (function( $ ) {
-	'use strict';
+	"use strict";
 
 	/**
 	 * All of the code for your admin-specific JavaScript source

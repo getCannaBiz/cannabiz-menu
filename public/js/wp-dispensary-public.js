@@ -5,11 +5,11 @@
 */
 
 ;(function(factory) { // eslint-disable-line no-extra-semi
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
+    "use strict";
+    if (typeof define === "function" && define.amd) {
         // AMD
         define(['jquery'], factory);
-    } else if (typeof module !== 'undefined' && module.exports) {
+    } else if (typeof module !== "undefined" && module.exports) {
         // CommonJS
         module.exports = factory(require('jquery'));
     } else {
@@ -80,18 +80,18 @@
     var _parseOptions = function(options) {
         var opts = {
             byRow: true,
-            property: 'height',
+            property: "height",
             target: null,
             remove: false
         };
 
-        if (typeof options === 'object') {
+        if (typeof options === "object") {
             return $.extend(opts, options);
         }
 
-        if (typeof options === 'boolean') {
+        if (typeof options === "boolean") {
             opts.byRow = options;
-        } else if (options === 'remove') {
+        } else if (options === "remove") {
             opts.remove = true;
         }
 
@@ -143,7 +143,7 @@
     *  plugin global options
     */
 
-    matchHeight.version = 'master';
+    matchHeight.version = "master";
     matchHeight._groups = [];
     matchHeight._throttle = 80;
     matchHeight._maintainScroll = false;
@@ -188,8 +188,8 @@
                     display = $that.css('display');
 
                 // temporarily force a usable display value
-                if (display !== 'inline-block' && display !== 'flex' && display !== 'inline-flex') {
-                    display = 'block';
+                if (display !== "inline-block" && display !== "flex" && display !== "inline-flex") {
+                    display = "block";
                 }
 
                 // cache the original inline style
@@ -236,8 +236,8 @@
                         display = $that.css('display');
 
                     // temporarily force a usable display value
-                    if (display !== 'inline-block' && display !== 'flex' && display !== 'inline-flex') {
-                        display = 'block';
+                    if (display !== "inline-block" && display !== "flex" && display !== "inline-flex") {
+                        display = "block";
                     }
 
                     // ensure we get the correct actual height (and not a previously set height value)
@@ -273,7 +273,7 @@
                 }
 
                 // handle padding and border correctly (required when not using border-box)
-                if ($that.css('box-sizing') !== 'border-box') {
+                if ($that.css('box-sizing') !== "border-box") {
                     verticalPadding += _parse($that.css('border-top-width')) + _parse($that.css('border-bottom-width'));
                     verticalPadding += _parse($that.css('padding-top')) + _parse($that.css('padding-bottom'));
                 }
@@ -346,7 +346,7 @@
         // prevent update if fired from a resize event
         // where the viewport width hasn't actually changed
         // fixes an event looping bug in IE8
-        if (event && event.type === 'resize') {
+        if (event && event.type === "resize") {
             var windowWidth = $(window).width();
             if (windowWidth === _previousResizeWidth) {
                 return;
