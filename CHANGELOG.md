@@ -356,7 +356,7 @@
 *   Added Compound Details to the shortcodes in `admin/wp-dispensary-shortcodes.php`
 *   Added oEmbed style customization in `wp-dispensary.php`
 *   Added oEmbed CSS in `public/wp-dispensary-oembed.css` and `public/class-wp-dispensary-public.php`
-*   Fixed code error in the [wpd-carousel] output in `admin/wp-dispensary-shortcodes.php`
+*   Fixed code error in the `[wpd-carousel]` output in `admin/wp-dispensary-shortcodes.php`
 *   Updated translation strings in `languages/wp-dispensary.pot`
 *   Updated Pricing table's title if donation is selected in `admin/wp-dispensary-data-output.php`
 
@@ -438,9 +438,9 @@
 *   Added "prerolls" in array to output </table> in `admin/wp-dispensary-data-output.php`
 *   Added Action Hooks to Pricing & Data Tables in `admin/wp-dispensary-data-output.php`
 *   Added promotion for premium add-ons for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
-*   Fixed shortcode [wpd-edibles] serving count output in `admin/wp-dispensary-shortcodes.php`
+*   Fixed shortcode `[wpd-edibles]` serving count output in `admin/wp-dispensary-shortcodes.php`
 *   Removed unnecessary pricing variable in `admin/wp-dispensary-shortcodes.php`
-*   Updated shortcode [wpd-edibles] output of THC mg% & servings in `admin/wp-dispensary-shortcodes.php`
+*   Updated shortcode `[wpd-edibles]` output of THC mg% & servings in `admin/wp-dispensary-shortcodes.php`
 *   Updated serving count variable name for edibles in `admin/wp-dispensary-shortcodes.php`
 
 ## 1.7.1
