@@ -8,10 +8,10 @@
     "use strict";
     if (typeof define === "function" && define.amd) {
         // AMD
-        define(['jquery'], factory);
+        define(["jquery"], factory);
     } else if (typeof module !== "undefined" && module.exports) {
         // CommonJS
-        module.exports = factory(require('jquery'));
+        module.exports = factory(require("jquery"));
     } else {
         // Global
         factory(jQuery);
@@ -165,19 +165,19 @@
 
         // take note of scroll position
         var scrollTop = $(window).scrollTop(),
-            htmlHeight = $('html').outerHeight(true);
+            htmlHeight = $("html").outerHeight(true);
 
         // get hidden parents
-        var $hiddenParents = $elements.parents().filter(':hidden');
+        var $hiddenParents = $elements.parents().filter(":hidden");
 
         // cache the original inline style
         $hiddenParents.each(function() {
             var $that = $(this);
-            $that.data('style-cache', $that.attr('style'));
+            $that.data("style-cache", $that.attr("style"));
         });
 
         // temporarily must force hidden parents visible
-        $hiddenParents.css('display', 'block');
+        $hiddenParents.css("display", "block");
 
         // get rows if using byRow, otherwise assume one row
         if (opts.byRow && !opts.target) {
@@ -185,7 +185,7 @@
             // must first force an arbitrary equal height so floating elements break evenly
             $elements.each(function() {
                 var $that = $(this),
-                    display = $that.css('display');
+                    display = $that.css("display");
 
                 // temporarily force a usable display value
                 if (display !== "inline-block" && display !== "flex" && display !== "inline-flex") {
@@ -193,18 +193,18 @@
                 }
 
                 // cache the original inline style
-                $that.data('style-cache', $that.attr('style'));
+                $that.data("style-cache", $that.attr("style"));
 
                 $that.css({
                     'display': display,
-                    'padding-top': '0',
-                    'padding-bottom': '0',
-                    'margin-top': '0',
-                    'margin-bottom': '0',
-                    'border-top-width': '0',
-                    'border-bottom-width': '0',
-                    'height': '100px',
-                    'overflow': 'hidden'
+                    'padding-top': "0",
+                    'padding-bottom': "0",
+                    'margin-top': "0",
+                    'margin-bottom': "0",
+                    'border-top-width': "0",
+                    'border-bottom-width': "0",
+                    'height': "100px",
+                    'overflow': "hidden"
                 });
             });
 
@@ -232,8 +232,8 @@
                 // iterate the row and find the max height
                 $row.each(function(){
                     var $that = $(this),
-                        style = $that.attr('style'),
-                        display = $that.css('display');
+                        style = $that.attr("style"),
+                        display = $that.css("display");
 
                     // temporarily force a usable display value
                     if (display !== "inline-block" && display !== "flex" && display !== "inline-flex") {
@@ -242,7 +242,7 @@
 
                     // ensure we get the correct actual height (and not a previously set height value)
                     var css = { 'display': display };
-                    css[opts.property] = '';
+                    css[opts.property] = "";
                     $that.css(css);
 
                     // find the max height (including padding, but not margin)
@@ -252,9 +252,9 @@
 
                     // revert styles
                     if (style) {
-                        $that.attr('style', style);
+                        $that.attr("style", style);
                     } else {
-                        $that.css('display', '');
+                        $that.css("display", "");
                     }
                 });
             } else {
@@ -273,9 +273,9 @@
                 }
 
                 // handle padding and border correctly (required when not using border-box)
-                if ($that.css('box-sizing') !== "border-box") {
-                    verticalPadding += _parse($that.css('border-top-width')) + _parse($that.css('border-bottom-width'));
-                    verticalPadding += _parse($that.css('padding-top')) + _parse($that.css('padding-bottom'));
+                if ($that.css("box-sizing") !== "border-box") {
+                    verticalPadding += _parse($that.css("border-top-width")) + _parse($that.css("border-bottom-width"));
+                    verticalPadding += _parse($that.css("padding-top")) + _parse($that.css("padding-bottom"));
                 }
 
                 // set the height (accounting for padding and border)
@@ -286,12 +286,12 @@
         // revert hidden parents
         $hiddenParents.each(function() {
             var $that = $(this);
-            $that.attr('style', $that.data('style-cache') || null);
+            $that.attr("style", $that.data("style-cache") || null);
         });
 
         // restore scroll position if enabled
         if (matchHeight._maintainScroll) {
-            $(window).scrollTop((scrollTop / htmlHeight) * $('html').outerHeight(true));
+            $(window).scrollTop((scrollTop / htmlHeight) * $("html").outerHeight(true));
         }
 
         return this;
@@ -308,7 +308,7 @@
         // generate groups by their groupId set by elements using data-match-height
         $('[data-match-height], [data-mh]').each(function() {
             var $this = $(this),
-                groupId = $this.attr('data-mh') || $this.attr('data-match-height');
+                groupId = $this.attr("data-mh") || $this.attr("data-match-height");
 
             if (groupId in groups) {
                 groups[groupId] = groups[groupId].add($this);
@@ -385,11 +385,11 @@
 });
 
 jQuery(document).ready(function ($) {
-    $('.wpdshortcode').matchHeight();
+    $(".wpdshortcode").matchHeight();
 });
 
 jQuery(document).ready(function ($) {
-    $('.wpd-menu-item').matchHeight();
+    $(".wpd-menu-item").matchHeight();
 });
 
 /*
