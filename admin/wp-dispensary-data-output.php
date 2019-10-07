@@ -364,10 +364,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				// Create compounds table.
 				$wpd_details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . __( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $showcompounds . '</tr></table>';
 
-				if ( ! isset( $wpd_settings['wpd_hide_compounds'] ) ) {
-					$wpd_details_compounds = $wpd_details_compounds;
-				} elseif ( isset( $wpd_settings['wpd_hide_compounds'] ) && 'on' !== $wpd_settings['wpd_hide_compounds'] ) {
-					$wpd_details_compounds = $wpd_details_compounds;
+				if ( ! is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+					if ( ! isset( $wpd_settings['wpd_hide_compounds'] ) ) {
+						$wpd_details_compounds = $wpd_details_compounds;
+					} elseif ( isset( $wpd_settings['wpd_hide_compounds'] ) && 'on' !== $wpd_settings['wpd_hide_compounds'] ) {
+						$wpd_details_compounds = $wpd_details_compounds;
+					} else {
+						$wpd_details_compounds = '';
+					}
 				} else {
 					$wpd_details_compounds = '';
 				}
