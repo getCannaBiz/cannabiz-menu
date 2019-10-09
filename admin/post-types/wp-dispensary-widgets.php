@@ -76,9 +76,9 @@ class wpdispensary_flowers_widget extends WP_Widget {
 		}
 
 		if ( 'on' === $instance['order'] ) {
-			$randorder = 'rand';
+			$rand_order = 'rand';
 		} else {
-			$randorder = '';
+			$rand_order = '';
 		}
 
 		global $post;
@@ -87,7 +87,7 @@ class wpdispensary_flowers_widget extends WP_Widget {
 			array(
 				'post_type' => 'flowers',
 				'showposts' => $instance['limit'],
-				'orderby'   => $randorder,
+				'orderby'   => $rand_order,
 			)
 		);
 
@@ -312,9 +312,9 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 		}
 
 		if ( 'on' === $instance['order'] ) {
-			$randorder = 'rand';
+			$rand_order = 'rand';
 		} else {
-			$randorder = '';
+			$rand_order = '';
 		}
 
 		global $post;
@@ -323,7 +323,7 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 			array(
 				'post_type' => 'concentrates',
 				'showposts' => $instance['limit'],
-				'orderby'   => $randorder,
+				'orderby'   => $rand_order,
 			)
 		);
 
@@ -547,9 +547,9 @@ class wpdispensary_edibles_widget extends WP_Widget {
 		}
 
 		if ( 'on' === $instance['order'] ) {
-			$randorder = 'rand';
+			$rand_order = 'rand';
 		} else {
-			$randorder = '';
+			$rand_order = '';
 		}
 
 		global $post;
@@ -558,7 +558,7 @@ class wpdispensary_edibles_widget extends WP_Widget {
 			array(
 				'post_type' => 'edibles',
 				'showposts' => $instance['limit'],
-				'orderby'   => $randorder,
+				'orderby'   => $rand_order,
 			)
 		);
 
@@ -784,9 +784,9 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 		}
 
 		if ( 'on' === $instance['order'] ) {
-			$randorder = 'rand';
+			$rand_order = 'rand';
 		} else {
-			$randorder = '';
+			$rand_order = '';
 		}
 
 		global $post;
@@ -795,7 +795,7 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 			array(
 				'post_type' => 'prerolls',
 				'showposts' => $instance['limit'],
-				'orderby'   => $randorder,
+				'orderby'   => $rand_order,
 			)
 		);
 
@@ -1026,16 +1026,16 @@ class wpdispensary_topicals_widget extends WP_Widget {
 		}
 
 		if ( 'on' === $instance['order'] ) {
-			$randorder = 'rand';
+			$rand_order = 'rand';
 		} else {
-			$randorder = '';
+			$rand_order = '';
 		}
 
 		$wpdispensary_topicals_widget = new WP_Query(
 			array(
 				'post_type' => 'topicals',
 				'showposts' => $instance['limit'],
-				'orderby'   => $randorder,
+				'orderby'   => $rand_order,
 			)
 		);
 
@@ -1262,9 +1262,9 @@ class wpdispensary_growers_widget extends WP_Widget {
 		}
 
 		if ( 'on' === $instance['order'] ) {
-			$randorder = 'rand';
+			$rand_order = 'rand';
 		} else {
-			$randorder = '';
+			$rand_order = '';
 		}
 
 		global $post;
@@ -1273,7 +1273,7 @@ class wpdispensary_growers_widget extends WP_Widget {
 			array(
 				'post_type' => 'growers',
 				'showposts' => $instance['limit'],
-				'orderby'   => $randorder,
+				'orderby'   => $rand_order,
 			)
 		);
 
@@ -1511,28 +1511,30 @@ class WP_Dispensary_Widget extends WP_Widget {
 				}
 			}
 
+			// Random order.
+			$rand_order = '';
+
 			// Set random order if selected by user.
 			if ( 'on' == $instance['order'] ) {
-				$randorder = 'rand';
-			} else {
-				$randorder = '';
+				$rand_order = 'rand';
 			}
 
             // Get the post type selected by user.
 			$type = $instance['type'];
 
-            // Set the post type selected by user.
+			// Post type(s).
+			$post_type = $type;
+
+			// Set the post type selected by user.
 			if ( 'all' == $type ) {
 				$post_type = apply_filters( 'wpd_widgets_post_types', wpd_menu_types_simple( TRUE ) );
-			} else {
-				$post_type = $type;
 			}
 
 			$wp_dispensary_widget = new WP_Query(
 				array(
-					'post_type'  => $post_type,
-					'showposts'  => $instance['limit'],
-					'orderby'    => $randorder,
+					'post_type' => $post_type,
+					'showposts' => $instance['limit'],
+					'orderby'   => $rand_order,
 				)
 			);
 
@@ -1551,7 +1553,7 @@ class WP_Dispensary_Widget extends WP_Widget {
 				wpd_product_image( $post->ID, $instance['imagesize'] );
 
                 if ( 'on' == $instance['itemname'] ) {
-					echo "<span class='wp-dispensary-widget-title'><a href='" . get_permalink( $post->ID ) ."'>". get_the_title( $post->ID ) ."</a></span>";
+					echo '<span class="wp-dispensary-widget-title"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></span>';
 				}
 
 				if ( 'on' == $instance['itemprice'] ) {

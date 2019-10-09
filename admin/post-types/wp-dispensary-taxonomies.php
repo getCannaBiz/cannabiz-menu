@@ -16,7 +16,6 @@
  *
  * @since    2.1.0
  */
-
 function wpdispensary_shelf_type() {
 
 	$labels = array(
@@ -130,12 +129,12 @@ function wpdispensary_vendor() {
 	// Loop through menu types
 	foreach ( $menu_types as $key=>$value ) {
 		// Strip wpd- from the menu type name.
-		$name = str_replace( "wpd-", "", $key );
+		$name = str_replace( 'wpd-', '', $key );
 		// Add menu type name to new array.
 		$menu_types_names[] = $name;
 	}
 
-	$vendor_tax_type   = apply_filters( 'wpd_vendor_tax_type', $menu_types_names );
+	$vendor_tax_type = apply_filters( 'wpd_vendor_tax_type', $menu_types_names );
 
 	register_taxonomy( 'vendor', $vendor_tax_type, array(
 		'hierarchical'          => false,
@@ -143,9 +142,9 @@ function wpdispensary_vendor() {
 		'show_ui'               => true,
 		'show_in_rest'          => true,
 		'show_admin_column'     => true,
-		'show_in_nav_menus'     => false,
-		'update_count_callback' => '_update_post_term_count',
+		'show_in_nav_menus'     => true,
 		'query_var'             => true,
+		'update_count_callback' => '_update_post_term_count',
 		'rewrite'               => array(
 			'slug' => 'vendor',
 		),

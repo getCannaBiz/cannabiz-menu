@@ -25,14 +25,13 @@ function wpdispensary_add_compounddetails_metaboxes() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_compounds',
-			__( 'Compound details', 'wp-dispensary' ),
+			esc_html__( 'Compound details', 'wp-dispensary' ),
 			'wpdispensary_compounddetails',
 			$screen,
 			'normal',
 			'default'
 		);
 	}
-
 }
 add_action( 'add_meta_boxes', 'wpdispensary_add_compounddetails_metaboxes' );
 
@@ -57,31 +56,31 @@ function wpdispensary_compounddetails() {
 
 	/** Echo out the fields */
 	echo '<div class="compoundbox">';
-	echo '<p>' . __( 'THC', 'wp-dispensary' ) . ' %</p>';
+	echo '<p>' . esc_html__( 'THC', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_thc" value="' . esc_html( $thc ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>' . __( 'THCA', 'wp-dispensary' ) . ' %</p>';
+	echo '<p>' . esc_html__( 'THCA', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_thca" value="' . esc_html( $thca ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>' . __( 'CBD', 'wp-dispensary' ) . ' %</p>';
+	echo '<p>' . esc_html__( 'CBD', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cbd" value="' . esc_html( $cbd ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>' . __( 'CBA', 'wp-dispensary' ) . ' %</p>';
+	echo '<p>' . esc_html__( 'CBA', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cba" value="' . esc_html( $cba ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>' . __( 'CBN', 'wp-dispensary' ) . ' %</p>';
+	echo '<p>' . esc_html__( 'CBN', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>' . __( 'CBG', 'wp-dispensary' ) . ' %</p>';
+	echo '<p>' . esc_html__( 'CBG', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="compoundbox">';
-	echo '<p>' . __( 'Total', 'wp-dispensary' ) . ' %</p>';
+	echo '<p>' . esc_html__( 'Total', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="_total_compounds" value="' . esc_html( $total ) . '" class="widefat" />';
 	echo '</div>';
 
@@ -156,7 +155,7 @@ function wpdispensary_add_prices_metaboxes() {
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_prices',
-			__( 'Flower Prices', 'wp-dispensary' ),
+			esc_html__( 'Flower Prices', 'wp-dispensary' ),
 			'wpdispensary_prices',
 			$screen,
 			'normal',
