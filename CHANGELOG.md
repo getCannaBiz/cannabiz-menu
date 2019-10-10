@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.1.1
+*   Added CSS classes to body on the `menu` page in `public/class-wp-dispensary-public.php`
+*   Bugfix data return for prerolls featured images in REST API in `admin/wp-dispensary-rest-api.php`
+*   Bugfix changed `shelf_type` and `strain_type` data names for REST API endpoints in `admin/wp-dispensary-rest-apit.php`
+*   Updated data output to hide compounds table if eCommerce plugin is active in `admin/wp-dispensary-data-output.php`
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+*   General code cleanup throughout various files in the plugin
+
 ## 3.1
 *   Added `wpd-thumbnail` size to featured images REST API data in `admin/wp-dispensary-rest-api.php`
 *   Added `strain_type` and `shelf_type` to the products REST API data in `admin/wp-dispensary-rest-api.php`
