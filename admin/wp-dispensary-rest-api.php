@@ -187,6 +187,7 @@ function prerolls_featured_images( $data, $post, $request ) {
 	$_data['featured_image_medium']    = $wpd_medium[0];
 	$_data['featured_image_large']     = $wpd_large[0];
 	$data->data                        = $_data;
+	return $data;
 }
 add_filter( 'rest_prepare_prerolls', 'prerolls_featured_images', 10, 3 );
 
