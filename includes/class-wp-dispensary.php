@@ -71,18 +71,16 @@ class WP_Dispensary {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-dispensary';
+		$this->version     = '3.1';
 
 		if ( defined( 'WP_DISPENSARY_VERSION' ) ) {
 			$this->version = WP_DISPENSARY_VERSION;
-		} else {
-			$this->version = '3.1';
 		}
 
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -197,13 +195,10 @@ class WP_Dispensary {
 
 		/**
 		 * Adding the Class responsible for CSV product export.
-		 *
-		 * @since    3.0
 		 */
 		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-csv-export.php';
 
 		$this->loader = new WP_Dispensary_Loader();
-
 	}
 
 	/**
@@ -223,7 +218,6 @@ class WP_Dispensary {
 		$plugin_i18n->set_domain( $this->get_plugin_name() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**

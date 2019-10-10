@@ -226,28 +226,28 @@ function wpdispensary_flowers_shortcode( $atts ) {
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_top' );
-			$wpd_shortcode_inside_top = ob_get_contents();
+			$wpd_inside_top = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_top_flowers' );
-			$wpd_shortcode_top_flowers = ob_get_contents();
+			$wpd_top_flowers = ob_get_contents();
 		ob_end_clean();
 
 		// Product wrapper.
-		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class . '">' . $wpd_shortcode_top_flowers . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
+		$wpdposts .= '<div class="wpdshortcode wpd-flowers ' . $class . '">' . $wpd_top_flowers . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
-			$wpd_shortcode_inside_bottom = ob_get_contents();
+			$wpd_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_bottom_flowers' );
-			$wpd_shortcode_bottom_flowers = ob_get_contents();
+			$wpd_bottom_flowers = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $show_compounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_flowers . '</div>';
+		$wpdposts .= $showname . $showinfo . $show_compounds . $wpd_inside_bottom . $wpd_bottom_flowers . '</div>';
 
 	endwhile;
 
@@ -463,28 +463,28 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_top' );
-			$wpd_shortcode_inside_top = ob_get_contents();
+			$wpd_inside_top = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_top_concentrates' );
-			$wpd_shortcode_top_concentrates = ob_get_contents();
+			$wpd_top_concentrates = ob_get_contents();
 		ob_end_clean();
 
 		// Product wrapper.
-		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class . '">' . $wpd_shortcode_top_concentrates . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
+		$wpdposts .= '<div class="wpdshortcode wpd-concentrates ' . $class . '">' . $wpd_top_concentrates . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
-			$wpd_shortcode_inside_bottom = ob_get_contents();
+			$wpd_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_bottom_concentrates' );
-			$wpd_shortcode_bottom_concentrates = ob_get_contents();
+			$wpd_bottom_concentrates = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $show_compounds . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_concentrates . '</div>';
+		$wpdposts .= $showname . $showinfo . $show_compounds . $wpd_inside_bottom . $wpd_bottom_concentrates . '</div>';
 
 	endwhile;
 
@@ -635,28 +635,28 @@ function wpdispensary_edibles_shortcode( $atts ) {
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_top' );
-			$wpd_shortcode_inside_top = ob_get_contents();
+			$wpd_inside_top = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_top_edibles' );
-			$wpd_shortcode_top_edibles = ob_get_contents();
+			$wpd_top_edibles = ob_get_contents();
 		ob_end_clean();
 
 		// Product wrapper.
-		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class . '">' . $wpd_shortcode_top_edibles . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
+		$wpdposts .= '<div class="wpdshortcode wpd-edibles ' . $class . '">' . $wpd_top_edibles . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
-			$wpd_shortcode_inside_bottom = ob_get_contents();
+			$wpd_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_bottom_edibles' );
-			$wpd_shortcode_bottom_edibles = ob_get_contents();
+			$wpd_bottom_edibles = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_edibles . '</div>';
+		$wpdposts .= $showname . $showinfo . $wpd_inside_bottom . $wpd_bottom_edibles . '</div>';
 
 	endwhile;
 
@@ -789,27 +789,27 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_top' );
-			$wpd_shortcode_inside_top = ob_get_contents();
+			$wpd_inside_top = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_top_prerolls' );
-			$wpd_shortcode_top_prerolls = ob_get_contents();
+			$wpd_top_prerolls = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class . '">' . $wpd_shortcode_top_prerolls . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
+		$wpdposts .= '<div class="wpdshortcode wpd-prerolls ' . $class . '">' . $wpd_top_prerolls . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
-			$wpd_shortcode_inside_bottom = ob_get_contents();
+			$wpd_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_bottom_prerolls' );
-			$wpd_shortcode_bottom_prerolls = ob_get_contents();
+			$wpd_bottom_prerolls = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_prerolls . '</div>';
+		$wpdposts .= $showname . $showinfo . $wpd_inside_bottom . $wpd_bottom_prerolls . '</div>';
 
 	endwhile;
 
@@ -951,27 +951,27 @@ function wpdispensary_topicals_shortcode( $atts ) {
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_top' );
-			$wpd_shortcode_inside_top = ob_get_contents();
+			$wpd_inside_top = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_top_topicals' );
-			$wpd_shortcode_top_topicals = ob_get_contents();
+			$wpd_top_topicals = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class . '">' . $wpd_shortcode_top_topicals . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
+		$wpdposts .= '<div class="wpdshortcode wpd-topicals ' . $class . '">' . $wpd_top_topicals . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
-			$wpd_shortcode_inside_bottom = ob_get_contents();
+			$wpd_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_bottom_topicals' );
-			$wpd_shortcode_bottom_topicals = ob_get_contents();
+			$wpd_bottom_topicals = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_topicals . '</div>';
+		$wpdposts .= $showname . $showinfo . $wpd_inside_bottom . $wpd_bottom_topicals . '</div>';
 
 	endwhile;
 
@@ -1097,27 +1097,27 @@ function wpdispensary_growers_shortcode( $atts ) {
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_top' );
-			$wpd_shortcode_inside_top = ob_get_contents();
+			$wpd_inside_top = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_top_growers' );
-			$wpd_shortcode_top_growers = ob_get_contents();
+			$wpd_top_growers = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class . '">' . $wpd_shortcode_top_growers . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
+		$wpdposts .= '<div class="wpdshortcode wpd-growers ' . $class . '">' . $wpd_top_growers . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
-			$wpd_shortcode_inside_bottom = ob_get_contents();
+			$wpd_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_bottom_growers' );
-			$wpd_shortcode_bottom_growers = ob_get_contents();
+			$wpd_bottom_growers = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_growers . '</div>';
+		$wpdposts .= $showname . $showinfo . $wpd_inside_bottom . $wpd_bottom_growers . '</div>';
 
 	endwhile;
 
@@ -1557,27 +1557,27 @@ function wpdispensary_carousel_shortcode( $atts ) {
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_top' );
-			$wpd_shortcode_inside_top = ob_get_contents();
+			$wpd_inside_top = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_top_carousel' );
-			$wpd_shortcode_top_carousel = ob_get_contents();
+			$wpd_top_carousel = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= '<div class="carousel-item ' . $class . '">' . $wpd_shortcode_top_carousel . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
+		$wpdposts .= '<div class="carousel-item ' . $class . '">' . $wpd_top_carousel . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $imgsize );
 
 		ob_start();
 			do_action( 'wpd_shortcode_inside_bottom' );
-			$wpd_shortcode_inside_bottom = ob_get_contents();
+			$wpd_inside_bottom = ob_get_contents();
 		ob_end_clean();
 
 		ob_start();
 			do_action( 'wpd_shortcode_bottom_carousel' );
-			$wpd_shortcode_bottom_carousel = ob_get_contents();
+			$wpd_bottom_carousel = ob_get_contents();
 		ob_end_clean();
 
-		$wpdposts .= $showname . $showinfo . $wpd_shortcode_inside_bottom . $wpd_shortcode_bottom_carousel . '</div>';
+		$wpdposts .= $showname . $showinfo . $wpd_inside_bottom . $wpd_bottom_carousel . '</div>';
 
 	endwhile;
 
@@ -1920,32 +1920,32 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			// Shortcode inside top action hook.
 			ob_start();
 				do_action( 'wpd_shortcode_inside_top' );
-				$wpd_shortcode_inside_top = ob_get_contents();
+				$wpd_inside_top = ob_get_contents();
 			ob_end_clean();
 
 			// Shortcode menu top action hook.
 			ob_start();
 				do_action( 'wpd_shortcode_menu_top' );
-				$wpd_shortcode_menu_top = ob_get_contents();
+				$wpd_menu_top = ob_get_contents();
 			ob_end_clean();
 
 			// Shortcode item start.
-			$wpd_products .= '<div class="wpd-menu-item ' . $class . '">' . $wpd_shortcode_menu_top . $wpd_shortcode_inside_top . get_wpd_product_image( get_the_ID(), $img_size );
+			$wpd_products .= '<div class="wpd-menu-item ' . $class . '">' . $wpd_menu_top . $wpd_inside_top . get_wpd_product_image( get_the_ID(), $img_size );
 
 			// Shortcode inside bottom action hook.
 			ob_start();
 				do_action( 'wpd_shortcode_inside_bottom' );
-				$wpd_shortcode_inside_bottom = ob_get_contents();
+				$wpd_inside_bottom = ob_get_contents();
 			ob_end_clean();
 
 			// Shortcode menu top action hook.
 			ob_start();
 				do_action( 'wpd_shortcode_menu_bottom' );
-				$wpd_shortcode_menu_bottom = ob_get_contents();
+				$wpd_menu_bottom = ob_get_contents();
 			ob_end_clean();
 
 			// Shortcode item.
-			$wpd_products .= $show_name . $show_price . $show_info . $wpd_shortcode_inside_bottom . $wpd_shortcode_menu_bottom;
+			$wpd_products .= $show_name . $show_price . $show_info . $wpd_inside_bottom . $wpd_menu_bottom;
 
 			// Shortcode item end.
 			$wpd_products .= '</div>';

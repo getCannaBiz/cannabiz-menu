@@ -45,9 +45,9 @@ Looking to take things even further? Our commercial extensions provide you with 
 
 Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
 
-### Looking for a WooCommerce solution?
+### We also have a WooCommerce solution
 
-We've also released the [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/) plugin that adds all of the required cannabis related details to your WooCommerce store.
+If you're looking for a WooCommerce solution for your dispensary website, we released the [Dispensary Details for WooCommerce](https://www.wpdispensary.com/product/dispensary-details-for-woocommerce/) plugin that adds all of the required cannabis related details to your WooCommerce store.
 
 ## Changelog
 

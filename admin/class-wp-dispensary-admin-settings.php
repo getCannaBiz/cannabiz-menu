@@ -790,11 +790,11 @@ function wpd_admin_menu_prerolls( ) {
 		$wpd_prerolls_slug = 'prerolls';
 	}
 
+	$wpd_prerolls_slug_cap = ucfirst( $wpd_prerolls_slug );
+
 	// Capitalize first letter of new slug.
 	if ( 'prerolls' == $wpd_prerolls_slug ) {
 		$wpd_prerolls_slug_cap = 'Pre-rolls';
-	} else {
-		$wpd_prerolls_slug_cap = ucfirst( $wpd_prerolls_slug );
 	}
 
 	add_submenu_page( 'wpd-settings', $wpd_prerolls_slug_cap, $wpd_prerolls_slug_cap, 'manage_options', 'edit.php?post_type=prerolls', null );

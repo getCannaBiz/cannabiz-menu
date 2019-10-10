@@ -21,66 +21,31 @@ class WP_Dispensary_Permalink_Settings {
 	 * Call register fields.
 	 */
 	public function init() {
-		add_filter( 'admin_init', array( &$this, 'register_flowers_field' ) );
-		add_filter( 'admin_init', array( &$this, 'register_concentrates_field' ) );
-		add_filter( 'admin_init', array( &$this, 'register_edibles_field' ) );
-		add_filter( 'admin_init', array( &$this, 'register_prerolls_field' ) );
-		add_filter( 'admin_init', array( &$this, 'register_topicals_field' ) );
-		add_filter( 'admin_init', array( &$this, 'register_growers_field' ) );
+		add_filter( 'admin_init', array( &$this, 'register_wpd_settings_fields' ) );
 	}
 
 	/**
 	 * Add Flowers setting to permalinks page.
 	 */
-	public function register_flowers_field() {
+	public function register_wpd_settings_fields() {
 		// Register Flowers slug.
 		register_setting( 'permalink', 'wpd_flowers_slug', 'esc_attr' );
-		add_settings_field( 'wpd_flowers_slug', '<label for="wpd_flowers_slug">' . __( 'Flowers Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_flowers_fields_html' ), 'permalink', 'optional' );
-	}
-
-	/**
-	 * Add Concentrates setting to permalinks page.
-	 */
-	public function register_concentrates_field() {
+		add_settings_field( 'wpd_flowers_slug', '<label for="wpd_flowers_slug">' . esc_html__( 'Flowers Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_flowers_fields_html' ), 'permalink', 'optional' );
 		// Register Concentrates slug.
 		register_setting( 'permalink', 'wpd_concentrates_slug', 'esc_attr' );
-		add_settings_field( 'wpd_concentrates_slug', '<label for="wpd_concentrates_slug">' . __( 'Concentrates Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_concentrates_fields_html' ), 'permalink', 'optional' );
-	}
-
-	/**
-	 * Add Edibles setting to permalinks page.
-	 */
-	public function register_edibles_field() {
+		add_settings_field( 'wpd_concentrates_slug', '<label for="wpd_concentrates_slug">' . esc_html__( 'Concentrates Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_concentrates_fields_html' ), 'permalink', 'optional' );
 		// Register Edibles slug.
 		register_setting( 'permalink', 'wpd_edibles_slug', 'esc_attr' );
-		add_settings_field( 'wpd_edibles_slug', '<label for="wpd_edibles_slug">' . __( 'Edibles Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_edibles_fields_html' ), 'permalink', 'optional' );
-	}
-
-	/**
-	 * Add Pre-rolls setting to permalinks page.
-	 */
-	public function register_prerolls_field() {
+		add_settings_field( 'wpd_edibles_slug', '<label for="wpd_edibles_slug">' . esc_html__( 'Edibles Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_edibles_fields_html' ), 'permalink', 'optional' );
 		// Register Pre-rolls slug.
 		register_setting( 'permalink', 'wpd_prerolls_slug', 'esc_attr' );
-		add_settings_field( 'wpd_prerolls_slug', '<label for="wpd_prerolls_slug">' . __( 'Pre-rolls Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_prerolls_fields_html' ), 'permalink', 'optional' );
-	}
-
-	/**
-	 * Add Topicals setting to permalinks page.
-	 */
-	public function register_topicals_field() {
+		add_settings_field( 'wpd_prerolls_slug', '<label for="wpd_prerolls_slug">' . esc_html__( 'Pre-rolls Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_prerolls_fields_html' ), 'permalink', 'optional' );
 		// Register Topicals slug.
 		register_setting( 'permalink', 'wpd_topicals_slug', 'esc_attr' );
-		add_settings_field( 'wpd_topicals_slug', '<label for="wpd_topicals_slug">' . __( 'Topicals Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_topicals_fields_html' ), 'permalink', 'optional' );
-	}
-
-	/**
-	 * Add Flowers setting to permalinks page.
-	 */
-	public function register_growers_field() {
+		add_settings_field( 'wpd_topicals_slug', '<label for="wpd_topicals_slug">' . esc_html__( 'Topicals Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_topicals_fields_html' ), 'permalink', 'optional' );
 		// Register Growers slug.
 		register_setting( 'permalink', 'wpd_growers_slug', 'esc_attr' );
-		add_settings_field( 'wpd_growers_slug', '<label for="wpd_growers_slug">' . __( 'Growers Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_growers_fields_html' ), 'permalink', 'optional' );
+		add_settings_field( 'wpd_growers_slug', '<label for="wpd_growers_slug">' . esc_html__( 'Growers Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_growers_fields_html' ), 'permalink', 'optional' );
 	}
 
 	/**
