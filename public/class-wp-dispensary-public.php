@@ -125,7 +125,7 @@ add_action( 'enqueue_embed_scripts', 'wpd_oembed_styles' );
  */
 function wp_dispensary_body_class( $classes ) {
 
-	if ( is_page( 'dispensary-menu' ) ) {
+	if ( is_page( 'dispensary-menu' ) || is_page( 'menu' ) ) {
 		$classes[] = 'wp-dispensary';
 		$classes[] = 'dispensary-menu';
 	}
