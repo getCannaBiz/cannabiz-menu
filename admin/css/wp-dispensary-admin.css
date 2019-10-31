@@ -337,3 +337,74 @@ div.widget[id*=_wp_dispensary_] .widget-action {
 		display: none;
 	}
 }
+
+/** Admin post type screens
+-------------------------------------------------------------- */
+
+body.post-type-flowers,
+body.post-type-concentrates,
+body.post-type-edibles,
+body.post-type-topicals,
+body.post-type-prerolls,
+body.post-type-growers,
+body.post-type-gear,
+body.post-type-tinctures {
+    background: #FFF;
+}
+
+body.post-type-flowers table thead,
+body.post-type-flowers table tfoot,
+body.post-type-concentrates table thead,
+body.post-type-concentrates table tfoot,
+body.post-type-edibles table thead,
+body.post-type-edibles table tfoot,
+body.post-type-topicals table thead,
+body.post-type-topicals table tfoot,
+body.post-type-prerolls table thead,
+body.post-type-prerolls table tfoot,
+body.post-type-growers table thead,
+body.post-type-growers table tfoot,
+body.post-type-gear table thead,
+body.post-type-gear table tfoot,
+body.post-type-tinctures table thead,
+body.post-type-tinctures table tfoot {
+    background: #F7F7F7;
+}
+
+body.post-type-flowers .alternate,
+body.post-type-flowers .striped>tbody>:nth-child(odd),
+body.post-type-flowers ul.striped>:nth-child(odd),
+body.post-type-concentrates .alternate,
+body.post-type-concentrates .striped>tbody>:nth-child(odd),
+body.post-type-concentrates ul.striped>:nth-child(odd),
+body.post-type-edibles .alternate,
+body.post-type-edibles .striped>tbody>:nth-child(odd),
+body.post-type-edibles ul.striped>:nth-child(odd),
+body.post-type-topicals .alternate,
+body.post-type-topicals .striped>tbody>:nth-child(odd),
+body.post-type-topicals ul.striped>:nth-child(odd),
+body.post-type-prerolls .alternate,
+body.post-type-prerolls .striped>tbody>:nth-child(odd),
+body.post-type-prerolls ul.striped>:nth-child(odd),
+body.post-type-growers .alternate,
+body.post-type-growers .striped>tbody>:nth-child(odd),
+body.post-type-growers ul.striped>:nth-child(odd),
+body.post-type-gear .alternate,
+body.post-type-gear .striped>tbody>:nth-child(odd),
+body.post-type-gear ul.striped>:nth-child(odd),
+body.post-type-tinctures .alternate,
+body.post-type-tinctures .striped>tbody>:nth-child(odd),
+body.post-type-tinctures ul.striped>:nth-child(odd) {
+	background: #FFF;
+}
+
+tr.type-flowers td, tr.type-flowers th,
+tr.type-concentrates td, tr.type-concentrates th,
+tr.type-edibles td, tr.type-edibles th,
+tr.type-topicals td, tr.type-topicals th,
+tr.type-prerolls td, tr.type-prerolls th,
+tr.type-growers td, tr.type-growers th,
+tr.type-gear td, tr.type-gear th,
+tr.type-tinctures td, tr.type-tinctures th {
+    border-bottom: 1px solid #DDD;
+}
