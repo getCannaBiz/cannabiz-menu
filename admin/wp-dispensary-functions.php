@@ -258,6 +258,9 @@ function get_wpd_details_phrase() {
 		$wpd_details_phrase = __( 'Details', 'wp-dispensary' );
 	}
 
+	// Create filterable details phrase.
+	$wpd_details_phrase = apply_filters( 'wpd_details_phrase', $wpd_details_phrase );
+
 	// Return the details phrase.
 	return $wpd_details_phrase;
 }
