@@ -352,6 +352,17 @@ body.post-type-tinctures {
     background: #FFF;
 }
 
+body.post-type-flowers table.posts,
+body.post-type-concentrates table.posts,
+body.post-type-edibles table.posts,
+body.post-type-topicals table.posts,
+body.post-type-prerolls table.posts,
+body.post-type-growers table.posts,
+body.post-type-gear table.posts,
+body.post-type-tinctures table.posts {
+	margin-top: 12px;
+}
+
 body.post-type-flowers table thead,
 body.post-type-flowers table tfoot,
 body.post-type-concentrates table thead,
