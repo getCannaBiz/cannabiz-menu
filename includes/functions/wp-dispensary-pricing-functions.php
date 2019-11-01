@@ -159,6 +159,9 @@ function get_wpd_pricing_phrase( $singular ) {
 		}
 	}
 
+	// Create filterable pricing phrase.
+	$wpd_pricing_phrase = apply_filters( 'wpd_pricing_phrase', $wpd_pricing_phrase );
+
 	// Return the pricing phrase.
 	return $wpd_pricing_phrase;
 }
