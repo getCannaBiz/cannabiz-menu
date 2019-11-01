@@ -3,7 +3,7 @@
 
 ![Cannabis Dispensary WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v3.1.1](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release :point_right: [v3.2](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
 
 ## Dispensary Menu Features
 
@@ -19,7 +19,7 @@ See all shortcode options in the [documentation](https://www.wpdispensary.com/se
 
 ## Define your dispensary style
 
-[CannaBiz](https://www.wpdispensary.com/downloads/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
+[CannaBiz](https://www.wpdispensary.com/product/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
 
 Along with full integration for WP Dispensary and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
 

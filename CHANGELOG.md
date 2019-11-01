@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2
+*   Added `wpd_pricing_phrase` filter in includes/functions/wp-dispensary-pricing-functions.php`
+*   Added `wpd_details_phrase` filter in admin/wp-dispensary-functions.php`
+*   Updated admin edit menu type screens style in `admin/css/wp-dispensary-admin.css`
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+*   General code cleanup throughout various files in the plugin
+
 ## 3.1.1
 *   Added CSS classes to body on the `menu` page in `public/class-wp-dispensary-public.php`
 *   Bugfix data return for prerolls featured images in REST API in `admin/wp-dispensary-rest-api.php`
