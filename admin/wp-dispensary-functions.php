@@ -381,7 +381,7 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// Add each compound to variable.
 	foreach ( $compounds as $compound=>$value ) {
-		$str .= "<span class='wpd-productinfo " . $compound . "'><strong>" . $compound . ":</strong> " . $value . '</span>';
+		$str .= '<span class="wpd-productinfo ' . $compound . '"><strong>' . $compound . ':</strong> ' . $value . '</span>';
 	}
 
 	return $str;
