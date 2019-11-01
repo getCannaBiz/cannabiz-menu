@@ -70,10 +70,14 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 
 == Screenshots ==
 
-1. WP Dispensary menu display
-2. WP Dispensary "Flowers" menu type
-3. WP Dispensary Settings page
-4. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
+1. WP Dispensary example menu display
+2. WP Dispensary single menu item display
+3. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
+4. WP Dispensary admin "Flowers" menu type
+5. WP Dispensary edit "Flowers" product
+6. WP Dispensary admin Settings page
+7. WP Dispensary Products widget list style
+8. WP Dispensary Products widget carousel style
 
 == Changelog ==
 
