@@ -606,7 +606,11 @@ function wpdispensary_edibles_shortcode( $atts ) {
 
 		// Total THC (Servings X THC).
 		if ( 'show' === $totalthc ) {
-			$totalthc = '<span class="wpd-productinfo thc"><strong>' . __( 'THC: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_thcmg', true ) * get_post_meta( get_the_id(), '_thccbdservings', true ) . 'mg</span>';
+			if ( '' != get_post_meta( get_the_id(), '_thcmg', true ) && '' != get_post_meta( get_the_id(), '_thccbdservings', true ) ) {
+				$total_thc = '<span class="wpd-productinfo thc"><strong>' . __( 'THC: ', 'wp-dispensary' ) . '</strong>' . get_post_meta( get_the_id(), '_thcmg', true ) * get_post_meta( get_the_id(), '_thccbdservings', true ) . 'mg</span>';
+			} else {
+				$total_thc = '';
+			}
 		} else {
 			$totalthc = '';
 		}
