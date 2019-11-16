@@ -185,10 +185,11 @@ function get_wpd_product_details( $product_id, $product_details ) {
  *
  * @param  string $product_id
  * @param  array  $product_details
+ * @param  string $wrapper
  * @return void
  */
-function wpd_product_details( $product_id, $product_details ) {
-    echo apply_filters( 'wpd_product_details', get_wpd_product_details( $product_id, $product_details ) );
+function wpd_product_details( $product_id, $product_details, $wrapper ) {
+    echo apply_filters( 'wpd_product_details', get_wpd_product_details( $product_id, $product_details, $wrapper ) );
 }
 
 /**
