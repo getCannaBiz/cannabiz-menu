@@ -1835,7 +1835,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			}
 
 			// Show info.
-			$show_info = get_wpd_product_details( get_the_ID(), $product_details );
+			$show_info = get_wpd_product_details( get_the_ID(), $product_details, $wrapper );
 
 			// Shortcode inside top action hook.
 			ob_start();
