@@ -133,7 +133,7 @@ class CSVExport {
         foreach ( $products as $product ) {
 
             // Cat ID.
-            $cat_id = '';
+            $cat_id = array();
 
             if ( 'flowers' == $product['post_type'] ) {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_flowers', TRUE );
@@ -142,47 +142,55 @@ class CSVExport {
                 $price_each       = '';
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
-            } elseif ( 'concentrates' == $product['post_type'] ) {
+            }
+            
+            if ( 'concentrates' == $product['post_type'] ) {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_concentrates', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'concentrates_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'concentrates_category', array( 'fields' => 'ids' ) );
                 $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
-            } elseif ( 'edibles' == $product['post_type'] ) {
+            }
+            
+            if ( 'edibles' == $product['post_type'] ) {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_edibles', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'edibles_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'edibles_category', array( 'fields' => 'ids' ) );
                 $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
-            } elseif ( 'prerolls' == $product['post_type'] ) {
+            }
+            
+            if ( 'prerolls' == $product['post_type'] ) {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_prerolls', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'prerolls_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'flowers_category', array( 'fields' => 'ids' ) );
                 $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
-            } elseif ( 'topicals' == $product['post_type'] ) {
+            }
+            
+            if ( 'topicals' == $product['post_type'] ) {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_topicals', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'topicals_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'topicals_category', array( 'fields' => 'ids' ) );
                 $price_each       = get_post_meta( $product['ID'], '_pricetopical', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
             } elseif ( 'growers' == $product['post_type'] ) {
@@ -192,27 +200,31 @@ class CSVExport {
                 $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
-            } elseif ( 'gear' == $product['post_type'] ) {
+            }
+            
+            if ( 'gear' == $product['post_type'] ) {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_gear', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'wpd_gear_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'wpd_gear_category', array( 'fields' => 'ids' ) );
                 $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
-            } elseif ( 'tinctures' == $product['post_type'] ) {
+            } 
+            
+            if ( 'tinctures' == $product['post_type'] ) {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_tinctures', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'tinctures_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'tinctures_category', array( 'fields' => 'ids' ) );
                 $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
-                        $cat_id .= $value->term_id;
+                        $cat_id[] = $value;
                     }
                 }
             } else {
