@@ -1339,6 +1339,25 @@ function wpdispensary_carousel_shortcode( $atts ) {
 				'terms'    => $new_category,
 			);
 		}
+
+		// Add gear categories to $cat_tax_query.
+		if ( in_array( 'gear', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'gear_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+
+		// Add tinctures categories to $cat_tax_query.
+		if ( in_array( 'tinctures', $array_type ) ) {
+			$cat_tax_query[] = array(
+				'taxonomy' => 'tinctures_category',
+				'field'    => 'name',
+				'terms'    => $new_category,
+			);
+		}
+
 	}
 
 	// Create new tax query.
