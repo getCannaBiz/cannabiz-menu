@@ -135,7 +135,7 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 span.wpd-pricing,
 span.wpd-thc,
 span.wpd-productinfo {
-  color: #AAA;
+  color: #999999;
   font-size: 13px;
   margin-right: 10px;
 }
@@ -192,7 +192,7 @@ table.wpdispensary-table td {
 }
 
 table.wpdispensary-table.pricing td {
-	color: #76BD1D;
+	color: #76bd43;
 	width: auto;
 }
 
@@ -555,7 +555,7 @@ table.wpdispensary-table.single.details.compound-details td {
 .carousel-item span.wpd-pricing,
 .carousel-item span.wpd-thc,
 .carousel-item span.wpd-productinfo {
-  color: #AAA;
+  color: #999999;
   font-size: 13px;
   margin-right: 10px;
 }
