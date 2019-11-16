@@ -348,7 +348,8 @@ body.post-type-topicals,
 body.post-type-prerolls,
 body.post-type-growers,
 body.post-type-gear,
-body.post-type-tinctures {
+body.post-type-tinctures,
+body.post-type-coupons {
     background: #FFF;
 }
 
@@ -359,7 +360,8 @@ body.post-type-topicals table.posts,
 body.post-type-prerolls table.posts,
 body.post-type-growers table.posts,
 body.post-type-gear table.posts,
-body.post-type-tinctures table.posts {
+body.post-type-tinctures table.posts,
+body.post-type-coupons table.posts {
 	margin-top: 12px;
 }
 
@@ -378,7 +380,9 @@ body.post-type-growers table tfoot,
 body.post-type-gear table thead,
 body.post-type-gear table tfoot,
 body.post-type-tinctures table thead,
-body.post-type-tinctures table tfoot {
+body.post-type-tinctures table tfoot,
+body.post-type-coupons table thead,
+body.post-type-coupons table tfoot {
     background: #F7F7F7;
 }
 
@@ -405,7 +409,10 @@ body.post-type-gear .striped>tbody>:nth-child(odd),
 body.post-type-gear ul.striped>:nth-child(odd),
 body.post-type-tinctures .alternate,
 body.post-type-tinctures .striped>tbody>:nth-child(odd),
-body.post-type-tinctures ul.striped>:nth-child(odd) {
+body.post-type-tinctures ul.striped>:nth-child(odd),
+body.post-type-coupons .alternate,
+body.post-type-coupons .striped>tbody>:nth-child(odd),
+body.post-type-coupons ul.striped>:nth-child(odd) {
 	background: #FFF;
 }
 
@@ -416,6 +423,7 @@ tr.type-topicals td, tr.type-topicals th,
 tr.type-prerolls td, tr.type-prerolls th,
 tr.type-growers td, tr.type-growers th,
 tr.type-gear td, tr.type-gear th,
-tr.type-tinctures td, tr.type-tinctures th {
+tr.type-tinctures td, tr.type-tinctures th,
+tr.type-coupons td, tr.type-coupons th {
     border-bottom: 1px solid #DDD;
 }
