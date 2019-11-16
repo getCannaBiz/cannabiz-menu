@@ -554,6 +554,10 @@ function wpd_menu_types_simple( $lowercase = NULL ) {
  */
 function wpd_product_updated_messages( $messages ) {
 	global $post;
+
+	// Product ID.
+	$product_id = $post->ID;
+
     if ( 'flowers' === get_post_type() ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
