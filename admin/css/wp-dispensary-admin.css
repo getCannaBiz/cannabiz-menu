@@ -427,3 +427,16 @@ tr.type-tinctures td, tr.type-tinctures th,
 tr.type-coupons td, tr.type-coupons th {
     border-bottom: 1px solid #DDD;
 }
+
+body.post-type-flowers .search-box input[type="search"],
+body.post-type-concentrates .search-box input[type="search"],
+body.post-type-edibles .search-box input[type="search"],
+body.post-type-topicals .search-box input[type="search"],
+body.post-type-prerolls .search-box input[type="search"],
+body.post-type-growers .search-box input[type="search"],
+body.post-type-gear .search-box input[type="search"],
+body.post-type-tinctures .search-box input[type="search"],
+body.post-type-coupons .search-box input[type="search"] {
+    min-height: 26px;
+    line-height: 1.92;
+}
