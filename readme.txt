@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 5.2.3
-Stable tag: 3.2
+Tested up to: 5.3
+Stable tag: 3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,24 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 3.3 =
+*   Added `product_id` var to `wpd_product_updates_messages` function in `admin/wp-dispensary-functions.php`
+*   Added gear and tinctures taxonomies to `$cat_tax_query` for carousel shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Added `$wrapper` param to `wpd_product_details` function in `includes/functions/wp-dispensary-product-functions.php`
+*   Added `$wrapper` param to `get_wpd_product_details` function in `includes/functions/wp-dispensary-product-functions.php`
+*   Added `$wrapper` param to `details` REST API endpoint in `admin/wp-dispensary-rest-api.php`
+*   Added `$wrapper` param to `wpd_menu` shortcode product details in `admin/wp-dispensary-shortcodes.php`
+*   Added minified CSS for the admin screens in `admin/css/wp-dispensary-admin.min.css`
+*   Added admin edit post type styles for coupons in `admin/css/wp-dispensary-admin.css`
+*   Updated CSS for search box in admin edit post types screens in `admin/css/wp-dispensary-admin.css`
+*   Updated carousel shortcode to use get_wpd_product_details function in `admin/wp-dispensary-shortcodes.php`
+*   Updated functions for featured images REST API endpoints in `admin/wp-dispensary-rest-api.php`
+*   Updated total THC for edibles shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Updated colors for product details in shortcodes and compound details in `public/css/wp-dispensary-public.css`
+*   Updated carousel shortcode default atts in `admin/wp-dispensary-shortcodes.php`
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+*   General code cleanup throughout various files in the plugin
 
 = 3.2 =
 *   Added `wpd_pricing_phrase` filter in includes/functions/wp-dispensary-pricing-functions.php`
