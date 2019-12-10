@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Dispensary\n"
-"POT-Creation-Date: 2019-11-26 12:39-0500\n"
-"PO-Revision-Date: 2019-11-26 12:38-0500\n"
+"POT-Creation-Date: 2019-12-10 13:50-0500\n"
+"PO-Revision-Date: 2019-12-10 13:42-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2064,48 +2064,48 @@ msgid "Item draft updated. <a target=\"_blank\" href=\"%s\">Preview item</a>"
 msgstr ""
 
 #: admin/wp-dispensary-shortcodes.php:156
-#: admin/wp-dispensary-shortcodes.php:396
-#: admin/wp-dispensary-shortcodes.php:572
-#: admin/wp-dispensary-shortcodes.php:752
-#: admin/wp-dispensary-shortcodes.php:900
-#: admin/wp-dispensary-shortcodes.php:1053
+#: admin/wp-dispensary-shortcodes.php:404
+#: admin/wp-dispensary-shortcodes.php:588
+#: admin/wp-dispensary-shortcodes.php:776
+#: admin/wp-dispensary-shortcodes.php:932
+#: admin/wp-dispensary-shortcodes.php:1093
 msgid "(view all)"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:588
+#: admin/wp-dispensary-shortcodes.php:604
 msgid "Servings: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:599
-#: admin/wp-dispensary-shortcodes.php:610
+#: admin/wp-dispensary-shortcodes.php:615
+#: admin/wp-dispensary-shortcodes.php:626
 msgid "THC: "
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:773
+#: admin/wp-dispensary-shortcodes.php:797
 msgid "Weight:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:921
+#: admin/wp-dispensary-shortcodes.php:953
 msgid "Size:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:928
+#: admin/wp-dispensary-shortcodes.php:960
 msgid "THC:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:935
+#: admin/wp-dispensary-shortcodes.php:967
 msgid "CBD:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1074
+#: admin/wp-dispensary-shortcodes.php:1114
 msgid "Seeds:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1081
+#: admin/wp-dispensary-shortcodes.php:1121
 msgid "Clones:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1158
+#: admin/wp-dispensary-shortcodes.php:1206
 msgid "Recent Products"
 msgstr ""
 
