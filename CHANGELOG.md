@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.3.1
+*   Added `image` to the `wpd-carousel` shortcode atts in `admin/wp-dispensary-shortcodes.php`
+*   Updated `wpd-carousel` shortcode to pass `span` as the $wrapper for the `get_wpd_product_details` function in `admin/wp-dispensary-shortcodes.php`
+*   Updated shortcodes to allow users to show/hide images via the shortcode atts in `admin/wp-dispensary-shortcodes.php`
+*   Updated `wpd_shortcode_top_menu` and `wpd_shortcode_bottom_menu` action hook names in `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Updated multiple atts for `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+*   General code cleanup throughout various files in the plugin
+
 ## 3.3
 *   Added `product_id` var to `wpd_product_updates_messages` function in `admin/wp-dispensary-functions.php`
 *   Added gear and tinctures taxonomies to `$cat_tax_query` for carousel shortcode in `admin/wp-dispensary-shortcodes.php`
