@@ -1221,6 +1221,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'orderby'     => '',
 			'meta_key'    => '',
 			'type'        => "flowers, concentrates, edibles, prerolls, topicals, growers, gear, tinctures",
+			'image'       => 'show',
 			'imgsize'     => 'wpd-small',
 		),
 		$atts,
