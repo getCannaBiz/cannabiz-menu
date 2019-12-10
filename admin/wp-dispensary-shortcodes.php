@@ -1456,7 +1456,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 			'weight'      => $weight
 		);
 		
-		$show_info = get_wpd_product_details( get_the_ID(), $product_details, $wrapper );
+		$show_info = get_wpd_product_details( get_the_ID(), $product_details, 'span' );
 
 		// Product name.
 		if ( 'show' === $name ) {
