@@ -1597,6 +1597,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			'class'       => '',
 			'name'        => 'show',
 			'price'       => 'show',
+			'info'        => 'show',
 			'thc'         => 'show',
 			'thca'        => '',
 			'cbd'         => '',
@@ -1620,17 +1621,19 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			'clone_count' => 'show',
 			'size'        => 'show',
 			'servings'    => '',
+			'order'       => 'DESC',
 			'orderby'     => '',
 			'meta_key'    => '',
 			'type'        => $menu_types,
+			'image'       => 'show',
 			'image_size'  => 'wpd-small',
+			'viewall'     => ''
 		),
 		$atts,
 		'wpd_menu'
 	) );
 
 	// Default variables.
-	$order     = '';
 	$order_new = '';
 
 	// Create $tax_query variable.
@@ -1708,12 +1711,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			'field'    => 'slug',
 			'terms'    => $strain_type,
 		);
-	}
-
-	// Order by.
-	if ( '' !== $orderby ) {
-		$order    = $orderby;
-		$order_new = 'ASC';
 	}
 
 	// Create $cat_tax_query variable.
@@ -1820,8 +1817,8 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			'post_type'      => $value,
 			'posts_per_page' => $posts,
 			'tax_query'      => $new_tax_query,
-			'orderby'        => $order,
-			'order'          => $order_new,
+			'orderby'        => $orderby,
+			'order'          => $order,
 			'meta_key'       => $meta_key,
 		) );
 
@@ -1890,8 +1887,14 @@ function wp_dispensary_menu_shortcode( $atts ) {
 				$show_price = '';
 			}
 
+			// Set empty variable for info.
+			$show_info = '';
+
 			// Show info.
-			$show_info = get_wpd_product_details( get_the_ID(), $product_details, $wrapper );
+			if ( 'show' === $info ) {
+				$show_info = get_wpd_product_details( get_the_ID(), $product_details, 'span' );
+			}
+
 			// Set empty variable for image.
 			$wpd_image = '';
 
