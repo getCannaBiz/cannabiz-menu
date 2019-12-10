@@ -1908,7 +1908,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 
 			// Shortcode menu top action hook.
 			ob_start();
-				do_action( 'wpd_shortcode_menu_top' );
+				do_action( 'wpd_shortcode_top_menu' );
 				$wpd_menu_top = ob_get_contents();
 			ob_end_clean();
 
@@ -1923,7 +1923,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 
 			// Shortcode menu top action hook.
 			ob_start();
-				do_action( 'wpd_shortcode_menu_bottom' );
+				do_action( 'wpd_shortcode_bottom_menu' );
 				$wpd_menu_bottom = ob_get_contents();
 			ob_end_clean();
 
