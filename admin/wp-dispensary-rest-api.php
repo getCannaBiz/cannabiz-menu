@@ -373,8 +373,8 @@ function slug_get_prices( $object, $field_name, $request ) {
 /**
  * Update Prices
  */
-function slug_update_prices( $value, $post, $field_name ) {
-	return update_post_meta( $post->ID, $field_name, $value );
+function slug_update_prices( $value, $object, $field_name ) {
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
