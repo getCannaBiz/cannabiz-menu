@@ -367,14 +367,14 @@ function slug_register_prices() {
  * Get Prices
  */
 function slug_get_prices( $object, $field_name, $request ) {
-	return get_post_meta( $object['id'], $field_name, true );
+	return get_post_meta( $object->ID, $field_name, true );
 }
 
 /**
  * Update Prices
  */
 function slug_update_prices( $value, $object, $field_name ) {
-	return update_post_meta( $object['id'], $field_name, $value );
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
@@ -408,14 +408,14 @@ function slug_register_concentrateprices() {
  * Get Prices
  */
 function slug_get_concentrateprices( $object, $field_name, $request ) {
-	return get_post_meta( $object['id'], $field_name, true );
+	return get_post_meta( $object->ID, $field_name, true );
 }
 
 /**
  * Update Prices
  */
 function slug_update_concentrateprices( $value, $object, $field_name ) {
-	return update_post_meta( $object['id'], $field_name, $value );
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
@@ -449,14 +449,14 @@ function slug_register_edibleinfo() {
  * Get Edible info
  */
 function slug_get_edibleinfo( $object, $field_name, $request ) {
-	return get_post_meta( $object['id'], $field_name, true );
+	return get_post_meta( $object->ID, $field_name, true );
 }
 
 /**
  * Update Edible info
  */
 function slug_update_edibleinfo( $value, $object, $field_name ) {
-	return update_post_meta( $object['id'], $field_name, $value );
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
@@ -490,14 +490,14 @@ function slug_register_prerollinfo() {
  * Get Pre-roll info
  */
 function slug_get_prerollinfo( $object, $field_name, $request ) {
-	return get_post_meta( $object['id'], $field_name, true );
+	return get_post_meta( $object->ID, $field_name, true );
 }
 
 /**
  * Update Pre-roll info
  */
 function slug_update_prerollinfo( $value, $object, $field_name ) {
-	return update_post_meta( $object['id'], $field_name, $value );
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
@@ -534,14 +534,14 @@ function slug_register_compounds() {
  * Get Compound info
  */
 function slug_get_compounds( $object, $field_name, $request ) {
-	return get_post_meta( $object['id'], $field_name, true );
+	return get_post_meta( $object->ID, $field_name, true );
 }
 
 /**
  * Update Compound info
  */
 function slug_update_compounds( $value, $object, $field_name ) {
-	return update_post_meta( $object['id'], $field_name, $value );
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
@@ -575,14 +575,14 @@ function slug_register_topicalinfo() {
  * Get Topical info
  */
 function slug_get_topicalinfo( $object, $field_name, $request ) {
-	return get_post_meta( $object['id'], $field_name, true );
+	return get_post_meta( $object->ID, $field_name, true );
 }
 
 /**
  * Update Topical info
  */
 function slug_update_topicalinfo( $value, $object, $field_name ) {
-	return update_post_meta( $object['id'], $field_name, $value );
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
@@ -616,14 +616,14 @@ function slug_register_growerinfo() {
  * Get Grower info
  */
 function slug_get_growerinfo( $object, $field_name, $request ) {
-	return get_post_meta( $object['id'], $field_name, true );
+	return get_post_meta( $object->ID, $field_name, true );
 }
 
 /**
  * Update Grower info
  */
 function slug_update_growerinfo( $value, $object, $field_name ) {
-	return update_post_meta( $object['id'], $field_name, $value );
+	return update_post_meta( $object->ID, $field_name, $value );
 }
 
 /**
