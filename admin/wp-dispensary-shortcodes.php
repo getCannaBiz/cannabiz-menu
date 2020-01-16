@@ -628,7 +628,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 				$total_thc = '';
 			}
 		} else {
-			$totalthc = '';
+			$total_thc = '';
 		}
 
 		// Price.
@@ -646,7 +646,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 
 		// Product info.
 		if ( 'show' === $info ) {
-			$showinfo = $ediblepricing . $thc . $servingcount . $totalthc;
+			$showinfo = $ediblepricing . $thc . $servingcount . $total_thc;
 		} else {
 			$showinfo = '';
 		}
