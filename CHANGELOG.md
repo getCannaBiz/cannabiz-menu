@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.3.2
+*   Bugfix product image size variable in `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Bugfix total THC display in edibles shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Updated `wpd-carousel` shortcode default attributes in `admin/wp-dispensary-shortcodes.php`
+*   Updated REST API to use `WP_Post` method of getting ID (thanks to github user BigNug) in `admin/wp-dispensary-rest-api.php`
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+
 ## 3.3.1
 *   Added `image` to the `wpd-carousel` shortcode atts in `admin/wp-dispensary-shortcodes.php`
 *   Updated `wpd-carousel` shortcode to pass `span` as the $wrapper for the `get_wpd_product_details` function in `admin/wp-dispensary-shortcodes.php`

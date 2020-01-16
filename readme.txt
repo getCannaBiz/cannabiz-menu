@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 5.3
-Stable tag: 3.3.1
+Tested up to: 5.3.2
+Stable tag: 3.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,13 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 3.3.2 =
+*   Bugfix product image size variable in `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Bugfix total THC display in edibles shortcode in `admin/wp-dispensary-shortcodes.php`
+*   Updated `wpd-carousel` shortcode default attributes in `admin/wp-dispensary-shortcodes.php`
+*   Updated REST API to use `WP_Post` method of getting ID (thanks to github user BigNug) in `admin/wp-dispensary-rest-api.php`
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
 
 = 3.3.1 =
 *   Added `image` to the `wpd-carousel` shortcode atts in `admin/wp-dispensary-shortcodes.php`
