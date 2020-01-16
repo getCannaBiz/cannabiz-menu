@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Dispensary\n"
-"POT-Creation-Date: 2019-12-10 13:50-0500\n"
-"PO-Revision-Date: 2019-12-10 13:42-0500\n"
+"POT-Creation-Date: 2020-01-15 23:17-0500\n"
+"PO-Revision-Date: 2020-01-15 23:16-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2105,7 +2105,7 @@ msgstr ""
 msgid "Clones:"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:1206
+#: admin/wp-dispensary-shortcodes.php:1197
 msgid "Recent Products"
 msgstr ""
 
