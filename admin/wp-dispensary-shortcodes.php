@@ -1901,7 +1901,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 
 			// Set image if set to show.
 			if ( 'show' === $image ) {
-				$wpd_image = get_wpd_product_image( get_the_ID(), $imgsize );
+				$wpd_image = get_wpd_product_image( get_the_ID(), $img_size );
 			}
 
 			// Shortcode inside top action hook.
