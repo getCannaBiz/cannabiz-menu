@@ -14,7 +14,6 @@
  *
  * @since 2.0
  */
-// Plugin version.
 if ( ! defined( 'WPD_ADMIN_SETTINGS_VERSION' ) ) {
 	define( 'WPD_ADMIN_SETTINGS_VERSION', WP_DISPENSARY_VERSION );
 }
@@ -86,7 +85,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_section(
 		array(
 			'id'    => 'wpdas_display',
-			'title' => __( 'Display', 'wp-dispensary' ),
+			'title' => esc_attr__( 'Display', 'wp-dispensary' ),
 		)
 	);
 
@@ -94,7 +93,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	$wpdas_obj->add_section(
 		array(
 			'id'    => 'wpdas_general',
-			'title' => __( 'General', 'wp-dispensary' ),
+			'title' => esc_attr__( 'General', 'wp-dispensary' ),
 		)
 	);
 
@@ -104,7 +103,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_section(
 			array(
 				'id'    => 'wpdas_payments',
-				'title' => __( 'Payments', 'wp-dispensary' ),
+				'title' => esc_attr__( 'Payments', 'wp-dispensary' ),
 			)
 		);
 
@@ -112,7 +111,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_section(
 			array(
 				'id'    => 'wpdas_patients',
-				'title' => __( 'Patients', 'wp-dispensary' ),
+				'title' => esc_attr__( 'Patients', 'wp-dispensary' ),
 			)
 		);
 
@@ -120,7 +119,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_section(
 			array(
 				'id'    => 'wpdas_pages',
-				'title' => __( 'Pages', 'wp-dispensary' ),
+				'title' => esc_attr__( 'Pages', 'wp-dispensary' ),
 			)
 		);
 	}
@@ -137,7 +136,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_pricing_table_title',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'Prices table', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'Prices table', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -151,8 +150,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'      => 'wpd_pricing_phrase',
 				'type'    => 'select',
-				'name'    => __( 'Title', 'wp-dispensary' ),
-				'desc'    => __( 'Choose the title you would like used', 'wp-dispensary' ),
+				'name'    => esc_attr__( 'Title', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Choose the title you would like used', 'wp-dispensary' ),
 				'options' => array(
 					'Price'    => 'Prices',
 					'Donation' => 'Donations',
@@ -171,7 +170,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'id'          => 'wpd_pricing_phrase_custom',
 				'type'        => 'text',
 				'name'        => '',
-				'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
+				'desc'        => esc_attr__( 'or add a custom title', 'wp-dispensary' ),
 				'placeholder' => '',
 			)
 		);
@@ -186,8 +185,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'      => 'wpd_pricing_table_placement',
 				'type'    => 'select',
-				'name'    => __( 'Display', 'wp-dispensary' ),
-				'desc'    => __( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
+				'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
 				'options' => array(
 					'above' => 'Above Content',
 					'below' => 'Below Content',
@@ -206,7 +205,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'id'   => 'wpd_hide_pricing',
 				'type' => 'checkbox',
 				'name' => '',
-				'desc' => __( 'Remove the price table from data output', 'wp-dispensary' ),
+				'desc' => esc_attr__( 'Remove the price table from data output', 'wp-dispensary' ),
 			)
 		);
 
@@ -234,7 +233,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_settings_compounds_table_title',
 			'type' => 'title',
-			'name' => '<h1>' . __( 'Compounds table', 'wp-dispensary' ) . '</h1>',
+			'name' => '<h1>' . esc_attr__( 'Compounds table', 'wp-dispensary' ) . '</h1>',
 		)
 	);
 
@@ -242,7 +241,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 	 * Add Field: Details table placement
 	 * Field:     select
 	 * Section:   wpdas_display
-	 * 
+	 *
 	 * @todo make the options filterable for WPD eCommerce to add and set an option on install.
 	 */
 	$wpdas_obj->add_field(
@@ -250,8 +249,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'      => 'wpd_compounds_table_placement',
 			'type'    => 'select',
-			'name'    => __( 'Display', 'wp-dispensary' ),
-			'desc'    => __( 'Where should the compounds display on single menu items?', 'wp-dispensary' ),
+			'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
+			'desc'    => esc_attr__( 'Where should the compounds display on single menu items?', 'wp-dispensary' ),
 			'options' => array(
 				'above' => 'Above Content',
 				'below' => 'Below Content',
@@ -270,7 +269,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'   => 'wpd_hide_compounds',
 			'type' => 'checkbox',
 			'name' => '',
-			'desc' => __( 'Remove the compounds table from data output', 'wp-dispensary' ),
+			'desc' => esc_attr__( 'Remove the compounds table from data output', 'wp-dispensary' ),
 		)
 	);
 
@@ -297,7 +296,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'   => 'wpd_settings_details_table_title',
 			'type' => 'title',
-			'name' => '<h1>' . __( 'Details table', 'wp-dispensary' ) . '</h1>',
+			'name' => '<h1>' . esc_attr__( 'Details table', 'wp-dispensary' ) . '</h1>',
 		)
 	);
 
@@ -311,11 +310,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'      => 'wpd_details_phrase',
 			'type'    => 'select',
-			'name'    => __( 'Title', 'wp-dispensary' ),
-			'desc'    => __( 'Choose the title you would like used', 'wp-dispensary' ),
+			'name'    => esc_attr__( 'Title', 'wp-dispensary' ),
+			'desc'    => esc_attr__( 'Choose the title you would like used', 'wp-dispensary' ),
 			'options' => array(
-				'Details'     => 'Details',
-				'Information' => 'Information',
+				'Details'     => esc_attr__( 'Details', 'wp-dispensary' ),
+				'Information' => esc_attr__( 'Information', 'wp-dispensary' ),
 			),
 		)
 	);
@@ -331,7 +330,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'          => 'wpd_details_phrase_custom',
 			'type'        => 'text',
 			'name'        => '',
-			'desc'        => __( 'or add a custom title', 'wp-dispensary' ),
+			'desc'        => esc_attr__( 'or add a custom title', 'wp-dispensary' ),
 			'placeholder' => '',
 		)
 	);
@@ -346,11 +345,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'      => 'wpd_details_table_placement',
 			'type'    => 'select',
-			'name'    => __( 'Display', 'wp-dispensary' ),
-			'desc'    => __( 'Where should the details display on single menu items?', 'wp-dispensary' ),
+			'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
+			'desc'    => esc_attr__( 'Where should the details display on single menu items?', 'wp-dispensary' ),
 			'options' => array(
-				'above' => 'Above Content',
-				'below' => 'Below Content',
+				'above' => esc_attr__( 'Above Content', 'wp-dispensary' ),
+				'below' => esc_attr__( 'Below Content', 'wp-dispensary' ),
 			),
 		)
 	);
@@ -366,7 +365,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			'id'   => 'wpd_hide_details',
 			'type' => 'checkbox',
 			'name' => '',
-			'desc' => __( 'Remove the details table from data output', 'wp-dispensary' ),
+			'desc' => esc_attr__( 'Remove the details table from data output', 'wp-dispensary' ),
 		)
 	);
 
@@ -382,7 +381,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_store_general',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'General', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'General', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 	}
@@ -397,8 +396,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		array(
 			'id'      => 'wpd_pricing_currency_code',
 			'type'    => 'select',
-			'name'    => __( 'Currency', 'wp-dispensary' ),
-			'desc'    => __( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
+			'name'    => esc_attr__( 'Currency', 'wp-dispensary' ),
+			'desc'    => esc_attr__( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
 			'options' => wpd_pricing_currency_codes()
 		)
 	);
@@ -415,7 +414,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_store_taxes',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'Taxes', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'Taxes', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -427,11 +426,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_field(
 			'wpdas_general',
 			array(
-				'id'      => 'wpd_ecommerce_sales_tax',
-				'type'    => 'text',
-				'name'    => __( 'Sales tax', 'wp-dispensary' ),
-				'desc'    => __( 'Apply sales tax to orders (%)', 'wp-dispensary' ),
-				'placeholder' => __( '6', 'wp-dispensary' ),
+				'id'          => 'wpd_ecommerce_sales_tax',
+				'type'        => 'text',
+				'name'        => esc_attr__( 'Sales tax', 'wp-dispensary' ),
+				'desc'        => esc_attr__( 'Apply sales tax to orders (%)', 'wp-dispensary' ),
+				'placeholder' => esc_attr__( '6', 'wp-dispensary' ),
 			)
 		);
 
@@ -443,11 +442,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_field(
 			'wpdas_general',
 			array(
-				'id'      => 'wpd_ecommerce_excise_tax',
+				'id'          => 'wpd_ecommerce_excise_tax',
 				'type'        => 'text',
-				'name'        => __( 'Excise tax', 'wp-dispensary' ),
-				'desc'        => __( 'Apply excise tax to orders (%)', 'wp-dispensary' ),
-				'placeholder' => __( '10', 'wp-dispensary' ),
+				'name'        => esc_attr__( 'Excise tax', 'wp-dispensary' ),
+				'desc'        => esc_attr__( 'Apply excise tax to orders (%)', 'wp-dispensary' ),
+				'placeholder' => esc_attr__( '10', 'wp-dispensary' ),
 			)
 		);
 
@@ -461,7 +460,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_cart_options',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'Cart', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'Cart', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -473,10 +472,10 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_field(
 			'wpdas_general',
 			array(
-				'id'          => 'wpd_ecommerce_cart_require_login_to_shop',
-				'type'        => 'checkbox',
-				'name'        => __( 'Require login to shop', 'wp-dispensary' ),
-				'desc'        => __( 'Hide the add to cart functionality for non-logged in users', 'wp-dispensary' ),
+				'id'   => 'wpd_ecommerce_cart_require_login_to_shop',
+				'type' => 'checkbox',
+				'name' => esc_attr__( 'Require login to shop', 'wp-dispensary' ),
+				'desc' => esc_attr__( 'Hide the add to cart functionality for non-logged in users', 'wp-dispensary' ),
 			)
 		);
 
@@ -490,7 +489,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_checkout_options',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'Checkout', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'Checkout', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -504,8 +503,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'          => 'wpd_ecommerce_checkout_minimum_order',
 				'type'        => 'text',
-				'name'        => __( 'Minimum order', 'wp-dispensary' ),
-				'desc'        => __( 'Require a minimum order amount before checkout', 'wp-dispensary' ),
+				'name'        => esc_attr__( 'Minimum order', 'wp-dispensary' ),
+				'desc'        => esc_attr__( 'Require a minimum order amount before checkout', 'wp-dispensary' ),
 				'placeholder' => 'ex: 50',
 			)
 		);
@@ -522,21 +521,21 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				array(
 					'id'   => 'wpd_ecommerce_checkout_coupons',
 					'type' => 'checkbox',
-					'name' => __( 'Coupons', 'wp-dispensary' ),
-					'desc' => __( 'Allow patients to apply a coupon to their order', 'wp-dispensary' ),
+					'name' => esc_attr__( 'Coupons', 'wp-dispensary' ),
+					'desc' => esc_attr__( 'Allow patients to apply a coupon to their order', 'wp-dispensary' ),
 				)
 			);
 		}
 
 		/**
 		 * Checkout payment options
-		 * 
+		 *
 		 * @since 2.5
 		 */
 		$checkout_payments = array(
-			'cod'    => __( 'Cash on delivery', 'wp-dispensary' ),
-			'pop'    => __( 'Pay on pickup', 'wp-dispensary' ),
-			'ground' => __( 'Ground shipping', 'wp-dispensary' ),
+			'cod'    => esc_attr__( 'Cash on delivery', 'wp-dispensary' ),
+			'pop'    => esc_attr__( 'Pay on pickup', 'wp-dispensary' ),
+			'ground' => esc_attr__( 'Ground shipping', 'wp-dispensary' ),
 		);
 
 		$checkout_payment_options = apply_filters( 'wpd_ecommerce_checkout_payment_options', $checkout_payments );
@@ -568,7 +567,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 					'id'   => 'wpd_ecommerce_checkout_payments_' . $id . '_checkbox',
 					'type' => 'checkbox',
 					'name' => 'Enable/Disable',
-					'desc' => __( 'Enable ' . $value, 'wp-dispensary' ),
+					'desc' => esc_attr__( 'Enable ' . $value, 'wp-dispensary' ),
 				)
 			);
 
@@ -582,8 +581,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				array(
 					'id'          => 'wpd_ecommerce_checkout_payments_' . $id,
 					'type'        => 'text',
-					'name'        => __( 'Charge', 'wp-dispensary' ),
-					'placeholder' => __( '0', 'wp-dispensary' ),
+					'name'        => esc_attr__( 'Charge', 'wp-dispensary' ),
+					'placeholder' => esc_attr__( '0', 'wp-dispensary' ),
 				)
 			);
 
@@ -599,8 +598,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_ecommerce_checkout_payments_ground_textarea',
 				'type' => 'textarea',
-				'name' => __( 'Instructions', 'wp-dispensary' ),
-				'desc' => __( 'Let the user know how to send payment for the order.', 'wp-dispensary' ),
+				'name' => esc_attr__( 'Instructions', 'wp-dispensary' ),
+				'desc' => esc_attr__( 'Let the user know how to send payment for the order.', 'wp-dispensary' ),
 			)
 		);
 
@@ -614,13 +613,13 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_registration_title',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'Patient Registration', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'Patient Registration', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
 		// Update pages array.
 		$redirect_pages = $pages_array;
-		array_unshift( $redirect_pages, __( 'Select a page', 'wp-dispensary' ) );
+		array_unshift( $redirect_pages, esc_attr__( 'Select a page', 'wp-dispensary' ) );
 
 		/**
 		 * Add Field: Redirect after registration
@@ -632,8 +631,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'      => 'wpd_settings_patients_registration_redirect',
 				'type'    => 'select',
-				'name'    => __( 'Redirect after registration', 'wp-dispensary' ),
-				'desc'    => __( 'Choose the page patients will be redirected to when registering.', 'wp-dispensary' ),
+				'name'    => esc_attr__( 'Redirect after registration', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Choose the page patients will be redirected to when registering.', 'wp-dispensary' ),
 				'options' => $redirect_pages,
 			)
 		);
@@ -648,7 +647,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_verification_title',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'Patient Verification', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'Patient Verification', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -662,8 +661,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_verification_drivers_license',
 				'type' => 'checkbox',
-				'name' => __( 'Drivers license / Valid ID', 'wp-dispensary' ),
-				'desc' => __( 'Hide the drivers license upload from account details', 'wp-dispensary' ),
+				'name' => esc_attr__( 'Drivers license / Valid ID', 'wp-dispensary' ),
+				'desc' => esc_attr__( 'Hide the drivers license upload from account details', 'wp-dispensary' ),
 			)
 		);
 
@@ -677,8 +676,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_verification_recommendation_doc',
 				'type' => 'checkbox',
-				'name' => 'Doctor recommendation',
-				'desc' => __( 'Hide the doctor recommendation upload from account details', 'wp-dispensary' ),
+				'name' => esc_attr__( 'Doctor recommendation', 'wp-dispensary' ),
+				'desc' => esc_attr__( 'Hide the doctor recommendation upload from account details', 'wp-dispensary' ),
 			)
 		);
 
@@ -692,8 +691,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_verification_recommendation_num',
 				'type' => 'checkbox',
-				'name' => 'Recommendation number',
-				'desc' => __( 'Hide the recommendation number from account details', 'wp-dispensary' ),
+				'name' => esc_attr__( 'Recommendation number', 'wp-dispensary' ),
+				'desc' => esc_attr__( 'Hide the recommendation number from account details', 'wp-dispensary' ),
 			)
 		);
 
@@ -707,8 +706,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_verification_recommendation_exp',
 				'type' => 'checkbox',
-				'name' => 'Expiration date',
-				'desc' => __( 'Hide the expiration date from account details', 'wp-dispensary' ),
+				'name' => esc_attr_ ( 'Expiration date', 'wp-dispensary' ),
+				'desc' => esc_attr__( 'Hide the expiration date from account details', 'wp-dispensary' ),
 			)
 		);
 
@@ -722,7 +721,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_checkout_options',
 				'type' => 'title',
-				'name' => '<h1>' . __( 'Page Setup', 'wp-dispensary' ) . '</h1>',
+				'name' => '<h1>' . esc_attr__( 'Page Setup', 'wp-dispensary' ) . '</h1>',
 			)
 		);
 
@@ -736,8 +735,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'      => 'wpd_pages_setup_menu_page',
 				'type'    => 'select',
-				'name'    => __( 'Menu page', 'wp-dispensary' ),
-				'desc'    => __( 'Page contents [wpd_menu]', 'wp-dispensary' ),
+				'name'    => esc_attr__( 'Menu page', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Page contents [wpd_menu]', 'wp-dispensary' ),
 				'options' => $pages_array,
 			)
 		);
@@ -752,8 +751,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'      => 'wpd_pages_setup_cart_page',
 				'type'    => 'select',
-				'name'    => __( 'Cart page', 'wp-dispensary' ),
-				'desc'    => __( 'Page contents [wpd_cart]', 'wp-dispensary' ),
+				'name'    => esc_attr__( 'Cart page', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Page contents [wpd_cart]', 'wp-dispensary' ),
 				'options' => $pages_array,
 			)
 		);
@@ -768,8 +767,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'      => 'wpd_pages_setup_checkout_page',
 				'type'    => 'select',
-				'name'    => __( 'Checkout page', 'wp-dispensary' ),
-				'desc'    => __( 'Page contents [wpd_checkout]', 'wp-dispensary' ),
+				'name'    => esc_attr__( 'Checkout page', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Page contents [wpd_checkout]', 'wp-dispensary' ),
 				'options' => $pages_array,
 			)
 		);
@@ -784,8 +783,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'      => 'wpd_pages_setup_account_page',
 				'type'    => 'select',
-				'name'    => __( 'Account page', 'wp-dispensary' ),
-				'desc'    => __( 'Page contents [wpd_account]', 'wp-dispensary' ),
+				'name'    => esc_attr__( 'Account page', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Page contents [wpd_account]', 'wp-dispensary' ),
 				'options' => $pages_array,
 			)
 		);

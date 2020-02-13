@@ -230,7 +230,7 @@ function concentrates_category_numbers( $data, $post, $request ) {
 	}
 
 	$data->data = $_data;
-	//print_r( $items );
+
 	return $data;
 }
 add_filter( 'rest_prepare_concentrates', 'concentrates_category_numbers', 10, 3 );
@@ -343,8 +343,6 @@ add_filter( 'rest_prepare_topicals', 'topicals_category_numbers', 10, 3 );
  * @since    1.1.0
  */
 
-add_action( 'rest_api_init', 'slug_register_prices' );
-
 /**
  * Registering Prices
  */
@@ -362,6 +360,7 @@ function slug_register_prices() {
 		);
 	} /** /foreach */
 }
+add_action( 'rest_api_init', 'slug_register_prices' );
 
 /**
  * Get Prices
@@ -384,8 +383,6 @@ function slug_update_prices( $value, $object, $field_name ) {
  * @since    1.9.6
  */
 
-add_action( 'rest_api_init', 'slug_register_concentrateprices' );
-
 /**
  * Registering Prices
  */
@@ -403,6 +400,7 @@ function slug_register_concentrateprices() {
 		);
 	} /** /foreach */
 }
+add_action( 'rest_api_init', 'slug_register_concentrateprices' );
 
 /**
  * Get Prices
@@ -425,8 +423,6 @@ function slug_update_concentrateprices( $value, $object, $field_name ) {
  * @since    1.1.0
  */
 
-add_action( 'rest_api_init', 'slug_register_edibleinfo' );
-
 /**
  * Register Edible information
  */
@@ -444,6 +440,7 @@ function slug_register_edibleinfo() {
 		);
 	} /** /foreach */
 }
+add_action( 'rest_api_init', 'slug_register_edibleinfo' );
 
 /**
  * Get Edible info
@@ -466,8 +463,6 @@ function slug_update_edibleinfo( $value, $object, $field_name ) {
  * @since    1.1.0
  */
 
-add_action( 'rest_api_init', 'slug_register_prerollinfo' );
-
 /**
  * Register Pre-roll info
  */
@@ -485,6 +480,7 @@ function slug_register_prerollinfo() {
 		);
 	} /** /foreach */
 }
+add_action( 'rest_api_init', 'slug_register_prerollinfo' );
 
 /**
  * Get Pre-roll info
@@ -507,8 +503,6 @@ function slug_update_prerollinfo( $value, $object, $field_name ) {
  * @since    1.9.9
  */
 
-add_action( 'rest_api_init', 'slug_register_compounds' );
-
 /**
  * Register compound details info
  */
@@ -529,6 +523,7 @@ function slug_register_compounds() {
 		);
 	} /** /foreach */
 }
+add_action( 'rest_api_init', 'slug_register_compounds' );
 
 /**
  * Get Compound info
@@ -551,8 +546,6 @@ function slug_update_compounds( $value, $object, $field_name ) {
  * @since    1.4.0
  */
 
-add_action( 'rest_api_init', 'slug_register_topicalinfo' );
-
 /**
  * Register Topical info
  */
@@ -570,6 +563,7 @@ function slug_register_topicalinfo() {
 		);
 	} /** /foreach */
 }
+add_action( 'rest_api_init', 'slug_register_topicalinfo' );
 
 /**
  * Get Topical info
@@ -592,8 +586,6 @@ function slug_update_topicalinfo( $value, $object, $field_name ) {
  * @since    1.7.0
  */
 
-add_action( 'rest_api_init', 'slug_register_growerinfo' );
-
 /**
  * Register Grower info
  */
@@ -611,6 +603,7 @@ function slug_register_growerinfo() {
 		);
 	} /** /foreach */
 }
+add_action( 'rest_api_init', 'slug_register_growerinfo' );
 
 /**
  * Get Grower info
@@ -645,7 +638,7 @@ function growers_category_numbers( $data, $post, $request ) {
 	}
 
 	$data->data = $_data;
-	//print_r( $items );
+
 	return $data;
 }
 add_filter( 'rest_prepare_growers', 'growers_category_numbers', 10, 3 );
@@ -669,7 +662,7 @@ add_filter( 'rest_prepare_growers', 'wpd_vendor', 10, 3 );
 
 /**
  * Add Shelf Type taxonomy for specific Custom Post Types
- * 
+ *
  * @since 3.1
  */
 function wpd_rest_shelf_type( $data, $post, $request ) {
@@ -685,7 +678,7 @@ add_filter( 'rest_prepare_growers', 'wpd_rest_shelf_type', 10, 3 );
 
 /**
  * Add Strain Type taxonomy for specific Custom Post Types
- * 
+ *
  * @since 3.1
  */
 function wpd_rest_strain_type( $data, $post, $request ) {
