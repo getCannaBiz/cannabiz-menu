@@ -673,6 +673,7 @@ function wpd_rest_shelf_type( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'wpd_rest_shelf_type', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_rest_shelf_type', 10, 3 );
+add_filter( 'rest_prepare_edibles', 'wpd_rest_shelf_type', 10, 3 );
 add_filter( 'rest_prepare_prerolls', 'wpd_rest_shelf_type', 10, 3 );
 add_filter( 'rest_prepare_growers', 'wpd_rest_shelf_type', 10, 3 );
 
@@ -689,5 +690,6 @@ function wpd_rest_strain_type( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_flowers', 'wpd_rest_strain_type', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_rest_strain_type', 10, 3 );
+add_filter( 'rest_prepare_edibles', 'wpd_rest_strain_type', 10, 3 );
 add_filter( 'rest_prepare_prerolls', 'wpd_rest_strain_type', 10, 3 );
 add_filter( 'rest_prepare_growers', 'wpd_rest_strain_type', 10, 3 );
