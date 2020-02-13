@@ -159,6 +159,13 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-rest-api.php';
 
 		/**
+		 * Adding depreciated shortcodes
+		 *
+		 * @since    3.3.3
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/depreciated-shortcodes.php';
+
+		/**
 		 * Adding shortcode generation
 		 *
 		 * @since    1.2.0
