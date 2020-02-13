@@ -1,13 +1,13 @@
 <?php
 /**
  * Pricing functions
- * 
+ *
  * @since 2.5
  */
 
 /**
  * Flowers Prices - Simple
- * 
+ *
  * @see get_wpd_flowers_prices_simple()
  * @since 2.4
  * @return string
@@ -20,7 +20,7 @@ function wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Concentrates Prices - Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -32,7 +32,7 @@ function wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Edibles Prices - Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -44,7 +44,7 @@ function wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Pre-rolls Prices - Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -56,7 +56,7 @@ function wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Topicals Prices - Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -68,7 +68,7 @@ function wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Growers Prices - Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -80,7 +80,7 @@ function wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * All Prices - Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -124,7 +124,7 @@ function wpd_all_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Pricing phrase
- * 
+ *
  * @since 2.4
  * @return string
  */
@@ -134,7 +134,7 @@ function wpd_pricing_phrase( $singular ) {
 
 /**
  * Get Pricing phrase
- * 
+ *
  * @since 2.4
  * @return string
  */
@@ -147,15 +147,15 @@ function get_wpd_pricing_phrase( $singular ) {
 		$wpd_pricing_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
 	} elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
 		if ( $singular == true ) {
-			$wpd_pricing_phrase = __( 'Donation', 'wp-dispensary' );
+			$wpd_pricing_phrase = esc_attr__( 'Donation', 'wp-dispensary' );
 		} else {
-			$wpd_pricing_phrase = __( 'Donations', 'wp-dispensary' );
+			$wpd_pricing_phrase = esc_attr__( 'Donations', 'wp-dispensary' );
 		}
 	} else {
 		if ( $singular == true ) {
-			$wpd_pricing_phrase = __( 'Price', 'wp-dispensary' );
+			$wpd_pricing_phrase = esc_attr__( 'Price', 'wp-dispensary' );
 		} else {
-			$wpd_pricing_phrase = __( 'Prices', 'wp-dispensary' );
+			$wpd_pricing_phrase = esc_attr__( 'Prices', 'wp-dispensary' );
 		}
 	}
 
@@ -170,7 +170,7 @@ function get_wpd_pricing_phrase( $singular ) {
 
 /**
  * Flowers Prices - Get Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -300,13 +300,13 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Concentrates Prices - Get Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
 function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
-    global $post;
+  global $post;
 
 	// Get currency code.
 	$currency_code = wpd_currency_code();
@@ -354,7 +354,6 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 
 	// Filter the low prices.
 	$pricinglow = apply_filters( 'wpd_concentrates_pricing_low', $pricinglow );
-
 
 	// Separator.
 	$pricingsep = '-';
@@ -412,13 +411,13 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 
 /**
  * Edibles Prices - Get Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
 function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
-    global $post;
+  global $post;
 
 	// Get currency code.
 	$currency_code = wpd_currency_code();
@@ -467,7 +466,7 @@ function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Pre-rolls Prices - Get Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -522,7 +521,7 @@ function get_wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Topicals Prices - Get Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -577,7 +576,7 @@ function get_wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * Growers Prices - Get Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -631,7 +630,7 @@ function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 
 /**
  * All Prices - Simple
- * 
+ *
  * @since 2.5
  * @return string
  */
@@ -640,7 +639,7 @@ function get_wpd_all_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	global $post;
 
 	$str = '';
-	
+
 	if ( 'flowers' == get_post_type( $product_id ) ) {
 		$str .= apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase ) );
 	}

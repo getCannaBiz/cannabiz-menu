@@ -23,7 +23,7 @@ function wpd_settings_display_compounds_table_placement() {
         $placement = 'above';
     }
 
-	return apply_filters( 'wpd_settings_display_compounds_table_placement', $placement );
+    return apply_filters( 'wpd_settings_display_compounds_table_placement', $placement );
 }
 
 /**
@@ -40,7 +40,7 @@ function wpd_settings_display_hide_compounds() {
         $hide = FALSE;
     }
 
-	return apply_filters( 'wpd_settings_display_hide_compounds', $hide );
+    return apply_filters( 'wpd_settings_display_hide_compounds', $hide );
 }
 
 /**
@@ -57,7 +57,7 @@ function wpd_settings_display_details_table_placement() {
         $placement = 'above';
     }
 
-	return apply_filters( 'wpd_settings_display_details_table_placement', $placement );
+    return apply_filters( 'wpd_settings_display_details_table_placement', $placement );
 }
 
 /**
@@ -74,7 +74,7 @@ function wpd_settings_display_hide_details() {
         $hide = FALSE;
     }
 
-	return apply_filters( 'wpd_settings_display_hide_details', $hide );
+    return apply_filters( 'wpd_settings_display_hide_details', $hide );
 }
 
 /**
@@ -93,10 +93,10 @@ function wpd_settings_display_details_phrase() {
         $phrase = $setting['wpd_details_phrase'];
     } else {
         // Default title phrase.
-        $phrase = __( 'Details', 'wp-dispensary' );
+        $phrase = esc_attr__( 'Details', 'wp-dispensary' );
     }
 
-	return apply_filters( 'wpd_settings_display_details_phrase', $phrase );
+    return apply_filters( 'wpd_settings_display_details_phrase', $phrase );
 }
 
 /**
