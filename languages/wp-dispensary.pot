@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Dispensary\n"
-"POT-Creation-Date: 2020-01-15 23:17-0500\n"
-"PO-Revision-Date: 2020-01-15 23:16-0500\n"
+"POT-Creation-Date: 2020-02-13 20:01-0500\n"
+"PO-Revision-Date: 2020-02-13 20:00-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -52,8 +52,8 @@ msgid "Type"
 msgstr ""
 
 #: admin/class-wp-dispensary-csv-export.php:100
-#: admin/wp-dispensary-admin-settings.php:154
-#: admin/wp-dispensary-admin-settings.php:314
+#: admin/wp-dispensary-admin-settings.php:153
+#: admin/wp-dispensary-admin-settings.php:313
 msgid "Title"
 msgstr ""
 
@@ -80,44 +80,37 @@ msgstr ""
 #: admin/class-wp-dispensary-csv-export.php:106
 #: admin/post-types/wp-dispensary-metaboxes.php:194
 #: admin/post-types/wp-dispensary-metaboxes.php:334
-#: admin/wp-dispensary-data-output.php:445
 msgid "1 g"
 msgstr ""
 
 #: admin/class-wp-dispensary-csv-export.php:107
 #: admin/post-types/wp-dispensary-metaboxes.php:198
 #: admin/post-types/wp-dispensary-metaboxes.php:338
-#: admin/wp-dispensary-data-output.php:451
 msgid "2 g"
 msgstr ""
 
 #: admin/class-wp-dispensary-csv-export.php:108
 #: admin/post-types/wp-dispensary-metaboxes.php:202
-#: admin/wp-dispensary-data-output.php:457
 msgid "1/8 oz"
 msgstr ""
 
 #: admin/class-wp-dispensary-csv-export.php:109
 #: admin/post-types/wp-dispensary-metaboxes.php:206
-#: admin/wp-dispensary-data-output.php:463
 msgid "5 g"
 msgstr ""
 
 #: admin/class-wp-dispensary-csv-export.php:110
 #: admin/post-types/wp-dispensary-metaboxes.php:210
-#: admin/wp-dispensary-data-output.php:469
 msgid "1/4 oz"
 msgstr ""
 
 #: admin/class-wp-dispensary-csv-export.php:111
 #: admin/post-types/wp-dispensary-metaboxes.php:214
-#: admin/wp-dispensary-data-output.php:475
 msgid "1/2 oz"
 msgstr ""
 
 #: admin/class-wp-dispensary-csv-export.php:112
 #: admin/post-types/wp-dispensary-metaboxes.php:218
-#: admin/wp-dispensary-data-output.php:481
 msgid "1 oz"
 msgstr ""
 
@@ -148,6 +141,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:536
 #: admin/post-types/wp-dispensary-taxonomies.php:577
 #: admin/post-types/wp-dispensary-taxonomies.php:618
+#: admin/post-types/wp-dispensary-taxonomies.php:706
 msgid "Categories"
 msgstr ""
 
@@ -177,6 +171,44 @@ msgstr ""
 
 #: admin/class-wp-dispensary-permalink-settings.php:48
 msgid "Growers Base"
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:143 admin/depreciated-shortcodes.php:391
+#: admin/depreciated-shortcodes.php:575 admin/depreciated-shortcodes.php:763
+#: admin/depreciated-shortcodes.php:919 admin/depreciated-shortcodes.php:1080
+msgid "(view all)"
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:591
+msgid "Servings: "
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:602 admin/depreciated-shortcodes.php:613
+msgid "THC: "
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:784
+msgid "Weight:"
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:940
+msgid "Size:"
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:947
+msgid "THC:"
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:954
+msgid "CBD:"
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:1101
+msgid "Seeds:"
+msgstr ""
+
+#: admin/depreciated-shortcodes.php:1108
+msgid "Clones:"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-concentrates.php:42
@@ -479,7 +511,6 @@ msgid "Concentrate Prices"
 msgstr ""
 
 #: admin/post-types/wp-dispensary-metaboxes.php:330
-#: admin/wp-dispensary-data-output.php:439
 msgid "1/2 g"
 msgstr ""
 
@@ -1104,6 +1135,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:525
 #: admin/post-types/wp-dispensary-taxonomies.php:566
 #: admin/post-types/wp-dispensary-taxonomies.php:607
+#: admin/post-types/wp-dispensary-taxonomies.php:695
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
@@ -1113,6 +1145,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:526
 #: admin/post-types/wp-dispensary-taxonomies.php:567
 #: admin/post-types/wp-dispensary-taxonomies.php:608
+#: admin/post-types/wp-dispensary-taxonomies.php:696
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr ""
@@ -1122,6 +1155,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:527
 #: admin/post-types/wp-dispensary-taxonomies.php:568
 #: admin/post-types/wp-dispensary-taxonomies.php:609
+#: admin/post-types/wp-dispensary-taxonomies.php:697
 msgid "Search Categories"
 msgstr ""
 
@@ -1130,6 +1164,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:528
 #: admin/post-types/wp-dispensary-taxonomies.php:569
 #: admin/post-types/wp-dispensary-taxonomies.php:610
+#: admin/post-types/wp-dispensary-taxonomies.php:698
 msgid "All Categories"
 msgstr ""
 
@@ -1138,6 +1173,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:529
 #: admin/post-types/wp-dispensary-taxonomies.php:570
 #: admin/post-types/wp-dispensary-taxonomies.php:611
+#: admin/post-types/wp-dispensary-taxonomies.php:699
 msgid "Parent Category"
 msgstr ""
 
@@ -1146,6 +1182,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:530
 #: admin/post-types/wp-dispensary-taxonomies.php:571
 #: admin/post-types/wp-dispensary-taxonomies.php:612
+#: admin/post-types/wp-dispensary-taxonomies.php:700
 msgid "Parent Category:"
 msgstr ""
 
@@ -1154,6 +1191,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:531
 #: admin/post-types/wp-dispensary-taxonomies.php:572
 #: admin/post-types/wp-dispensary-taxonomies.php:613
+#: admin/post-types/wp-dispensary-taxonomies.php:701
 msgid "Edit Category"
 msgstr ""
 
@@ -1162,6 +1200,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:532
 #: admin/post-types/wp-dispensary-taxonomies.php:573
 #: admin/post-types/wp-dispensary-taxonomies.php:614
+#: admin/post-types/wp-dispensary-taxonomies.php:702
 msgid "Update Category"
 msgstr ""
 
@@ -1170,6 +1209,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:533
 #: admin/post-types/wp-dispensary-taxonomies.php:574
 #: admin/post-types/wp-dispensary-taxonomies.php:615
+#: admin/post-types/wp-dispensary-taxonomies.php:703
 msgid "Add New Category"
 msgstr ""
 
@@ -1178,6 +1218,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:534
 #: admin/post-types/wp-dispensary-taxonomies.php:575
 #: admin/post-types/wp-dispensary-taxonomies.php:616
+#: admin/post-types/wp-dispensary-taxonomies.php:704
 msgid "New Category Name"
 msgstr ""
 
@@ -1186,6 +1227,7 @@ msgstr ""
 #: admin/post-types/wp-dispensary-taxonomies.php:535
 #: admin/post-types/wp-dispensary-taxonomies.php:576
 #: admin/post-types/wp-dispensary-taxonomies.php:617
+#: admin/post-types/wp-dispensary-taxonomies.php:705
 msgid "No categories found"
 msgstr ""
 
@@ -1477,249 +1519,276 @@ msgstr ""
 msgid "Display products in carousel?"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:89
-#: admin/wp-dispensary-admin-settings.php:189
-#: admin/wp-dispensary-admin-settings.php:253
-#: admin/wp-dispensary-admin-settings.php:349
+#: admin/wp-dispensary-admin-settings.php:88
+#: admin/wp-dispensary-admin-settings.php:188
+#: admin/wp-dispensary-admin-settings.php:252
+#: admin/wp-dispensary-admin-settings.php:348
 msgid "Display"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:97
-#: admin/wp-dispensary-admin-settings.php:385
+#: admin/wp-dispensary-admin-settings.php:96
+#: admin/wp-dispensary-admin-settings.php:384
 msgid "General"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:107
+#: admin/wp-dispensary-admin-settings.php:106
 msgid "Payments"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:115
+#: admin/wp-dispensary-admin-settings.php:114
 msgid "Patients"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:123
+#: admin/wp-dispensary-admin-settings.php:122
 msgid "Pages"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:140
+#: admin/wp-dispensary-admin-settings.php:139
 msgid "Prices table"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:155
-#: admin/wp-dispensary-admin-settings.php:315
+#: admin/wp-dispensary-admin-settings.php:154
+#: admin/wp-dispensary-admin-settings.php:314
 msgid "Choose the title you would like used"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:174
-#: admin/wp-dispensary-admin-settings.php:334
+#: admin/wp-dispensary-admin-settings.php:173
+#: admin/wp-dispensary-admin-settings.php:333
 msgid "or add a custom title"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:190
+#: admin/wp-dispensary-admin-settings.php:189
 msgid "Where should the pricing display on single menu items?"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:209
+#: admin/wp-dispensary-admin-settings.php:208
 msgid "Remove the price table from data output"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:237
+#: admin/wp-dispensary-admin-settings.php:236
 msgid "Compounds table"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:254
+#: admin/wp-dispensary-admin-settings.php:253
 msgid "Where should the compounds display on single menu items?"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:273
+#: admin/wp-dispensary-admin-settings.php:272
 msgid "Remove the compounds table from data output"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:300
+#: admin/wp-dispensary-admin-settings.php:299
 msgid "Details table"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:350
+#: admin/wp-dispensary-admin-settings.php:316
+#: admin/wp-dispensary-functions.php:258
+#: includes/functions/wp-dispensary-settings-functions.php:96
+msgid "Details"
+msgstr ""
+
+#: admin/wp-dispensary-admin-settings.php:317
+#: admin/wp-dispensary-functions.php:256
+msgid "Information"
+msgstr ""
+
+#: admin/wp-dispensary-admin-settings.php:349
 msgid "Where should the details display on single menu items?"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:369
+#: admin/wp-dispensary-admin-settings.php:351
+msgid "Above Content"
+msgstr ""
+
+#: admin/wp-dispensary-admin-settings.php:352
+msgid "Below Content"
+msgstr ""
+
+#: admin/wp-dispensary-admin-settings.php:368
 msgid "Remove the details table from data output"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:400
+#: admin/wp-dispensary-admin-settings.php:399
 msgid "Currency"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:401
+#: admin/wp-dispensary-admin-settings.php:400
 msgid "Select the currency symbol you would like to use"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:418
+#: admin/wp-dispensary-admin-settings.php:417
 msgid "Taxes"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:432
+#: admin/wp-dispensary-admin-settings.php:431
 msgid "Sales tax"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:433
+#: admin/wp-dispensary-admin-settings.php:432
 msgid "Apply sales tax to orders (%)"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:434
+#: admin/wp-dispensary-admin-settings.php:433
 msgid "6"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:448
+#: admin/wp-dispensary-admin-settings.php:447
 msgid "Excise tax"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:449
+#: admin/wp-dispensary-admin-settings.php:448
 msgid "Apply excise tax to orders (%)"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:450
+#: admin/wp-dispensary-admin-settings.php:449
 msgid "10"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:464
+#: admin/wp-dispensary-admin-settings.php:463
 msgid "Cart"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:478
+#: admin/wp-dispensary-admin-settings.php:477
 msgid "Require login to shop"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:479
+#: admin/wp-dispensary-admin-settings.php:478
 msgid "Hide the add to cart functionality for non-logged in users"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:493
+#: admin/wp-dispensary-admin-settings.php:492
 msgid "Checkout"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:507
+#: admin/wp-dispensary-admin-settings.php:506
 msgid "Minimum order"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:508
+#: admin/wp-dispensary-admin-settings.php:507
 msgid "Require a minimum order amount before checkout"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:525
+#: admin/wp-dispensary-admin-settings.php:524
 msgid "Coupons"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:526
+#: admin/wp-dispensary-admin-settings.php:525
 msgid "Allow patients to apply a coupon to their order"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:537
+#: admin/wp-dispensary-admin-settings.php:536
 msgid "Cash on delivery"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:538
+#: admin/wp-dispensary-admin-settings.php:537
 msgid "Pay on pickup"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:539
+#: admin/wp-dispensary-admin-settings.php:538
 msgid "Ground shipping"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:571
+#: admin/wp-dispensary-admin-settings.php:570
 msgid "Enable "
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:585
+#: admin/wp-dispensary-admin-settings.php:584
 msgid "Charge"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:586
+#: admin/wp-dispensary-admin-settings.php:585
 msgid "0"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:602
+#: admin/wp-dispensary-admin-settings.php:601
 msgid "Instructions"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:603
+#: admin/wp-dispensary-admin-settings.php:602
 msgid "Let the user know how to send payment for the order."
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:617
+#: admin/wp-dispensary-admin-settings.php:616
 msgid "Patient Registration"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:623
+#: admin/wp-dispensary-admin-settings.php:622
 msgid "Select a page"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:635
+#: admin/wp-dispensary-admin-settings.php:634
 msgid "Redirect after registration"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:636
+#: admin/wp-dispensary-admin-settings.php:635
 msgid "Choose the page patients will be redirected to when registering."
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:651
+#: admin/wp-dispensary-admin-settings.php:650
 msgid "Patient Verification"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:665
+#: admin/wp-dispensary-admin-settings.php:664
 msgid "Drivers license / Valid ID"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:666
+#: admin/wp-dispensary-admin-settings.php:665
 msgid "Hide the drivers license upload from account details"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:681
+#: admin/wp-dispensary-admin-settings.php:679
+msgid "Doctor recommendation"
+msgstr ""
+
+#: admin/wp-dispensary-admin-settings.php:680
 msgid "Hide the doctor recommendation upload from account details"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:696
+#: admin/wp-dispensary-admin-settings.php:694
+msgid "Recommendation number"
+msgstr ""
+
+#: admin/wp-dispensary-admin-settings.php:695
 msgid "Hide the recommendation number from account details"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:711
+#: admin/wp-dispensary-admin-settings.php:710
 msgid "Hide the expiration date from account details"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:725
+#: admin/wp-dispensary-admin-settings.php:724
 msgid "Page Setup"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:739
+#: admin/wp-dispensary-admin-settings.php:738
 msgid "Menu page"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:740
+#: admin/wp-dispensary-admin-settings.php:739
 msgid "Page contents [wpd_menu]"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:755
+#: admin/wp-dispensary-admin-settings.php:754
 msgid "Cart page"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:756
+#: admin/wp-dispensary-admin-settings.php:755
 msgid "Page contents [wpd_cart]"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:771
+#: admin/wp-dispensary-admin-settings.php:770
 msgid "Checkout page"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:772
+#: admin/wp-dispensary-admin-settings.php:771
 msgid "Page contents [wpd_checkout]"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:787
+#: admin/wp-dispensary-admin-settings.php:786
 msgid "Account page"
 msgstr ""
 
-#: admin/wp-dispensary-admin-settings.php:788
+#: admin/wp-dispensary-admin-settings.php:787
 msgid "Page contents [wpd_account]"
 msgstr ""
 
@@ -1773,15 +1842,6 @@ msgstr ""
 
 #: admin/wp-dispensary-data-output.php:433
 msgid "Price per unit:"
-msgstr ""
-
-#: admin/wp-dispensary-functions.php:256
-msgid "Information"
-msgstr ""
-
-#: admin/wp-dispensary-functions.php:258
-#: includes/functions/wp-dispensary-settings-functions.php:96
-msgid "Details"
 msgstr ""
 
 #: admin/wp-dispensary-functions.php:564
@@ -2063,49 +2123,7 @@ msgstr ""
 msgid "Item draft updated. <a target=\"_blank\" href=\"%s\">Preview item</a>"
 msgstr ""
 
-#: admin/wp-dispensary-shortcodes.php:156
-#: admin/wp-dispensary-shortcodes.php:404
-#: admin/wp-dispensary-shortcodes.php:588
-#: admin/wp-dispensary-shortcodes.php:776
-#: admin/wp-dispensary-shortcodes.php:932
-#: admin/wp-dispensary-shortcodes.php:1093
-msgid "(view all)"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:604
-msgid "Servings: "
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:615
-#: admin/wp-dispensary-shortcodes.php:626
-msgid "THC: "
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:797
-msgid "Weight:"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:953
-msgid "Size:"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:960
-msgid "THC:"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:967
-msgid "CBD:"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:1114
-msgid "Seeds:"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:1121
-msgid "Clones:"
-msgstr ""
-
-#: admin/wp-dispensary-shortcodes.php:1197
+#: admin/wp-dispensary-shortcodes.php:54
 msgid "Recent Products"
 msgstr ""
 
