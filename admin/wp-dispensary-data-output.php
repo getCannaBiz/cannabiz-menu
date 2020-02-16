@@ -52,6 +52,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Adding the WP Dispensary menu item data
 		 */
+
+		$original = '';
+
 		if ( in_array( get_post_type(), apply_filters( 'wpd_original_array', $menu_types_simple ) ) ) {
 			$original = $content;
 		}
