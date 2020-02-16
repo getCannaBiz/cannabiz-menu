@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.3.3
+*   Added shelf and strain type to Edibles REST API endpoint in `admin/wp-dispensary-rest-api.php`
+*   Added file to store the code for 6 upcoming depreciated shortcodes in `admin/depreciated-shortcodes.php`
+*   Updated codes used for flower prices in prices table output in `admin/wp-dispensary-data-output.php`
+*   Updated admin settings logo file to use the new WP Dispensary logo in `admin/images/wpd-logo.png`
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+*   General code cleanup throughout various files in the plugin
+
 ## 3.3.2
 *   Bugfix product image size variable in `wpd_menu` shortcode in `admin/wp-dispensary-shortcodes.php`
 *   Bugfix total THC display in edibles shortcode in `admin/wp-dispensary-shortcodes.php`

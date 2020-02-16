@@ -435,52 +435,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$price_topical = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_halfgram', true ) ) {
-			$wpd_half_gram = '<td><span>' . esc_attr__( '1/2 g', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_halfgram', true ) . '</td>';
-		} else {
-			$wpd_half_gram = '';
-		}
+		// Flower prices.
+		$flower_prices = '';
 
-		if ( get_post_meta( get_the_ID(), '_gram', true ) ) {
-			$wpd_gram = '<td><span>' . esc_attr__( '1 g', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_gram', true ) . '</td>';
-		} else {
-			$wpd_gram = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_twograms', true ) ) {
-			$wpd_two_grams = '<td><span>' . esc_attr__( '2 g', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_twograms', true ) . '</td>';
-		} else {
-			$wpd_two_grams = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_eighth', true ) ) {
-			$wpd_eighth = '<td><span>' . esc_attr__( '1/8 oz', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_eighth', true ) . '</td>';
-		} else {
-			$wpd_eighth = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_fivegrams', true ) ) {
-			$wpd_five_grams = '<td><span>' . esc_attr__( '5 g', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_fivegrams', true ) . '</td>';
-		} else {
-			$wpd_five_grams = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_quarter', true ) ) {
-			$wpd_quarter = '<td><span>' . esc_attr__( '1/4 oz', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_quarter', true ) . '</td>';
-		} else {
-			$wpd_quarter = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_halfounce', true ) ) {
-			$wpd_half_ounce = '<td><span>' . esc_attr__( '1/2 oz', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_halfounce', true ) . '</td>';
-		} else {
-			$wpd_half_ounce = '';
-		}
-
-		if ( get_post_meta( get_the_ID(), '_ounce', true ) ) {
-			$wpd_ounce = '<td><span>' . esc_attr__( '1 oz', 'wp-dispensary' ) . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), '_ounce', true ) . '</td>';
-		} else {
-			$wpd_ounce = '';
+		// Add price for each available weight.
+		foreach ( wpd_flowers_weights_array() as $id=>$value ) {
+			if ( get_post_meta( get_the_ID(), $value, true ) ) {
+				$flower_prices .= '<td><span>' . $id . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), $value, true ) . '</td>';
+			}
 		}
 
 		/**
@@ -515,7 +477,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
-			$pricing_table_flowers = '<tr>' . $wpd_gram . $wpd_two_grams . $wpd_eighth . $wpd_five_grams . $wpd_quarter . $wpd_half_ounce . $wpd_ounce . '</tr>';
+			$pricing_table_flowers = '<tr>' . $flower_prices . '</tr>';
 		} else {
 			$pricing_table_flowers = '';
 		}

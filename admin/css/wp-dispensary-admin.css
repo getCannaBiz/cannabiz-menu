@@ -231,8 +231,8 @@ th#featured_thumb {
  * Settings page
  */
 .wpd-settings-wrap img {
-	width: 280px;
-	max-width: 280px;
+	width: 300px;
+	max-width: 300px;
 }
 
 .wpd-settings-separator {
@@ -279,7 +279,7 @@ th#featured_thumb {
 	font-size: 50%;
 	margin-left: 10px;
 	position: absolute;
-	top: 12px;
+	top: 23px;
 }
 
 .metabox-holder .group form select {
