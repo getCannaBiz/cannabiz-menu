@@ -594,6 +594,7 @@ table.wpdispensary-table.single.details.compound-details td {
 	.wpd-menu-item {
 		margin: 12px 1%;
 		flex-basis: 48%;
+		text-align: center;
 	}
 
 }
