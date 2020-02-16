@@ -289,7 +289,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		$showtitle = '<h2 class="wpd-title">' . $title . '</h2>';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="wpdispensary">' . $showtitle . '<div class="wpd-carousel">';
+	$wpdposts = '<div id="' . $id . '" class="carouselwrap">' . $showtitle . '<div class="wpd-carousel">';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();

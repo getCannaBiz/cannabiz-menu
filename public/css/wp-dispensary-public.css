@@ -103,22 +103,24 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 
 .wpdispensary,
 .wpd-menu {
-  display: inline-block;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
   position: relative;
   width: 100%;
 }
 
-.wpdshortcode,
-.wpd-menu-item {
-  float: left;
-  margin: 12px 0;
-  position: relative;
-  width: 32%;
+.carouselwrap {
+	display: inline-block;
+	position: relative;
+	width: 100%;
 }
 
-.wpdshortcode:nth-child(3n+3),
-.wpd-menu-item:nth-child(3n+2) {
-	margin: 12px 2%;
+.wpdshortcode,
+.wpd-menu-item {
+	flex-basis: 31%;
+  margin: 12px 0;
+  position: relative;
 }
 
 .wpdshortcode p,
@@ -145,6 +147,7 @@ span.wpd-productinfo span.wpd-productinfo.pricing {
 }
 
 h2.wpd-title {
+	flex-basis: 100%;
 	font-size: 48px;
 	text-align: center;
 }
@@ -587,6 +590,12 @@ table.wpdispensary-table.single.details.compound-details td {
 		margin: 12px 1%;
 	}
 
+	.wpdshortcode,
+	.wpd-menu-item {
+		margin: 12px 0;
+		flex-basis: 48%;
+	}
+
 }
 
 @media screen and (max-width: 600px) {
@@ -598,11 +607,9 @@ table.wpdispensary-table.single.details.compound-details td {
 	}
 
 	.wpdshortcode,
-	.wpdshortcode:nth-child(3n+3),
-	.wpd-menu-item,
-	.wpd-menu-item:nth-child(3n+2) {
+	.wpd-menu-item {
 		margin: 12px 0;
-		width: 100%;
+		flex-basis: 100%;
 	}
 
 }
