@@ -706,7 +706,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'   => 'wpd_settings_patients_verification_recommendation_exp',
 				'type' => 'checkbox',
-				'name' => esc_attr_ ( 'Expiration date', 'wp-dispensary' ),
+				'name' => esc_attr__( 'Expiration date', 'wp-dispensary' ),
 				'desc' => esc_attr__( 'Hide the expiration date from account details', 'wp-dispensary' ),
 			)
 		);
