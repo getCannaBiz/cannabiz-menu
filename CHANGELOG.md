@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.4
+*   Bugfix fatal error from undefined function (missing underscore) in `admin/wp-dispensary-admin-settings.php`
+*   Updated menu shortcodes to display with flexbox instead of floats in `public/css/wp-dispensary-public.css`
+*   Updated JavaScript to remove the matchheight.js script in `public/js/wp-dispensary-public.js`
+
 ## 3.3.3
 *   Added shelf and strain type to Edibles REST API endpoint in `admin/wp-dispensary-rest-api.php`
 *   Added file to store the code for 6 upcoming depreciated shortcodes in `admin/depreciated-shortcodes.php`

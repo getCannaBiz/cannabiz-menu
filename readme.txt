@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 5.3.2
-Stable tag: 3.3.3
+Stable tag: 3.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,11 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 3.3.4 =
+*   Bugfix fatal error from undefined function (missing underscore) in `admin/wp-dispensary-admin-settings.php`
+*   Updated menu shortcodes to display with flexbox instead of floats in `public/css/wp-dispensary-public.css`
+*   Updated JavaScript to remove the matchheight.js script in `public/js/wp-dispensary-public.js`
 
 = 3.3.3 =
 *   Added shelf and strain type to Edibles REST API endpoint in `admin/wp-dispensary-rest-api.php`
