@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 5.3.2
-Stable tag: 3.3.4
+Stable tag: 3.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,11 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 3.3.5 =
+*   Added default image for the Styles add-on in `public/images/wpd-styles-list-image.jpg`
+*   Added empty var to remove WP Debug notice in `admin/wp-dispensary-data-output.php`
+*   General code cleanup throughout various files in the plugin
 
 = 3.3.4 =
 *   Bugfix fatal error from undefined function (missing underscore) in `admin/wp-dispensary-admin-settings.php`

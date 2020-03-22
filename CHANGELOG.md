@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.5
+*   Added default image for the Styles add-on in `public/images/wpd-styles-list-image.jpg`
+*   Added empty var to remove WP Debug notice in `admin/wp-dispensary-data-output.php`
+*   General code cleanup throughout various files in the plugin
+
 ## 3.3.4
 *   Bugfix fatal error from undefined function (missing underscore) in `admin/wp-dispensary-admin-settings.php`
 *   Updated menu shortcodes to display with flexbox instead of floats in `public/css/wp-dispensary-public.css`
