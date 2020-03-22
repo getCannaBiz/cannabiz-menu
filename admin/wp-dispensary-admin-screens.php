@@ -171,7 +171,11 @@ function wpd_remove_taxonomies_from_admin_columns( $columns ) {
     // remove ingredients taxonomy column.
     unset( $columns['taxonomy-ingredients'] );
     // remove allergens taxonomy column.
-    unset( $columns['taxonomy-allergens'] );
+	unset( $columns['taxonomy-allergens'] );
+	
+	/**
+	 * @todo add the old category taxonomies to unset list.
+	 */
 
 	return $columns;
 }

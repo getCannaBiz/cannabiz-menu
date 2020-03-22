@@ -834,3 +834,9 @@ function wpd_admin_menu_growers() {
 	add_submenu_page( 'wpd-settings', $wpd_growers_slug_cap, $wpd_growers_slug_cap, 'manage_options', 'edit.php?post_type=growers', null );
 }
 add_action( 'admin_menu', 'wpd_admin_menu_growers', 7 );
+
+// Adds Categories admin submenu link.
+function wpd_admin_menu_categories() {
+	add_submenu_page( 'wpd-settings', 'Categories', 'Categories', 'manage_options', 'edit-tags.php?taxonomy=product_category', null );
+}
+add_action( 'admin_menu', 'wpd_admin_menu_categories', 8 );

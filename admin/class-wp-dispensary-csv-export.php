@@ -252,7 +252,7 @@ class CSVExport {
                 get_post_meta( $product['ID'], '_priceperpack', TRUE ),
                 get_post_meta( $product['ID'], '_unitsperpack', TRUE ),
                 $inventory_amount,
-                $cat_id,
+                str_putcsv( $cat_id ),
                 get_post_thumbnail_id( $product['ID'] ),
             );
             $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row );
