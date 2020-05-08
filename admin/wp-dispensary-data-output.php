@@ -85,7 +85,6 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			} else {
 				$wpd_shelf_type = '';
 			}
-
 			if ( get_the_term_list( $post->ID, 'strain_type', true ) ) {
 				$wpd_strain_type = '<tr><td><span>' . __( 'Strain', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_type', '', ', ', '' ) . '</td></tr>';
 			} else {
@@ -448,6 +447,15 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			}
 		}
 
+		// Concentrate prices.
+		$concentrate_prices = '';
+
+		// Add price for each available weight.
+		foreach ( wpd_concentrates_weights_array() as $id=>$value ) {
+			if ( get_post_meta( get_the_ID(), $value, true ) ) {
+				$concentrate_prices .= '<td><span>' . $id . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), $value, true ) . '</td>';
+			}
+		}
 		/**
 		 * Pricing Table Before Action Hook
 		 *
@@ -486,11 +494,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
-			if ( empty( $price_per_unit ) ) {
-				$pricing_table_concentrates = '<tr>' . $wpd_half_gram . $wpd_gram . $wpd_two_grams . '</tr>';
-			} else {
-				$pricing_table_concentrates = '<tr>' . $price_per_unit . '</tr>';
-			}
+			$pricing_table_concentrates = '<tr>' . $concentrate_prices . '</tr>';
 		} else {
 			$pricing_table_concentrates = '';
 		}
