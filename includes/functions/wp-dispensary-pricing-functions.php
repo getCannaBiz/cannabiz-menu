@@ -693,3 +693,19 @@ function wpd_flowers_prices_array( $product_id, $flower_prices = NULL ) {
 	);
 	return apply_filters( 'wpd_flowers_prices_array', $flower_prices );
 }
+
+
+/**
+ * Get all concentrates prices.
+ *
+ * @since 3.4
+ * @return array
+ */
+function wpd_concentrates_prices_array( $product_id, $flower_prices = NULL ) {
+	$concentrates_prices = array(
+		'1/2 g' => esc_html( get_post_meta( $product_id, '_halfgram', true ) ),
+		'1 g'   => esc_html( get_post_meta( $product_id, '_gram', true ) ),
+		'2 g'   => esc_html( get_post_meta( $product_id, '_twograms', true ) ),
+	);
+	return apply_filters( 'wpd_concentrates_prices_array', $concentrates_prices );
+}
