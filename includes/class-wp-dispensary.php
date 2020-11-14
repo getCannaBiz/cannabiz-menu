@@ -144,6 +144,7 @@ class WP_Dispensary {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-taxonomies.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-metaboxes.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-products-post-type.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-flowers.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-concentrates.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/post-types/wp-dispensary-edibles.php';
