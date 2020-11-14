@@ -10,6 +10,63 @@
  */
 
 /**
+ * Product Category Taxonomy
+ *
+ * Adds the default Category taxonomy to all custom post types
+ *
+ * @since    4.0
+ */
+function wp_dispensary_product_category() {
+
+	$labels = array(
+		'name'              => _x( 'Categories', 'taxonomy general name', 'wp-dispensary' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'wp-dispensary' ),
+		'search_items'      => __( 'Search Categories', 'wp-dispensary' ),
+		'all_items'         => __( 'All Categories', 'wp-dispensary' ),
+		'parent_item'       => __( 'Parent Category', 'wp-dispensary' ),
+		'parent_item_colon' => __( 'Parent Category:', 'wp-dispensary' ),
+		'edit_item'         => __( 'Edit Category', 'wp-dispensary' ),
+		'update_item'       => __( 'Update Category', 'wp-dispensary' ),
+		'add_new_item'      => __( 'Add New Category', 'wp-dispensary' ),
+		'new_item_name'     => __( 'New Category Name', 'wp-dispensary' ),
+		'not_found'         => __( 'No categories found', 'wp-dispensary' ),
+		'menu_name'         => __( 'Categories', 'wp-dispensary' ),
+	);
+
+	$menu_types       = wpd_menu_types();
+	$menu_types_names = array();
+
+	// Loop through menu types.
+	foreach ( $menu_types as $key=>$value ) {
+		// Strip wpd- from the menu type name.
+		$name = str_replace( 'wpd-', '', $key );
+		// Add menu type name to new array.
+		$menu_types_names[] = $name;
+	}
+
+	// Add Products to menu types list.
+	$menu_types_names[] = 'products';
+
+	$product_types = apply_filters( 'wpd_product_tax_type', $menu_types_names );
+
+	register_taxonomy( 'product_category', $product_types, array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'       => 'product-category',
+			'with_front' => true,
+		),
+	) );
+
+}
+add_action( 'init', 'wp_dispensary_product_category', 0 );
+
+/**
  * Shelf Type
  *
  * Adds the Shelf Type taxonomy to specific custom post types
@@ -684,63 +741,6 @@ function wpdispensary_allergens() {
 
 }
 add_action( 'init', 'wpdispensary_allergens', 0 );
-
-/**
- * Product Category Taxonomy
- *
- * Adds the default Category taxonomy to all custom post types
- *
- * @since    3.4
- */
-function wp_dispensary_product_category() {
-
-	$labels = array(
-		'name'              => _x( 'Categories', 'taxonomy general name', 'wp-dispensary' ),
-		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'wp-dispensary' ),
-		'search_items'      => __( 'Search Categories', 'wp-dispensary' ),
-		'all_items'         => __( 'All Categories', 'wp-dispensary' ),
-		'parent_item'       => __( 'Parent Category', 'wp-dispensary' ),
-		'parent_item_colon' => __( 'Parent Category:', 'wp-dispensary' ),
-		'edit_item'         => __( 'Edit Category', 'wp-dispensary' ),
-		'update_item'       => __( 'Update Category', 'wp-dispensary' ),
-		'add_new_item'      => __( 'Add New Category', 'wp-dispensary' ),
-		'new_item_name'     => __( 'New Category Name', 'wp-dispensary' ),
-		'not_found'         => __( 'No categories found', 'wp-dispensary' ),
-		'menu_name'         => __( 'Categories', 'wp-dispensary' ),
-	);
-
-	$menu_types       = wpd_menu_types();
-	$menu_types_names = array();
-
-	// Loop through menu types.
-	foreach ( $menu_types as $key=>$value ) {
-		// Strip wpd- from the menu type name.
-		$name = str_replace( 'wpd-', '', $key );
-		// Add menu type name to new array.
-		$menu_types_names[] = $name;
-	}
-
-	// Add Products to menu types list.
-	$menu_types_names[] = 'products';
-
-	$product_types = apply_filters( 'wpd_product_tax_type', $menu_types_names );
-
-	register_taxonomy( 'product_category', $product_types, array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_in_rest'      => true,
-		'show_admin_column' => true,
-		'show_in_nav_menus' => true,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'product-category',
-			'with_front' => true,
-		),
-	) );
-
-}
-add_action( 'init', 'wp_dispensary_product_category', 10 );
 
 function acme_test() {
 	convert_taxonomies( 'flowers', 'flowers_category', 'product_category' );
