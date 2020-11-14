@@ -729,6 +729,23 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 	} // WPD_ADMIN_SETTINGS ended.
 endif;
 
+// Adds Products admin submenu link.
+function wpd_admin_menu_products(  ) {
+	// Get permalink base for Products.
+	$wpd_products_slug = get_option( 'wpd_products_slug' );
+
+	// If custom base is empty, set default.
+	if ( '' == $wpd_products_slug ) {
+		$wpd_products_slug = 'products';
+	}
+
+	// Capitalize first letter of new slug.
+	$wpd_products_slug_cap = ucfirst( $wpd_products_slug );
+
+	add_submenu_page( 'wpd-settings', $wpd_products_slug_cap, $wpd_products_slug_cap, 'manage_options', 'edit.php?post_type=products', null );
+}
+add_action( 'admin_menu', 'wpd_admin_menu_products', 1 );
+
 // Adds Flowers admin submenu link.
 function wpd_admin_menu_flowers(  ) {
 	// Get permalink base for Flowers.
