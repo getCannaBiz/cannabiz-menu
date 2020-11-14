@@ -34,6 +34,7 @@ function wpd_rest_featured_image_url( $data, $post, $request ) {
 	$data->data                  = $_data;
 	return $data;
 }
+add_filter( 'rest_prepare_products', 'wpd_rest_featured_image_url', 10, 3 );
 add_filter( 'rest_prepare_flowers', 'wpd_rest_featured_image_url', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_rest_featured_image_url', 10, 3 );
 add_filter( 'rest_prepare_edibles', 'wpd_rest_featured_image_url', 10, 3 );
@@ -68,6 +69,7 @@ function wpd_rest_featured_images( $data, $post, $request ) {
 	$data->data                        = $_data;
 	return $data;
 }
+add_filter( 'rest_prepare_products', 'wpd_rest_featured_images', 10, 3 );
 add_filter( 'rest_prepare_flowers', 'wpd_rest_featured_images', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_rest_featured_images', 10, 3 );
 add_filter( 'rest_prepare_edibles', 'wpd_rest_featured_images', 10, 3 );
@@ -75,6 +77,30 @@ add_filter( 'rest_prepare_prerolls', 'wpd_rest_featured_images', 10, 3 );
 add_filter( 'rest_prepare_topicals', 'wpd_rest_featured_images', 10, 3 );
 add_filter( 'rest_prepare_growers', 'wpd_rest_featured_images', 10, 3 );
 
+
+/**
+ * Add 'categories' endpoint for the Products Custom Post Type
+ *
+ * @since 4.0
+ */
+function products_category_numbers( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$items = wp_get_post_terms( $post->ID, 'product_category' );
+
+	foreach ( $items as $item=>$value ) {
+		$_data['categories'][$item]['id']          = $value->term_id;
+		$_data['categories'][$item]['slug']        = $value->slug;
+		$_data['categories'][$item]['title']       = $value->name;
+		$_data['categories'][$item]['description'] = $value->description;
+		$_data['categories'][$item]['count']       = $value->count;
+	}
+
+	$data->data = $_data;
+
+	return $data;
+}
+add_filter( 'rest_prepare_products', 'products_category_numbers', 10, 3 );
 
 /**
  * Add 'categories' endpoint for the Flowers Custom Post Type
@@ -111,6 +137,7 @@ function wpd_product_prices_all( $data, $post, $request ) {
 	$data->data      = $_data;
 	return $data;
 }
+add_filter( 'rest_prepare_products', 'wpd_product_prices_all', 10, 3 );
 add_filter( 'rest_prepare_flowers', 'wpd_product_prices_all', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_product_prices_all', 10, 3 );
 add_filter( 'rest_prepare_edibles', 'wpd_product_prices_all', 10, 3 );
@@ -204,6 +231,7 @@ function wpd_product_details_all( $data, $post, $request ) {
 	return $data;
 
 }
+add_filter( 'rest_prepare_products', 'wpd_product_details_all', 10, 3 );
 add_filter( 'rest_prepare_flowers', 'wpd_product_details_all', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_product_details_all', 10, 3 );
 add_filter( 'rest_prepare_edibles', 'wpd_product_details_all', 10, 3 );
@@ -653,6 +681,7 @@ function wpd_vendor( $data, $post, $request ) {
 	$data->data       = $_data;
 	return $data;
 }
+add_filter( 'rest_prepare_products', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_flowers', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_vendor', 10, 3 );
 add_filter( 'rest_prepare_edibles', 'wpd_vendor', 10, 3 );
@@ -671,6 +700,7 @@ function wpd_rest_shelf_type( $data, $post, $request ) {
 	$data->data           = $_data;
 	return $data;
 }
+add_filter( 'rest_prepare_products', 'wpd_rest_shelf_type', 10, 3 );
 add_filter( 'rest_prepare_flowers', 'wpd_rest_shelf_type', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_rest_shelf_type', 10, 3 );
 add_filter( 'rest_prepare_edibles', 'wpd_rest_shelf_type', 10, 3 );
@@ -688,7 +718,7 @@ function wpd_rest_strain_type( $data, $post, $request ) {
 	$data->data            = $_data;
 	return $data;
 }
-add_filter( 'rest_prepare_flowers', 'wpd_rest_strain_type', 10, 3 );
+add_filter( 'rest_prepare_products', 'wpd_rest_strain_type', 10, 3 );
 add_filter( 'rest_prepare_concentrates', 'wpd_rest_strain_type', 10, 3 );
 add_filter( 'rest_prepare_edibles', 'wpd_rest_strain_type', 10, 3 );
 add_filter( 'rest_prepare_prerolls', 'wpd_rest_strain_type', 10, 3 );
