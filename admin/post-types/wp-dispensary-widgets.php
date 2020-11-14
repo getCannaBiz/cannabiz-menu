@@ -1785,12 +1785,7 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
 
 				'<form role="search" action="' . site_url( '/' ) . '" method="get" id="searchform">
 					<input type="text" name="s" placeholder="' . __( 'Search Products', 'wp-dispensary' ) . '" />
-					<input type="hidden" name="post_type[]" value="flowers" />
-					<input type="hidden" name="post_type[]" value="edibles" />
-					<input type="hidden" name="post_type[]" value="concentrates" />
-					<input type="hidden" name="post_type[]" value="prerolls" />
-					<input type="hidden" name="post_type[]" value="topicals" />
-					<input type="hidden" name="post_type[]" value="growers" />
+					<input type="hidden" name="post_type[]" value="products" />
 					<input type="submit" alt="Search" value="' . __( 'Search', 'wp-dispensary' ) . '" />
 				</form>' . 
 
