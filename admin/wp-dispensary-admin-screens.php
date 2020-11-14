@@ -179,6 +179,7 @@ function wpd_remove_taxonomies_from_admin_columns( $columns ) {
 
 	return $columns;
 }
+add_filter( 'manage_edit-products_columns', 'wpd_remove_taxonomies_from_admin_columns' );
 add_filter( 'manage_edit-flowers_columns', 'wpd_remove_taxonomies_from_admin_columns' );
 add_filter( 'manage_edit-concentrates_columns', 'wpd_remove_taxonomies_from_admin_columns' );
 add_filter( 'manage_edit-edibles_columns', 'wpd_remove_taxonomies_from_admin_columns' );
