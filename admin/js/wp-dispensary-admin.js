@@ -30,3 +30,81 @@
 	 */
 
 })( jQuery );
+
+jQuery(document).ready(function($) {
+	$( '#wpdispensary_prices' ).hide();
+	$( '#wpdispensary_concentrateprices' ).hide();
+	$( '#wpdispensary_singleprices' ).hide();
+	$( '#wpdispensary_topicalprices' ).hide();
+	$( '#wpdispensary_grower_product_details' ).hide();
+	$( '#wpdispensary_thc_cbd_mg' ).hide();
+	$( '#wpdispensary_thccbdtopical' ).hide();
+	$( '#wpdispensary_clonedetails' ).hide();
+	$( '#wpdispensary_preroll_weight' ).hide();
+	$( '#wpdispensary_compounds' ).hide();
+	$( '#wpd_tinctures_details' ).hide();
+
+	$('#product_type').change(function() {
+		$( '#wpdispensary_prices' ).hide();
+		$( '#wpdispensary_concentrateprices' ).hide();
+		$( '#wpdispensary_singleprices' ).hide();
+		$( '#wpdispensary_topicalprices' ).hide();
+		$( '#wpdispensary_grower_product_details' ).hide();
+		$( '#wpdispensary_thc_cbd_mg' ).hide();
+		$( '#wpdispensary_thccbdtopical' ).hide();
+		$( '#wpdispensary_clonedetails' ).hide();
+		$( '#wpdispensary_preroll_weight' ).hide();
+		$( '#wpdispensary_compounds' ).hide();
+		$( '#wpd_tinctures_details' ).hide();
+
+		// Flowers product type.
+		if($(this).val() == 'Flowers'){
+			console.log( 'Flowers has been selected' );
+			$( '#wpdispensary_prices' ).show();
+			$( '#wpdispensary_compounds' ).show();
+		}
+		// Edibles product type.
+		if($(this).val() == 'Edibles'){
+			console.log( 'Edibles has been selected' );
+			$( '#wpdispensary_singleprices' ).show();
+			$( '#wpdispensary_thc_cbd_mg' ).show();
+		}
+		// Concentrates product type.
+		if($(this).val() == 'Concentrates'){
+			console.log( 'Concentrates has been selected' );
+			$( '#wpdispensary_concentrateprices' ).show();
+			$( '#wpdispensary_compounds' ).show();
+		}
+		// Pre-rolls product type.
+		if($(this).val() == 'Pre-rolls'){
+			console.log( 'Pre-rolls has been selected' );
+			$( '#wpdispensary_singleprices' ).show();
+			$( '#wpdispensary_preroll_weight' ).show();
+			$( '#wpdispensary_compounds' ).show();
+		}
+		// Topicals product type.
+		if($(this).val() == 'Topicals'){
+			console.log( 'Topicals has been selected' );
+			$( '#wpdispensary_topicalprices' ).show();
+			$( '#wpdispensary_thccbdtopical' ).show();
+		}
+		// Growers product type.
+		if($(this).val() == 'Growers'){
+			console.log( 'Growers has been selected' );
+			$( '#wpdispensary_singleprices' ).show();
+			$( '#wpdispensary_growers_product_details' ).show();
+			$( '#wpdispensary_clonedetails' ).show();
+		}
+		// Tinctures product type.
+		if($(this).val() == 'Tinctures'){
+			console.log( 'Tinctures has been selected' );
+			$( '#wpdispensary_singleprices' ).show();
+			$( '#wpd_tinctures_details' ).show();
+		}
+		// Gear product type.
+		if($(this).val() == 'Gear'){
+			console.log( 'Gear has been selected' );
+			$( '#wpdispensary_singleprices' ).show();
+		}
+	});
+});

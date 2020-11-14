@@ -10,78 +10,50 @@
  */
 
 /**
- * Compound Details metabox
+ * Product Type metabox
  *
- * Adds the compound details metabox to specific custom post types
+ * Adds the product type metabox to specific custom post types
  *
- * @since    1.9.9
+ * @since    4.0
  */
-function wpdispensary_add_compounddetails_metaboxes() {
-	// Default screens array.
-	$screens = array( 'flowers', 'concentrates', 'prerolls' );
-	// Filter screens array.
-	$screens = apply_filters( 'wpd_compound_details_screens', $screens );
-
-	foreach ( $screens as $screen ) {
-		add_meta_box(
-			'wpdispensary_compounds',
-			esc_html__( 'Compound details', 'wp-dispensary' ),
-			'wpdispensary_compounddetails',
-			$screen,
-			'normal',
-			'default'
-		);
-	}
+function wp_dispensary_add_product_type_meta() {
+	add_meta_box(
+		'wp_dispensary_product_types',
+		esc_html__( 'Product type', 'wp-dispensary' ),
+		'wp_dispensary_product_types',
+		$screen,
+		'normal',
+		'high'
+	);
 }
-add_action( 'add_meta_boxes', 'wpdispensary_add_compounddetails_metaboxes' );
+add_action( 'add_meta_boxes', 'wp_dispensary_add_product_type_meta' );
 
 /**
  * Building the metabox
  */
-function wpdispensary_compounddetails() {
+function wp_dispensary_product_types() {
 	global $post;
 
 	/** Noncename needed to verify where the data originated */
-	echo '<input type="hidden" name="compounddetailsmeta_noncename" id="compounddetailsmeta_noncename" value="' .
+	echo '<input type="hidden" name="product_type_meta_noncename" id="product_type_meta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-	/** Get the thccbd data if its already been entered */
-	$thc   = get_post_meta( $post->ID, '_thc', true );
-	$thca  = get_post_meta( $post->ID, '_thca', true );
-	$cbd   = get_post_meta( $post->ID, '_cbd', true );
-	$cba   = get_post_meta( $post->ID, '_cba', true );
-	$cbn   = get_post_meta( $post->ID, '_cbn', true );
-	$cbg   = get_post_meta( $post->ID, '_cbg', true );
-	$total = get_post_meta( $post->ID, '_total_compounds', true );
+	/** Get the product type data if its already been entered */
+	$product_type = get_post_meta( $post->ID, 'product_type', true );
 
-	/** Echo out the fields */
-	echo '<div class="compoundbox">';
-	echo '<p>' . esc_html__( 'THC', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="_thc" value="' . esc_html( $thc ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="compoundbox">';
-	echo '<p>' . esc_html__( 'THCA', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="_thca" value="' . esc_html( $thca ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="compoundbox">';
-	echo '<p>' . esc_html__( 'CBD', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="_cbd" value="' . esc_html( $cbd ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="compoundbox">';
-	echo '<p>' . esc_html__( 'CBA', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="_cba" value="' . esc_html( $cba ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="compoundbox">';
-	echo '<p>' . esc_html__( 'CBN', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="compoundbox">';
-	echo '<p>' . esc_html__( 'CBG', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="compoundbox">';
-	echo '<p>' . esc_html__( 'Total', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="_total_compounds" value="' . esc_html( $total ) . '" class="widefat" />';
+	echo '<div class="wpd-product-type-meta">';
+	echo '<select name="product_type" id="product_type">';
+	echo '<option value="">--</option>';
+	foreach ( wpd_menu_types_simple() as $product_type_name ) {
+		// Check if current loop item is the same as the saved product_type.
+		if ( $product_type_name == $product_type ) {
+			$selected = 'selected';
+		} else {
+			$selected = '';
+		}
+		echo '<option ' . $selected . ' value="' . $product_type_name . '">' . $product_type_name . '</option>';
+	}
+	echo '</select>';
 	echo '</div>';
 
 }
@@ -89,15 +61,15 @@ function wpdispensary_compounddetails() {
 /**
  * Save the Metabox Data
  */
-function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
+function wp_dispensary_save_product_type_meta( $post_id, $post ) {
 
 	/**
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
 	if (
-		! isset( $_POST['compounddetailsmeta_noncename' ] ) ||
-		! wp_verify_nonce( $_POST['compounddetailsmeta_noncename'], plugin_basename( __FILE__ ) )
+		! isset( $_POST['product_type_meta_noncename' ] ) ||
+		! wp_verify_nonce( $_POST['product_type_meta_noncename'], plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;
 	}
@@ -112,17 +84,11 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$thccbd_meta['_thc']             = $_POST['_thc'];
-	$thccbd_meta['_thca']            = $_POST['_thca'];
-	$thccbd_meta['_cbd']             = $_POST['_cbd'];
-	$thccbd_meta['_cba']             = $_POST['_cba'];
-	$thccbd_meta['_cbn']             = $_POST['_cbn'];
-	$thccbd_meta['_cbg']             = $_POST['_cbg'];
-	$thccbd_meta['_total_compounds'] = $_POST['_total_compounds'];
+	$product_type_meta['product_type'] = $_POST['product_type'];
 
-	/** Add values of $compounddetails_meta as custom fields */
+	/** Add product type meta as custom fields */
 
-	foreach ( $thccbd_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
+	foreach ( $product_type_meta as $key => $value ) { /** Cycle through the $product_type_meta array! */
 		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}
@@ -138,7 +104,7 @@ function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
 	}
 
 }
-add_action( 'save_post', 'wpdispensary_save_compounddetails_meta', 1, 2 ); // Save the custom fields.
+add_action( 'save_post', 'wp_dispensary_save_product_type_meta', 1, 2 ); // Save the custom fields.
 
 
 /**
@@ -150,12 +116,12 @@ add_action( 'save_post', 'wpdispensary_save_compounddetails_meta', 1, 2 ); // Sa
  */
 function wpdispensary_add_prices_metaboxes() {
 
-	$screens = apply_filters( 'wpd_prices_screens', array( 'flowers' ) );
+	$screens = apply_filters( 'wpd_prices_screens', array( 'products', 'flowers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_prices',
-			esc_html__( 'Flower Prices', 'wp-dispensary' ),
+			esc_html__( 'Product pricing', 'wp-dispensary' ),
 			'wpdispensary_prices',
 			$screen,
 			'normal',
@@ -285,12 +251,12 @@ add_action( 'save_post', 'wpdispensary_save_prices_meta', 1, 2 ); /** Save the c
  */
 function wpdispensary_add_concentrateprices_metaboxes() {
 
-	$screens = apply_filters( 'wpd_concentrateprices_screens', array( 'concentrates' ) );
+	$screens = apply_filters( 'wpd_concentrateprices_screens', array( 'products', 'concentrates' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_concentrateprices',
-			__( 'Concentrate Prices', 'wp-dispensary' ),
+			__( 'Product pricing', 'wp-dispensary' ),
 			'wpdispensary_concentrateprices',
 			$screen,
 			'normal',
@@ -539,12 +505,12 @@ new WPDispensary_Growers();
  */
 function wpdispensary_add_singleprices_metaboxes() {
 
-	$screens = apply_filters( 'wpd_singleprices_screens', array( 'edibles', 'prerolls', 'growers' ) );
+	$screens = apply_filters( 'wpd_singleprices_screens', array( 'products', 'edibles', 'prerolls', 'growers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_singleprices',
-			__( 'Product Pricing', 'wp-dispensary' ),
+			__( 'Product pricing', 'wp-dispensary' ),
 			'wpdispensary_singleprices',
 			$screen,
 			'normal',
@@ -651,12 +617,12 @@ add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** Save
  */
 function wpdispensary_add_topicalprices_metaboxes() {
 
-	$screens = apply_filters( 'wpd_topicalprices_screens', array( 'topicals' ) );
+	$screens = apply_filters( 'wpd_topicalprices_screens', array( 'products', 'topicals' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_topicalprices',
-			__( 'Product Pricing', 'wp-dispensary' ),
+			__( 'Product pricing', 'wp-dispensary' ),
 			'wpdispensary_topicalprices',
 			$screen,
 			'normal',
@@ -763,7 +729,7 @@ add_action( 'save_post', 'wpdispensary_save_topicalprices_meta', 1, 2 ); /** Sav
  */
 function wpdispensary_add_grower_product_details_metaboxes() {
 
-	$screens = apply_filters( 'wpd_grower_product_details_screens', array( 'growers' ) );
+	$screens = apply_filters( 'wpd_grower_product_details_screens', array( 'products', 'growers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -865,12 +831,12 @@ add_action( 'save_post', 'wpdispensary_save_grower_product_details_meta', 1, 2 )
  */
 function wpdispensary_add_thc_cbd_mg_metaboxes() {
 
-	$screens = apply_filters( 'wpd_thc_cbd_mg_screens', array( 'edibles' ) );
+	$screens = apply_filters( 'wpd_thc_cbd_mg_screens', array( 'products', 'edibles' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_thc_cbd_mg',
-			__( 'Product information', 'wp-dispensary' ),
+			__( 'Product details', 'wp-dispensary' ),
 			'wpdispensary_thc_cbd_mg',
 			$screen,
 			'normal',
@@ -978,12 +944,12 @@ add_action( 'save_post', 'wpdispensary_save_thc_cbd_mg_meta', 1, 2 ); /** Save t
  */
 function wpdispensary_add_thccbdtopical_metaboxes() {
 
-	$screens = apply_filters( 'wpd_thccbdtopical_screens', array( 'topicals' ) );
+	$screens = apply_filters( 'wpd_thccbdtopical_screens', array( 'products', 'topicals' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_thccbdtopical',
-			__( 'Product Information', 'wp-dispensary' ),
+			__( 'Product details', 'wp-dispensary' ),
 			'wpdispensary_thccbdtopical',
 			$screen,
 			'normal',
@@ -1084,12 +1050,12 @@ add_action( 'save_post', 'wpdispensary_save_thccbdtopical_meta', 1, 2 ); /** Sav
  */
 function wpdispensary_add_clonedetails_metaboxes() {
 
-	$screens = apply_filters( 'wpd_clonedetails_screens', array( 'growers' ) );
+	$screens = apply_filters( 'wpd_clonedetails_screens', array( 'products', 'growers' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'wpdispensary_clonedetails',
-			__( 'Grow Details', 'wp-dispensary' ),
+			__( 'Grow details', 'wp-dispensary' ),
 			'wpdispensary_clonedetails',
 			$screen,
 			'normal',
@@ -1187,6 +1153,139 @@ function wpdispensary_save_clonedetails_meta( $post_id, $post ) {
 }
 add_action( 'save_post', 'wpdispensary_save_clonedetails_meta', 1, 2 ); // Save the custom fields.
 
+
+/**
+ * Compound Details metabox
+ *
+ * Adds the compound details metabox to specific custom post types
+ *
+ * @since    1.9.9
+ */
+function wpdispensary_add_compounddetails_metaboxes() {
+	// Default screens array.
+	$screens = array( 'products', 'flowers', 'concentrates', 'prerolls' );
+	// Filter screens array.
+	$screens = apply_filters( 'wpd_compound_details_screens', $screens );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpdispensary_compounds',
+			esc_html__( 'Compound details', 'wp-dispensary' ),
+			'wpdispensary_compounddetails',
+			$screen,
+			'normal',
+			'default'
+		);
+	}
+}
+add_action( 'add_meta_boxes', 'wpdispensary_add_compounddetails_metaboxes' );
+
+/**
+ * Building the metabox
+ */
+function wpdispensary_compounddetails() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="compounddetailsmeta_noncename" id="compounddetailsmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the thccbd data if its already been entered */
+	$thc   = get_post_meta( $post->ID, '_thc', true );
+	$thca  = get_post_meta( $post->ID, '_thca', true );
+	$cbd   = get_post_meta( $post->ID, '_cbd', true );
+	$cba   = get_post_meta( $post->ID, '_cba', true );
+	$cbn   = get_post_meta( $post->ID, '_cbn', true );
+	$cbg   = get_post_meta( $post->ID, '_cbg', true );
+	$total = get_post_meta( $post->ID, '_total_compounds', true );
+
+	/** Echo out the fields */
+	echo '<div class="compoundbox">';
+	echo '<p>' . esc_html__( 'THC', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_thc" value="' . esc_html( $thc ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>' . esc_html__( 'THCA', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_thca" value="' . esc_html( $thca ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>' . esc_html__( 'CBD', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_cbd" value="' . esc_html( $cbd ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>' . esc_html__( 'CBA', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_cba" value="' . esc_html( $cba ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>' . esc_html__( 'CBN', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>' . esc_html__( 'CBG', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="compoundbox">';
+	echo '<p>' . esc_html__( 'Total', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="_total_compounds" value="' . esc_html( $total ) . '" class="widefat" />';
+	echo '</div>';
+
+}
+
+/**
+ * Save the Metabox Data
+ */
+function wpdispensary_save_compounddetails_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if (
+		! isset( $_POST['compounddetailsmeta_noncename' ] ) ||
+		! wp_verify_nonce( $_POST['compounddetailsmeta_noncename'], plugin_basename( __FILE__ ) )
+	) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+
+	$thccbd_meta['_thc']             = $_POST['_thc'];
+	$thccbd_meta['_thca']            = $_POST['_thca'];
+	$thccbd_meta['_cbd']             = $_POST['_cbd'];
+	$thccbd_meta['_cba']             = $_POST['_cba'];
+	$thccbd_meta['_cbn']             = $_POST['_cbn'];
+	$thccbd_meta['_cbg']             = $_POST['_cbg'];
+	$thccbd_meta['_total_compounds'] = $_POST['_total_compounds'];
+
+	/** Add values of $compounddetails_meta as custom fields */
+
+	foreach ( $thccbd_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
+		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value.
+			update_post_meta( $post->ID, $key, $value );
+		} else { // If the custom field doesn't have a value.
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+add_action( 'save_post', 'wpdispensary_save_compounddetails_meta', 1, 2 ); // Save the custom fields.
+
+
 /**
  * Pre-rolls Weight metabox
  *
@@ -1196,7 +1295,7 @@ add_action( 'save_post', 'wpdispensary_save_clonedetails_meta', 1, 2 ); // Save 
  */
 function wpdispensary_add_preroll_weight_metaboxes() {
 
-	$screens = apply_filters( 'wpd_preroll_weight_screens', array( 'prerolls' ) );
+	$screens = apply_filters( 'wpd_preroll_weight_screens', array( 'products', 'prerolls' ) );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
@@ -1280,3 +1379,117 @@ function wpdispensary_save_preroll_weight_meta( $post_id, $post ) {
 
 }
 add_action( 'save_post', 'wpdispensary_save_preroll_weight_meta', 1, 2 ); // Save the custom fields.
+
+/**
+ * Details metabox for the Tinctures menu type
+ *
+ * Adds a details metabox
+ *
+ * @since    4.0.0
+ */
+function wp_dispensary_tinctures_details_metaboxes() {
+
+	$screens = array( 'products', 'tinctures' );
+
+	foreach ( $screens as $screen ) {
+		add_meta_box(
+			'wpd_tinctures_details',
+			esc_attr__( 'Product Details', 'wpd-tinctures' ),
+			'wp_dispensary_tinctures_details',
+			$screen,
+			'normal',
+			'default'
+		);
+	}
+
+}
+add_action( 'add_meta_boxes', 'wp_dispensary_tinctures_details_metaboxes' );
+
+/**
+ * Tincture Details
+ */
+function wp_dispensary_tinctures_details() {
+	global $post;
+
+	/** Noncename needed to verify where the data originated */
+	echo '<input type="hidden" name="tincturesdetailsmeta_noncename" id="tincturesdetailsmeta_noncename" value="' .
+	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+
+	/** Get the details data if its already been entered */
+	$thcmg          = get_post_meta( $post->ID, '_thcmg', true );
+	$cbdmg          = get_post_meta( $post->ID, '_cbdmg', true );
+	$mlserving      = get_post_meta( $post->ID, '_mlserving', true );
+	$thccbdservings = get_post_meta( $post->ID, '_thccbdservings', true );
+	$netweight      = get_post_meta( $post->ID, '_netweight', true );
+
+	/** Echo out the fields */
+	echo '<div class="tincturesdetailsbox">';
+	echo '<p>' . esc_attr__( 'Servings', 'wpd-tinctures' ) . '</p>';
+	echo '<input type="text" name="_thccbdservings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="tincturesdetailsbox">';
+	echo '<p>' . esc_attr__( 'THC mg per serving', 'wpd-tinctures' ) . '</p>';
+	echo '<input type="text" name="_thcmg" value="' . esc_html( $thcmg ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="tincturesdetailsbox">';
+	echo '<p>' . esc_attr__( 'CBD mg per serving', 'wpd-tinctures' ) . '</p>';
+	echo '<input type="text" name="_cbdmg" value="' . esc_html( $cbdmg ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="tincturesdetailsbox">';
+	echo '<p>' . esc_attr__( 'mL per serving', 'wpd-tinctures' ) . '</p>';
+	echo '<input type="text" name="_mlserving" value="' . esc_html( $mlserving ) . '" class="widefat" />';
+	echo '</div>';
+	echo '<div class="tincturesdetailsbox">';
+	echo '<p>' . esc_attr__( 'Net weight (ounces)', 'wpd-tinctures' ) . '</p>';
+	echo '<input type="text" name="_netweight" value="' . esc_html( $netweight ) . '" class="widefat" />';
+	echo '</div>';
+
+}
+
+/**
+ * Save the Metabox Data
+ */
+function wp_dispensary_tinctures_details_save_meta( $post_id, $post ) {
+
+	/**
+	 * Verify this came from the our screen and with proper authorization,
+	 * because save_post can be triggered at other times
+	 */
+	if ( ! isset( $_POST['tincturesdetailsmeta_noncename' ] ) || ! wp_verify_nonce( $_POST['tincturesdetailsmeta_noncename'], plugin_basename( __FILE__ ) ) ) {
+		return $post->ID;
+	}
+
+	/** Is the user allowed to edit the post or page? */
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
+		return $post->ID;
+	}
+
+	/**
+	 * OK, we're authenticated: we need to find and save the data
+	 * We'll put it into an array to make it easier to loop though.
+	 */
+	$details_meta['_thcmg']          = esc_html( $_POST['_thcmg'] );
+	$details_meta['_cbdmg']          = esc_html( $_POST['_cbdmg'] );
+	$details_meta['_mlserving']      = esc_html( $_POST['_mlserving'] );
+	$details_meta['_thccbdservings'] = esc_html( $_POST['_thccbdservings'] );
+	$details_meta['_netweight']      = esc_html( $_POST['_netweight'] );
+
+	/** Add values of $details_meta as custom fields */
+
+	foreach ( $details_meta as $key => $value ) { /** Cycle through the $details_meta array! */
+		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
+			return;
+		}
+		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
+		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
+			update_post_meta( $post->ID, $key, $value );
+		} else { /** If the custom field doesn't have a value */
+			add_post_meta( $post->ID, $key, $value );
+		}
+		if ( ! $value ) { /** Delete if blank */
+			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+}
+add_action( 'save_post', 'wp_dispensary_tinctures_details_save_meta', 1, 2 ); /** Save the custom fields */
