@@ -56,7 +56,7 @@ class WP_Dispensary_Permalink_Settings {
 	 */
 	public function wpd_products_fields_html() {
 		$wpd_products_slug = get_option( 'wpd_products_slug' );
-		echo '<input type="text" class="regular-text code" id="wpd_products_slug" name="wpd_products_slug" placeholder="flowers" value="' . esc_attr( $wpd_products_slug ) . '" />';
+		echo '<input type="text" class="regular-text code" id="wpd_products_slug" name="wpd_products_slug" placeholder="products" value="' . esc_attr( $wpd_products_slug ) . '" />';
 	}
 
 	/**
