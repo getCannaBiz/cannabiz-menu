@@ -748,7 +748,7 @@ add_action( 'admin_menu', 'wpd_admin_menu_products', 1 );
 
 // Adds Categories admin submenu link.
 function wpd_admin_menu_categories() {
-	add_submenu_page( 'wpd-settings', 'Categories', 'Categories', 'manage_options', 'edit-tags.php?taxonomy=product_category', null );
+	add_submenu_page( 'wpd-settings', 'Categories', 'Categories', 'manage_options', 'edit-tags.php?taxonomy=wpd_categories', null );
 }
 add_action( 'admin_menu', 'wpd_admin_menu_categories', 2 );
 
@@ -764,7 +764,7 @@ function wpd_keep_taxonomy_menu_open( $parent_file ) {
 	// Get current screen taxonomy.
 	$taxonomy = $current_screen->taxonomy;
 	// Check taxonomies.
-	if ( 'vendor' == $taxonomy || 'product_category' == $taxonomy || 'shelf_type' == $taxonomy || 'strain_type' == $taxonomy ) {
+	if ( 'vendor' == $taxonomy || 'wpd_categories' == $taxonomy || 'shelf_type' == $taxonomy || 'strain_type' == $taxonomy ) {
 		$parent_file = 'wpd-settings';
 	}
 

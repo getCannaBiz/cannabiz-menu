@@ -16,7 +16,7 @@
  *
  * @since    4.0
  */
-function wp_dispensary_product_category() {
+function wp_dispensary_products_categories() {
 
 	$labels = array(
 		'name'              => _x( 'Categories', 'taxonomy general name', 'wp-dispensary' ),
@@ -49,7 +49,7 @@ function wp_dispensary_product_category() {
 
 	$product_types = apply_filters( 'wpd_product_tax_type', $menu_types_names );
 
-	register_taxonomy( 'product_category', $product_types, array(
+	register_taxonomy( 'wpd_categories', $product_types, array(
 		'hierarchical'      => true,
 		'labels'            => $labels,
 		'show_ui'           => true,
@@ -64,7 +64,7 @@ function wp_dispensary_product_category() {
 	) );
 
 }
-add_action( 'init', 'wp_dispensary_product_category', 0 );
+add_action( 'init', 'wp_dispensary_products_categories', 0 );
 
 /**
  * Shelf Type
@@ -743,11 +743,11 @@ function wpdispensary_allergens() {
 add_action( 'init', 'wpdispensary_allergens', 0 );
 
 function acme_test() {
-	convert_taxonomies( 'flowers', 'flowers_category', 'product_category' );
-	convert_taxonomies( 'concentrates', 'concentrates_category', 'product_category' );
-	convert_taxonomies( 'edibles', 'edibles_category', 'product_category' );
-	convert_taxonomies( 'prerolls', 'flowers_category', 'product_category' );
-	convert_taxonomies( 'topicals', 'topicals_category', 'product_category' );
-	convert_taxonomies( 'growers', 'growers_category', 'product_category' );
+	convert_taxonomies( 'flowers', 'flowers_category', 'wpd_categories' );
+	convert_taxonomies( 'concentrates', 'concentrates_category', 'wpd_categories' );
+	convert_taxonomies( 'edibles', 'edibles_category', 'wpd_categories' );
+	convert_taxonomies( 'prerolls', 'flowers_category', 'wpd_categories' );
+	convert_taxonomies( 'topicals', 'topicals_category', 'wpd_categories' );
+	convert_taxonomies( 'growers', 'growers_category', 'wpd_categories' );
 }
 //add_action( 'init', 'acme_test', 12 );
