@@ -757,3 +757,17 @@ function wpd_admin_menu_vendors() {
 	add_submenu_page( 'wpd-settings', 'Vendors', 'Vendors', 'manage_options', 'edit-tags.php?taxonomy=vendor', null );
 }
 add_action( 'admin_menu', 'wpd_admin_menu_vendors', 6 );
+
+// Keeps the WP Dispensary link list open when taxonomy submenu items are open.
+function wpd_keep_taxonomy_menu_open( $parent_file ) {
+	global $current_screen;
+	// Get current screen taxonomy.
+	$taxonomy = $current_screen->taxonomy;
+	// Check taxonomies.
+	if ( 'vendor' == $taxonomy || 'product_category' == $taxonomy || 'shelf_type' == $taxonomy || 'strain_type' == $taxonomy ) {
+		$parent_file = 'wpd-settings';
+	}
+
+	return $parent_file;
+}
+add_action( 'parent_file', 'wpd_keep_taxonomy_menu_open' );
