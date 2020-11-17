@@ -357,7 +357,8 @@ body.taxonomy-locations,
 body.taxonomy-vendor,
 body.taxonomy-wpd_categories,
 body.taxonomy-strain_type,
-body.taxonomy-shelf_type {
+body.taxonomy-shelf_type,
+body.toplevel_page_wpd-settings {
     background: #FFF;
 }
 
