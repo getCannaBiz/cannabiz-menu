@@ -322,6 +322,7 @@ div.widget[id*=_wp_dispensary_] .widget-action {
 -------------------------------------------------------------- */
 
 @media screen and (max-width: 782px) {
+	.wp-list-table tr.type-products:not(.inline-edit-row):not(.no-items) td:not(.check-column),
 	.wp-list-table tr.type-flowers:not(.inline-edit-row):not(.no-items) td:not(.check-column),
 	.wp-list-table tr.type-concentrates:not(.inline-edit-row):not(.no-items) td:not(.check-column),
 	.wp-list-table tr.type-edibles:not(.inline-edit-row):not(.no-items) td:not(.check-column),
@@ -341,6 +342,7 @@ div.widget[id*=_wp_dispensary_] .widget-action {
 /** Admin post type screens
 -------------------------------------------------------------- */
 
+body.post-type-products,
 body.post-type-flowers,
 body.post-type-concentrates,
 body.post-type-edibles,
@@ -353,6 +355,7 @@ body.post-type-coupons {
     background: #FFF;
 }
 
+body.post-type-products table.posts,
 body.post-type-flowers table.posts,
 body.post-type-concentrates table.posts,
 body.post-type-edibles table.posts,
@@ -365,6 +368,8 @@ body.post-type-coupons table.posts {
 	margin-top: 12px;
 }
 
+body.post-type-products table thead,
+body.post-type-products table tfoot,
 body.post-type-flowers table thead,
 body.post-type-flowers table tfoot,
 body.post-type-concentrates table thead,
@@ -386,6 +391,9 @@ body.post-type-coupons table tfoot {
     background: #F7F7F7;
 }
 
+body.post-type-products .alternate,
+body.post-type-products .striped>tbody>:nth-child(odd),
+body.post-type-products ul.striped>:nth-child(odd),
 body.post-type-flowers .alternate,
 body.post-type-flowers .striped>tbody>:nth-child(odd),
 body.post-type-flowers ul.striped>:nth-child(odd),
@@ -416,6 +424,7 @@ body.post-type-coupons ul.striped>:nth-child(odd) {
 	background: #FFF;
 }
 
+tr.type-products td, tr.type-flowers th,
 tr.type-flowers td, tr.type-flowers th,
 tr.type-concentrates td, tr.type-concentrates th,
 tr.type-edibles td, tr.type-edibles th,
@@ -428,6 +437,7 @@ tr.type-coupons td, tr.type-coupons th {
     border-bottom: 1px solid #DDD;
 }
 
+body.post-type-products .search-box input[type="search"],
 body.post-type-flowers .search-box input[type="search"],
 body.post-type-concentrates .search-box input[type="search"],
 body.post-type-edibles .search-box input[type="search"],
