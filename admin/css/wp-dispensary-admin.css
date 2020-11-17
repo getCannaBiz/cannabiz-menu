@@ -358,7 +358,8 @@ body.taxonomy-vendor,
 body.taxonomy-wpd_categories,
 body.taxonomy-strain_type,
 body.taxonomy-shelf_type,
-body.toplevel_page_wpd-settings {
+body.toplevel_page_wpd-settings,
+.wp-dispensary_page_wpd-inventory {
     background: #FFF;
 }
 
