@@ -746,114 +746,14 @@ function wpd_admin_menu_products(  ) {
 }
 add_action( 'admin_menu', 'wpd_admin_menu_products', 1 );
 
-// Adds Flowers admin submenu link.
-function wpd_admin_menu_flowers(  ) {
-	// Get permalink base for Flowers.
-	$wpd_flowers_slug = get_option( 'wpd_flowers_slug' );
-
-	// If custom base is empty, set default.
-	if ( '' == $wpd_flowers_slug ) {
-		$wpd_flowers_slug = 'flowers';
-	}
-
-	// Capitalize first letter of new slug.
-	$wpd_flowers_slug_cap = ucfirst( $wpd_flowers_slug );
-
-	add_submenu_page( 'wpd-settings', $wpd_flowers_slug_cap, $wpd_flowers_slug_cap, 'manage_options', 'edit.php?post_type=flowers', null );
-}
-add_action( 'admin_menu', 'wpd_admin_menu_flowers', 1 );
-
-// Adds Concentrates admin submenu link.
-function wpd_admin_menu_concentrates( ) {
-	// Get permalink base for Concentrates.
-	$wpd_concentrates_slug = get_option( 'wpd_concentrates_slug' );
-
-	// If custom base is empty, set default.
-	if ( '' == $wpd_concentrates_slug ) {
-		$wpd_concentrates_slug = 'concentrates';
-	}
-
-	// Capitalize first letter of new slug.
-	$wpd_concentrates_slug_cap = ucfirst( $wpd_concentrates_slug );
-
-	add_submenu_page( 'wpd-settings', $wpd_concentrates_slug_cap, $wpd_concentrates_slug_cap, 'manage_options', 'edit.php?post_type=concentrates', null );
-}
-add_action( 'admin_menu', 'wpd_admin_menu_concentrates', 2 );
-
-// Adds Edibles admin submenu link.
-function wpd_admin_menu_edibles( ) {
-	// Get permalink base for Edibles.
-	$wpd_edibles_slug = get_option( 'wpd_edibles_slug' );
-
-	// If custom base is empty, set default.
-	if ( '' == $wpd_edibles_slug ) {
-		$wpd_edibles_slug = 'edibles';
-	}
-
-	// Capitalize first letter of new slug.
-	$wpd_edibles_slug_cap = ucfirst( $wpd_edibles_slug );
-
-	add_submenu_page( 'wpd-settings', $wpd_edibles_slug_cap, $wpd_edibles_slug_cap, 'manage_options', 'edit.php?post_type=edibles', null );
-}
-add_action( 'admin_menu', 'wpd_admin_menu_edibles', 4 );
-
-// Adds Pre-rolls admin submenu link.
-function wpd_admin_menu_prerolls( ) {
-	// Get permalink base for Pre-rolls.
-	$wpd_prerolls_slug = get_option( 'wpd_prerolls_slug' );
-
-	// If custom base is empty, set default.
-	if ( '' == $wpd_prerolls_slug ) {
-		$wpd_prerolls_slug = 'prerolls';
-	}
-
-	$wpd_prerolls_slug_cap = ucfirst( $wpd_prerolls_slug );
-
-	// Capitalize first letter of new slug.
-	if ( 'prerolls' == $wpd_prerolls_slug ) {
-		$wpd_prerolls_slug_cap = 'Pre-rolls';
-	}
-
-	add_submenu_page( 'wpd-settings', $wpd_prerolls_slug_cap, $wpd_prerolls_slug_cap, 'manage_options', 'edit.php?post_type=prerolls', null );
-}
-add_action( 'admin_menu', 'wpd_admin_menu_prerolls', 5 );
-
-// Adds Topcials admin submenu link.
-function wpd_admin_menu_topicals() {
-	// Get permalink base for Topicals.
-	$wpd_topicals_slug = get_option( 'wpd_topicals_slug' );
-
-	// If custom base is empty, set default.
-	if ( '' == $wpd_topicals_slug ) {
-		$wpd_topicals_slug = 'topicals';
-	}
-
-	// Capitalize first letter of new slug.
-	$wpd_topicals_slug_cap = ucfirst( $wpd_topicals_slug );
-
-	add_submenu_page( 'wpd-settings', $wpd_topicals_slug_cap, $wpd_topicals_slug_cap, 'manage_options', 'edit.php?post_type=topicals', null );
-}
-add_action( 'admin_menu', 'wpd_admin_menu_topicals', 6 );
-
-// Adds Growers admin submenu link.
-function wpd_admin_menu_growers() {
-	// Get permalink base for Growers.
-	$wpd_growers_slug = get_option( 'wpd_growers_slug' );
-
-	// If custom base is empty, set default.
-	if ( '' == $wpd_growers_slug ) {
-		$wpd_growers_slug = 'growers';
-	}
-
-	// Capitalize first letter of new slug.
-	$wpd_growers_slug_cap = ucfirst( $wpd_growers_slug );
-
-	add_submenu_page( 'wpd-settings', $wpd_growers_slug_cap, $wpd_growers_slug_cap, 'manage_options', 'edit.php?post_type=growers', null );
-}
-add_action( 'admin_menu', 'wpd_admin_menu_growers', 7 );
-
 // Adds Categories admin submenu link.
 function wpd_admin_menu_categories() {
 	add_submenu_page( 'wpd-settings', 'Categories', 'Categories', 'manage_options', 'edit-tags.php?taxonomy=product_category', null );
 }
-add_action( 'admin_menu', 'wpd_admin_menu_categories', 8 );
+add_action( 'admin_menu', 'wpd_admin_menu_categories', 2 );
+
+// Adds Vendors admin submenu link.
+function wpd_admin_menu_vendors() {
+	add_submenu_page( 'wpd-settings', 'Vendors', 'Vendors', 'manage_options', 'edit-tags.php?taxonomy=vendor', null );
+}
+add_action( 'admin_menu', 'wpd_admin_menu_vendors', 6 );
