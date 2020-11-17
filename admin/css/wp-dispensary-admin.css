@@ -343,6 +343,7 @@ div.widget[id*=_wp_dispensary_] .widget-action {
 -------------------------------------------------------------- */
 
 body.post-type-products,
+body.post-type-wpd_orders,
 body.post-type-flowers,
 body.post-type-concentrates,
 body.post-type-edibles,
@@ -351,11 +352,17 @@ body.post-type-prerolls,
 body.post-type-growers,
 body.post-type-gear,
 body.post-type-tinctures,
-body.post-type-coupons {
+body.post-type-coupons,
+body.taxonomy-locations,
+body.taxonomy-vendor,
+body.taxonomy-product_category,
+body.taxonomy-strain_type,
+body.taxonomy-shelf_type {
     background: #FFF;
 }
 
 body.post-type-products table.posts,
+body.post-type-wpd_orders table.posts,
 body.post-type-flowers table.posts,
 body.post-type-concentrates table.posts,
 body.post-type-edibles table.posts,
@@ -364,12 +371,19 @@ body.post-type-prerolls table.posts,
 body.post-type-growers table.posts,
 body.post-type-gear table.posts,
 body.post-type-tinctures table.posts,
-body.post-type-coupons table.posts {
+body.post-type-coupons table.posts,
+body.taxonomy-locations table.posts,
+body.taxonomy-vendor table.posts,
+body.taxonomy-product_category table.posts,
+body.taxonomy-strain_type table.posts,
+body.taxonomy-shelf_type table.posts {
 	margin-top: 12px;
 }
 
 body.post-type-products table thead,
 body.post-type-products table tfoot,
+body.post-type-wpd_orders table thead,
+body.post-type-wpd_orders table tfoot,
 body.post-type-flowers table thead,
 body.post-type-flowers table tfoot,
 body.post-type-concentrates table thead,
@@ -387,13 +401,26 @@ body.post-type-gear table tfoot,
 body.post-type-tinctures table thead,
 body.post-type-tinctures table tfoot,
 body.post-type-coupons table thead,
-body.post-type-coupons table tfoot {
+body.post-type-coupons table tfoot,
+body.taxonomy-locations table thead,
+body.taxonomy-locations table tfoot,
+body.taxonomy-vendor table thead,
+body.taxonomy-vendor table tfoot,
+body.taxonomy-product_category table thead,
+body.taxonomy-product_category table tfoot,
+body.taxonomy-strain_type table thead,
+body.taxonomy-strain_type table tfoot,
+body.taxonomy-shelf_type table thead,
+body.taxonomy-shelf_type table tfoot {
     background: #F7F7F7;
 }
 
 body.post-type-products .alternate,
 body.post-type-products .striped>tbody>:nth-child(odd),
 body.post-type-products ul.striped>:nth-child(odd),
+body.post-type-wpd_orders .alternate,
+body.post-type-wpd_orders .striped>tbody>:nth-child(odd),
+body.post-type-wpd_orders ul.striped>:nth-child(odd),
 body.post-type-flowers .alternate,
 body.post-type-flowers .striped>tbody>:nth-child(odd),
 body.post-type-flowers ul.striped>:nth-child(odd),
@@ -420,11 +447,27 @@ body.post-type-tinctures .striped>tbody>:nth-child(odd),
 body.post-type-tinctures ul.striped>:nth-child(odd),
 body.post-type-coupons .alternate,
 body.post-type-coupons .striped>tbody>:nth-child(odd),
-body.post-type-coupons ul.striped>:nth-child(odd) {
+body.post-type-coupons ul.striped>:nth-child(odd),
+body.taxonomy-locations .alternate,
+body.taxonomy-locations .striped>tbody>:nth-child(odd),
+body.taxonomy-locations ul.striped>:nth-child(odd),
+body.taxonomy-vendor .alternate,
+body.taxonomy-vendor .striped>tbody>:nth-child(odd),
+body.taxonomy-vendor ul.striped>:nth-child(odd),
+body.taxonomy-product_category .alternate,
+body.taxonomy-product_category .striped>tbody>:nth-child(odd),
+body.taxonomy-product_category ul.striped>:nth-child(odd),
+body.taxonomy-strain_type .alternate,
+body.taxonomy-strain_type .striped>tbody>:nth-child(odd),
+body.taxonomy-strain_type ul.striped>:nth-child(odd),
+body.taxonomy-shelf_type .alternate,
+body.taxonomy-shelf_type .striped>tbody>:nth-child(odd),
+body.taxonomy-shelf_type ul.striped>:nth-child(odd) {
 	background: #FFF;
 }
 
 tr.type-products td, tr.type-flowers th,
+tr.type-wpd_orders td, tr.type-wpd_orders th,
 tr.type-flowers td, tr.type-flowers th,
 tr.type-concentrates td, tr.type-concentrates th,
 tr.type-edibles td, tr.type-edibles th,
@@ -438,6 +481,7 @@ tr.type-coupons td, tr.type-coupons th {
 }
 
 body.post-type-products .search-box input[type="search"],
+body.post-type-wpd_orders .search-box input[type="search"],
 body.post-type-flowers .search-box input[type="search"],
 body.post-type-concentrates .search-box input[type="search"],
 body.post-type-edibles .search-box input[type="search"],
@@ -446,7 +490,12 @@ body.post-type-prerolls .search-box input[type="search"],
 body.post-type-growers .search-box input[type="search"],
 body.post-type-gear .search-box input[type="search"],
 body.post-type-tinctures .search-box input[type="search"],
-body.post-type-coupons .search-box input[type="search"] {
+body.post-type-coupons .search-box input[type="search"],
+body.taxonomy-locations .search-box input[type="search"],
+body.taxonomy-vendor .search-box input[type="search"],
+body.taxonomy-product_category .search-box input[type="search"],
+body.taxonomy-strain_type .search-box input[type="search"],
+body.taxonomy-shelf_type .search-box input[type="search"] {
     min-height: 26px;
     line-height: 1.92;
 }
