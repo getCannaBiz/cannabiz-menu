@@ -138,6 +138,13 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-product-functions.php';
 
 		/**
+		 * The functions responsible for updating WP Dispensary data during plugin upgrades
+		 * 
+		 * @since 4.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-plugin-upgrade.php';
+
+		/**
 		 * The functions responsible for building the custom post types
 		 *
 		 * @since    1.0.0

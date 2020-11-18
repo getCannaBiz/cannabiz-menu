@@ -741,13 +741,3 @@ function wpdispensary_allergens() {
 
 }
 add_action( 'init', 'wpdispensary_allergens', 0 );
-
-function acme_test() {
-	convert_taxonomies( 'flowers', 'flowers_category', 'wpd_categories' );
-	convert_taxonomies( 'concentrates', 'concentrates_category', 'wpd_categories' );
-	convert_taxonomies( 'edibles', 'edibles_category', 'wpd_categories' );
-	convert_taxonomies( 'prerolls', 'flowers_category', 'wpd_categories' );
-	convert_taxonomies( 'topicals', 'topicals_category', 'wpd_categories' );
-	convert_taxonomies( 'growers', 'growers_category', 'wpd_categories' );
-}
-//add_action( 'init', 'acme_test', 12 );
