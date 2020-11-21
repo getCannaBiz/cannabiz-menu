@@ -18,6 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Convert Product Data during Version 4.0 upgrade.
  */
 function wpd_convert_product_data() {
+    // Update category taxonomies.
 	convert_taxonomies( 'flowers', 'flowers_category', 'wpd_categories' );
 	convert_taxonomies( 'concentrates', 'concentrates_category', 'wpd_categories' );
 	convert_taxonomies( 'edibles', 'edibles_category', 'wpd_categories' );
@@ -27,11 +28,14 @@ function wpd_convert_product_data() {
 	convert_taxonomies( 'gear', 'wpd_gear_category', 'wpd_categories' );
 	convert_taxonomies( 'tinctures', 'wpd_tinctures_category', 'wpd_categories' );
 
+    // Update post type metadata.
 	convert_metadata( 'flowers' );
 	convert_metadata( 'concentrates' );
 	convert_metadata( 'edibles' );
 	convert_metadata( 'prerolls' );
 	convert_metadata( 'topicals' );
 	convert_metadata( 'growers' );
+	convert_metadata( 'gear' );
+	convert_metadata( 'tinctures' );
 }
 //add_action( 'init', 'wpd_convert_product_data', 12 );
