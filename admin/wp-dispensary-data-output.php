@@ -35,31 +35,17 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		// Get post type.
 		$post_type = get_post_type_object( get_post_type( $post ) );
 
-		// Get menu types.
-		$menu_types = wpd_menu_types();
-
-		// Create new menu type array.
-		$menu_types_simple = array();
-
-		// Loop through menu types
-		foreach ( $menu_types as $key=>$value ) {
-			// Strip wpd- from the menu type name.
-			$name = str_replace( 'wpd-', '', $key );
-			// Add menu type name to new array.
-			$menu_types_simple[] = $name;
-		}
-
 		/**
 		 * Adding the WP Dispensary menu item data
 		 */
 
 		$original = '';
 
-		if ( in_array( get_post_type(), apply_filters( 'wpd_original_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_original_array', wpd_menu_types_simple( true ) ) ) ) {
 			$original = $content;
 		}
 
-		if ( in_array( get_post_type(), apply_filters( 'wpd_content_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_content_array', wpd_menu_types_simple( true ) ) ) ) {
 			$content = '';
 		}
 

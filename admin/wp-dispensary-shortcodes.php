@@ -31,19 +31,8 @@ if ( function_exists( 'add_image_size' ) ) {
  * @return string HTML markup.
  */
 function wpdispensary_carousel_shortcode( $atts ) {
-	// Menu types (array).
-	$array_types = wpd_menu_types();
-
-	// Loop through menu types.
-	foreach ( $array_types as $key=>$value ) {
-		// Strip wpd- from the menu type name.
-		$name = str_replace( 'wpd-', '', $key );
-		// Add menu type name to new array.
-		$menu_types_simple[] = $name;
-	}
-
 	// Menu types (string).
-	$menu_types = implode ( ', ', $menu_types_simple );
+	$menu_types = implode ( ', ', wpd_menu_types_simple( true ) );
 
 	// Attributes.
 	extract( shortcode_atts(
@@ -432,19 +421,8 @@ add_shortcode( 'wpd-carousel', 'wpdispensary_carousel_shortcode' );
  */
 function wp_dispensary_menu_shortcode( $atts ) {
 
-	// Menu types (array).
-	$array_types = wpd_menu_types();
-
-	// Loop through menu types.
-	foreach ( $array_types as $key=>$value ) {
-		// Strip wpd- from the menu type name.
-		$name = str_replace( 'wpd-', '', $key );
-		// Add menu type name to new array.
-		$menu_types_simple[] = $name;
-	}
-
 	// Menu types (string).
-	$menu_types = implode ( ', ', $menu_types_simple );
+	$menu_types = implode ( ', ', wpd_menu_types( true ) );
 
 	// Attributes.
 	extract( shortcode_atts(
