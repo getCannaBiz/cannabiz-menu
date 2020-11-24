@@ -49,9 +49,13 @@ function wp_dispensary_columns_data( $column ) {
 if ( isset( $_GET['post_type'] ) ) {
 	// Get post type.
 	$post_type = esc_html( $_GET['post_type'] );
+	// Get post types.
+	$post_types = wpd_menu_types_simple( true );
+	// Add products to post types array.
+	$post_types[] = 'products';
 
 	// Add actions and filters if post type is a WPD Menu type.
-	if ( in_array( $post_type, apply_filters( 'wpd_admin_screen_thumbnails', wpd_menu_types_simple( true ) ) ) ) {
+	if ( in_array( $post_type, apply_filters( 'wpd_admin_screen_thumbnails', $post_types ) ) ) {
 		add_filter( 'manage_posts_columns', 'wp_dispensary_columns' );
 		add_action( 'manage_posts_custom_column', 'wp_dispensary_columns_data', 10, 1 );
 		add_filter( 'manage_pages_columns', 'wp_dispensary_columns' );
