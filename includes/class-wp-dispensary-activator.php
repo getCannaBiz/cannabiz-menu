@@ -37,26 +37,26 @@ class WP_Dispensary_Activator {
 		/**
 		 * Custom Post Types
 		 */
-		wpdispensary_flowers();
-		wpdispensary_edibles();
-		wpdispensary_concentrates();
-		wpdispensary_prerolls();
-		wpdispensary_topicals();
-		wpdispensary_growers();
+		wp_dispensary_flowers();
+		wp_dispensary_edibles();
+		wp_dispensary_concentrates();
+		wp_dispensary_prerolls();
+		wp_dispensary_topicals();
+		wp_dispensary_growers();
 
 		/**
 		 * Taxonomies
 		 */
-		wpdispensary_aroma();
-		wpdispensary_flavor();
-		wpdispensary_effect();
-		wpdispensary_symptom();
-		wpdispensary_condition();
-		wpdispensary_ingredient();
-		wpdispensary_vendor();
-		wpdispensary_shelf_type();
-		wpdispensary_strain_type();
-		wpdispensary_allergens();
+		wp_dispensary_aroma();
+		wp_dispensary_flavor();
+		wp_dispensary_effect();
+		wp_dispensary_symptom();
+		wp_dispensary_condition();
+		wp_dispensary_ingredient();
+		wp_dispensary_vendor();
+		wp_dispensary_shelf_type();
+		wp_dispensary_strain_type();
+		wp_dispensary_allergens();
 
 		/**
 		 * Custom Categories

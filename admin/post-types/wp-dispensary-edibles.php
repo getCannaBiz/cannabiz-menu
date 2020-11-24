@@ -18,7 +18,7 @@
  *
  * @since    1.0.0
  */
-function wpdispensary_edibles() {
+function wp_dispensary_edibles() {
 
 	// Get permalink base for Edibles.
 	$wpd_edibles_slug = get_option( 'wpd_edibles_slug' );
@@ -91,4 +91,4 @@ function wpdispensary_edibles() {
 
 	register_post_type( 'edibles', $args );
 }
-add_action( 'init', 'wpdispensary_edibles', 0 );
+add_action( 'init', 'wp_dispensary_edibles', 0 );

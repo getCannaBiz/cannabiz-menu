@@ -18,7 +18,7 @@
  *
  * @since    1.7.0
  */
-function wpdispensary_growers() {
+function wp_dispensary_growers() {
 
 	// Get permalink base for Growers.
 	$wpd_growers_slug = get_option( 'wpd_growers_slug' );
@@ -91,4 +91,4 @@ function wpdispensary_growers() {
 
 	register_post_type( 'growers', $args );
 }
-add_action( 'init', 'wpdispensary_growers', 0 );
+add_action( 'init', 'wp_dispensary_growers', 0 );

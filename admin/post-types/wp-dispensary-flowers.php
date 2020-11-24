@@ -18,7 +18,7 @@
  *
  * @since    1.0.0
  */
-function wpdispensary_flowers() {
+function wp_dispensary_flowers() {
 
 	// Get permalink base for Flowers.
 	$wpd_flowers_slug = get_option( 'wpd_flowers_slug' );
@@ -91,4 +91,4 @@ function wpdispensary_flowers() {
 
 	register_post_type( 'flowers', $args );
 }
-add_action( 'init', 'wpdispensary_flowers', 0 );
+add_action( 'init', 'wp_dispensary_flowers', 0 );

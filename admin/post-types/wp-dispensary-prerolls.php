@@ -18,7 +18,7 @@
  *
  * @since    1.0.0
  */
-function wpdispensary_prerolls() {
+function wp_dispensary_prerolls() {
 
 	// Get permalink base for Pre-rolls.
 	$wpd_prerolls_slug = get_option( 'wpd_prerolls_slug' );
@@ -96,4 +96,4 @@ function wpdispensary_prerolls() {
 	register_post_type( 'prerolls', $args );
 
 }
-add_action( 'init', 'wpdispensary_prerolls', 0 );
+add_action( 'init', 'wp_dispensary_prerolls', 0 );

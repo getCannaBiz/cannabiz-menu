@@ -702,7 +702,7 @@ add_action( 'init', 'wpdispensary_growerscategory', 0 );
  *
  * @since    2.3.0
  */
-function wpdispensary_allergens() {
+function wp_dispensary_allergens() {
 
 	$labels = array(
 		'name'                       => _x( 'Allergens', 'general name', 'wp-dispensary' ),
@@ -740,4 +740,4 @@ function wpdispensary_allergens() {
 	) );
 
 }
-add_action( 'init', 'wpdispensary_allergens', 0 );
+add_action( 'init', 'wp_dispensary_allergens', 0 );

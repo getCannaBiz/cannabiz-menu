@@ -18,7 +18,7 @@
  *
  * @since    1.4.0
  */
-function wpdispensary_topicals() {
+function wp_dispensary_topicals() {
 
 	// Get permalink base for Topicals.
 	$wpd_topicals_slug = get_option( 'wpd_topicals_slug' );
@@ -92,4 +92,4 @@ function wpdispensary_topicals() {
 	register_post_type( 'topicals', $args );
 
 }
-add_action( 'init', 'wpdispensary_topicals', 0 );
+add_action( 'init', 'wp_dispensary_topicals', 0 );

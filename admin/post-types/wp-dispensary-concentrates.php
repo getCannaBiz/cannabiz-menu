@@ -18,7 +18,7 @@
  *
  * @since    1.0.0
  */
-function wpdispensary_concentrates() {
+function wp_dispensary_concentrates() {
 
 	// Get permalink base for Concentrates.
 	$wpd_concentrates_slug = get_option( 'wpd_concentrates_slug' );
@@ -91,4 +91,4 @@ function wpdispensary_concentrates() {
 
 	register_post_type( 'concentrates', $args );
 }
-add_action( 'init', 'wpdispensary_concentrates', 0 );
+add_action( 'init', 'wp_dispensary_concentrates', 0 );
