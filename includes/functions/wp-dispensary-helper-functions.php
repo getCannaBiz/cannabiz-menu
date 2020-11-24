@@ -465,3 +465,38 @@ if ( ! function_exists( 'convert_metadata' ) ) {
     }
 
 }
+
+if ( ! function_exists( 'convert_post_types' ) ) {
+    /**
+     * Convert Post Types
+     *
+     * @since  4.0
+     * @return void
+     */
+    function convert_post_types() {
+        // Loop through each menu type.
+        foreach( wpd_menu_types_simple( true ) as $product_type ) {
+            // Get products.
+            $products = get_posts( array(
+                'post_type'      => $product_type,
+                'posts_per_page' => -1,
+                'post_status'    => array( 'publish', 'pending', 'draft', 'future', 'private' ),
+            ) );
+            // Loop through products.
+            foreach( $products as $product ) {
+                // Get product data.
+                $product = get_post( $product->ID );
+                // Get featured image ID.
+                $featured_image = get_post_thumbnail_id( $product->ID );
+                // Add product type metadata.
+                add_post_meta( $product->ID, 'product_type', $product_type );
+                // Update post type.
+                $product->post_type = 'products';
+                // Update the product.
+                wp_update_post( $product );
+                // Update featured image.
+                update_post_meta( $product->ID, '_thumbnail_id', $featured_image );
+            }
+        }
+    }
+}

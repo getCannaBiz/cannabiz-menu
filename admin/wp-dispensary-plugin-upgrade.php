@@ -37,5 +37,7 @@ function wpd_convert_product_data() {
 	convert_metadata( 'growers' );
 	convert_metadata( 'gear' );
 	convert_metadata( 'tinctures' );
+
+	// Update post types.
+	convert_post_types();
 }
-//add_action( 'init', 'wpd_convert_product_data', 12 );
