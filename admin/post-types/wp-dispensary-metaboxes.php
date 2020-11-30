@@ -21,7 +21,7 @@ function wp_dispensary_add_product_type_meta() {
 		'wp_dispensary_product_types',
 		esc_html__( 'Product type', 'wp-dispensary' ),
 		'wp_dispensary_product_types',
-		$screen,
+		'products',
 		'normal',
 		'high'
 	);
