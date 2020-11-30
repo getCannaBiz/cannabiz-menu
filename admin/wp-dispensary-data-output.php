@@ -41,11 +41,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 		$original = '';
 
-		if ( in_array( get_post_type(), apply_filters( 'wpd_original_array', wpd_menu_types_simple( true ) ) ) ) {
+		if ( in_array( $post_type, apply_filters( 'wpd_original_array', wpd_menu_types_simple( true ) ) ) ) {
 			$original = $content;
 		}
 
-		if ( in_array( get_post_type(), apply_filters( 'wpd_content_array', wpd_menu_types_simple( true ) ) ) ) {
+		if ( in_array( $post_type, apply_filters( 'wpd_content_array', wpd_menu_types_simple( true ) ) ) ) {
 			$content = '';
 		}
 
@@ -264,7 +264,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 *
 		 * @since      1.9.5
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_before_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_before_array', wpd_menu_types_simple( true ) ) ) ) {
 			ob_start();
 			do_action( 'wpd_dataoutput_before' );
 			$wpd_data_before = ob_get_clean();
@@ -275,13 +275,13 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 *
 		 * @since      1.9.5
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_top_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_top_array', wpd_menu_types_simple( true ) ) ) ) {
 			ob_start();
 			do_action( 'wpd_dataoutput_top' );
 			$wpd_data_top = ob_get_clean();
 		}
 
-		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_title_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_title_array', wpd_menu_types_simple( true ) ) ) ) {
 			$details_table_top = $wpd_data_before . '<table class="wpdispensary-table single details"><thead><tr><td class="wpdispensary-title" colspan="7">' . get_wpd_details_phrase() . '</td></tr></thead><tbody class="wpdispensary-details">' . $wpd_data_top;
 		} else {
 			$details_table_top = '';
@@ -373,13 +373,13 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 *
 		 * @since      1.8.0
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_bottom_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_bottom_array', wpd_menu_types_simple( true ) ) ) ) {
 			ob_start();
 			do_action( 'wpd_dataoutput_bottom' );
 			$wpd_data_bottom = ob_get_clean();
 		}
 
-		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_end_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_dataoutput_end_array', wpd_menu_types_simple( true ) ) ) ) {
 			$details_table_bottom = $wpd_data_bottom . '</tbody></table>';
 		} else {
 			$details_table_bottom = '';
@@ -447,7 +447,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 *
 		 * @since      1.9.5
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', wpd_menu_types_simple( true ) ) ) ) {
 			ob_start();
 			do_action( 'wpd_pricingoutput_before' );
 			$wpd_pricing_before = ob_get_clean();
@@ -458,7 +458,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 *
 		 * @since      1.9.5
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_top_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_top_array', wpd_menu_types_simple( true ) ) ) ) {
 			ob_start();
 			do_action( 'wpd_pricingoutput_top' );
 			$wpd_pricing_top = ob_get_clean();
@@ -467,7 +467,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Starting to build the Pricing table
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_before_array', wpd_menu_types_simple( true ) ) ) ) {
 			$pricing_table_top = $wpd_pricing_before . '<table class="wpdispensary-table single pricing"><thead><tr><td class="wpdispensary-title" colspan="7">' . esc_html( get_wpd_pricing_phrase( $singular = false ) ) . '</td></tr></thead><tbody class="wpdispensary-prices">' . $wpd_pricing_top;
 		} else {
 			$pricing_table_top = '';
@@ -508,7 +508,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 *
 		 * @since      1.8.0
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', wpd_menu_types_simple( true ) ) ) ) {
 			ob_start();
 			do_action( 'wpd_pricingoutput_bottom' );
 			$wpd_pricing_bottom = ob_get_clean();
@@ -519,13 +519,13 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 *
 		 * @since      1.9.5
 		 */
-		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_after_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_after_array', wpd_menu_types_simple( true ) ) ) ) {
 			ob_start();
 			do_action( 'wpd_pricingoutput_after' );
 			$wpd_pricing_after = ob_get_clean();
 		}
 
-		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', $menu_types_simple ) ) ) {
+		if ( in_array( get_post_type(), apply_filters( 'wpd_pricingoutput_bottom_array', wpd_menu_types_simple( true ) ) ) ) {
 			$pricing_table_bottom = $wpd_pricing_bottom . '</tbody></table>' . $wpd_pricing_after;
 		} else {
 			$pricing_table_bottom = '';
@@ -550,7 +550,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Conditional statement to output menu
 		 * item pricing above or below the_content
 		 */
-		if ( is_singular( apply_filters( 'wpd_pricing_table_placement_array', $menu_types_simple ) ) ) {
+		if ( is_singular( apply_filters( 'wpd_pricing_table_placement_array', wpd_menu_types_simple( true ) ) ) ) {
 
 			// Pricing Placement.
 			if ( isset( $wpd_settings['wpd_pricing_table_placement'] ) && 'above' !== $wpd_settings['wpd_pricing_table_placement'] ) {
