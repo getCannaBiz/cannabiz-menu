@@ -44,7 +44,7 @@ function wp_dispensary_product_types() {
 	echo '<div class="wpd-product-type-meta">';
 	echo '<select name="product_type" id="product_type">';
 	echo '<option value="">--</option>';
-	foreach ( wpd_menu_types_simple() as $product_type_name ) {
+	foreach ( wpd_menu_types_simple( true ) as $product_type_name ) {
 		// Check if current loop item is the same as the saved product_type.
 		if ( $product_type_name == $product_type ) {
 			$selected = 'selected';
