@@ -1519,22 +1519,77 @@ class WP_Dispensary_Widget extends WP_Widget {
 				$rand_order = 'rand';
 			}
 
-            // Get the post type selected by user.
-			$type = $instance['type'];
+            // Get the product type selected by user.
+			$product_type = $instance['type'];
 
-			// Post type(s).
-			$post_type = $type;
+			// Set the product type selected by user.
+			if ( 'all' == $product_type ) {
+				$product_types = array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers', 'gear', 'tinctures' );
 
-			// Set the post type selected by user.
-			if ( 'all' == $type ) {
-				$post_type = apply_filters( 'wpd_widgets_post_types', wpd_menu_types_simple( TRUE ) );
+				/**
+				 * @todo update this to work in replace of the $meta_query relation below
+				 */
+				$type_array = array();
+				foreach ( $product_types as $type ) {
+					$type_array[] = array(
+						'key'   => 'product_type',
+						'value' => $type
+					);
+				}
+
+				$meta_query = array(
+					array(
+						'relation' => 'OR',
+						array(
+							'key'   => 'product_type',
+							'value' => 'flowers'
+						),
+						array(
+							'key'   => 'product_type',
+							'value' => 'concentrates'
+						),
+						array(
+							'key'   => 'product_type',
+							'value' => 'edibles'
+						),
+						array(
+							'key'   => 'product_type',
+							'value' => 'prerolls'
+						),
+						array(
+							'key'   => 'product_type',
+							'value' => 'topicals'
+						),
+						array(
+							'key'   => 'product_type',
+							'value' => 'growers'
+						),
+						array(
+							'key'   => 'product_type',
+							'value' => 'tinctures'
+						),
+						array(
+							'key'   => 'product_type',
+							'value' => 'gear'
+						),
+					)
+				);
+			} else {
+				$meta_query = array(
+					array(
+						'key'     => 'product_type',
+						'value'   => $product_type,
+						'compare' => '=',
+					)
+				);
 			}
-
+	
 			$wp_dispensary_widget = new WP_Query(
 				array(
-					'post_type' => $post_type,
-					'showposts' => $instance['limit'],
-					'orderby'   => $rand_order,
+					'post_type'  => 'products',
+					'showposts'  => $instance['limit'],
+					'orderby'    => $rand_order,
+					'meta_query' => $meta_query
 				)
 			);
 
