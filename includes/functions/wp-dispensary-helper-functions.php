@@ -74,6 +74,9 @@ if ( ! function_exists( 'convert_metadata' ) ) {
             // Loop through all posts.
             foreach( $products as $post ) : setup_postdata( $post );
 
+                // Set the Product Type metadata.
+                add_post_meta( $post->ID, 'product_type', $post_type );
+
                 // Update Flowers metadata.
                 if ( 'flowers' == $post_type ) {
                     // Prices metadata.
