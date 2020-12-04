@@ -312,7 +312,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		// Growers info.
-		if ( in_array( get_post_type(), array( 'growers' ) ) ) {
+		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'growers' ) ) ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_growers_prices_simple( get_the_ID(), NULL ) . '</span>';
 			} else {
@@ -321,7 +321,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		// Topicals info.
-		if ( in_array( get_post_type(), array( 'topicals' ) ) ) {
+		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'topicals' ) ) ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_topicals_prices_simple( get_the_ID(), NULL) . '</span>';
 			} else {
@@ -330,7 +330,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		// Pre-rolls.
-		if ( in_array( get_post_type(), array( 'prerolls' ) ) ) {
+		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'prerolls' ) ) ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_prerolls_prices_simple( get_the_ID(), NULL ) . '</span>';
 			} else {
@@ -339,7 +339,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		// Edibles.
-		if ( in_array( get_post_type(), array( 'edibles' ) ) ) {
+		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'edibles' ) ) ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_edibles_prices_simple( get_the_ID(), NULL ) . '</span>';
 			} else {
@@ -348,7 +348,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		// Concentrates.
-		if ( in_array( get_post_type(), array( 'concentrates' ) ) ) {
+		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'concentrates' ) ) ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_concentrates_prices_simple( get_the_ID(), NULL ) . '</span>';
 			} else {
@@ -357,7 +357,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		}
 
 		// Flowers.
-		if ( in_array( get_post_type(), array( 'flowers' ) ) ) {
+		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'flowers' ) ) ) {
 			if ( 'show' === $info ) {
 				$showinfo = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_flowers_prices_simple( get_the_ID(), NULL ) . '</span>';
 			} else {
@@ -558,17 +558,16 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	$array_type = explode( ', ', $type );
 
 	// Turn shortcode category="" input into an array.
-	$category = explode( ', ', $category );
+	$new_category = explode( ', ', $category );
 
 	// If category="" isn't empty, add to $cat_tax_query.
 	if ( ! empty( $category ) ) {
-		// Add category tax.
+		// Add product categories to $cat_tax_query.
 		$cat_tax_query[] = array(
-			'taxonomy' => 'wpd_categories',
+			'taxonomy' => 'wpd_gear_category',
 			'field'    => 'name',
-			'terms'    => $category,
+			'terms'    => $new_category,
 		);
-
 	}
 
 	// Create new tax query.
@@ -583,14 +582,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Loop through menu types.
 	foreach ( $menu_types as $key=>$value ) {
 
-		$meta_query = array(
-			array(
-				'key'     => 'product_type',
-				'value'   => $value,
-				'compare' => '=',
-			)
-		);
-	
 		if ( empty( $meta_key ) ) {
 			$meta_query = array(
 				array(
@@ -599,8 +590,14 @@ function wp_dispensary_menu_shortcode( $atts ) {
 					'compare' => '=',
 				)
 			);
+		} else {
+			$meta_query = array(
+				array(
+					'key' => $meta_key,
+				)
+			);
 		}
-	
+
 		// Create WP_Query args.
 		$args = apply_filters( 'wpd_menu_shortcode_args', array(
 			'post_type'      => 'products',
@@ -608,7 +605,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			'tax_query'      => $new_tax_query,
 			'orderby'        => $orderby,
 			'order'          => $order,
-			'meta_query'     => $meta_query
+			'meta_query'     => $meta_query,
 		) );
 
 		// Create new WP_Query.
@@ -620,7 +617,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 		$post_type_slug = $post_type_data->rewrite['slug'];
 
 		// Menu type name.
-		$menu_type_name = $post_type_name;
+		$menu_type_name = wpd_product_type_display_name( $value );
 
 		// Image size.
 		if ( '' === $image_size ) {

@@ -29,6 +29,18 @@ function wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
     echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase ) );
 }
 
+/**
+ * Tinctures Prices - Simple
+ *
+ * @see get_wpd_tinctures_prices_simple()
+ * @since 2.4
+ * @return string
+ */
+function wpd_tinctures_prices_simple( $product_id = NULL, $phrase = NULL ) {
+    // Filters the displayed tinctures prices.
+    echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
+}
+
 
 /**
  * Edibles Prices - Simple
@@ -77,6 +89,17 @@ function wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
     echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase ) );
 }
 
+/**
+ * Gear Prices - Simple
+ * 
+ * @see get_wpd_gear_prices_simple()
+ * @since 1.6
+ * @return string
+ */
+function wpd_gear_prices_simple( $gear_id = NULL, $phrase = NULL ) {
+    // Filters the displayed flowers prices.
+    echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $gear_id, $phrase ) );
+}
 
 /**
  * All Prices - Simple
@@ -408,6 +431,58 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 
 }
 
+/**
+ * Tinctures Prices - Get Simple
+ * 
+ * @since 4.0
+ */
+function get_wpd_tinctures_prices_simple( $product_id, $phrase = NULL ) {
+
+    global $post;
+
+	// Get currency code.
+	$currency_code = wpd_currency_code();
+
+	// Get prices.
+	$price_each     = get_post_meta( $product_id, 'price_each', true );
+	$price_per_pack = get_post_meta( $product_id, 'price_per_pack', true );
+	$pricingsep     = '-';
+
+	// Check if phrase is set in function.
+	if ( TRUE == $phrase ) {
+		$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
+	} else {
+		$pricing_phrase = '';
+	}
+
+	/**
+	 * Price output - if only one price has been added
+	 */
+	if ( '' != $price_each && '' != $price_per_pack ) {
+
+		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
+		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+
+	} elseif ( '' === $price_each && '' != $price_per_pack ) {
+
+		$pricing = $currency_code . $price_per_pack;
+		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+
+	} elseif ( '' != $price_each && '' === $price_per_pack ) {
+
+		$pricing = $currency_code . $price_each;
+		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+
+	} else {
+		$phrase_final = '';
+	}
+
+	/**
+	 * Return Pricing Prices.
+	 */
+	return $phrase_final;
+
+}
 
 /**
  * Edibles Prices - Get Simple
@@ -626,6 +701,55 @@ function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	 */
 	return $phrase_final;
 
+}
+
+/**
+ * Gear Prices - Get Simple
+ * 
+ * @since 4.0
+ */
+function get_wpd_gear_prices_simple( $product_id, $phrase = NULL ) {
+	// Get currency code.
+	$currency_code = wpd_currency_code();
+
+	// Get prices.
+	$price_each     = get_post_meta( $product_id, 'price_each', TRUE );
+	$price_per_pack = get_post_meta( $product_id, 'price_per_pack', TRUE );
+	$pricingsep     = '-';
+
+	// Check if phrase is set in function.
+	if ( TRUE == $phrase ) {
+		$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
+	} else {
+		$pricing_phrase = '';
+	}
+
+	/**
+	 * Price output - if only one price has been added
+	 */
+	if ( '' != $price_each && '' != $price_per_pack ) {
+
+		$pricing      = $currency_code . $price_each . $pricingsep . $price_per_pack;
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+	} elseif ( '' === $price_each && '' != $price_per_pack ) {
+
+		$pricing      = $currency_code . $price_per_pack;
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+	} elseif ( '' != $price_each && '' === $price_per_pack ) {
+
+		$pricing      = $currency_code . $price_each;
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+	} else {
+		$phrase_final = '';
+	}
+
+	/**
+	 * Return Pricing Prices.
+	 */
+	return $phrase_final;
 }
 
 /**
