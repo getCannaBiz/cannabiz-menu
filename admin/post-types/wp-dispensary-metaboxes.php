@@ -147,38 +147,38 @@ function wpdispensary_prices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$gram      = get_post_meta( $post->ID, '_gram', true );
-	$twograms  = get_post_meta( $post->ID, '_twograms', true );
-	$eighth    = get_post_meta( $post->ID, '_eighth', true );
-	$fivegrams = get_post_meta( $post->ID, '_fivegrams', true );
-	$quarter   = get_post_meta( $post->ID, '_quarter', true );
-	$halfounce = get_post_meta( $post->ID, '_halfounce', true );
-	$ounce     = get_post_meta( $post->ID, '_ounce', true );
+	$gram      = get_post_meta( $post->ID, 'price_gram', true );
+	$twograms  = get_post_meta( $post->ID, 'price_half_gram', true );
+	$eighth    = get_post_meta( $post->ID, 'price_eighth', true );
+	$fivegrams = get_post_meta( $post->ID, 'price_five_grams', true );
+	$quarter   = get_post_meta( $post->ID, 'price_quarter_ounce', true );
+	$halfounce = get_post_meta( $post->ID, 'price_half_ounce', true );
+	$ounce     = get_post_meta( $post->ID, 'price_ounce', true );
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '1 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
+	echo '<input type="text" name="price_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '2 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_twograms" value="' . esc_html( $twograms ) . '" class="widefat" />';
+	echo '<input type="text" name="price_two_grams" value="' . esc_html( $twograms ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '1/8 oz', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_eighth" value="' . esc_html( $eighth ) . '" class="widefat" />';
+	echo '<input type="text" name="price_eighth" value="' . esc_html( $eighth ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '5 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_fivegrams" value="' . esc_html( $fivegrams ) . '" class="widefat" />';
+	echo '<input type="text" name="price_five_grams" value="' . esc_html( $fivegrams ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '1/4 oz', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_quarter" value="' . esc_html( $quarter ) . '" class="widefat" />';
+	echo '<input type="text" name="price_quarter_ounce" value="' . esc_html( $quarter ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '1/2 oz', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_halfounce" value="' . esc_html( $halfounce ) . '" class="widefat" />';
+	echo '<input type="text" name="price_half_ounce" value="' . esc_html( $halfounce ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '1 oz', 'wp-dispensary' ) . '</p>';
@@ -213,13 +213,13 @@ function wpdispensary_save_prices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_gram']      = esc_html( $_POST['_gram'] );
-	$prices_meta['_twograms']  = esc_html( $_POST['_twograms'] );
-	$prices_meta['_eighth']    = esc_html( $_POST['_eighth'] );
-	$prices_meta['_fivegrams'] = esc_html( $_POST['_fivegrams'] );
-	$prices_meta['_quarter']   = esc_html( $_POST['_quarter'] );
-	$prices_meta['_halfounce'] = esc_html( $_POST['_halfounce'] );
-	$prices_meta['_ounce']     = esc_html( $_POST['_ounce'] );
+	$prices_meta['price_gram']          = esc_html( $_POST['price_gram'] );
+	$prices_meta['price_half_gram']     = esc_html( $_POST['price_half_gram'] );
+	$prices_meta['price_eighth']        = esc_html( $_POST['price_eighth'] );
+	$prices_meta['price_five_grams']    = esc_html( $_POST['price_five_grams'] );
+	$prices_meta['price_quarter_ounce'] = esc_html( $_POST['price_quarter_ounce'] );
+	$prices_meta['price_half_ounce']    = esc_html( $_POST['price_half_ounce'] );
+	$prices_meta['price_ounce']         = esc_html( $_POST['price_ounce'] );
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -282,27 +282,27 @@ function wpdispensary_concentrateprices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$priceeach = get_post_meta( $post->ID, '_priceeach', true );
-	$halfgram  = get_post_meta( $post->ID, '_halfgram', true );
-	$gram      = get_post_meta( $post->ID, '_gram', true );
-	$twograms  = get_post_meta( $post->ID, '_twograms', true );
+	$priceeach = get_post_meta( $post->ID, 'price_each', true );
+	$halfgram  = get_post_meta( $post->ID, 'price_half_gram', true );
+	$gram      = get_post_meta( $post->ID, 'price_gram', true );
+	$twograms  = get_post_meta( $post->ID, 'price_two_grams', true );
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>' . __( 'Price each', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_priceeach" value="' . esc_html( $priceeach ) . '" class="widefat" />';
+	echo '<input type="text" name="price_each" value="' . esc_html( $priceeach ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '1/2 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_halfgram" value="' . esc_html( $halfgram ) . '" class="widefat" />';
+	echo '<input type="text" name="price_half_gram" value="' . esc_html( $halfgram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '1 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
+	echo '<input type="text" name="price_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="pricebox">';
 	echo '<p>' . __( '2 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_twograms" value="' . esc_html( $twograms ) . '" class="widefat" />';
+	echo '<input type="text" name="price_two_grams" value="' . esc_html( $twograms ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -333,10 +333,10 @@ function wpdispensary_save_concentrateprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$concentrateprices_meta['_priceeach'] = esc_html( $_POST['_priceeach'] );
-	$concentrateprices_meta['_halfgram']  = esc_html( $_POST['_halfgram'] );
-	$concentrateprices_meta['_gram']      = esc_html( $_POST['_gram'] );
-	$concentrateprices_meta['_twograms']  = esc_html( $_POST['_twograms'] );
+	$concentrateprices_meta['price_each']      = esc_html( $_POST['price_each'] );
+	$concentrateprices_meta['price_half_gram'] = esc_html( $_POST['price_half_gram'] );
+	$concentrateprices_meta['price_gram']      = esc_html( $_POST['price_gram'] );
+	$concentrateprices_meta['price_two_grams'] = esc_html( $_POST['price_two_grams'] );
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -532,26 +532,26 @@ function wpdispensary_singleprices() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the prices data if its already been entered */
-	$priceeach    = get_post_meta( $post->ID, '_priceeach', true );
-	$priceperpack = get_post_meta( $post->ID, '_priceperpack', true );
-	$unitsperpack = get_post_meta( $post->ID, '_unitsperpack', true );
+	$priceeach    = get_post_meta( $post->ID, 'price_each', true );
+	$priceperpack = get_post_meta( $post->ID, 'price_per_pack', true );
+	$unitsperpack = get_post_meta( $post->ID, 'units_per_pack', true );
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>' . __( 'Price per unit', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_priceeach" value="' . esc_html( $priceeach ) . '" class="widefat" />';
+	echo '<input type="text" name="price_each" value="' . esc_html( $priceeach ) . '" class="widefat" />';
 	echo '</div>';
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>' . __( 'Price per pack', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_priceperpack" value="' . esc_html( $priceperpack ) . '" class="widefat" />';
+	echo '<input type="text" name="price_per_pack" value="' . esc_html( $priceperpack ) . '" class="widefat" />';
 	echo '</div>';
 
 	/** Echo out the fields */
 	echo '<div class="pricebox">';
 	echo '<p>' . __( 'Units per pack', 'wp-dispensary' ) . '</p>';
-	echo '<input type="number" name="_unitsperpack" value="' . esc_html( $unitsperpack ) . '" class="widefat" />';
+	echo '<input type="number" name="units_per_pack" value="' . esc_html( $unitsperpack ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -582,9 +582,9 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$prices_meta['_priceeach']    = esc_html( $_POST['_priceeach'] );
-	$prices_meta['_priceperpack'] = esc_html( $_POST['_priceperpack'] );
-	$prices_meta['_unitsperpack'] = esc_html( $_POST['_unitsperpack'] );
+	$prices_meta['price_each']     = esc_html( $_POST['price_each'] );
+	$prices_meta['price_per_pack'] = esc_html( $_POST['price_per_pack'] );
+	$prices_meta['units_per_pack'] = esc_html( $_POST['units_per_pack'] );
 
 	/** Add values of $prices_meta as custom fields */
 
@@ -605,118 +605,6 @@ function wpdispensary_save_singleprices_meta( $post_id, $post ) {
 
 }
 add_action( 'save_post', 'wpdispensary_save_singleprices_meta', 1, 2 ); /** Save the custom fields */
-
-
-/**
- * Prices metabox for the following menu types:
- * Topicals
- *
- * Adds a price metabox to all of the above custom post types
- *
- * @since    1.0.0
- */
-function wpdispensary_add_topicalprices_metaboxes() {
-
-	$screens = apply_filters( 'wpd_topicalprices_screens', array( 'products', 'topicals' ) );
-
-	foreach ( $screens as $screen ) {
-		add_meta_box(
-			'wpdispensary_topicalprices',
-			__( 'Product pricing', 'wp-dispensary' ),
-			'wpdispensary_topicalprices',
-			$screen,
-			'normal',
-			'default'
-		);
-	}
-
-}
-add_action( 'add_meta_boxes', 'wpdispensary_add_topicalprices_metaboxes' );
-
-/**
- * Single Prices
- */
-function wpdispensary_topicalprices() {
-	global $post;
-
-	/** Noncename needed to verify where the data originated */
-	echo '<input type="hidden" name="topicalpricesmeta_noncename" id="topicalpricesmeta_noncename" value="' .
-	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
-
-	/** Get the prices data if its already been entered */
-	$priceeach    = get_post_meta( $post->ID, '_pricetopical', true );
-	$priceperpack = get_post_meta( $post->ID, '_priceperpack', true );
-	$unitsperpack = get_post_meta( $post->ID, '_unitsperpack', true );
-
-	/** Echo out the fields */
-	echo '<div class="pricebox">';
-	echo '<p>' . __( 'Price per unit', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_pricetopical" value="' . esc_html( $priceeach ) . '" class="widefat" />';
-	echo '</div>';
-
-	/** Echo out the fields */
-	echo '<div class="pricebox">';
-	echo '<p>' . __( 'Price per pack', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_priceperpack" value="' . esc_html( $priceperpack ) . '" class="widefat" />';
-	echo '</div>';
-
-	/** Echo out the fields */
-	echo '<div class="pricebox">';
-	echo '<p>' . __( 'Units per pack', 'wp-dispensary' ) . '</p>';
-	echo '<input type="number" name="_unitsperpack" value="' . esc_html( $unitsperpack ) . '" class="widefat" />';
-	echo '</div>';
-
-}
-
-/**
- * Save the Metabox Data
- */
-function wpdispensary_save_topicalprices_meta( $post_id, $post ) {
-
-	/**
-	 * Verify this came from the our screen and with proper authorization,
-	 * because save_post can be triggered at other times
-	 */
-	if (
-		! isset( $_POST['topicalpricesmeta_noncename'] ) ||
-		! wp_verify_nonce( $_POST['topicalpricesmeta_noncename'], plugin_basename( __FILE__ ) )
-	) {
-		return $post->ID;
-	}
-
-	/** Is the user allowed to edit the post or page? */
-	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
-		return $post->ID;
-	}
-
-	/**
-	 * OK, we're authenticated: we need to find and save the data
-	 * We'll put it into an array to make it easier to loop though.
-	 */
-
-	$prices_meta['_pricetopical'] = esc_html( $_POST['_pricetopical'] );
-	$prices_meta['_priceperpack'] = esc_html( $_POST['_priceperpack'] );
-	$prices_meta['_unitsperpack'] = esc_html( $_POST['_unitsperpack'] );
-
-	/** Add values of $prices_meta as custom fields */
-
-	foreach ( $prices_meta as $key => $value ) { /** Cycle through the $prices_meta array! */
-		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
-			return;
-		}
-		$value = implode( ',', (array) $value ); /** If $value is an array, make it a CSV (unlikely) */
-		if ( get_post_meta( $post->ID, $key, false ) ) { /** If the custom field already has a value */
-			update_post_meta( $post->ID, $key, $value );
-		} else { /** If the custom field doesn't have a value */
-			add_post_meta( $post->ID, $key, $value );
-		}
-		if ( ! $value ) { /** Delete if blank */
-			delete_post_meta( $post->ID, $key );
-		}
-	}
-
-}
-add_action( 'save_post', 'wpdispensary_save_topicalprices_meta', 1, 2 ); /** Save the custom fields */
 
 
 /**

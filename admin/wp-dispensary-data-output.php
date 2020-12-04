@@ -41,11 +41,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 		$original = '';
 
-		if ( in_array( $post_type, apply_filters( 'wpd_original_array', wpd_menu_types_simple( true ) ) ) ) {
+		if ( in_array( $post_type, apply_filters( 'wpd_original_array', array( 'products' ) ) ) ) {
 			$original = $content;
 		}
 
-		if ( in_array( $post_type, apply_filters( 'wpd_content_array', wpd_menu_types_simple( true ) ) ) ) {
+		if ( in_array( $post_type, apply_filters( 'wpd_content_array', array( 'products' ) ) ) ) {
 			$content = '';
 		}
 
@@ -399,26 +399,26 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		/**
 		 * Setting up WP Dispensary menu pricing data
 		 */
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$price_each = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+		if ( get_post_meta( get_the_ID(), 'price_each', true ) ) {
+			$price_each = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
 		} else {
 			$price_each = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_priceperpack', true ) ) {
-			$price_per_pack = '<tr class="priceeach"><td><span>' . get_post_meta( get_the_ID(), '_unitsperpack', true ) . ' ' . __( 'per pack:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_ID(), '_priceperpack', true ) . '</td></tr>';
+		if ( get_post_meta( get_the_ID(), 'price_per_pack', true ) ) {
+			$price_per_pack = '<tr class="priceeach"><td><span>' . get_post_meta( get_the_ID(), '_unitsperpack', true ) . ' ' . __( 'per pack:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_ID(), 'price_per_pack', true ) . '</td></tr>';
 		} else {
 			$price_per_pack = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_priceeach', true ) ) {
-			$price_per_unit = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), '_priceeach', true ) . '</td></tr>';
+		if ( get_post_meta( get_the_ID(), 'price_each', true ) ) {
+			$price_per_unit = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
 		} else {
 			$price_per_unit = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_pricetopical', true ) ) {
-			$price_topical = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price per unit:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), '_pricetopical', true ) . '</td></tr>';
+		if ( get_post_meta( get_the_ID(), 'price_each', true ) ) {
+			$price_topical = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price per unit:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_topical', true ) . '</td></tr>';
 		} else {
 			$price_topical = '';
 		}

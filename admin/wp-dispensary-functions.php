@@ -666,13 +666,13 @@ add_filter( 'post_updated_messages', 'wpd_product_updated_messages' );
  */
 function wpd_flowers_weights_array() {
 	$flowers_weights = array(
-		'1 g'    => '_gram',
-		'2 g'    => '_twograms',
-		'1/8 oz' => '_eighth',
-		'5 g'    => '_fivegrams',
-		'1/4 oz' => '_quarter',
-		'1/2 oz' => '_halfounce',
-		'1 oz'   => '_ounce',
+		'1 g'    => 'price_gram',
+		'2 g'    => 'price_two_grams',
+		'1/8 oz' => 'price_eighth',
+		'5 g'    => 'price_five_grams',
+		'1/4 oz' => 'price_quarter_',
+		'1/2 oz' => 'price_half_ounce',
+		'1 oz'   => 'price_ounce',
 	);
 	return apply_filters( 'wpd_flowers_weights_array', $flowers_weights );
 }
@@ -685,9 +685,9 @@ function wpd_flowers_weights_array() {
  */
 function wpd_concentrates_weights_array() {
 	$concentrates_weights = array(
-		'1/2 g' => '_halfgram',
-		'1 g'   => '_gram',
-		'2 g'   => '_twograms',
+		'1/2 g' => 'price_half_gram',
+		'1 g'   => 'price_gram',
+		'2 g'   => 'price_two_grams',
 	);
 	return apply_filters( 'wpd_concentrates_weights_array', $concentrates_weights );
 }

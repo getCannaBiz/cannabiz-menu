@@ -16,7 +16,7 @@ if ( ! function_exists( 'is_product' ) ) {
 	 * @return bool
 	 */
 	function is_product() {
-		return is_singular( wpd_menu_types_simple( TRUE ) );
+		return is_singular( 'products' );
 	}
 }
 

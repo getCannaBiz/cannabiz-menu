@@ -151,7 +151,7 @@ class CSVExport {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_concentrates', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'concentrates_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'concentrates_category', array( 'fields' => 'ids' ) );
-                $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
+                $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
                         $cat_id[] = $value;
@@ -163,7 +163,7 @@ class CSVExport {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_edibles', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'edibles_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'edibles_category', array( 'fields' => 'ids' ) );
-                $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
+                $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
                         $cat_id[] = $value;
@@ -175,7 +175,7 @@ class CSVExport {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_prerolls', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'prerolls_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'flowers_category', array( 'fields' => 'ids' ) );
-                $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
+                $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
                         $cat_id[] = $value;
@@ -187,7 +187,7 @@ class CSVExport {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_topicals', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'topicals_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'topicals_category', array( 'fields' => 'ids' ) );
-                $price_each       = get_post_meta( $product['ID'], '_pricetopical', TRUE );
+                $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
                         $cat_id[] = $value;
@@ -197,7 +197,7 @@ class CSVExport {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_growers', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'growers_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'growers_category', array( 'fields' => 'ids' ) );
-                $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
+                $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
                         $cat_id[] = $value;
@@ -209,7 +209,7 @@ class CSVExport {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_gear', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'wpd_gear_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'wpd_gear_category', array( 'fields' => 'ids' ) );
-                $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
+                $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
                         $cat_id[] = $value;
@@ -221,7 +221,7 @@ class CSVExport {
                 $inventory_amount = get_post_meta( $product['ID'], '_inventory_tinctures', TRUE );
 //                $category_name    = get_the_terms( $product['ID'], 'tinctures_category' );
                 $category_name    = wp_get_post_terms( $product['ID'], 'tinctures_category', array( 'fields' => 'ids' ) );
-                $price_each       = get_post_meta( $product['ID'], '_priceeach', TRUE );
+                $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
                 if ( $category_name && ! is_wp_error( $category_name ) ) {
                     foreach ( $category_name as $cat=>$value ) {
                         $cat_id[] = $value;
@@ -240,17 +240,17 @@ class CSVExport {
                 $product['post_name'],
                 $product['post_date'],
                 $product['post_author'],
-                get_post_meta( $product['ID'], '_halfgram', TRUE ),
-                get_post_meta( $product['ID'], '_gram', TRUE ),
-                get_post_meta( $product['ID'], '_twograms', TRUE ),
-                get_post_meta( $product['ID'], '_eighth', TRUE ),
-                get_post_meta( $product['ID'], '_fivegrams', TRUE ),
-                get_post_meta( $product['ID'], '_quarter', TRUE ),
-                get_post_meta( $product['ID'], '_halfounce', TRUE ),
-                get_post_meta( $product['ID'], '_ounce', TRUE ),
+                get_post_meta( $product['ID'], 'price_half_gram', TRUE ),
+                get_post_meta( $product['ID'], 'price_gram', TRUE ),
+                get_post_meta( $product['ID'], 'price_two_grams', TRUE ),
+                get_post_meta( $product['ID'], 'price_eighth', TRUE ),
+                get_post_meta( $product['ID'], 'price_five_grams', TRUE ),
+                get_post_meta( $product['ID'], 'price_quarter_ounce', TRUE ),
+                get_post_meta( $product['ID'], 'price_half_ounce', TRUE ),
+                get_post_meta( $product['ID'], 'price_ounce', TRUE ),
                 $price_each,
-                get_post_meta( $product['ID'], '_priceperpack', TRUE ),
-                get_post_meta( $product['ID'], '_unitsperpack', TRUE ),
+                get_post_meta( $product['ID'], 'price_per_pack', TRUE ),
+                get_post_meta( $product['ID'], 'units_per_pack', TRUE ),
                 $inventory_amount,
                 str_putcsv( $cat_id ),
                 get_post_thumbnail_id( $product['ID'] ),
