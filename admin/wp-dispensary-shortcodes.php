@@ -398,7 +398,8 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			'type'        => $menu_types,
 			'image'       => 'show',
 			'image_size'  => 'wpd-small',
-			'viewall'     => ''
+			'viewall'     => '',
+			'carousel'    => ''
 		),
 		$atts,
 		'wpd_menu'
@@ -495,12 +496,14 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Turn shortcode category="" input into an array.
 	$new_category = explode( ', ', $category );
 
-	// Add product categories to $cat_tax_query.
-	$cat_tax_query[] = array(
-		'taxonomy' => 'wpd_categories',
-		'field'    => 'name',
-		'terms'    => $new_category,
-	);
+	if ( ! empty( $category ) ) {	
+		// Add product categories to $cat_tax_query.
+		$cat_tax_query[] = array(
+			'taxonomy' => 'wpd_categories',
+			'field'    => 'name',
+			'terms'    => $new_category,
+		);
+	}
 
 	// Create new tax query.
 	$new_tax_query = array_merge( $tax_query, $cat_tax_query );
@@ -581,8 +584,14 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			$show_title = '';
 		}
 
-		// Product wrap start.
-		$wpd_products .= '<div id="' . $id . '" class="wp-dispensary">' . $show_title . '<div class="wpd-menu">';
+		// Product start wrap.
+		if ( 'on' === $carousel ) {
+			// Prodfuct wrap start.
+			$wpd_products .= '<div id="' . $id . '" class="carouselwrap">' . $show_title . '<div class="wpd-carousel">';
+		} else {
+			// Product wrap start.
+			$wpd_products .= '<div id="' . $id . '" class="wp-dispensary">' . $show_title . '<div class="wpd-menu">';
+		}
 
 		// Product loop.
 		while ( $wpd_query->have_posts() ) :
@@ -633,8 +642,13 @@ function wp_dispensary_menu_shortcode( $atts ) {
 				$wpd_menu_top = ob_get_contents();
 			ob_end_clean();
 
-			// Shortcode item start.
-			$wpd_products .= '<div class="wpd-menu-item ' . $class . '">' . $wpd_menu_top . $wpd_inside_top . $wpd_image;
+			if ( 'on' === $carousel ) {
+				// Shortcode item start.
+				$wpd_products .= '<div class="carousel-item ' . $class . '">' . $wpd_menu_top . $wpd_inside_top . $wpd_image;
+			} else {
+				// Shortcode item start.
+				$wpd_products .= '<div class="wpd-menu-item ' . $class . '">' . $wpd_menu_top . $wpd_inside_top . $wpd_image;
+			}
 
 			// Shortcode inside bottom action hook.
 			ob_start();
