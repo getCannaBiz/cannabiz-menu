@@ -181,77 +181,12 @@ function wpdispensary_carousel_shortcode( $atts ) {
 	// If category="" isn't empty, add to $cat_tax_query.
 	if ( ! empty( $category ) ) {
 
-		// Add flowers categories to $cat_tax_query.
-		if ( in_array( 'flowers', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'flowers_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
-		// Add concentrates categories to $cat_tax_query.
-		if ( in_array( 'concentrates', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'concentrates_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
-		// Add edibles categories to $cat_tax_query.
-		if ( in_array( 'edibles', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'edibles_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
-		// Add flowers categories to $cat_tax_query.
-		if ( in_array( 'prerolls', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'flowers_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
-		// Add topicals categories to $cat_tax_query.
-		if ( in_array( 'topicals', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'topicals_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
-		// Add growers categories to $cat_tax_query.
-		if ( in_array( 'growers', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'growers_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
-		// Add gear categories to $cat_tax_query.
-		if ( in_array( 'gear', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'gear_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
-
 		// Add tinctures categories to $cat_tax_query.
-		if ( in_array( 'tinctures', $array_type ) ) {
-			$cat_tax_query[] = array(
-				'taxonomy' => 'tinctures_category',
-				'field'    => 'name',
-				'terms'    => $new_category,
-			);
-		}
+		$cat_tax_query[] = array(
+			'taxonomy' => 'wpd_categories',
+			'field'    => 'name',
+			'terms'    => $new_category,
+		);
 
 	}
 
@@ -560,15 +495,12 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Turn shortcode category="" input into an array.
 	$new_category = explode( ', ', $category );
 
-	// If category="" isn't empty, add to $cat_tax_query.
-	if ( ! empty( $category ) ) {
-		// Add product categories to $cat_tax_query.
-		$cat_tax_query[] = array(
-			'taxonomy' => 'wpd_gear_category',
-			'field'    => 'name',
-			'terms'    => $new_category,
-		);
-	}
+	// Add product categories to $cat_tax_query.
+	$cat_tax_query[] = array(
+		'taxonomy' => 'wpd_categories',
+		'field'    => 'name',
+		'terms'    => $new_category,
+	);
 
 	// Create new tax query.
 	$new_tax_query = array_merge( $tax_query, $cat_tax_query );

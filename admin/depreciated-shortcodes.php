@@ -936,22 +936,22 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$topicalpricing = apply_filters( 'wpd_shortcodes_product_price', $topicalpricing );
 
 		// Size.
-		if ( get_post_meta( get_the_ID(), '_sizetopical', true ) ) {
-			$topicalsize = '<span class="wpd-productinfo size"><strong>' . __( 'Size:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), '_sizetopical', true ) . 'oz</span>';
+		if ( get_post_meta( get_the_ID(), 'product_size', true ) ) {
+			$topicalsize = '<span class="wpd-productinfo size"><strong>' . __( 'Size:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), 'product_size ', true ) . 'oz</span>';
 		} else {
 			$topicalsize = '';
 		}
 
 		// THC.
-		if ( get_post_meta( get_the_ID(), '_thctopical', true ) ) {
-			$topicalthc = '<span class="wpd-productinfo thc"><strong>' . __( 'THC:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), '_thctopical', true ) . 'mg</span>';
+		if ( get_post_meta( get_the_ID(), 'compounds_thc', true ) ) {
+			$topicalthc = '<span class="wpd-productinfo thc"><strong>' . __( 'THC:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), 'compounds_thc', true ) . 'mg</span>';
 		} else {
 			$topicalthc = '';
 		}
 
 		// CBD.
-		if ( get_post_meta( get_the_ID(), '_cbdtopical', true ) ) {
-			$topicalcbd = '<span class="wpd-productinfo cbd"><strong>' . __( 'CBD:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), '_cbdtopical', true ) . 'mg</span>';
+		if ( get_post_meta( get_the_ID(), 'compounds_cbd', true ) ) {
+			$topicalcbd = '<span class="wpd-productinfo cbd"><strong>' . __( 'CBD:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), 'compounds_cbd', true ) . 'mg</span>';
 		} else {
 			$topicalcbd = '';
 		}
