@@ -644,18 +644,18 @@ function wpdispensary_grower_product_details() {
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the clone count data if it has already been entered */
-	$clonecount = get_post_meta( $post->ID, '_clonecount', true );
+	$clonecount = get_post_meta( $post->ID, 'clone_count', true );
 
 	/** Get the seed count data if it has already been entered */
-	$seedcount = get_post_meta( $post->ID, '_seedcount', true );
+	$seedcount = get_post_meta( $post->ID, 'seed_count', true );
 
 	echo '<div class="growerbox">';
 	echo '<p>' . __( 'Seeds per unit', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_seedcount" value="' . esc_html( $seedcount ) . '" class="widefat" />';
+	echo '<input type="text" name="seed_count" value="' . esc_html( $seedcount ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="growerbox">';
 	echo '<p>' . __( 'Clones per unit', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_clonecount" value="' . esc_html( $clonecount ) . '" class="widefat" />';
+	echo '<input type="text" name="clone_count" value="' . esc_html( $clonecount ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -686,8 +686,8 @@ function wpdispensary_save_grower_product_details_meta( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	 $grower_product_details['_clonecount'] = esc_html( $_POST['_clonecount'] );
-	 $grower_product_details['_seedcount']  = esc_html( $_POST['_seedcount'] );
+	 $grower_product_details['clone_count'] = esc_html( $_POST['clone_count'] );
+	 $grower_product_details['seed_count']  = esc_html( $_POST['seed_count'] );
 
 	/** Add values of $clonecount as custom fields */
 

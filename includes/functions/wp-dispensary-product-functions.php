@@ -94,8 +94,8 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper ) {
 
 			// Seed count.
 			if ( 'show' === $value && 'seed_count' === $product ) {
-        if ( get_post_meta( $product_id, '_seedcount', true ) ) {
-            $str .= '<'  . $wrapper . ' class="wpd-productinfo seeds"><strong>' . esc_attr__( 'Seeds', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, '_seedcount', true ) . '</'  . $wrapper . '>';
+        if ( get_post_meta( $product_id, 'seed_count', true ) ) {
+            $str .= '<'  . $wrapper . ' class="wpd-productinfo seeds"><strong>' . esc_attr__( 'Seeds', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, 'seed_count', true ) . '</'  . $wrapper . '>';
 				} else {
 					// Do nothing.
 				}
@@ -105,8 +105,8 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper ) {
 
 			// Clone count.
 			if ( 'show' === $value && 'clone_count' === $product ) {
-        if ( get_post_meta( $product_id, '_clonecount', true ) ) {
-            $str .= '<'  . $wrapper . ' class="wpd-productinfo clones"><strong>' . esc_attr__( 'Clones', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, '_clonecount', true ) . '</'  . $wrapper . '>';
+        if ( get_post_meta( $product_id, 'clone_count', true ) ) {
+            $str .= '<'  . $wrapper . ' class="wpd-productinfo clones"><strong>' . esc_attr__( 'Clones', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, 'clone_count', true ) . '</'  . $wrapper . '>';
 				} else {
 					// Do nothing.
 				}

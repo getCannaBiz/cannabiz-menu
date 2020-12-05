@@ -618,7 +618,7 @@ function slug_update_topicalinfo( $value, $object, $field_name ) {
  * Register Grower info
  */
 function slug_register_growerinfo() {
-	$growerinformation = apply_filters( 'wpd_rest_api_register_growers_info', array( 'price_each', 'units_per_pack', 'price_per_pack', '_selected_flowers', '_seedcount', '_clonecount', '_time', '_origin', '_yield', '_difficulty' ) );
+	$growerinformation = apply_filters( 'wpd_rest_api_register_growers_info', array( 'price_each', 'units_per_pack', 'price_per_pack', '_selected_flowers', 'seed_count', 'clone_count', '_time', '_origin', '_yield', '_difficulty' ) );
 	foreach ( $growerinformation as $growerinfo ) {
 		register_rest_field(
 			'growers',

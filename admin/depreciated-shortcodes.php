@@ -1097,15 +1097,15 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$growerspricing = apply_filters( 'wpd_shortcodes_product_price', $growerspricing );
 
 		// Seed count.
-		if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
-			$wpdseedcount = '<span class="wpd-productinfo seeds"><strong>' . __( 'Seeds:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), '_seedcount', true ) . '</span>';
+		if ( get_post_meta( get_the_ID(), 'seed_count', true ) ) {
+			$wpdseedcount = '<span class="wpd-productinfo seeds"><strong>' . __( 'Seeds:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), 'seed_count', true ) . '</span>';
 		} else {
 			$wpdseedcount = '';
 		}
 
 		// Clone count.
-		if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
-			$wpdclonecount = '<span class="wpd-productinfo clones"><strong>' . __( 'Clones:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), '_clonecount', true ) . '</span>';
+		if ( get_post_meta( get_the_ID(), 'clone_count', true ) ) {
+			$wpdclonecount = '<span class="wpd-productinfo clones"><strong>' . __( 'Clones:', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_id(), 'clone_count', true ) . '</span>';
 		} else {
 			$wpdclonecount = '';
 		}

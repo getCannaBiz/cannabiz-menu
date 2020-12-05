@@ -203,14 +203,14 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpd_size_topical = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_seedcount', true ) ) {
-			$wpd_seed_count = '<tr><td><span>' . __( 'Seeds per unit', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), '_seedcount', true ) . '</td></tr>';
+		if ( get_post_meta( get_the_ID(), 'seed_count', true ) ) {
+			$wpd_seed_count = '<tr><td><span>' . __( 'Seeds per unit', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'seed_count', true ) . '</td></tr>';
 		} else {
 			$wpd_seed_count = '';
 		}
 
-		if ( get_post_meta( get_the_ID(), '_clonecount', true ) ) {
-			$wpd_clone_count = '<tr><td><span>' . __( 'Clones per unit', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), '_clonecount', true ) . '</td></tr>';
+		if ( get_post_meta( get_the_ID(), 'clone_count', true ) ) {
+			$wpd_clone_count = '<tr><td><span>' . __( 'Clones per unit', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'clone_count', true ) . '</td></tr>';
 		} else {
 			$wpd_clone_count = '';
 		}

@@ -350,6 +350,8 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     $product_yield      = get_post_meta( $post->ID, '_yield', true );
                     $product_time       = get_post_meta( $post->ID, '_time', true );
                     $product_difficulty = get_post_meta( $post->ID, '_difficulty', true );
+                    $clone_count        = get_post_meta( $post->ID, 'clone_count', true );
+                    $seed_count         = get_post_meta( $post->ID, 'seed_count', true );
 
                     // Update new meta.
                     update_post_meta( $post->ID, 'price_each', $price_each );
@@ -361,7 +363,8 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'product_yield', $product_yield );
                     update_post_meta( $post->ID, 'product_time', $product_time );
                     update_post_meta( $post->ID, 'product_difficulty', $product_difficulty );
-                    update_post_meta( $post->ID, 'inventory_clones', $inventory_clones );
+                    update_post_meta( $post->ID, 'clone_count', $clone_count );
+                    update_post_meta( $post->ID, 'seed_count', $seed_count );
                     update_post_meta( $post->ID, 'inventory_seeds', $inventory_seeds );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
@@ -378,6 +381,8 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     delete_post_meta( $post->ID, '_yield' );
                     delete_post_meta( $post->ID, '_time' );
                     delete_post_meta( $post->ID, '_difficulty' );
+                    delete_post_meta( $post->ID, 'clone_count' );
+                    delete_post_meta( $post->ID, 'seed_count' );
 
                 }
 
