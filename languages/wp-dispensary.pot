@@ -173,41 +173,41 @@ msgstr ""
 msgid "Growers Base"
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:143 admin/depreciated-shortcodes.php:391
-#: admin/depreciated-shortcodes.php:575 admin/depreciated-shortcodes.php:763
-#: admin/depreciated-shortcodes.php:919 admin/depreciated-shortcodes.php:1080
+#: admin/deprecated-shortcodes.php:143 admin/deprecated-shortcodes.php:391
+#: admin/deprecated-shortcodes.php:575 admin/deprecated-shortcodes.php:763
+#: admin/deprecated-shortcodes.php:919 admin/deprecated-shortcodes.php:1080
 msgid "(view all)"
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:591
+#: admin/deprecated-shortcodes.php:591
 msgid "Servings: "
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:602 admin/depreciated-shortcodes.php:613
+#: admin/deprecated-shortcodes.php:602 admin/deprecated-shortcodes.php:613
 msgid "THC: "
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:784
+#: admin/deprecated-shortcodes.php:784
 msgid "Weight:"
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:940
+#: admin/deprecated-shortcodes.php:940
 msgid "Size:"
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:947
+#: admin/deprecated-shortcodes.php:947
 msgid "THC:"
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:954
+#: admin/deprecated-shortcodes.php:954
 msgid "CBD:"
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:1101
+#: admin/deprecated-shortcodes.php:1101
 msgid "Seeds:"
 msgstr ""
 
-#: admin/depreciated-shortcodes.php:1108
+#: admin/deprecated-shortcodes.php:1108
 msgid "Clones:"
 msgstr ""
 

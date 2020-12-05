@@ -1,6 +1,6 @@
 <?php
 /**
- * Depreciated shortcodes that are still able to be used, but will no longer be
+ * deprecated shortcodes that are still able to be used, but will no longer be
  * updated with new features. Please use the [wpd_menu] shortcode.
  *
  * @link       https://www.wpdispensary.com
