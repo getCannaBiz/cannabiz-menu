@@ -338,7 +338,7 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 	$price_each      = get_post_meta( $product_id, 'price_each', true );
 	$price_half_gram = get_post_meta( $product_id, 'price_half_gram', true );
 	$price_one_gram  = get_post_meta( $product_id, 'price_gram', true );
-	$price_two_grams = get_post_meta( $product_id, 'price_twograms', true );
+	$price_two_grams = get_post_meta( $product_id, 'price_two_grams', true );
 
 	/**
 	 * Price output - if only one price has been added
@@ -390,7 +390,7 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 		$pricinghigh = $currency_code . $price_two_grams;
 	} elseif ( get_post_meta( $product_id, 'price_gram', true ) ) {
 		$pricinghigh = $currency_code . $price_one_gram;
-	} elseif ( get_post_meta( $product_id, 'price_halfgram', true ) ) {
+	} elseif ( get_post_meta( $product_id, 'price_half_gram', true ) ) {
 		$pricinghigh = $currency_code . $price_half_gram;
 	} else {
 		// Do nothing.
@@ -461,17 +461,17 @@ function get_wpd_tinctures_prices_simple( $product_id, $phrase = NULL ) {
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = "<span class='wpd-productinfo pricing'>" . $pricing_phrase . $pricing . "</span>";
+		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} else {
 		$phrase_final = '';
@@ -502,11 +502,13 @@ function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	$price_per_pack = get_post_meta( $product_id, 'price_per_pack', true );
 	$pricingsep     = '-';
 
+	// Set empty variables.
+	$pricing_phrase = '';
+	$phrase_final   = '';
+
 	// Check if phrase is set in function.
 	if ( TRUE == $phrase ) {
 		$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
-	} else {
-		$pricing_phrase = '';
 	}
 
 	/**
@@ -528,7 +530,7 @@ function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
 
 	} else {
-		$phrase_final = '';
+		// Do nothing.
 	}
 
 	/**
@@ -825,7 +827,7 @@ function wpd_flowers_prices_array( $product_id, $flower_prices = NULL ) {
  * @since 3.4
  * @return array
  */
-function wpd_concentrates_prices_array( $product_id, $flower_prices = NULL ) {
+function wpd_concentrates_prices_array( $product_id, $concentrates_prices = NULL ) {
 	$concentrates_prices = array(
 		'1/2 g' => esc_html( get_post_meta( $product_id, 'price_half_gram', true ) ),
 		'1 g'   => esc_html( get_post_meta( $product_id, 'price_gram', true ) ),

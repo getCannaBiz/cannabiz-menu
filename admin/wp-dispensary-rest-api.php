@@ -35,12 +35,6 @@ function wpd_rest_featured_image_url( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_products', 'wpd_rest_featured_image_url', 10, 3 );
-add_filter( 'rest_prepare_flowers', 'wpd_rest_featured_image_url', 10, 3 );
-add_filter( 'rest_prepare_concentrates', 'wpd_rest_featured_image_url', 10, 3 );
-add_filter( 'rest_prepare_edibles', 'wpd_rest_featured_image_url', 10, 3 );
-add_filter( 'rest_prepare_prerolls', 'wpd_rest_featured_image_url', 10, 3 );
-add_filter( 'rest_prepare_topicals', 'wpd_rest_featured_image_url', 10, 3 );
-add_filter( 'rest_prepare_growers', 'wpd_rest_featured_image_url', 10, 3 );
 
 /**
  * Adding featured image URL's to Flowers Custom Post Type
@@ -70,13 +64,6 @@ function wpd_rest_featured_images( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_products', 'wpd_rest_featured_images', 10, 3 );
-add_filter( 'rest_prepare_flowers', 'wpd_rest_featured_images', 10, 3 );
-add_filter( 'rest_prepare_concentrates', 'wpd_rest_featured_images', 10, 3 );
-add_filter( 'rest_prepare_edibles', 'wpd_rest_featured_images', 10, 3 );
-add_filter( 'rest_prepare_prerolls', 'wpd_rest_featured_images', 10, 3 );
-add_filter( 'rest_prepare_topicals', 'wpd_rest_featured_images', 10, 3 );
-add_filter( 'rest_prepare_growers', 'wpd_rest_featured_images', 10, 3 );
-
 
 /**
  * Add 'categories' endpoint for the Products Custom Post Type
@@ -120,14 +107,17 @@ add_filter( 'rest_prepare_products', 'wpd_product_prices_all', 10, 3 );
  * 
  * @since 4.0
  */
-function proucts_taxonomies( $data, $post, $request ) {
-	$_data               = $data->data;
-	$_data['aromas']     = get_the_term_list( $post->ID, 'aroma', '', ' ', '' );
-	$_data['flavors']    = get_the_term_list( $post->ID, 'flavor', '', ' ', '' );
-	$_data['effects']    = get_the_term_list( $post->ID, 'effect', '', ' ', '' );
-	$_data['symptoms']   = get_the_term_list( $post->ID, 'symptom', '', ' ', '' );
-	$_data['conditions'] = get_the_term_list( $post->ID, 'condition', '', ' ', '' );
-	$data->data          = $_data;
+function products_taxonomies( $data, $post, $request ) {
+	$_data                 = $data->data;
+	$_data['aromas']       = get_the_term_list( $post->ID, 'aroma', '', ' ', '' );
+	$_data['flavors']      = get_the_term_list( $post->ID, 'flavor', '', ' ', '' );
+	$_data['effects']      = get_the_term_list( $post->ID, 'effect', '', ' ', '' );
+	$_data['symptoms']     = get_the_term_list( $post->ID, 'symptom', '', ' ', '' );
+	$_data['conditions']   = get_the_term_list( $post->ID, 'condition', '', ' ', '' );
+	$_data['shelf_types']  = get_the_term_list( $post->ID, 'shelf_type', '', ' ', '' );
+	$_data['strain_types'] = get_the_term_list( $post->ID, 'strain_type', '', ' ', '' );
+	$_data['vendors']      = get_the_term_list( $post->ID, 'vendor', '', ' ', '' );
+	$data->data            = $_data;
 	return $data;
 }
 add_filter( 'rest_prepare_products', 'products_taxonomies', 10, 3 );
@@ -447,40 +437,3 @@ function slug_get_growerinfo( $object, $field_name, $request ) {
 function slug_update_growerinfo( $value, $object, $field_name ) {
 	return update_post_meta( $object->ID, $field_name, $value );
 }
-
-/**
- * Add Vendors taxonomy to Products
- */
-function wpd_vendor( $data, $post, $request ) {
-	$_data            = $data->data;
-	$_data['vendors'] = get_the_term_list( $post->ID, 'vendor', '', ' ', '' );
-	$data->data       = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_products', 'wpd_vendor', 10, 3 );
-
-/**
- * Add Shelf Type taxonomy to Products
- *
- * @since 3.1
- */
-function wpd_rest_shelf_type( $data, $post, $request ) {
-	$_data                = $data->data;
-	$_data['shelf_types'] = get_the_term_list( $post->ID, 'shelf_type', '', ' ', '' );
-	$data->data           = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_products', 'wpd_rest_shelf_type', 10, 3 );
-
-/**
- * Add Strain Type taxonomy to Products
- *
- * @since 3.1
- */
-function wpd_rest_strain_type( $data, $post, $request ) {
-	$_data                 = $data->data;
-	$_data['strain_types'] = get_the_term_list( $post->ID, 'strain_type', '', ' ', '' );
-	$data->data            = $_data;
-	return $data;
-}
-add_filter( 'rest_prepare_products', 'wpd_rest_strain_type', 10, 3 );
