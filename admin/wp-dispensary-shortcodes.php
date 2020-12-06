@@ -84,7 +84,14 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	) );
 
 	// Default variables.
-	$order_new = '';
+	$order_new    = '';
+	$wpd_products = '';
+	$wpd_image    = '';
+	$img_size     = 'dispensary-image';
+	$show_title   = '';
+	$show_name    = '';
+	$show_price   = '';
+	$show_info    = '';
 
 	// Create $tax_query variable.
 	$tax_query = array(
@@ -186,9 +193,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Create new tax query.
 	$new_tax_query = array_merge( $tax_query, $cat_tax_query );
 
-	// Products.
-	$wpd_products = '';
-
 	// Menu types.
 	$menu_types = apply_filters( 'wpd_shortcode_menu_types', $array_type );
 
@@ -224,18 +228,11 @@ function wp_dispensary_menu_shortcode( $atts ) {
 		// Create new WP_Query.
 		$wpd_query = new WP_Query( $args );
 
-		// Get post type name.
-		$post_type_data = get_post_type_object( $value );
-		$post_type_name = $post_type_data->label;
-		$post_type_slug = $post_type_data->rewrite['slug'];
-
 		// Menu type name.
 		$menu_type_name = wpd_product_type_display_name( $value );
 
 		// Image size.
-		if ( '' === $image_size ) {
-			$img_size = 'dispensary-image';
-		} else {
+		if ( $image_size ) {
 			$img_size = $image_size;
 		}
 
@@ -258,8 +255,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 		// Display Title.
 		if ( 'show' === $title ) {
 			$show_title = '<h2 class="wpd-title">' . $menu_type_name . '</h2>';
-		} else {
-			$show_title = '';
 		}
 
 		// Product start wrap.
@@ -278,30 +273,19 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			// Show name.
 			if ( 'show' === $name ) {
 				$show_name = '<h2 class="wpd-producttitle"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-			} else {
-				$show_name = '';
 			}
 
 			// Show Price.
 			if ( 'show' === $price ) {
 				$show_price = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_all_prices_simple( get_the_ID() ) . '</span>';
-
 				// Filter price.
 				$show_price = apply_filters( 'wpd_shortcodes_product_price', $show_price );
-			} else {
-				$show_price = '';
 			}
-
-			// Set empty variable for info.
-			$show_info = '';
 
 			// Show info.
 			if ( 'show' === $info ) {
 				$show_info = get_wpd_product_details( get_the_ID(), $product_details, 'span' );
 			}
-
-			// Set empty variable for image.
-			$wpd_image = '';
 
 			// Set image if set to show.
 			if ( 'show' === $image ) {

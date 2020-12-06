@@ -10,6 +10,11 @@
  * @subpackage WP_Dispensary/admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Flowers Shortcode Fuction
  *

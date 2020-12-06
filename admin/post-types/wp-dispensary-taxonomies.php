@@ -74,9 +74,7 @@ function wp_dispensary_shelf_type() {
 		'menu_name'         => __( 'Shelf Type', 'wp-dispensary' ),
 	);
 
-	$shelftaxtype = apply_filters( 'wpd_tax_shelf_type', array( 'products' ) );
-
-	register_taxonomy( 'shelf_type', $shelftaxtype, array(
+	register_taxonomy( 'shelf_type', 'products', array(
 		'hierarchical'      => true,
 		'labels'            => $labels,
 		'show_ui'           => true,
@@ -117,9 +115,7 @@ function wp_dispensary_strain_type() {
 		'menu_name'         => __( 'Strain Type', 'wp-dispensary' ),
 	);
 
-	$straintaxtype = apply_filters( 'wpd_tax_strain_type', array( 'products' ) );
-
-	register_taxonomy( 'strain_type', $straintaxtype, array(
+	register_taxonomy( 'strain_type', 'products', array(
 		'hierarchical'      => true,
 		'labels'            => $labels,
 		'show_ui'           => true,
@@ -164,9 +160,7 @@ function wp_dispensary_vendor() {
 		'menu_name'                  => __( 'Vendors', 'wp-dispensary' ),
 	);
 
-	$vendor_tax_type = apply_filters( 'wpd_vendor_tax_type', 'products' );
-
-	register_taxonomy( 'vendor', $vendor_tax_type, array(
+	register_taxonomy( 'vendor', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -211,9 +205,7 @@ function wp_dispensary_aroma() {
 		'menu_name'                  => __( 'Aromas', 'wp-dispensary' ),
 	);
 
-	$aromataxtype = apply_filters( 'wpd_aroma_tax_type', array( 'products' ) );
-
-	register_taxonomy( 'aroma', $aromataxtype, array(
+	register_taxonomy( 'aroma', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -258,9 +250,7 @@ function wp_dispensary_flavor() {
 		'menu_name'                  => __( 'Flavors', 'wp-dispensary' ),
 	);
 
-	$flavortaxtype = apply_filters( 'wpd_flavor_tax_type', array( 'products' ) );
-
-	register_taxonomy( 'flavor', $flavortaxtype, array(
+	register_taxonomy( 'flavor', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -304,9 +294,7 @@ function wp_dispensary_effect() {
 		'menu_name'                  => __( 'Effects', 'wp-dispensary' ),
 	);
 
-	$effecttaxtype = apply_filters( 'wpd_effect_tax_type', array( 'products' ) );
-
-	register_taxonomy( 'effect', $effecttaxtype, array(
+	register_taxonomy( 'effect', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -350,9 +338,7 @@ function wp_dispensary_symptom() {
 		'menu_name'                  => __( 'Symptoms', 'wp-dispensary' ),
 	);
 
-	$symptomtaxtype = apply_filters( 'wpd_symptom_tax_type', array( 'products' ) );
-
-	register_taxonomy( 'symptom', $symptomtaxtype, array(
+	register_taxonomy( 'symptom', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -396,9 +382,7 @@ function wp_dispensary_condition() {
 		'menu_name'                  => __( 'Conditions', 'wp-dispensary' ),
 	);
 
-	$conditiontaxtype = apply_filters( 'wpd_condition_tax_type', array( 'products' ) );
-
-	register_taxonomy( 'condition', $conditiontaxtype, array(
+	register_taxonomy( 'condition', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -442,9 +426,7 @@ function wp_dispensary_ingredient() {
 		'menu_name'                  => __( 'Ingredients', 'wp-dispensary' ),
 	);
 
-	$ingredientstaxtype = apply_filters( 'wpd_ingredients_tax_type', array( 'products' ) );
-
-	register_taxonomy( 'ingredients', $ingredientstaxtype, array(
+	register_taxonomy( 'ingredients', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -488,9 +470,7 @@ function wp_dispensary_allergens() {
 		'menu_name'                  => __( 'Allergens', 'wp-dispensary' ),
 	);
 
-	$allergenstaxtype = apply_filters( 'wpd_allergens_tax_type', array( 'products' ) );
-
-	register_taxonomy( 'allergens', $allergenstaxtype, array(
+	register_taxonomy( 'allergens', 'products', array(
 		'hierarchical'          => false,
 		'labels'                => $labels,
 		'show_ui'               => true,
