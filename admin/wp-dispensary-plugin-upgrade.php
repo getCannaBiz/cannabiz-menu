@@ -15,6 +15,15 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
+ * @todo double check that these upgrades work with post types removed
+ * 
+ * If they aren't working, create a deprecated-post-types.php file for the old post types to go into
+ * 
+ * These deprecated files can be deleted when Version 5.0 is released, to make sure all upgrades
+ * work witin the time that 4.0 and 5.0 versions are released.
+ */
+
+/**
  * Convert Product Data during Version 4.0 upgrade.
  */
 function wpd_convert_product_data() {

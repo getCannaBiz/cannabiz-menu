@@ -36,7 +36,6 @@ jQuery(document).ready(function($) {
 	$( '#wpdispensary_prices' ).hide();
 	$( '#wpdispensary_concentrateprices' ).hide();
 	$( '#wpdispensary_singleprices' ).hide();
-	$( '#wpdispensary_singleprices' ).hide();
 	$( '#wpdispensary_heavyweight_prices' ).hide();
 	$( '#wpdispensary_grower_product_details' ).hide();
 	$( '#wpdispensary_thc_cbd_mg' ).hide();
@@ -101,7 +100,6 @@ jQuery(document).ready(function($) {
 	$('#product_type').change(function() {
 		$( '#wpdispensary_prices' ).hide();
 		$( '#wpdispensary_concentrateprices' ).hide();
-		$( '#wpdispensary_singleprices' ).hide();
 		$( '#wpdispensary_singleprices' ).hide();
 		$( '#wpdispensary_heavyweight_prices' ).hide();
 		$( '#wpdispensary_grower_product_details' ).hide();

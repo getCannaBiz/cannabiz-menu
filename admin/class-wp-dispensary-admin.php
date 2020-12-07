@@ -94,7 +94,7 @@ class WP_Dispensary_Admin {
  * @return void
  */
 function wpdispensary_right_now_content_table_end() {
-	$args       = array(
+	$args = array(
 		'public'   => true,
 		'_builtin' => false,
 	);

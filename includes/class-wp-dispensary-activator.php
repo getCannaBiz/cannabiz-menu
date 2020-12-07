@@ -35,14 +35,9 @@ class WP_Dispensary_Activator {
 	 */
 	public static function activate() {
 		/**
-		 * Custom Post Types
+		 * Custom Post Type
 		 */
-		wp_dispensary_flowers();
-		wp_dispensary_edibles();
-		wp_dispensary_concentrates();
-		wp_dispensary_prerolls();
-		wp_dispensary_topicals();
-		wp_dispensary_growers();
+		wp_dispensary_products_post_type();
 
 		/**
 		 * Taxonomies
@@ -61,11 +56,7 @@ class WP_Dispensary_Activator {
 		/**
 		 * Custom Categories
 		 */
-		wpdispensary_flowercategory();
-		wpdispensary_ediblecategory();
-		wpdispensary_concentratecategory();
-		wpdispensary_topicalcategory();
-		wpdispensary_growerscategory();
+		wp_dispensary_products_categories();
 
 		/**
 		 * Flush Rewrite Rules
