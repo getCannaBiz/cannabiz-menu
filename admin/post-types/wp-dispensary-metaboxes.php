@@ -41,21 +41,25 @@ function wp_dispensary_product_types() {
 	/** Get the product type data if its already been entered */
 	$product_type = get_post_meta( $post->ID, 'product_type', true );
 
-	echo '<div class="wpd-product-type-meta">';
-	echo '<select name="product_type" id="product_type">';
-	echo '<option value="">--</option>';
-	foreach ( wpd_menu_types_simple( true ) as $product_type_name ) {
+	$div  = '<div class="wpd-product-type-meta">';
+	$div .= '<select name="product_type" id="product_type">';
+	$div .= '<option value="">--</option>';
+	// Loop through product types.
+	foreach ( wpd_menu_types_simple( true ) as $key=>$name ) {
+		// Empty var.
+		$selected = '';
 		// Check if current loop item is the same as the saved product_type.
-		if ( $product_type_name == $product_type ) {
+		if ( $name == $product_type ) {
 			$selected = 'selected';
-		} else {
-			$selected = '';
 		}
-		echo '<option ' . $selected . ' value="' . $product_type_name . '">' . $product_type_name . '</option>';
+		// Product type display name.
+		$product_type_name = wpd_product_type_display_name( $name );
+		$div .= '<option ' . $selected . ' value="' . $name . '">' . $product_type_name  . '</option>';
 	}
-	echo '</select>';
-	echo '</div>';
+	$div .= '</select>';
+	$div .= '</div>';
 
+	echo $div;
 }
 
 /**
