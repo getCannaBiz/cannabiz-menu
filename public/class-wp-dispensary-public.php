@@ -101,7 +101,6 @@ function wp_dispensary_body_class( $classes ) {
 	// Add classes to a page that has the WP Dispensary shortcode present.
     if ( isset( $post->post_content ) && has_shortcode( $post->post_content, 'wpd_menu' ) ) {
 		$classes[] = 'wp-dispensary';
-		$classes[] = 'wpd-menu';
 	}
 	// Add wp-dispensary class name to multiple areas of the website.
 	if ( is_singular( 'products' ) || is_post_type_archive( 'products' ) || is_category( 'wpd_categories' ) ) {
