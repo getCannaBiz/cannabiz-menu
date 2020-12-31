@@ -36,11 +36,12 @@ function wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.4
  * @return string
  */
-function wpd_tinctures_prices_simple( $product_id = NULL, $phrase = NULL ) {
-    // Filters the displayed tinctures prices.
-    echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
+if ( ! function_exists( 'wpd_tinctures_prices_simple' ) ) {
+	function wpd_tinctures_prices_simple( $product_id = NULL, $phrase = NULL ) {
+		// Filters the displayed tinctures prices.
+		echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
+	}
 }
-
 
 /**
  * Edibles Prices - Simple
@@ -96,9 +97,11 @@ function wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 1.6
  * @return string
  */
-function wpd_gear_prices_simple( $gear_id = NULL, $phrase = NULL ) {
-    // Filters the displayed flowers prices.
-    echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $gear_id, $phrase ) );
+if ( ! function_exists( 'get_wpd_gear_prices_simple' ) ) {
+	function wpd_gear_prices_simple( $gear_id = NULL, $phrase = NULL ) {
+		// Filters the displayed flowers prices.
+		echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $gear_id, $phrase ) );
+	}
 }
 
 /**
@@ -436,52 +439,53 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
  * 
  * @since 4.0
  */
-function get_wpd_tinctures_prices_simple( $product_id, $phrase = NULL ) {
+if ( ! function_exists( 'get_wpd_tinctures_prices_simple' ) ) {
+	function get_wpd_tinctures_prices_simple( $product_id, $phrase = NULL ) {
 
-    global $post;
+		global $post;
 
-	// Get currency code.
-	$currency_code = wpd_currency_code();
+		// Get currency code.
+		$currency_code = wpd_currency_code();
 
-	// Get prices.
-	$price_each     = get_post_meta( $product_id, 'price_each', true );
-	$price_per_pack = get_post_meta( $product_id, 'price_per_pack', true );
-	$pricingsep     = '-';
+		// Get prices.
+		$price_each     = get_post_meta( $product_id, 'price_each', true );
+		$price_per_pack = get_post_meta( $product_id, 'price_per_pack', true );
+		$pricingsep     = '-';
 
-	// Check if phrase is set in function.
-	if ( TRUE == $phrase ) {
-		$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
-	} else {
-		$pricing_phrase = '';
+		// Check if phrase is set in function.
+		if ( TRUE == $phrase ) {
+			$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
+		} else {
+			$pricing_phrase = '';
+		}
+
+		/**
+		 * Price output - if only one price has been added
+		 */
+		if ( '' != $price_each && '' != $price_per_pack ) {
+
+			$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
+			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+		} elseif ( '' === $price_each && '' != $price_per_pack ) {
+
+			$pricing = $currency_code . $price_per_pack;
+			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+		} elseif ( '' != $price_each && '' === $price_per_pack ) {
+
+			$pricing = $currency_code . $price_each;
+			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+		} else {
+			$phrase_final = '';
+		}
+
+		/**
+		 * Return Pricing Prices.
+		 */
+		return $phrase_final;
 	}
-
-	/**
-	 * Price output - if only one price has been added
-	 */
-	if ( '' != $price_each && '' != $price_per_pack ) {
-
-		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
-
-	} elseif ( '' === $price_each && '' != $price_per_pack ) {
-
-		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
-
-	} elseif ( '' != $price_each && '' === $price_per_pack ) {
-
-		$pricing = $currency_code . $price_each;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
-
-	} else {
-		$phrase_final = '';
-	}
-
-	/**
-	 * Return Pricing Prices.
-	 */
-	return $phrase_final;
-
 }
 
 /**
@@ -710,48 +714,50 @@ function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * 
  * @since 4.0
  */
-function get_wpd_gear_prices_simple( $product_id, $phrase = NULL ) {
-	// Get currency code.
-	$currency_code = wpd_currency_code();
+if ( ! function_exists( 'get_wpd_gear_prices_simple' ) ) {
+	function get_wpd_gear_prices_simple( $product_id, $phrase = NULL ) {
+		// Get currency code.
+		$currency_code = wpd_currency_code();
 
-	// Get prices.
-	$price_each     = get_post_meta( $product_id, 'price_each', TRUE );
-	$price_per_pack = get_post_meta( $product_id, 'price_per_pack', TRUE );
-	$pricingsep     = '-';
+		// Get prices.
+		$price_each     = get_post_meta( $product_id, 'price_each', TRUE );
+		$price_per_pack = get_post_meta( $product_id, 'price_per_pack', TRUE );
+		$pricingsep     = '-';
 
-	// Check if phrase is set in function.
-	if ( TRUE == $phrase ) {
-		$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
-	} else {
-		$pricing_phrase = '';
+		// Check if phrase is set in function.
+		if ( TRUE == $phrase ) {
+			$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
+		} else {
+			$pricing_phrase = '';
+		}
+
+		/**
+		 * Price output - if only one price has been added
+		 */
+		if ( '' != $price_each && '' != $price_per_pack ) {
+
+			$pricing      = $currency_code . $price_each . $pricingsep . $price_per_pack;
+			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+		} elseif ( '' === $price_each && '' != $price_per_pack ) {
+
+			$pricing      = $currency_code . $price_per_pack;
+			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+		} elseif ( '' != $price_each && '' === $price_per_pack ) {
+
+			$pricing      = $currency_code . $price_each;
+			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+
+		} else {
+			$phrase_final = '';
+		}
+
+		/**
+		 * Return Pricing Prices.
+		 */
+		return $phrase_final;
 	}
-
-	/**
-	 * Price output - if only one price has been added
-	 */
-	if ( '' != $price_each && '' != $price_per_pack ) {
-
-		$pricing      = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
-
-	} elseif ( '' === $price_each && '' != $price_per_pack ) {
-
-		$pricing      = $currency_code . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
-
-	} elseif ( '' != $price_each && '' === $price_per_pack ) {
-
-		$pricing      = $currency_code . $price_each;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
-
-	} else {
-		$phrase_final = '';
-	}
-
-	/**
-	 * Return Pricing Prices.
-	 */
-	return $phrase_final;
 }
 
 /**
