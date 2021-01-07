@@ -205,8 +205,10 @@ class WP_Dispensary {
 
 		/**
 		 * Adding the Class responsible for CSV product export.
+		 * 
+		 * @since 4.0
 		 */
-		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-csv-export.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-csv-export.php';
 
 		$this->loader = new WP_Dispensary_Loader();
 	}

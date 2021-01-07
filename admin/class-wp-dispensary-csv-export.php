@@ -19,7 +19,7 @@
  * @subpackage WP_Dispensary/admin
  * @author     WP Dispensary <contact@wpdispensary.com>
  */
-class CSVExport {
+class WP_Dispensary_CSV_Export {
     /**
     * Constructor
     */
@@ -223,6 +223,14 @@ class CSVExport {
                 // Do nothing.
             }
 
+            // Empty category ID's.
+            $category_ids = '';
+
+            // Get category ID's.
+            if ( ! empty( $cat_id ) ) {
+                $category_ids = json_encode( $cat_id, JSON_FORCE_OBJECT );
+            }
+
             // Create row.
             $row = array(
                 $product['ID'],
@@ -244,7 +252,7 @@ class CSVExport {
                 get_post_meta( $product['ID'], 'price_per_pack', TRUE ),
                 get_post_meta( $product['ID'], 'units_per_pack', TRUE ),
                 $inventory_amount,
-                str_putcsv( $cat_id ),
+                $category_ids,
                 get_post_thumbnail_id( $product['ID'] ),
             );
             $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row );
@@ -275,5 +283,14 @@ class CSVExport {
     }
 }
 
-// Instantiate a singleton of this plugin.
-$csvExport = new CSVExport();
+/**
+ * Initialize the CSV Export class
+ * 
+ * @since  4.0
+ * @return void
+ */
+function wpd_csv_export() {
+    // Instantiate a singleton of this plugin.
+    $csvExport = new WP_Dispensary_CSV_Export();
+}
+add_action( 'init', 'wpd_csv_export' );
