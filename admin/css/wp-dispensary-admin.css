@@ -196,12 +196,24 @@ select#selected_tinctures {
 
 /** WPD Settings */
 
+body.toplevel_page_wpd-settings .nav-tab {
+    background: transparent;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+	border-right: 1px solid #FFF;
+	color: #7e8993;
+}
+
 body.toplevel_page_wpd-settings .nav-tab-active,
 body.toplevel_page_wpd-settings .nav-tab-active:focus,
 body.toplevel_page_wpd-settings .nav-tab-active:focus:active,
 body.toplevel_page_wpd-settings .nav-tab-active:hover {
 	background: #FFF;
 	border-bottom: 1px solid #FFF;
+    border-top: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	color: #000;
 }
 
 /**
