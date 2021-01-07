@@ -379,6 +379,8 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 						$default           = isset( $field['default'] ) ? $field['default'] : '';
 						$placeholder       = isset( $field['placeholder'] ) ? $field['placeholder'] : '';
 						$sanitize_callback = isset( $field['sanitize_callback'] ) ? $field['sanitize_callback'] : '';
+						$button_text       = isset( $field['button_text'] ) ? $field['button_text'] : '';
+						$button_url        = isset( $field['button_url'] ) ? $field['button_url'] : '';
 						$args = array(
 							'id'                => $id,
 							'type'              => $type,
@@ -390,6 +392,8 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 							'options'           => $options,
 							'std'               => $default,
 							'placeholder'       => $placeholder,
+							'button_text'       => $button_text,
+							'button_url'        => $button_url,
 							'sanitize_callback' => $sanitize_callback
 						);
 						/**
@@ -493,9 +497,21 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 		 * @param array $args settings field args.
 		 */
 		function callback_separator( $args ) {
-			$type  = isset( $args['type'] ) ? $args['type'] : 'separator';
-			$html  = '';
-			$html .= '<div class="wpd-settings-separator"></div>';
+			$type = isset( $args['type'] ) ? $args['type'] : 'separator';
+			$html = '<div class="wpd-settings-separator"></div>';
+			echo $html;
+		}
+
+		/**
+		 * Displays a button field for a settings field
+		 *
+		 * @param array $args settings field args.
+		 */
+		function callback_button( $args ) {
+			$type = isset( $args['type'] ) ? $args['type'] : 'button';
+			$url  = isset( $args['button_url'] ) ? $args['button_url'] : '';
+			$text = isset( $args['button_text'] ) ? $args['button_text'] : '';
+			$html = '<a class="button" href="' . $url . '">' . $text . '</a>';
 			echo $html;
 		}
 
@@ -510,7 +526,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 				$name = $args['name'];
 			} else {
 
-			};
+			}
 			$type = isset( $args['type'] ) ? $args['type'] : 'title';
 		}
 
@@ -660,9 +676,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 			$id    = $args['section'] . '[' . $args['id'] . ']';
-			$label = isset( $args['options']['button_label'] ) ?
-			$args['options']['button_label'] :
-			__( 'Choose File' );
+			$label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose File' );
 			$html  = sprintf( '<input type="text" class="%1$s-text wpds-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
 			$html .= '<input type="button" class="button wpds-browse" value="' . $label . '" />';
 			$html .= $this->get_field_description( $args );
