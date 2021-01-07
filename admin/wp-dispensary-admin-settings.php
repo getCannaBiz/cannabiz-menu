@@ -164,11 +164,43 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_field(
 			'wpdas_advanced',
 			array(
-				'id'          => 'wpd_settings_button',
+				'id'          => 'wpd_settings_export_products_button',
 				'type'        => 'button',
 				'name'        => __( 'Products', 'wp-dispensary' ),
 				'button_text' => __( 'Export', 'wp-dispensary' ),
 				'button_url'  => 'admin.php?page=wpd-settings&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ),
+			)
+		);
+
+		/**
+		 * Add Field: Export orders
+		 * Field:     button
+		 * Section:   wpdas_advanced
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_advanced',
+			array(
+				'id'          => 'wpd_settings_export_orders_button',
+				'type'        => 'button',
+				'name'        => __( 'Orders', 'wp-dispensary' ),
+				'button_text' => __( 'Export', 'wp-dispensary' ),
+				'button_url'  => 'admin.php?page=wpd-settings&export_orders&_wpnonce=' . wp_create_nonce( 'download_csv' ),
+			)
+		);
+
+		/**
+		 * Add Field: Export patients
+		 * Field:     button
+		 * Section:   wpdas_advanced
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_advanced',
+			array(
+				'id'          => 'wpd_settings_export_patientsbutton',
+				'type'        => 'button',
+				'name'        => __( 'Patients', 'wp-dispensary' ),
+				'button_text' => __( 'Export', 'wp-dispensary' ),
+				'button_url'  => 'admin.php?page=wpd-settings&export_patients&_wpnonce=' . wp_create_nonce( 'download_csv' ),
 			)
 		);
 
