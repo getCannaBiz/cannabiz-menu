@@ -194,6 +194,16 @@ select#selected_tinctures {
     opacity: 1;
 }
 
+/** WPD Settings */
+
+body.toplevel_page_wpd-settings .nav-tab-active,
+body.toplevel_page_wpd-settings .nav-tab-active:focus,
+body.toplevel_page_wpd-settings .nav-tab-active:focus:active,
+body.toplevel_page_wpd-settings .nav-tab-active:hover {
+	background: #FFF;
+	border-bottom: 1px solid #FFF;
+}
+
 /**
  * Featured image in menu items list
  */
