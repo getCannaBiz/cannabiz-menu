@@ -266,6 +266,34 @@ function get_wpd_details_phrase() {
 }
 
 /**
+ * Product Compound type
+ * 
+ * @param string $product_id
+ * @since  4.0
+ * @return void|string
+ */
+function wpd_compound_type( $product_id ) {
+	// Bail early?
+	if ( ! $product_id ) { return; }
+	// Get post type.
+	$product_type = get_post_meta( $product_id, 'product_type', true );
+	// Set % compound type.
+	if ( 'flowers' == $product_type || 'concentrates' == $product_type || 'prerolls' == $product_type || 'tinctures' == $product_type ) {
+		$type = '%';
+	}
+	// Set mg compound type.
+	if ( 'edibles' == $product_type || 'topicals' == $product_type ) {
+		$type = 'mg';
+	}
+	// Default return.
+	if ( ! $type ) {
+		return '';
+	}
+	// Return type.
+	return $type;
+}
+
+/**
  * Compounds details - Simple
  *
  * @see get_wpd_compounds_simple()
