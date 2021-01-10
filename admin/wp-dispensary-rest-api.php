@@ -15,6 +15,15 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+// Define WPD REST API version number.
+define( 'WPD_REST_API_VERSION_NUMBER', '2' );
+
+// Define WPD REST API version.
+define( 'WPD_REST_API_VERSION', 'v' . WPD_REST_API_VERSION_NUMBER );
+
+// Define the WPD REST API namespace.
+define( 'WPD_REST_API_NAMESPACE', 'wpd/' . WPD_REST_API_VERSION );
+
 /**
  * Register 'Products' route
  * 
@@ -23,7 +32,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function wpd_register_rest_api_route() {
 	// Register 'Products' route.
-	register_rest_route( 'wpd/v1', 'products', array(
+	register_rest_route( WPD_REST_API_NAMESPACE, 'products', array(
 			'methods'  => 'GET',
 			'callback' => 'wpd_rest_api_products_route_callback',
 			'args'     => array(
@@ -65,7 +74,7 @@ function wpd_rest_api_products_route_callback( $data ) {
 	}
 
 	// Loop through products.
-    foreach( $products_list as $product ) {
+	foreach( $products_list as $product ) {
 		// Product default data.
 		$product_id      = $product->ID;
 		$product_title   = $product->post_title;
@@ -85,10 +94,9 @@ function wpd_rest_api_products_route_callback( $data ) {
 		// Inventory amount.
 		$inventory_amount = get_post_meta( $product_id, 'inventory_grams', TRUE );
 		// Inventory type.
+		$inventory_type = 'units';
 		if ( get_post_meta( $product_id, 'inventory_grams', TRUE ) ) {
 			$inventory_type = 'grams';
-		} else {
-			$inventory_type = 'units';
 		}
 		// Compound type.
 		$compound_type = wpd_compound_type( $product_id );
@@ -113,13 +121,13 @@ function wpd_rest_api_products_route_callback( $data ) {
 		$product_data[$product_id]['inventory']['type']   = $inventory_type;
 		$product_data[$product_id]['inventory']['amount'] = $inventory_amount;
 		// Create compounds endpoints.
-		$product_data[$product_id]['compound_type']     = $compound_type;
-		$product_data[$product_id]['compounds']['thc']  = $compounds_thc;
-		$product_data[$product_id]['compounds']['thca'] = $compounds_thc;
-		$product_data[$product_id]['compounds']['cbd']  = $compounds_cbd;
-		$product_data[$product_id]['compounds']['cba']  = $compounds_cba;
-		$product_data[$product_id]['compounds']['cbn']  = $compounds_cbn;
-		$product_data[$product_id]['compounds']['cbg']  = $compounds_cbg;
+		$product_data[$product_id]['compounds']['type']             = $compound_type;
+		$product_data[$product_id]['compounds']['compound']['thc']  = $compounds_thc;
+		$product_data[$product_id]['compounds']['compound']['thca'] = $compounds_thc;
+		$product_data[$product_id]['compounds']['compound']['cbd']  = $compounds_cbd;
+		$product_data[$product_id]['compounds']['compound']['cba']  = $compounds_cba;
+		$product_data[$product_id]['compounds']['compound']['cbn']  = $compounds_cbn;
+		$product_data[$product_id]['compounds']['compound']['cbg']  = $compounds_cbg;
     }
 
     wp_reset_postdata();
