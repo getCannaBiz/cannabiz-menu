@@ -23,18 +23,17 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function wpd_register_rest_api_route() {
 	// Register 'Products' route.
-    register_rest_route( 'wpd/v1', 'products', array(
+	register_rest_route( 'wpd/v1', 'products', array(
 			'methods'  => 'GET',
 			'callback' => 'wpd_rest_api_products_route_callback',
-            'args'     => array(
-				'id' => array( 
-					'validate_callback' => function( $param, $request, $key ) {
-						return is_numeric( $param );
-					}
-				),
+			'args'     => array(
+				'id' => array(
+				'validate_callback' => function( $param, $request, $key ) {
+					return is_numeric( $param );
+				}
 			),
-		)
-	);
+		),
+	) );
 }
 add_action( 'rest_api_init', 'wpd_register_rest_api_route' );
 
@@ -46,7 +45,7 @@ add_action( 'rest_api_init', 'wpd_register_rest_api_route' );
  * @return string
  */
 function wpd_rest_api_products_route_callback( $data ) {
-    // Get the products.
+	// Get the products.
 	$products_list = get_posts(
 		array(
 			'numberposts' => -1,
@@ -69,7 +68,7 @@ function wpd_rest_api_products_route_callback( $data ) {
     foreach( $products_list as $product ) {
 		// Product default data.
 		$product_id      = $product->ID;
-        $product_title   = $product->post_title;
+		$product_title   = $product->post_title;
 		$product_content = $product->post_content;
 		// Product type.
 		$product_type = get_post_meta( $product_id, 'product_type', true );
