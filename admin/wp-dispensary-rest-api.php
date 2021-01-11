@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Define WPD REST API version number.
-define( 'WPD_REST_API_VERSION_NUMBER', '2' );
+define( 'WPD_REST_API_VERSION_NUMBER', '1' );
 
 // Define WPD REST API version.
 define( 'WPD_REST_API_VERSION', 'v' . WPD_REST_API_VERSION_NUMBER );
@@ -100,6 +100,8 @@ function wpd_rest_api_products_route_callback( $data ) {
 		}
 		// Compound type.
 		$compound_type = wpd_compound_type( $product_id );
+		// Compound total.
+		$compound_total = get_post_meta( $product_id, 'compounds_total', TRUE );
 		// Compounds.
 		$compounds_thc  = get_post_meta( $product_id, 'thc', TRUE );
 		$compounds_thca = get_post_meta( $product_id, 'thca', TRUE );
@@ -122,6 +124,7 @@ function wpd_rest_api_products_route_callback( $data ) {
 		$product_data[$product_id]['inventory']['amount'] = $inventory_amount;
 		// Create compounds endpoints.
 		$product_data[$product_id]['compounds']['type']             = $compound_type;
+		$product_data[$product_id]['compounds']['total']            = $compound_total;
 		$product_data[$product_id]['compounds']['compound']['thc']  = $compounds_thc;
 		$product_data[$product_id]['compounds']['compound']['thca'] = $compounds_thc;
 		$product_data[$product_id]['compounds']['compound']['cbd']  = $compounds_cbd;
