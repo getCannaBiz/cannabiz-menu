@@ -18,8 +18,23 @@
 #wpdispensary_clonedetails .inside,
 #wpdispensary_thc_cbd_mg .inside,
 #wpdispensary_thccbdtopical .inside,
-#wpdispensary_grower_product_details .inside {
+#wpdispensary_grower_product_details .inside,
+#wpd_tinctures_prices .inside,
+#wpd_gear_prices .inside {
     overflow: auto;
+}
+
+#wpd_tinctures_prices .inside .tincturesdetailsbox {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#postbox-container-2 #wpd_tinctures_prices .inside .tincturesdetailsbox {
+	float: left;
+	margin: 10px 1%;
+	position: relative;
+	width: 24%;
 }
 
 #wpdispensary_prices .inside .pricebox {
