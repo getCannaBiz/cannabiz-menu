@@ -20,6 +20,7 @@
 #wpdispensary_thccbdtopical .inside,
 #wpdispensary_grower_product_details .inside,
 #wpd_tinctures_prices .inside,
+#wpd_tinctures_details .inside,
 #wpd_gear_prices .inside {
     overflow: auto;
 }
@@ -30,11 +31,11 @@
 	width: 100%;
 }
 
-#postbox-container-2 #wpd_tinctures_prices .inside .tincturesdetailsbox {
+#postbox-container-2 #wpd_tinctures_details .inside .tincturesdetailsbox {
 	float: left;
 	margin: 10px 1%;
 	position: relative;
-	width: 24%;
+	width: 18%;
 }
 
 #wpdispensary_prices .inside .pricebox {
