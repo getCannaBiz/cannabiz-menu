@@ -150,6 +150,43 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		$wpdas_obj->add_field(
 			'wpdas_advanced',
 			array(
+				'id'   => 'wpd_settings_advanced_section_title',
+				'type' => 'title',
+				'name' => '<h1>' . esc_attr__( 'Advanced Settings', 'wp-dispensary' ) . '</h1>',
+			)
+		);
+
+		/**
+		 * Add Field: Cookie lifetime
+		 * Field:     select
+		 * Section:   wpdas_advanced
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_advanced',
+			array(
+				'id'      => 'wpd_settings_cookie_lifetime',
+				'type'    => 'select',
+				'name'    => esc_attr__( 'Cookie lifetime', 'wp-dispensary' ),
+				'desc'    => esc_attr__( 'Set the amount of time the shopping cart cookie gets saved to your visitors computer', 'wp-dispensary' ),
+				'options' => array(
+					'half_hour'    => __( '1/2 hour', 'wp-dispensary' ),
+					'one_hour'     => __( '1 hour', 'wp-dispensary' ),
+					'three_hours'  => __( '3 hours', 'wp-dispensary' ),
+					'six_hours'    => __( '6 hours', 'wp-dispensary' ),
+					'twelve_hours' => __( '12 hours', 'wp-dispensary' ),
+					'one_day'      => __( '24 hours', 'wp-dispensary' ),
+				),
+			)
+		);
+
+		/**
+		 * Add Field: Display a title to help separate fields
+		 * Field:     title
+		 * Section:   wpdas_advanced
+		 */
+		$wpdas_obj->add_field(
+			'wpdas_advanced',
+			array(
 				'id'   => 'wpd_settings_export_section_title',
 				'type' => 'title',
 				'name' => '<h1>' . esc_attr__( 'Export Data', 'wp-dispensary' ) . '</h1>',
