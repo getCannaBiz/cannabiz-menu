@@ -39,7 +39,7 @@ function wp_dispensary_compound_details_metabox_content() {
 	global $post;
 
 	/** Noncename needed to verify where the data originated */
-	echo '<input type="hidden" name="compound_detailsmeta_noncename" id="compound_detailsmeta_noncename" value="' .
+	echo '<input type="hidden" name="compound_details_meta_noncename" id="compound_details_meta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
 	/** Get the thccbd data if its already been entered */
@@ -52,31 +52,31 @@ function wp_dispensary_compound_details_metabox_content() {
 	$total = get_post_meta( $post->ID, 'compounds_total', true );
 
 	/** Echo out the fields */
-	echo '<div class="compoundbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_html__( 'THC', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $thc ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="compoundbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_html__( 'THCA', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="compounds_thca" value="' . esc_html( $thca ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="compoundbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_html__( 'CBD', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $cbd ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="compoundbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_html__( 'CBA', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="compounds_cba" value="' . esc_html( $cba ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="compoundbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_html__( 'CBN', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="compounds_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="compoundbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_html__( 'CBG', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="compounds_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="compoundbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_html__( 'Total', 'wp-dispensary' ) . ' %</p>';
 	echo '<input type="text" name="compounds_total" value="' . esc_html( $total ) . '" class="widefat" />';
 	echo '</div>';
@@ -97,8 +97,8 @@ function wp_dispensary_compound_details_metabox_save( $post_id, $post ) {
 	 * because save_post can be triggered at other times
 	 */
 	if (
-		! isset( $_POST['compound_detailsmeta_noncename' ] ) ||
-		! wp_verify_nonce( $_POST['compound_detailsmeta_noncename'], plugin_basename( __FILE__ ) )
+		! isset( $_POST['compound_details_meta_noncename' ] ) ||
+		! wp_verify_nonce( $_POST['compound_details_meta_noncename'], plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;
 	}

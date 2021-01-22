@@ -22,7 +22,7 @@
 function wp_dispensary_product_details_metabox() {
     // Add Metabox.
 	add_meta_box(
-		'wpd_product_details',
+		'wp_dispensary_product_details',
 		esc_attr__( 'Product Details', 'wpd-tinctures' ),
 		'wp_dispensary_product_details_metabox_content',
 		'products',
@@ -66,71 +66,71 @@ function wp_dispensary_product_details_metabox_content() {
 	$seedcount  = get_post_meta( $post->ID, 'seed_count', true );
 
 	/// Tinctures fields.
-	echo '<div class="tincturesdetailsbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_attr__( 'Servings', 'wpd-tinctures' ) . '</p>';
 	echo '<input type="text" name="product_servings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="tincturesdetailsbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_attr__( 'THC mg per serving', 'wpd-tinctures' ) . '</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="tincturesdetailsbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_attr__( 'CBD mg per serving', 'wpd-tinctures' ) . '</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $cbdmg ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="tincturesdetailsbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_attr__( 'mL per serving', 'wpd-tinctures' ) . '</p>';
 	echo '<input type="text" name="product_servings_ml" value="' . esc_html( $mlserving ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="tincturesdetailsbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . esc_attr__( 'Net weight (ounces)', 'wpd-tinctures' ) . '</p>';
 	echo '<input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" />';
     echo '</div>';
     
     // Pre-roll weight.
-    echo '<div class="weightbox">';
+    echo '<div class="input-field">';
 	echo '<p>' . __( 'Weight (g)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_weight" value="' . esc_html( $preroll_weight ) . '" class="widefat" />';
     echo '</div>';
     
     // Topicals fields.
-	echo '<div class="topicalbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Size (oz)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_size" value="' . esc_html( $product_size ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="topicalbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'THC mg', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $compounds_thc ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="topicalbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'CBD mg', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $compounds_cbd ) . '" class="widefat" />';
     echo '</div>';
     
     // Edibles fields.
-	echo '<div class="ediblebox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'THC mg per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="ediblebox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'CBD mg per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $cbdmg ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="ediblebox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Servings', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_servings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="ediblebox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Net weight (grams)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" />';
     echo '</div>';
     
     // Grower fields.
-	echo '<div class="growerbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Seeds per unit', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="seed_count" value="' . esc_html( $seedcount ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="growerbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Clones per unit', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="clone_count" value="' . esc_html( $clonecount ) . '" class="widefat" />';
 	echo '</div>';

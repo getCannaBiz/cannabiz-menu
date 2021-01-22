@@ -49,19 +49,19 @@ function wp_dispensary_grower_details_metabox_content() {
 	$difficulty = get_post_meta( $post->ID, 'product_difficulty', true );
 
 	/** Echo out the fields */
-	echo '<div class="growerbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Origin', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_origin" value="' . esc_html( $origin ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="growerbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Grow time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_time" value="' . esc_html( $time ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="growerbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Yield', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_yield" value="' . esc_html( $yield ) . '" class="widefat" />';
 	echo '</div>';
-	echo '<div class="growerbox">';
+	echo '<div class="input-field">';
 	echo '<p>' . __( 'Difficulty', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_difficulty" value="' . esc_html( $difficulty ) . '" class="widefat" />';
 	echo '</div>';
