@@ -41,87 +41,43 @@ function wp_dispensary_product_prices_metabox_content() {
 	global $post;
 
 	/** Noncename needed to verify where the data originated */
-	echo '<input type="hidden" name="wpd_product_prices_meta_noncename" id="wpd_product_prices_meta_noncename" value="' .
+	$string = '<input type="hidden" name="wpd_product_prices_meta_noncename" id="wpd_product_prices_meta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-	// Regular prices.
-	$price_each     = get_post_meta( $post->ID, 'price_each', true );
-	$price_per_pack = get_post_meta( $post->ID, 'price_per_pack', true );
-	$units_per_pack = get_post_meta( $post->ID, 'units_per_pack', true );
-	// Flower prices.
-	$gram          = get_post_meta( $post->ID, 'price_gram', true );
-	$two_grams     = get_post_meta( $post->ID, 'price_half_gram', true );
-	$eighth        = get_post_meta( $post->ID, 'price_eighth', true );
-	$five_grams    = get_post_meta( $post->ID, 'price_five_grams', true );
-	$quarter_ounce = get_post_meta( $post->ID, 'price_quarter_ounce', true );
-	$half_ounce    = get_post_meta( $post->ID, 'price_half_ounce', true );
-	$ounce         = get_post_meta( $post->ID, 'price_ounce', true );
-	// Concentrates prices.
-	$price_each = get_post_meta( $post->ID, 'price_each', true );
-	$half_gram  = get_post_meta( $post->ID, 'price_half_gram', true );
-	$gram       = get_post_meta( $post->ID, 'price_gram', true );
-	$two_grams  = get_post_meta( $post->ID, 'price_two_grams', true );
+	// Get flower prices.
+	$flower_prices = wpd_product_prices( 'flowers' );
 
-	// Regular prices fields.
-	echo '<div class="input-field">';
-	echo '<p>' . __( 'Price per unit', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_each" value="' . esc_html( $price_each ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( 'Price per pack', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_per_pack" value="' . esc_html( $price_per_pack ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( 'Units per pack', 'wp-dispensary' ) . '</p>';
-	echo '<input type="number" name="units_per_pack" value="' . esc_html( $units_per_pack ) . '" class="widefat" />';
-	echo '</div>';
-	// Flower prices.
-	echo '<div class="input-field">';
-	echo '<p>' . __( '1 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '2 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_two_grams" value="' . esc_html( $two_grams ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '1/8 oz', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_eighth" value="' . esc_html( $eighth ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '5 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_five_grams" value="' . esc_html( $five_grams ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '1/4 oz', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_quarter_ounce" value="' . esc_html( $quarter_ounce ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '1/2 oz', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_half_ounce" value="' . esc_html( $half_ounce ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '1 oz', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="_ounce" value="' . esc_html( $ounce ) . '" class="widefat" />';
-	echo '</div>';
-	// Concentrates prices.
-	echo '<div class="input-field">';
-	echo '<p>' . __( 'Price each', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_each" value="' . esc_html( $price_each ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '1/2 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_half_gram" value="' . esc_html( $half_gram ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '1 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_gram" value="' . esc_html( $gram ) . '" class="widefat" />';
-	echo '</div>';
-	echo '<div class="input-field">';
-	echo '<p>' . __( '2 g', 'wp-dispensary' ) . '</p>';
-	echo '<input type="text" name="price_two_grams" value="' . esc_html( $two_grams ) . '" class="widefat" />';
-	echo '</div>';
+	// Loop through flower prices.
+	foreach ( $flower_prices as $key=>$value ) {
+		$string .= '<div class="input-field flower-price">';
+		$string .= '<p>' . $value . '</p>';
+		$string .= '<input type="text" name="' . $key . '" value="' . get_post_meta( $post->ID, $key, true ) . '" class="widefat" />';
+		$string .= '</div>';	
+	}
 
+	// Get concentrates prices.
+	$concentrates_prices = wpd_product_prices( 'concentrates' );
+
+	// Loop through concentrates prices.
+	foreach ( $concentrates_prices as $key=>$value ) {
+		$string .= '<div class="input-field concentrates-price">';
+		$string .= '<p>' . $value . '</p>';
+		$string .= '<input type="text" name="' . $key . '" value="' . get_post_meta( $post->ID, $key, true ) . '" class="widefat" />';
+		$string .= '</div>';	
+	}
+
+	// Get product prices.
+	$product_prices = wpd_product_prices();
+
+	// Loop through product prices.
+	foreach ( $product_prices as $key=>$value ) {
+		$string .= '<div class="input-field product-price">';
+		$string .= '<p>' . $value . '</p>';
+		$string .= '<input type="text" name="' . $key . '" value="' . get_post_meta( $post->ID, $key, true ) . '" class="widefat" />';
+		$string .= '</div>';	
+	}
+
+	echo $string;
 }
 
 /**
