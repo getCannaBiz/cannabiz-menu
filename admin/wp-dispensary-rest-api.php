@@ -243,7 +243,7 @@ function wpd_product_taxonomies( $data, $post, $request ) {
 	$data->data            = $_data;
 	return $data;
 }
-//add_filter( 'rest_prepare_products', 'wpd_product_taxonomies', 10, 3 );
+add_filter( 'rest_prepare_products', 'wpd_product_taxonomies', 10, 3 );
 
 /**
  * Add 'details' endpoint to Products

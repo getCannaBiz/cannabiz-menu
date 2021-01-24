@@ -768,7 +768,7 @@ add_action( 'admin_menu', 'wpd_admin_menu_categories', 2 );
 
 // Adds Vendors admin submenu link.
 function wpd_admin_menu_vendors() {
-	add_submenu_page( 'wpd-settings', 'Vendors', 'Vendors', 'manage_options', 'edit-tags.php?taxonomy=vendor', null );
+	add_submenu_page( 'wpd-settings', 'Vendors', 'Vendors', 'manage_options', 'edit-tags.php?taxonomy=vendors', null );
 }
 add_action( 'admin_menu', 'wpd_admin_menu_vendors', 6 );
 

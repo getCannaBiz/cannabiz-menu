@@ -6,7 +6,7 @@
  * @since      1.0.0
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/post-types/
+ * @subpackage WP_Dispensary/admin/
  */
 
 // Exit if accessed directly.
@@ -20,7 +20,7 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 // Products.
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'post-types/widgets/wpd-widget-products.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/widgets/wpd-widget-products.php';
 
 // Product search.
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'post-types/widgets/wpd-widget-product-search.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/widgets/wpd-widget-product-search.php';
