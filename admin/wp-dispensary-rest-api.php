@@ -230,20 +230,20 @@ add_filter( 'rest_prepare_products', 'wpd_product_prices_all', 10, 3 );
  * 
  * @since 4.0
  */
-function products_taxonomies( $data, $post, $request ) {
+function wpd_product_taxonomies( $data, $post, $request ) {
 	$_data                 = $data->data;
-	$_data['aromas']       = get_the_term_list( $post->ID, 'aroma', '', ' ', '' );
-	$_data['flavors']      = get_the_term_list( $post->ID, 'flavor', '', ' ', '' );
-	$_data['effects']      = get_the_term_list( $post->ID, 'effect', '', ' ', '' );
-	$_data['symptoms']     = get_the_term_list( $post->ID, 'symptom', '', ' ', '' );
-	$_data['conditions']   = get_the_term_list( $post->ID, 'condition', '', ' ', '' );
-	$_data['shelf_types']  = get_the_term_list( $post->ID, 'shelf_type', '', ' ', '' );
-	$_data['strain_types'] = get_the_term_list( $post->ID, 'strain_type', '', ' ', '' );
-	$_data['vendors']      = get_the_term_list( $post->ID, 'vendor', '', ' ', '' );
+	$_data['aromas']       = get_the_term_list( $post->ID, 'aromas', '', ' ', '' );
+	$_data['flavors']      = get_the_term_list( $post->ID, 'flavors', '', ' ', '' );
+	$_data['effects']      = get_the_term_list( $post->ID, 'effects', '', ' ', '' );
+	$_data['symptoms']     = get_the_term_list( $post->ID, 'symptoms', '', ' ', '' );
+	$_data['conditions']   = get_the_term_list( $post->ID, 'conditions', '', ' ', '' );
+	$_data['shelf_types']  = get_the_term_list( $post->ID, 'shelf_types', '', ' ', '' );
+	$_data['strain_types'] = get_the_term_list( $post->ID, 'strain_types', '', ' ', '' );
+	$_data['vendors']      = get_the_term_list( $post->ID, 'vendors', '', ' ', '' );
 	$data->data            = $_data;
 	return $data;
 }
-add_filter( 'rest_prepare_products', 'products_taxonomies', 10, 3 );
+//add_filter( 'rest_prepare_products', 'wpd_product_taxonomies', 10, 3 );
 
 /**
  * Add 'details' endpoint to Products
