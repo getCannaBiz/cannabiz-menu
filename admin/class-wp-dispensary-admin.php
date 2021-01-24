@@ -64,7 +64,7 @@ class WP_Dispensary_Admin {
 	 * @return void
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-dispensary-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/wp-dispensary-admin.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -77,7 +77,7 @@ class WP_Dispensary_Admin {
 	 */
 	public function enqueue_scripts() {
 		// Add the main admin js file.
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-dispensary-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/wp-dispensary-admin.js', array( 'jquery' ), $this->version, false );
 		// Only localize script on the Edit screen.
 		if ( 'edit' == $_GET['action'] ) {
 			// Localize the js file.

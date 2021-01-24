@@ -64,7 +64,7 @@ class WP_Dispensary_Public {
 	 * @return void
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-dispensary-public.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/wp-dispensary-public.min.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -75,7 +75,7 @@ class WP_Dispensary_Public {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-dispensary-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/wp-dispensary-public.js', array( 'jquery' ), $this->version, false );
 	}
 }
 
@@ -84,7 +84,7 @@ class WP_Dispensary_Public {
  */
 function wpd_oembed_styles() {
 
-	wp_register_style( 'wpd-oembed', plugin_dir_url( __FILE__ ) . 'css/wp-dispensary-oembed.css', false, $this->version );
+	wp_register_style( 'wpd-oembed', plugin_dir_url( __FILE__ ) . 'assets/css/wp-dispensary-oembed.css', false, $this->version );
 	wp_enqueue_style( 'wpd-oembed' );
 
 }
