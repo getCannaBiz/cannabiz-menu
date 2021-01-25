@@ -6,8 +6,14 @@
  * @since      3.4
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes
+ * @subpackage WP_Dispensary/includes/functions
  */
+
+ // If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 
 if ( ! function_exists( 'convert_taxonomies' ) ) {
     /**

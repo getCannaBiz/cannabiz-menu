@@ -129,10 +129,10 @@ class WP_Dispensary {
 		/**
 		 * Adding in custom functions that are used throughout the rest of the plugin
 		 *
-		 * @since    2.0.0 - last updated in version 3.4
+		 * @since    2.0.0 - last updated in version 4.0
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-helper-functions.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-general-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-settings-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-pricing-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-product-functions.php';

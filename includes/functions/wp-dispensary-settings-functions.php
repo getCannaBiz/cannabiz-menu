@@ -6,8 +6,13 @@
  * @since      3.0
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes
+ * @subpackage WP_Dispensary/includes/functions
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 /**
  * Display - Compounds table placement
