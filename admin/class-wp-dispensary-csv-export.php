@@ -213,16 +213,23 @@ class WP_Dispensary_CSV_Export {
                 $category_ids = json_encode( $cat_id, JSON_FORCE_OBJECT );
             }
 
-            $prices_by_weight = array(
-                __( '1/2 g', 'wp-dispensary' )  => get_post_meta( $product['ID'], 'price_half_gram', TRUE ),
-                __( '1 g', 'wp-dispensary' )    => get_post_meta( $product['ID'], 'price_gram', TRUE ),
-                __( '2 g', 'wp-dispensary' )    => get_post_meta( $product['ID'], 'price_two_grams', TRUE ),
-                __( '1/8 oz', 'wp-dispensary' ) => get_post_meta( $product['ID'], 'price_eighth', TRUE ),
-                __( '5 g', 'wp-dispensary' )    => get_post_meta( $product['ID'], 'price_five_grams', TRUE ),
-                __( '1/4 oz', 'wp-dispensary' ) => get_post_meta( $product['ID'], 'price_quarter_ounce', TRUE ),
-                __( '1/2 oz', 'wp-dispensary' ) => get_post_meta( $product['ID'], 'price_half_ounce', TRUE ),
-                __( '1 oz', 'wp-dispensary' )   => get_post_meta( $product['ID'], 'price_ounce', TRUE ),
-            );
+            // Create array.
+            $prices_by_weight = array();
+
+            // Flower prices.
+            $flower_prices = wpd_product_prices( 'flowers' );
+
+            // Concentrates prices.
+            $concentrates_prices = wpd_product_prices( 'concentrates' );
+
+            // Prices by weight.
+            $weight_prices = array_merge( $flower_prices, $concentrates_prices );
+
+            // Loop through flower prices.
+            foreach ( $weight_prices as $key=>$value ) {
+                // Add item to array.
+                $prices_by_weight[$value] = get_post_meta( $product['ID'], $key, true );
+            }
 
             // Prices by units array.
             $prices_by_units = array();
