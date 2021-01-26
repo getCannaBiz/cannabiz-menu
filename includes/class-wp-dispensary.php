@@ -131,6 +131,7 @@ class WP_Dispensary {
 		 *
 		 * @since    2.0.0 - last updated in version 4.0
 		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/deprecated-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-helper-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-general-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-settings-functions.php';

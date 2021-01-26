@@ -1,5 +1,21 @@
 <?php
 /**
+ * deprecated functions that are still able to be used, but will no longer be
+ * updated with new features.
+ *
+ * @link       https://www.wpdispensary.com
+ * @since      4.0
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin
+ */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
  * Get all menu types
  *
  * @since 2.5
