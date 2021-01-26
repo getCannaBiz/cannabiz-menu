@@ -35,3 +35,32 @@ function wpd_menu_types() {
 	return apply_filters( 'wpd_menu_types', $menu_types );
 }
 
+/**
+ * Get all menu types - Simple
+ *
+ * @todo update this function to have $lowercase = true, and pass a second arg ($implode) set to false
+ * by default. I can use the code found elsewhere in the theme to include this option.
+ * 
+ * @since 2.5
+ * @return array
+ */
+function wpd_menu_types_simple( $lowercase = NULL ) {
+
+	// Get menu types.
+	$menu_types = wpd_menu_types();
+
+	// Create simple array.
+	$menu_types_simple = array();
+
+	// Loop through menu types.
+	foreach ( $menu_types as $key=>$value ) {
+		// Add items to simple array.
+		if ( $lowercase ) {
+			$menu_types_simple[] = str_replace( '-', '', strtolower( $value ) );
+		} else {
+			$menu_types_simple[] = $value;
+		}
+	}
+
+	return apply_filters( 'wpd_menu_types_simple', $menu_types_simple );
+}

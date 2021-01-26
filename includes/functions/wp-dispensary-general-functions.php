@@ -85,31 +85,31 @@ function wpd_product_type_display_name( $slug = '' ) {
 }
 
 /**
- * Get all menu types - Simple
+ * Get all product types - Simple
  *
  * @todo update this function to have $lowercase = true, and pass a second arg ($implode) set to false
  * by default. I can use the code found elsewhere in the theme to include this option.
  * 
- * @since 2.5
+ * @since  4.0
  * @return array
  */
-function wpd_menu_types_simple( $lowercase = NULL ) {
+function wpd_product_types_simple( $lowercase = NULL ) {
 
-	// Get menu types.
-	$menu_types = wpd_menu_types();
+	// Get product types.
+	$product_types = wpd_product_types();
 
 	// Create simple array.
-	$menu_types_simple = array();
+	$product_types_simple = array();
 
-	// Loop through menu types.
-	foreach ( $menu_types as $key=>$value ) {
+	// Loop through product types.
+	foreach ( $product_types as $key=>$value ) {
 		// Add items to simple array.
 		if ( $lowercase ) {
-			$menu_types_simple[] = str_replace( '-', '', strtolower( $value ) );
+			$product_types_simple[] = str_replace( '-', '', strtolower( $value ) );
 		} else {
-			$menu_types_simple[] = $value;
+			$product_types_simple[] = $value;
 		}
 	}
 
-	return apply_filters( 'wpd_menu_types_simple', $menu_types_simple );
+	return apply_filters( 'wpd_product_types_simple', $product_types_simple );
 }
