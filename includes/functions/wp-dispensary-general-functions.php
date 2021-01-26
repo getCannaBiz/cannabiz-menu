@@ -41,13 +41,13 @@ function get_wpd_details_phrase() {
 }
 
 /**
- * Get all menu types
+ * Get all product types
  *
- * @since 2.5
+ * @since 4.0
  * @return array
  */
-function wpd_menu_types() {
-	$menu_types = array(
+function wpd_product_types() {
+	$product_types = array(
 		'wpd-flowers'      => __( 'Flowers', 'wp-dispensary' ),
 		'wpd-concentrates' => __( 'Concentrates', 'wp-dispensary' ),
 		'wpd-tinctures'    => __( 'Tinctures', 'wp-dispensary' ),
@@ -57,7 +57,7 @@ function wpd_menu_types() {
 		'wpd-growers'      => __( 'Growers', 'wp-dispensary' ),
 		'wpd-gear'         => __( 'Gear', 'wp-dispensary' ),
 	);
-	return apply_filters( 'wpd_menu_types', $menu_types );
+	return apply_filters( 'wpd_product_types', $product_types );
 }
 
 /**
