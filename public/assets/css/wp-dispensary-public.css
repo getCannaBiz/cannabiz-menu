@@ -106,8 +106,8 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-  position: relative;
-  width: 100%;
+	position: relative;
+	width: 100%;
 }
 
 .carouselwrap {
@@ -118,9 +118,11 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 
 .wpdshortcode,
 .wpd-menu-item {
+	display: flex;
 	flex-basis: 31%;
-  margin: 12px 1%;
-  position: relative;
+	flex-direction: column;
+	margin: 12px 1%;
+	position: relative;
 }
 
 .wpdshortcode p,
@@ -129,6 +131,7 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 .wpd-menu-item h2.wpd-producttitle,
 .carousel-item h2.wpd-producttitle {
 	font-size: 24px;
+	flex: 1;
 	margin-top: 12px;
 	margin-bottom: 6px;
 	padding: 0;
