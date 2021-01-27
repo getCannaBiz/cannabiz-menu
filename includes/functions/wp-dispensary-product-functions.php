@@ -269,13 +269,13 @@ function get_wpd_product_image( $product_id = NULL, $image_size ) {
 
     // Show image.
     if ( null === $thumbnail_url && 'full' === $image_size ) {
-        $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/images/wpd-large.jpg';
+        $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/assets/images/wpd-large.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
         $show_image  = '<a href="' . get_permalink( $product_id ) . '"><img src="' . $default_img . '" alt="' . get_the_title() . '" /></a>';
     } elseif ( null !== $thumbnail_url ) {
         $show_image = '<a href="' . get_permalink( $product_id ) . '"><img src="' . $thumbnail_url . '" alt="' . get_the_title() . '" /></a>';
     } else {
-        $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/images/' . $image_size . '.jpg';
+        $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/assets/images/' . $image_size . '.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
         $show_image  = '<a href="' . get_permalink( $product_id ) . '"><img src="' . $default_img . '" alt="' . get_the_title() . '" /></a>';
     }
