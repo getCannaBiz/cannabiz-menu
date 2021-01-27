@@ -144,7 +144,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 		public function wp_dispensary_create_admin_page() {
 			$url = plugins_url();
 			echo '<div class="wrap wpd-settings-wrap">';
-			echo '<h1 class="wpd-settings-logo"><img src="' . esc_url( $url ) . '/wp-dispensary/admin/images/wpd-logo.png" /> <span class="wpd-settings-version">v' . WPD_ADMIN_SETTINGS_VERSION . '</span></h1>';
+			echo '<h1 class="wpd-settings-logo"><img src="' . esc_url( $url ) . '/wp-dispensary/admin/assets/images/wpd-logo.png" /> <span class="wpd-settings-version">v' . WPD_ADMIN_SETTINGS_VERSION . '</span></h1>';
 			$this->show_navigation();
 			$this->show_forms();
 			echo '</div>';
