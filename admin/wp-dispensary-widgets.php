@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Create custom featured image size for the widget.
-if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'wpdispensary-widget', 312, 156, true );
-}
-
 // Products.
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/widgets/wpd-widget-products.php';
 

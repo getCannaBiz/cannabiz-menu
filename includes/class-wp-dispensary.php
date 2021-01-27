@@ -139,6 +139,13 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-product-functions.php';
 
 		/**
+		 * The file responsible for defining the custom image sizes.
+		 * 
+		 * @since 4.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-image-sizes.php';
+
+		/**
 		 * The functions responsible for updating WP Dispensary data during plugin upgrades
 		 * 
 		 * @since 4.0

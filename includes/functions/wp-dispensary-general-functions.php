@@ -113,3 +113,42 @@ function wpd_product_types_simple( $lowercase = NULL ) {
 
 	return apply_filters( 'wpd_product_types_simple', $product_types_simple );
 }
+
+/**
+ * Custom image sizes
+ * 
+ * @since  4.0
+ * @return array
+ */
+function wp_dispensary_custom_image_sizes() {
+    $sizes = array(
+        'dispensary-image' => array(
+            'width'  => 360,
+            'height' => 250
+        ),
+        'wpd-large' => array(
+            'width'  => 1200,
+            'height' => 1200
+        ),
+        'wpd-medium' => array(
+            'width'  => 800,
+            'height' => 800
+        ),
+        'wpd-small' => array(
+            'width'  => 400,
+            'height' => 400
+        ),
+        'wpd-thumbnail' => array(
+            'width'  => 50,
+            'height' => 50
+        ),
+        'wpdispensary-widget' => array(
+            'width'  => 312,
+            'height' => 156
+        )
+    );
+    // Filter the sizes.
+    $sizes = apply_filters( 'wp_dispensary_custom_image_sizes', $sizes );
+
+    return $sizes;
+}
