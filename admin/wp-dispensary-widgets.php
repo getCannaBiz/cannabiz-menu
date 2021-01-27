@@ -6,7 +6,7 @@
  * @since      1.0.0
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/
+ * @subpackage WP_Dispensary/admin
  */
 
 // Exit if accessed directly.

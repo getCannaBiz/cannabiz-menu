@@ -158,8 +158,9 @@ class WP_Dispensary {
 		/**
 		 * Adding custom post type taxonomy and metabox data to WP REST API
 		 *
-		 * @since    1.1.0
+		 * @since    1.1.0 - last updated v4.0
 		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-rest-api.php';
 
 		/**
