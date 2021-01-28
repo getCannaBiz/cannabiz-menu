@@ -67,48 +67,48 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpd_vendors     = '';
 		} else {
 			if ( get_the_term_list( $post->ID, 'shelf_types', true ) ) {
-				$wpd_shelf_type = '<tr><td><span>' . __( 'Shelf', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_type', '', ', ', '' ) . '</td></tr>';
+				$wpd_shelf_type = '<tr><td><span>' . __( 'Shelf', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_types', '', ', ', '' ) . '</td></tr>';
 			} else {
 				$wpd_shelf_type = '';
 			}
 			if ( get_the_term_list( $post->ID, 'strain_types', true ) ) {
-				$wpd_strain_type = '<tr><td><span>' . __( 'Strain', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_type', '', ', ', '' ) . '</td></tr>';
+				$wpd_strain_type = '<tr><td><span>' . __( 'Strain', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_types', '', ', ', '' ) . '</td></tr>';
 			} else {
 				$wpd_strain_type = '';
 			}
 			if ( get_the_term_list( $post->ID, 'vendors', true ) ) {
-				$wpd_vendors = '<tr><td><span>' . __( 'Vendor', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendor', '', ', ', '' ) . '</td></tr>';
+				$wpd_vendors = '<tr><td><span>' . __( 'Vendor', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendors', '', ', ', '' ) . '</td></tr>';
 			} else {
 				$wpd_vendors = '';
 			}
 		}
 
 		if ( get_the_term_list( $post->ID, 'aromas', true ) ) {
-			$wpd_aroma = '<tr><td><span>' . __( 'Aromas', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'aroma', '', ', ', '' ) . '</td></tr>';
+			$wpd_aroma = '<tr><td><span>' . __( 'Aromas', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'aromas', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpd_aroma = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'flavors', true ) ) {
-			$wpd_flavor = '<tr><td><span>' . __( 'Flavors', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'flavor', '', ', ', '' ) . '</td></tr>';
+			$wpd_flavor = '<tr><td><span>' . __( 'Flavors', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'flavors', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpd_flavor = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'effects', true ) ) {
-			$wpd_effect = '<tr><td><span>' . __( 'Effects', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'effect', '', ', ', '' ) . '</td></tr>';
+			$wpd_effect = '<tr><td><span>' . __( 'Effects', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'effects', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpd_effect = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'symptoms', true ) ) {
-			$wpd_symptom = '<tr><td><span>' . __( 'Symptoms', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'symptom', '', ', ', '' ) . '</td></tr>';
+			$wpd_symptom = '<tr><td><span>' . __( 'Symptoms', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'symptoms', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpd_symptom = '';
 		}
 
 		if ( get_the_term_list( $post->ID, 'conditions', true ) ) {
-			$wpd_condition = '<tr><td><span>' . __( 'Conditions', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'condition', '', ', ', '' ) . '</td></tr>';
+			$wpd_condition = '<tr><td><span>' . __( 'Conditions', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'conditions', '', ', ', '' ) . '</td></tr>';
 		} else {
 			$wpd_condition = '';
 		}
