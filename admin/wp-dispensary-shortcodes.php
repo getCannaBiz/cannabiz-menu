@@ -88,7 +88,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add aromas to $tax_query.
 	if ( '' !== $aroma ) {
 		$tax_query[] = array(
-			'taxonomy' => 'aroma',
+			'taxonomy' => 'aromas',
 			'field'    => 'slug',
 			'terms'    => $aroma,
 		);
@@ -97,7 +97,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add flavors to $tax_query.
 	if ( '' !== $flavor ) {
 		$tax_query[] = array(
-			'taxonomy' => 'flavor',
+			'taxonomy' => 'flavors',
 			'field'    => 'slug',
 			'terms'    => $flavor,
 		);
@@ -106,7 +106,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add effects to $tax_query.
 	if ( '' !== $effect ) {
 		$tax_query[] = array(
-			'taxonomy' => 'effect',
+			'taxonomy' => 'effects',
 			'field'    => 'slug',
 			'terms'    => $effect,
 		);
@@ -115,7 +115,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add symptoms to $tax_query.
 	if ( '' !== $symptom ) {
 		$tax_query[] = array(
-			'taxonomy' => 'symptom',
+			'taxonomy' => 'symptoms',
 			'field'    => 'slug',
 			'terms'    => $symptom,
 		);
@@ -124,7 +124,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add conditions to $tax_query.
 	if ( '' !== $condition ) {
 		$tax_query[] = array(
-			'taxonomy' => 'condition',
+			'taxonomy' => 'conditions',
 			'field'    => 'slug',
 			'terms'    => $condition,
 		);
@@ -133,7 +133,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add vendors to $tax_query.
 	if ( '' !== $vendor ) {
 		$tax_query[] = array(
-			'taxonomy' => 'vendor',
+			'taxonomy' => 'vendors',
 			'field'    => 'slug',
 			'terms'    => $vendor,
 		);
@@ -142,7 +142,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add shelf types to $tax_query.
 	if ( '' !== $shelf_type ) {
 		$tax_query[] = array(
-			'taxonomy' => 'shelf_type',
+			'taxonomy' => 'shelf_types',
 			'field'    => 'slug',
 			'terms'    => $shelf_type,
 		);
@@ -151,7 +151,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Add strain types to $tax_query.
 	if ( '' !== $strain_type ) {
 		$tax_query[] = array(
-			'taxonomy' => 'strain_type',
+			'taxonomy' => 'strain_types',
 			'field'    => 'slug',
 			'terms'    => $strain_type,
 		);
