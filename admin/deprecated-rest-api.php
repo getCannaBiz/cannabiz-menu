@@ -326,10 +326,7 @@ function slug_update_prerollinfo( $value, $object, $field_name ) {
  * Register compound details info
  */
 function slug_register_compounds() {
-	/**
-	 * @todo add function instead of array.
-	 */
-	$compounds = array( 'compound_thc', 'compound_thca', 'compound_cbd', 'compound_cba', 'compound_cbn', 'compound_cbg' );
+	$compounds = wpd_compound_list();
 	foreach ( $compounds as $compound ) {
 		register_rest_field(
 			array( 'flowers', 'concentrates' ),

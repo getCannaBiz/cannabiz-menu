@@ -602,3 +602,21 @@ function wpd_concentrates_weights_array() {
 	);
 	return apply_filters( 'wpd_concentrates_weights_array', $concentrates_weights );
 }
+
+/**
+ * Compounds list
+ * 
+ * @since  4.0
+ * @return array
+ */
+function wpd_compound_list() {
+	$compounds = array(
+		'compound_thc', 
+		'compound_thca', 
+		'compound_cbd', 
+		'compound_cba', 
+		'compound_cbn', 
+		'compound_cbg'
+	);
+	return apply_filters( 'wpd_compound_list', $compounds );
+}
