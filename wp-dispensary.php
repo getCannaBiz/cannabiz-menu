@@ -25,10 +25,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**
- * Current plugin version.
- */
+// Define the plugin version.
 define( 'WP_DISPENSARY_VERSION', '3.3.5' );
+
+// Define the plugin base name.
+$plugin_name = plugin_basename( __FILE__ );
 
 /**
  * The code that runs during plugin activation.
@@ -89,9 +90,6 @@ function run_wp_dispensary() {
 
 // Runs WP Dispensary.
 run_wp_dispensary();
-
-// Plugin base name.
-$plugin_name = plugin_basename( __FILE__ );
 
 /**
  * Add settings link on plugin page

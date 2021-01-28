@@ -26,7 +26,6 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Convert Product Data during Version 4.0 upgrade.
  * 
- * @todo   convert the taxonomies I changed (aromas, vendors, etc)
  * @since  4.0
  * @return void
  */
