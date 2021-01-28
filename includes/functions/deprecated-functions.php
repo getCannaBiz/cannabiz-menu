@@ -38,9 +38,6 @@ function wpd_menu_types() {
 /**
  * Get all menu types - Simple
  *
- * @todo update this function to have $lowercase = true, and pass a second arg ($implode) set to false
- * by default. I can use the code found elsewhere in the theme to include this option.
- * 
  * @since 2.5
  * @return array
  */

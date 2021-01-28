@@ -41,15 +41,22 @@ function wpd_convert_product_data() {
 	convert_taxonomies( 'gear', 'wpd_gear_category', 'wpd_categories' );
 	convert_taxonomies( 'tinctures', 'wpd_tinctures_category', 'wpd_categories' );
 
-    // Update post type metadata.
-	convert_metadata( 'flowers' );
-	convert_metadata( 'concentrates' );
-	convert_metadata( 'edibles' );
-	convert_metadata( 'prerolls' );
-	convert_metadata( 'topicals' );
-	convert_metadata( 'growers' );
-	convert_metadata( 'gear' );
-	convert_metadata( 'tinctures' );
+	// Update additional taxonomies and post type metadata.
+	foreach ( wpd_product_types_simple( true ) as $key=>$value ) {
+		// Update taxonomies.
+		convert_taxonomies( $key, 'allergen', 'allergens' );
+		convert_taxonomies( $key, 'aromas', 'aromas' );
+		convert_taxonomies( $key, 'conditions', 'conditions' );
+		convert_taxonomies( $key, 'effects', 'effects' );
+		convert_taxonomies( $key, 'flavors', 'flavors' );
+		convert_taxonomies( $key, 'ingredients', 'ingredients' );
+		convert_taxonomies( $key, 'shelf-type', 'shelf-types' );
+		convert_taxonomies( $key, 'strain-type', 'strain-types' );
+		convert_taxonomies( $key, 'symptom', 'symptoms' );
+		convert_taxonomies( $key, 'vendor', 'vendors' );
+		// Update metadata.
+		convert_metadata( $key );
+	}
 
 	// Update post types.
 	convert_post_types();
