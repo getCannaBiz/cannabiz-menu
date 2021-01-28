@@ -371,6 +371,7 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'product_difficulty', $product_difficulty );
                     update_post_meta( $post->ID, 'clone_count', $clone_count );
                     update_post_meta( $post->ID, 'seed_count', $seed_count );
+                    update_post_meta( $post->ID, 'inventory_clones', $inventory_clones );
                     update_post_meta( $post->ID, 'inventory_seeds', $inventory_seeds );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
