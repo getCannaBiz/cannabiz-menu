@@ -86,11 +86,11 @@ function wpd_rest_api_products_route_callback( $data ) {
 		// Categories.
 		$product_categories = wp_get_post_terms( $product_id, 'wpd_categories', array( 'fields' => 'ids' ) );
 		// Vendors.
-		$product_vendors = wp_get_post_terms( $product_id, 'vendor', array( 'fields' => 'ids' ) );
+		$product_vendors = wp_get_post_terms( $product_id, 'vendors', array( 'fields' => 'ids' ) );
 		// Shelf type.
-		$product_shelf_type = wp_get_post_terms( $product_id, 'shelf_type', array( 'fields' => 'ids' ) );
+		$product_shelf_type = wp_get_post_terms( $product_id, 'shelf_types', array( 'fields' => 'ids' ) );
 		// Strain type.
-		$product_strain_type = wp_get_post_terms( $product_id, 'strain_type', array( 'fields' => 'ids' ) );
+		$product_strain_type = wp_get_post_terms( $product_id, 'strain_types', array( 'fields' => 'ids' ) );
 		// Inventory amount.
 		$inventory_amount = get_post_meta( $product_id, 'inventory_grams', TRUE );
 		// Inventory type.
@@ -103,12 +103,12 @@ function wpd_rest_api_products_route_callback( $data ) {
 		// Compound total.
 		$compound_total = get_post_meta( $product_id, 'compounds_total', TRUE );
 		// Compounds.
-		$compounds_thc  = get_post_meta( $product_id, 'thc', TRUE );
-		$compounds_thca = get_post_meta( $product_id, 'thca', TRUE );
-		$compounds_cbd  = get_post_meta( $product_id, 'cbd', TRUE );
-		$compounds_cba  = get_post_meta( $product_id, 'cba', TRUE );
-		$compounds_cbn  = get_post_meta( $product_id, 'cbn', TRUE );
-		$compounds_cbg  = get_post_meta( $product_id, 'cbg', TRUE );
+		$compounds_thc  = get_post_meta( $product_id, 'compound_thc', TRUE );
+		$compounds_thca = get_post_meta( $product_id, 'compound_thca', TRUE );
+		$compounds_cbd  = get_post_meta( $product_id, 'compound_cbd', TRUE );
+		$compounds_cba  = get_post_meta( $product_id, 'compound_cba', TRUE );
+		$compounds_cbn  = get_post_meta( $product_id, 'compound_cbn', TRUE );
+		$compounds_cbg  = get_post_meta( $product_id, 'compound_cbg', TRUE );
 
 		// Create individual product data endpoints.
         $product_data[$product_id]['title']        = $product_title;
