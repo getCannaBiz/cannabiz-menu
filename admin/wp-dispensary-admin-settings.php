@@ -358,8 +358,6 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		 * Add Field: Details table placement
 		 * Field:     select
 		 * Section:   wpdas_display
-		 *
-		 * @todo make the options filterable for WPD eCommerce to add and set an option on install.
 		 */
 		$wpdas_obj->add_field(
 			'wpdas_display',
@@ -368,10 +366,10 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'type'    => 'select',
 				'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
 				'desc'    => esc_attr__( 'Where should the compounds display on single menu items?', 'wp-dispensary' ),
-				'options' => array(
+				'options' => apply_filters( 'wpd_compounds_table_placement_options', array(
 					'above' => 'Above Content',
 					'below' => 'Below Content',
-				),
+				) ),
 			)
 		);
 
