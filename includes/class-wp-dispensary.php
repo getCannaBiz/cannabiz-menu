@@ -127,6 +127,11 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-dispensary-public.php';
 
 		/**
+		 * The files responsible for defining all oEmbed related functionality
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/wp-dispensary-oembed.php';
+
+		/**
 		 * Adding in custom functions that are used throughout the rest of the plugin
 		 *
 		 * @since    2.0.0 - last updated in version 4.0
