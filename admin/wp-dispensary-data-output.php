@@ -9,6 +9,11 @@
  * @subpackage WP_Dispensary/admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Checking WP Dispensary option to
  * see if the user checked to hide the

@@ -9,6 +9,11 @@
  * @subpackage WP_Dispensary/admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /** Creates new featured image column */
 function wp_dispensary_columns( $columns ) {
 

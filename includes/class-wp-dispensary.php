@@ -121,6 +121,13 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-admin.php';
 
 		/**
+		 * The file responsible for defining all admin menu related functionality
+		 * 
+		 * @since 4.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-admin-menu-links.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */

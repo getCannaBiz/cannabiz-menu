@@ -9,6 +9,11 @@
  * @subpackage WP_Dispensary/admin/post-types
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Product Type.
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/metaboxes/wpd-metabox-product-type.php';
 
