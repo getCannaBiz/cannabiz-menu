@@ -9,7 +9,7 @@
  * @subpackage WP_Dispensary/admin
  */
 
-// Allergens.
+// Allergens. 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-allergens.php';
 
 // Aromas.

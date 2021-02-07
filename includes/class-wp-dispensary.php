@@ -231,6 +231,13 @@ class WP_Dispensary {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-csv-export.php';
 
+		/**
+		 * Adding the Class responsible managing Products.
+		 * 
+		 * @since 4.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-dispensary-products.php';
+
 		$this->loader = new WP_Dispensary_Loader();
 	}
 
