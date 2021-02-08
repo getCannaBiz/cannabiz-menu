@@ -96,6 +96,7 @@ class WPD_Products {
      */
     private function find( array $query ) {
         $query = array_merge( array(
+            'post_type'              => 'products',
             'no_found_rows'          => true,
             'update_post_meta_cache' => true,
             'update_post_term_cache' => false,
@@ -115,6 +116,7 @@ class WPD_Products {
     private function find_one( array $query ) {
         // Update query to only find 1 result.
         $query = array_merge( $query, array(
+            'post_type'      => 'products',
             'posts_per_page' => 1,
         ) );
         // Find the post
