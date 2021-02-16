@@ -131,7 +131,7 @@ function wp_dispensary_product_prices_metabox_save( $post_id, $post ) {
 	foreach ( $prices_meta as $key => $value ) {
         // Bail on post revisions.
 		if ( 'revision' === $post->post_type ) {
-			return;
+			return; 
 		}
         $value = implode( ',', (array) $value );
         // Check for meta value and either update or add the metadata.
