@@ -270,7 +270,7 @@ class WP_Dispensary_CSV_Export {
                 $category_ids,
                 get_the_post_thumbnail_url( $product['ID'] ),
             );
-            $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row );
+            $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row, $product );
         }
 
         $fh = @fopen( 'php://output', 'w' );
