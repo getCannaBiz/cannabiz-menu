@@ -85,7 +85,15 @@ function wpd_keep_taxonomy_menu_open( $parent_file ) {
 	// Get current screen taxonomy.
 	$taxonomy = $current_screen->taxonomy;
 	// Check taxonomies.
-	if ( 'vendor' == $taxonomy || 'wpd_categories' == $taxonomy || 'shelf_types' == $taxonomy || 'strain_types' == $taxonomy ) {
+	$tax_check = array(
+		'vendor',
+		'wpd_categories',
+		'shelf_types',
+		'strain_types'
+	);
+
+	// Check taxonomies.
+	if ( in_array( $taxonomy, $tax_check ) ) {
 		$parent_file = 'wpd-settings';
 	}
 
