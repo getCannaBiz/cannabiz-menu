@@ -72,19 +72,20 @@ class WPD_Products {
     }
 
     /**
-     * Save a post into the repository. Returns the post ID or a WP_Error.
+     * Get products
      *
-     * @param array $product
+     * @param array $query
      *
-     * @return int|WP_Error
+     * @return WP_Post|null
      */
-    public function save( array $product ) {
-        // Update post if $product exists.
-        if ( ! empty( $product['ID'] ) ) {
-            return wp_update_post( $product, true );
-        }
-        // Insert post if $product doesn't exist.
-        return wp_insert_post( $product, true );
+    public function get_products( $post_count ) {
+        // Update query to only find 1 result.
+        $query = array(
+            'post_type'      => 'products',
+            'posts_per_page' => $post_count,
+        );
+
+        return $this->query->query( $query );
     }
 
     /**
@@ -120,8 +121,24 @@ class WPD_Products {
             'posts_per_page' => 1,
         ) );
         // Find the post
-        $product = $this->find( $query );
-
-        return ! empty( $product[0] ) ? $product[0] : null;
+        return $this->query->query( $query );
     }
+
+    /**
+     * Save a post into the repository. Returns the post ID or a WP_Error.
+     *
+     * @param array $product
+     *
+     * @return int|WP_Error
+     */
+    public function save( array $product ) {
+        // Update post if $product exists.
+        if ( ! empty( $product['ID'] ) ) {
+            return wp_update_post( $product, true );
+        }
+        // Insert post if $product doesn't exist.
+        return wp_insert_post( $product, true );
+    }
+
+
 }
