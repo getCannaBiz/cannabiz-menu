@@ -96,6 +96,8 @@ class WP_Dispensary_CSV_Export {
             __( 'Inventory', 'wp-dispensary' ),
             __( 'Categories', 'wp-dispensary' ),
             __( 'Vendors', 'wp-dispensary' ),
+            __( 'Shelf type', 'wp-dispensary' ),
+            __( 'Strain type', 'wp-dispensary' ),
             __( 'Featured image', 'wp-dispensary' )
         );
 
@@ -153,6 +155,27 @@ class WP_Dispensary_CSV_Export {
             // Get vendors ID's.
             if ( ! empty( $vendors_id ) ) {
                 $vendors_ids = json_encode( $vendors_id, JSON_FORCE_OBJECT );
+            }
+
+            // Shelf Type ID.
+            $shelf_types_id = array();
+
+            // Shelf Type name.
+            $shelf_types_name = wp_get_post_terms( $product['ID'], 'shelf_types', array( 'fields' => 'names' ) );
+
+            // Shelf Type ID's.
+            if ( $shelf_types_name && ! is_wp_error( $shelf_types_name ) ) {
+                foreach ( $shelf_types_name as $cat=>$value ) {
+                    $shelf_types_id[] = $value;
+                }
+            }
+
+            // Empty shelf type ID's.
+            $shelf_types_ids = '';
+
+            // Get shelf type ID's.
+            if ( ! empty( $shelf_types_id ) ) {
+                $shelf_types_ids = json_encode( $shelf_types_id, JSON_FORCE_OBJECT );
             }
 
             // Flowers data.
@@ -227,6 +250,7 @@ class WP_Dispensary_CSV_Export {
                 $inventory_amount,
                 $category_ids,
                 $vendors_ids,
+                $shelf_types_ids,
                 get_the_post_thumbnail_url( $product['ID'] ),
             );
             $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row, $product );
