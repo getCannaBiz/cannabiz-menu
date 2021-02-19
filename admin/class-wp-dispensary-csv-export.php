@@ -178,6 +178,27 @@ class WP_Dispensary_CSV_Export {
                 $shelf_types_ids = json_encode( $shelf_types_id, JSON_FORCE_OBJECT );
             }
 
+            // Strain Type ID.
+            $strain_types_id = array();
+
+            // Strain Type name.
+            $strain_types_name = wp_get_post_terms( $product['ID'], 'strain_types', array( 'fields' => 'names' ) );
+
+            // Strain Type ID's.
+            if ( $strain_types_name && ! is_wp_error( $strain_types_name ) ) {
+                foreach ( $strain_types_name as $cat=>$value ) {
+                    $strain_types_id[] = $value;
+                }
+            }
+
+            // Empty strain type ID's.
+            $strain_types_ids = '';
+
+            // Get strain type ID's.
+            if ( ! empty( $strain_types_id ) ) {
+                $strain_types_ids = json_encode( $strain_types_id, JSON_FORCE_OBJECT );
+            }
+
             // Flowers data.
             if ( 'flowers' == get_post_meta( $product['ID'], 'product_type', true ) ) {
                 $inventory_amount = get_post_meta( $product['ID'], 'inventory_grams', TRUE );
@@ -251,6 +272,7 @@ class WP_Dispensary_CSV_Export {
                 $category_ids,
                 $vendors_ids,
                 $shelf_types_ids,
+                $strain_types_ids,
                 get_the_post_thumbnail_url( $product['ID'] ),
             );
             $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row, $product );
