@@ -197,3 +197,20 @@ add_filter( 'manage_edit-flowers_columns', 'wpd_remove_taxonomies_from_admin_col
 add_filter( 'manage_edit-concentrates_columns', 'wpd_remove_taxonomies_from_admin_columns' );
 add_filter( 'manage_edit-edibles_columns', 'wpd_remove_taxonomies_from_admin_columns' );
 add_filter( 'manage_edit-topicals_columns', 'wpd_remove_taxonomies_from_admin_columns' );
+
+/**
+ * Sort products on archive page
+ * 
+ * @since  4.0
+ * @param  object $query
+ * @return void
+ */
+function wpd_products_archive_sort_order( $query ) {
+	if ( is_post_type_archive( 'products' ) ):
+		// Set the order ASC or DESC.
+		$query->set( 'order', 'ASC' );
+		// Set the orderby.
+		$query->set( 'orderby', 'title' );
+	endif;    
+};
+add_action( 'pre_get_posts', 'wpd_products_archive_sort_order' ); 
