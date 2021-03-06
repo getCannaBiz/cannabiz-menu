@@ -211,6 +211,8 @@ function wpd_products_archive_sort_order( $query ) {
 		$query->set( 'order', 'ASC' );
 		// Set the orderby.
 		$query->set( 'orderby', 'title' );
+		// Set the amount of products to show.
+		$query->set( 'posts_per_page', -1 );
 	endif;    
 };
 add_action( 'pre_get_posts', 'wpd_products_archive_sort_order' ); 
