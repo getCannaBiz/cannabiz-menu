@@ -200,6 +200,27 @@ class WP_Dispensary_CSV_Export {
                 $strain_types_ids = json_encode( $strain_types_id, JSON_FORCE_OBJECT );
             }
 
+            // Allergens ID.
+            $allergens_id = array();
+
+            // Allergens name.
+            $allergens_name = wp_get_post_terms( $product['ID'], 'allergens', array( 'fields' => 'names' ) );
+
+            // Allergens ID's.
+            if ( $allergens_name && ! is_wp_error( $allergens_name ) ) {
+                foreach ( $allergens_name as $cat=>$value ) {
+                    $allergens_id[] = $value;
+                }
+            }
+
+            // Empty allergens ID's.
+            $allergens_ids = '';
+
+            // Get allergens ID's.
+            if ( ! empty( $allergens_id ) ) {
+                $allergens_ids = json_encode( $allergens_id, JSON_FORCE_OBJECT );
+            }
+
             // Aromas ID.
             $aromas_id = array();
 
@@ -295,6 +316,7 @@ class WP_Dispensary_CSV_Export {
                 $vendors_ids,
                 $shelf_types_ids,
                 $strain_types_ids,
+                $allergens_ids,
                 $aromas_ids,
                 get_the_post_thumbnail_url( $product['ID'] ),
             );
