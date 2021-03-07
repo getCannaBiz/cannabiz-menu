@@ -25,10 +25,10 @@ class WP_Dispensary_Permalink_Settings {
 	}
 
 	/**
-	 * Add Flowers setting to permalinks page.
+	 * Add Products setting to permalinks page.
 	 */
 	public function register_wpd_settings_fields() {
-		// Register Flowers slug.
+		// Register Products slug.
 		register_setting( 'permalink', 'wpd_products_slug', 'esc_attr' );
 		add_settings_field( 'wpd_products_slug', '<label for="wpd_products_slug">' . esc_html__( 'Products Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_products_fields_html' ), 'permalink', 'optional' );
 	}
