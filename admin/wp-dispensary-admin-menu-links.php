@@ -86,7 +86,7 @@ function wpd_keep_taxonomy_menu_open( $parent_file ) {
 	$taxonomy = $current_screen->taxonomy;
 	// Check taxonomies.
 	$tax_check = array(
-		'vendor',
+		'vendors',
 		'wpd_categories',
 		'shelf_types',
 		'strain_types'

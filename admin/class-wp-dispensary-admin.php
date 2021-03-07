@@ -105,6 +105,7 @@ function wpdispensary_right_now_content_table_end() {
 	$output     = 'object';
 	$operator   = 'and';
 	$post_types = get_post_types( $args, $output, $operator );
+	// Loop through post types.
 	foreach ( $post_types as $post_type ) {
 		$num_posts = wp_count_posts( $post_type->name );
 		$num       = number_format_i18n( $num_posts->publish );
@@ -114,6 +115,5 @@ function wpdispensary_right_now_content_table_end() {
 		}
 		echo '<li class="' . esc_html( $cpt_name ) . '-count"><tr><a href="edit.php?post_type=' . esc_html( $cpt_name ) . '"><td class="first b b-' . esc_html( $post_type->name ) . '"></td>' . esc_html( $num ) . ' <td class="t ' . esc_html( $post_type->name ) . '">' . esc_html( $text ) . '</td></a></tr></li>';
 	}
-
 }
 add_action( 'dashboard_glance_items', 'wpdispensary_right_now_content_table_end' );
