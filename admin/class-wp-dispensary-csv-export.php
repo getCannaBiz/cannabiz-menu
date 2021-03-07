@@ -102,6 +102,7 @@ class WP_Dispensary_CSV_Export {
             __( 'Aromas', 'wp-dispensary' ),
             __( 'Conditions', 'wp-dispensary' ),
             __( 'Effects', 'wp-dispensary' ),
+            __( 'Flavors', 'wp-dispensary' ),
             __( 'Featured image', 'wp-dispensary' )
         );
 
@@ -282,9 +283,30 @@ class WP_Dispensary_CSV_Export {
             // Empty effects ID's.
             $effects_ids = '';
 
-            // Get conditions ID's.
+            // Get effects ID's.
             if ( ! empty( $effects_id ) ) {
                 $effects_ids = json_encode( $effects_id, JSON_FORCE_OBJECT );
+            }
+
+            // Flavors ID.
+            $flavors_id = array();
+
+            // Flavors name.
+            $flavors_name = wp_get_post_terms( $product['ID'], 'flavors', array( 'fields' => 'names' ) );
+
+            // Flavors ID's.
+            if ( $flavors_name && ! is_wp_error( $flavors_name ) ) {
+                foreach ( $flavors_name as $cat=>$value ) {
+                    $flavors_id[] = $value;
+                }
+            }
+
+            // Empty flavors ID's.
+            $flavors_ids = '';
+
+            // Get flavors ID's.
+            if ( ! empty( $flavors_id ) ) {
+                $flavors_ids = json_encode( $flavors_id, JSON_FORCE_OBJECT );
             }
 
             // Flowers data.
@@ -365,6 +387,7 @@ class WP_Dispensary_CSV_Export {
                 $aromas_ids,
                 $conditions_ids,
                 $effects_ids,
+                $flavors_ids,
                 get_the_post_thumbnail_url( $product['ID'] ),
             );
             $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row, $product );
