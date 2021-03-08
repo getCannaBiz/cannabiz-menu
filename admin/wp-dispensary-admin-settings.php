@@ -139,6 +139,17 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			);
 		}
 
+		// Check if WPD Drivers is active.
+		if ( is_plugin_active( 'wpd-drivers/wpd-drivers.php' ) ) {
+			// Section: Drivers.
+			$wpdas_obj->add_section(
+				array(
+					'id'    => 'wpdas_drivers',
+					'title' => esc_attr__( 'Drivers', 'wp-dispensary' ),
+				)
+			);
+		}
+
 		// Section: Advanced.
 		$wpdas_obj->add_section(
 			array(
