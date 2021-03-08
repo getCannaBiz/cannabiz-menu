@@ -941,7 +941,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			);
 
 			/**
-			 * Add Field: Dispatch phone number
+			 * Add Field: Google Maps API key
 			 * Field:     text
 			 * Section:   wpdas_drivers
 			 */
@@ -953,6 +953,21 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 					'name'        => esc_attr__( 'Google Maps API key', 'wp-dispensary' ),
 					'desc'        => esc_attr__( 'Add a map to the order directions for your drivers', 'wp-dispensary' ),
 					'placeholder' => ''
+				)
+			);
+
+			/**
+			 * Add Field: Google Maps Geocode
+			 * Field:     checkbox
+			 * Section:   wpdas_display
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_drivers',
+				array(
+					'id'   => 'wpd_google_maps_geocode',
+					'type' => 'checkbox',
+					'name' => '',
+					'desc' => esc_attr__( 'Enable Google Maps geocode for latitude and longitude', 'wp-dispensary' ),
 				)
 			);
 
