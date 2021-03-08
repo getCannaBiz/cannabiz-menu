@@ -924,6 +924,38 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				)
 			);
 
+			/**
+			 * Add Field: Dispatch phone number
+			 * Field:     text
+			 * Section:   wpdas_drivers
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_drivers',
+				array(
+					'id'          => 'wpd_dispatch_phone_number',
+					'type'        => 'text',
+					'name'        => esc_attr__( 'Dispatch phone number', 'wp-dispensary' ),
+					'desc'        => esc_attr__( 'Add the phone number to your dispatch center', 'wp-dispensary' ),
+					'placeholder' => ''
+				)
+			);
+
+			/**
+			 * Add Field: Dispatch phone number
+			 * Field:     text
+			 * Section:   wpdas_drivers
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_drivers',
+				array(
+					'id'          => 'wpd_google_maps_api_key',
+					'type'        => 'text',
+					'name'        => esc_attr__( 'Google Maps API key', 'wp-dispensary' ),
+					'desc'        => esc_attr__( 'Add a map to the order directions for your drivers', 'wp-dispensary' ),
+					'placeholder' => ''
+				)
+			);
+
 		}
 	}
 	add_action( 'init', 'wpd_admin_settings_fields' );
