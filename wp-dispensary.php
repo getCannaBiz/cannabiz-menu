@@ -94,14 +94,16 @@ run_wp_dispensary();
 /**
  * Add settings link on plugin page
  *
- * @since 1.9.8
- * @param array $links an array of links related to the plugin.
+ * @since  1.9.8
+ * @param  array  $links an array of links related to the plugin.
  * @return array updatead array of links related to the plugin.
  */
 function wpd_plugin_links( $links ) {
 	$pro_link      = '<a href="https://www.wpdispensary.com/product/pro-package/" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'wp-dispensary' ) . '</a>';
 	$settings_link = '<a href="admin.php?page=wpd-settings">' . esc_attr__( 'Settings', 'wp-dispensary' ) . '</a>';
+	// Updated links.
 	array_unshift( $links, $settings_link );
+	// Updated links (Pro).
 	if ( ! function_exists( 'wpd_ecommerce' ) ) {
 		array_unshift( $links, $pro_link );
 	}
