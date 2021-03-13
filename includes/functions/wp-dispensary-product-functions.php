@@ -68,13 +68,14 @@ add_filter( 'post_updated_messages', 'wpd_product_updated_messages' );
  * @param  string $wrapper
  * @return void
  */
-function get_wpd_product_details( $product_id, $product_details, $wrapper ) {
+function get_wpd_product_details( $product_id, $product_details, $wrapper = 'span' ) {
 
     $str = '';
 
 	// Create variable.
 	$compounds_new = array();
 
+	// Wrapper type.
 	if ( isset( $wrapper ) ) {
 		$wrapper = $wrapper;
 	} else {
