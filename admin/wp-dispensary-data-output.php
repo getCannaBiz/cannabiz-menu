@@ -327,8 +327,8 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				}
 
 				// Add total compounds.
-				if ( get_post_meta( get_the_ID(), '_total_compounds', TRUE ) ) {
-					$showcompounds .= '<td><strong>' . __( 'TOTAL', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_ID(), '_total_compounds', TRUE ) . '%</td>';
+				if ( get_post_meta( get_the_ID(), 'compounds_total', TRUE ) ) {
+					$showcompounds .= '<td><strong>' . __( 'TOTAL', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_ID(), 'compounds_total', TRUE ) . '%</td>';
 				}
 
 				// Combine compounds into one variable.
@@ -387,11 +387,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		if ( get_post_meta( get_the_ID(), 'price_each', true ) ) {
 			$price_each     = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
 			$price_per_unit = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
-			$price_topical  = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price per unit:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
 		} else {
 			$price_each     = '';
 			$price_per_unit = '';
-			$price_topical  = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), 'price_per_pack', true ) ) {
@@ -469,7 +467,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'topicals' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-			$pricing_table_topicals = $price_topical;
+			$pricing_table_topicals = $price_each;
 		} else {
 			$pricing_table_topicals = '';
 		}
