@@ -8,7 +8,7 @@
  * @since      4.0.0
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/post-types/widgets
+ * @subpackage WP_Dispensary/admin/widgets
  */
 
 
@@ -88,12 +88,16 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
 
 			// Set the product type selected by user.
 			if ( 'all' == $product_type ) {
-				$product_types = array( 'flowers', 'concentrates', 'edibles', 'prerolls', 'topicals', 'growers', 'gear', 'tinctures' );
+				$product_types = wpd_product_types_simple( true );
 
 				/**
 				 * @todo update this to work in replace of the $meta_query relation below
 				 */
-				$type_array = array();
+				$type_array = array(
+					array(
+						'relation' => 'OR',
+					)
+				);
 				foreach ( $product_types as $type ) {
 					$type_array[] = array(
 						'key'   => 'product_type',

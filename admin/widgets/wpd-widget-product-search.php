@@ -8,7 +8,7 @@
  * @since      4.0.0
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/post-types/widgets
+ * @subpackage WP_Dispensary/admin/widgets
  */
 
 
