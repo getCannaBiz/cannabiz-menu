@@ -39,9 +39,7 @@ add_filter( 'wpd_manage_posts_custom_column', 'wp_dispensary_columns' );
 function wp_dispensary_columns_data( $column ) {
 	switch ( $column ) {
 		case 'featured_thumb':
-			echo '<a href="' . get_edit_post_link() . '">';
-			echo the_post_thumbnail( array( 40, 40 ) );
-			echo '</a>';
+			echo '<a href="' . get_edit_post_link() . '">' . the_post_thumbnail( array( 40, 40 ) ) . '</a>';
 			break;
 	}
 }

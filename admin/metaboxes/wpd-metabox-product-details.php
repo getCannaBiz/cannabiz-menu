@@ -166,23 +166,13 @@ function wp_dispensary_product_details_metabox_save( $post_id, $post ) {
     // Tinctures data.
 	$details_meta['compounds_thc']       = esc_html( $_POST['compounds_thc'] );
 	$details_meta['compounds_cbd']       = esc_html( $_POST['compounds_cbd'] );
+	$details_meta['product_size']        = esc_html( $_POST['product_size'] );
 	$details_meta['product_servings']    = esc_html( $_POST['product_servings'] );
 	$details_meta['product_servings_ml'] = esc_html( $_POST['product_servings_ml'] );
     $details_meta['product_net_weight']  = esc_html( $_POST['product_net_weight'] );
-    // Pre-roll data.
-    $details_meta['preroll_weight'] = esc_html( $_POST['preroll_weight'] );
-    // Topicals data.
-	$details_meta['compounds_thc'] = esc_html( $_POST['compounds_thc'] );
-	$details_meta['compounds_cbd'] = esc_html( $_POST['compounds_cbd'] );
-	$details_meta['product_size']  = esc_html( $_POST['product_size'] );
-    // Edibles data.
-	$details_meta['compounds_thc']      = esc_html( $_POST['compounds_thc'] );
-	$details_meta['compounds_cbd']      = esc_html( $_POST['compounds_cbd'] );
-	$details_meta['product_servings']   = esc_html( $_POST['product_servings'] );
-    $details_meta['product_net_weight'] = esc_html( $_POST['product_net_weight'] );
-    // Growers data.
-	$details_meta['seed_count']  = esc_html( $_POST['seed_count'] );
-	$details_meta['clone_count'] = esc_html( $_POST['clone_count'] );
+    $details_meta['preroll_weight']      = esc_html( $_POST['preroll_weight'] );
+	$details_meta['seed_count']          = esc_html( $_POST['seed_count'] );
+	$details_meta['clone_count']         = esc_html( $_POST['clone_count'] );
 
 	// Save $details_meta as metadata.
 	foreach ( $details_meta as $key => $value ) {
