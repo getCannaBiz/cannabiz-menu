@@ -355,44 +355,68 @@ class WP_Dispensary_CSV_Export {
 
             // Flowers data.
             if ( 'flowers' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-                $inventory_amount = get_post_meta( $product['ID'], 'inventory_grams', TRUE );
+                if ( get_post_meta( $product['ID'], 'inventory_grams', TRUE ) ) {
+                    $inventory_amount = get_post_meta( $product['ID'], 'inventory_grams', TRUE );
+                    $inventory_type   = 'grams';
+                } else {
+                    $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                    $inventory_type   = 'units';
+                }
                 $price_each       = '';
             }
             
             if ( 'concentrates' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-                $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                if ( get_post_meta( $product['ID'], 'inventory_grams', TRUE ) ) {
+                    $inventory_amount = get_post_meta( $product['ID'], 'inventory_grams', TRUE );
+                    $inventory_type   = 'grams';
+                } else {
+                    $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                    $inventory_type   = 'units';
+                }
                 $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
             }
             
             if ( 'edibles' == get_post_meta( $product['ID'], 'product_type', true ) ) {
                 $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                $inventory_type   = 'units';
                 $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
             }
             
             if ( 'prerolls' == get_post_meta( $product['ID'], 'product_type', true ) ) {
                 $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                $inventory_type   = 'units';
                 $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
             }
             
             if ( 'topicals' == get_post_meta( $product['ID'], 'product_type', true ) ) {
                 $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                $inventory_type   = 'units';
                 $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
             }
             
             if ( 'growers' == get_post_meta( $product['ID'], 'product_type', true ) ) {
                 $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                $inventory_type   = 'units';
                 $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
             }
             
             if ( 'gear' == get_post_meta( $product['ID'], 'product_type', true ) ) {
                 $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                $inventory_type   = 'units';
                 $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
             } 
             
             if ( 'tinctures' == get_post_meta( $product['ID'], 'product_type', true ) ) {
                 $inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+                $inventory_type   = 'units';
                 $price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
             }
+
+            // Create array.
+            $inventory = array(
+                'type'   => $inventory_type,
+                'amount' => $inventory_amount,
+            );
 
             // Create array.
             $prices_by_weight = array();
@@ -422,7 +446,7 @@ class WP_Dispensary_CSV_Export {
                 $product['post_date'],
                 $product['post_author'],
                 json_encode( $prices_by_weight, JSON_FORCE_OBJECT ),
-                $inventory_amount,
+                json_encode( $inventory, JSON_FORCE_OBJECT ),
                 $category_ids,
                 $vendors_ids,
                 $shelf_types_ids,
