@@ -231,7 +231,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		 * Section:   wpdas_advanced
 		 */
 		$wpdas_obj->add_field(
-			'wpdas_advanced',
+			'wpdas_advanced_disabled',
 			array(
 				'id'          => 'wpd_settings_export_orders_button',
 				'type'        => 'button',
@@ -247,7 +247,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		 * Section:   wpdas_advanced
 		 */
 		$wpdas_obj->add_field(
-			'wpdas_advanced',
+			'wpdas_advanced_disabled',
 			array(
 				'id'          => 'wpd_settings_export_patientsbutton',
 				'type'        => 'button',
