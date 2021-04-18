@@ -46,7 +46,7 @@ function wp_dispensary_shelf_types_taxonomy() {
 		'query_var'         => true,
 		'rewrite'           => array(
 			'slug'       => 'shelf-type',
-			'with_front' => false,
+			'with_front' => true,
 		),
 	) );
 

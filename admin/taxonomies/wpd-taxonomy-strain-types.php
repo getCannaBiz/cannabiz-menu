@@ -46,7 +46,7 @@ function wp_dispensary_strain_types_taxonomy() {
 		'query_var'         => true,
 		'rewrite'           => array(
 			'slug'       => 'strain-type',
-			'with_front' => false,
+			'with_front' => true,
 		),
 	) );
 }
