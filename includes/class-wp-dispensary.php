@@ -179,7 +179,6 @@ class WP_Dispensary {
 		 *
 		 * @since    1.1.0 - last updated v4.0
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-rest-api.php';
 
 		/**
