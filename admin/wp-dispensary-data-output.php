@@ -575,8 +575,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$details_above = '';
 			}
 
+			// Product Schema.
+			$product_schema = wpd_product_schema( get_the_ID() );
+
 			// Apply before.
-			$new_content = $wpd_pricing_above . $wpd_compound_details_above . $details_above . $original . $wpd_pricing_below . $wpd_compound_details_below . $details_below;
+			$new_content = $product_schema . $wpd_pricing_above . $wpd_compound_details_above . $details_above . $original . $wpd_pricing_below . $wpd_compound_details_below . $details_below;
 
 			return $new_content;
 		} else {

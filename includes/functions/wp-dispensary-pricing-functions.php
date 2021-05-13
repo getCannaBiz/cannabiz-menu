@@ -245,9 +245,9 @@ function wpd_pricing_currency_codes() {
  * @since 2.4
  * @return string
  */
-function wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
     // Filters the displayed flowers prices.
-    echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase ) );
+    echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase, $wrapper ) );
 }
 
 
@@ -257,9 +257,9 @@ function wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
     // Filters the displayed concentrates prices.
-    echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase ) );
+    echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase, $wrapper ) );
 }
 
 /**
@@ -270,9 +270,9 @@ function wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @return string
  */
 if ( ! function_exists( 'wpd_tinctures_prices_simple' ) ) {
-	function wpd_tinctures_prices_simple( $product_id = NULL, $phrase = NULL ) {
+	function wpd_tinctures_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
 		// Filters the displayed tinctures prices.
-		echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 }
 
@@ -282,9 +282,9 @@ if ( ! function_exists( 'wpd_tinctures_prices_simple' ) ) {
  * @since 2.5
  * @return string
  */
-function wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
     // Filters the displayed edibless prices.
-    echo apply_filters( 'wpd_edibless_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase ) );
+    echo apply_filters( 'wpd_edibless_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase, $wrapper ) );
 }
 
 
@@ -294,9 +294,9 @@ function wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
     // Filters the displayed prerolls prices.
-    echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase ) );
+    echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase, $wrapper ) );
 }
 
 
@@ -306,9 +306,9 @@ function wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
     // Filters the displayed topicals prices.
-    echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase ) );
+    echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase, $wrapper ) );
 }
 
 
@@ -318,9 +318,9 @@ function wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
     // Filters the displayed growers prices.
-    echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase ) );
+    echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase, $wrapper ) );
 }
 
 /**
@@ -331,9 +331,9 @@ function wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @return string
  */
 if ( ! function_exists( 'get_wpd_gear_prices_simple' ) ) {
-	function wpd_gear_prices_simple( $gear_id = NULL, $phrase = NULL ) {
+	function wpd_gear_prices_simple( $gear_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
 		// Filters the displayed flowers prices.
-		echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $gear_id, $phrase ) );
+		echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $gear_id, $phrase, $wrapper ) );
 	}
 }
 
@@ -343,38 +343,38 @@ if ( ! function_exists( 'get_wpd_gear_prices_simple' ) ) {
  * @since 2.5
  * @return string
  */
-function wpd_all_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function wpd_all_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
 
 	if ( 'flowers' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'concentrates' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'edibles' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_edibles_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_edibles_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'prerolls' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'topicals' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'growers' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'gear' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'tinctures' == get_post_meta( $product_id, 'product_type', true ) ) {
-		echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
+		echo apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 }
 
@@ -431,7 +431,7 @@ function get_wpd_pricing_phrase( $singular ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE ) {
 
     global $post;
 
@@ -535,11 +535,16 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricing_phrase = '';
 	}
 
-	$phrase_lowhigh = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . '</span>';
-	$phrase_single  = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+	if ( TRUE == $wrapper ) {
+		$span_start = '<span class="wpd-productinfo pricing">';
+		$span_end   = '</span>';
+	} else {
+		$span_start = '';
+		$span_end   = '';
+	}
 
-	$phrase_final        = $phrase_lowhigh;
-	$phrase_single_final = $phrase_single;
+	$phrase_final   = $span_start . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . $span_end;
+	$phrase_single  = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	/**
 	 * Return Pricing Prices.
@@ -549,7 +554,7 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 	} elseif ( ' ' === $pricing ) {
 		return '';
 	} else {
-		return $phrase_single_final;
+		return $phrase_single;
 	}
 
 }
@@ -561,7 +566,7 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
 
   global $post;
 
@@ -646,11 +651,16 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 		$pricing_phrase = '';
 	}
 
-	$phrase_lowhigh = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . '</span>';
-	$phrase_single  = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+	if ( TRUE == $wrapper ) {
+		$span_start = '<span class="wpd-productinfo pricing">';
+		$span_end   = '</span>';
+	} else {
+		$span_start = '';
+		$span_end   = '';
+	}
 
-	$phrase_final        = $phrase_lowhigh;
-	$phrase_single_final = $phrase_single;
+	$phrase_final = $span_start . $pricing_phrase . $pricinglow . $pricingsep . $pricinghigh . $span_end;
+	$phrase_single  = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	/**
 	 * Return Pricing Prices.
@@ -660,7 +670,7 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
 	} elseif ( ' ' === $pricing ) {
 		return '';
 	} else {
-		return $phrase_single_final;
+		return $phrase_single;
 	}
 
 }
@@ -671,7 +681,7 @@ function get_wpd_concentrates_prices_simple( $product_id = NULL, $phrase = NULL 
  * @since 4.0
  */
 if ( ! function_exists( 'get_wpd_tinctures_prices_simple' ) ) {
-	function get_wpd_tinctures_prices_simple( $product_id, $phrase = NULL ) {
+	function get_wpd_tinctures_prices_simple( $product_id, $phrase = NULL, $wrapper = TRUE  ) {
 
 		global $post;
 
@@ -690,23 +700,31 @@ if ( ! function_exists( 'get_wpd_tinctures_prices_simple' ) ) {
 			$pricing_phrase = '';
 		}
 
+		if ( TRUE == $wrapper ) {
+			$span_start = '<span class="wpd-productinfo pricing">';
+			$span_end   = '</span>';
+		} else {
+			$span_start = '';
+			$span_end   = '';
+		}	
+
 		/**
 		 * Price output - if only one price has been added
 		 */
 		if ( '' != $price_each && '' != $price_per_pack ) {
 
 			$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+			$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 		} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
-			$pricing = $currency_code . $price_per_pack;
-			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+			$pricing      = $currency_code . $price_per_pack;
+			$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 		} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
-			$pricing = $currency_code . $price_each;
-			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+			$pricing      = $currency_code . $price_each;
+			$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 		} else {
 			$phrase_final = '';
@@ -746,23 +764,31 @@ function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricing_phrase = '<strong>' . get_wpd_pricing_phrase( TRUE ) . ':</strong> ';
 	}
 
+	if ( TRUE == $wrapper ) {
+		$span_start = '<span class="wpd-productinfo pricing">';
+		$span_end   = '</span>';
+	} else {
+		$span_start = '';
+		$span_end   = '';
+	}
+
 	/**
 	 * Price output
 	 */
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
-		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$pricing      = $currency_code . $price_each . $pricingsep . $price_per_pack;
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
-		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$pricing      = $currency_code . $price_per_pack;
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
-		$pricing = $currency_code . $price_each;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$pricing      = $currency_code . $price_each;
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} else {
 		// Do nothing.
@@ -782,7 +808,7 @@ function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function get_wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE ) {
 
 	global $post;
 
@@ -801,23 +827,31 @@ function get_wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricing_phrase = '';
 	}
 
+	if ( TRUE == $wrapper ) {
+		$span_start = '<span class="wpd-productinfo pricing">';
+		$span_end   = '</span>';
+	} else {
+		$span_start = '';
+		$span_end   = '';
+	}
+
 	/**
 	 * Price output - if only one price has been added
 	 */
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} else {
 		$phrase_final = '';
@@ -837,7 +871,7 @@ function get_wpd_prerolls_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function get_wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
 
 	global $post;
 
@@ -856,23 +890,31 @@ function get_wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricing_phrase = '';
 	}
 
+	if ( TRUE == $wrapper ) {
+		$span_start = '<span class="wpd-productinfo pricing">';
+		$span_end   = '</span>';
+	} else {
+		$span_start = '';
+		$span_end   = '';
+	}
+
 	/**
 	 * Price output - if only one price has been added
 	 */
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} else {
 		$phrase_final = '';
@@ -892,7 +934,7 @@ function get_wpd_topicals_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE  ) {
 
 	global $post;
 
@@ -911,23 +953,31 @@ function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
 		$pricing_phrase = '';
 	}
 
+	if ( TRUE == $wrapper ) {
+		$span_start = '<span class="wpd-productinfo pricing">';
+		$span_end   = '</span>';
+	} else {
+		$span_start = '';
+		$span_end   = '';
+	}
+
 	/**
 	 * Price output - if only one price has been added
 	 */
 	if ( '' != $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each . $pricingsep . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 		$pricing = $currency_code . $price_per_pack;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 		$pricing = $currency_code . $price_each;
-		$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+		$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 	} else {
 		$phrase_final = '';
@@ -946,7 +996,7 @@ function get_wpd_growers_prices_simple( $product_id = NULL, $phrase = NULL ) {
  * @since 4.0
  */
 if ( ! function_exists( 'get_wpd_gear_prices_simple' ) ) {
-	function get_wpd_gear_prices_simple( $product_id, $phrase = NULL ) {
+	function get_wpd_gear_prices_simple( $product_id, $phrase = NULL, $wrapper = TRUE  ) {
 		// Get currency code.
 		$currency_code = wpd_currency_code();
 
@@ -962,23 +1012,31 @@ if ( ! function_exists( 'get_wpd_gear_prices_simple' ) ) {
 			$pricing_phrase = '';
 		}
 
-		/**
+		if ( TRUE == $wrapper ) {
+			$span_start = '<span class="wpd-productinfo pricing">';
+			$span_end   = '</span>';
+		} else {
+			$span_start = '';
+			$span_end   = '';
+		}
+	
+			/**
 		 * Price output - if only one price has been added
 		 */
 		if ( '' != $price_each && '' != $price_per_pack ) {
 
 			$pricing      = $currency_code . $price_each . $pricingsep . $price_per_pack;
-			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+			$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 		} elseif ( '' === $price_each && '' != $price_per_pack ) {
 
 			$pricing      = $currency_code . $price_per_pack;
-			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+			$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 		} elseif ( '' != $price_each && '' === $price_per_pack ) {
 
 			$pricing      = $currency_code . $price_each;
-			$phrase_final = '<span class="wpd-productinfo pricing">' . $pricing_phrase . $pricing . '</span>';
+			$phrase_final = $span_start . $pricing_phrase . $pricing . $span_end;
 
 		} else {
 			$phrase_final = '';
@@ -997,40 +1055,40 @@ if ( ! function_exists( 'get_wpd_gear_prices_simple' ) ) {
  * @since  2.5
  * @return string
  */
-function get_wpd_all_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function get_wpd_all_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE ) {
 
 	$str = '';
 
 	if ( 'flowers' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_flowers_prices_simple', get_wpd_flowers_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'concentrates' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_concentrates_prices_simple', get_wpd_concentrates_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'edibles' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_edibles_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_edibles_prices_simple', get_wpd_edibles_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'prerolls' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_prerolls_prices_simple', get_wpd_prerolls_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'topicals' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_topicals_prices_simple', get_wpd_topicals_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'growers' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_growers_prices_simple', get_wpd_growers_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'gear' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_gear_prices_simple', get_wpd_gear_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	if ( 'tinctures' == get_post_meta( $product_id, 'product_type', true ) ) {
-		$str .= apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase ) );
+		$str .= apply_filters( 'wpd_tinctures_prices_simple', get_wpd_tinctures_prices_simple( $product_id, $phrase, $wrapper ) );
 	}
 
 	return apply_filters( 'get_wpd_all_prices_simple', $str );

@@ -631,3 +631,37 @@ function wpd_compound_list() {
 	);
 	return apply_filters( 'wpd_compound_list', $compounds );
 }
+
+/**
+ * Product Schema
+ * 
+ * @param  int $product_id
+ * @since  4.0
+ * @return string
+ */
+function wpd_product_schema( $product_id ) {
+	
+	$wpd_settings = get_option( 'wpdas_general' );
+
+	if ( ! isset ( $wpd_settings['wpd_pricing_currency_code'] ) ) {
+		$wpd_currency = 'USD';
+	} else {
+		$wpd_currency = $wpd_settings['wpd_pricing_currency_code'];
+	}
+	?>
+	<!-- BEGIN Schema.org Product Rich Snippet Markup -->
+	<div itemscope="" itemtype="http://schema.org/Product">
+	  <meta itemprop="category" content="<?php get_the_term_list( $product_id, 'wpd_categories', '', '' ); ?>">
+	  <meta itemprop="name" content="<?php the_title(); ?>">
+	  <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>">
+
+	  <!-- offers -->
+	  <div id="dvProductPricing" class="ProductDetailsPricing" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+		<meta itemprop="seller" content="<?php echo get_bloginfo( 'name' ); ?>">
+		<meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
+		<link itemprop="availability" href="http://schema.org/InStock">
+		<meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
+		<meta itemprop="price" content="<?php echo wpd_all_prices_simple( $product_id, NULL, NULL ); ?>">
+	</div>
+	<!-- END Schema.org Product Structured Data Markup -->
+<?php }
