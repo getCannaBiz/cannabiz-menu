@@ -31,10 +31,10 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxo
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-ingredients.php';
 
 // Shelf types.
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-shelf-types.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-shelf_types.php';
 
 // Strain types.
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-strain-types.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-strain_types.php';
 
 // Symptoms.
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-symptoms.php';

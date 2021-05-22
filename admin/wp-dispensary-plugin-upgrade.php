@@ -49,8 +49,8 @@ function wpd_convert_product_data() {
 		convert_taxonomies( $key, 'effects', 'effects' );
 		convert_taxonomies( $key, 'flavors', 'flavors' );
 		convert_taxonomies( $key, 'ingredients', 'ingredients' );
-		convert_taxonomies( $key, 'shelf-type', 'shelf-types' );
-		convert_taxonomies( $key, 'strain-type', 'strain-types' );
+		convert_taxonomies( $key, 'shelf-type', 'shelf_types' );
+		convert_taxonomies( $key, 'strain-type', 'strain_types' );
 		convert_taxonomies( $key, 'symptom', 'symptoms' );
 		convert_taxonomies( $key, 'vendor', 'vendors' );
 		// Update metadata.
