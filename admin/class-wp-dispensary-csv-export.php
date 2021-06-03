@@ -80,7 +80,12 @@ class WP_Dispensary_CSV_Export {
     public function generate_csv() {
         ob_start();
 
-        $domain    = $_SERVER['SERVER_NAME'];
+        $domain = 'domain';
+
+        if ( isset( $_SERVER['SERVER_NAME'] ) ) {
+            $domain = $_SERVER['SERVER_NAME'];
+        }
+        // Create file name.
         $file_name = 'wpd-products-' . $domain . '-' . time() . '.csv';
 
         // Set the headers.

@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
      * 
      * @todo add localize_script to allow for slidesToShow to be updated in the WPD Settings
      */
-    $('.wpd-carousel').slick({
+    $(".wpd-carousel").slick({
     dots: true,
     arrows: false,
     autoplay: true,
@@ -62,23 +62,23 @@ jQuery(document).ready(function ($) {
      *
      * @since 2.4
      */
-    $('table.wpdispensary-prices tr').each(function(){ $(this).html($.trim($(this).html())) });
-    $('tr:empty').parents('table').hide();
+    $("table.wpdispensary-prices tr").each(function(){ $(this).html($.trim($(this).html())) });
+    $("tr:empty").parents("table").hide();
 
     /**
      * Hide Details table if empty.
      *
      * @since 2.4
      */
-    $('tbody').each(function(){ $(this).html($.trim($(this).html())) });
-    $('tbody:empty').parents('table').hide();
+    $("tbody").each(function(){ $(this).html($.trim($(this).html())) });
+    $("tbody:empty").parents("table").hide();
 
     /**
      * Widget carousel
      *
      * @since 3.0
      */
-    $('.wpd-carousel-widget').slick({
+    $(".wpd-carousel-widget").slick({
         dots: true,
         arrows: false,
         autoplay: true,
