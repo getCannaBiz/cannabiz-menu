@@ -42,21 +42,21 @@ class WP_Dispensary_Activator {
 		/**
 		 * Taxonomies
 		 */
-		wp_dispensary_aroma();
-		wp_dispensary_flavor();
-		wp_dispensary_effect();
-		wp_dispensary_symptom();
-		wp_dispensary_condition();
-		wp_dispensary_ingredient();
-		wp_dispensary_vendor();
-		wp_dispensary_shelf_type();
-		wp_dispensary_strain_type();
-		wp_dispensary_allergens();
+		wp_dispensary_aromas_taxonomy();
+		wp_dispensary_flavors_taxonomy();
+		wp_dispensary_effects_taxonomy();
+		wp_dispensary_symptoms_taxonomy();
+		wp_dispensary_conditions_taxonomy();
+		wp_dispensary_ingredients_taxonomy();
+		wp_dispensary_vendors_taxonomy();
+		wp_dispensary_shelf_types_taxonomy();
+		wp_dispensary_strain_types_taxonomy();
+		wp_dispensary_allergens_taxonomy();
 
 		/**
 		 * Custom Categories
 		 */
-		wp_dispensary_products_categories();
+		wp_dispensary_products_categories_taxonomy();
 
 		/**
 		 * Flush Rewrite Rules

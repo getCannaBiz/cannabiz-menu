@@ -19,7 +19,7 @@
  *
  * @since    1.0.0
  */
-function wp_dispensary_effect_taxonomy() {
+function wp_dispensary_effects_taxonomy() {
 
 	$labels = array(
 		'name'                       => _x( 'Effects', 'general name', 'wp-dispensary' ),
@@ -54,4 +54,4 @@ function wp_dispensary_effect_taxonomy() {
 		),
 	) );
 }
-add_action( 'init', 'wp_dispensary_effect_taxonomy', 0 );
+add_action( 'init', 'wp_dispensary_effects_taxonomy', 0 );
