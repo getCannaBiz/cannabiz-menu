@@ -109,18 +109,56 @@ function wp_dispensary_product_prices_metabox_save( $post_id, $post ) {
 	 * OK, we're authenticated: we need to find and save the data
 	 * We'll put it into an array to make it easier to loop though.
 	 */
-	// Regular prices.
-	$prices_meta['price_each']          = esc_html( $_POST['price_each'] );
-	$prices_meta['price_per_pack']      = esc_html( $_POST['price_per_pack'] );
-	$prices_meta['units_per_pack']      = esc_html( $_POST['units_per_pack'] );
-	$prices_meta['price_half_gram']     = esc_html( $_POST['price_half_gram'] );
-	$prices_meta['price_gram']          = esc_html( $_POST['price_gram'] );
-	$prices_meta['price_two_grams']     = esc_html( $_POST['price_two_grams'] );
-	$prices_meta['price_eighth']        = esc_html( $_POST['price_eighth'] );
-	$prices_meta['price_five_grams']    = esc_html( $_POST['price_five_grams'] );
-	$prices_meta['price_quarter_ounce'] = esc_html( $_POST['price_quarter_ounce'] );
-	$prices_meta['price_half_ounce']    = esc_html( $_POST['price_half_ounce'] );
-	$prices_meta['price_ounce']         = esc_html( $_POST['price_ounce'] );
+
+	$prices_meta = array();
+
+	if ( isset( $_POST['price_each'] ) ) {
+		$prices_meta['price_each'] = esc_html( $_POST['price_each'] );
+	}
+
+	if ( isset( $_POST['price_per_pack'] ) ) {
+		$prices_meta['price_per_pack'] = esc_html( $_POST['price_per_pack'] );
+	}
+
+	if ( isset( $_POST['units_per_pack'] ) ) {
+		$prices_meta['units_per_pack'] = esc_html( $_POST['units_per_pack'] );
+	}
+
+	if ( isset( $_POST['units_per_pack'] ) ) {
+		$prices_meta['units_per_pack'] = esc_html( $_POST['units_per_pack'] );
+	}
+
+	if ( isset( $_POST['price_half_gram'] ) ) {
+		$prices_meta['price_half_gram'] = esc_html( $_POST['price_half_gram'] );
+	}
+
+	if ( isset( $_POST['price_gram'] ) ) {
+		$prices_meta['price_gram'] = esc_html( $_POST['price_gram'] );
+	}
+
+	if ( isset( $_POST['price_two_grams'] ) ) {
+		$prices_meta['price_two_grams'] = esc_html( $_POST['price_two_grams'] );
+	}
+
+	if ( isset( $_POST['price_eighth'] ) ) {
+		$prices_meta['price_eighth'] = esc_html( $_POST['price_eighth'] );
+	}
+
+	if ( isset( $_POST['price_five_grams'] ) ) {
+		$prices_meta['price_five_grams'] = esc_html( $_POST['price_five_grams'] );
+	}
+
+	if ( isset( $_POST['price_quarter_ounce'] ) ) {
+		$prices_meta['price_quarter_ounce'] = esc_html( $_POST['price_quarter_ounce'] );
+	}
+
+	if ( isset( $_POST['price_half_ounce'] ) ) {
+		$prices_meta['price_half_ounce'] = esc_html( $_POST['price_half_ounce'] );
+	}
+
+	if ( isset( $_POST['price_ounce'] ) ) {
+		$prices_meta['price_ounce'] = esc_html( $_POST['price_ounce'] );
+	}
 
 	// Save $prices_meta as metadata.
 	foreach ( $prices_meta as $key => $value ) {
