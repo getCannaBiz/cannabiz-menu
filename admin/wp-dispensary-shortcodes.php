@@ -215,9 +215,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 		// Create new WP_Query.
 		$wpd_query = new WP_Query( $args );
 
-		// Menu type name.
-		$menu_type_name = wpd_product_type_display_name( $value );
-
 		// Image size.
 		if ( $image_size ) {
 			$img_size = $image_size;
@@ -239,9 +236,9 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			'weight'      => $weight
 		);
 
-		// Display Title.
+		// Display Product Type title.
 		if ( 'show' === $title ) {
-			$show_title = '<h2 class="wpd-title">' . $menu_type_name . '</h2>';
+			$show_title = '<h2 class="wpd-title">' . $value . '</h2>';
 		}
 
 		// Product start wrap.
