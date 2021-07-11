@@ -186,11 +186,13 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	// Loop through menu types.
 	foreach ( $menu_types as $key=>$value ) {
 
+		$key_value = str_replace( '-', '', strtolower( $value ) );
+
 		if ( empty( $meta_key ) ) {
 			$meta_query = array(
 				array(
 					'key'     => 'product_type',
-					'value'   => $value,
+					'value'   => $key_value,
 					'compare' => '=',
 				)
 			);
