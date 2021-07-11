@@ -29,6 +29,7 @@ div#wp_dispensary_grower_details .inside div.input-field {
 	margin-bottom:12px;
 }
 
+div#wp_dispensary_product_prices .inside div.input-field.flower-price,
 div#wp_dispensary_compound_details .inside div.input-field {
     flex-basis: 13%;
 }

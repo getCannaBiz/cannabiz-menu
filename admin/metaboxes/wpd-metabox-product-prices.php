@@ -44,15 +44,15 @@ function wp_dispensary_product_prices_metabox_content() {
 	$string = '<input type="hidden" name="wpd_product_prices_meta_noncename" id="wpd_product_prices_meta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-	// Get flower prices.
-	$flower_prices = wpd_product_prices( 'flowers' );
+	// Get product prices.
+	$product_prices = wpd_product_prices();
 
-	// Loop through flower prices.
-	foreach ( $flower_prices as $key=>$value ) {
-		$string .= '<div class="input-field flower-price">';
+	// Loop through product prices.
+	foreach ( $product_prices as $key=>$value ) {
+		$string .= '<div class="input-field product-price">';
 		$string .= '<p>' . $value . '</p>';
 		$string .= '<input type="text" name="' . $key . '" value="' . get_post_meta( $post->ID, $key, true ) . '" class="widefat" />';
-		$string .= '</div>';	
+		$string .= '</div>';
 	}
 
 	// Get concentrates prices.
@@ -63,18 +63,18 @@ function wp_dispensary_product_prices_metabox_content() {
 		$string .= '<div class="input-field concentrates-price">';
 		$string .= '<p>' . $value . '</p>';
 		$string .= '<input type="text" name="' . $key . '" value="' . get_post_meta( $post->ID, $key, true ) . '" class="widefat" />';
-		$string .= '</div>';	
+		$string .= '</div>';
 	}
 
-	// Get product prices.
-	$product_prices = wpd_product_prices();
+	// Get flower prices.
+	$flower_prices = wpd_product_prices( 'flowers' );
 
-	// Loop through product prices.
-	foreach ( $product_prices as $key=>$value ) {
-		$string .= '<div class="input-field product-price">';
+	// Loop through flower prices.
+	foreach ( $flower_prices as $key=>$value ) {
+		$string .= '<div class="input-field flower-price">';
 		$string .= '<p>' . $value . '</p>';
 		$string .= '<input type="text" name="' . $key . '" value="' . get_post_meta( $post->ID, $key, true ) . '" class="widefat" />';
-		$string .= '</div>';	
+		$string .= '</div>';
 	}
 
 	echo $string;
