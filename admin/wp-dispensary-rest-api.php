@@ -107,12 +107,13 @@ function wpd_rest_api_products_route_callback( $data ) {
 		$product_symptoms = wp_get_post_terms( $product_id, 'symptoms', array( 'fields' => 'ids' ) );
 		// Conditions.
 		$product_conditions = wp_get_post_terms( $product_id, 'conditions', array( 'fields' => 'ids' ) );	
-		// Inventory amount.
-		$inventory_amount = get_post_meta( $product_id, 'inventory_grams', TRUE );
-		// Inventory type.
-		$inventory_type = 'units';
+		// Inventory units.
+		$inventory_type   = 'units';
+		$inventory_amount = get_post_meta( $product_id, 'inventory_units', TRUE );
+		// Inventory grams.
 		if ( get_post_meta( $product_id, 'inventory_grams', TRUE ) ) {
-			$inventory_type = 'grams';
+			$inventory_type   = 'grams';
+			$inventory_amount = get_post_meta( $product_id, 'inventory_grams', TRUE );
 		}
 		// Compound type.
 		$compound_type = wpd_compound_type( $product_id );
