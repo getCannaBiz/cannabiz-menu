@@ -473,7 +473,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'topicals' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-			$pricing_table_topicals = $price_each;
+			$pricing_table_topicals = $price_each . $price_per_pack;
 		} else {
 			$pricing_table_topicals = '';
 		}
