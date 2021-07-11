@@ -302,6 +302,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$details_growers = '';
 		}
 
+		if ( 'tinctures' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
+			$details_tinctures = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors;
+		} else {
+			$details_tinctures = '';
+		}
+
 		// Menu types that display compounds.
 		$compounds_table = array( 'flowers', 'concentrates', 'prerolls' );
 
@@ -374,9 +380,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Details table build
 		 */
 		if ( ! isset( $wpd_settings['wpd_hide_details'] ) ) {
-			$wpd_table_details = $details_table_top . $details_flowers_concentrates . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_table_bottom;
+			$wpd_table_details = $details_table_top . $details_flowers_concentrates . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_tinctures . $details_table_bottom;
 		} elseif ( isset( $wpd_settings['wpd_hide_details'] ) && 'on' !== $wpd_settings['wpd_hide_details'] ) {
-			$wpd_table_details = $details_table_top . $details_flowers_concentrates . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_table_bottom;
+			$wpd_table_details = $details_table_top . $details_flowers_concentrates . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_tinctures . $details_table_bottom;
 		} else {
 			$wpd_table_details = '';
 		}
@@ -478,6 +484,18 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$pricing_table_growers = '';
 		}
 
+		if ( 'tinctures' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
+			$pricing_table_tinctures = $price_per_unit . $price_per_pack;
+		} else {
+			$pricing_table_tinctures = '';
+		}
+
+		if ( 'gear' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
+			$pricing_table_gear = $price_per_unit . $price_per_pack;
+		} else {
+			$pricing_table_gear = '';
+		}
+
 		/**
 		 * Pricing Table Bottom Action Hook
 		 *
@@ -511,9 +529,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 */
 		if ( ! is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
 			if ( ! isset( $wpd_settings['wpd_hide_pricing'] ) ) {
-				$wpd_table_pricing = $pricing_table_top . $pricing_table_flowers . $pricing_table_concentrates . $pricing_table_prerolls_edibles . $pricing_table_growers . $pricing_table_topicals . $pricing_table_bottom;
+				$wpd_table_pricing = $pricing_table_top . $pricing_table_flowers . $pricing_table_concentrates . $pricing_table_prerolls_edibles . $pricing_table_growers . $pricing_table_topicals . $pricing_table_tinctures . $pricing_table_gear . $pricing_table_bottom;
 			} elseif ( isset( $wpd_settings['wpd_hide_pricing'] ) && 'on' !== $wpd_settings['wpd_hide_pricing'] ) {
-				$wpd_table_pricing = $pricing_table_top . $pricing_table_flowers . $pricing_table_concentrates . $pricing_table_prerolls_edibles . $pricing_table_growers . $pricing_table_topicals . $pricing_table_bottom;
+				$wpd_table_pricing = $pricing_table_top . $pricing_table_flowers . $pricing_table_concentrates . $pricing_table_prerolls_edibles . $pricing_table_growers . $pricing_table_topicals . $pricing_table_tinctures . $pricing_table_gear . $pricing_table_bottom;
 			} else {
 				$wpd_table_pricing = '';
 			}
