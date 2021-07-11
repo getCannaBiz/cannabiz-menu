@@ -743,7 +743,7 @@ if ( ! function_exists( 'get_wpd_tinctures_prices_simple' ) ) {
  * @since 2.5
  * @return string
  */
-function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL ) {
+function get_wpd_edibles_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = TRUE ) {
 
   global $post;
 
