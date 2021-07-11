@@ -244,10 +244,10 @@ function wp_dispensary_menu_shortcode( $atts ) {
 		// Product start wrap.
 		if ( 'on' === $carousel ) {
 			// Prodfuct wrap start.
-			$wpd_products .= '<div id="' . $id . '" class="carouselwrap">' . $show_title . '<div class="wpd-carousel">';
+			$wpd_products .= '<div id="' . $id . '" class="carouselwrap ' . strtolower( $value ) . '">' . $show_title . '<div class="wpd-carousel">';
 		} else {
 			// Product wrap start.
-			$wpd_products .= '<div id="' . $id . '" class="wp-dispensary">' . $show_title . '<div class="wpd-menu">';
+			$wpd_products .= '<div id="' . $id . '" class="wp-dispensary ' . strtolower( $value ) . '">' . $show_title . '<div class="wpd-menu">';
 		}
 
 		// Product loop.
@@ -319,12 +319,9 @@ function wp_dispensary_menu_shortcode( $atts ) {
 		wp_reset_postdata();
 
 		// Shortcode inside top action hook.
-		$wpd_products .= '</div>';
+		$wpd_products .= '</div></div>';
 
 	}
-
-	// Product wrap end.
-	$wpd_products .= '</div>';
 
 	return $wpd_products;
 }
