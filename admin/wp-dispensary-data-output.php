@@ -467,7 +467,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'concentrates' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-			$pricing_table_concentrates = '<tr>' . $concentrate_prices . '</tr>';
+			$pricing_table_concentrates = '<tr>' . $price_each . $price_per_pack . $concentrate_prices . '</tr>';
 		} else {
 			$pricing_table_concentrates = '';
 		}
