@@ -46,11 +46,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 		$original = '';
 
-		if ( in_array( $post_type, apply_filters( 'wpd_original_array', array( 'products' ) ) ) ) {
+		if ( in_array( $post_type->name, apply_filters( 'wpd_original_array', array( 'products' ) ) ) ) {
 			$original = $content;
 		}
 
-		if ( in_array( $post_type, apply_filters( 'wpd_content_array', array( 'products' ) ) ) ) {
+		if ( in_array( $post_type->name, apply_filters( 'wpd_content_array', array( 'products' ) ) ) ) {
 			$content = '';
 		}
 
