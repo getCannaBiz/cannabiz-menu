@@ -66,6 +66,7 @@ function wp_dispensary_product_details_metabox_content() {
 	$seedcount  = get_post_meta( $post->ID, 'seed_count', true );
 
 	/// Tinctures fields.
+	echo '<div class="tinctures-fields">';
 	echo '<div class="input-field">';
 	echo '<p>' . esc_attr__( 'Servings', 'wpd-tinctures' ) . '</p>';
 	echo '<input type="text" name="product_servings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
@@ -85,15 +86,19 @@ function wp_dispensary_product_details_metabox_content() {
 	echo '<div class="input-field">';
 	echo '<p>' . esc_attr__( 'Net weight (ounces)', 'wpd-tinctures' ) . '</p>';
 	echo '<input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" />';
-    echo '</div>';
-    
+	echo '</div>';
+	echo '</div>';
+
     // Pre-roll weight.
+	echo '<div class="prerolls-fields">';
     echo '<div class="input-field">';
 	echo '<p>' . __( 'Weight (g)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_weight" value="' . esc_html( $preroll_weight ) . '" class="widefat" />';
     echo '</div>';
-    
+    echo '</div>';
+
     // Topicals fields.
+	echo '<div class="topicals-fields">';
 	echo '<div class="input-field">';
 	echo '<p>' . __( 'Size (oz)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_size" value="' . esc_html( $product_size ) . '" class="widefat" />';
@@ -106,8 +111,10 @@ function wp_dispensary_product_details_metabox_content() {
 	echo '<p>' . __( 'CBD mg', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $compounds_cbd ) . '" class="widefat" />';
     echo '</div>';
-    
+    echo '</div>';
+
     // Edibles fields.
+	echo '<div class="edibles-fields">';
 	echo '<div class="input-field">';
 	echo '<p>' . __( 'THC mg per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" />';
@@ -124,8 +131,10 @@ function wp_dispensary_product_details_metabox_content() {
 	echo '<p>' . __( 'Net weight (grams)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" />';
     echo '</div>';
-    
+    echo '</div>';
+
     // Grower fields.
+	echo '<div class="growers-fields">';
 	echo '<div class="input-field">';
 	echo '<p>' . __( 'Seeds per unit', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="seed_count" value="' . esc_html( $seedcount ) . '" class="widefat" />';
@@ -134,6 +143,7 @@ function wp_dispensary_product_details_metabox_content() {
 	echo '<p>' . __( 'Clones per unit', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="clone_count" value="' . esc_html( $clonecount ) . '" class="widefat" />';
 	echo '</div>';
+    echo '</div>';
 
 }
 
