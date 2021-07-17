@@ -130,6 +130,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$wpd_allergens = '';
 		}
 
+		if ( get_post_meta( get_the_ID(), 'activation_time', true ) ) {
+			$activation_time = '<td><span>' . __( 'Activation time', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'activation_time', true ) . '</td>';
+		} else {
+			$activation_time = '';
+		}
+
 		if ( get_post_meta( get_the_ID(), 'compounds_thc', true ) ) {
 			$wpd_thc         = '<td><span>' . __( 'THC', 'wp-dispensary' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . '%</td>';
 			$wpd_thc_mg      = '<tr><td><span>' . __( 'THC mg per serving', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . '</td></tr>';
@@ -273,19 +279,19 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'flowers', 'concentrates' ) ) ) {
-			$details_flowers_concentrates = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors;
+			$details_flowers_concentrates = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time;
 		} else {
 			$details_flowers_concentrates = '';
 		}
 
 		if ( 'edibles' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-			$details_edibles = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors;
+			$details_edibles = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time;
 		} else {
 			$details_edibles = '';
 		}
 
 		if ( 'prerolls' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-			$details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_preroll_weight . $wpd_vendors;
+			$details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_vendors . $wpd_preroll_weight . $activation_time;
 		} else {
 			$details_prerolls = '';
 		}
@@ -303,7 +309,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'tinctures' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-			$details_tinctures = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors;
+			$details_tinctures = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time;
 		} else {
 			$details_tinctures = '';
 		}

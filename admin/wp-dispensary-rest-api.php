@@ -115,6 +115,8 @@ function wpd_rest_api_products_route_callback( $data ) {
 			$inventory_type   = 'grams';
 			$inventory_amount = get_post_meta( $product_id, 'inventory_grams', TRUE );
 		}
+		// Activation time.
+		$activation_time = get_post_meta( $product_id, 'activation_time', TRUE );
 		// Compound type.
 		$compound_type = wpd_compound_type( $product_id );
 		// Compound total.
@@ -148,22 +150,21 @@ function wpd_rest_api_products_route_callback( $data ) {
 		$clone_count        = get_post_meta( $product_id, 'clone_count', true );
 		$seed_count         = get_post_meta( $product_id, 'seed_count', true );
 
-
 		// Create individual product data endpoints.
-        $product_data[$product_id]['title']          = $product_title;
-        $product_data[$product_id]['content']        = $product_content;
-		$product_data[$product_id]['product_type']   = $product_type;
-		$product_data[$product_id]['featured']       = $product_featured;
-		$product_data[$product_id]['prices']         = $product_prices;
-		$product_data[$product_id]['categories']     = $product_categories;
-		$product_data[$product_id]['vendors']        = $product_vendors;
-		$product_data[$product_id]['shelf_type']     = $product_shelf_type;
-		$product_data[$product_id]['strain_type']    = $product_strain_type;
-		$product_data[$product_id]['aromas']         = $product_aromas;
-		$product_data[$product_id]['flavors']        = $product_flavors;
-		$product_data[$product_id]['effects']        = $product_effects;
-		$product_data[$product_id]['symptoms']       = $product_symptoms;
-		$product_data[$product_id]['conditions']     = $product_conditions;
+        $product_data[$product_id]['title']        = $product_title;
+        $product_data[$product_id]['content']      = $product_content;
+		$product_data[$product_id]['product_type'] = $product_type;
+		$product_data[$product_id]['featured']     = $product_featured;
+		$product_data[$product_id]['prices']       = $product_prices;
+		$product_data[$product_id]['categories']   = $product_categories;
+		$product_data[$product_id]['vendors']      = $product_vendors;
+		$product_data[$product_id]['shelf_type']   = $product_shelf_type;
+		$product_data[$product_id]['strain_type']  = $product_strain_type;
+		$product_data[$product_id]['aromas']       = $product_aromas;
+		$product_data[$product_id]['flavors']      = $product_flavors;
+		$product_data[$product_id]['effects']      = $product_effects;
+		$product_data[$product_id]['symptoms']     = $product_symptoms;
+		$product_data[$product_id]['conditions']   = $product_conditions;
 		// Create inventory endpoints.
 		$product_data[$product_id]['inventory']['type']   = $inventory_type;
 		$product_data[$product_id]['inventory']['amount'] = $inventory_amount;
@@ -177,11 +178,12 @@ function wpd_rest_api_products_route_callback( $data ) {
 		$product_data[$product_id]['compounds']['compound']['cbn']  = $compounds_cbn;
 		$product_data[$product_id]['compounds']['compound']['cbg']  = $compounds_cbg;
 		// Create details endpoints.
-		$product_data[$product_id]['details']['servings']       = $product_servings;
-		$product_data[$product_id]['details']['servings_ml']    = $product_servings_ml;
-		$product_data[$product_id]['details']['net_weight']     = $product_net_weight;
-		$product_data[$product_id]['details']['product_flower'] = $product_flower;
-		$product_data[$product_id]['details']['product_weight'] = $product_weight;
+		$product_data[$product_id]['details']['servings']        = $product_servings;
+		$product_data[$product_id]['details']['servings_ml']     = $product_servings_ml;
+		$product_data[$product_id]['details']['net_weight']      = $product_net_weight;
+		$product_data[$product_id]['details']['product_flower']  = $product_flower;
+		$product_data[$product_id]['details']['product_weight']  = $product_weight;
+		$product_data[$product_id]['details']['activation_time'] = $activation_time;
 		// Create growers endpoints.
 		$product_data[$product_id]['growers']['origin']      = $product_origin;
 		$product_data[$product_id]['growers']['yield']       = $product_yield;
