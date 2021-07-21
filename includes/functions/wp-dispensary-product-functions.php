@@ -399,8 +399,8 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// THC.
 	if ( NULL != $compound_array && in_array( 'thc', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_thc', true ) ) {
-			$compounds['THC'] = get_post_meta( $product_id, 'compound_thc', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_thc', true ) ) {
+			$compounds['THC'] = get_post_meta( $product_id, 'compounds_thc', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -410,8 +410,8 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// THCA.
 	if ( NULL != $compound_array && in_array( 'thca', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_thca', true ) ) {
-			$compounds['THCA'] = get_post_meta( $product_id, 'compound_thca', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_thca', true ) ) {
+			$compounds['THCA'] = get_post_meta( $product_id, 'compounds_thca', true ) . $type;
 		}
 	} else {
 		// Do nothing.
@@ -419,8 +419,8 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// CBD.
 	if ( NULL != $compound_array && in_array( 'cbd', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cbd', true ) ) {
-			$compounds['CBD'] = get_post_meta( $product_id, 'compound_cbd', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cbd', true ) ) {
+			$compounds['CBD'] = get_post_meta( $product_id, 'compounds_cbd', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -430,8 +430,8 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// CBA.
 	if ( NULL != $compound_array && in_array( 'cba', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cba', true ) ) {
-			$compounds['CBA'] = get_post_meta( $product_id, 'compound_cba', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cba', true ) ) {
+			$compounds['CBA'] = get_post_meta( $product_id, 'compounds_cba', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -441,8 +441,8 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// CBN.
 	if ( NULL != $compound_array && in_array( 'cbn', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cbn', true ) ) {
-			$compounds['CBN'] = get_post_meta( $product_id, 'compound_cbn', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cbn', true ) ) {
+			$compounds['CBN'] = get_post_meta( $product_id, 'compounds_cbn', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -452,8 +452,8 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// CBG.
 	if ( NULL != $compound_array && in_array( 'cbg', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cbg', true ) ) {
-			$compounds['CBG'] = get_post_meta( $product_id, 'compound_cbg', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cbg', true ) ) {
+			$compounds['CBG'] = get_post_meta( $product_id, 'compounds_cbg', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -515,8 +515,8 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
 
 	// THC.
 	if ( in_array( 'thc', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_thc', true ) ) {
-			$compounds['THC'] = get_post_meta( $product_id, 'compound_thc', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_thc', true ) ) {
+			$compounds['THC'] = get_post_meta( $product_id, 'compounds_thc', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -526,8 +526,8 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
 
 	// THCA.
 	if ( in_array( 'thca', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_thca', true ) ) {
-			$compounds['THCA'] = get_post_meta( $product_id, 'compound_thca', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_thca', true ) ) {
+			$compounds['THCA'] = get_post_meta( $product_id, 'compounds_thca', true ) . $type;
 		}
 	} else {
 		// Do nothing.
@@ -535,8 +535,8 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
 
 	// CBD.
 	if ( in_array( 'cbd', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cbd', true ) ) {
-			$compounds['CBD'] = get_post_meta( $product_id, 'compound_cbd', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cbd', true ) ) {
+			$compounds['CBD'] = get_post_meta( $product_id, 'compounds_cbd', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -546,8 +546,8 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
 
 	// CBA.
 	if ( in_array( 'cba', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cba', true ) ) {
-			$compounds['CBA'] = get_post_meta( $product_id, 'compound_cba', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cba', true ) ) {
+			$compounds['CBA'] = get_post_meta( $product_id, 'compounds_cba', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -557,8 +557,8 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
 
 	// CBN.
 	if ( in_array( 'cbn', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cbn', true ) ) {
-			$compounds['CBN'] = get_post_meta( $product_id, 'compound_cbn', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cbn', true ) ) {
+			$compounds['CBN'] = get_post_meta( $product_id, 'compounds_cbn', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -568,8 +568,8 @@ function get_wpd_compounds_array( $product_id, $type = NULL, $compound_array = N
 
 	// CBG.
 	if ( in_array( 'cbg', $compound_array ) ) {
-		if ( get_post_meta( $product_id, 'compound_cbg', true ) ) {
-			$compounds['CBG'] = get_post_meta( $product_id, 'compound_cbg', true ) . $type;
+		if ( get_post_meta( $product_id, 'compounds_cbg', true ) ) {
+			$compounds['CBG'] = get_post_meta( $product_id, 'compounds_cbg', true ) . $type;
 		} else {
 			// Do nothing.
 		}
@@ -622,12 +622,12 @@ function wpd_concentrates_weights_array() {
  */
 function wpd_compound_list() {
 	$compounds = array(
-		'compound_thc', 
-		'compound_thca', 
-		'compound_cbd', 
-		'compound_cba', 
-		'compound_cbn', 
-		'compound_cbg'
+		'compounds_thc', 
+		'compounds_thca', 
+		'compounds_cbd', 
+		'compounds_cba', 
+		'compounds_cbn', 
+		'compounds_cbg'
 	);
 	return apply_filters( 'wpd_compound_list', $compounds );
 }
