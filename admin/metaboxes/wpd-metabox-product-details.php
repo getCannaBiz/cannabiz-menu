@@ -23,7 +23,7 @@ function wp_dispensary_product_details_metabox() {
     // Add Metabox.
 	add_meta_box(
 		'wp_dispensary_product_details',
-		esc_attr__( 'Product Details', 'wpd-tinctures' ),
+		esc_attr__( 'Product Details', 'wp-dispensary' ),
 		'wp_dispensary_product_details_metabox_content',
 		'products',
 		'normal',
@@ -86,23 +86,23 @@ function wp_dispensary_product_details_metabox_content() {
 	// Tinctures fields.
 	echo '<div class="tinctures-fields">';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_attr__( 'Servings', 'wpd-tinctures' ) . '</p>';
+	echo '<p>' . esc_attr__( 'Servings', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_servings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_attr__( 'THC mg per serving', 'wpd-tinctures' ) . '</p>';
+	echo '<p>' . esc_attr__( 'THC mg per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_attr__( 'CBD mg per serving', 'wpd-tinctures' ) . '</p>';
+	echo '<p>' . esc_attr__( 'CBD mg per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $cbdmg ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_attr__( 'mL per serving', 'wpd-tinctures' ) . '</p>';
+	echo '<p>' . esc_attr__( 'mL per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_servings_ml" value="' . esc_html( $mlserving ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_attr__( 'Net weight (ounces)', 'wpd-tinctures' ) . '</p>';
+	echo '<p>' . esc_attr__( 'Net weight (ounces)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" />';
 	echo '</div>';
     echo '<div class="input-field">';
