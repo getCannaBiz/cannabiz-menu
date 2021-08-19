@@ -121,6 +121,7 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 	display: flex;
 	flex-basis: 31%;
 	flex-direction: column;
+	flex-wrap: wrap;
 	margin: 12px 1%;
 	position: relative;
 	text-align: center;
