@@ -151,8 +151,8 @@ function wpd_rest_api_products_route_callback( $data ) {
 		$seed_count         = get_post_meta( $product_id, 'seed_count', true );
 
 		// Create individual product data endpoints.
-        $product_data[$product_id]['title']        = $product_title;
-        $product_data[$product_id]['content']      = $product_content;
+		$product_data[$product_id]['title']        = $product_title;
+		$product_data[$product_id]['content']      = $product_content;
 		$product_data[$product_id]['product_type'] = $product_type;
 		$product_data[$product_id]['featured']     = $product_featured;
 		$product_data[$product_id]['prices']       = $product_prices;
@@ -193,7 +193,7 @@ function wpd_rest_api_products_route_callback( $data ) {
 		$product_data[$product_id]['growers']['seed_count']  = $seed_count;
 	}
 
-    wp_reset_postdata();
+	wp_reset_postdata();
 
-    return rest_ensure_response( $product_data );
+	return rest_ensure_response( $product_data );
 }

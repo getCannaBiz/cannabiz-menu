@@ -169,19 +169,19 @@ add_filter( 'get_user_option_meta-box-order_growers', 'growers_metabox_order' );
  * @since 2.3
  */
 function wpd_remove_taxonomies_from_admin_columns( $columns ) {
-    // remove aroma taxonomy column.
-    unset( $columns['taxonomy-aroma'] );
-    // remove flavor taxonomy column.
-    unset( $columns['taxonomy-flavor'] );
-    // remove effect taxonomy column.
-    unset( $columns['taxonomy-effect'] );
-    // remove symptom taxonomy column.
-    unset( $columns['taxonomy-symptom'] );
-    // remove condition taxonomy column.
-    unset( $columns['taxonomy-condition'] );
-    // remove ingredients taxonomy column.
-    unset( $columns['taxonomy-ingredients'] );
-    // remove allergens taxonomy column.
+	// remove aroma taxonomy column.
+	unset( $columns['taxonomy-aroma'] );
+	// remove flavor taxonomy column.
+	unset( $columns['taxonomy-flavor'] );
+	// remove effect taxonomy column.
+	unset( $columns['taxonomy-effect'] );
+	// remove symptom taxonomy column.
+	unset( $columns['taxonomy-symptom'] );
+	// remove condition taxonomy column.
+	unset( $columns['taxonomy-condition'] );
+	// remove ingredients taxonomy column.
+	unset( $columns['taxonomy-ingredients'] );
+	// remove allergens taxonomy column.
 	unset( $columns['taxonomy-allergens'] );
 	
 	/**
@@ -211,6 +211,6 @@ function wpd_products_archive_sort_order( $query ) {
 		$query->set( 'orderby', 'title' );
 		// Set the amount of products to show.
 		$query->set( 'posts_per_page', -1 );
-	endif;    
+	endif;
 };
 add_action( 'pre_get_posts', 'wpd_products_archive_sort_order' ); 

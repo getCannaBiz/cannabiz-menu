@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @return void
  */
 function wpd_convert_product_data() {
-    // Update category taxonomies.
+	// Update category taxonomies.
 	convert_taxonomies( 'flowers', 'flowers_category', 'wpd_categories' );
 	convert_taxonomies( 'concentrates', 'concentrates_category', 'wpd_categories' );
 	convert_taxonomies( 'edibles', 'edibles_category', 'wpd_categories' );

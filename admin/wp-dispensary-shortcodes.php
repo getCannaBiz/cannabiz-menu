@@ -311,7 +311,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 			ob_end_clean();
 
 			// Shortcode item.
-			$wpd_products .= $show_name . $show_price . $show_info . $wpd_inside_bottom . $wpd_menu_bottom;
+			$wpd_products .= $show_name . '<div class="product-details">' . $show_price . $show_info . '</div>' . $wpd_inside_bottom . $wpd_menu_bottom;
 
 			// Shortcode item end.
 			$wpd_products .= '</div>';
