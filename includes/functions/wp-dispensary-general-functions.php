@@ -152,3 +152,183 @@ function wp_dispensary_custom_image_sizes() {
 
     return $sizes;
 }
+
+if ( ! function_exists( 'get_wpd_vendors_details' ) ) {
+	/**
+	 * Get vendors details
+	 * 
+	 * Retrieve details about all current vendors
+	 * 
+	 * @since  4.0
+	 * @param  string $details
+	 * @return array  $details
+	 */
+	function get_wpd_vendors_details( $details = NULL ) {
+		// Bail early?
+		if ( ! $details ) { return NULL; }
+
+		// Create vendors list.
+		$vendor_list = array();
+
+		// Get vendors.
+		$vendors = get_categories( [
+			'taxonomy' => 'vendors',
+			'orderby'  => 'title',
+			'order'    => 'ASC'
+		] );
+
+		// Build vendor list.
+		foreach ( $vendors as $vendor ) {
+			$vendor_list[] = array(
+				'name'  => $vendor->name,
+				'count' => $vendor->count,
+			);
+		}
+
+		// Create list of vendor names.
+		$vendor_names = array();
+
+		// Loop through vendor names.
+		foreach ( $vendor_list as $vendor ) {
+			$vendor_names[] = $vendor['name'];
+		}
+
+		// Create list of vendor counts.
+		$vendor_counts = array();
+
+		// Loop through vendor counts.
+		foreach ( $vendor_list as $vendor ) {
+			$vendor_counts[] = $vendor['count'];
+		}
+
+		// Vendor counts.
+		if ( 'counts' == $details ) {
+			return $vendor_counts;
+		}
+
+		// Vendor names.
+		if ( 'names' == $details ) {
+			return $vendor_names;
+		}
+	}
+}
+
+if ( ! function_exists( 'get_wpd_strain_types_details' ) ) {
+	/**
+	 * Get strain types details
+	 * 
+	 * Retrieve details about all current strain types
+	 * 
+	 * @since  4.0
+	 * @param  string $details
+	 * @return array  $details
+	 */
+	function get_wpd_strain_types_details( $details = NULL ) {
+		// Bail early?
+		if ( ! $details ) { return NULL; }
+
+		// Create strain types list.
+		$strain_types_list = array();
+
+		// Get strain types.
+		$strain_types = get_categories( [
+			'taxonomy' => 'strain_types',
+			'orderby'  => 'title',
+			'order'    => 'ASC'
+		] );
+
+		// Build strain list.
+		foreach ( $strain_types as $strain ) {
+			$strain_types_list[] = array(
+				'name'  => $strain->name,
+				'count' => $strain->count,
+			);
+		}
+
+		// Create list of strain types names.
+		$strain_type_names = array();
+
+		// Loop through strain types.
+		foreach ( $strain_types_list as $strain ) {
+			$strain_names[] = $strain['name'];
+		}
+
+		// Create list of strain types counts.
+		$strain_counts = array();
+
+		// Loop through strain types.
+		foreach ( $strain_types_list as $strain ) {
+			$strain_counts[] = $strain['count'];
+		}
+
+		// Strain counts.
+		if ( 'counts' == $details ) {
+			return $strain_counts;
+		}
+
+		// Strain names.
+		if ( 'names' == $details ) {
+			return $strain_names;
+		}
+	}
+}
+
+if ( ! function_exists( 'get_wpd_shelf_types_details' ) ) {
+	/**
+	 * Get shelf types details
+	 * 
+	 * Retrieve details about all current shelf types
+	 * 
+	 * @since  4.0
+	 * @param  string $details
+	 * @return array  $details
+	 */
+	function get_wpd_shelf_types_details( $details = NULL ) {
+		// Bail early?
+		if ( ! $details ) { return NULL; }
+
+		// Create shelf types list.
+		$shelf_types_list = array();
+
+		// Get shelf types.
+		$shelf_types = get_categories( [
+			'taxonomy' => 'shelf_types',
+			'orderby'  => 'title',
+			'order'    => 'ASC'
+		] );
+
+		// Build shelf list.
+		foreach ( $shelf_types as $shelf ) {
+			$shelf_types_list[] = array(
+				'name'  => $shelf->name,
+				'count' => $shelf->count,
+			);
+		}
+
+		// Create list of shelf types names.
+		$shelf_type_names = array();
+
+		// Loop through shelf types.
+		foreach ( $shelf_types_list as $shelf ) {
+			$shelf_names[] = $shelf['name'];
+		}
+
+		// Create list of shelf types counts.
+		$shelf_counts = array();
+
+		// Loop through shelf types.
+		foreach ( $shelf_types_list as $shelf ) {
+			$shelf_counts[] = $shelf['count'];
+		}
+
+		// Strain counts.
+		if ( 'counts' == $details ) {
+			return $shelf_counts;
+		}
+
+		// Strain names.
+		if ( 'names' == $details ) {
+			return $shelf_names;
+		}
+	}
+}
