@@ -61,7 +61,7 @@ function wpd_product_types() {
 }
 
 /**
- * Get menu type display name
+ * Get product type display name
  *
  * @since 4.0
  * @param string $slug
@@ -82,6 +82,30 @@ function wpd_product_type_display_name( $slug = '' ) {
 		'gear'         => __( 'Gear', 'wp-dispensary' ),
 	);
 	return apply_filters( 'wpd_product_type_display_name', $product_types[$slug] );
+}
+
+/**
+ * Get product type slug
+ *
+ * @since 4.0
+ * @param string $slug
+ * @return string
+ */
+function wpd_product_type_display_name_to_slug( $name = '' ) {
+	if ( ! $name ) {
+		return null;
+	}
+	$product_types = array(
+		__( 'Flowers', 'wp-dispensary' )      => 'flowers',
+		__( 'Concentrates', 'wp-dispensary' ) => 'concentrates',
+		__( 'Tinctures', 'wp-dispensary' )    => 'tinctures',
+		__( 'Edibles', 'wp-dispensary' )      => 'edibles',
+		__( 'Pre-rolls', 'wp-dispensary' )    => 'prerolls',
+		__( 'Topicals', 'wp-dispensary' )     => 'topicals',
+		__( 'Growers', 'wp-dispensary' )      => 'growers',
+		__( 'Gear', 'wp-dispensary' )         => 'gear',
+	);
+	return apply_filters( 'wpd_product_type_display_name', $product_types[$name] );
 }
 
 /**
@@ -329,6 +353,104 @@ if ( ! function_exists( 'get_wpd_shelf_types_details' ) ) {
 		// Strain names.
 		if ( 'names' == $details ) {
 			return $shelf_names;
+		}
+	}
+}
+
+if ( ! function_exists( 'get_wpd_product_type_item_count' ) ) {
+	/**
+	 * Get item (post) count by product type
+	 * 
+	 * @since  4.0
+	 * @return int
+	 */
+	function get_wpd_product_type_item_count( $product_type = NULL ) {
+		// Bail early?
+		if ( ! $product_type ) { return NULL; }
+		// Build query.
+		$query = new WP_Query( array( 'post_type' => 'products', 'meta_key' => 'product_type', 'meta_value' => $product_type ) );
+
+		return $query->found_posts;
+	}
+}
+
+if ( ! function_exists( 'get_wpd_product_type_details' ) ) {
+	/**
+	 * Get product type details
+	 * 
+	 * @since  4.0
+	 * @return int
+	 */
+	function get_wpd_product_type_details( $product_type = NULL ) {
+		// Bail early?
+		if ( ! $product_type ) { return NULL; }
+		// Build details array.
+		$details = array();
+		// Loop through product types.
+		foreach ( wpd_product_types_simple() as $slug=>$name ) {
+			// Add product type details to array.
+			$details[wpd_product_type_display_name_to_slug( $name )] = array(
+				'name'  => $name,
+				'count' => get_wpd_product_type_item_count( $name ),
+			);
+		}
+		// Return details.
+		return $details[$product_type];
+	}
+}
+
+if ( ! function_exists( 'get_wpd_product_types_details' ) ) {
+	/**
+	 * Get shelf types details
+	 * 
+	 * Retrieve details about all current shelf types
+	 * 
+	 * @since  4.0
+	 * @param  string $details
+	 * @return array  $details
+	 */
+	function get_wpd_product_types_details( $details = NULL ) {
+
+		$types = array();
+
+		// Loop through product types.
+		foreach ( wpd_product_types_simple( TRUE ) as $slug ) {
+			// Add product type details to array.
+			$types[] = get_wpd_product_type_details( $slug );
+		}
+
+		// Build product type list.
+		foreach ( $types as $product_type ) {
+			$details_list[] = array(
+				'name'  => $product_type['name'],
+				'count' => $product_type['count'],
+			);
+		}
+
+		// Create list of product types names.
+		$product_type_names = array();
+
+		// Loop through product types.
+		foreach ( $details_list as $product_type ) {
+			$product_names[] = $product_type['name'];
+		}
+
+		// Create list of product types counts.
+		$product_counts = array();
+
+		// Loop through product types.
+		foreach ( $details_list as $product_type ) {
+			$product_counts[] = $product_type['count'];
+		}
+
+		// Strain counts.
+		if ( 'counts' == $details ) {
+			return $product_counts;
+		}
+
+		// Strain names.
+		if ( 'names' == $details ) {
+			return $product_names;
 		}
 	}
 }
