@@ -388,10 +388,12 @@ if ( ! function_exists( 'get_wpd_product_type_details' ) ) {
 		$details = array();
 		// Loop through product types.
 		foreach ( wpd_product_types_simple() as $slug=>$name ) {
+			// Create the product type slug.
+			$slug = wpd_product_type_display_name_to_slug( $name );
 			// Add product type details to array.
 			$details[wpd_product_type_display_name_to_slug( $name )] = array(
 				'name'  => $name,
-				'count' => get_wpd_product_type_item_count( $name ),
+				'count' => get_wpd_product_type_item_count( $slug ),
 			);
 		}
 		// Return details.
