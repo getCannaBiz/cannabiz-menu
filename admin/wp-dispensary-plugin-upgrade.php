@@ -59,4 +59,8 @@ function wpd_convert_product_data() {
 
 	// Update post types.
 	convert_post_types();
+
+	/**
+	 * @todo convert user roles from 'patient' to 'customer'
+	 */
 }

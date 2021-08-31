@@ -167,12 +167,13 @@ class WP_Dispensary {
 		/**
 		 * The functions responsible for building the custom post types
 		 *
-		 * @since    1.0.0
+		 * @since    1.0.0 - last updated v4.0
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-taxonomies.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-metaboxes.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-products-post-type.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-widgets.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-vendors-taxonomy-fields.php';
 
 		/**
 		 * Adding custom post type taxonomy and metabox data to WP REST API
