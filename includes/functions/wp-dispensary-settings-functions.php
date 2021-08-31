@@ -105,18 +105,18 @@ function wpd_settings_display_details_phrase() {
 }
 
 /**
- * Patients - Registration Redirect
+ * Customers - Registration Redirect
  *
  * @return string|bool
  */
-function wpd_settings_patients_registration_redirect() {
-    $setting = get_option( 'wpdas_patients' );
+function wpd_settings_customers_registration_redirect() {
+    $setting = get_option( 'wpdas_customers' );
 
-    if ( isset( $setting['wpd_settings_patients_registration_redirect'] ) && 0 !== $setting['wpd_settings_patients_registration_redirect'] ) {
-        $redirect_url = home_url() . '/' . $setting['wpd_settings_patients_registration_redirect'];
+    if ( isset( $setting['wpd_settings_customers_registration_redirect'] ) && 0 !== $setting['wpd_settings_customers_registration_redirect'] ) {
+        $redirect_url = home_url() . '/' . $setting['wpd_settings_customers_registration_redirect'];
     } else {
         $redirect_url = FALSE;
     }
 
-	return apply_filters( 'wpd_settings_patients_registration_redirect', $redirect_url );
+	return apply_filters( 'wpd_settings_customers_registration_redirect', $redirect_url );
 }

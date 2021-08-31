@@ -251,7 +251,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'          => 'wpd_settings_export_patientsbutton',
 				'type'        => 'button',
-				'name'        => __( 'Patients', 'wp-dispensary' ),
+				'name'        => __( 'Customers', 'wp-dispensary' ),
 				'button_text' => __( 'Export', 'wp-dispensary' ),
 				'button_url'  => 'admin.php?page=wpd-settings&export_patients&_wpnonce=' . wp_create_nonce( 'download_csv' ),
 			)
