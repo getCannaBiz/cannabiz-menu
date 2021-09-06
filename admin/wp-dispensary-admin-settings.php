@@ -122,11 +122,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				)
 			);
 
-			// Section: Patients.
+			// Section: Customers.
 			$wpdas_obj->add_section(
 				array(
-					'id'    => 'wpdas_patients',
-					'title' => esc_attr__( 'Patients', 'wp-dispensary' ),
+					'id'    => 'wpdas_customers',
+					'title' => esc_attr__( 'Customers', 'wp-dispensary' ),
 				)
 			);
 
@@ -242,18 +242,18 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		);
 
 		/**
-		 * Add Field: Export patients
+		 * Add Field: Export customers
 		 * Field:     button
 		 * Section:   wpdas_advanced
 		 */
 		$wpdas_obj->add_field(
 			'wpdas_advanced_disabled',
 			array(
-				'id'          => 'wpd_settings_export_patientsbutton',
+				'id'          => 'wpd_settings_export_customersbutton',
 				'type'        => 'button',
 				'name'        => __( 'Customers', 'wp-dispensary' ),
 				'button_text' => __( 'Export', 'wp-dispensary' ),
-				'button_url'  => 'admin.php?page=wpd-settings&export_patients&_wpnonce=' . wp_create_nonce( 'download_csv' ),
+				'button_url'  => 'admin.php?page=wpd-settings&export_customers&_wpnonce=' . wp_create_nonce( 'download_csv' ),
 			)
 		);
 
@@ -653,7 +653,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 						'id'   => 'wpd_ecommerce_checkout_coupons',
 						'type' => 'checkbox',
 						'name' => esc_attr__( 'Coupons', 'wp-dispensary' ),
-						'desc' => esc_attr__( 'Allow patients to apply a coupon to their order', 'wp-dispensary' ),
+						'desc' => esc_attr__( 'Allow customers to apply a coupon to their order', 'wp-dispensary' ),
 					)
 				);
 			}
@@ -737,14 +737,14 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			/**
 			 * Add Field: Display a title to help separate fields
 			 * Field:     title
-			 * Section:   wpdas_patients
+			 * Section:   wpdas_customers
 			 */
 			$wpdas_obj->add_field(
-				'wpdas_patients',
+				'wpdas_customers',
 				array(
-					'id'   => 'wpd_settings_patients_registration_title',
+					'id'   => 'wpd_settings_customers_registration_title',
 					'type' => 'title',
-					'name' => '<h1>' . esc_attr__( 'Patient Registration', 'wp-dispensary' ) . '</h1>',
+					'name' => '<h1>' . esc_attr__( 'Customer Registration', 'wp-dispensary' ) . '</h1>',
 				)
 			);
 
@@ -759,15 +759,15 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			/**
 			 * Add Field: Redirect after registration
 			 * Field:     select
-			 * Section:   wpdas_patients
+			 * Section:   wpdas_customers
 			 */
 			$wpdas_obj->add_field(
-				'wpdas_patients',
+				'wpdas_customers',
 				array(
-					'id'      => 'wpd_settings_patients_registration_redirect',
+					'id'      => 'wpd_settings_customers_registration_redirect',
 					'type'    => 'select',
 					'name'    => esc_attr__( 'Redirect after registration', 'wp-dispensary' ),
-					'desc'    => esc_attr__( 'Choose the page patients will be redirected to when registering.', 'wp-dispensary' ),
+					'desc'    => esc_attr__( 'Choose the page customers will be redirected to when registering.', 'wp-dispensary' ),
 					'options' => $pages_array,
 				)
 			);
@@ -775,26 +775,26 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			/**
 			 * Add Field: Display a title to help separate fields
 			 * Field:     title
-			 * Section:   wpdas_patients
+			 * Section:   wpdas_customers
 			 */
 			$wpdas_obj->add_field(
-				'wpdas_patients',
+				'wpdas_customers',
 				array(
-					'id'   => 'wpd_settings_patients_verification_title',
+					'id'   => 'wpd_settings_customers_verification_title',
 					'type' => 'title',
-					'name' => '<h1>' . esc_attr__( 'Patient Verification', 'wp-dispensary' ) . '</h1>',
+					'name' => '<h1>' . esc_attr__( 'Customer Verification', 'wp-dispensary' ) . '</h1>',
 				)
 			);
 
 			/**
 			 * Add Field: Hide drivers license upload
 			 * Field:     checkbox
-			 * Section:   wpdas_patients
+			 * Section:   wpdas_customers
 			 */
 			$wpdas_obj->add_field(
-				'wpdas_patients',
+				'wpdas_customers',
 				array(
-					'id'   => 'wpd_settings_patients_verification_drivers_license',
+					'id'   => 'wpd_settings_customers_verification_drivers_license',
 					'type' => 'checkbox',
 					'name' => esc_attr__( 'Drivers license / Valid ID', 'wp-dispensary' ),
 					'desc' => esc_attr__( 'Hide the drivers license upload from account details', 'wp-dispensary' ),
@@ -804,12 +804,12 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			/**
 			 * Add Field: Hide doctor recommendation upload
 			 * Field:     checkbox
-			 * Section:   wpdas_patients
+			 * Section:   wpdas_customers
 			 */
 			$wpdas_obj->add_field(
-				'wpdas_patients',
+				'wpdas_customers',
 				array(
-					'id'   => 'wpd_settings_patients_verification_recommendation_doc',
+					'id'   => 'wpd_settings_customers_verification_recommendation_doc',
 					'type' => 'checkbox',
 					'name' => esc_attr__( 'Doctor recommendation', 'wp-dispensary' ),
 					'desc' => esc_attr__( 'Hide the doctor recommendation upload from account details', 'wp-dispensary' ),
@@ -819,12 +819,12 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			/**
 			 * Add Field: Hide recommendation number
 			 * Field:     checkbox
-			 * Section:   wpdas_patients
+			 * Section:   wpdas_customers
 			 */
 			$wpdas_obj->add_field(
-				'wpdas_patients',
+				'wpdas_customers',
 				array(
-					'id'   => 'wpd_settings_patients_verification_recommendation_num',
+					'id'   => 'wpd_settings_customers_verification_recommendation_num',
 					'type' => 'checkbox',
 					'name' => esc_attr__( 'Recommendation number', 'wp-dispensary' ),
 					'desc' => esc_attr__( 'Hide the recommendation number from account details', 'wp-dispensary' ),
@@ -834,12 +834,12 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			/**
 			 * Add Field: Hide expiration date
 			 * Field:     checkbox
-			 * Section:   wpdas_patients
+			 * Section:   wpdas_customers
 			 */
 			$wpdas_obj->add_field(
-				'wpdas_patients',
+				'wpdas_customers',
 				array(
-					'id'   => 'wpd_settings_patients_verification_recommendation_exp',
+					'id'   => 'wpd_settings_customers_verification_recommendation_exp',
 					'type' => 'checkbox',
 					'name' => esc_attr__( 'Expiration date', 'wp-dispensary' ),
 					'desc' => esc_attr__( 'Hide the expiration date from account details', 'wp-dispensary' ),
