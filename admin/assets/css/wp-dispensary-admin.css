@@ -331,3 +331,24 @@ body.taxonomy-shelf_type .search-box input[type="search"] {
     min-height: 26px;
     line-height: 1.92;
 }
+
+ul#adminmenu a.toplevel_page_wpd-settings.wp-has-current-submenu:after {
+	border-right-color: #FFF;
+}
+
+/** Admin toolbar menu items
+-------------------------------------------------------------- */
+
+body.wp-admin #wp-admin-bar-wp_dispensary a:before {
+	content: '';
+	background: url(../images/menu-icon.png) no-repeat center center !important;
+	width: 32px;
+	height: 32px;
+	padding: 0 !important;
+	display: block;
+	margin-right: 0 !important;
+}
+
+body.wp-admin #wp-admin-bar-wp_dispensary .ab-sub-wrapper a:before {
+	display: none !important;
+}

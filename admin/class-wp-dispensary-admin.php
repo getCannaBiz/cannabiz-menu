@@ -107,9 +107,9 @@ function wpdispensary_right_now_content_table_end() {
 	$post_types = get_post_types( $args, $output, $operator );
 	// Loop through post types.
 	foreach ( $post_types as $post_type ) {
-		$num_posts = wp_count_posts( $post_type->name );
-		$num       = number_format_i18n( $num_posts->publish );
-		$text      = _n( $post_type->labels->singular_name, $post_type->labels->name, intval( $num_posts->publish ) );
+		$count = wp_count_posts( $post_type->name );
+		$num   = number_format_i18n( $count->publish );
+		$text  = _n( $post_type->labels->singular_name, $post_type->labels->name, intval( $count->publish ) );
 		if ( current_user_can( 'edit_posts' ) ) {
 			$cpt_name = $post_type->name;
 		}
@@ -117,3 +117,62 @@ function wpdispensary_right_now_content_table_end() {
 	}
 }
 add_action( 'dashboard_glance_items', 'wpdispensary_right_now_content_table_end' );
+
+/**
+ * WP Dispensary toolbar quick menu
+ * 
+ * @since  4.0
+ * @return void
+ */
+function toolbar_quick_menu( $wp_admin_bar ) {
+	$args = array(
+		'id'    => 'wp_dispensary',
+		'title' => esc_attr__( 'WP Dispensary', 'wp-dispensary' ),
+		'href'  => admin_url() . 'edit.php?post_type=products',
+	);
+	$wp_admin_bar->add_node( $args );
+
+	// Create menu.
+	$menu = array();
+
+	// Add Products.
+	$menu[] = array(
+		'id'     => 'wpd_products',
+		'title'  => esc_attr__( 'Products', 'wp-dispensary' ),
+		'href'   => admin_url() . 'edit.php?post_type=products',
+		'parent' => 'wp_dispensary'
+	);
+
+	// Add Categories.
+	$menu[] = array(
+		'id'     => 'wpd_categories',
+		'title'  => esc_attr__( 'Categories', 'wp-dispensary' ),
+		'href'   => admin_url() . 'edit-tags.php?taxonomy=wpd_categories',
+		'parent' => 'wp_dispensary'
+	);
+
+	// Add Vendors.
+	$menu[] = array(
+		'id'     => 'wpd_vendors',
+		'title'  => esc_attr__( 'Vendors', 'wp-dispensary' ),
+		'href'   => admin_url() . 'edit-tags.php?taxonomy=vendors',
+		'parent' => 'wp_dispensary'
+	);
+
+	// Add Settings.
+	$menu[] = array(
+		'id'     => 'wpd_settings',
+		'title'  => esc_attr__( 'Settings', 'wp-dispensary' ),
+		'href'   => admin_url() . 'admin.php?page=wpd-settings',
+		'parent' => 'wp_dispensary'
+	);
+
+	$menu = apply_filters( 'wp_dispensary_toolbar_menu_items', $menu );
+
+	// Loop through menu items.
+	foreach ( $menu as $args ) {
+		// Add menu item.
+		$wp_admin_bar->add_node( $args );
+	}
+}
+add_action( 'admin_bar_menu', 'toolbar_quick_menu', 999 );
