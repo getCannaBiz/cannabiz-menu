@@ -286,8 +286,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 					'name'    => esc_attr__( 'Title', 'wp-dispensary' ),
 					'desc'    => esc_attr__( 'Choose the title you would like used', 'wp-dispensary' ),
 					'options' => array(
-						'Price'    => 'Prices',
-						'Donation' => 'Donations',
+						'Price'    => esc_attr__( 'Prices', 'wp-dispensary' ),
+						'Donation' => esc_attr__( 'Donations', 'wp-dispensary' ),
 					),
 				)
 			);
@@ -321,8 +321,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 					'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
 					'desc'    => esc_attr__( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
 					'options' => array(
-						'above' => 'Above Content',
-						'below' => 'Below Content',
+						'above' => esc_attr__( 'Above Content', 'wp-dispensary' ),
+						'below' => esc_attr__( 'Below Content', 'wp-dispensary' ),
 					),
 				)
 			);
@@ -383,9 +383,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
 				'desc'    => esc_attr__( 'Where should the compounds display on single menu items?', 'wp-dispensary' ),
 				'options' => apply_filters( 'wpd_compounds_table_placement_options', array(
-					'above' => 'Above Content',
-					'below' => 'Below Content',
-				) ),
+					'above' => esc_attr__( 'Above Content', 'wp-dispensary' ),
+					'below' => esc_attr__( 'Below Content', 'wp-dispensary' ),
+			) ),
 			)
 		);
 
@@ -636,7 +636,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 					'type'        => 'text',
 					'name'        => esc_attr__( 'Minimum order', 'wp-dispensary' ),
 					'desc'        => esc_attr__( 'Require a minimum order amount before checkout', 'wp-dispensary' ),
-					'placeholder' => 'ex: 50',
+					'placeholder' => esc_attr__( 'ex: 50', 'wp-dispensary' ),
 				)
 			);
 
@@ -697,7 +697,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 					array(
 						'id'   => 'wpd_ecommerce_checkout_payments_' . $id . '_checkbox',
 						'type' => 'checkbox',
-						'name' => 'Enable/Disable',
+						'name' => esc_attr__( 'Enable/Disable', 'wp-dispensary' ),
 						'desc' => esc_attr__( 'Enable ' . $value, 'wp-dispensary' ),
 					)
 				);
