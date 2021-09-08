@@ -21,14 +21,9 @@ jQuery(document).ready(function($) {
 	$( "#wp_dispensary_compound_details" ).hide();
 	$( "#wp_dispensary_product_prices .inside div.input-field" ).hide();
 	$( "#wp_dispensary_product_prices .inside div.input-field input" ).prop('disabled', true);
-	$( "#wp_dispensary_inventory_flowers" ).hide();
-	$( "#wp_dispensary_inventory_concentrates" ).hide();
-	$( "#wp_dispensary_inventory_edibles" ).hide();
-	$( "#wp_dispensary_inventory_prerolls" ).hide();
-	$( "#wp_dispensary_inventory_topicals" ).hide();
-	$( "#wp_dispensary_inventory_growers" ).hide();
-	$( "#wp_dispensary_inventory_tinctures" ).hide();
-	$( "#wp_dispensary_inventory_gear" ).hide();
+	$( "#wp_dispensary_inventory_management .wpd-inventory.grams" ).hide();
+	$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).hide();
+	$( "#wp_dispensary_inventory_management .wpd-inventory.growers" ).hide();
 
 	// Flowers product type.
 	if($("#product_type").val() == "flowers" ) {
@@ -39,7 +34,7 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_compound_details" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.flower-price" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.flower-price input" ).prop('disabled', false);
-		$( "#wp_dispensary_inventory_flowers" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.grams" ).show();
 	}
 	// Edibles product type.
 	if($("#product_type").val() == "edibles" ) {
@@ -49,7 +44,7 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_product_details .inside div.edibles-fields div.input-field input" ).prop('disabled', false);
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
-		$( "#wp_dispensary_inventory_edibles" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 	}
 	// Concentrates product type.
 	if($("#product_type").val() == "concentrates" ) {
@@ -61,7 +56,8 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_product_prices .inside div.input-field.concentrates-price" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.concentrates-price input" ).prop('disabled', false);
 		$( "#wp_dispensary_compound_details" ).show();
-		$( "#wp_dispensary_inventory_concentrates" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.grams" ).show();
 	}
 	// Pre-rolls product type.
 	if($("#product_type").val() == "prerolls" ) {
@@ -73,7 +69,7 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 		$( "#wp_dispensary_product_details" ).show();
-		$( "#wp_dispensary_inventory_prerolls" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 	}
 	// Topicals product type.
 	if($("#product_type").val() == "topicals" ) {
@@ -85,7 +81,7 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 		$( "#wp_dispensary_product_details" ).show();
-		$( "#wp_dispensary_inventory_topicals" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 	}
 	// Growers product type.
 	if($("#product_type").val() == "growers" ) {
@@ -97,7 +93,7 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 		$( "#wp_dispensary_grower_details" ).show();
 		$( "#wp_dispensary_clone_details" ).show();
-		$( "#wp_dispensary_inventory_growers" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.growers" ).show();
 	}
 	// Tinctures product type.
 	if($("#product_type").val() == "tinctures" ) {
@@ -108,13 +104,13 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 		$( "#wpd_tinctures_details" ).show();
-		$( "#wp_dispensary_inventory_tinctures" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 	}
 	// Gear product type.
 	if($("#product_type").val() == "gear" ) {
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 		$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
-		$( "#wp_dispensary_inventory_gear" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 	}
 
 	$('#product_type').change(function() {
@@ -138,14 +134,9 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_compound_details" ).hide();
 		$( "#wp_dispensary_product_prices .inside div.input-field" ).hide();
 		$( "#wp_dispensary_product_prices .inside div.input-field input" ).prop('disabled', true);
-		$( "#wp_dispensary_inventory_flowers" ).hide();
-		$( "#wp_dispensary_inventory_concentrates" ).hide();
-		$( "#wp_dispensary_inventory_edibles" ).hide();
-		$( "#wp_dispensary_inventory_prerolls" ).hide();
-		$( "#wp_dispensary_inventory_topicals" ).hide();
-		$( "#wp_dispensary_inventory_growers" ).hide();
-		$( "#wp_dispensary_inventory_tinctures" ).hide();
-		$( "#wp_dispensary_inventory_gear" ).hide();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.grams" ).show();
+		$( "#wp_dispensary_inventory_management .wpd-inventory.growers" ).show();
 
 		// Flowers product type.
 		if($(this).val() == 'flowers') {
@@ -157,7 +148,7 @@ jQuery(document).ready(function($) {
 			$( "#wp_dispensary_product_prices .inside div.input-field.flower-price" ).show();
 			$( "#wp_dispensary_product_prices .inside div.input-field.flower-price input" ).prop('disabled', false);
 			$( "#wp_dispensary_compound_details" ).show();
-			$( "#wp_dispensary_inventory_flowers" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.grams" ).show();
 		}
 		// Concentrates product type.
 		if($(this).val() == 'concentrates') {
@@ -169,7 +160,8 @@ jQuery(document).ready(function($) {
 			$( "#wp_dispensary_product_prices .inside div.input-field.concentrates-price" ).show();
 			$( "#wp_dispensary_product_prices .inside div.input-field.concentrates-price input" ).prop('disabled', false);
 			$( "#wp_dispensary_compound_details" ).show();
-			$( "#wp_dispensary_inventory_concentrates" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.grams" ).show();
 		}
 		// Edibles product type.
 		if($(this).val() == 'edibles') {
@@ -182,6 +174,7 @@ jQuery(document).ready(function($) {
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 			$( "#wp_dispensary_compound_details" ).show();
 			$( "#wp_dispensary_inventory_edibles" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 		}
 		// Pre-rolls product type.
 		if($(this).val() == 'prerolls') {
@@ -193,7 +186,7 @@ jQuery(document).ready(function($) {
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 			$( "#wp_dispensary_compound_details" ).show();
-			$( "#wp_dispensary_inventory_prerolls" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 		}
 		// Topicals product type.
 		if($(this).val() == 'topicals') {
@@ -204,7 +197,7 @@ jQuery(document).ready(function($) {
 			$( "#wp_dispensary_product_details .inside div.topicals-fields div.input-field input" ).prop('disabled', false);
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
-			$( "#wp_dispensary_inventory_details" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 		}
 		// Growers product type.
 		if($(this).val() == 'growers') {
@@ -216,7 +209,7 @@ jQuery(document).ready(function($) {
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 			$( "#wp_dispensary_grower_details" ).show();
-			$( "#wp_dispensary_inventory_growers" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.growers" ).show();
 		}
 		// Tinctures product type.
 		if($(this).val() == 'tinctures') {
@@ -228,14 +221,14 @@ jQuery(document).ready(function($) {
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
 			$( "#wp_dispensary_product_details" ).show();
-			$( "#wp_dispensary_inventory_tinctures" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 		}
 		// Gear product type.
 		if($(this).val() == 'gear') {
 			console.log( 'Gear has been selected' );
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price" ).show();
 			$( "#wp_dispensary_product_prices .inside div.input-field.product-price input" ).prop('disabled', false);
-			$( "#wp_dispensary_inventory_gear" ).show();
+			$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 		}
 	});
 });
