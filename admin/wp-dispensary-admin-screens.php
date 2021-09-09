@@ -214,3 +214,65 @@ function wpd_products_archive_sort_order( $query ) {
 	endif;
 };
 add_action( 'pre_get_posts', 'wpd_products_archive_sort_order' ); 
+
+/**
+ * Add filter to All Products admin screen
+ * 
+ * @since  4.0
+ * @return void
+ */
+function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
+    $type = 'products';
+	// Set post type.
+	if ( isset( $_GET['post_type'] ) ) {
+        $type = $_GET['post_type'];
+    }
+
+    // Only add filter to post type you want
+    if ( 'products' == $type ) {
+		// Create array.
+		$values = array();
+		// Loop through product types.
+		foreach ( wpd_product_types() as $key=>$value ) {
+			// Add product type to array.
+			$values[$value] = wpd_product_type_display_name_to_slug( $value );
+		}
+        ?>
+        <select name="PRODUCT_TYPE_FIELD_VALUE">
+        <option value=""><?php _e( 'All Types', 'wp-dispensary' ); ?></option>
+        <?php
+            $current_v = isset( $_GET['PRODUCT_TYPE_FIELD_VALUE'] ) ? $_GET['PRODUCT_TYPE_FIELD_VALUE'] : '';
+            foreach ( $values as $label => $value ) {
+                printf
+                    (
+                        '<option value="%s"%s>%s</option>',
+                        $value,
+                        $value == $current_v ? ' selected="selected"':'',
+                        $label
+                    );
+                }
+        ?>
+        </select>
+        <?php
+    }
+}
+add_action( 'restrict_manage_posts', 'wp_dispensary_admin_posts_filter_restrict_manage_posts' );
+
+/**
+ * Filter products by post meta
+ * 
+ * @since  4.0
+ * @return void
+ */
+function wp_dispensary_posts_filter( $query ) {
+    global $pagenow;
+    $type = 'post';
+    if ( isset($_GET['post_type'] ) ) {
+        $type = $_GET['post_type'];
+    }
+    if ( 'products' == $type && is_admin() && $pagenow=='edit.php' && isset( $_GET['PRODUCT_TYPE_FIELD_VALUE'] ) && '' != $_GET['PRODUCT_TYPE_FIELD_VALUE'] ) {
+        $query->query_vars['meta_key']   = 'product_type';
+        $query->query_vars['meta_value'] = $_GET['PRODUCT_TYPE_FIELD_VALUE'];
+    }
+}
+add_filter( 'parse_query', 'wp_dispensary_posts_filter' );
