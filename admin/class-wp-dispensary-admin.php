@@ -135,6 +135,14 @@ function toolbar_quick_menu( $wp_admin_bar ) {
 	// Create menu.
 	$menu = array();
 
+	// Add Menu.
+	$menu[] = array(
+		'id'     => 'wpd_menu',
+		'title'  => esc_attr__( 'View Menu', 'wp-dispensary' ),
+		'href'   => wpd_ecommerce_menu_url(),
+		'parent' => 'wp_dispensary'
+	);
+
 	// Add Products.
 	$menu[] = array(
 		'id'     => 'wpd_products',
