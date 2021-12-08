@@ -241,21 +241,24 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			)
 		);
 
-		/**
-		 * Add Field: Export customers
-		 * Field:     button
-		 * Section:   wpdas_advanced
-		 */
-		$wpdas_obj->add_field(
-			'wpdas_advanced_disabled',
-			array(
-				'id'          => 'wpd_settings_export_customersbutton',
-				'type'        => 'button',
-				'name'        => __( 'Customers', 'wp-dispensary' ),
-				'button_text' => __( 'Export', 'wp-dispensary' ),
-				'button_url'  => 'admin.php?page=wpd-settings&export_customers&_wpnonce=' . wp_create_nonce( 'download_csv' ),
-			)
-		);
+		// Check if WPD eCommerce is active.
+		if ( is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
+			/**
+			 * Add Field: Export customers
+			 * Field:     button
+			 * Section:   wpdas_advanced
+			 */
+			$wpdas_obj->add_field(
+				'wpdas_advanced',
+				array(
+					'id'          => 'wpd_settings_export_customersbutton',
+					'type'        => 'button',
+					'name'        => __( 'Customers', 'wp-dispensary' ),
+					'button_text' => __( 'Export', 'wp-dispensary' ),
+					'button_url'  => 'admin.php?page=wpd-settings&export_customers&_wpnonce=' . wp_create_nonce( 'download_csv' ),
+				)
+			);
+		}
 
 		// Check if WPD eCommerce is active.
 		if ( ! is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
