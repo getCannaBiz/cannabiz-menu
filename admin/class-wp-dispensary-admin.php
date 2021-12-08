@@ -135,11 +135,22 @@ function toolbar_quick_menu( $wp_admin_bar ) {
 	// Create menu.
 	$menu = array();
 
+	// Get settings.
+	$wpdas_pages = get_option( 'wpdas_pages' );
+	// Set default menu page.
+	$menu_page = 'menu';
+	// Customize the menu page.
+	if ( $wpdas_pages ) {
+		$menu_page = $wpdas_pages['wpd_pages_setup_menu_page'];
+	}
+	// Create the full menu page URL.
+    $menu_url = home_url() . '/' . $menu_page;
+
 	// Add Menu.
 	$menu[] = array(
 		'id'     => 'wpd_menu',
 		'title'  => esc_attr__( 'View Menu', 'wp-dispensary' ),
-		'href'   => wpd_ecommerce_menu_url(),
+		'href'   => $menu_url,
 		'parent' => 'wp_dispensary'
 	);
 
