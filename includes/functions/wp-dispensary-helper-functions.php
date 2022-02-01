@@ -47,7 +47,7 @@ if ( ! function_exists( 'convert_taxonomies' ) ) {
                 if ( false == get_term_by( 'name', $t->name, $new_tax ) ) {
                    wp_insert_term( $t->name, $new_tax, $args = array() );
                 }
-                wp_set_object_terms( $product->ID, $term_array, $new_tax ); 
+                wp_set_object_terms( $product->ID, $term_array, $new_tax );
             }
         }
     }
@@ -113,26 +113,15 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'inventory_grams', $inventory_grams );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_gram' );
-                    delete_post_meta( $post->ID, '_twograms' );
-                    delete_post_meta( $post->ID, '_eighth' );
-                    delete_post_meta( $post->ID, '_fivegrams' );
-                    delete_post_meta( $post->ID, '_quarter' );
-                    delete_post_meta( $post->ID, '_halfounce' );
-                    delete_post_meta( $post->ID, '_ounce' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_flowers' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
                 }
 
                 // Update Concentrates metadata.
                 if ( 'concentrates' == $post_type ) {
                     // Prices metadata.
                     $price_each = get_post_meta( $post->ID, '_priceeach', true );
-                    $halfgram  = get_post_meta( $post->ID, '_halfgram', true );
-                    $gram      = get_post_meta( $post->ID, '_gram', true );
-                    $twograms  = get_post_meta( $post->ID, '_twograms', true );
+                    $halfgram   = get_post_meta( $post->ID, '_halfgram', true );
+                    $gram       = get_post_meta( $post->ID, '_gram', true );
+                    $twograms   = get_post_meta( $post->ID, '_twograms', true );
 
                     // Top Sellers metadata.
                     $product_featured = get_post_meta( $post->ID, 'wpd_topsellers', true );
@@ -168,22 +157,6 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'inventory_units', $inventory_units );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_priceeach' );
-                    delete_post_meta( $post->ID, '_halfgram' );
-                    delete_post_meta( $post->ID, '_gram' );
-                    delete_post_meta( $post->ID, '_twograms' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_concentrates' );
-                    delete_post_meta( $post->ID, '_inventory_concentrates_each' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
-                    delete_post_meta( $post->ID, '_thc' );
-                    delete_post_meta( $post->ID, '_thca' );
-                    delete_post_meta( $post->ID, '_cbd' );
-                    delete_post_meta( $post->ID, '_cba' );
-                    delete_post_meta( $post->ID, '_cbn' );
-                    delete_post_meta( $post->ID, '_cbg' );
-                    delete_post_meta( $post->ID, '_total_compounds' );
                 }
 
                 // Update Edibles metadata.
@@ -212,23 +185,12 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'units_per_pack', $pack_units );
                     update_post_meta( $post->ID, 'product_featured', $product_featured );
                     update_post_meta( $post->ID, 'product_servings', $product_servings );
-                    update_post_meta( $post->ID, 'product_net_weight', $net_weight );
+                    update_post_meta( $post->ID, 'product_net_weight', $product_net_weight );
                     update_post_meta( $post->ID, 'compounds_thc', $compounds_thc );
                     update_post_meta( $post->ID, 'compounds_cbd', $compounds_cbd );
                     update_post_meta( $post->ID, 'inventory_units', $inventory_units );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_priceeach' );
-                    delete_post_meta( $post->ID, '_priceperpack' );
-                    delete_post_meta( $post->ID, '_unitsperpack' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_edibles' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
-                    delete_post_meta( $post->ID, '_thcmg' );
-                    delete_post_meta( $post->ID, '_cbdmg' );
-                    delete_post_meta( $post->ID, '_thccbdservings' );
-                    delete_post_meta( $post->ID, '_netweight' );
                 }
 
                 // Update Pre-rolls metadata.
@@ -275,22 +237,6 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'inventory_units', $inventory_units );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_priceeach' );
-                    delete_post_meta( $post->ID, '_priceperpack' );
-                    delete_post_meta( $post->ID, '_unitsperpack' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_prerolls' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
-                    delete_post_meta( $post->ID, '_thc' );
-                    delete_post_meta( $post->ID, '_thca' );
-                    delete_post_meta( $post->ID, '_cbd' );
-                    delete_post_meta( $post->ID, '_cba' );
-                    delete_post_meta( $post->ID, '_cbn' );
-                    delete_post_meta( $post->ID, '_cbg' );
-                    delete_post_meta( $post->ID, '_total_compounds' );
-                    delete_post_meta( $post->ID, '_preroll_weight' );
-                    delete_post_meta( $post->ID, 'selected_flowers' );
                 }
 
                 // Update Topicals metadata.
@@ -323,16 +269,6 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'inventory_units', $inventory_units );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_priceeach' );
-                    delete_post_meta( $post->ID, '_priceperpack' );
-                    delete_post_meta( $post->ID, '_unitsperpack' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_topicals' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
-                    delete_post_meta( $post->ID, '_sizetopical' );
-                    delete_post_meta( $post->ID, '_thctopical' );
-                    delete_post_meta( $post->ID, '_cbdtopical' );
                 }
 
                 // Update Growers metadata.
@@ -375,22 +311,6 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'inventory_seeds', $inventory_seeds );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
 
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_priceeach' );
-                    delete_post_meta( $post->ID, '_priceperpack' );
-                    delete_post_meta( $post->ID, '_unitsperpack' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_clones' );
-                    delete_post_meta( $post->ID, '_inventory_seeds' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
-                    delete_post_meta( $post->ID, 'selected_flowers' );
-                    delete_post_meta( $post->ID, '_origin' );
-                    delete_post_meta( $post->ID, '_yield' );
-                    delete_post_meta( $post->ID, '_time' );
-                    delete_post_meta( $post->ID, '_difficulty' );
-                    delete_post_meta( $post->ID, 'clone_count' );
-                    delete_post_meta( $post->ID, 'seed_count' );
-
                 }
 
                 // Update Gear metadata.
@@ -414,14 +334,6 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'product_featured', $product_featured );
                     update_post_meta( $post->ID, 'inventory_units', $inventory_units );
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
-
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_priceeach' );
-                    delete_post_meta( $post->ID, '_priceperpack' );
-                    delete_post_meta( $post->ID, '_unitsperpack' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_gear' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
 
                 }
 
@@ -458,21 +370,57 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     update_post_meta( $post->ID, 'inventory_display', $inventory_display );
                     update_post_meta( $post->ID, 'compounds_thc', $compounds_thc );
                     update_post_meta( $post->ID, 'compounds_cbd', $compounds_cbd );
- 
-                    // Delete old meta.
-                    delete_post_meta( $post->ID, '_priceeach' );
-                    delete_post_meta( $post->ID, '_priceperpack' );
-                    delete_post_meta( $post->ID, '_unitsperpack' );
-                    delete_post_meta( $post->ID, 'wpd_topsellers' );
-                    delete_post_meta( $post->ID, '_inventory_tinctures' );
-                    delete_post_meta( $post->ID, 'wpd_inventory_display' );
-                    delete_post_meta( $post->ID, '_thccbdservings' );
-                    delete_post_meta( $post->ID, '_mlserving' );
-                    delete_post_meta( $post->ID, '_thcmg' );
-                    delete_post_meta( $post->ID, '_cbdmg' );
-                    delete_post_meta( $post->ID, '_netweight' );
-
                 }
+
+                // Delete old meta.
+                delete_post_meta( $post->ID, '_priceeach' );
+                delete_post_meta( $post->ID, '_priceperpack' );
+                delete_post_meta( $post->ID, '_unitsperpack' );
+                delete_post_meta( $post->ID, 'wpd_topsellers' );
+                delete_post_meta( $post->ID, '_inventory_gear' );
+                delete_post_meta( $post->ID, 'wpd_inventory_display' );
+                delete_post_meta( $post->ID, '_inventory_tinctures' );
+                delete_post_meta( $post->ID, '_thccbdservings' );
+                delete_post_meta( $post->ID, '_mlserving' );
+                delete_post_meta( $post->ID, '_thcmg' );
+                delete_post_meta( $post->ID, '_cbdmg' );
+                delete_post_meta( $post->ID, '_netweight' );
+                delete_post_meta( $post->ID, '_inventory_clones' );
+                delete_post_meta( $post->ID, '_inventory_seeds' );
+                delete_post_meta( $post->ID, 'selected_flowers' );
+                delete_post_meta( $post->ID, '_origin' );
+                delete_post_meta( $post->ID, '_yield' );
+                delete_post_meta( $post->ID, '_time' );
+                delete_post_meta( $post->ID, '_difficulty' );
+                delete_post_meta( $post->ID, 'clone_count' );
+                delete_post_meta( $post->ID, 'seed_count' );
+                delete_post_meta( $post->ID, '_inventory_topicals' );
+                delete_post_meta( $post->ID, '_sizetopical' );
+                delete_post_meta( $post->ID, '_thctopical' );
+                delete_post_meta( $post->ID, '_cbdtopical' );
+                delete_post_meta( $post->ID, '_inventory_prerolls' );
+                delete_post_meta( $post->ID, '_thc' );
+                delete_post_meta( $post->ID, '_thca' );
+                delete_post_meta( $post->ID, '_cbd' );
+                delete_post_meta( $post->ID, '_cba' );
+                delete_post_meta( $post->ID, '_cbn' );
+                delete_post_meta( $post->ID, '_cbg' );
+                delete_post_meta( $post->ID, '_total_compounds' );
+                delete_post_meta( $post->ID, '_preroll_weight' );
+                delete_post_meta( $post->ID, '_halfgram' );
+                delete_post_meta( $post->ID, '_gram' );
+                delete_post_meta( $post->ID, '_twograms' );
+                delete_post_meta( $post->ID, '_eighth' );
+                delete_post_meta( $post->ID, '_fivegrams' );
+                delete_post_meta( $post->ID, '_quarter' );
+                delete_post_meta( $post->ID, '_halfounce' );
+                delete_post_meta( $post->ID, '_ounce' );
+                delete_post_meta( $post->ID, '_inventory_flowers' );
+                delete_post_meta( $post->ID, 'wpd_topsellers' );
+                delete_post_meta( $post->ID, '_inventory_concentrates' );
+                delete_post_meta( $post->ID, '_inventory_concentrates_each' );
+
+                wp_update_post( $post );
 
             endforeach;	
         }
@@ -508,7 +456,7 @@ if ( ! function_exists( 'convert_post_types' ) ) {
                 // Update post type.
                 $product->post_type = 'products';
                 // Update the product.
-                wp_update_post( $product );
+                set_post_type( $product->ID, 'products' );
                 // Update featured image.
                 update_post_meta( $product->ID, '_thumbnail_id', $featured_image );
             }
