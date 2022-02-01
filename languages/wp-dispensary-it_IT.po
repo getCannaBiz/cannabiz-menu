@@ -1,0 +1,2155 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Dispensary\n"
+"POT-Creation-Date: 2022-01-31 23:26-0500\n"
+"PO-Revision-Date: 2022-02-01 00:13-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-dispensary.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#. Plugin Name of the plugin/theme
+#. Author of the plugin/theme
+#: admin/class-wp-dispensary-admin-settings.php:134
+#: admin/class-wp-dispensary-admin-settings.php:135
+#: admin/class-wp-dispensary-admin.php:130
+msgid "WP Dispensary"
+msgstr "WP Dispensary"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+msgid "WP Dispensary Settings"
+msgstr "Impostazioni del dispensario WP"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+#: admin/class-wp-dispensary-admin.php:184 wp-dispensary.php:103
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: admin/class-wp-dispensary-admin-settings.php:679
+msgid "Choose File"
+msgstr "Scegli file"
+
+#: admin/class-wp-dispensary-admin-settings.php:696
+msgid "Choose Image"
+msgstr "Scegli un'immagine"
+
+#: admin/class-wp-dispensary-admin.php:152
+msgid "View Menu"
+msgstr "Guarda il menu"
+
+#: admin/class-wp-dispensary-admin.php:160
+#: admin/widgets/wpd-widget-products.php:261
+#: admin/wp-dispensary-admin-settings.php:222
+msgid "Products"
+msgstr "Prodotti"
+
+#: admin/class-wp-dispensary-admin.php:168
+#: admin/class-wp-dispensary-csv-export.php:102
+#: admin/deprecated/wp-dispensary-categories.php:36
+#: admin/taxonomies/wpd-taxonomy-categories.php:36
+msgid "Categories"
+msgstr "Categorie"
+
+#: admin/class-wp-dispensary-admin.php:176
+#: admin/class-wp-dispensary-csv-export.php:103
+#: admin/taxonomies/wpd-taxonomy-vendors.php:40
+msgid "Vendors"
+msgstr "Venditori"
+
+#: admin/class-wp-dispensary-csv-export.php:72
+msgid "WP Dispensary's Product Export"
+msgstr "Esportazione del prodotto di WP Dispensary"
+
+#: admin/class-wp-dispensary-csv-export.php:73
+msgid ""
+"Export your WP Dispensary products as a CSV file by clicking the button "
+"below."
+msgstr ""
+"Esporta i tuoi prodotti WP Dispensary come file CSV facendo clic sul "
+"pulsante in basso."
+
+#: admin/class-wp-dispensary-csv-export.php:74
+#: admin/wp-dispensary-admin-settings.php:223
+#: admin/wp-dispensary-admin-settings.php:239
+#: admin/wp-dispensary-admin-settings.php:257
+msgid "Export"
+msgstr "Esporta"
+
+#: admin/class-wp-dispensary-csv-export.php:93
+msgid "ID"
+msgstr "ID"
+
+#: admin/class-wp-dispensary-csv-export.php:94
+msgid "Type"
+msgstr "Tipo"
+
+#: admin/class-wp-dispensary-csv-export.php:95
+#: admin/wp-dispensary-admin-settings.php:289
+#: admin/wp-dispensary-admin-settings.php:447
+msgid "Title"
+msgstr "Titolo"
+
+#: admin/class-wp-dispensary-csv-export.php:96
+msgid "Content"
+msgstr "Contenuto"
+
+#: admin/class-wp-dispensary-csv-export.php:97
+msgid "Slug"
+msgstr "Slug"
+
+#: admin/class-wp-dispensary-csv-export.php:98
+msgid "Date"
+msgstr "Data"
+
+#: admin/class-wp-dispensary-csv-export.php:99
+msgid "Author"
+msgstr "Autore"
+
+#: admin/class-wp-dispensary-csv-export.php:100
+#: admin/wp-dispensary-admin-settings.php:292
+#: includes/functions/wp-dispensary-pricing-functions.php:415
+msgid "Prices"
+msgstr "Prezzi"
+
+#: admin/class-wp-dispensary-csv-export.php:101
+msgid "Inventory"
+msgstr "Inventario"
+
+#: admin/class-wp-dispensary-csv-export.php:104
+msgid "Shelf type"
+msgstr "Tipo di scaffale"
+
+#: admin/class-wp-dispensary-csv-export.php:105
+msgid "Strain type"
+msgstr "Tipo di ceppo"
+
+#: admin/class-wp-dispensary-csv-export.php:106
+#: admin/taxonomies/wpd-taxonomy-allergens.php:40
+#: admin/wp-dispensary-data-output.php:128
+msgid "Allergens"
+msgstr "Allergeni"
+
+#: admin/class-wp-dispensary-csv-export.php:107
+#: admin/taxonomies/wpd-taxonomy-aromas.php:40
+#: admin/wp-dispensary-data-output.php:92
+msgid "Aromas"
+msgstr "Aromi"
+
+#: admin/class-wp-dispensary-csv-export.php:108
+#: admin/taxonomies/wpd-taxonomy-conditions.php:40
+#: admin/wp-dispensary-data-output.php:116
+msgid "Conditions"
+msgstr "Condizioni"
+
+#: admin/class-wp-dispensary-csv-export.php:109
+#: admin/taxonomies/wpd-taxonomy-effects.php:40
+#: admin/wp-dispensary-data-output.php:104
+msgid "Effects"
+msgstr "Effetti"
+
+#: admin/class-wp-dispensary-csv-export.php:110
+#: admin/taxonomies/wpd-taxonomy-flavors.php:40
+#: admin/wp-dispensary-data-output.php:98
+msgid "Flavors"
+msgstr "Sapori"
+
+#: admin/class-wp-dispensary-csv-export.php:111
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:40
+#: admin/wp-dispensary-data-output.php:122
+msgid "Ingredients"
+msgstr "Ingredienti"
+
+#: admin/class-wp-dispensary-csv-export.php:112
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:40
+#: admin/wp-dispensary-data-output.php:110
+msgid "Symptoms"
+msgstr "Sintomi"
+
+#: admin/class-wp-dispensary-csv-export.php:113
+#: admin/wp-dispensary-admin-screens.php:26
+msgid "Featured image"
+msgstr "Immagine in primo piano"
+
+#: admin/class-wp-dispensary-permalink-settings.php:33
+msgid "Products Base"
+msgstr "Base di prodotti"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:57
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:88
+msgid "Logo"
+msgstr "Logo"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:61
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:99
+msgid "Add Image"
+msgstr "Aggiungi immagine"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:62
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:100
+msgid "Remove Image"
+msgstr "Rimuovi Immagine"
+
+#: admin/deprecated-shortcodes.php:148 admin/deprecated-shortcodes.php:396
+#: admin/deprecated-shortcodes.php:580 admin/deprecated-shortcodes.php:768
+#: admin/deprecated-shortcodes.php:924 admin/deprecated-shortcodes.php:1085
+msgid "(view all)"
+msgstr "(mostra tutto)"
+
+#: admin/deprecated-shortcodes.php:596
+msgid "Servings: "
+msgstr "Porzioni: "
+
+#: admin/deprecated-shortcodes.php:607 admin/deprecated-shortcodes.php:618
+msgid "THC: "
+msgstr "THC: "
+
+#: admin/deprecated-shortcodes.php:789
+msgid "Weight:"
+msgstr "Peso:"
+
+#: admin/deprecated-shortcodes.php:945
+msgid "Size:"
+msgstr "Dimensione:"
+
+#: admin/deprecated-shortcodes.php:952
+msgid "THC:"
+msgstr "THC:"
+
+#: admin/deprecated-shortcodes.php:959
+msgid "CBD:"
+msgstr "CBD:"
+
+#: admin/deprecated-shortcodes.php:1106
+msgid "Seeds:"
+msgstr "Seed:"
+
+#: admin/deprecated-shortcodes.php:1113
+msgid "Clones:"
+msgstr "Cloni:"
+
+#: admin/deprecated-shortcodes.php:1191
+msgid "Recent Products"
+msgstr "Prodotti recenti"
+
+#: admin/deprecated-widgets.php:36
+msgid "WPD Flowers"
+msgstr "WPD Fiori"
+
+#: admin/deprecated-widgets.php:38
+msgid "Your most recent Flowers"
+msgstr "I tuoi fiori più recenti"
+
+#: admin/deprecated-widgets.php:191 admin/deprecated-widgets.php:426
+#: admin/deprecated-widgets.php:662 admin/deprecated-widgets.php:904
+#: admin/deprecated-widgets.php:1141 admin/deprecated-widgets.php:1383
+#: admin/widgets/wpd-widget-products.php:274
+msgid "Widget Title:"
+msgstr "Titolo widget:"
+
+#: admin/deprecated-widgets.php:196
+msgid "Amount of flowers to show:"
+msgstr "Quantità di fiori da mostrare:"
+
+#: admin/deprecated-widgets.php:202 admin/deprecated-widgets.php:437
+#: admin/deprecated-widgets.php:673 admin/deprecated-widgets.php:915
+#: admin/deprecated-widgets.php:1152 admin/deprecated-widgets.php:1394
+#: admin/widgets/wpd-widget-products.php:300
+msgid "Randomize output?"
+msgstr "Randomizzare l’output?"
+
+#: admin/deprecated-widgets.php:207
+msgid "Display flower name?"
+msgstr "Mostrare il nome del fiore?"
+
+#: admin/deprecated-widgets.php:212
+msgid "Display flower category?"
+msgstr "Mostra la categoria dei fiori?"
+
+#: admin/deprecated-widgets.php:217 admin/deprecated-widgets.php:452
+#: admin/deprecated-widgets.php:688 admin/deprecated-widgets.php:930
+#: admin/deprecated-widgets.php:1167 admin/deprecated-widgets.php:1409
+msgid "Display featured image?"
+msgstr "Mostra Immagine in Evidenza?"
+
+#: admin/deprecated-widgets.php:221 admin/deprecated-widgets.php:692
+#: admin/widgets/wpd-widget-products.php:319
+msgid "Image size:"
+msgstr "Dimensione immagine:"
+
+#: admin/deprecated-widgets.php:272
+msgid "WPD Concentrates"
+msgstr "WPD Concentrati"
+
+#: admin/deprecated-widgets.php:274
+msgid "Your most recent Concentrates"
+msgstr "I tuoi concentrati più recenti"
+
+#: admin/deprecated-widgets.php:431
+msgid "Amount of concentrates to show:"
+msgstr "Quantità di concentrati da mostrare:"
+
+#: admin/deprecated-widgets.php:442
+msgid "Display concentrate name?"
+msgstr "Visualizzare il nome del concentrato?"
+
+#: admin/deprecated-widgets.php:447
+msgid "Display concentrate category?"
+msgstr "Visualizzare la categoria del concentrato?"
+
+#: admin/deprecated-widgets.php:507
+msgid "WPD Edibles"
+msgstr "WPD Commestibili"
+
+#: admin/deprecated-widgets.php:509
+msgid "Your most recent Edibles"
+msgstr "I tuoi edible più recenti"
+
+#: admin/deprecated-widgets.php:667
+msgid "Amount of edibles to show:"
+msgstr "Quantità di edibili da mostrare:"
+
+#: admin/deprecated-widgets.php:678
+msgid "Display edible name?"
+msgstr "Visualizzare il nome commestibile?"
+
+#: admin/deprecated-widgets.php:683
+msgid "Display edible category?"
+msgstr "Visualizza la categoria commestibile?"
+
+#: admin/deprecated-widgets.php:744
+msgid "WPD Pre-rolls"
+msgstr "WPD Pre-roll"
+
+#: admin/deprecated-widgets.php:746
+msgid "Your most recent Pre-rolls"
+msgstr "I tuoi pre-roll più recenti"
+
+#: admin/deprecated-widgets.php:909
+msgid "Amount of pre-rolls to show:"
+msgstr "Quantità di pre-roll da mostrare:"
+
+#: admin/deprecated-widgets.php:920
+msgid "Display pre-roll name?"
+msgstr "Visualizzare il nome del pre-roll?"
+
+#: admin/deprecated-widgets.php:925
+msgid "Display pre-roll flower?"
+msgstr "Mostrare il fiore pre-roll?"
+
+#: admin/deprecated-widgets.php:986
+msgid "WPD Topicals"
+msgstr "WPD Argomenti"
+
+#: admin/deprecated-widgets.php:988
+msgid "Your most recent Topicals"
+msgstr "I tuoi argomenti più recenti"
+
+#: admin/deprecated-widgets.php:1146
+msgid "Amount of topicals to show:"
+msgstr "Quantità di argomenti da mostrare:"
+
+#: admin/deprecated-widgets.php:1157
+msgid "Display topical name?"
+msgstr "Visualizzare il nome dell’argomento?"
+
+#: admin/deprecated-widgets.php:1162
+msgid "Display topical category?"
+msgstr "Visualizza la categoria dell’argomento?"
+
+#: admin/deprecated-widgets.php:1222
+msgid "WPD Growers"
+msgstr "WPD Coltivatori"
+
+#: admin/deprecated-widgets.php:1224
+msgid "Your most recent Clones and Seeds"
+msgstr "I tuoi cloni e semi più recenti"
+
+#: admin/deprecated-widgets.php:1388
+msgid "Amount of growers to show:"
+msgstr "Numero di coltivatori da mostrare:"
+
+#: admin/deprecated-widgets.php:1399
+msgid "Display grower name?"
+msgstr "Visualizzare il nome del coltivatore?"
+
+#: admin/deprecated-widgets.php:1404
+msgid "Display flower type?"
+msgstr "Visualizzare il tipo di fiore?"
+
+#: admin/deprecated/wp-dispensary-categories.php:25
+#: admin/taxonomies/wpd-taxonomy-categories.php:25
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr "Categorie"
+
+#: admin/deprecated/wp-dispensary-categories.php:26
+#: admin/taxonomies/wpd-taxonomy-categories.php:26
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "Categoria"
+
+#: admin/deprecated/wp-dispensary-categories.php:27
+#: admin/taxonomies/wpd-taxonomy-categories.php:27
+msgid "Search Categories"
+msgstr "Cerca Categorie"
+
+#: admin/deprecated/wp-dispensary-categories.php:28
+#: admin/taxonomies/wpd-taxonomy-categories.php:28
+msgid "All Categories"
+msgstr "Tutte le categorie"
+
+#: admin/deprecated/wp-dispensary-categories.php:29
+#: admin/taxonomies/wpd-taxonomy-categories.php:29
+msgid "Parent Category"
+msgstr "Categoria Genitore"
+
+#: admin/deprecated/wp-dispensary-categories.php:30
+#: admin/taxonomies/wpd-taxonomy-categories.php:30
+msgid "Parent Category:"
+msgstr "Categoria Genitore:"
+
+#: admin/deprecated/wp-dispensary-categories.php:31
+#: admin/taxonomies/wpd-taxonomy-categories.php:31
+msgid "Edit Category"
+msgstr "Modifica Categoria"
+
+#: admin/deprecated/wp-dispensary-categories.php:32
+#: admin/taxonomies/wpd-taxonomy-categories.php:32
+msgid "Update Category"
+msgstr "Aggiorna Categoria"
+
+#: admin/deprecated/wp-dispensary-categories.php:33
+#: admin/taxonomies/wpd-taxonomy-categories.php:33
+msgid "Add New Category"
+msgstr "Aggiungi Nuova Categoria"
+
+#: admin/deprecated/wp-dispensary-categories.php:34
+#: admin/taxonomies/wpd-taxonomy-categories.php:34
+msgid "New Category Name"
+msgstr "Nuovo Nome Categoria"
+
+#: admin/deprecated/wp-dispensary-categories.php:35
+#: admin/deprecated/wp-dispensary-taxonomies.php:35
+#: admin/taxonomies/wpd-taxonomy-categories.php:35
+msgid "No categories found"
+msgstr "Categoria trovata"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:42
+#: admin/deprecated/wp-dispensary-concentrates.php:43
+#: admin/deprecated/wp-dispensary-concentrates.php:44
+#: admin/deprecated/wp-dispensary-concentrates.php:45
+#: admin/deprecated/wp-dispensary-concentrates.php:70
+#: admin/deprecated/wp-dispensary-edibles.php:42
+#: admin/deprecated/wp-dispensary-edibles.php:43
+#: admin/deprecated/wp-dispensary-edibles.php:44
+#: admin/deprecated/wp-dispensary-edibles.php:45
+#: admin/deprecated/wp-dispensary-edibles.php:70
+#: admin/deprecated/wp-dispensary-flowers.php:42
+#: admin/deprecated/wp-dispensary-flowers.php:43
+#: admin/deprecated/wp-dispensary-flowers.php:44
+#: admin/deprecated/wp-dispensary-flowers.php:45
+#: admin/deprecated/wp-dispensary-flowers.php:70
+#: admin/deprecated/wp-dispensary-growers.php:42
+#: admin/deprecated/wp-dispensary-growers.php:43
+#: admin/deprecated/wp-dispensary-growers.php:44
+#: admin/deprecated/wp-dispensary-growers.php:45
+#: admin/deprecated/wp-dispensary-growers.php:70
+#: admin/deprecated/wp-dispensary-prerolls.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:74
+#: admin/deprecated/wp-dispensary-topicals.php:42
+#: admin/deprecated/wp-dispensary-topicals.php:43
+#: admin/deprecated/wp-dispensary-topicals.php:44
+#: admin/deprecated/wp-dispensary-topicals.php:45
+#: admin/deprecated/wp-dispensary-topicals.php:70
+#: admin/wp-dispensary-products-post-type.php:50
+#: admin/wp-dispensary-products-post-type.php:51
+#: admin/wp-dispensary-products-post-type.php:52
+#: admin/wp-dispensary-products-post-type.php:53
+#: admin/wp-dispensary-products-post-type.php:78
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:46
+#: admin/deprecated/wp-dispensary-edibles.php:46
+#: admin/deprecated/wp-dispensary-flowers.php:46
+#: admin/deprecated/wp-dispensary-growers.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:50
+#: admin/deprecated/wp-dispensary-topicals.php:46
+#: admin/wp-dispensary-products-post-type.php:54
+#, php-format
+msgid "%s Archives"
+msgstr "%s Archivi"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:47
+#: admin/deprecated/wp-dispensary-edibles.php:47
+#: admin/deprecated/wp-dispensary-flowers.php:47
+#: admin/deprecated/wp-dispensary-growers.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:51
+#: admin/deprecated/wp-dispensary-topicals.php:47
+#: admin/wp-dispensary-products-post-type.php:55
+#, php-format
+msgid "Parent %s:"
+msgstr "Genitore %s:"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:48
+#: admin/deprecated/wp-dispensary-edibles.php:48
+#: admin/deprecated/wp-dispensary-flowers.php:48
+#: admin/deprecated/wp-dispensary-growers.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:52
+#: admin/deprecated/wp-dispensary-topicals.php:48
+#: admin/wp-dispensary-products-post-type.php:56
+#, php-format
+msgid "All %s"
+msgstr "Tutti %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:49
+#: admin/deprecated/wp-dispensary-edibles.php:49
+#: admin/deprecated/wp-dispensary-flowers.php:49
+#: admin/deprecated/wp-dispensary-growers.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:53
+#: admin/deprecated/wp-dispensary-topicals.php:49
+#: admin/wp-dispensary-products-post-type.php:57
+#, php-format
+msgid "Add New %s"
+msgstr "Aggiungi Nuovo %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:50
+#: admin/deprecated/wp-dispensary-edibles.php:50
+#: admin/deprecated/wp-dispensary-flowers.php:50
+#: admin/deprecated/wp-dispensary-growers.php:50
+#: admin/deprecated/wp-dispensary-prerolls.php:54
+#: admin/deprecated/wp-dispensary-topicals.php:50
+#: admin/wp-dispensary-products-post-type.php:58
+msgid "Add New"
+msgstr "Aggiungi Nuovo"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:51
+#: admin/deprecated/wp-dispensary-edibles.php:51
+#: admin/deprecated/wp-dispensary-flowers.php:51
+#: admin/deprecated/wp-dispensary-growers.php:51
+#: admin/deprecated/wp-dispensary-prerolls.php:55
+#: admin/deprecated/wp-dispensary-topicals.php:51
+#: admin/wp-dispensary-products-post-type.php:59
+#, php-format
+msgid "New %s"
+msgstr "Nuovo %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:52
+#: admin/deprecated/wp-dispensary-edibles.php:52
+#: admin/deprecated/wp-dispensary-flowers.php:52
+#: admin/deprecated/wp-dispensary-growers.php:52
+#: admin/deprecated/wp-dispensary-prerolls.php:56
+#: admin/deprecated/wp-dispensary-topicals.php:52
+#: admin/wp-dispensary-products-post-type.php:60
+#, php-format
+msgid "Edit %s"
+msgstr "Modifica %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:53
+#: admin/deprecated/wp-dispensary-edibles.php:53
+#: admin/deprecated/wp-dispensary-flowers.php:53
+#: admin/deprecated/wp-dispensary-growers.php:53
+#: admin/deprecated/wp-dispensary-prerolls.php:57
+#: admin/deprecated/wp-dispensary-topicals.php:53
+#: admin/wp-dispensary-products-post-type.php:61
+#, php-format
+msgid "Update %s"
+msgstr "Aggiorna %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:54
+#: admin/deprecated/wp-dispensary-edibles.php:54
+#: admin/deprecated/wp-dispensary-flowers.php:54
+#: admin/deprecated/wp-dispensary-growers.php:54
+#: admin/deprecated/wp-dispensary-prerolls.php:58
+#: admin/deprecated/wp-dispensary-topicals.php:54
+#: admin/wp-dispensary-products-post-type.php:62
+#, php-format
+msgid "View %s"
+msgstr "Visualizza %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:55
+#: admin/deprecated/wp-dispensary-edibles.php:55
+#: admin/deprecated/wp-dispensary-flowers.php:55
+#: admin/deprecated/wp-dispensary-growers.php:55
+#: admin/deprecated/wp-dispensary-prerolls.php:59
+#: admin/deprecated/wp-dispensary-topicals.php:55
+#: admin/wp-dispensary-products-post-type.php:63
+#, php-format
+msgid "Search %s"
+msgstr "Cerca %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:56
+#: admin/deprecated/wp-dispensary-edibles.php:56
+#: admin/deprecated/wp-dispensary-flowers.php:56
+#: admin/deprecated/wp-dispensary-growers.php:56
+#: admin/deprecated/wp-dispensary-prerolls.php:60
+#: admin/deprecated/wp-dispensary-topicals.php:56
+#: admin/wp-dispensary-products-post-type.php:64
+msgid "Not found"
+msgstr "Non trovato"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:57
+#: admin/deprecated/wp-dispensary-edibles.php:57
+#: admin/deprecated/wp-dispensary-flowers.php:57
+#: admin/deprecated/wp-dispensary-growers.php:57
+#: admin/deprecated/wp-dispensary-prerolls.php:61
+#: admin/deprecated/wp-dispensary-topicals.php:57
+#: admin/wp-dispensary-products-post-type.php:65
+msgid "Not found in Trash"
+msgstr "Non trovato nel cestino"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:58
+#: admin/deprecated/wp-dispensary-edibles.php:58
+#: admin/deprecated/wp-dispensary-flowers.php:58
+#: admin/deprecated/wp-dispensary-growers.php:58
+#: admin/deprecated/wp-dispensary-prerolls.php:62
+#: admin/deprecated/wp-dispensary-topicals.php:58
+#: admin/wp-dispensary-products-post-type.php:66
+msgid "Featured Image"
+msgstr "Immagine in evidenza"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:59
+#: admin/deprecated/wp-dispensary-edibles.php:59
+#: admin/deprecated/wp-dispensary-flowers.php:59
+#: admin/deprecated/wp-dispensary-growers.php:59
+#: admin/deprecated/wp-dispensary-prerolls.php:63
+#: admin/deprecated/wp-dispensary-topicals.php:59
+#: admin/wp-dispensary-products-post-type.php:67
+msgid "Set featured image"
+msgstr "Imposta immagine in evidenza"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:60
+#: admin/deprecated/wp-dispensary-edibles.php:60
+#: admin/deprecated/wp-dispensary-flowers.php:60
+#: admin/deprecated/wp-dispensary-growers.php:60
+#: admin/deprecated/wp-dispensary-prerolls.php:64
+#: admin/deprecated/wp-dispensary-topicals.php:60
+#: admin/wp-dispensary-products-post-type.php:68
+msgid "Remove featured image"
+msgstr "Rimuovi immagine in evidenza"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:61
+#: admin/deprecated/wp-dispensary-edibles.php:61
+#: admin/deprecated/wp-dispensary-flowers.php:61
+#: admin/deprecated/wp-dispensary-growers.php:61
+#: admin/deprecated/wp-dispensary-prerolls.php:65
+#: admin/deprecated/wp-dispensary-topicals.php:61
+#: admin/wp-dispensary-products-post-type.php:69
+msgid "Use as featured image"
+msgstr "Usa come immagine in evidenza"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:62
+#: admin/deprecated/wp-dispensary-edibles.php:62
+#: admin/deprecated/wp-dispensary-flowers.php:62
+#: admin/deprecated/wp-dispensary-growers.php:62
+#: admin/deprecated/wp-dispensary-prerolls.php:66
+#: admin/deprecated/wp-dispensary-topicals.php:62
+#: admin/wp-dispensary-products-post-type.php:70
+#, php-format
+msgid "Insert into %s"
+msgstr "Inserire in %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:63
+#: admin/deprecated/wp-dispensary-edibles.php:63
+#: admin/deprecated/wp-dispensary-flowers.php:63
+#: admin/deprecated/wp-dispensary-growers.php:63
+#: admin/deprecated/wp-dispensary-prerolls.php:67
+#: admin/deprecated/wp-dispensary-topicals.php:63
+#: admin/wp-dispensary-products-post-type.php:71
+#, php-format
+msgid "Uploaded to this %s"
+msgstr "Caricato su questo %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:64
+#: admin/deprecated/wp-dispensary-edibles.php:64
+#: admin/deprecated/wp-dispensary-flowers.php:64
+#: admin/deprecated/wp-dispensary-growers.php:64
+#: admin/deprecated/wp-dispensary-prerolls.php:68
+#: admin/deprecated/wp-dispensary-topicals.php:64
+#: admin/wp-dispensary-products-post-type.php:72
+#, php-format
+msgid "%s list"
+msgstr "%s lista"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:65
+#: admin/deprecated/wp-dispensary-edibles.php:65
+#: admin/deprecated/wp-dispensary-flowers.php:65
+#: admin/deprecated/wp-dispensary-growers.php:65
+#: admin/deprecated/wp-dispensary-prerolls.php:69
+#: admin/deprecated/wp-dispensary-topicals.php:65
+#: admin/wp-dispensary-products-post-type.php:73
+#, php-format
+msgid "%s list navigation"
+msgstr "%s navigazione elenco"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:66
+#: admin/deprecated/wp-dispensary-edibles.php:66
+#: admin/deprecated/wp-dispensary-flowers.php:66
+#: admin/deprecated/wp-dispensary-growers.php:66
+#: admin/deprecated/wp-dispensary-prerolls.php:70
+#: admin/deprecated/wp-dispensary-topicals.php:66
+#: admin/wp-dispensary-products-post-type.php:74
+#, php-format
+msgid "Filter %s list"
+msgstr "Elenco filtri %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:71
+#: admin/deprecated/wp-dispensary-edibles.php:71
+#: admin/deprecated/wp-dispensary-flowers.php:71
+#: admin/deprecated/wp-dispensary-growers.php:71
+#: admin/deprecated/wp-dispensary-prerolls.php:75
+#: admin/deprecated/wp-dispensary-topicals.php:71
+#: admin/wp-dispensary-products-post-type.php:79
+#, php-format
+msgid "Display the %s from your menu"
+msgstr "Visualizza %s dal tuo menu"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:25
+msgctxt "taxonomy general name"
+msgid "Taxonomies"
+msgstr "Tassonomie"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:26
+msgctxt "taxonomy singular name"
+msgid "Taxonomy"
+msgstr "Tassonomia"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:27
+msgid "Search Taxonomies"
+msgstr "Tassonomie di ricerca"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:28
+msgid "All Taxonomies"
+msgstr "Tutte le Taxonomie"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:29
+msgid "Parent Taxonomy"
+msgstr "Tassonomia dei genitori"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:30
+msgid "Parent Taxonomy:"
+msgstr "Tassonomia genitore:"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:31
+msgid "Edit Taxonomy"
+msgstr "Modifica tassonomia"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:32
+msgid "Update Taxonomy"
+msgstr "Aggiornamento tassonomia"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:33
+msgid "Add New Taxonomy"
+msgstr "Aggiungi Tassonomia"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:34
+msgid "New Taxonomy Name"
+msgstr "Nuovo nome tassonomia"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:36
+msgid "Taxonomies"
+msgstr "Tassonomie"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:24
+msgid "Compound details"
+msgstr "Dettagli composti"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:56
+#: admin/wp-dispensary-data-output.php:140
+#: admin/wp-dispensary-data-output.php:142
+#: includes/functions/wp-dispensary-product-functions.php:126
+#: includes/functions/wp-dispensary-product-functions.php:170
+#: includes/functions/wp-dispensary-product-functions.php:203
+msgid "THC"
+msgstr "THC"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:60
+#: admin/wp-dispensary-data-output.php:150
+msgid "THCA"
+msgstr "THCA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:64
+#: admin/wp-dispensary-data-output.php:156
+#: admin/wp-dispensary-data-output.php:158
+#: includes/functions/wp-dispensary-product-functions.php:181
+msgid "CBD"
+msgstr "CBD"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:68
+#: admin/wp-dispensary-data-output.php:166
+msgid "CBA"
+msgstr "CBA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:72
+#: admin/wp-dispensary-data-output.php:172
+msgid "CBN"
+msgstr "CBN"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:76
+#: admin/wp-dispensary-data-output.php:178
+msgid "CBG"
+msgstr "CBG"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:80
+msgid "Total"
+msgstr "Totale"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:26
+msgid "Grow details"
+msgstr "Coltiva i dettagli"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:53
+#: admin/wp-dispensary-data-output.php:214
+msgid "Origin"
+msgstr "Origine"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:57
+#: admin/wp-dispensary-data-output.php:220
+msgid "Grow time"
+msgstr "Coltiva il tempo"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:61
+#: admin/wp-dispensary-data-output.php:226
+msgid "Yield"
+msgstr "Porzioni"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:65
+#: admin/wp-dispensary-data-output.php:232
+msgid "Difficulty"
+msgstr "Difficoltà"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:26
+msgid "Product Details"
+msgstr "Dettagli Prodotto"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:73
+#: admin/metaboxes/wpd-metabox-product-details.php:81
+#: admin/metaboxes/wpd-metabox-product-details.php:109
+#: admin/metaboxes/wpd-metabox-product-details.php:121
+#: admin/metaboxes/wpd-metabox-product-details.php:141
+#: admin/metaboxes/wpd-metabox-product-details.php:165
+#: admin/wp-dispensary-data-output.php:134
+msgid "Activation time"
+msgstr "Tempo di attivazione"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:89
+#: admin/metaboxes/wpd-metabox-product-details.php:157
+#: admin/wp-dispensary-data-output.php:184
+#: includes/functions/wp-dispensary-product-functions.php:214
+msgid "Servings"
+msgstr "Porzioni"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:93
+#: admin/metaboxes/wpd-metabox-product-details.php:149
+#: admin/wp-dispensary-data-output.php:141
+msgid "THC mg per serving"
+msgstr "mg di THC per porzione"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:97
+#: admin/metaboxes/wpd-metabox-product-details.php:153
+#: admin/wp-dispensary-data-output.php:157
+msgid "CBD mg per serving"
+msgstr "mg di CBD per porzione"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:101
+msgid "mL per serving"
+msgstr "mL per porzione"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:105
+msgid "Net weight (ounces)"
+msgstr "Peso netto (once)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:117
+msgid "Weight (g)"
+msgstr "Peso (g)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:129
+msgid "Size (oz)"
+msgstr "Dimensioni (oz)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:133
+msgid "THC mg"
+msgstr "mg di THC"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:137
+msgid "CBD mg"
+msgstr "mg di CBD"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:161
+msgid "Net weight (grams)"
+msgstr "Peso netto (grammi)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:173
+#: admin/wp-dispensary-data-output.php:202
+msgid "Seeds per unit"
+msgstr "Semi per unità"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:177
+#: admin/wp-dispensary-data-output.php:208
+msgid "Clones per unit"
+msgstr "Cloni per unità"
+
+#: admin/metaboxes/wpd-metabox-product-prices.php:26
+msgid "Product prices"
+msgstr "Prezzi dei prodotti"
+
+#: admin/metaboxes/wpd-metabox-product-type.php:25
+msgid "Product type"
+msgstr "Tipo prodotto"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:25
+msgctxt "general name"
+msgid "Allergens"
+msgstr "Allergeni"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:26
+msgctxt "singular name"
+msgid "Allergen"
+msgstr "Allergia"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:27
+msgid "Search Allergens"
+msgstr "Cerca allergeni"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:28
+msgid "Popular Allergens"
+msgstr "Allergeni popolari"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:29
+msgid "All Allergens"
+msgstr "Tutti gli allergeni"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:32
+msgid "Edit Allergen"
+msgstr "Modifica allergene"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:33
+msgid "Update Allergen"
+msgstr "Aggiorna allergene"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:34
+msgid "Add New Allergen"
+msgstr "Aggiungi nuovo allergene"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:35
+msgid "New Allergen Name"
+msgstr "Nuovo nome di allergene"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:36
+msgid "Separate allergens with commas"
+msgstr "Separa gli allergeni con le virgole"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:37
+msgid "Add or remove allergens"
+msgstr "Aggiungi o rimuovi allergeni"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:38
+msgid "Choose from the most used allergens"
+msgstr "Scegli tra gli  allergeni più utilizzati"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:39
+msgid "No allergens found"
+msgstr "Nessun allergene trovato"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:25
+msgctxt "general name"
+msgid "Aromas"
+msgstr "Aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:26
+msgctxt "singular name"
+msgid "Aroma"
+msgstr "Aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:27
+msgid "Search Aromas"
+msgstr "Cerca Aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:28
+msgid "Popular Aromas"
+msgstr "Aromi popolari"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:29
+msgid "All Aromas"
+msgstr "Tutti gli aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:32
+msgid "Edit Aroma"
+msgstr "Modifica Aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:33
+msgid "Update Aroma"
+msgstr "Aggiorna Aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:34
+msgid "Add New Aroma"
+msgstr "Aggiungi nuovo aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:35
+msgid "New Aroma Name"
+msgstr "Nuovo nome di aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:36
+msgid "Separate aromas with commas"
+msgstr "Separare gli aromi con le virgole"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:37
+msgid "Add or remove aromas"
+msgstr "Aggiungi o rimuovi aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:38
+msgid "Choose from the most used aromas"
+msgstr "Scegli tra gli aromi più utilizzati"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:39
+msgid "No aromas found"
+msgstr "Nessun aroma trovato"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:25
+msgctxt "general name"
+msgid "Conditions"
+msgstr "Condizioni"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:26
+msgctxt "singular name"
+msgid "Condition"
+msgstr "Condizione"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:27
+msgid "Search Conditions"
+msgstr "Cerca Condizioni"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:28
+msgid "Popular Conditions"
+msgstr "Condizioni popolari"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:29
+msgid "All Conditions"
+msgstr "Tutte le Condizioni"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:32
+msgid "Edit Condition"
+msgstr "Modifica Condizione"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:33
+msgid "Update Condition"
+msgstr "Aggiorna Condizione"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:34
+msgid "Add New Condition"
+msgstr "Aggiungi nuova Condizione"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:35
+msgid "New Condition Name"
+msgstr "Nome della Condizione"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:36
+msgid "Separate conditions with commas"
+msgstr "Separare le condizioni con virgole"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:37
+msgid "Add or remove conditions"
+msgstr "Aggiungi o rimuovi condizioni"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:38
+msgid "Choose from the most used conditions"
+msgstr "Scegli tra le condizioni più utilizzate"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:39
+msgid "No conditions found"
+msgstr "Nessuna condizione trovata"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:25
+msgctxt "general name"
+msgid "Effects"
+msgstr "Effetti"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:26
+msgctxt "singular name"
+msgid "Effect"
+msgstr "Effetto"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:27
+msgid "Search Effects"
+msgstr "Cerca effetti"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:28
+msgid "Popular Effects"
+msgstr "Effetti popolari"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:29
+msgid "All Effects"
+msgstr "Tutti gli effetti"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:32
+msgid "Edit Effect"
+msgstr "Modifica effetto"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:33
+msgid "Update Effect"
+msgstr "Effetto di aggiornamento"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:34
+msgid "Add New Effect"
+msgstr "Aggiungi nuovo effetto"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:35
+msgid "New Effect Name"
+msgstr "Nuovo nome effetto"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:36
+msgid "Separate effects with commas"
+msgstr "Separa gli effetti con le virgole"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:37
+msgid "Add or remove effects"
+msgstr "Aggiungi o rimuovi effetti"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:38
+msgid "Choose from the most used effects"
+msgstr "Scegli tra gli effetti più utilizzati"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:39
+msgid "No effects found"
+msgstr "Nessun effetto trovato"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:25
+msgctxt "general name"
+msgid "Flavors"
+msgstr "Sapori"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:26
+msgctxt "singular name"
+msgid "Flavor"
+msgstr "Sapore"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:27
+msgid "Search Flavors"
+msgstr "Cerca Sapori"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:28
+msgid "Popular Flavors"
+msgstr "Sapori Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:29
+msgid "All Flavors"
+msgstr "Tutti i gusti"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:32
+msgid "Edit Flavor"
+msgstr "Modifica sapore"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:33
+msgid "Update Flavor"
+msgstr "Aggiorna sapore"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:34
+msgid "Add New Flavor"
+msgstr "Aggiungi nuovo sapore"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:35
+msgid "New Flavor Name"
+msgstr "Nuovo nome di sapore"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:36
+msgid "Separate flavors with commas"
+msgstr "Separare i sapori con le virgole"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:37
+msgid "Add or remove flavors"
+msgstr "Aggiungi o rimuovi aromi"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:38
+msgid "Choose from the most used flavors"
+msgstr "Scegli tra i gusti più utilizzati"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:39
+msgid "No flavors found"
+msgstr "Nessun gusto trovato"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:25
+msgctxt "general name"
+msgid "Ingredients"
+msgstr "Ingredienti"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:26
+msgctxt "singular name"
+msgid "Ingredient"
+msgstr "Ingrediente"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:27
+msgid "Search Ingredients"
+msgstr "Cerca Ingredienti"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:28
+msgid "Popular Ingredients"
+msgstr "Ingredienti popolari"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:29
+msgid "All Ingredients"
+msgstr "Tutti gli ingredienti"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:32
+msgid "Edit Ingredient"
+msgstr "Modifica ingrediente"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:33
+msgid "Update Ingredient"
+msgstr "Aggiorna ingrediente"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:34
+msgid "Add New Ingredient"
+msgstr "Aggiungi nuovo ingrediente"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:35
+msgid "New Ingredient Name"
+msgstr "Nuovo nome ingrediente"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:36
+msgid "Separate ingredients with commas"
+msgstr "Separa gli ingredienti con le virgole"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:37
+msgid "Add or remove ingredients"
+msgstr "Aggiungi o rimuovi ingredienti"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:38
+msgid "Choose from the most used ingredients"
+msgstr "Scegli dagli ingredienti più usati"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:39
+msgid "No ingredients found"
+msgstr "Nessun ingrediente trovato"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:25
+msgctxt "taxonomy general name"
+msgid "Shelf Type"
+msgstr "Tipo di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Shelf Type"
+msgstr "Tipo di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:27
+msgid "Search Shelf Types"
+msgstr "Cerca tipi di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:28
+msgid "All Shelf Types"
+msgstr "Tutti i tipi di mensola"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:29
+msgid "Parent Shelf Type"
+msgstr "Tipo di scaffale padre"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:30
+msgid "Parent Shelf Type:"
+msgstr "Tipo di scaffale padre:"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:31
+msgid "Edit Shelf Type"
+msgstr "Modifica tipo di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:32
+msgid "Update Shelf Type"
+msgstr "Aggiorna tipo di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:33
+msgid "Add New Shelf Type"
+msgstr "Aggiungi nuovo tipo di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:34
+msgid "New Shelf Type Name"
+msgstr "Nuovo nome del tipo di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:35
+msgid "No shelf types found"
+msgstr "Nessun tipo di scaffale trovato"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:36
+msgid "Shelf Type"
+msgstr "Tipo di scaffale"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:25
+msgctxt "taxonomy general name"
+msgid "Strain Type"
+msgstr "Tipo di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Strain Type"
+msgstr "Tipo di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:27
+msgid "Search Strain Types"
+msgstr "Cerca tipi di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:28
+msgid "All Strain Types"
+msgstr "Tutti i tipi di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:29
+msgid "Parent Strain Type"
+msgstr "Tipo di ceppo genitore"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:30
+msgid "Parent Strain Type:"
+msgstr "Tipo di ceppo genitore:"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:31
+msgid "Edit Strain Type"
+msgstr "Modifica tipo di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:32
+msgid "Update Strain Type"
+msgstr "Aggiorna tipo di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:33
+msgid "Add New Strain Type"
+msgstr "Aggiungi un nuovo tipo di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:34
+msgid "New Strain Type Name"
+msgstr "Nome del nuovo tipo di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:35
+msgid "No strain types found"
+msgstr "Nessun tipo di ceppo trovato"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:36
+msgid "Strain Type"
+msgstr "Tipo di ceppo"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:25
+msgctxt "general name"
+msgid "Symptoms"
+msgstr "Sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:26
+msgctxt "singular name"
+msgid "Symptom"
+msgstr "Sintomatologia"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:27
+msgid "Search Symptoms"
+msgstr "Cerca sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:28
+msgid "Popular Symptoms"
+msgstr "Sintomi popolari"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:29
+msgid "All Symptoms"
+msgstr "Tutti i sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:32
+msgid "Edit Symptom"
+msgstr "Modifica sintomo"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:33
+msgid "Update Symptom"
+msgstr "Aggiorna sintomo"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:34
+msgid "Add New Symptom"
+msgstr "Aggiungi nuovo sintomo"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:35
+msgid "New Symptom Name"
+msgstr "Nuovo nome del sintomo"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:36
+msgid "Separate symptoms with commas"
+msgstr "Separare i sintomi con virgole"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:37
+msgid "Add or remove symptoms"
+msgstr "Aggiungi o rimuovi sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:38
+msgid "Choose from the most used symptoms"
+msgstr "Scegli tra i sintomi più utilizzati"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:39
+msgid "No symptoms found"
+msgstr "Nessun sintomo trovato"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:25
+msgctxt "general name"
+msgid "Vendors"
+msgstr "Venditori"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:26
+msgctxt "singular name"
+msgid "Vendor"
+msgstr "Venditore"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:27
+msgid "Search Vendors"
+msgstr "Cerca Venditori"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:28
+msgid "Popular Vendors"
+msgstr "Venditori Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:29
+msgid "All Vendors"
+msgstr "Tutti i Venditori"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:32
+msgid "Edit Vendor"
+msgstr "Modifica Venditore"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:33
+msgid "Update Vendor"
+msgstr "Aggiorna Venditore"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:34
+msgid "Add New Vendor"
+msgstr "Aggiungi nuovo Venditore"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:35
+msgid "New Vendor Name"
+msgstr "Nome del nuovo Venditore"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:36
+msgid "Separate vendors with commas"
+msgstr "Separare i venditori con virgole"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:37
+msgid "Add or remove vendors"
+msgstr "Aggiungi o rimuovi fornitori"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:38
+msgid "Choose from the most used vendors"
+msgstr "Scegli tra i fornitori più utilizzati"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:39
+msgid "No vendors found"
+msgstr "Nessun venditore trovato"
+
+#: admin/widgets/wpd-widget-product-search.php:33
+msgid "Product Search"
+msgstr "Ricerca prodotti"
+
+#: admin/widgets/wpd-widget-product-search.php:35
+msgid "Add a search box"
+msgstr "Aggiungi una casella di ricerca"
+
+#: admin/widgets/wpd-widget-product-search.php:72
+msgid "Search Products"
+msgstr "Cerca prodotti"
+
+#: admin/widgets/wpd-widget-product-search.php:74
+msgid "Search"
+msgstr "Cerca"
+
+#: admin/widgets/wpd-widget-products.php:33
+msgid "Dispensary Products"
+msgstr "Prodotti dispensari"
+
+#: admin/widgets/wpd-widget-products.php:35
+msgid "Your WP Dispensary products"
+msgstr "I tuoi prodotti WP Dispensary"
+
+#: admin/widgets/wpd-widget-products.php:279
+msgid "Menu item type:"
+msgstr "Tipo di voce di menu:"
+
+#: admin/widgets/wpd-widget-products.php:281
+msgid "All types"
+msgstr "Tutte le tipologie"
+
+#: admin/widgets/wpd-widget-products.php:282
+#: includes/functions/deprecated-functions.php:26
+#: includes/functions/wp-dispensary-general-functions.php:51
+#: includes/functions/wp-dispensary-general-functions.php:75
+#: includes/functions/wp-dispensary-general-functions.php:99
+msgid "Flowers"
+msgstr "Fiori"
+
+#: admin/widgets/wpd-widget-products.php:283
+#: includes/functions/deprecated-functions.php:27
+#: includes/functions/wp-dispensary-general-functions.php:52
+#: includes/functions/wp-dispensary-general-functions.php:76
+#: includes/functions/wp-dispensary-general-functions.php:100
+msgid "Concentrates"
+msgstr "Concentrati"
+
+#: admin/widgets/wpd-widget-products.php:284
+#: includes/functions/deprecated-functions.php:29
+#: includes/functions/wp-dispensary-general-functions.php:54
+#: includes/functions/wp-dispensary-general-functions.php:78
+#: includes/functions/wp-dispensary-general-functions.php:102
+msgid "Edibles"
+msgstr "Commestibili"
+
+#: admin/widgets/wpd-widget-products.php:285
+#: includes/functions/deprecated-functions.php:30
+#: includes/functions/wp-dispensary-general-functions.php:55
+#: includes/functions/wp-dispensary-general-functions.php:79
+#: includes/functions/wp-dispensary-general-functions.php:103
+msgid "Pre-rolls"
+msgstr "Pre-roll"
+
+#: admin/widgets/wpd-widget-products.php:286
+#: includes/functions/deprecated-functions.php:31
+#: includes/functions/wp-dispensary-general-functions.php:56
+#: includes/functions/wp-dispensary-general-functions.php:80
+#: includes/functions/wp-dispensary-general-functions.php:104
+msgid "Topicals"
+msgstr "Argomenti"
+
+#: admin/widgets/wpd-widget-products.php:287
+#: includes/functions/deprecated-functions.php:32
+#: includes/functions/wp-dispensary-general-functions.php:57
+#: includes/functions/wp-dispensary-general-functions.php:81
+#: includes/functions/wp-dispensary-general-functions.php:105
+msgid "Growers"
+msgstr "Coltivatori"
+
+#: admin/widgets/wpd-widget-products.php:288
+#: includes/functions/deprecated-functions.php:33
+#: includes/functions/wp-dispensary-general-functions.php:58
+#: includes/functions/wp-dispensary-general-functions.php:82
+#: includes/functions/wp-dispensary-general-functions.php:106
+msgid "Gear"
+msgstr "Marcia"
+
+#: admin/widgets/wpd-widget-products.php:289
+#: includes/functions/deprecated-functions.php:28
+#: includes/functions/wp-dispensary-general-functions.php:53
+#: includes/functions/wp-dispensary-general-functions.php:77
+#: includes/functions/wp-dispensary-general-functions.php:101
+msgid "Tinctures"
+msgstr "Tinture"
+
+#: admin/widgets/wpd-widget-products.php:294
+msgid "Amount of items to show:"
+msgstr "Quantità di articoli da mostrare:"
+
+#: admin/widgets/wpd-widget-products.php:305
+msgid "Display item name?"
+msgstr "Visualizzare il nome dell’elemento?"
+
+#: admin/widgets/wpd-widget-products.php:310
+msgid "Display item price?"
+msgstr "Visualizzare il prezzo dell’articolo?"
+
+#: admin/widgets/wpd-widget-products.php:315
+msgid "Display products in carousel?"
+msgstr "Visualizzare i prodotti nel carosello?"
+
+#: admin/wp-dispensary-admin-screens.php:177
+msgid "All Types"
+msgstr "Tutti i tipi"
+
+#: admin/wp-dispensary-admin-settings.php:103
+#: admin/wp-dispensary-admin-settings.php:324
+#: admin/wp-dispensary-admin-settings.php:386
+#: admin/wp-dispensary-admin-settings.php:482
+msgid "Display"
+msgstr "Visualizza"
+
+#: admin/wp-dispensary-admin-settings.php:111
+#: admin/wp-dispensary-admin-settings.php:518
+msgid "General"
+msgstr "Generale"
+
+#: admin/wp-dispensary-admin-settings.php:121
+msgid "Payments"
+msgstr "Pagamenti"
+
+#: admin/wp-dispensary-admin-settings.php:129
+#: admin/wp-dispensary-admin-settings.php:256
+msgid "Customers"
+msgstr "Clienti"
+
+#: admin/wp-dispensary-admin-settings.php:137
+msgid "Pages"
+msgstr "Pagine"
+
+#: admin/wp-dispensary-admin-settings.php:148
+msgid "Drivers"
+msgstr "Drivers"
+
+#: admin/wp-dispensary-admin-settings.php:157
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: admin/wp-dispensary-admin-settings.php:171
+msgid "Advanced Settings"
+msgstr "Impostazioni avanzate"
+
+#: admin/wp-dispensary-admin-settings.php:185
+msgid "Cookie lifetime"
+msgstr "Durata del cookie"
+
+#: admin/wp-dispensary-admin-settings.php:186
+msgid ""
+"Set the amount of time the shopping cart cookie gets saved to your visitors "
+"computer"
+msgstr ""
+"Imposta la quantità di tempo in cui il cookie del carrello degli acquisti "
+"viene salvato sul computer dei visitatori"
+
+#: admin/wp-dispensary-admin-settings.php:188
+msgid "1/2 hour"
+msgstr "Mezz'ora"
+
+#: admin/wp-dispensary-admin-settings.php:189
+msgid "1 hour"
+msgstr "1 ora"
+
+#: admin/wp-dispensary-admin-settings.php:190
+msgid "3 hours"
+msgstr "3 ore"
+
+#: admin/wp-dispensary-admin-settings.php:191
+msgid "6 hours"
+msgstr "6 ore"
+
+#: admin/wp-dispensary-admin-settings.php:192
+msgid "12 hours"
+msgstr "12 ore"
+
+#: admin/wp-dispensary-admin-settings.php:193
+msgid "24 hours"
+msgstr "24 ore"
+
+#: admin/wp-dispensary-admin-settings.php:208
+msgid "Export Data"
+msgstr "Esporta dati"
+
+#: admin/wp-dispensary-admin-settings.php:238
+msgid "Orders"
+msgstr "Ordini"
+
+#: admin/wp-dispensary-admin-settings.php:275
+msgid "Prices table"
+msgstr "Tabella dei prezzi"
+
+#: admin/wp-dispensary-admin-settings.php:290
+#: admin/wp-dispensary-admin-settings.php:448
+msgid "Choose the title you would like used"
+msgstr "Scegli il titolo che vorresti utilizzare"
+
+#: admin/wp-dispensary-admin-settings.php:293
+#: includes/functions/wp-dispensary-pricing-functions.php:409
+msgid "Donations"
+msgstr "Donazioni"
+
+#: admin/wp-dispensary-admin-settings.php:309
+#: admin/wp-dispensary-admin-settings.php:467
+msgid "or add a custom title"
+msgstr "o aggiungi un titolo personalizzato"
+
+#: admin/wp-dispensary-admin-settings.php:325
+msgid "Where should the pricing display on single menu items?"
+msgstr ""
+"Dove dovrebbe essere visualizzato il prezzo sulle singole voci di menu?"
+
+#: admin/wp-dispensary-admin-settings.php:327
+#: admin/wp-dispensary-admin-settings.php:389
+#: admin/wp-dispensary-admin-settings.php:485
+msgid "Above Content"
+msgstr "Contenuto superiore"
+
+#: admin/wp-dispensary-admin-settings.php:328
+#: admin/wp-dispensary-admin-settings.php:390
+#: admin/wp-dispensary-admin-settings.php:486
+msgid "Below Content"
+msgstr "Sotto il Contenuto"
+
+#: admin/wp-dispensary-admin-settings.php:344
+msgid "Remove the price table from data output"
+msgstr "Rimuovere la tabella dei prezzi dall’output dei dati"
+
+#: admin/wp-dispensary-admin-settings.php:372
+msgid "Compounds table"
+msgstr "Tabella dei composti"
+
+#: admin/wp-dispensary-admin-settings.php:387
+msgid "Where should the compounds display on single menu items?"
+msgstr ""
+"Dove dovrebbero essere visualizzati i composti sulle singole voci di menu?"
+
+#: admin/wp-dispensary-admin-settings.php:406
+msgid "Remove the compounds table from data output"
+msgstr "Rimuovere la tabella dei composti dall’output dei dati"
+
+#: admin/wp-dispensary-admin-settings.php:433
+msgid "Details table"
+msgstr "Tabella dettagli"
+
+#: admin/wp-dispensary-admin-settings.php:450
+#: includes/functions/wp-dispensary-general-functions.php:33
+#: includes/functions/wp-dispensary-settings-functions.php:101
+msgid "Details"
+msgstr "Dettagli"
+
+#: admin/wp-dispensary-admin-settings.php:451
+#: includes/functions/wp-dispensary-general-functions.php:31
+msgid "Information"
+msgstr "Informazioni"
+
+#: admin/wp-dispensary-admin-settings.php:483
+msgid "Where should the details display on single menu items?"
+msgstr ""
+"Dove dovrebbero essere visualizzati i dettagli sulle singole voci di menu?"
+
+#: admin/wp-dispensary-admin-settings.php:502
+msgid "Remove the details table from data output"
+msgstr "Rimuovere la tabella dei dettagli dall’output dei dati"
+
+#: admin/wp-dispensary-admin-settings.php:533
+msgid "Currency"
+msgstr "Valuta"
+
+#: admin/wp-dispensary-admin-settings.php:534
+msgid "Select the currency symbol you would like to use"
+msgstr "Seleziona il simbolo di valuta che desideri utilizzare"
+
+#: admin/wp-dispensary-admin-settings.php:551
+msgid "Taxes"
+msgstr "Tasse"
+
+#: admin/wp-dispensary-admin-settings.php:565
+msgid "Sales tax"
+msgstr "Imposta sulle vendite"
+
+#: admin/wp-dispensary-admin-settings.php:566
+msgid "Apply sales tax to orders (%)"
+msgstr "Applicare l’imposta sulle vendite agli ordini (%)"
+
+#: admin/wp-dispensary-admin-settings.php:567
+msgid "6"
+msgstr "6"
+
+#: admin/wp-dispensary-admin-settings.php:581
+msgid "Excise tax"
+msgstr "Accise"
+
+#: admin/wp-dispensary-admin-settings.php:582
+msgid "Apply excise tax to orders (%)"
+msgstr "Applicare l’accisa agli ordini (%)"
+
+#: admin/wp-dispensary-admin-settings.php:583
+msgid "10"
+msgstr "10"
+
+#: admin/wp-dispensary-admin-settings.php:597
+msgid "Cart"
+msgstr "Carrello"
+
+#: admin/wp-dispensary-admin-settings.php:611
+msgid "Require login to shop"
+msgstr "Richiedi il login per fare acquisti"
+
+#: admin/wp-dispensary-admin-settings.php:612
+msgid "Hide the add to cart functionality for non-logged in users"
+msgstr ""
+"Nascondi la funzionalità di aggiunta al carrello per gli utenti non "
+"registrati"
+
+#: admin/wp-dispensary-admin-settings.php:626
+msgid "Checkout"
+msgstr "Cassa"
+
+#: admin/wp-dispensary-admin-settings.php:640
+msgid "Minimum order"
+msgstr "Ordine minimo"
+
+#: admin/wp-dispensary-admin-settings.php:641
+msgid "Require a minimum order amount before checkout"
+msgstr "Richiedi un importo minimo dell’ordine prima del checkout"
+
+#: admin/wp-dispensary-admin-settings.php:642
+msgid "ex: 50"
+msgstr "es: 50"
+
+#: admin/wp-dispensary-admin-settings.php:658
+msgid "Coupons"
+msgstr "Coupon"
+
+#: admin/wp-dispensary-admin-settings.php:659
+msgid "Allow customers to apply a coupon to their order"
+msgstr "Consenti ai clienti di applicare un coupon al loro ordine"
+
+#: admin/wp-dispensary-admin-settings.php:670
+msgid "Cash on delivery"
+msgstr "Pagamento in Contrassegno"
+
+#: admin/wp-dispensary-admin-settings.php:671
+msgid "Pay on pickup"
+msgstr "Paga al ritiro"
+
+#: admin/wp-dispensary-admin-settings.php:672
+msgid "Ground shipping"
+msgstr "Spedire via terra"
+
+#: admin/wp-dispensary-admin-settings.php:703
+msgid "Enable/Disable"
+msgstr "Abilita/Disabilita"
+
+#: admin/wp-dispensary-admin-settings.php:704
+msgid "Enable "
+msgstr "Abilita "
+
+#: admin/wp-dispensary-admin-settings.php:718
+msgid "Charge"
+msgstr "Addebita"
+
+#: admin/wp-dispensary-admin-settings.php:719
+msgid "0"
+msgstr "0"
+
+#: admin/wp-dispensary-admin-settings.php:735
+msgid "Instructions"
+msgstr "Istruzioni"
+
+#: admin/wp-dispensary-admin-settings.php:736
+msgid "Let the user know how to send payment for the order."
+msgstr "Fai sapere all’utente come inviare il pagamento per l’ordine."
+
+#: admin/wp-dispensary-admin-settings.php:750
+msgid "Customer Registration"
+msgstr "Registrazione cliente"
+
+#: admin/wp-dispensary-admin-settings.php:757
+msgid "Select a page"
+msgstr "Seleziona una pagina"
+
+#: admin/wp-dispensary-admin-settings.php:759
+msgid "No pages found"
+msgstr "Nessuna pagina trovata"
+
+#: admin/wp-dispensary-admin-settings.php:772
+msgid "Redirect after registration"
+msgstr "Reindirizzamento dopo la registrazione"
+
+#: admin/wp-dispensary-admin-settings.php:773
+msgid "Choose the page customers will be redirected to when registering."
+msgstr ""
+"Scegli la pagina a cui verranno reindirizzati i clienti al momento della "
+"registrazione."
+
+#: admin/wp-dispensary-admin-settings.php:788
+msgid "Customer Verification"
+msgstr "Verifica del cliente"
+
+#: admin/wp-dispensary-admin-settings.php:802
+msgid "Drivers license / Valid ID"
+msgstr "Patente di guida/ID valido"
+
+#: admin/wp-dispensary-admin-settings.php:803
+msgid "Hide the drivers license upload from account details"
+msgstr ""
+"Nascondi il caricamento della patente di guida dai dettagli dell’account"
+
+#: admin/wp-dispensary-admin-settings.php:817
+msgid "Doctor recommendation"
+msgstr "Raccomandazione del medico"
+
+#: admin/wp-dispensary-admin-settings.php:818
+msgid "Hide the doctor recommendation upload from account details"
+msgstr ""
+"Nascondi il caricamento della raccomandazione del medico dai dettagli "
+"dell’account"
+
+#: admin/wp-dispensary-admin-settings.php:832
+msgid "Recommendation number"
+msgstr "Numero di raccomandazione"
+
+#: admin/wp-dispensary-admin-settings.php:833
+msgid "Hide the recommendation number from account details"
+msgstr "Nascondi il numero di raccomandazione dai dettagli dell’account"
+
+#: admin/wp-dispensary-admin-settings.php:847
+msgid "Expiration date"
+msgstr "Data di scadenza"
+
+#: admin/wp-dispensary-admin-settings.php:848
+msgid "Hide the expiration date from account details"
+msgstr "Nascondi la data di scadenza dai dettagli dell’account"
+
+#: admin/wp-dispensary-admin-settings.php:862
+msgid "Page Setup"
+msgstr "Imposta pagina"
+
+#: admin/wp-dispensary-admin-settings.php:876
+msgid "Menu page"
+msgstr "Pagina del menu"
+
+#: admin/wp-dispensary-admin-settings.php:877
+msgid "Page contents [wpd_menu]"
+msgstr "Contenuto della pagina [wpd_menu]"
+
+#: admin/wp-dispensary-admin-settings.php:892
+msgid "Cart page"
+msgstr "Pagina carrello"
+
+#: admin/wp-dispensary-admin-settings.php:893
+msgid "Page contents [wpd_cart]"
+msgstr "Contenuto della pagina [wpd_cart]"
+
+#: admin/wp-dispensary-admin-settings.php:908
+msgid "Checkout page"
+msgstr "Pagina del Checkout"
+
+#: admin/wp-dispensary-admin-settings.php:909
+msgid "Page contents [wpd_checkout]"
+msgstr "Contenuto della pagina [wpd_checkout]"
+
+#: admin/wp-dispensary-admin-settings.php:924
+msgid "Account page"
+msgstr "Pagina Profilo"
+
+#: admin/wp-dispensary-admin-settings.php:925
+msgid "Page contents [wpd_account]"
+msgstr "Contenuto della pagina [wpd_account]"
+
+#: admin/wp-dispensary-admin-settings.php:940
+msgid "Dispatch phone number"
+msgstr "Numero di telefono della spedizione"
+
+#: admin/wp-dispensary-admin-settings.php:941
+msgid "Add the phone number to your dispatch center"
+msgstr "Aggiungi il numero di telefono al tuo centro di spedizione"
+
+#: admin/wp-dispensary-admin-settings.php:956
+msgid "Google Maps API key"
+msgstr "Chiave API di Google Maps"
+
+#: admin/wp-dispensary-admin-settings.php:957
+msgid "Add a map to the order directions for your drivers"
+msgstr "Aggiungi una mappa alle indicazioni dell’ordine per i tuoi autisti"
+
+#: admin/wp-dispensary-admin-settings.php:973
+msgid "Enable Google Maps geocode for latitude and longitude"
+msgstr ""
+"Abilita la codifica geografica di Google Maps per latitudine e longitudine"
+
+#: admin/wp-dispensary-data-output.php:75
+msgid "Shelf"
+msgstr "Lo scaffale"
+
+#: admin/wp-dispensary-data-output.php:80
+msgid "Strain"
+msgstr "Sforzo"
+
+#: admin/wp-dispensary-data-output.php:85
+msgid "Vendor"
+msgstr "Venditore"
+
+#: admin/wp-dispensary-data-output.php:190
+msgid "Net weight"
+msgstr "Peso netto"
+
+#: admin/wp-dispensary-data-output.php:196
+#: includes/functions/wp-dispensary-product-functions.php:159
+msgid "Size"
+msgstr "Dimensione"
+
+#: admin/wp-dispensary-data-output.php:238
+#: includes/functions/wp-dispensary-product-functions.php:192
+msgid "Weight"
+msgstr "Peso"
+
+#: admin/wp-dispensary-data-output.php:245
+#: admin/wp-dispensary-data-output.php:247
+msgid "Flower"
+msgstr "Fiore"
+
+#: admin/wp-dispensary-data-output.php:349
+msgid "TOTAL"
+msgstr "TOTALE"
+
+#: admin/wp-dispensary-data-output.php:356
+msgid "Compounds"
+msgstr "Composti"
+
+#: admin/wp-dispensary-data-output.php:406
+#: admin/wp-dispensary-data-output.php:407
+msgid "Price each:"
+msgstr "Prezzo ciascuno:"
+
+#: admin/wp-dispensary-data-output.php:414
+msgid "per pack:"
+msgstr "per pack:"
+
+#: admin/wp-dispensary-plugin-upgrade.php:172
+msgid "WP Dispensary database update required"
+msgstr "È necessario l’aggiornamento del database di WP Dispensary"
+
+#: admin/wp-dispensary-plugin-upgrade.php:173
+msgid ""
+"WP Dispensary has been updated! To keep things running smoothly, we have to "
+"update your database to the newest version. The database update process may "
+"take a little while, so please be patient."
+msgstr ""
+"WP Dispensary è stato aggiornato! Per mantenere le cose senza intoppi, "
+"dobbiamo aggiornare il database alla versione più recente. Il processo di "
+"aggiornamento del database potrebbe richiedere del tempo, quindi sii "
+"paziente."
+
+#: admin/wp-dispensary-plugin-upgrade.php:174
+msgid "Upgrade Now"
+msgstr "Aggiorna Adesso"
+
+#: includes/class-wp-dispensary-activator.php:81
+msgid "Menu"
+msgstr "Menu"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:407
+msgid "Donation"
+msgstr "Donazione"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:413
+msgid "Price"
+msgstr "Prezzo"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1144
+#: includes/functions/wp-dispensary-pricing-functions.php:1168
+msgid "Price per unit"
+msgstr "Prezzo per unità"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1145
+#: includes/functions/wp-dispensary-pricing-functions.php:1169
+msgid "Price per pack"
+msgstr "Prezzo per confezione"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1146
+#: includes/functions/wp-dispensary-pricing-functions.php:1170
+msgid "Units per pack"
+msgstr "Unità per confezione"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1153
+#: includes/functions/wp-dispensary-pricing-functions.php:1172
+msgid "1 g"
+msgstr "1 g"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1154
+#: includes/functions/wp-dispensary-pricing-functions.php:1173
+msgid "2 g"
+msgstr "2 g"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1155
+msgid "1/8 oz"
+msgstr "1/8 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1156
+msgid "5 g"
+msgstr "5 g"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1157
+msgid "1/4 oz"
+msgstr "1/4 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1158
+msgid "1/2 oz"
+msgstr "1/2 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1159
+msgid "1 oz"
+msgstr "1 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1171
+msgid "1/2 gram"
+msgstr "1/2 grammo"
+
+#: includes/functions/wp-dispensary-product-functions.php:42
+#, php-format
+msgid "Product updated. <a href=\"%s\">View product</a>"
+msgstr "Prodotto aggiornato. <a href=\"%s\">Visualizza prodotto</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:43
+#: includes/functions/wp-dispensary-product-functions.php:45
+msgid "Product updated."
+msgstr "Prodotto aggiornato."
+
+#: includes/functions/wp-dispensary-product-functions.php:44
+msgid "Product deleted."
+msgstr "Prodotto eliminato."
+
+#: includes/functions/wp-dispensary-product-functions.php:46
+#, php-format
+msgid "Product restored to revision from %s"
+msgstr "Prodotto ripristinato per la revisione da %s"
+
+#: includes/functions/wp-dispensary-product-functions.php:47
+#, php-format
+msgid "Product published. <a href=\"%s\">View product</a>"
+msgstr "Prodotto pubblicato. <a href=\"%s\">Visualizza prodotto</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:48
+msgid "Product saved."
+msgstr "Prodotto salvato."
+
+#: includes/functions/wp-dispensary-product-functions.php:49
+#, php-format
+msgid "Product submitted. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr "Prodotto inviato. <a href=\"%s\">Anteprima Prodotto</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:50
+#, php-format
+msgid ""
+"Product scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Preview product</a>"
+msgstr ""
+"Prodotto previsto per: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Anteprima Prodotto</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:51
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: includes/functions/wp-dispensary-product-functions.php:52
+#, php-format
+msgid ""
+"Product draft updated. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr ""
+"Bozza prodotto aggiornata. <a target=\"_blank\" href=\"%s\">Anteprima "
+"prodotto</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:137
+msgid "Seeds"
+msgstr "Seeds"
+
+#: includes/functions/wp-dispensary-product-functions.php:148
+msgid "Clones"
+msgstr "Cloni"
+
+#: wp-dispensary.php:102
+msgid "Go Pro"
+msgstr "Passa a Pro"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.wpdispensary.com"
+msgstr "https://www.wpdispensary.com"
+
+#. Description of the plugin/theme
+msgid ""
+"The complete marijuana menu solution for dispensaries and delivery services"
+msgstr ""
+"La soluzione completa per il menu della marijuana per dispensari e servizi "
+"di consegna"
