@@ -15,13 +15,81 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * @todo double check that these upgrades work with post types removed
+ * Deactivate old WPD plugins
  * 
- * If they aren't working, create a deprecated-post-types.php file for the old post types to go into
+ * This function will deactivate old add-on's to allow for the new version
+ * of WPD eCommerce to control these features.
  * 
- * These deprecated files can be deleted when Version 5.0 is released, to make sure all upgrades
- * work witin the time that 4.0 and 5.0 versions are released.
+ * @return void
  */
+function wpd_ecommerce_deactivate_plugins() {
+	// Plugins to deactivate.
+	$plugins_to_deactivate = array(
+		'wpd-heavyweights/wpd-heavyweights.php',
+		'wpd-inventory/wpd-inventory.php',
+		'wpd-locations/wpd-locations.php',
+		'wpd-topsellers/wpd-topsellers.php',
+		'dispensary-gear/wpd-gear.php',
+		'dispensary-tinctures/wpd-tinctures.php'
+	);
+
+	// Loop throgh plugins.
+	foreach ( $plugins_to_deactivate as $plugin ) {
+		// Check if the plugin is active.
+		if ( is_plugin_active( $plugin ) ) {
+			deactivate_plugins( $plugin );
+		}
+	}
+
+	/**
+	 * Flush Rewrite Rules
+	 */
+	global $wp_rewrite;
+	$wp_rewrite->init();
+	$wp_rewrite->flush_rules();
+}
+add_action( 'init', 'wpd_ecommerce_deactivate_plugins' );
+
+/**
+ * Unregister old post types
+ * 
+ * @return void
+ */
+function wpd_unregister_post_types() {
+	unregister_post_type( 'flowers' );
+	unregister_post_type( 'concentrates' );
+	unregister_post_type( 'edibles' );
+	unregister_post_type( 'prerolls' );
+	unregister_post_type( 'topicals' );
+	unregister_post_type( 'growers' );
+	unregister_post_type( 'tinctures' );
+	unregister_post_type( 'gear' );
+}
+
+/**
+ * Unregister old taxonomies
+ * 
+ * @return void
+ */
+function wpd_unregister_taxonomies() {
+	// Categories.
+	unregister_taxonomy( 'flowers_category' );
+	unregister_taxonomy( 'edibles_category' );
+	unregister_taxonomy( 'concentrates_category' );
+	unregister_taxonomy( 'topicals_category' );
+	unregister_taxonomy( 'growers_category' );
+	unregister_taxonomy( 'wpd_gear_category' );
+	unregister_taxonomy( 'wpd_tinctures_category' );
+	// Additional taxonomies.
+	unregister_taxonomy( 'shelf_type' );
+	unregister_taxonomy( 'strain_type' );
+	unregister_taxonomy( 'vendor' );
+	unregister_taxonomy( 'aroma' );
+	unregister_taxonomy( 'flavor' );
+	unregister_taxonomy( 'effect' );
+	unregister_taxonomy( 'symptom' );
+	unregister_taxonomy( 'condition' );
+}
 
 /**
  * Convert Product Data during Version 4.0 upgrade.
@@ -43,24 +111,123 @@ function wpd_convert_product_data() {
 	// Update additional taxonomies and post type metadata.
 	foreach ( wpd_product_types_simple( true ) as $key=>$value ) {
 		// Update taxonomies.
-		convert_taxonomies( $key, 'allergen', 'allergens' );
-		convert_taxonomies( $key, 'aromas', 'aromas' );
-		convert_taxonomies( $key, 'conditions', 'conditions' );
-		convert_taxonomies( $key, 'effects', 'effects' );
-		convert_taxonomies( $key, 'flavors', 'flavors' );
-		convert_taxonomies( $key, 'ingredients', 'ingredients' );
-		convert_taxonomies( $key, 'shelf-type', 'shelf_types' );
-		convert_taxonomies( $key, 'strain-type', 'strain_types' );
-		convert_taxonomies( $key, 'symptom', 'symptoms' );
-		convert_taxonomies( $key, 'vendor', 'vendors' );
+		convert_taxonomies( $value, 'allergen', 'allergens' );
+		convert_taxonomies( $value, 'aromas', 'aromas' );
+		convert_taxonomies( $value, 'conditions', 'conditions' );
+		convert_taxonomies( $value, 'effects', 'effects' );
+		convert_taxonomies( $value, 'flavors', 'flavors' );
+		convert_taxonomies( $value, 'ingredients', 'ingredients' );
+		convert_taxonomies( $value, 'shelf_type', 'shelf_types' );
+		convert_taxonomies( $value, 'strain_type', 'strain_types' );
+		convert_taxonomies( $value, 'symptom', 'symptoms' );
+		convert_taxonomies( $value, 'vendor', 'vendors' );
 		// Update metadata.
-		convert_metadata( $key );
+		convert_metadata( $value );
 	}
 
 	// Update post types.
 	convert_post_types();
 
+	// Update taxonomy counts.
+	wpd_update_taxonomy_count();
+
 	/**
 	 * @todo convert user roles from 'patient' to 'customer'
 	 */
+}
+
+/**
+ * Plugin Upgrader
+ * 
+ * This will convert all product data to WPD v4.0 setup
+ * 
+ * @return void
+ */
+function wpd_plugin_upgrader() {
+	if ( isset( $_REQUEST['do_update_wpd'] ) ) {
+		// Remove the upgrade admin notice.
+		remove_action( 'admin_notices', 'wp_dispensary_upgrade_admin_notice' );
+		// Start the data conversion.
+		wpd_convert_product_data();
+		// Set an option when the upgrade is complete.
+		add_option( 'wpd_upgrade_complete', 'true' );
+	}
+}
+add_action( 'admin_init', 'wpd_plugin_upgrader' );
+
+/**
+ * Add admin notice for upgrade.
+ * 
+ * @since  4.0
+ * @return string
+ */
+function wp_dispensary_upgrade_admin_notice() {
+	$update_url = wp_nonce_url(
+		add_query_arg( 'do_update_wpd', 'true', admin_url( 'admin.php?page=wpd-settings' ) ),
+		'wpd_db_update',
+		'wpd_db_update_nonce'
+	);
+
+    echo '<div class="notice notice-info">
+		  <p><strong>' . __( 'WP Dispensary database update required', 'wp-dispensary' ) . '</strong></p>
+		  <p>' . __( 'WP Dispensary has been updated! To keep things running smoothly, we have to update your database to the newest version. The database update process may take a little while, so please be patient.', 'wp-dispensary' ) . '</p>
+		  <p><a href="' . $update_url . '" class="button button-primary">' . __( 'Upgrade Now', 'wp-dispensary' ) . '</a></p>
+         </div>';
+}
+
+if ( ! get_option( 'wpd_upgrade_complete' ) ) {
+	add_action( 'admin_notices', 'wp_dispensary_upgrade_admin_notice' );
+}
+
+/**
+ * Unregister stuff
+ * 
+ * This will unregister old post types and taxonomies after the version 4.0 upgrade is complete
+ * 
+ * @since  4.0
+ * @return void
+ */
+function wpd_unregister_stuff() {
+	// Deactivate old post types.
+	wpd_unregister_post_types();
+	// Deacrtivate old taxonomies.
+	wpd_unregister_taxonomies();
+}
+
+if ( get_option( 'wpd_upgrade_complete' ) ) {
+	add_action( 'init', 'wpd_unregister_stuff' );
+}
+
+/**
+ * Update taxonomy counts
+ * 
+ * This will update the taxonomy counts after the version 4.0 upgrade is complete
+ * 
+ * @since  4.0
+ * @return void
+ */
+function wpd_update_taxonomy_count() {
+	$taxonomies = array(
+		'allergens',
+		'aromas',
+		'conditions',
+		'effects',
+		'flavors',
+		'ingredients',
+		'shelf_types',
+		'strain_types',
+		'symptoms',
+		'vendors',
+		'wpd_categories'
+	);
+
+	foreach ( $taxonomies as $tax ) {
+		$get_terms_args = array(
+			'taxonomy'   => $tax,
+			'fields'     => 'ids',
+			'hide_empty' => false,
+		);	
+		$update_terms = get_terms( $get_terms_args );
+		wp_update_term_count_now( $update_terms, $tax );
+	}
 }
