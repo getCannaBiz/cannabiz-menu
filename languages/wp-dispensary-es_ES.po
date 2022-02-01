@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Dispensary\n"
 "POT-Creation-Date: 2020-12-30 15:20-0500\n"
-"PO-Revision-Date: 2020-12-30 15:20-0500\n"
+"PO-Revision-Date: 2022-01-31 23:24-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: wp-dispensary.php\n"
@@ -884,7 +884,7 @@ msgstr "Nuevo nombre de aroma"
 
 #: admin/post-types/wp-dispensary-taxonomies.php:201
 msgid "Separate aromas with commas"
-msgstr "Separe los aromas con comas."
+msgstr "Separa los aromas con comas"
 
 #: admin/post-types/wp-dispensary-taxonomies.php:202
 msgid "Add or remove aromas"
@@ -943,7 +943,7 @@ msgstr "Nuevo nombre de Sabor"
 
 #: admin/post-types/wp-dispensary-taxonomies.php:246
 msgid "Separate flavors with commas"
-msgstr "Separe los sabores con comas."
+msgstr "Separa los sabores con comas"
 
 #: admin/post-types/wp-dispensary-taxonomies.php:247
 msgid "Add or remove flavors"
@@ -1238,7 +1238,7 @@ msgstr "Nuevo nombre de alérgeno"
 
 #: admin/post-types/wp-dispensary-taxonomies.php:466
 msgid "Separate allergens with commas"
-msgstr "Separe los alérgenos con comas."
+msgstr "Separe los alérgenos con comas"
 
 #: admin/post-types/wp-dispensary-taxonomies.php:467
 msgid "Add or remove allergens"
@@ -1486,10 +1486,9 @@ msgid "Require login to shop"
 msgstr "Requerir inicio de sesión para comprar"
 
 #: admin/wp-dispensary-admin-settings.php:481
-#, fuzzy
 msgid "Hide the add to cart functionality for non-logged in users"
 msgstr ""
-"Ocultar la funcionalidad de agregar al carrito para los usuarios que no han "
+"Ocultar la funcionalidad de agregar al carrito para usuarios que no han "
 "iniciado sesión"
 
 #: admin/wp-dispensary-admin-settings.php:495
@@ -1518,7 +1517,7 @@ msgstr "Efectivo a la entrega"
 
 #: admin/wp-dispensary-admin-settings.php:540
 msgid "Pay on pickup"
-msgstr "paga al recogerlo"
+msgstr "Paga al recogerlo"
 
 #: admin/wp-dispensary-admin-settings.php:541
 msgid "Ground shipping"
@@ -1545,7 +1544,6 @@ msgid "Let the user know how to send payment for the order."
 msgstr "Informar al usuario cómo enviar el pago del pedido."
 
 #: admin/wp-dispensary-admin-settings.php:619
-#, fuzzy
 msgid "Patient Registration"
 msgstr "Registro de pacientes"
 
@@ -1562,12 +1560,10 @@ msgid "Redirect after registration"
 msgstr "Redirigir después del registro"
 
 #: admin/wp-dispensary-admin-settings.php:642
-#, fuzzy
 msgid "Choose the page patients will be redirected to when registering."
 msgstr "Elija la página a la que se redirigirá a los pacientes al registrarse."
 
 #: admin/wp-dispensary-admin-settings.php:657
-#, fuzzy
 msgid "Patient Verification"
 msgstr "Verificación del paciente"
 
@@ -1590,12 +1586,10 @@ msgstr ""
 "Ocultar la carga de recomendación del médico de los detalles de la cuenta"
 
 #: admin/wp-dispensary-admin-settings.php:701
-#, fuzzy
 msgid "Recommendation number"
 msgstr "Número de recomendación"
 
 #: admin/wp-dispensary-admin-settings.php:702
-#, fuzzy
 msgid "Hide the recommendation number from account details"
 msgstr "Ocultar el número de recomendación de los detalles de la cuenta"
 
@@ -1604,7 +1598,6 @@ msgid "Expiration date"
 msgstr "Fecha de vencimiento"
 
 #: admin/wp-dispensary-admin-settings.php:717
-#, fuzzy
 msgid "Hide the expiration date from account details"
 msgstr "Ocultar la fecha de vencimiento de los detalles de la cuenta"
 
@@ -1614,7 +1607,7 @@ msgstr "Configuración de Página"
 
 #: admin/wp-dispensary-admin-settings.php:745
 msgid "Menu page"
-msgstr "página Menú"
+msgstr "Página de menú"
 
 #: admin/wp-dispensary-admin-settings.php:746
 msgid "Page contents [wpd_menu]"
@@ -1625,7 +1618,6 @@ msgid "Cart page"
 msgstr "Página carrito"
 
 #: admin/wp-dispensary-admin-settings.php:762
-#, fuzzy
 msgid "Page contents [wpd_cart]"
 msgstr "Contenido de la página [wpd_cart]"
 
@@ -1634,7 +1626,6 @@ msgid "Checkout page"
 msgstr "Página de finalizar compra"
 
 #: admin/wp-dispensary-admin-settings.php:778
-#, fuzzy
 msgid "Page contents [wpd_checkout]"
 msgstr "Contenido de la página [wpd_checkout]"
 
@@ -1643,7 +1634,6 @@ msgid "Account page"
 msgstr "Página de Cuenta"
 
 #: admin/wp-dispensary-admin-settings.php:794
-#, fuzzy
 msgid "Page contents [wpd_account]"
 msgstr "Contenido de la página [wpd_account]"
 
@@ -1660,7 +1650,6 @@ msgid "Vendor"
 msgstr "Vendedor"
 
 #: admin/wp-dispensary-data-output.php:183
-#, fuzzy
 msgid "Net weight"
 msgstr "Peso neto"
 
@@ -1689,7 +1678,6 @@ msgstr "Compuestos"
 
 #: admin/wp-dispensary-data-output.php:403
 #: admin/wp-dispensary-data-output.php:415
-#, fuzzy
 msgid "Price each:"
 msgstr "Precio cada uno:"
 
@@ -1711,7 +1699,6 @@ msgid "Product updated."
 msgstr "Producto actualizado."
 
 #: admin/wp-dispensary-functions.php:588
-#, fuzzy
 msgid "Product deleted."
 msgstr "Producto eliminado."
 
@@ -1780,7 +1767,6 @@ msgid "Seeds"
 msgstr "Seeds"
 
 #: includes/functions/wp-dispensary-product-functions.php:109
-#, fuzzy
 msgid "Clones"
 msgstr "Clones"
 
@@ -1807,4 +1793,4 @@ msgid ""
 "The complete marijuana menu solution for dispensaries and delivery services"
 msgstr ""
 "La solución completa de menú de marihuana para dispensarios y servicios de "
-"entrega."
+"entrega"
