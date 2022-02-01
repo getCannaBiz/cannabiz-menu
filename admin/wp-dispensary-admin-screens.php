@@ -73,128 +73,63 @@ if ( isset( $_GET['post_type'] ) ) {
  */
 function hide_meta_box( $hidden, $screen ) {
 	//make sure we are dealing with the correct screen.
-	if ( ( 'post' == $screen->base ) && ( 'flowers' == $screen->id ) ) {
-		$hidden = array( 'postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv' );
-	} elseif ( ( 'post' == $screen->base ) && ( 'concentrates' == $screen->id ) ) {
-		$hidden = array( 'postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv' );
-	} elseif ( ( 'post' == $screen->base ) && ( 'edibles' == $screen->id ) ) {
-		$hidden = array( 'postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv' );
-	} elseif ( ( 'post' == $screen->base ) && ( 'prerolls' == $screen->id ) ) {
-		$hidden = array( 'postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv' );
-	} elseif ( ( 'post' == $screen->base ) && ( 'topicals' == $screen->id ) ) {
-		$hidden = array( 'postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv' );
-	} elseif ( ( 'post' == $screen->base ) && ( 'growers' == $screen->id ) ) {
-		$hidden = array( 'postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv' );
-	} else {}
+	if ( ( 'post' == $screen->base ) && ( 'products' == $screen->id ) ) {
+		$hidden = array( 'postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'revisionsdiv' );
+		$hidden = apply_filters( 'wpd_hide_meta_box', $hidden );
+	}
 	return $hidden;
 }
 add_filter( 'default_hidden_meta_boxes', 'hide_meta_box', 10, 2 );
 
-// Rearrange metabox order on Flowers edit screen.
-function flowers_metabox_order( $order ) {
-	return array(
-		'normal' => join(
-			',',
-			array(
-				'wpdispensary_prices',
-				'wpdispensary_compounds',
-			)
-		),
-	);
-}
-add_filter( 'get_user_option_meta-box-order_flowers', 'flowers_metabox_order' );
-
-// Rearrange metabox order on Edibles edit screen.
-function edibles_metabox_order( $order ) {
-	return array(
-		'side' => join(
-			',',
-			array(
-				'submitdiv',
-			)
-		),
-		'normal' => join(
-			',',
-			array(
-				'wpdispensary_singleprices',
-			)
-		),
-	);
-}
-add_filter( 'get_user_option_meta-box-order_edibles', 'edibles_metabox_order' );
-
-// Rearrange metabox order on Pre-rolls edit screen.
-function prerolls_metabox_order( $order ) {
-	return array(
-		'side' => join(
-			',',
-			array(
-				'submitdiv',
-				'select-flowers-metabox',
-			)
-		),
-		'normal' => join(
-			',',
-			array(
-				'wpdispensary_singleprices',
-			)
-		),
-	);
-}
-add_filter( 'get_user_option_meta-box-order_prerolls', 'prerolls_metabox_order' );
-
-// Rearrange metabox order on Growers edit screen.
-function growers_metabox_order( $order ) {
-	return array(
-		'side' => join(
-			',',
-			array(
-				'submitdiv',
-				'select-flowers-metabox',
-			)
-		),
-		'normal' => join(
-			',',
-			array(
-				'wpdispensary_singleprices',
-			)
-		),
-	);
-}
-add_filter( 'get_user_option_meta-box-order_growers', 'growers_metabox_order' );
-
 /**
  * Remove specific taxonomies from columns on menu type screen.
  * 
- * @since 2.3
+ * @since 2.3 - updated 4.0
  */
 function wpd_remove_taxonomies_from_admin_columns( $columns ) {
 	// remove aroma taxonomy column.
 	unset( $columns['taxonomy-aroma'] );
+	unset( $columns['taxonomy-aromas'] );
 	// remove flavor taxonomy column.
 	unset( $columns['taxonomy-flavor'] );
+	unset( $columns['taxonomy-flavors'] );
 	// remove effect taxonomy column.
 	unset( $columns['taxonomy-effect'] );
+	unset( $columns['taxonomy-effects'] );
 	// remove symptom taxonomy column.
 	unset( $columns['taxonomy-symptom'] );
+	unset( $columns['taxonomy-symptoms'] );
 	// remove condition taxonomy column.
 	unset( $columns['taxonomy-condition'] );
+	unset( $columns['taxonomy-conditions'] );
 	// remove ingredients taxonomy column.
 	unset( $columns['taxonomy-ingredients'] );
 	// remove allergens taxonomy column.
 	unset( $columns['taxonomy-allergens'] );
-	
-	/**
-	 * @todo add the old category taxonomies to unset list.
-	 */
+	// remove vendor taxonomy column.
+	unset( $columns['taxonomy-vendor'] );
+	// remove shelf type taxonomy column.
+	unset( $columns['taxonomy-shelf_type'] );
+	// remove strain type taxonomy column.
+	unset( $columns['taxonomy-strain_type'] );
+	// remove flowers category taxonomy column.
+	unset( $columns['taxonomy-flowers_category'] );
+	// remove edibles category taxonomy column.
+	unset( $columns['taxonomy-edibles_category'] );
+	// remove concentrates category taxonomy column.
+	unset( $columns['taxonomy-concentrates_category'] );
+	// remove topicals category taxonomy column.
+	unset( $columns['taxonomy-topicals_category'] );
+	// remove growers category taxonomy column.
+	unset( $columns['taxonomy-growers_category'] );
+	// remove gear category taxonomy column.
+	unset( $columns['taxonomy-wpd_gear_category'] );
+	// remove tinctures category taxonomy column.
+	unset( $columns['taxonomy-wpd_tinctures_category'] );
 
 	return $columns;
 }
 add_filter( 'manage_edit-products_columns', 'wpd_remove_taxonomies_from_admin_columns' );
-add_filter( 'manage_edit-flowers_columns', 'wpd_remove_taxonomies_from_admin_columns' );
-add_filter( 'manage_edit-concentrates_columns', 'wpd_remove_taxonomies_from_admin_columns' );
-add_filter( 'manage_edit-edibles_columns', 'wpd_remove_taxonomies_from_admin_columns' );
-add_filter( 'manage_edit-topicals_columns', 'wpd_remove_taxonomies_from_admin_columns' );
 
 /**
  * Sort products on archive page
