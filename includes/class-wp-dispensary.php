@@ -150,6 +150,15 @@ class WP_Dispensary {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-pricing-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/wp-dispensary-product-functions.php';
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-categories.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-taxonomies.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-flowers.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-concentrates.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-edibles.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-prerolls.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-topicals.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-growers.php';
+
 		/**
 		 * The file responsible for defining the custom image sizes.
 		 * 
