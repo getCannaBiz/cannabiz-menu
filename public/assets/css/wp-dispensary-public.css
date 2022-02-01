@@ -32,31 +32,31 @@ div.wp-dispensary-widget-product:last-child {
 .wpdispensary-widget img,
 div.wp-dispensary-widget-product img {
 	height: auto;
-  margin-bottom: 12px;
+	margin-bottom: 12px;
 	width: 100%;
 }
 
 span.wpdispensary-widget-title,
 span.wp-dispensary-widget-title {
-  font-size: 16px;
+	font-size: 16px;
 	font-weight: 600;
 	line-height: 1.2;
 }
 
 span.wpdispensary-widget-categories {
-  float: right;
+	float: right;
 	font-size: 13px;
-  font-weight: 600;
+	font-weight: 600;
 	line-height: 1.2;
 }
 
 span.wpdispensary-widget-categories a,
 span.wpdispensary-widget-categories a:visited {
-  background: #EEE;
-  border-radius: 15px;
-  color: #AAA;
-  display: inline-block;
-  padding: 5px 10px;
+	background: #EEE;
+	border-radius: 15px;
+	color: #AAA;
+	display: inline-block;
+	padding: 5px 10px;
 }
 
 span.wpdispensary-widget-categories a:hover {
@@ -64,11 +64,11 @@ span.wpdispensary-widget-categories a:hover {
 }
 
 ul.wpdispensary-list li:before {
-  color: #454545;
-  content: "\f105";
-  font-family: 'FontAwesome';
-  margin-right: 6px;
-  -webkit-font-smoothing: antialiased;
+	color: #454545;
+	content: "\f105";
+	font-family: 'FontAwesome';
+	margin-right: 6px;
+	-webkit-font-smoothing: antialiased;
 }
 
 ul.wp-dispensary-list li img {
@@ -127,6 +127,11 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 	text-align: center;
 }
 
+.entry-content .wpd-menu-item:last-child,
+.entry-content .wpdshortcode:last-child {
+	margin-bottom: 12px !important;
+}
+
 .wpdshortcode p,
 .wpdshortcode h2.wpd-producttitle,
 .wpd-menu-item p.wpd-producttitle,
@@ -142,9 +147,9 @@ li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
 span.wpd-pricing,
 span.wpd-thc,
 span.wpd-productinfo {
-  color: #999999;
-  font-size: 13px;
-  margin: 0 5px;
+	color: #999999;
+	font-size: 13px;
+	margin: 0 5px;
 }
 
 span.wpd-productinfo span.wpd-productinfo.pricing {
@@ -158,14 +163,14 @@ h2.wpd-title {
 }
 
 span.wp-dispensary-view-all {
-    color: #AAA;
-    font-size: 16px;
-    display: block;
+	color: #AAA;
+	font-size: 16px;
+	display: block;
 }
 
 span.wp-dispensary-view-all a,
 span.wp-dispensary-view-all a:visited {
-    color: #AAA;
+	color: #AAA;
 }
 
 span.wp-dispensary-view-all a:hover {
@@ -223,7 +228,7 @@ table.wpdispensary-table td span {
 }
 
 table.wpdispensary-table.single.details.compound-details td {
-    color: #454545;
+	color: #454545;
 }
 
 /** Ingredients */
@@ -556,25 +561,25 @@ table.wpdispensary-table.single.details.compound-details td {
 }
 
 .carousel-item p {
-  margin: 12px 0 0 0;
-  padding: 0;
+	margin: 12px 0 0 0;
+	padding: 0;
 }
 
 .carousel-item span.wpd-pricing,
 .carousel-item span.wpd-thc,
 .carousel-item span.wpd-productinfo {
-  color: #999999;
-  font-size: 13px;
-  margin-right: 10px;
+	color: #999999;
+	font-size: 13px;
+	margin-right: 10px;
 }
 
 .carousel-item span.wpd-productinfo span.wpd-productinfo.pricing {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 .carousel-item span.wpd-topsellers-icon {
-    top: 0;
-    right: 0;
+	top: 0;
+	right: 0;
 }
 
 /* Mobile responsive CSS */
@@ -623,13 +628,13 @@ table.wpdispensary-table.single.details.compound-details td {
 /** Widget - Product Search */
 
 .wp-dispensary-product-search form {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .wp-dispensary-product-search form input[type="text"],
 .wp-dispensary-product-search form input[type="submit"] {
-    border-radius: 0;
+	border-radius: 0;
 }
 
 /** Admin toolbar menu items
