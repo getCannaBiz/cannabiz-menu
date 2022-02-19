@@ -1,0 +1,2147 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Dispensary\n"
+"POT-Creation-Date: 2022-02-19 12:16-0500\n"
+"PO-Revision-Date: 2022-02-19 12:55-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: mt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==0 || (n%100>=2 && n"
+"%100<=10) ? 1 : n%100>=11 && n%100<=19 ? 2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-dispensary.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#. Plugin Name of the plugin/theme
+#. Author of the plugin/theme
+#: admin/class-wp-dispensary-admin-settings.php:134
+#: admin/class-wp-dispensary-admin-settings.php:135
+#: admin/class-wp-dispensary-admin.php:130
+msgid "WP Dispensary"
+msgstr "WP Dispensary"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+msgid "WP Dispensary Settings"
+msgstr "Settings tad-Dispensarju WP"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+#: admin/class-wp-dispensary-admin.php:184 wp-dispensary.php:103
+msgid "Settings"
+msgstr "Settings"
+
+#: admin/class-wp-dispensary-admin-settings.php:679
+msgid "Choose File"
+msgstr "Agħżel File"
+
+#: admin/class-wp-dispensary-admin-settings.php:696
+msgid "Choose Image"
+msgstr "Agħżel Image"
+
+#: admin/class-wp-dispensary-admin.php:152
+msgid "View Menu"
+msgstr "View Menu"
+
+#: admin/class-wp-dispensary-admin.php:160
+#: admin/widgets/wpd-widget-products.php:261
+#: admin/wp-dispensary-admin-settings.php:222
+msgid "Products"
+msgstr "Prodotti"
+
+#: admin/class-wp-dispensary-admin.php:168
+#: admin/class-wp-dispensary-csv-export.php:102
+#: admin/deprecated/wp-dispensary-categories.php:36
+#: admin/taxonomies/wpd-taxonomy-categories.php:36
+msgid "Categories"
+msgstr "Kategoriji"
+
+#: admin/class-wp-dispensary-admin.php:176
+#: admin/class-wp-dispensary-csv-export.php:103
+#: admin/taxonomies/wpd-taxonomy-vendors.php:40
+msgid "Vendors"
+msgstr "Bejjiegħa"
+
+#: admin/class-wp-dispensary-csv-export.php:72
+msgid "WP Dispensary's Product Export"
+msgstr "Esportazzjoni tal-Prodotti tal-WP Dispensary"
+
+#: admin/class-wp-dispensary-csv-export.php:73
+msgid ""
+"Export your WP Dispensary products as a CSV file by clicking the button "
+"below."
+msgstr ""
+"Esporta l-prodotti tiegħek WP Dispensary bħala fajl CSV billi tikklikkja l-"
+"buttuna hawn taħt."
+
+#: admin/class-wp-dispensary-csv-export.php:74
+#: admin/wp-dispensary-admin-settings.php:223
+#: admin/wp-dispensary-admin-settings.php:239
+#: admin/wp-dispensary-admin-settings.php:257
+msgid "Export"
+msgstr "Esportazzjoni"
+
+#: admin/class-wp-dispensary-csv-export.php:93
+msgid "ID"
+msgstr "ID"
+
+#: admin/class-wp-dispensary-csv-export.php:94
+msgid "Type"
+msgstr "Tip"
+
+#: admin/class-wp-dispensary-csv-export.php:95
+#: admin/wp-dispensary-admin-settings.php:289
+#: admin/wp-dispensary-admin-settings.php:447
+msgid "Title"
+msgstr "Titolu"
+
+#: admin/class-wp-dispensary-csv-export.php:96
+msgid "Content"
+msgstr "Kontenut"
+
+#: admin/class-wp-dispensary-csv-export.php:97
+msgid "Slug"
+msgstr "Slug"
+
+#: admin/class-wp-dispensary-csv-export.php:98
+msgid "Date"
+msgstr "Data"
+
+#: admin/class-wp-dispensary-csv-export.php:99
+msgid "Author"
+msgstr "Awtur"
+
+#: admin/class-wp-dispensary-csv-export.php:100
+#: admin/wp-dispensary-admin-settings.php:292
+#: includes/functions/wp-dispensary-pricing-functions.php:415
+msgid "Prices"
+msgstr "Prezzijiet"
+
+#: admin/class-wp-dispensary-csv-export.php:101
+msgid "Inventory"
+msgstr "Inventarju"
+
+#: admin/class-wp-dispensary-csv-export.php:104
+msgid "Shelf type"
+msgstr "Tip ta ‘xkaffa"
+
+#: admin/class-wp-dispensary-csv-export.php:105
+msgid "Strain type"
+msgstr "Tip ta ‘razza"
+
+#: admin/class-wp-dispensary-csv-export.php:106
+#: admin/taxonomies/wpd-taxonomy-allergens.php:40
+#: admin/wp-dispensary-data-output.php:128
+msgid "Allergens"
+msgstr "Allerġeni"
+
+#: admin/class-wp-dispensary-csv-export.php:107
+#: admin/taxonomies/wpd-taxonomy-aromas.php:40
+#: admin/wp-dispensary-data-output.php:92
+msgid "Aromas"
+msgstr "Aromi"
+
+#: admin/class-wp-dispensary-csv-export.php:108
+#: admin/taxonomies/wpd-taxonomy-conditions.php:40
+#: admin/wp-dispensary-data-output.php:116
+msgid "Conditions"
+msgstr "Kundizzjonijiet"
+
+#: admin/class-wp-dispensary-csv-export.php:109
+#: admin/taxonomies/wpd-taxonomy-effects.php:40
+#: admin/wp-dispensary-data-output.php:104
+msgid "Effects"
+msgstr "Effetti"
+
+#: admin/class-wp-dispensary-csv-export.php:110
+#: admin/taxonomies/wpd-taxonomy-flavors.php:40
+#: admin/wp-dispensary-data-output.php:98
+msgid "Flavors"
+msgstr "Togħmiet"
+
+#: admin/class-wp-dispensary-csv-export.php:111
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:40
+#: admin/wp-dispensary-data-output.php:122
+msgid "Ingredients"
+msgstr "Ingredjenti"
+
+#: admin/class-wp-dispensary-csv-export.php:112
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:40
+#: admin/wp-dispensary-data-output.php:110
+msgid "Symptoms"
+msgstr "Sintomi"
+
+#: admin/class-wp-dispensary-csv-export.php:113
+#: admin/wp-dispensary-admin-screens.php:26
+msgid "Featured image"
+msgstr "Dehru immaġni"
+
+#: admin/class-wp-dispensary-permalink-settings.php:33
+msgid "Products Base"
+msgstr "Bażi tal-Prodotti"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:57
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:88
+msgid "Logo"
+msgstr "Logo"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:61
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:99
+msgid "Add Image"
+msgstr "Żid Immaġni"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:62
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:100
+msgid "Remove Image"
+msgstr "Neħħi l-Immaġini"
+
+#: admin/deprecated-shortcodes.php:148 admin/deprecated-shortcodes.php:396
+#: admin/deprecated-shortcodes.php:580 admin/deprecated-shortcodes.php:768
+#: admin/deprecated-shortcodes.php:924 admin/deprecated-shortcodes.php:1085
+msgid "(view all)"
+msgstr "(ara kollha)"
+
+#: admin/deprecated-shortcodes.php:596
+msgid "Servings: "
+msgstr "Porzjonijiet: "
+
+#: admin/deprecated-shortcodes.php:607 admin/deprecated-shortcodes.php:618
+msgid "THC: "
+msgstr "THC: "
+
+#: admin/deprecated-shortcodes.php:789
+msgid "Weight:"
+msgstr "Piż:"
+
+#: admin/deprecated-shortcodes.php:945
+msgid "Size:"
+msgstr "Daqs:"
+
+#: admin/deprecated-shortcodes.php:952
+msgid "THC:"
+msgstr "THC:"
+
+#: admin/deprecated-shortcodes.php:959
+msgid "CBD:"
+msgstr "CBD:"
+
+#: admin/deprecated-shortcodes.php:1106
+msgid "Seeds:"
+msgstr "Żrieragħ:"
+
+#: admin/deprecated-shortcodes.php:1113
+msgid "Clones:"
+msgstr "Kloni:"
+
+#: admin/deprecated-shortcodes.php:1191
+msgid "Recent Products"
+msgstr "Prodotti riċenti"
+
+#: admin/deprecated-widgets.php:36
+msgid "WPD Flowers"
+msgstr "WPD Fjuri"
+
+#: admin/deprecated-widgets.php:38
+msgid "Your most recent Flowers"
+msgstr "L-aktar Fjuri riċenti tiegħek"
+
+#: admin/deprecated-widgets.php:191 admin/deprecated-widgets.php:426
+#: admin/deprecated-widgets.php:662 admin/deprecated-widgets.php:904
+#: admin/deprecated-widgets.php:1141 admin/deprecated-widgets.php:1383
+#: admin/widgets/wpd-widget-products.php:274
+msgid "Widget Title:"
+msgstr "Titolu tal-widget:"
+
+#: admin/deprecated-widgets.php:196
+msgid "Amount of flowers to show:"
+msgstr "Ammont ta’ fjuri li trid turi:"
+
+#: admin/deprecated-widgets.php:202 admin/deprecated-widgets.php:437
+#: admin/deprecated-widgets.php:673 admin/deprecated-widgets.php:915
+#: admin/deprecated-widgets.php:1152 admin/deprecated-widgets.php:1394
+#: admin/widgets/wpd-widget-products.php:300
+msgid "Randomize output?"
+msgstr "Randomize output?"
+
+#: admin/deprecated-widgets.php:207
+msgid "Display flower name?"
+msgstr "Uri l-isem tal-fjura?"
+
+#: admin/deprecated-widgets.php:212
+msgid "Display flower category?"
+msgstr "Uri l-kategorija tal-fjuri?"
+
+#: admin/deprecated-widgets.php:217 admin/deprecated-widgets.php:452
+#: admin/deprecated-widgets.php:688 admin/deprecated-widgets.php:930
+#: admin/deprecated-widgets.php:1167 admin/deprecated-widgets.php:1409
+msgid "Display featured image?"
+msgstr "Uri immaġni dehru?"
+
+#: admin/deprecated-widgets.php:221 admin/deprecated-widgets.php:692
+#: admin/widgets/wpd-widget-products.php:319
+msgid "Image size:"
+msgstr "Daqs tal-immaġni:"
+
+#: admin/deprecated-widgets.php:272
+msgid "WPD Concentrates"
+msgstr "WPD Konċentrati"
+
+#: admin/deprecated-widgets.php:274
+msgid "Your most recent Concentrates"
+msgstr "Il-Konċentrati l-aktar riċenti tiegħek"
+
+#: admin/deprecated-widgets.php:431
+msgid "Amount of concentrates to show:"
+msgstr "Ammont ta’ konċentrati li trid turi:"
+
+#: admin/deprecated-widgets.php:442
+msgid "Display concentrate name?"
+msgstr "Uri l-isem tal-konċentrat?"
+
+#: admin/deprecated-widgets.php:447
+msgid "Display concentrate category?"
+msgstr "Uri l-kategorija tal-konċentrat?"
+
+#: admin/deprecated-widgets.php:507
+msgid "WPD Edibles"
+msgstr "WPD Jittiekel"
+
+#: admin/deprecated-widgets.php:509
+msgid "Your most recent Edibles"
+msgstr "L-aktar riċenti tal-ikel tiegħek"
+
+#: admin/deprecated-widgets.php:667
+msgid "Amount of edibles to show:"
+msgstr "Ammont ta’ prodotti li jittieklu li jridu juru:"
+
+#: admin/deprecated-widgets.php:678
+msgid "Display edible name?"
+msgstr "Uri l-isem li jittiekel?"
+
+#: admin/deprecated-widgets.php:683
+msgid "Display edible category?"
+msgstr "Uri kategorija li tittiekel?"
+
+#: admin/deprecated-widgets.php:744
+msgid "WPD Pre-rolls"
+msgstr "WPD Pre-rolls"
+
+#: admin/deprecated-widgets.php:746
+msgid "Your most recent Pre-rolls"
+msgstr "Pre-rolls l-aktar riċenti tiegħek"
+
+#: admin/deprecated-widgets.php:909
+msgid "Amount of pre-rolls to show:"
+msgstr "Ammont ta’ pre-rolls li jridu juru:"
+
+#: admin/deprecated-widgets.php:920
+msgid "Display pre-roll name?"
+msgstr "Uri l-isem ta’ qabel ir-roll?"
+
+#: admin/deprecated-widgets.php:925
+msgid "Display pre-roll flower?"
+msgstr "Uri fjura ta ‘qabel ir-roll?"
+
+#: admin/deprecated-widgets.php:986
+msgid "WPD Topicals"
+msgstr "WPD Topiċi"
+
+#: admin/deprecated-widgets.php:988
+msgid "Your most recent Topicals"
+msgstr "It-Topi l-aktar riċenti tiegħek"
+
+#: admin/deprecated-widgets.php:1146
+msgid "Amount of topicals to show:"
+msgstr "Ammont ta’ suġġetti li jridu juru:"
+
+#: admin/deprecated-widgets.php:1157
+msgid "Display topical name?"
+msgstr "Uri l-isem topiku?"
+
+#: admin/deprecated-widgets.php:1162
+msgid "Display topical category?"
+msgstr "Uri kategorija topika?"
+
+#: admin/deprecated-widgets.php:1222
+msgid "WPD Growers"
+msgstr "WPD Il-koltivaturi"
+
+#: admin/deprecated-widgets.php:1224
+msgid "Your most recent Clones and Seeds"
+msgstr "Kloni u Żrieragħ l-aktar riċenti tiegħek"
+
+#: admin/deprecated-widgets.php:1388
+msgid "Amount of growers to show:"
+msgstr "Ammont ta’ koltivaturi li għandhom juru:"
+
+#: admin/deprecated-widgets.php:1399
+msgid "Display grower name?"
+msgstr "Uri l-isem tal-koltivatur?"
+
+#: admin/deprecated-widgets.php:1404
+msgid "Display flower type?"
+msgstr "Wiri tip ta ‘fjura?"
+
+#: admin/deprecated/wp-dispensary-categories.php:25
+#: admin/taxonomies/wpd-taxonomy-categories.php:25
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr "Kategoriji"
+
+#: admin/deprecated/wp-dispensary-categories.php:26
+#: admin/taxonomies/wpd-taxonomy-categories.php:26
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "Kategorija"
+
+#: admin/deprecated/wp-dispensary-categories.php:27
+#: admin/taxonomies/wpd-taxonomy-categories.php:27
+msgid "Search Categories"
+msgstr "Fittex Kategoriji"
+
+#: admin/deprecated/wp-dispensary-categories.php:28
+#: admin/taxonomies/wpd-taxonomy-categories.php:28
+msgid "All Categories"
+msgstr "Il-Kategoriji kollha"
+
+#: admin/deprecated/wp-dispensary-categories.php:29
+#: admin/taxonomies/wpd-taxonomy-categories.php:29
+msgid "Parent Category"
+msgstr "Kategorija Ġenitur"
+
+#: admin/deprecated/wp-dispensary-categories.php:30
+#: admin/taxonomies/wpd-taxonomy-categories.php:30
+msgid "Parent Category:"
+msgstr "Kategorija Ġenitur:"
+
+#: admin/deprecated/wp-dispensary-categories.php:31
+#: admin/taxonomies/wpd-taxonomy-categories.php:31
+msgid "Edit Category"
+msgstr "Edit Kategorija"
+
+#: admin/deprecated/wp-dispensary-categories.php:32
+#: admin/taxonomies/wpd-taxonomy-categories.php:32
+msgid "Update Category"
+msgstr "Aġġornament Kategorija"
+
+#: admin/deprecated/wp-dispensary-categories.php:33
+#: admin/taxonomies/wpd-taxonomy-categories.php:33
+msgid "Add New Category"
+msgstr "Żid Kategorija Ġdida"
+
+#: admin/deprecated/wp-dispensary-categories.php:34
+#: admin/taxonomies/wpd-taxonomy-categories.php:34
+msgid "New Category Name"
+msgstr "Isem tal-Kategorija Ġdid"
+
+#: admin/deprecated/wp-dispensary-categories.php:35
+#: admin/deprecated/wp-dispensary-taxonomies.php:35
+#: admin/taxonomies/wpd-taxonomy-categories.php:35
+msgid "No categories found"
+msgstr "L-ebda kategorija ma nstabet"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:42
+#: admin/deprecated/wp-dispensary-concentrates.php:43
+#: admin/deprecated/wp-dispensary-concentrates.php:44
+#: admin/deprecated/wp-dispensary-concentrates.php:45
+#: admin/deprecated/wp-dispensary-concentrates.php:70
+#: admin/deprecated/wp-dispensary-edibles.php:42
+#: admin/deprecated/wp-dispensary-edibles.php:43
+#: admin/deprecated/wp-dispensary-edibles.php:44
+#: admin/deprecated/wp-dispensary-edibles.php:45
+#: admin/deprecated/wp-dispensary-edibles.php:70
+#: admin/deprecated/wp-dispensary-flowers.php:42
+#: admin/deprecated/wp-dispensary-flowers.php:43
+#: admin/deprecated/wp-dispensary-flowers.php:44
+#: admin/deprecated/wp-dispensary-flowers.php:45
+#: admin/deprecated/wp-dispensary-flowers.php:70
+#: admin/deprecated/wp-dispensary-growers.php:42
+#: admin/deprecated/wp-dispensary-growers.php:43
+#: admin/deprecated/wp-dispensary-growers.php:44
+#: admin/deprecated/wp-dispensary-growers.php:45
+#: admin/deprecated/wp-dispensary-growers.php:70
+#: admin/deprecated/wp-dispensary-prerolls.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:74
+#: admin/deprecated/wp-dispensary-topicals.php:42
+#: admin/deprecated/wp-dispensary-topicals.php:43
+#: admin/deprecated/wp-dispensary-topicals.php:44
+#: admin/deprecated/wp-dispensary-topicals.php:45
+#: admin/deprecated/wp-dispensary-topicals.php:70
+#: admin/wp-dispensary-products-post-type.php:50
+#: admin/wp-dispensary-products-post-type.php:51
+#: admin/wp-dispensary-products-post-type.php:52
+#: admin/wp-dispensary-products-post-type.php:53
+#: admin/wp-dispensary-products-post-type.php:78
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:46
+#: admin/deprecated/wp-dispensary-edibles.php:46
+#: admin/deprecated/wp-dispensary-flowers.php:46
+#: admin/deprecated/wp-dispensary-growers.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:50
+#: admin/deprecated/wp-dispensary-topicals.php:46
+#: admin/wp-dispensary-products-post-type.php:54
+#, php-format
+msgid "%s Archives"
+msgstr "Arkivji %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:47
+#: admin/deprecated/wp-dispensary-edibles.php:47
+#: admin/deprecated/wp-dispensary-flowers.php:47
+#: admin/deprecated/wp-dispensary-growers.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:51
+#: admin/deprecated/wp-dispensary-topicals.php:47
+#: admin/wp-dispensary-products-post-type.php:55
+#, php-format
+msgid "Parent %s:"
+msgstr "Ġenitur %s:"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:48
+#: admin/deprecated/wp-dispensary-edibles.php:48
+#: admin/deprecated/wp-dispensary-flowers.php:48
+#: admin/deprecated/wp-dispensary-growers.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:52
+#: admin/deprecated/wp-dispensary-topicals.php:48
+#: admin/wp-dispensary-products-post-type.php:56
+#, php-format
+msgid "All %s"
+msgstr "Kollha %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:49
+#: admin/deprecated/wp-dispensary-edibles.php:49
+#: admin/deprecated/wp-dispensary-flowers.php:49
+#: admin/deprecated/wp-dispensary-growers.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:53
+#: admin/deprecated/wp-dispensary-topicals.php:49
+#: admin/wp-dispensary-products-post-type.php:57
+#, php-format
+msgid "Add New %s"
+msgstr "Żid %s Ġdid"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:50
+#: admin/deprecated/wp-dispensary-edibles.php:50
+#: admin/deprecated/wp-dispensary-flowers.php:50
+#: admin/deprecated/wp-dispensary-growers.php:50
+#: admin/deprecated/wp-dispensary-prerolls.php:54
+#: admin/deprecated/wp-dispensary-topicals.php:50
+#: admin/wp-dispensary-products-post-type.php:58
+msgid "Add New"
+msgstr "Żid Ġdid"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:51
+#: admin/deprecated/wp-dispensary-edibles.php:51
+#: admin/deprecated/wp-dispensary-flowers.php:51
+#: admin/deprecated/wp-dispensary-growers.php:51
+#: admin/deprecated/wp-dispensary-prerolls.php:55
+#: admin/deprecated/wp-dispensary-topicals.php:51
+#: admin/wp-dispensary-products-post-type.php:59
+#, php-format
+msgid "New %s"
+msgstr "%s ġdid"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:52
+#: admin/deprecated/wp-dispensary-edibles.php:52
+#: admin/deprecated/wp-dispensary-flowers.php:52
+#: admin/deprecated/wp-dispensary-growers.php:52
+#: admin/deprecated/wp-dispensary-prerolls.php:56
+#: admin/deprecated/wp-dispensary-topicals.php:52
+#: admin/wp-dispensary-products-post-type.php:60
+#, php-format
+msgid "Edit %s"
+msgstr "Editja %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:53
+#: admin/deprecated/wp-dispensary-edibles.php:53
+#: admin/deprecated/wp-dispensary-flowers.php:53
+#: admin/deprecated/wp-dispensary-growers.php:53
+#: admin/deprecated/wp-dispensary-prerolls.php:57
+#: admin/deprecated/wp-dispensary-topicals.php:53
+#: admin/wp-dispensary-products-post-type.php:61
+#, php-format
+msgid "Update %s"
+msgstr "Aġġorna %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:54
+#: admin/deprecated/wp-dispensary-edibles.php:54
+#: admin/deprecated/wp-dispensary-flowers.php:54
+#: admin/deprecated/wp-dispensary-growers.php:54
+#: admin/deprecated/wp-dispensary-prerolls.php:58
+#: admin/deprecated/wp-dispensary-topicals.php:54
+#: admin/wp-dispensary-products-post-type.php:62
+#, php-format
+msgid "View %s"
+msgstr "Ara %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:55
+#: admin/deprecated/wp-dispensary-edibles.php:55
+#: admin/deprecated/wp-dispensary-flowers.php:55
+#: admin/deprecated/wp-dispensary-growers.php:55
+#: admin/deprecated/wp-dispensary-prerolls.php:59
+#: admin/deprecated/wp-dispensary-topicals.php:55
+#: admin/wp-dispensary-products-post-type.php:63
+#, php-format
+msgid "Search %s"
+msgstr "Fittex %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:56
+#: admin/deprecated/wp-dispensary-edibles.php:56
+#: admin/deprecated/wp-dispensary-flowers.php:56
+#: admin/deprecated/wp-dispensary-growers.php:56
+#: admin/deprecated/wp-dispensary-prerolls.php:60
+#: admin/deprecated/wp-dispensary-topicals.php:56
+#: admin/wp-dispensary-products-post-type.php:64
+msgid "Not found"
+msgstr "Ma nstabx"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:57
+#: admin/deprecated/wp-dispensary-edibles.php:57
+#: admin/deprecated/wp-dispensary-flowers.php:57
+#: admin/deprecated/wp-dispensary-growers.php:57
+#: admin/deprecated/wp-dispensary-prerolls.php:61
+#: admin/deprecated/wp-dispensary-topicals.php:57
+#: admin/wp-dispensary-products-post-type.php:65
+msgid "Not found in Trash"
+msgstr "Mhux misjuba fit-Trash"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:58
+#: admin/deprecated/wp-dispensary-edibles.php:58
+#: admin/deprecated/wp-dispensary-flowers.php:58
+#: admin/deprecated/wp-dispensary-growers.php:58
+#: admin/deprecated/wp-dispensary-prerolls.php:62
+#: admin/deprecated/wp-dispensary-topicals.php:58
+#: admin/wp-dispensary-products-post-type.php:66
+msgid "Featured Image"
+msgstr "Immaġni Dehru"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:59
+#: admin/deprecated/wp-dispensary-edibles.php:59
+#: admin/deprecated/wp-dispensary-flowers.php:59
+#: admin/deprecated/wp-dispensary-growers.php:59
+#: admin/deprecated/wp-dispensary-prerolls.php:63
+#: admin/deprecated/wp-dispensary-topicals.php:59
+#: admin/wp-dispensary-products-post-type.php:67
+msgid "Set featured image"
+msgstr "Issettja immaġni dehru"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:60
+#: admin/deprecated/wp-dispensary-edibles.php:60
+#: admin/deprecated/wp-dispensary-flowers.php:60
+#: admin/deprecated/wp-dispensary-growers.php:60
+#: admin/deprecated/wp-dispensary-prerolls.php:64
+#: admin/deprecated/wp-dispensary-topicals.php:60
+#: admin/wp-dispensary-products-post-type.php:68
+msgid "Remove featured image"
+msgstr "Neħħi l-immaġni dehru"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:61
+#: admin/deprecated/wp-dispensary-edibles.php:61
+#: admin/deprecated/wp-dispensary-flowers.php:61
+#: admin/deprecated/wp-dispensary-growers.php:61
+#: admin/deprecated/wp-dispensary-prerolls.php:65
+#: admin/deprecated/wp-dispensary-topicals.php:61
+#: admin/wp-dispensary-products-post-type.php:69
+msgid "Use as featured image"
+msgstr "Uża bħala immaġni dehru"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:62
+#: admin/deprecated/wp-dispensary-edibles.php:62
+#: admin/deprecated/wp-dispensary-flowers.php:62
+#: admin/deprecated/wp-dispensary-growers.php:62
+#: admin/deprecated/wp-dispensary-prerolls.php:66
+#: admin/deprecated/wp-dispensary-topicals.php:62
+#: admin/wp-dispensary-products-post-type.php:70
+#, php-format
+msgid "Insert into %s"
+msgstr "Daħħal f’%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:63
+#: admin/deprecated/wp-dispensary-edibles.php:63
+#: admin/deprecated/wp-dispensary-flowers.php:63
+#: admin/deprecated/wp-dispensary-growers.php:63
+#: admin/deprecated/wp-dispensary-prerolls.php:67
+#: admin/deprecated/wp-dispensary-topicals.php:63
+#: admin/wp-dispensary-products-post-type.php:71
+#, php-format
+msgid "Uploaded to this %s"
+msgstr "Imtella fuq dan %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:64
+#: admin/deprecated/wp-dispensary-edibles.php:64
+#: admin/deprecated/wp-dispensary-flowers.php:64
+#: admin/deprecated/wp-dispensary-growers.php:64
+#: admin/deprecated/wp-dispensary-prerolls.php:68
+#: admin/deprecated/wp-dispensary-topicals.php:64
+#: admin/wp-dispensary-products-post-type.php:72
+#, php-format
+msgid "%s list"
+msgstr "lista %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:65
+#: admin/deprecated/wp-dispensary-edibles.php:65
+#: admin/deprecated/wp-dispensary-flowers.php:65
+#: admin/deprecated/wp-dispensary-growers.php:65
+#: admin/deprecated/wp-dispensary-prerolls.php:69
+#: admin/deprecated/wp-dispensary-topicals.php:65
+#: admin/wp-dispensary-products-post-type.php:73
+#, php-format
+msgid "%s list navigation"
+msgstr "Navigazzjoni tal-lista %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:66
+#: admin/deprecated/wp-dispensary-edibles.php:66
+#: admin/deprecated/wp-dispensary-flowers.php:66
+#: admin/deprecated/wp-dispensary-growers.php:66
+#: admin/deprecated/wp-dispensary-prerolls.php:70
+#: admin/deprecated/wp-dispensary-topicals.php:66
+#: admin/wp-dispensary-products-post-type.php:74
+#, php-format
+msgid "Filter %s list"
+msgstr "Iffiltra %s lista"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:71
+#: admin/deprecated/wp-dispensary-edibles.php:71
+#: admin/deprecated/wp-dispensary-flowers.php:71
+#: admin/deprecated/wp-dispensary-growers.php:71
+#: admin/deprecated/wp-dispensary-prerolls.php:75
+#: admin/deprecated/wp-dispensary-topicals.php:71
+#: admin/wp-dispensary-products-post-type.php:79
+#, php-format
+msgid "Display the %s from your menu"
+msgstr "Uri l-%s mill-menu tiegħek"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:25
+msgctxt "taxonomy general name"
+msgid "Taxonomies"
+msgstr "Tassonomiji"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:26
+msgctxt "taxonomy singular name"
+msgid "Taxonomy"
+msgstr "Tassonomija"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:27
+msgid "Search Taxonomies"
+msgstr "Fittex Tassonomiji"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:28
+msgid "All Taxonomies"
+msgstr "It-Tassonomiji kollha"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:29
+msgid "Parent Taxonomy"
+msgstr "Tassonomija Ġenitur"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:30
+msgid "Parent Taxonomy:"
+msgstr "Tassonomija Ġenitur:"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:31
+msgid "Edit Taxonomy"
+msgstr "Edit Tassonomija"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:32
+msgid "Update Taxonomy"
+msgstr "Aġġorna t-Tassonomija"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:33
+msgid "Add New Taxonomy"
+msgstr "Żid Tassonomija Ġdida"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:34
+msgid "New Taxonomy Name"
+msgstr "Isem Ġdid tat-Tassonomija"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:36
+msgid "Taxonomies"
+msgstr "Tassonomiji"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:24
+msgid "Compound details"
+msgstr "Dettalji komposti"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:56
+#: admin/wp-dispensary-data-output.php:140
+#: admin/wp-dispensary-data-output.php:142
+#: includes/functions/wp-dispensary-product-functions.php:126
+#: includes/functions/wp-dispensary-product-functions.php:170
+#: includes/functions/wp-dispensary-product-functions.php:203
+msgid "THC"
+msgstr "THC"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:60
+#: admin/wp-dispensary-data-output.php:150
+msgid "THCA"
+msgstr "THCA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:64
+#: admin/wp-dispensary-data-output.php:156
+#: admin/wp-dispensary-data-output.php:158
+#: includes/functions/wp-dispensary-product-functions.php:181
+msgid "CBD"
+msgstr "CBD"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:68
+#: admin/wp-dispensary-data-output.php:166
+msgid "CBA"
+msgstr "CBA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:72
+#: admin/wp-dispensary-data-output.php:172
+msgid "CBN"
+msgstr "CBN"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:76
+#: admin/wp-dispensary-data-output.php:178
+msgid "CBG"
+msgstr "CBG"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:80
+msgid "Total"
+msgstr "Total"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:26
+msgid "Grow details"
+msgstr "Ikber id-dettalji"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:53
+#: admin/wp-dispensary-data-output.php:214
+msgid "Origin"
+msgstr "Oriġini"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:57
+#: admin/wp-dispensary-data-output.php:220
+msgid "Grow time"
+msgstr "Żmien tikber"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:61
+#: admin/wp-dispensary-data-output.php:226
+msgid "Yield"
+msgstr "Rendiment"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:65
+#: admin/wp-dispensary-data-output.php:232
+msgid "Difficulty"
+msgstr "Diffikultà"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:26
+msgid "Product Details"
+msgstr "Dettalji tal-Prodott"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:73
+#: admin/metaboxes/wpd-metabox-product-details.php:81
+#: admin/metaboxes/wpd-metabox-product-details.php:109
+#: admin/metaboxes/wpd-metabox-product-details.php:121
+#: admin/metaboxes/wpd-metabox-product-details.php:141
+#: admin/metaboxes/wpd-metabox-product-details.php:165
+#: admin/wp-dispensary-data-output.php:134
+msgid "Activation time"
+msgstr "Ħin ta ‘attivazzjoni"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:89
+#: admin/metaboxes/wpd-metabox-product-details.php:157
+#: admin/wp-dispensary-data-output.php:184
+#: includes/functions/wp-dispensary-product-functions.php:214
+msgid "Servings"
+msgstr "Porzjonijiet"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:93
+#: admin/metaboxes/wpd-metabox-product-details.php:149
+#: admin/wp-dispensary-data-output.php:141
+msgid "THC mg per serving"
+msgstr "THC mg għal kull porzjon"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:97
+#: admin/metaboxes/wpd-metabox-product-details.php:153
+#: admin/wp-dispensary-data-output.php:157
+msgid "CBD mg per serving"
+msgstr "CBD mg għal kull porzjon"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:101
+msgid "mL per serving"
+msgstr "mL għal kull porzjon"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:105
+msgid "Net weight (ounces)"
+msgstr "Piż nett (uqija)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:117
+msgid "Weight (g)"
+msgstr "Piż (g)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:129
+msgid "Size (oz)"
+msgstr "Daqs (oz)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:133
+msgid "THC mg"
+msgstr "THC mg"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:137
+msgid "CBD mg"
+msgstr "CBD mg"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:161
+msgid "Net weight (grams)"
+msgstr "Piż nett (grammi)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:173
+#: admin/wp-dispensary-data-output.php:202
+msgid "Seeds per unit"
+msgstr "Żrieragħ għal kull unità"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:177
+#: admin/wp-dispensary-data-output.php:208
+msgid "Clones per unit"
+msgstr "Kloni għal kull unità"
+
+#: admin/metaboxes/wpd-metabox-product-prices.php:26
+msgid "Product prices"
+msgstr "Prezzijiet tal-prodott"
+
+#: admin/metaboxes/wpd-metabox-product-type.php:25
+msgid "Product type"
+msgstr "Tip ta’ prodott"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:25
+msgctxt "general name"
+msgid "Allergens"
+msgstr "Allerġeni"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:26
+msgctxt "singular name"
+msgid "Allergen"
+msgstr "Allerġenu"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:27
+msgid "Search Allergens"
+msgstr "Fittex Allerġeni"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:28
+msgid "Popular Allergens"
+msgstr "Allerġeni Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:29
+msgid "All Allergens"
+msgstr "L-Allerġeni kollha"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:32
+msgid "Edit Allergen"
+msgstr "Editja Allerġen"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:33
+msgid "Update Allergen"
+msgstr "Aġġorna l-Allerġen"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:34
+msgid "Add New Allergen"
+msgstr "Żid Allerġen Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:35
+msgid "New Allergen Name"
+msgstr "Isem Allerġen Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:36
+msgid "Separate allergens with commas"
+msgstr "Allerġeni separati bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:37
+msgid "Add or remove allergens"
+msgstr "Żid jew neħħi allerġeni"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:38
+msgid "Choose from the most used allergens"
+msgstr "Agħżel mill-allerġeni l-aktar użati"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:39
+msgid "No allergens found"
+msgstr "Ma nstab l-ebda allerġen"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:25
+msgctxt "general name"
+msgid "Aromas"
+msgstr "Aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:26
+msgctxt "singular name"
+msgid "Aroma"
+msgstr "Aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:27
+msgid "Search Aromas"
+msgstr "Fittex Aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:28
+msgid "Popular Aromas"
+msgstr "Aromi Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:29
+msgid "All Aromas"
+msgstr "Kollha Aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:32
+msgid "Edit Aroma"
+msgstr "Edit Aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:33
+msgid "Update Aroma"
+msgstr "Aġġorna Aroma"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:34
+msgid "Add New Aroma"
+msgstr "Żid Aroma Ġdida"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:35
+msgid "New Aroma Name"
+msgstr "Isem Aroma Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:36
+msgid "Separate aromas with commas"
+msgstr "Aromi separati bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:37
+msgid "Add or remove aromas"
+msgstr "Żid jew neħħi l-aromi"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:38
+msgid "Choose from the most used aromas"
+msgstr "Agħżel mill-aromi l-aktar użati"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:39
+msgid "No aromas found"
+msgstr "L-ebda aromi ma nstabu"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:25
+msgctxt "general name"
+msgid "Conditions"
+msgstr "Kundizzjonijiet"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:26
+msgctxt "singular name"
+msgid "Condition"
+msgstr "Kundizzjoni"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:27
+msgid "Search Conditions"
+msgstr "Kundizzjonijiet tat-Tiftix"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:28
+msgid "Popular Conditions"
+msgstr "Kundizzjonijiet Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:29
+msgid "All Conditions"
+msgstr "Il-Kundizzjonijiet Kollha"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:32
+msgid "Edit Condition"
+msgstr "Editja Kundizzjoni"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:33
+msgid "Update Condition"
+msgstr "Kundizzjoni tal-Aġġornament"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:34
+msgid "Add New Condition"
+msgstr "Żid Kundizzjoni Ġdida"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:35
+msgid "New Condition Name"
+msgstr "Isem tal-Kundizzjoni Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:36
+msgid "Separate conditions with commas"
+msgstr "Kundizzjonijiet separati bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:37
+msgid "Add or remove conditions"
+msgstr "Żid jew neħħi l-kundizzjonijiet"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:38
+msgid "Choose from the most used conditions"
+msgstr "Agħżel mill-aktar kundizzjonijiet użati"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:39
+msgid "No conditions found"
+msgstr "Ma nstab l-ebda kundizzjoni"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:25
+msgctxt "general name"
+msgid "Effects"
+msgstr "Effetti"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:26
+msgctxt "singular name"
+msgid "Effect"
+msgstr "Effett"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:27
+msgid "Search Effects"
+msgstr "Effetti Fittex"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:28
+msgid "Popular Effects"
+msgstr "Effetti Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:29
+msgid "All Effects"
+msgstr "L-effetti kollha"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:32
+msgid "Edit Effect"
+msgstr "Editja Effett"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:33
+msgid "Update Effect"
+msgstr "Effett tal-Aġġornament"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:34
+msgid "Add New Effect"
+msgstr "Żid Effett Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:35
+msgid "New Effect Name"
+msgstr "New Effect Name"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:36
+msgid "Separate effects with commas"
+msgstr "Effetti separati bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:37
+msgid "Add or remove effects"
+msgstr "Żid jew neħħi l-effetti"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:38
+msgid "Choose from the most used effects"
+msgstr "Agħżel mill-effetti l-aktar użati"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:39
+msgid "No effects found"
+msgstr "Ma nstab l-ebda effett"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:25
+msgctxt "general name"
+msgid "Flavors"
+msgstr "Togħmiet"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:26
+msgctxt "singular name"
+msgid "Flavor"
+msgstr "Togħma"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:27
+msgid "Search Flavors"
+msgstr "Fittex Togħmiet"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:28
+msgid "Popular Flavors"
+msgstr "Togħmiet Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:29
+msgid "All Flavors"
+msgstr "It-Togħmiet kollha"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:32
+msgid "Edit Flavor"
+msgstr "Editja Togħma"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:33
+msgid "Update Flavor"
+msgstr "Aġġorna Flavor"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:34
+msgid "Add New Flavor"
+msgstr "Żid Togħma Ġdida"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:35
+msgid "New Flavor Name"
+msgstr "Isem tat-Togħma Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:36
+msgid "Separate flavors with commas"
+msgstr "Togħmiet separati bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:37
+msgid "Add or remove flavors"
+msgstr "Żid jew neħħi t-togħmiet"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:38
+msgid "Choose from the most used flavors"
+msgstr "Agħżel mill-aktar togħmiet użati"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:39
+msgid "No flavors found"
+msgstr "L-ebda togħmiet misjuba"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:25
+msgctxt "general name"
+msgid "Ingredients"
+msgstr "Ingredjenti"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:26
+msgctxt "singular name"
+msgid "Ingredient"
+msgstr "Ingredjent"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:27
+msgid "Search Ingredients"
+msgstr "Fittex Ingredjenti"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:28
+msgid "Popular Ingredients"
+msgstr "Ingredjenti Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:29
+msgid "All Ingredients"
+msgstr "L-ingredjenti kollha"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:32
+msgid "Edit Ingredient"
+msgstr "Editja l-ingredjent"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:33
+msgid "Update Ingredient"
+msgstr "Aġġorna l-Ingredjent"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:34
+msgid "Add New Ingredient"
+msgstr "Żid Ingredjent Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:35
+msgid "New Ingredient Name"
+msgstr "Isem tal-Ingredjent Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:36
+msgid "Separate ingredients with commas"
+msgstr "Separa l-ingredjenti bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:37
+msgid "Add or remove ingredients"
+msgstr "Żid jew neħħi l-ingredjenti"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:38
+msgid "Choose from the most used ingredients"
+msgstr "Agħżel mill-ingredjenti l-aktar użati"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:39
+msgid "No ingredients found"
+msgstr "Ma nstab l-ebda ingredjent"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:25
+msgctxt "taxonomy general name"
+msgid "Shelf Type"
+msgstr "Tip ta ‘Xkaffa"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Shelf Type"
+msgstr "Tip ta ‘Xkaffa"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:27
+msgid "Search Shelf Types"
+msgstr "Fittex Tipi ta’ Xkaffa"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:28
+msgid "All Shelf Types"
+msgstr "It-tipi kollha tal-ixkaffa"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:29
+msgid "Parent Shelf Type"
+msgstr "Tip ta’ Xkaffa Ġenitur"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:30
+msgid "Parent Shelf Type:"
+msgstr "Tip ta’ l-ixkaffa tal-ġenituri:"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:31
+msgid "Edit Shelf Type"
+msgstr "Editja t-Tip ta’ l-ixkaffa"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:32
+msgid "Update Shelf Type"
+msgstr "Aġġorna t-Tip tal-Xkaffa"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:33
+msgid "Add New Shelf Type"
+msgstr "Żid Tip ta’ Xkaffa Ġdida"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:34
+msgid "New Shelf Type Name"
+msgstr "Isem tat-Tip ta’ Xkaffa Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:35
+msgid "No shelf types found"
+msgstr "L-ebda tip ta’ xkaffa ma nstab"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:36
+msgid "Shelf Type"
+msgstr "Tip ta ‘Xkaffa"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:25
+msgctxt "taxonomy general name"
+msgid "Strain Type"
+msgstr "Tip ta’ Strain"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Strain Type"
+msgstr "Tip ta’ Strain"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:27
+msgid "Search Strain Types"
+msgstr "Fittex Tipi ta’ Strain"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:28
+msgid "All Strain Types"
+msgstr "It-Tipi Kollha ta’ Strain"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:29
+msgid "Parent Strain Type"
+msgstr "Tip ta’ Strain Ġenitur"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:30
+msgid "Parent Strain Type:"
+msgstr "Tip ta’ Razza Ġenitur:"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:31
+msgid "Edit Strain Type"
+msgstr "Edit Strain Tip"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:32
+msgid "Update Strain Type"
+msgstr "Aġġorna t-Tip tar-Razza"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:33
+msgid "Add New Strain Type"
+msgstr "Żid Tip ta’ Strain Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:34
+msgid "New Strain Type Name"
+msgstr "Isem tat-Tip ta’ Strain Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:35
+msgid "No strain types found"
+msgstr "Ma nstab l-ebda tip ta’ strain"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:36
+msgid "Strain Type"
+msgstr "Tip ta’ Strain"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:25
+msgctxt "general name"
+msgid "Symptoms"
+msgstr "Sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:26
+msgctxt "singular name"
+msgid "Symptom"
+msgstr "Sintomu"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:27
+msgid "Search Symptoms"
+msgstr "Fittex Sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:28
+msgid "Popular Symptoms"
+msgstr "Sintomi Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:29
+msgid "All Symptoms"
+msgstr "Is-sintomi kollha"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:32
+msgid "Edit Symptom"
+msgstr "Editja Sintomu"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:33
+msgid "Update Symptom"
+msgstr "Aġġorna Sintomu"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:34
+msgid "Add New Symptom"
+msgstr "Żid Sintomu Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:35
+msgid "New Symptom Name"
+msgstr "Isem Sintomu Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:36
+msgid "Separate symptoms with commas"
+msgstr "Separa s-sintomi bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:37
+msgid "Add or remove symptoms"
+msgstr "Żid jew neħħi s-sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:38
+msgid "Choose from the most used symptoms"
+msgstr "Agħżel mill-aktar sintomi użati"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:39
+msgid "No symptoms found"
+msgstr "Ma nstab l-ebda sintomi"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:25
+msgctxt "general name"
+msgid "Vendors"
+msgstr "Bejjiegħa"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:26
+msgctxt "singular name"
+msgid "Vendor"
+msgstr "Bejjiegh"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:27
+msgid "Search Vendors"
+msgstr "Fittex Bejjiegħa"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:28
+msgid "Popular Vendors"
+msgstr "Bejjiegħa Popolari"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:29
+msgid "All Vendors"
+msgstr "Il-Bejjiegħa kollha"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:32
+msgid "Edit Vendor"
+msgstr "Editja Bejjiegħ"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:33
+msgid "Update Vendor"
+msgstr "Aġġorna l-Bejjiegħ"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:34
+msgid "Add New Vendor"
+msgstr "Żid Bejjiegħ Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:35
+msgid "New Vendor Name"
+msgstr "Isem il-Bejjiegħ Ġdid"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:36
+msgid "Separate vendors with commas"
+msgstr "Bejjiegħa separati bil-virgoli"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:37
+msgid "Add or remove vendors"
+msgstr "Żid jew neħħi l-bejjiegħa"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:38
+msgid "Choose from the most used vendors"
+msgstr "Agħżel mill-bejjiegħa l-aktar użati"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:39
+msgid "No vendors found"
+msgstr "L-ebda bejjiegħ ma nstab"
+
+#: admin/widgets/wpd-widget-product-search.php:33
+msgid "Product Search"
+msgstr "Fittex tal-Prodott"
+
+#: admin/widgets/wpd-widget-product-search.php:35
+msgid "Add a search box"
+msgstr "Żid kaxxa tat-tiftix"
+
+#: admin/widgets/wpd-widget-product-search.php:72
+msgid "Search Products"
+msgstr "Fittex Prodotti"
+
+#: admin/widgets/wpd-widget-product-search.php:74
+msgid "Search"
+msgstr "Fittex"
+
+#: admin/widgets/wpd-widget-products.php:33
+msgid "Dispensary Products"
+msgstr "Prodotti tad-Dispensarju"
+
+#: admin/widgets/wpd-widget-products.php:35
+msgid "Your WP Dispensary products"
+msgstr "Il-prodotti tiegħek tad-Dispensarju WP"
+
+#: admin/widgets/wpd-widget-products.php:279
+msgid "Menu item type:"
+msgstr "Tip ta’ oġġett tal-menu:"
+
+#: admin/widgets/wpd-widget-products.php:281
+msgid "All types"
+msgstr "It-tipi kollha"
+
+#: admin/widgets/wpd-widget-products.php:282
+#: includes/functions/deprecated-functions.php:26
+#: includes/functions/wp-dispensary-general-functions.php:51
+#: includes/functions/wp-dispensary-general-functions.php:75
+#: includes/functions/wp-dispensary-general-functions.php:99
+msgid "Flowers"
+msgstr "Fjuri"
+
+#: admin/widgets/wpd-widget-products.php:283
+#: includes/functions/deprecated-functions.php:27
+#: includes/functions/wp-dispensary-general-functions.php:52
+#: includes/functions/wp-dispensary-general-functions.php:76
+#: includes/functions/wp-dispensary-general-functions.php:100
+msgid "Concentrates"
+msgstr "Konċentrati"
+
+#: admin/widgets/wpd-widget-products.php:284
+#: includes/functions/deprecated-functions.php:29
+#: includes/functions/wp-dispensary-general-functions.php:54
+#: includes/functions/wp-dispensary-general-functions.php:78
+#: includes/functions/wp-dispensary-general-functions.php:102
+msgid "Edibles"
+msgstr "Jittiekel"
+
+#: admin/widgets/wpd-widget-products.php:285
+#: includes/functions/deprecated-functions.php:30
+#: includes/functions/wp-dispensary-general-functions.php:55
+#: includes/functions/wp-dispensary-general-functions.php:79
+#: includes/functions/wp-dispensary-general-functions.php:103
+msgid "Pre-rolls"
+msgstr "Pre-rolls"
+
+#: admin/widgets/wpd-widget-products.php:286
+#: includes/functions/deprecated-functions.php:31
+#: includes/functions/wp-dispensary-general-functions.php:56
+#: includes/functions/wp-dispensary-general-functions.php:80
+#: includes/functions/wp-dispensary-general-functions.php:104
+msgid "Topicals"
+msgstr "Topiċi"
+
+#: admin/widgets/wpd-widget-products.php:287
+#: includes/functions/deprecated-functions.php:32
+#: includes/functions/wp-dispensary-general-functions.php:57
+#: includes/functions/wp-dispensary-general-functions.php:81
+#: includes/functions/wp-dispensary-general-functions.php:105
+msgid "Growers"
+msgstr "Il-koltivaturi"
+
+#: admin/widgets/wpd-widget-products.php:288
+#: includes/functions/deprecated-functions.php:33
+#: includes/functions/wp-dispensary-general-functions.php:58
+#: includes/functions/wp-dispensary-general-functions.php:82
+#: includes/functions/wp-dispensary-general-functions.php:106
+msgid "Gear"
+msgstr "Irkaptu"
+
+#: admin/widgets/wpd-widget-products.php:289
+#: includes/functions/deprecated-functions.php:28
+#: includes/functions/wp-dispensary-general-functions.php:53
+#: includes/functions/wp-dispensary-general-functions.php:77
+#: includes/functions/wp-dispensary-general-functions.php:101
+msgid "Tinctures"
+msgstr "Tinturi"
+
+#: admin/widgets/wpd-widget-products.php:294
+msgid "Amount of items to show:"
+msgstr "Ammont ta’ oġġetti li jridu juru:"
+
+#: admin/widgets/wpd-widget-products.php:305
+msgid "Display item name?"
+msgstr "Uri l-isem tal-oġġett?"
+
+#: admin/widgets/wpd-widget-products.php:310
+msgid "Display item price?"
+msgstr "Uri l-prezz tal-oġġett?"
+
+#: admin/widgets/wpd-widget-products.php:315
+msgid "Display products in carousel?"
+msgstr "Uri prodotti fil-karużell?"
+
+#: admin/wp-dispensary-admin-screens.php:177
+msgid "All Types"
+msgstr "It-Tipi Kollha"
+
+#: admin/wp-dispensary-admin-settings.php:103
+#: admin/wp-dispensary-admin-settings.php:324
+#: admin/wp-dispensary-admin-settings.php:386
+#: admin/wp-dispensary-admin-settings.php:482
+msgid "Display"
+msgstr "Wiri"
+
+#: admin/wp-dispensary-admin-settings.php:111
+#: admin/wp-dispensary-admin-settings.php:518
+msgid "General"
+msgstr "Ġenerali"
+
+#: admin/wp-dispensary-admin-settings.php:121
+msgid "Payments"
+msgstr "Ħlasijiet"
+
+#: admin/wp-dispensary-admin-settings.php:129
+#: admin/wp-dispensary-admin-settings.php:256
+msgid "Customers"
+msgstr "Klijenti"
+
+#: admin/wp-dispensary-admin-settings.php:137
+msgid "Pages"
+msgstr "Paġni"
+
+#: admin/wp-dispensary-admin-settings.php:148
+msgid "Drivers"
+msgstr "Sewwieqa"
+
+#: admin/wp-dispensary-admin-settings.php:157
+msgid "Advanced"
+msgstr "Avvanzat"
+
+#: admin/wp-dispensary-admin-settings.php:171
+msgid "Advanced Settings"
+msgstr "Settings Avvanzati"
+
+#: admin/wp-dispensary-admin-settings.php:185
+msgid "Cookie lifetime"
+msgstr "Il-ħajja tal-cookie"
+
+#: admin/wp-dispensary-admin-settings.php:186
+msgid ""
+"Set the amount of time the shopping cart cookie gets saved to your visitors "
+"computer"
+msgstr ""
+"Issettja l-ammont ta’ ħin li l-cookie tal-cart tax-xiri tiġi salvata fil-"
+"kompjuter tal-viżitaturi tiegħek"
+
+#: admin/wp-dispensary-admin-settings.php:188
+msgid "1/2 hour"
+msgstr "1/2 siegħa"
+
+#: admin/wp-dispensary-admin-settings.php:189
+msgid "1 hour"
+msgstr "1 siegħa"
+
+#: admin/wp-dispensary-admin-settings.php:190
+msgid "3 hours"
+msgstr "3 sigħat"
+
+#: admin/wp-dispensary-admin-settings.php:191
+msgid "6 hours"
+msgstr "6 sigħat"
+
+#: admin/wp-dispensary-admin-settings.php:192
+msgid "12 hours"
+msgstr "12-il siegħa"
+
+#: admin/wp-dispensary-admin-settings.php:193
+msgid "24 hours"
+msgstr "24 siegħa"
+
+#: admin/wp-dispensary-admin-settings.php:208
+msgid "Export Data"
+msgstr "Esportazzjoni tad-Dejta"
+
+#: admin/wp-dispensary-admin-settings.php:238
+msgid "Orders"
+msgstr "Ordnijiet"
+
+#: admin/wp-dispensary-admin-settings.php:275
+msgid "Prices table"
+msgstr "Tabella tal-prezzijiet"
+
+#: admin/wp-dispensary-admin-settings.php:290
+#: admin/wp-dispensary-admin-settings.php:448
+msgid "Choose the title you would like used"
+msgstr "Agħżel it-titlu li tixtieq tuża"
+
+#: admin/wp-dispensary-admin-settings.php:293
+#: includes/functions/wp-dispensary-pricing-functions.php:409
+msgid "Donations"
+msgstr "Donazzjonijiet"
+
+#: admin/wp-dispensary-admin-settings.php:309
+#: admin/wp-dispensary-admin-settings.php:467
+msgid "or add a custom title"
+msgstr "jew żid titolu tad-dwana"
+
+#: admin/wp-dispensary-admin-settings.php:325
+msgid "Where should the pricing display on single menu items?"
+msgstr "Fejn għandu jintwera l-ipprezzar fuq oġġetti tal-menu wieħed?"
+
+#: admin/wp-dispensary-admin-settings.php:327
+#: admin/wp-dispensary-admin-settings.php:389
+#: admin/wp-dispensary-admin-settings.php:485
+msgid "Above Content"
+msgstr "Fuq Kontenut"
+
+#: admin/wp-dispensary-admin-settings.php:328
+#: admin/wp-dispensary-admin-settings.php:390
+#: admin/wp-dispensary-admin-settings.php:486
+msgid "Below Content"
+msgstr "Taħt il-Kontenut"
+
+#: admin/wp-dispensary-admin-settings.php:344
+msgid "Remove the price table from data output"
+msgstr "Neħħi t-tabella tal-prezzijiet mill-output tad-dejta"
+
+#: admin/wp-dispensary-admin-settings.php:372
+msgid "Compounds table"
+msgstr "Tabella tal-komposti"
+
+#: admin/wp-dispensary-admin-settings.php:387
+msgid "Where should the compounds display on single menu items?"
+msgstr "Fejn għandhom jintwerew il-komposti fuq oġġetti tal-menu wieħed?"
+
+#: admin/wp-dispensary-admin-settings.php:406
+msgid "Remove the compounds table from data output"
+msgstr "Neħħi t-tabella tal-komposti mill-output tad-dejta"
+
+#: admin/wp-dispensary-admin-settings.php:433
+msgid "Details table"
+msgstr "Tabella tad-dettalji"
+
+#: admin/wp-dispensary-admin-settings.php:450
+#: includes/functions/wp-dispensary-general-functions.php:33
+#: includes/functions/wp-dispensary-settings-functions.php:101
+msgid "Details"
+msgstr "Dettalji"
+
+#: admin/wp-dispensary-admin-settings.php:451
+#: includes/functions/wp-dispensary-general-functions.php:31
+msgid "Information"
+msgstr "Informazzjoni"
+
+#: admin/wp-dispensary-admin-settings.php:483
+msgid "Where should the details display on single menu items?"
+msgstr "Fejn għandhom jintwerew id-dettalji fuq oġġetti tal-menu wieħed?"
+
+#: admin/wp-dispensary-admin-settings.php:502
+msgid "Remove the details table from data output"
+msgstr "Neħħi t-tabella tad-dettalji mill-output tad-dejta"
+
+#: admin/wp-dispensary-admin-settings.php:533
+msgid "Currency"
+msgstr "Munita"
+
+#: admin/wp-dispensary-admin-settings.php:534
+msgid "Select the currency symbol you would like to use"
+msgstr "Agħżel is-simbolu tal-munita li tixtieq tuża"
+
+#: admin/wp-dispensary-admin-settings.php:551
+msgid "Taxes"
+msgstr "Taxxi"
+
+#: admin/wp-dispensary-admin-settings.php:565
+msgid "Sales tax"
+msgstr "Taxxa"
+
+#: admin/wp-dispensary-admin-settings.php:566
+msgid "Apply sales tax to orders (%)"
+msgstr "Applika taxxa tal-bejgħ għall-ordnijiet (%)"
+
+#: admin/wp-dispensary-admin-settings.php:567
+msgid "6"
+msgstr "6"
+
+#: admin/wp-dispensary-admin-settings.php:581
+msgid "Excise tax"
+msgstr "Taxxa tas-sisa"
+
+#: admin/wp-dispensary-admin-settings.php:582
+msgid "Apply excise tax to orders (%)"
+msgstr "Applika taxxa tas-sisa għal ordnijiet (%)"
+
+#: admin/wp-dispensary-admin-settings.php:583
+msgid "10"
+msgstr "10"
+
+#: admin/wp-dispensary-admin-settings.php:597
+msgid "Cart"
+msgstr "Karrettun"
+
+#: admin/wp-dispensary-admin-settings.php:611
+msgid "Require login to shop"
+msgstr "Jeħtieġ login biex tixtri"
+
+#: admin/wp-dispensary-admin-settings.php:612
+msgid "Hide the add to cart functionality for non-logged in users"
+msgstr "Aħbi l-funzjonalità taż-żid mal-karrettun għal utenti mhux illoggjati"
+
+#: admin/wp-dispensary-admin-settings.php:626
+msgid "Checkout"
+msgstr "Iċċekkja"
+
+#: admin/wp-dispensary-admin-settings.php:640
+msgid "Minimum order"
+msgstr "Ordni minima"
+
+#: admin/wp-dispensary-admin-settings.php:641
+msgid "Require a minimum order amount before checkout"
+msgstr "Jeħtieġ ammont minimu ta ‘ordni qabel iċ-checkout"
+
+#: admin/wp-dispensary-admin-settings.php:642
+msgid "ex: 50"
+msgstr "ex: 50"
+
+#: admin/wp-dispensary-admin-settings.php:658
+msgid "Coupons"
+msgstr "Kupuni"
+
+#: admin/wp-dispensary-admin-settings.php:659
+msgid "Allow customers to apply a coupon to their order"
+msgstr "Ħalli lill-klijenti japplikaw kupun għall-ordni tagħhom"
+
+#: admin/wp-dispensary-admin-settings.php:670
+msgid "Cash on delivery"
+msgstr "Flus mal-kunsinna"
+
+#: admin/wp-dispensary-admin-settings.php:671
+msgid "Pay on pickup"
+msgstr "Ħlas fuq pickup"
+
+#: admin/wp-dispensary-admin-settings.php:672
+msgid "Ground shipping"
+msgstr "Tbaħħir fuq l-art"
+
+#: admin/wp-dispensary-admin-settings.php:703
+msgid "Enable/Disable"
+msgstr "Ippermetti/Itfi"
+
+#: admin/wp-dispensary-admin-settings.php:704
+msgid "Enable "
+msgstr "Attiva "
+
+#: admin/wp-dispensary-admin-settings.php:718
+msgid "Charge"
+msgstr "Ħlas"
+
+#: admin/wp-dispensary-admin-settings.php:719
+msgid "0"
+msgstr "F"
+
+#: admin/wp-dispensary-admin-settings.php:735
+msgid "Instructions"
+msgstr "Istruzzjonijiet"
+
+#: admin/wp-dispensary-admin-settings.php:736
+msgid "Let the user know how to send payment for the order."
+msgstr "Ħalli lill-utent ikun jaf kif jibgħat il-ħlas għall-ordni."
+
+#: admin/wp-dispensary-admin-settings.php:750
+msgid "Customer Registration"
+msgstr "Reġistrazzjoni tal-Klijent"
+
+#: admin/wp-dispensary-admin-settings.php:757
+msgid "Select a page"
+msgstr "Agħżel paġna"
+
+#: admin/wp-dispensary-admin-settings.php:759
+msgid "No pages found"
+msgstr "Ebda paġni misjuba"
+
+#: admin/wp-dispensary-admin-settings.php:772
+msgid "Redirect after registration"
+msgstr "Redirect wara r-reġistrazzjoni"
+
+#: admin/wp-dispensary-admin-settings.php:773
+msgid "Choose the page customers will be redirected to when registering."
+msgstr ""
+"Agħżel il-paġna li ser jiġu ridiretti lejha l-klijenti meta jirreġistraw."
+
+#: admin/wp-dispensary-admin-settings.php:788
+msgid "Customer Verification"
+msgstr "Verifika tal-Klijent"
+
+#: admin/wp-dispensary-admin-settings.php:802
+msgid "Drivers license / Valid ID"
+msgstr "Liċenzja tas-sewwieq / ID Valida"
+
+#: admin/wp-dispensary-admin-settings.php:803
+msgid "Hide the drivers license upload from account details"
+msgstr "Aħbi l-upload tal-liċenzja tas-sewwieq mid-dettalji tal-kont"
+
+#: admin/wp-dispensary-admin-settings.php:817
+msgid "Doctor recommendation"
+msgstr "Rakkomandazzjoni tat-tabib"
+
+#: admin/wp-dispensary-admin-settings.php:818
+msgid "Hide the doctor recommendation upload from account details"
+msgstr "Aħbi t-tlugħ tar-rakkomandazzjoni tat-tabib mid-dettalji tal-kont"
+
+#: admin/wp-dispensary-admin-settings.php:832
+msgid "Recommendation number"
+msgstr "Numru tar-rakkomandazzjoni"
+
+#: admin/wp-dispensary-admin-settings.php:833
+msgid "Hide the recommendation number from account details"
+msgstr "Aħbi n-numru tar-rakkomandazzjoni mid-dettalji tal-kont"
+
+#: admin/wp-dispensary-admin-settings.php:847
+msgid "Expiration date"
+msgstr "Data ta ‘skadenza"
+
+#: admin/wp-dispensary-admin-settings.php:848
+msgid "Hide the expiration date from account details"
+msgstr "Aħbi d-data ta’ skadenza mid-dettalji tal-kont"
+
+#: admin/wp-dispensary-admin-settings.php:862
+msgid "Page Setup"
+msgstr "Page Setup"
+
+#: admin/wp-dispensary-admin-settings.php:876
+msgid "Menu page"
+msgstr "Paġna tal-menu"
+
+#: admin/wp-dispensary-admin-settings.php:877
+msgid "Page contents [wpd_menu]"
+msgstr "Kontenut tal-paġna [wpd_menu]"
+
+#: admin/wp-dispensary-admin-settings.php:892
+msgid "Cart page"
+msgstr "Paġna tal-karrettun"
+
+#: admin/wp-dispensary-admin-settings.php:893
+msgid "Page contents [wpd_cart]"
+msgstr "Kontenut tal-paġna [wpd_cart]"
+
+#: admin/wp-dispensary-admin-settings.php:908
+msgid "Checkout page"
+msgstr "Paġna tal-kontroll"
+
+#: admin/wp-dispensary-admin-settings.php:909
+msgid "Page contents [wpd_checkout]"
+msgstr "Kontenut tal-paġna [wpd_checkout]"
+
+#: admin/wp-dispensary-admin-settings.php:924
+msgid "Account page"
+msgstr "Paġna tal-kont"
+
+#: admin/wp-dispensary-admin-settings.php:925
+msgid "Page contents [wpd_account]"
+msgstr "Kontenut tal-paġna [wpd_account]"
+
+#: admin/wp-dispensary-admin-settings.php:940
+msgid "Dispatch phone number"
+msgstr "Dispaċċ numru tat-telefon"
+
+#: admin/wp-dispensary-admin-settings.php:941
+msgid "Add the phone number to your dispatch center"
+msgstr "Żid in-numru tat-telefon fiċ-ċentru tad-dispaċċ tiegħek"
+
+#: admin/wp-dispensary-admin-settings.php:956
+msgid "Google Maps API key"
+msgstr "Ċavetta tal-API ta’ Google Maps"
+
+#: admin/wp-dispensary-admin-settings.php:957
+msgid "Add a map to the order directions for your drivers"
+msgstr "Żid mappa mad-direzzjonijiet tal-ordni għas-sewwieqa tiegħek"
+
+#: admin/wp-dispensary-admin-settings.php:973
+msgid "Enable Google Maps geocode for latitude and longitude"
+msgstr "Ippermetti Google Maps geocode għal-latitudni u lonġitudni"
+
+#: admin/wp-dispensary-data-output.php:75
+msgid "Shelf"
+msgstr "Xkaffa"
+
+#: admin/wp-dispensary-data-output.php:80
+msgid "Strain"
+msgstr "Strain"
+
+#: admin/wp-dispensary-data-output.php:85
+msgid "Vendor"
+msgstr "Bejjiegh"
+
+#: admin/wp-dispensary-data-output.php:190
+msgid "Net weight"
+msgstr "Piż nett"
+
+#: admin/wp-dispensary-data-output.php:196
+#: includes/functions/wp-dispensary-product-functions.php:159
+msgid "Size"
+msgstr "Daqs"
+
+#: admin/wp-dispensary-data-output.php:238
+#: includes/functions/wp-dispensary-product-functions.php:192
+msgid "Weight"
+msgstr "Piż"
+
+#: admin/wp-dispensary-data-output.php:245
+#: admin/wp-dispensary-data-output.php:247
+msgid "Flower"
+msgstr "Fjura"
+
+#: admin/wp-dispensary-data-output.php:349
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#: admin/wp-dispensary-data-output.php:356
+msgid "Compounds"
+msgstr "Komposti"
+
+#: admin/wp-dispensary-data-output.php:406
+#: admin/wp-dispensary-data-output.php:407
+msgid "Price each:"
+msgstr "Prezz kull wieħed:"
+
+#: admin/wp-dispensary-data-output.php:414
+msgid "per pack:"
+msgstr "per pack:"
+
+#: admin/wp-dispensary-plugin-upgrade.php:172
+msgid "WP Dispensary database update required"
+msgstr "Aġġornament tad-database tad-Dispensarju WP meħtieġ"
+
+#: admin/wp-dispensary-plugin-upgrade.php:173
+msgid ""
+"WP Dispensary has been updated! To keep things running smoothly, we have to "
+"update your database to the newest version. The database update process may "
+"take a little while, so please be patient."
+msgstr ""
+"WP Dispensary ġie aġġornat! Biex inżommu l-affarijiet jaħdmu bla xkiel, "
+"irridu naġġornaw id-database tiegħek għall-aktar verżjoni ġdida. Il-proċess "
+"ta’ aġġornament tad-database jista’ jieħu ftit, għalhekk jekk jogħġbok kun "
+"paċenzjuż."
+
+#: admin/wp-dispensary-plugin-upgrade.php:174
+msgid "Upgrade Now"
+msgstr "Aġġorna Issa"
+
+#: includes/class-wp-dispensary-activator.php:81
+msgid "Menu"
+msgstr "Menu"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:407
+msgid "Donation"
+msgstr "Donazzjoni"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:413
+msgid "Price"
+msgstr "Prezz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1144
+#: includes/functions/wp-dispensary-pricing-functions.php:1168
+msgid "Price per unit"
+msgstr "Prezz għal kull unità"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1145
+#: includes/functions/wp-dispensary-pricing-functions.php:1169
+msgid "Price per pack"
+msgstr "Prezz għal kull pakkett"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1146
+#: includes/functions/wp-dispensary-pricing-functions.php:1170
+msgid "Units per pack"
+msgstr "Unitajiet għal kull pakkett"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1153
+#: includes/functions/wp-dispensary-pricing-functions.php:1172
+msgid "1 g"
+msgstr "1 g"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1154
+#: includes/functions/wp-dispensary-pricing-functions.php:1173
+msgid "2 g"
+msgstr "2 g"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1155
+msgid "1/8 oz"
+msgstr "1/8 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1156
+msgid "5 g"
+msgstr "5 g"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1157
+msgid "1/4 oz"
+msgstr "1/4 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1158
+msgid "1/2 oz"
+msgstr "1/2 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1159
+msgid "1 oz"
+msgstr "1 oz"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1171
+msgid "1/2 gram"
+msgstr "1/2 gramma"
+
+#: includes/functions/wp-dispensary-product-functions.php:42
+#, php-format
+msgid "Product updated. <a href=\"%s\">View product</a>"
+msgstr "Prodott aġġornat. <a href=\"%s\">Ara l-prodott</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:43
+#: includes/functions/wp-dispensary-product-functions.php:45
+msgid "Product updated."
+msgstr "Prodott aġġornat."
+
+#: includes/functions/wp-dispensary-product-functions.php:44
+msgid "Product deleted."
+msgstr "Prodott imħassar."
+
+#: includes/functions/wp-dispensary-product-functions.php:46
+#, php-format
+msgid "Product restored to revision from %s"
+msgstr "Prodott restawrat għal reviżjoni minn %s"
+
+#: includes/functions/wp-dispensary-product-functions.php:47
+#, php-format
+msgid "Product published. <a href=\"%s\">View product</a>"
+msgstr "Prodott ippubblikat. <a href=\"%s\">Ara l-prodott</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:48
+msgid "Product saved."
+msgstr "Prodott salvat."
+
+#: includes/functions/wp-dispensary-product-functions.php:49
+#, php-format
+msgid "Product submitted. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr ""
+"Prodott sottomess. <a target=\"_blank\" href=\"%s\">Preview tal-prodott</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:50
+#, php-format
+msgid ""
+"Product scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Preview product</a>"
+msgstr ""
+"Prodott skedat għal: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
+"\">Preview tal-prodott</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:51
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: includes/functions/wp-dispensary-product-functions.php:52
+#, php-format
+msgid ""
+"Product draft updated. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr ""
+"Abbozz tal-prodott aġġornat. <a target=\"_blank\" href=\"%s\">Preview tal-"
+"prodott</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:137
+msgid "Seeds"
+msgstr "Żrieragħ"
+
+#: includes/functions/wp-dispensary-product-functions.php:148
+msgid "Clones"
+msgstr "Kloni"
+
+#: wp-dispensary.php:102
+msgid "Go Pro"
+msgstr "Mur Pro"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.wpdispensary.com"
+msgstr "https://www.wpdispensary.com"
+
+#. Description of the plugin/theme
+msgid ""
+"The complete marijuana menu solution for dispensaries and delivery services"
+msgstr ""
+"Is-soluzzjoni sħiħa tal-menu tal-marijuana għal dispensarji u servizzi ta "
+"‘kunsinna"
