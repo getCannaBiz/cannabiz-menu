@@ -1,0 +1,2137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Dispensary\n"
+"POT-Creation-Date: 2022-02-03 20:39-0500\n"
+"PO-Revision-Date: 2022-02-03 21:29-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-dispensary.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#. Plugin Name of the plugin/theme
+#. Author of the plugin/theme
+#: admin/class-wp-dispensary-admin-settings.php:134
+#: admin/class-wp-dispensary-admin-settings.php:135
+#: admin/class-wp-dispensary-admin.php:130
+msgid "WP Dispensary"
+msgstr "מרפאת WP"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+msgid "WP Dispensary Settings"
+msgstr "הגדרות מאגר WP"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+#: admin/class-wp-dispensary-admin.php:184 wp-dispensary.php:103
+msgid "Settings"
+msgstr "הגדרות"
+
+#: admin/class-wp-dispensary-admin-settings.php:679
+msgid "Choose File"
+msgstr "בחר קובץ"
+
+#: admin/class-wp-dispensary-admin-settings.php:696
+msgid "Choose Image"
+msgstr "בחרו תמונה"
+
+#: admin/class-wp-dispensary-admin.php:152
+msgid "View Menu"
+msgstr "הצג תפריט"
+
+#: admin/class-wp-dispensary-admin.php:160
+#: admin/widgets/wpd-widget-products.php:261
+#: admin/wp-dispensary-admin-settings.php:222
+msgid "Products"
+msgstr "המוצרים"
+
+#: admin/class-wp-dispensary-admin.php:168
+#: admin/class-wp-dispensary-csv-export.php:102
+#: admin/deprecated/wp-dispensary-categories.php:36
+#: admin/taxonomies/wpd-taxonomy-categories.php:36
+msgid "Categories"
+msgstr "קטגוריות"
+
+#: admin/class-wp-dispensary-admin.php:176
+#: admin/class-wp-dispensary-csv-export.php:103
+#: admin/taxonomies/wpd-taxonomy-vendors.php:40
+msgid "Vendors"
+msgstr "ספקים"
+
+#: admin/class-wp-dispensary-csv-export.php:72
+msgid "WP Dispensary's Product Export"
+msgstr "ייצוא המוצרים של WP Dispensary"
+
+#: admin/class-wp-dispensary-csv-export.php:73
+msgid ""
+"Export your WP Dispensary products as a CSV file by clicking the button "
+"below."
+msgstr "ייצא את מוצרי WP Dispensary שלך כקובץ CSV על ידי לחיצה על הלחצן למטה."
+
+#: admin/class-wp-dispensary-csv-export.php:74
+#: admin/wp-dispensary-admin-settings.php:223
+#: admin/wp-dispensary-admin-settings.php:239
+#: admin/wp-dispensary-admin-settings.php:257
+msgid "Export"
+msgstr "ייצא"
+
+#: admin/class-wp-dispensary-csv-export.php:93
+msgid "ID"
+msgstr "מזהה"
+
+#: admin/class-wp-dispensary-csv-export.php:94
+msgid "Type"
+msgstr "סוג"
+
+#: admin/class-wp-dispensary-csv-export.php:95
+#: admin/wp-dispensary-admin-settings.php:289
+#: admin/wp-dispensary-admin-settings.php:447
+msgid "Title"
+msgstr "כותרת"
+
+#: admin/class-wp-dispensary-csv-export.php:96
+msgid "Content"
+msgstr "תוכן"
+
+#: admin/class-wp-dispensary-csv-export.php:97
+msgid "Slug"
+msgstr "אסימון"
+
+#: admin/class-wp-dispensary-csv-export.php:98
+msgid "Date"
+msgstr "תאריך"
+
+#: admin/class-wp-dispensary-csv-export.php:99
+msgid "Author"
+msgstr "מחבר"
+
+#: admin/class-wp-dispensary-csv-export.php:100
+#: admin/wp-dispensary-admin-settings.php:292
+#: includes/functions/wp-dispensary-pricing-functions.php:415
+msgid "Prices"
+msgstr "מחירים"
+
+#: admin/class-wp-dispensary-csv-export.php:101
+msgid "Inventory"
+msgstr "מלאי"
+
+#: admin/class-wp-dispensary-csv-export.php:104
+msgid "Shelf type"
+msgstr "סוג מדף"
+
+#: admin/class-wp-dispensary-csv-export.php:105
+msgid "Strain type"
+msgstr "סוג זן"
+
+#: admin/class-wp-dispensary-csv-export.php:106
+#: admin/taxonomies/wpd-taxonomy-allergens.php:40
+#: admin/wp-dispensary-data-output.php:128
+msgid "Allergens"
+msgstr "אלרגנים"
+
+#: admin/class-wp-dispensary-csv-export.php:107
+#: admin/taxonomies/wpd-taxonomy-aromas.php:40
+#: admin/wp-dispensary-data-output.php:92
+msgid "Aromas"
+msgstr "ניחוחות"
+
+#: admin/class-wp-dispensary-csv-export.php:108
+#: admin/taxonomies/wpd-taxonomy-conditions.php:40
+#: admin/wp-dispensary-data-output.php:116
+msgid "Conditions"
+msgstr "תנאים"
+
+#: admin/class-wp-dispensary-csv-export.php:109
+#: admin/taxonomies/wpd-taxonomy-effects.php:40
+#: admin/wp-dispensary-data-output.php:104
+msgid "Effects"
+msgstr "אפקטים"
+
+#: admin/class-wp-dispensary-csv-export.php:110
+#: admin/taxonomies/wpd-taxonomy-flavors.php:40
+#: admin/wp-dispensary-data-output.php:98
+msgid "Flavors"
+msgstr "טעמים"
+
+#: admin/class-wp-dispensary-csv-export.php:111
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:40
+#: admin/wp-dispensary-data-output.php:122
+msgid "Ingredients"
+msgstr "מרכיבים"
+
+#: admin/class-wp-dispensary-csv-export.php:112
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:40
+#: admin/wp-dispensary-data-output.php:110
+msgid "Symptoms"
+msgstr "תסמינים"
+
+#: admin/class-wp-dispensary-csv-export.php:113
+#: admin/wp-dispensary-admin-screens.php:26
+msgid "Featured image"
+msgstr "תמונת כותרת"
+
+#: admin/class-wp-dispensary-permalink-settings.php:33
+msgid "Products Base"
+msgstr "בסיס מוצרים"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:57
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:88
+msgid "Logo"
+msgstr "לוגו"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:61
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:99
+msgid "Add Image"
+msgstr "הוספת תמונה"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:62
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:100
+msgid "Remove Image"
+msgstr "להסיר תמונה"
+
+#: admin/deprecated-shortcodes.php:148 admin/deprecated-shortcodes.php:396
+#: admin/deprecated-shortcodes.php:580 admin/deprecated-shortcodes.php:768
+#: admin/deprecated-shortcodes.php:924 admin/deprecated-shortcodes.php:1085
+msgid "(view all)"
+msgstr "(צפה בהכל)"
+
+#: admin/deprecated-shortcodes.php:596
+msgid "Servings: "
+msgstr "מנות: "
+
+#: admin/deprecated-shortcodes.php:607 admin/deprecated-shortcodes.php:618
+msgid "THC: "
+msgstr "‫THC: "
+
+#: admin/deprecated-shortcodes.php:789
+msgid "Weight:"
+msgstr "משקל:"
+
+#: admin/deprecated-shortcodes.php:945
+msgid "Size:"
+msgstr "גודל:"
+
+#: admin/deprecated-shortcodes.php:952
+msgid "THC:"
+msgstr "‫THC:"
+
+#: admin/deprecated-shortcodes.php:959
+msgid "CBD:"
+msgstr "‫CBD:"
+
+#: admin/deprecated-shortcodes.php:1106
+msgid "Seeds:"
+msgstr "זרעים:"
+
+#: admin/deprecated-shortcodes.php:1113
+msgid "Clones:"
+msgstr "שיבוטים:"
+
+#: admin/deprecated-shortcodes.php:1191
+msgid "Recent Products"
+msgstr "מוצרים שנצפו לאחרונה"
+
+#: admin/deprecated-widgets.php:36
+msgid "WPD Flowers"
+msgstr "פרחי WPD"
+
+#: admin/deprecated-widgets.php:38
+msgid "Your most recent Flowers"
+msgstr "הפרחים האחרונים שלך"
+
+#: admin/deprecated-widgets.php:191 admin/deprecated-widgets.php:426
+#: admin/deprecated-widgets.php:662 admin/deprecated-widgets.php:904
+#: admin/deprecated-widgets.php:1141 admin/deprecated-widgets.php:1383
+#: admin/widgets/wpd-widget-products.php:274
+msgid "Widget Title:"
+msgstr "כותרת וידג'ט:"
+
+#: admin/deprecated-widgets.php:196
+msgid "Amount of flowers to show:"
+msgstr "כמות הפרחים להראות:"
+
+#: admin/deprecated-widgets.php:202 admin/deprecated-widgets.php:437
+#: admin/deprecated-widgets.php:673 admin/deprecated-widgets.php:915
+#: admin/deprecated-widgets.php:1152 admin/deprecated-widgets.php:1394
+#: admin/widgets/wpd-widget-products.php:300
+msgid "Randomize output?"
+msgstr "לעשות אקראי פלט?"
+
+#: admin/deprecated-widgets.php:207
+msgid "Display flower name?"
+msgstr "להציג את שם הפרח?"
+
+#: admin/deprecated-widgets.php:212
+msgid "Display flower category?"
+msgstr "להציג קטגוריית פרחים?"
+
+#: admin/deprecated-widgets.php:217 admin/deprecated-widgets.php:452
+#: admin/deprecated-widgets.php:688 admin/deprecated-widgets.php:930
+#: admin/deprecated-widgets.php:1167 admin/deprecated-widgets.php:1409
+msgid "Display featured image?"
+msgstr "להציג תמונה מוצגת?"
+
+#: admin/deprecated-widgets.php:221 admin/deprecated-widgets.php:692
+#: admin/widgets/wpd-widget-products.php:319
+msgid "Image size:"
+msgstr "גודל תמונה:"
+
+#: admin/deprecated-widgets.php:272
+msgid "WPD Concentrates"
+msgstr "תרכיז WPD"
+
+#: admin/deprecated-widgets.php:274
+msgid "Your most recent Concentrates"
+msgstr "התרכיזים האחרונים שלך"
+
+#: admin/deprecated-widgets.php:431
+msgid "Amount of concentrates to show:"
+msgstr "כמות התרכיזים להצגה:"
+
+#: admin/deprecated-widgets.php:442
+msgid "Display concentrate name?"
+msgstr "להציג את שם הרכז?"
+
+#: admin/deprecated-widgets.php:447
+msgid "Display concentrate category?"
+msgstr "להציג קטגוריית רכז?"
+
+#: admin/deprecated-widgets.php:507
+msgid "WPD Edibles"
+msgstr "‫WPD מאכלים"
+
+#: admin/deprecated-widgets.php:509
+msgid "Your most recent Edibles"
+msgstr "המאכלים העדכניים ביותר שלך"
+
+#: admin/deprecated-widgets.php:667
+msgid "Amount of edibles to show:"
+msgstr "כמות מאכלים להצגה:"
+
+#: admin/deprecated-widgets.php:678
+msgid "Display edible name?"
+msgstr "להציג שם אכיל?"
+
+#: admin/deprecated-widgets.php:683
+msgid "Display edible category?"
+msgstr "להציג קטגוריה אכילה?"
+
+#: admin/deprecated-widgets.php:744
+msgid "WPD Pre-rolls"
+msgstr "פרה רולס WPD"
+
+#: admin/deprecated-widgets.php:746
+msgid "Your most recent Pre-rolls"
+msgstr "הפרה-רוולים האחרונים שלך"
+
+#: admin/deprecated-widgets.php:909
+msgid "Amount of pre-rolls to show:"
+msgstr "כמות הפרה-רול להצגה:"
+
+#: admin/deprecated-widgets.php:920
+msgid "Display pre-roll name?"
+msgstr "להציג את השם לפני הסרט?"
+
+#: admin/deprecated-widgets.php:925
+msgid "Display pre-roll flower?"
+msgstr "להציג פרח טרום-רול?"
+
+#: admin/deprecated-widgets.php:986
+msgid "WPD Topicals"
+msgstr "אקטואליה WPD"
+
+#: admin/deprecated-widgets.php:988
+msgid "Your most recent Topicals"
+msgstr "הנושאים העדכניים ביותר שלך"
+
+#: admin/deprecated-widgets.php:1146
+msgid "Amount of topicals to show:"
+msgstr "כמות הנושאים להצגה:"
+
+#: admin/deprecated-widgets.php:1157
+msgid "Display topical name?"
+msgstr "להציג שם אקטואלי?"
+
+#: admin/deprecated-widgets.php:1162
+msgid "Display topical category?"
+msgstr "להציג קטגוריה אקטואליה?"
+
+#: admin/deprecated-widgets.php:1222
+msgid "WPD Growers"
+msgstr "מגדלים WPD"
+
+#: admin/deprecated-widgets.php:1224
+msgid "Your most recent Clones and Seeds"
+msgstr "השיבוטים והזרעים האחרונים שלך"
+
+#: admin/deprecated-widgets.php:1388
+msgid "Amount of growers to show:"
+msgstr "כמות המגדלים להראות:"
+
+#: admin/deprecated-widgets.php:1399
+msgid "Display grower name?"
+msgstr "להציג את שם המגדל?"
+
+#: admin/deprecated-widgets.php:1404
+msgid "Display flower type?"
+msgstr "להציג סוג פרח?"
+
+#: admin/deprecated/wp-dispensary-categories.php:25
+#: admin/taxonomies/wpd-taxonomy-categories.php:25
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr "קטגוריות"
+
+#: admin/deprecated/wp-dispensary-categories.php:26
+#: admin/taxonomies/wpd-taxonomy-categories.php:26
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "קטגוריה"
+
+#: admin/deprecated/wp-dispensary-categories.php:27
+#: admin/taxonomies/wpd-taxonomy-categories.php:27
+msgid "Search Categories"
+msgstr "חפש קטגוריות"
+
+#: admin/deprecated/wp-dispensary-categories.php:28
+#: admin/taxonomies/wpd-taxonomy-categories.php:28
+msgid "All Categories"
+msgstr "כל הקטגוריות"
+
+#: admin/deprecated/wp-dispensary-categories.php:29
+#: admin/taxonomies/wpd-taxonomy-categories.php:29
+msgid "Parent Category"
+msgstr "קטגוריית אב"
+
+#: admin/deprecated/wp-dispensary-categories.php:30
+#: admin/taxonomies/wpd-taxonomy-categories.php:30
+msgid "Parent Category:"
+msgstr "קטגוריית אב:"
+
+#: admin/deprecated/wp-dispensary-categories.php:31
+#: admin/taxonomies/wpd-taxonomy-categories.php:31
+msgid "Edit Category"
+msgstr "ערוך קטגוריה"
+
+#: admin/deprecated/wp-dispensary-categories.php:32
+#: admin/taxonomies/wpd-taxonomy-categories.php:32
+msgid "Update Category"
+msgstr "עדכן קטגוריה"
+
+#: admin/deprecated/wp-dispensary-categories.php:33
+#: admin/taxonomies/wpd-taxonomy-categories.php:33
+msgid "Add New Category"
+msgstr "הוסף קטגוריה חדשה"
+
+#: admin/deprecated/wp-dispensary-categories.php:34
+#: admin/taxonomies/wpd-taxonomy-categories.php:34
+msgid "New Category Name"
+msgstr "שם קטגוריה חדשה"
+
+#: admin/deprecated/wp-dispensary-categories.php:35
+#: admin/deprecated/wp-dispensary-taxonomies.php:35
+#: admin/taxonomies/wpd-taxonomy-categories.php:35
+msgid "No categories found"
+msgstr "אין קטגוריות"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:42
+#: admin/deprecated/wp-dispensary-concentrates.php:43
+#: admin/deprecated/wp-dispensary-concentrates.php:44
+#: admin/deprecated/wp-dispensary-concentrates.php:45
+#: admin/deprecated/wp-dispensary-concentrates.php:70
+#: admin/deprecated/wp-dispensary-edibles.php:42
+#: admin/deprecated/wp-dispensary-edibles.php:43
+#: admin/deprecated/wp-dispensary-edibles.php:44
+#: admin/deprecated/wp-dispensary-edibles.php:45
+#: admin/deprecated/wp-dispensary-edibles.php:70
+#: admin/deprecated/wp-dispensary-flowers.php:42
+#: admin/deprecated/wp-dispensary-flowers.php:43
+#: admin/deprecated/wp-dispensary-flowers.php:44
+#: admin/deprecated/wp-dispensary-flowers.php:45
+#: admin/deprecated/wp-dispensary-flowers.php:70
+#: admin/deprecated/wp-dispensary-growers.php:42
+#: admin/deprecated/wp-dispensary-growers.php:43
+#: admin/deprecated/wp-dispensary-growers.php:44
+#: admin/deprecated/wp-dispensary-growers.php:45
+#: admin/deprecated/wp-dispensary-growers.php:70
+#: admin/deprecated/wp-dispensary-prerolls.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:74
+#: admin/deprecated/wp-dispensary-topicals.php:42
+#: admin/deprecated/wp-dispensary-topicals.php:43
+#: admin/deprecated/wp-dispensary-topicals.php:44
+#: admin/deprecated/wp-dispensary-topicals.php:45
+#: admin/deprecated/wp-dispensary-topicals.php:70
+#: admin/wp-dispensary-products-post-type.php:50
+#: admin/wp-dispensary-products-post-type.php:51
+#: admin/wp-dispensary-products-post-type.php:52
+#: admin/wp-dispensary-products-post-type.php:53
+#: admin/wp-dispensary-products-post-type.php:78
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:46
+#: admin/deprecated/wp-dispensary-edibles.php:46
+#: admin/deprecated/wp-dispensary-flowers.php:46
+#: admin/deprecated/wp-dispensary-growers.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:50
+#: admin/deprecated/wp-dispensary-topicals.php:46
+#: admin/wp-dispensary-products-post-type.php:54
+#, php-format
+msgid "%s Archives"
+msgstr "אַרְכִיוֹן %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:47
+#: admin/deprecated/wp-dispensary-edibles.php:47
+#: admin/deprecated/wp-dispensary-flowers.php:47
+#: admin/deprecated/wp-dispensary-growers.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:51
+#: admin/deprecated/wp-dispensary-topicals.php:47
+#: admin/wp-dispensary-products-post-type.php:55
+#, php-format
+msgid "Parent %s:"
+msgstr "הורה %s:"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:48
+#: admin/deprecated/wp-dispensary-edibles.php:48
+#: admin/deprecated/wp-dispensary-flowers.php:48
+#: admin/deprecated/wp-dispensary-growers.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:52
+#: admin/deprecated/wp-dispensary-topicals.php:48
+#: admin/wp-dispensary-products-post-type.php:56
+#, php-format
+msgid "All %s"
+msgstr "כל ה%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:49
+#: admin/deprecated/wp-dispensary-edibles.php:49
+#: admin/deprecated/wp-dispensary-flowers.php:49
+#: admin/deprecated/wp-dispensary-growers.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:53
+#: admin/deprecated/wp-dispensary-topicals.php:49
+#: admin/wp-dispensary-products-post-type.php:57
+#, php-format
+msgid "Add New %s"
+msgstr "הוסף %s חדש"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:50
+#: admin/deprecated/wp-dispensary-edibles.php:50
+#: admin/deprecated/wp-dispensary-flowers.php:50
+#: admin/deprecated/wp-dispensary-growers.php:50
+#: admin/deprecated/wp-dispensary-prerolls.php:54
+#: admin/deprecated/wp-dispensary-topicals.php:50
+#: admin/wp-dispensary-products-post-type.php:58
+msgid "Add New"
+msgstr "הוסף חדש"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:51
+#: admin/deprecated/wp-dispensary-edibles.php:51
+#: admin/deprecated/wp-dispensary-flowers.php:51
+#: admin/deprecated/wp-dispensary-growers.php:51
+#: admin/deprecated/wp-dispensary-prerolls.php:55
+#: admin/deprecated/wp-dispensary-topicals.php:51
+#: admin/wp-dispensary-products-post-type.php:59
+#, php-format
+msgid "New %s"
+msgstr "%s חדשה"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:52
+#: admin/deprecated/wp-dispensary-edibles.php:52
+#: admin/deprecated/wp-dispensary-flowers.php:52
+#: admin/deprecated/wp-dispensary-growers.php:52
+#: admin/deprecated/wp-dispensary-prerolls.php:56
+#: admin/deprecated/wp-dispensary-topicals.php:52
+#: admin/wp-dispensary-products-post-type.php:60
+#, php-format
+msgid "Edit %s"
+msgstr "עריכת ה%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:53
+#: admin/deprecated/wp-dispensary-edibles.php:53
+#: admin/deprecated/wp-dispensary-flowers.php:53
+#: admin/deprecated/wp-dispensary-growers.php:53
+#: admin/deprecated/wp-dispensary-prerolls.php:57
+#: admin/deprecated/wp-dispensary-topicals.php:53
+#: admin/wp-dispensary-products-post-type.php:61
+#, php-format
+msgid "Update %s"
+msgstr "עדכון %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:54
+#: admin/deprecated/wp-dispensary-edibles.php:54
+#: admin/deprecated/wp-dispensary-flowers.php:54
+#: admin/deprecated/wp-dispensary-growers.php:54
+#: admin/deprecated/wp-dispensary-prerolls.php:58
+#: admin/deprecated/wp-dispensary-topicals.php:54
+#: admin/wp-dispensary-products-post-type.php:62
+#, php-format
+msgid "View %s"
+msgstr "הצג %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:55
+#: admin/deprecated/wp-dispensary-edibles.php:55
+#: admin/deprecated/wp-dispensary-flowers.php:55
+#: admin/deprecated/wp-dispensary-growers.php:55
+#: admin/deprecated/wp-dispensary-prerolls.php:59
+#: admin/deprecated/wp-dispensary-topicals.php:55
+#: admin/wp-dispensary-products-post-type.php:63
+#, php-format
+msgid "Search %s"
+msgstr "לחפש ב%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:56
+#: admin/deprecated/wp-dispensary-edibles.php:56
+#: admin/deprecated/wp-dispensary-flowers.php:56
+#: admin/deprecated/wp-dispensary-growers.php:56
+#: admin/deprecated/wp-dispensary-prerolls.php:60
+#: admin/deprecated/wp-dispensary-topicals.php:56
+#: admin/wp-dispensary-products-post-type.php:64
+msgid "Not found"
+msgstr "לא נמצא"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:57
+#: admin/deprecated/wp-dispensary-edibles.php:57
+#: admin/deprecated/wp-dispensary-flowers.php:57
+#: admin/deprecated/wp-dispensary-growers.php:57
+#: admin/deprecated/wp-dispensary-prerolls.php:61
+#: admin/deprecated/wp-dispensary-topicals.php:57
+#: admin/wp-dispensary-products-post-type.php:65
+msgid "Not found in Trash"
+msgstr "לא נמצא בפח זבל"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:58
+#: admin/deprecated/wp-dispensary-edibles.php:58
+#: admin/deprecated/wp-dispensary-flowers.php:58
+#: admin/deprecated/wp-dispensary-growers.php:58
+#: admin/deprecated/wp-dispensary-prerolls.php:62
+#: admin/deprecated/wp-dispensary-topicals.php:58
+#: admin/wp-dispensary-products-post-type.php:66
+msgid "Featured Image"
+msgstr "תמונה ראשית"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:59
+#: admin/deprecated/wp-dispensary-edibles.php:59
+#: admin/deprecated/wp-dispensary-flowers.php:59
+#: admin/deprecated/wp-dispensary-growers.php:59
+#: admin/deprecated/wp-dispensary-prerolls.php:63
+#: admin/deprecated/wp-dispensary-topicals.php:59
+#: admin/wp-dispensary-products-post-type.php:67
+msgid "Set featured image"
+msgstr "בחירת תמונה ראשית"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:60
+#: admin/deprecated/wp-dispensary-edibles.php:60
+#: admin/deprecated/wp-dispensary-flowers.php:60
+#: admin/deprecated/wp-dispensary-growers.php:60
+#: admin/deprecated/wp-dispensary-prerolls.php:64
+#: admin/deprecated/wp-dispensary-topicals.php:60
+#: admin/wp-dispensary-products-post-type.php:68
+msgid "Remove featured image"
+msgstr "הסר תמונה ראשית"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:61
+#: admin/deprecated/wp-dispensary-edibles.php:61
+#: admin/deprecated/wp-dispensary-flowers.php:61
+#: admin/deprecated/wp-dispensary-growers.php:61
+#: admin/deprecated/wp-dispensary-prerolls.php:65
+#: admin/deprecated/wp-dispensary-topicals.php:61
+#: admin/wp-dispensary-products-post-type.php:69
+msgid "Use as featured image"
+msgstr "השתמש כתמונה מייצגת"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:62
+#: admin/deprecated/wp-dispensary-edibles.php:62
+#: admin/deprecated/wp-dispensary-flowers.php:62
+#: admin/deprecated/wp-dispensary-growers.php:62
+#: admin/deprecated/wp-dispensary-prerolls.php:66
+#: admin/deprecated/wp-dispensary-topicals.php:62
+#: admin/wp-dispensary-products-post-type.php:70
+#, php-format
+msgid "Insert into %s"
+msgstr "הוסף לתוך %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:63
+#: admin/deprecated/wp-dispensary-edibles.php:63
+#: admin/deprecated/wp-dispensary-flowers.php:63
+#: admin/deprecated/wp-dispensary-growers.php:63
+#: admin/deprecated/wp-dispensary-prerolls.php:67
+#: admin/deprecated/wp-dispensary-topicals.php:63
+#: admin/wp-dispensary-products-post-type.php:71
+#, php-format
+msgid "Uploaded to this %s"
+msgstr "הועלה ל-%s זה"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:64
+#: admin/deprecated/wp-dispensary-edibles.php:64
+#: admin/deprecated/wp-dispensary-flowers.php:64
+#: admin/deprecated/wp-dispensary-growers.php:64
+#: admin/deprecated/wp-dispensary-prerolls.php:68
+#: admin/deprecated/wp-dispensary-topicals.php:64
+#: admin/wp-dispensary-products-post-type.php:72
+#, php-format
+msgid "%s list"
+msgstr "רשימת %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:65
+#: admin/deprecated/wp-dispensary-edibles.php:65
+#: admin/deprecated/wp-dispensary-flowers.php:65
+#: admin/deprecated/wp-dispensary-growers.php:65
+#: admin/deprecated/wp-dispensary-prerolls.php:69
+#: admin/deprecated/wp-dispensary-topicals.php:65
+#: admin/wp-dispensary-products-post-type.php:73
+#, php-format
+msgid "%s list navigation"
+msgstr "ניווט ברשימה %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:66
+#: admin/deprecated/wp-dispensary-edibles.php:66
+#: admin/deprecated/wp-dispensary-flowers.php:66
+#: admin/deprecated/wp-dispensary-growers.php:66
+#: admin/deprecated/wp-dispensary-prerolls.php:70
+#: admin/deprecated/wp-dispensary-topicals.php:66
+#: admin/wp-dispensary-products-post-type.php:74
+#, php-format
+msgid "Filter %s list"
+msgstr "רשימה וסינון %s '"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:71
+#: admin/deprecated/wp-dispensary-edibles.php:71
+#: admin/deprecated/wp-dispensary-flowers.php:71
+#: admin/deprecated/wp-dispensary-growers.php:71
+#: admin/deprecated/wp-dispensary-prerolls.php:75
+#: admin/deprecated/wp-dispensary-topicals.php:71
+#: admin/wp-dispensary-products-post-type.php:79
+#, php-format
+msgid "Display the %s from your menu"
+msgstr "הצג את ה-%s מהתפריט שלך"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:25
+msgctxt "taxonomy general name"
+msgid "Taxonomies"
+msgstr "טקסונומיות"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:26
+msgctxt "taxonomy singular name"
+msgid "Taxonomy"
+msgstr "טקסונומיה"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:27
+msgid "Search Taxonomies"
+msgstr "חפש טקסונומיות"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:28
+msgid "All Taxonomies"
+msgstr "כל טקסונומיות"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:29
+msgid "Parent Taxonomy"
+msgstr "טקסונומיית הורים"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:30
+msgid "Parent Taxonomy:"
+msgstr "טקסונומיית הורים:"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:31
+msgid "Edit Taxonomy"
+msgstr "ערוך טקסונומיה"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:32
+msgid "Update Taxonomy"
+msgstr "עדכון טקסונומיה"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:33
+msgid "Add New Taxonomy"
+msgstr "הוסף טקסונומיה חדשה"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:34
+msgid "New Taxonomy Name"
+msgstr "שם חדש לטקסונומיה"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:36
+msgid "Taxonomies"
+msgstr "טקסונומיות"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:24
+msgid "Compound details"
+msgstr "פרטים מורכבים"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:56
+#: admin/wp-dispensary-data-output.php:140
+#: admin/wp-dispensary-data-output.php:142
+#: includes/functions/wp-dispensary-product-functions.php:126
+#: includes/functions/wp-dispensary-product-functions.php:170
+#: includes/functions/wp-dispensary-product-functions.php:203
+msgid "THC"
+msgstr "‫THC"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:60
+#: admin/wp-dispensary-data-output.php:150
+msgid "THCA"
+msgstr "‫THCA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:64
+#: admin/wp-dispensary-data-output.php:156
+#: admin/wp-dispensary-data-output.php:158
+#: includes/functions/wp-dispensary-product-functions.php:181
+msgid "CBD"
+msgstr "‫CBD"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:68
+#: admin/wp-dispensary-data-output.php:166
+msgid "CBA"
+msgstr "‫CBA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:72
+#: admin/wp-dispensary-data-output.php:172
+msgid "CBN"
+msgstr "‫CBN"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:76
+#: admin/wp-dispensary-data-output.php:178
+msgid "CBG"
+msgstr "‫CBG"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:80
+msgid "Total"
+msgstr "סה\"כ"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:26
+msgid "Grow details"
+msgstr "הגדל פרטים"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:53
+#: admin/wp-dispensary-data-output.php:214
+msgid "Origin"
+msgstr "מקור"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:57
+#: admin/wp-dispensary-data-output.php:220
+msgid "Grow time"
+msgstr "זמן גידול"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:61
+#: admin/wp-dispensary-data-output.php:226
+msgid "Yield"
+msgstr "מספר מנות"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:65
+#: admin/wp-dispensary-data-output.php:232
+msgid "Difficulty"
+msgstr "קושי"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:26
+msgid "Product Details"
+msgstr "פרטי המוצר"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:73
+#: admin/metaboxes/wpd-metabox-product-details.php:81
+#: admin/metaboxes/wpd-metabox-product-details.php:109
+#: admin/metaboxes/wpd-metabox-product-details.php:121
+#: admin/metaboxes/wpd-metabox-product-details.php:141
+#: admin/metaboxes/wpd-metabox-product-details.php:165
+#: admin/wp-dispensary-data-output.php:134
+msgid "Activation time"
+msgstr "זמן הפעלה"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:89
+#: admin/metaboxes/wpd-metabox-product-details.php:157
+#: admin/wp-dispensary-data-output.php:184
+#: includes/functions/wp-dispensary-product-functions.php:214
+msgid "Servings"
+msgstr "מנות"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:93
+#: admin/metaboxes/wpd-metabox-product-details.php:149
+#: admin/wp-dispensary-data-output.php:141
+msgid "THC mg per serving"
+msgstr "‫THC מ”ג למנה"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:97
+#: admin/metaboxes/wpd-metabox-product-details.php:153
+#: admin/wp-dispensary-data-output.php:157
+msgid "CBD mg per serving"
+msgstr "‫CBD מ”ג למנה"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:101
+msgid "mL per serving"
+msgstr "מ”ל למנה"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:105
+msgid "Net weight (ounces)"
+msgstr "משקל נטו (אונקיות)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:117
+msgid "Weight (g)"
+msgstr "משקל (ג)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:129
+msgid "Size (oz)"
+msgstr "גודל (עוז)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:133
+msgid "THC mg"
+msgstr "‫THC מ”ג"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:137
+msgid "CBD mg"
+msgstr "‫CBD מ”ג"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:161
+msgid "Net weight (grams)"
+msgstr "משקל נטו (גרם)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:173
+#: admin/wp-dispensary-data-output.php:202
+msgid "Seeds per unit"
+msgstr "זרעים ליחידה"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:177
+#: admin/wp-dispensary-data-output.php:208
+msgid "Clones per unit"
+msgstr "שיבוטים ליחידה"
+
+#: admin/metaboxes/wpd-metabox-product-prices.php:26
+msgid "Product prices"
+msgstr "מחירי המוצרים"
+
+#: admin/metaboxes/wpd-metabox-product-type.php:25
+msgid "Product type"
+msgstr "סוג המוצר"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:25
+msgctxt "general name"
+msgid "Allergens"
+msgstr "אלרגנים"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:26
+msgctxt "singular name"
+msgid "Allergen"
+msgstr "אלרגן"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:27
+msgid "Search Allergens"
+msgstr "חפש אלרגנים"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:28
+msgid "Popular Allergens"
+msgstr "אלרגנים פופולריים"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:29
+msgid "All Allergens"
+msgstr "כל האלרגנים"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:32
+msgid "Edit Allergen"
+msgstr "ערוך אלרגן"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:33
+msgid "Update Allergen"
+msgstr "עדכון אלרגן"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:34
+msgid "Add New Allergen"
+msgstr "הוסף אלרגן חדש"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:35
+msgid "New Allergen Name"
+msgstr "שם אלרגן חדש"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:36
+msgid "Separate allergens with commas"
+msgstr "הפרד את האלרגנים באמצעות פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:37
+msgid "Add or remove allergens"
+msgstr "הוסף או הסר אלרגנים"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:38
+msgid "Choose from the most used allergens"
+msgstr "בחר מתוך אלרגנים הכי שימושיים"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:39
+msgid "No allergens found"
+msgstr "לא נמצאו אלרגנים"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:25
+msgctxt "general name"
+msgid "Aromas"
+msgstr "ניחוחות"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:26
+msgctxt "singular name"
+msgid "Aroma"
+msgstr "אֲרוֹמָה"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:27
+msgid "Search Aromas"
+msgstr "חפש ארומות"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:28
+msgid "Popular Aromas"
+msgstr "ארומות פופולריות"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:29
+msgid "All Aromas"
+msgstr "כל הניחוחות"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:32
+msgid "Edit Aroma"
+msgstr "ערוך ארומה"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:33
+msgid "Update Aroma"
+msgstr "עדכן ארומה"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:34
+msgid "Add New Aroma"
+msgstr "הוסף ארומה חדשה"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:35
+msgid "New Aroma Name"
+msgstr "שם ארומה חדש"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:36
+msgid "Separate aromas with commas"
+msgstr "הפרד ריחות עם פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:37
+msgid "Add or remove aromas"
+msgstr "הוסף או הסר ניחוחות"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:38
+msgid "Choose from the most used aromas"
+msgstr "בחר מבין הניחוחות הנפוצים ביותר"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:39
+msgid "No aromas found"
+msgstr "לא נמצאו ניחוחות"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:25
+msgctxt "general name"
+msgid "Conditions"
+msgstr "תנאים"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:26
+msgctxt "singular name"
+msgid "Condition"
+msgstr "תנאי"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:27
+msgid "Search Conditions"
+msgstr "תנאי חיפוש"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:28
+msgid "Popular Conditions"
+msgstr "תנאים פופולריים"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:29
+msgid "All Conditions"
+msgstr "כל התנאים"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:32
+msgid "Edit Condition"
+msgstr "ערוך מצב"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:33
+msgid "Update Condition"
+msgstr "עדכון מצב"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:34
+msgid "Add New Condition"
+msgstr "הוסף מצב חדש"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:35
+msgid "New Condition Name"
+msgstr "שם מצב חדש"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:36
+msgid "Separate conditions with commas"
+msgstr "הפרד תנאים עם פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:37
+msgid "Add or remove conditions"
+msgstr "הוסף או הסר תנאים"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:38
+msgid "Choose from the most used conditions"
+msgstr "בחר מבין התנאים הנפוצים ביותר"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:39
+msgid "No conditions found"
+msgstr "לא נמצאו תנאים"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:25
+msgctxt "general name"
+msgid "Effects"
+msgstr "אפקטים"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:26
+msgctxt "singular name"
+msgid "Effect"
+msgstr "ללא אפקט"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:27
+msgid "Search Effects"
+msgstr "אפקטי חיפוש"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:28
+msgid "Popular Effects"
+msgstr "אפקטים פופולריים"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:29
+msgid "All Effects"
+msgstr "כל האפקטים"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:32
+msgid "Edit Effect"
+msgstr "ערוך אפקט"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:33
+msgid "Update Effect"
+msgstr "אפקט עדכון"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:34
+msgid "Add New Effect"
+msgstr "הוסף אפקט חדש"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:35
+msgid "New Effect Name"
+msgstr "שם אפקט חדש"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:36
+msgid "Separate effects with commas"
+msgstr "הפרד אפקטים עם פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:37
+msgid "Add or remove effects"
+msgstr "הוסף או הסר אפקטים"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:38
+msgid "Choose from the most used effects"
+msgstr "בחר מבין האפקטים הנפוצים ביותר"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:39
+msgid "No effects found"
+msgstr "לא נמצאו אפקטים"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:25
+msgctxt "general name"
+msgid "Flavors"
+msgstr "טעמים"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:26
+msgctxt "singular name"
+msgid "Flavor"
+msgstr "טעם"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:27
+msgid "Search Flavors"
+msgstr "חפש טעמים"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:28
+msgid "Popular Flavors"
+msgstr "טעמים פופולריים"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:29
+msgid "All Flavors"
+msgstr "כל הטעמים"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:32
+msgid "Edit Flavor"
+msgstr "ערוך טעם"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:33
+msgid "Update Flavor"
+msgstr "עדכון טעם"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:34
+msgid "Add New Flavor"
+msgstr "הוסף טעם חדש"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:35
+msgid "New Flavor Name"
+msgstr "שם טעם חדש"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:36
+msgid "Separate flavors with commas"
+msgstr "הפרד טעמים עם פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:37
+msgid "Add or remove flavors"
+msgstr "להוסיף או להסיר טעמים"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:38
+msgid "Choose from the most used flavors"
+msgstr "בחר מבין הטעמים הנפוצים ביותר"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:39
+msgid "No flavors found"
+msgstr "לא נמצאו טעמים"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:25
+msgctxt "general name"
+msgid "Ingredients"
+msgstr "מרכיבים"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:26
+msgctxt "singular name"
+msgid "Ingredient"
+msgstr "מַרכִּיב"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:27
+msgid "Search Ingredients"
+msgstr "חפש מרכיבים"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:28
+msgid "Popular Ingredients"
+msgstr "מרכיבים פופולריים"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:29
+msgid "All Ingredients"
+msgstr "כל המרכיבים"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:32
+msgid "Edit Ingredient"
+msgstr "ערוך מרכיב"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:33
+msgid "Update Ingredient"
+msgstr "עדכון מרכיב"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:34
+msgid "Add New Ingredient"
+msgstr "הוספת מרכיב"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:35
+msgid "New Ingredient Name"
+msgstr "שם מרכיב חדש"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:36
+msgid "Separate ingredients with commas"
+msgstr "הפרד בין המרכיבים באמצעות פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:37
+msgid "Add or remove ingredients"
+msgstr "הוסף או הסר מרכיבים"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:38
+msgid "Choose from the most used ingredients"
+msgstr "בחר מבין המרכיבים הנפוצים ביותר"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:39
+msgid "No ingredients found"
+msgstr "לא נמצאו מרכיבים"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:25
+msgctxt "taxonomy general name"
+msgid "Shelf Type"
+msgstr "סוג מדף"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Shelf Type"
+msgstr "סוג מדף"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:27
+msgid "Search Shelf Types"
+msgstr "חיפוש סוגי מדף"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:28
+msgid "All Shelf Types"
+msgstr "כל סוגי המדף"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:29
+msgid "Parent Shelf Type"
+msgstr "סוג מדף הורים"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:30
+msgid "Parent Shelf Type:"
+msgstr "סוג מדף הורה:"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:31
+msgid "Edit Shelf Type"
+msgstr "ערוך סוג מדף"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:32
+msgid "Update Shelf Type"
+msgstr "עדכן את סוג המדף"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:33
+msgid "Add New Shelf Type"
+msgstr "הוסף סוג מדף חדש"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:34
+msgid "New Shelf Type Name"
+msgstr "שם סוג מדף חדש"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:35
+msgid "No shelf types found"
+msgstr "לא נמצאו סוגי מדף"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:36
+msgid "Shelf Type"
+msgstr "סוג מדף"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:25
+msgctxt "taxonomy general name"
+msgid "Strain Type"
+msgstr "סוג זן"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Strain Type"
+msgstr "סוג זן"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:27
+msgid "Search Strain Types"
+msgstr "חיפוש סוגי זנים"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:28
+msgid "All Strain Types"
+msgstr "כל סוגי הזנים"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:29
+msgid "Parent Strain Type"
+msgstr "סוג זן הורה"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:30
+msgid "Parent Strain Type:"
+msgstr "סוג זן הורה:"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:31
+msgid "Edit Strain Type"
+msgstr "ערוך סוג זן"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:32
+msgid "Update Strain Type"
+msgstr "עדכן את סוג הזן"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:33
+msgid "Add New Strain Type"
+msgstr "הוסף סוג זן חדש"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:34
+msgid "New Strain Type Name"
+msgstr "שם סוג זן חדש"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:35
+msgid "No strain types found"
+msgstr "לא נמצאו סוגי זנים"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:36
+msgid "Strain Type"
+msgstr "סוג זן"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:25
+msgctxt "general name"
+msgid "Symptoms"
+msgstr "תסמינים"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:26
+msgctxt "singular name"
+msgid "Symptom"
+msgstr "סימפטום"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:27
+msgid "Search Symptoms"
+msgstr "חיפוש סימפטומים"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:28
+msgid "Popular Symptoms"
+msgstr "תסמינים פופולריים"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:29
+msgid "All Symptoms"
+msgstr "כל הסימפטומים"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:32
+msgid "Edit Symptom"
+msgstr "ערוך סימפטום"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:33
+msgid "Update Symptom"
+msgstr "עדכון סימפטום"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:34
+msgid "Add New Symptom"
+msgstr "הוסף סימפטום חדש"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:35
+msgid "New Symptom Name"
+msgstr "שם סימפטום חדש"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:36
+msgid "Separate symptoms with commas"
+msgstr "הפרד בין התסמינים באמצעות פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:37
+msgid "Add or remove symptoms"
+msgstr "הוסף או הסר תסמינים"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:38
+msgid "Choose from the most used symptoms"
+msgstr "בחר מבין התסמינים הנפוצים ביותר"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:39
+msgid "No symptoms found"
+msgstr "לא נמצאו תסמינים"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:25
+msgctxt "general name"
+msgid "Vendors"
+msgstr "ספקים"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:26
+msgctxt "singular name"
+msgid "Vendor"
+msgstr "ספק"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:27
+msgid "Search Vendors"
+msgstr "חפש ספקים"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:28
+msgid "Popular Vendors"
+msgstr "אמנים פופולרים"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:29
+msgid "All Vendors"
+msgstr "כל המוכרים"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:32
+msgid "Edit Vendor"
+msgstr "ערוך ספק"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:33
+msgid "Update Vendor"
+msgstr "עדכון אמן"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:34
+msgid "Add New Vendor"
+msgstr "הוסף ספק חדש"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:35
+msgid "New Vendor Name"
+msgstr "שם אמן חדש"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:36
+msgid "Separate vendors with commas"
+msgstr "הפרד ספקים עם פסיקים"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:37
+msgid "Add or remove vendors"
+msgstr "הוסף או הסר ספקים"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:38
+msgid "Choose from the most used vendors"
+msgstr "בחר מבין הספקים הנפוצים ביותר"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:39
+msgid "No vendors found"
+msgstr "לא נמצאו ספקים"
+
+#: admin/widgets/wpd-widget-product-search.php:33
+msgid "Product Search"
+msgstr "חיפוש מוצרים"
+
+#: admin/widgets/wpd-widget-product-search.php:35
+msgid "Add a search box"
+msgstr "הוסף תיבת חיפוש"
+
+#: admin/widgets/wpd-widget-product-search.php:72
+msgid "Search Products"
+msgstr "חפש מוצרים"
+
+#: admin/widgets/wpd-widget-product-search.php:74
+msgid "Search"
+msgstr "חיפוש"
+
+#: admin/widgets/wpd-widget-products.php:33
+msgid "Dispensary Products"
+msgstr "מוצרי מרפא"
+
+#: admin/widgets/wpd-widget-products.php:35
+msgid "Your WP Dispensary products"
+msgstr "מוצרי WP Dispensary שלך"
+
+#: admin/widgets/wpd-widget-products.php:279
+msgid "Menu item type:"
+msgstr "סוג פריט בתפריט:"
+
+#: admin/widgets/wpd-widget-products.php:281
+msgid "All types"
+msgstr "כל הסוגים"
+
+#: admin/widgets/wpd-widget-products.php:282
+#: includes/functions/deprecated-functions.php:26
+#: includes/functions/wp-dispensary-general-functions.php:51
+#: includes/functions/wp-dispensary-general-functions.php:75
+#: includes/functions/wp-dispensary-general-functions.php:99
+msgid "Flowers"
+msgstr "פרחים"
+
+#: admin/widgets/wpd-widget-products.php:283
+#: includes/functions/deprecated-functions.php:27
+#: includes/functions/wp-dispensary-general-functions.php:52
+#: includes/functions/wp-dispensary-general-functions.php:76
+#: includes/functions/wp-dispensary-general-functions.php:100
+msgid "Concentrates"
+msgstr "מתרכז"
+
+#: admin/widgets/wpd-widget-products.php:284
+#: includes/functions/deprecated-functions.php:29
+#: includes/functions/wp-dispensary-general-functions.php:54
+#: includes/functions/wp-dispensary-general-functions.php:78
+#: includes/functions/wp-dispensary-general-functions.php:102
+msgid "Edibles"
+msgstr "מאכלים"
+
+#: admin/widgets/wpd-widget-products.php:285
+#: includes/functions/deprecated-functions.php:30
+#: includes/functions/wp-dispensary-general-functions.php:55
+#: includes/functions/wp-dispensary-general-functions.php:79
+#: includes/functions/wp-dispensary-general-functions.php:103
+msgid "Pre-rolls"
+msgstr "פרה רולס"
+
+#: admin/widgets/wpd-widget-products.php:286
+#: includes/functions/deprecated-functions.php:31
+#: includes/functions/wp-dispensary-general-functions.php:56
+#: includes/functions/wp-dispensary-general-functions.php:80
+#: includes/functions/wp-dispensary-general-functions.php:104
+msgid "Topicals"
+msgstr "אקטואליה"
+
+#: admin/widgets/wpd-widget-products.php:287
+#: includes/functions/deprecated-functions.php:32
+#: includes/functions/wp-dispensary-general-functions.php:57
+#: includes/functions/wp-dispensary-general-functions.php:81
+#: includes/functions/wp-dispensary-general-functions.php:105
+msgid "Growers"
+msgstr "מגדלים"
+
+#: admin/widgets/wpd-widget-products.php:288
+#: includes/functions/deprecated-functions.php:33
+#: includes/functions/wp-dispensary-general-functions.php:58
+#: includes/functions/wp-dispensary-general-functions.php:82
+#: includes/functions/wp-dispensary-general-functions.php:106
+msgid "Gear"
+msgstr "גלגל שיניים"
+
+#: admin/widgets/wpd-widget-products.php:289
+#: includes/functions/deprecated-functions.php:28
+#: includes/functions/wp-dispensary-general-functions.php:53
+#: includes/functions/wp-dispensary-general-functions.php:77
+#: includes/functions/wp-dispensary-general-functions.php:101
+msgid "Tinctures"
+msgstr "טינקטורות"
+
+#: admin/widgets/wpd-widget-products.php:294
+msgid "Amount of items to show:"
+msgstr "כמות הפריטים להצגה:"
+
+#: admin/widgets/wpd-widget-products.php:305
+msgid "Display item name?"
+msgstr "להציג את שם הפריט?"
+
+#: admin/widgets/wpd-widget-products.php:310
+msgid "Display item price?"
+msgstr "להציג מחיר פריט?"
+
+#: admin/widgets/wpd-widget-products.php:315
+msgid "Display products in carousel?"
+msgstr "להציג מוצרים בקרוסלה?"
+
+#: admin/wp-dispensary-admin-screens.php:177
+msgid "All Types"
+msgstr "כל הסוגים"
+
+#: admin/wp-dispensary-admin-settings.php:103
+#: admin/wp-dispensary-admin-settings.php:324
+#: admin/wp-dispensary-admin-settings.php:386
+#: admin/wp-dispensary-admin-settings.php:482
+msgid "Display"
+msgstr "הצג"
+
+#: admin/wp-dispensary-admin-settings.php:111
+#: admin/wp-dispensary-admin-settings.php:518
+msgid "General"
+msgstr "כללי"
+
+#: admin/wp-dispensary-admin-settings.php:121
+msgid "Payments"
+msgstr "תשלומים"
+
+#: admin/wp-dispensary-admin-settings.php:129
+#: admin/wp-dispensary-admin-settings.php:256
+msgid "Customers"
+msgstr "לקוחות"
+
+#: admin/wp-dispensary-admin-settings.php:137
+msgid "Pages"
+msgstr "עמודים"
+
+#: admin/wp-dispensary-admin-settings.php:148
+msgid "Drivers"
+msgstr "נהגים"
+
+#: admin/wp-dispensary-admin-settings.php:157
+msgid "Advanced"
+msgstr "מתקדם"
+
+#: admin/wp-dispensary-admin-settings.php:171
+msgid "Advanced Settings"
+msgstr "הגדרות מתקדמות"
+
+#: admin/wp-dispensary-admin-settings.php:185
+msgid "Cookie lifetime"
+msgstr "כל החיים של עוגיות"
+
+#: admin/wp-dispensary-admin-settings.php:186
+msgid ""
+"Set the amount of time the shopping cart cookie gets saved to your visitors "
+"computer"
+msgstr "הגדר את משך הזמן שעוגיית עגלת הקניות תישמר במחשב המבקר שלך"
+
+#: admin/wp-dispensary-admin-settings.php:188
+msgid "1/2 hour"
+msgstr "1/2 שעה"
+
+#: admin/wp-dispensary-admin-settings.php:189
+msgid "1 hour"
+msgstr "שעה"
+
+#: admin/wp-dispensary-admin-settings.php:190
+msgid "3 hours"
+msgstr "שלוש שעות"
+
+#: admin/wp-dispensary-admin-settings.php:191
+msgid "6 hours"
+msgstr "6 שעות"
+
+#: admin/wp-dispensary-admin-settings.php:192
+msgid "12 hours"
+msgstr "12 שעות"
+
+#: admin/wp-dispensary-admin-settings.php:193
+msgid "24 hours"
+msgstr "24 שעות"
+
+#: admin/wp-dispensary-admin-settings.php:208
+msgid "Export Data"
+msgstr "ייצוא נתונים"
+
+#: admin/wp-dispensary-admin-settings.php:238
+msgid "Orders"
+msgstr "הזמנות"
+
+#: admin/wp-dispensary-admin-settings.php:275
+msgid "Prices table"
+msgstr "טבלת מחירים"
+
+#: admin/wp-dispensary-admin-settings.php:290
+#: admin/wp-dispensary-admin-settings.php:448
+msgid "Choose the title you would like used"
+msgstr "בחר את הכותרת שבה תרצה להשתמש"
+
+#: admin/wp-dispensary-admin-settings.php:293
+#: includes/functions/wp-dispensary-pricing-functions.php:409
+msgid "Donations"
+msgstr "תרומות"
+
+#: admin/wp-dispensary-admin-settings.php:309
+#: admin/wp-dispensary-admin-settings.php:467
+msgid "or add a custom title"
+msgstr "או הוסף כותרת מותאמת אישית"
+
+#: admin/wp-dispensary-admin-settings.php:325
+msgid "Where should the pricing display on single menu items?"
+msgstr "היכן אמור התמחור להופיע בפריטי תפריט בודדים?"
+
+#: admin/wp-dispensary-admin-settings.php:327
+#: admin/wp-dispensary-admin-settings.php:389
+#: admin/wp-dispensary-admin-settings.php:485
+msgid "Above Content"
+msgstr "מעל תוכן"
+
+#: admin/wp-dispensary-admin-settings.php:328
+#: admin/wp-dispensary-admin-settings.php:390
+#: admin/wp-dispensary-admin-settings.php:486
+msgid "Below Content"
+msgstr "מתחת לתוכן"
+
+#: admin/wp-dispensary-admin-settings.php:344
+msgid "Remove the price table from data output"
+msgstr "הסר את טבלת המחירים מפלט הנתונים"
+
+#: admin/wp-dispensary-admin-settings.php:372
+msgid "Compounds table"
+msgstr "טבלת תרכובות"
+
+#: admin/wp-dispensary-admin-settings.php:387
+msgid "Where should the compounds display on single menu items?"
+msgstr "היכן התרכובות צריכות להופיע בפריטי תפריט בודדים?"
+
+#: admin/wp-dispensary-admin-settings.php:406
+msgid "Remove the compounds table from data output"
+msgstr "הסר את טבלת התרכובות מפלט הנתונים"
+
+#: admin/wp-dispensary-admin-settings.php:433
+msgid "Details table"
+msgstr "טבלת פרטים"
+
+#: admin/wp-dispensary-admin-settings.php:450
+#: includes/functions/wp-dispensary-general-functions.php:33
+#: includes/functions/wp-dispensary-settings-functions.php:101
+msgid "Details"
+msgstr "פרטים"
+
+#: admin/wp-dispensary-admin-settings.php:451
+#: includes/functions/wp-dispensary-general-functions.php:31
+msgid "Information"
+msgstr "מידע"
+
+#: admin/wp-dispensary-admin-settings.php:483
+msgid "Where should the details display on single menu items?"
+msgstr "היכן יוצגו הפרטים בפריטי תפריט בודדים?"
+
+#: admin/wp-dispensary-admin-settings.php:502
+msgid "Remove the details table from data output"
+msgstr "הסר את טבלת הפרטים מפלט הנתונים"
+
+#: admin/wp-dispensary-admin-settings.php:533
+msgid "Currency"
+msgstr "מטבע"
+
+#: admin/wp-dispensary-admin-settings.php:534
+msgid "Select the currency symbol you would like to use"
+msgstr "בחר את סמל המטבע שבו תרצה להשתמש"
+
+#: admin/wp-dispensary-admin-settings.php:551
+msgid "Taxes"
+msgstr "מע\"מ"
+
+#: admin/wp-dispensary-admin-settings.php:565
+msgid "Sales tax"
+msgstr "מס מכירה"
+
+#: admin/wp-dispensary-admin-settings.php:566
+msgid "Apply sales tax to orders (%)"
+msgstr "החל מס מכירה על הזמנות (%)"
+
+#: admin/wp-dispensary-admin-settings.php:567
+msgid "6"
+msgstr "6"
+
+#: admin/wp-dispensary-admin-settings.php:581
+msgid "Excise tax"
+msgstr "מס בלו"
+
+#: admin/wp-dispensary-admin-settings.php:582
+msgid "Apply excise tax to orders (%)"
+msgstr "החל מס בלו על הזמנות (%)"
+
+#: admin/wp-dispensary-admin-settings.php:583
+msgid "10"
+msgstr "10"
+
+#: admin/wp-dispensary-admin-settings.php:597
+msgid "Cart"
+msgstr "סל קניות"
+
+#: admin/wp-dispensary-admin-settings.php:611
+msgid "Require login to shop"
+msgstr "דרוש כניסה כדי לקנות"
+
+#: admin/wp-dispensary-admin-settings.php:612
+msgid "Hide the add to cart functionality for non-logged in users"
+msgstr "הסתר את פונקציונליות ההוספה לסל עבור משתמשים שאינם מחוברים"
+
+#: admin/wp-dispensary-admin-settings.php:626
+msgid "Checkout"
+msgstr "לתשלום"
+
+#: admin/wp-dispensary-admin-settings.php:640
+msgid "Minimum order"
+msgstr "הזמנה מינימלית"
+
+#: admin/wp-dispensary-admin-settings.php:641
+msgid "Require a minimum order amount before checkout"
+msgstr "דרוש כמות הזמנה מינימלית לפני התשלום"
+
+#: admin/wp-dispensary-admin-settings.php:642
+msgid "ex: 50"
+msgstr "דוגמה: 50"
+
+#: admin/wp-dispensary-admin-settings.php:658
+msgid "Coupons"
+msgstr "קופונים"
+
+#: admin/wp-dispensary-admin-settings.php:659
+msgid "Allow customers to apply a coupon to their order"
+msgstr "אפשר ללקוחות להחיל קופון על ההזמנה שלהם"
+
+#: admin/wp-dispensary-admin-settings.php:670
+msgid "Cash on delivery"
+msgstr "תשלום במזומן"
+
+#: admin/wp-dispensary-admin-settings.php:671
+msgid "Pay on pickup"
+msgstr "תשלום באיסוף"
+
+#: admin/wp-dispensary-admin-settings.php:672
+msgid "Ground shipping"
+msgstr "משלוח קרקע"
+
+#: admin/wp-dispensary-admin-settings.php:703
+msgid "Enable/Disable"
+msgstr "הפעלה/ביטול"
+
+#: admin/wp-dispensary-admin-settings.php:704
+msgid "Enable "
+msgstr "לְאַפשֵׁר "
+
+#: admin/wp-dispensary-admin-settings.php:718
+msgid "Charge"
+msgstr "חיוב"
+
+#: admin/wp-dispensary-admin-settings.php:719
+msgid "0"
+msgstr "0"
+
+#: admin/wp-dispensary-admin-settings.php:735
+msgid "Instructions"
+msgstr "הוראות"
+
+#: admin/wp-dispensary-admin-settings.php:736
+msgid "Let the user know how to send payment for the order."
+msgstr "יידע את המשתמש כיצד לשלוח תשלום עבור ההזמנה."
+
+#: admin/wp-dispensary-admin-settings.php:750
+msgid "Customer Registration"
+msgstr "רישום לקוח"
+
+#: admin/wp-dispensary-admin-settings.php:757
+msgid "Select a page"
+msgstr "בחר עמוד"
+
+#: admin/wp-dispensary-admin-settings.php:759
+msgid "No pages found"
+msgstr "לא נמצאו דפים"
+
+#: admin/wp-dispensary-admin-settings.php:772
+msgid "Redirect after registration"
+msgstr "הפנייה מחדש לאחר ההרשמה"
+
+#: admin/wp-dispensary-admin-settings.php:773
+msgid "Choose the page customers will be redirected to when registering."
+msgstr "בחר את הדף אליו יופנו לקוחות בעת ההרשמה."
+
+#: admin/wp-dispensary-admin-settings.php:788
+msgid "Customer Verification"
+msgstr "אימות לקוח"
+
+#: admin/wp-dispensary-admin-settings.php:802
+msgid "Drivers license / Valid ID"
+msgstr "רישיון נהיגה / תעודה מזהה בתוקף"
+
+#: admin/wp-dispensary-admin-settings.php:803
+msgid "Hide the drivers license upload from account details"
+msgstr "הסתר את העלאת רישיון הנהיגה מפרטי החשבון"
+
+#: admin/wp-dispensary-admin-settings.php:817
+msgid "Doctor recommendation"
+msgstr "המלצת רופא"
+
+#: admin/wp-dispensary-admin-settings.php:818
+msgid "Hide the doctor recommendation upload from account details"
+msgstr "הסתר את העלאת המלצת הרופא מפרטי החשבון"
+
+#: admin/wp-dispensary-admin-settings.php:832
+msgid "Recommendation number"
+msgstr "מספר המלצה"
+
+#: admin/wp-dispensary-admin-settings.php:833
+msgid "Hide the recommendation number from account details"
+msgstr "הסתר את מספר ההמלצה מפרטי החשבון"
+
+#: admin/wp-dispensary-admin-settings.php:847
+msgid "Expiration date"
+msgstr "תאריך תפוגה"
+
+#: admin/wp-dispensary-admin-settings.php:848
+msgid "Hide the expiration date from account details"
+msgstr "הסתר את תאריך התפוגה מפרטי החשבון"
+
+#: admin/wp-dispensary-admin-settings.php:862
+msgid "Page Setup"
+msgstr "הגדרת עמוד"
+
+#: admin/wp-dispensary-admin-settings.php:876
+msgid "Menu page"
+msgstr "עמוד תפריט"
+
+#: admin/wp-dispensary-admin-settings.php:877
+msgid "Page contents [wpd_menu]"
+msgstr "תוכן העמוד [wpd_menu]"
+
+#: admin/wp-dispensary-admin-settings.php:892
+msgid "Cart page"
+msgstr "עמוד סל קניות"
+
+#: admin/wp-dispensary-admin-settings.php:893
+msgid "Page contents [wpd_cart]"
+msgstr "תוכן העמוד [wpd_cart]"
+
+#: admin/wp-dispensary-admin-settings.php:908
+msgid "Checkout page"
+msgstr "עמוד התשלום"
+
+#: admin/wp-dispensary-admin-settings.php:909
+msgid "Page contents [wpd_checkout]"
+msgstr "תוכן העמוד [wpd_checkout]"
+
+#: admin/wp-dispensary-admin-settings.php:924
+msgid "Account page"
+msgstr "דף חשבון"
+
+#: admin/wp-dispensary-admin-settings.php:925
+msgid "Page contents [wpd_account]"
+msgstr "תוכן העמוד [wpd_account]"
+
+#: admin/wp-dispensary-admin-settings.php:940
+msgid "Dispatch phone number"
+msgstr "טלפון במסעדה"
+
+#: admin/wp-dispensary-admin-settings.php:941
+msgid "Add the phone number to your dispatch center"
+msgstr "הוסף את מספר הטלפון למרכז השיגור שלך"
+
+#: admin/wp-dispensary-admin-settings.php:956
+msgid "Google Maps API key"
+msgstr "מפתח API של גוגל מפות"
+
+#: admin/wp-dispensary-admin-settings.php:957
+msgid "Add a map to the order directions for your drivers"
+msgstr "הוסף מפה להוראות ההזמנה עבור הנהגים שלך"
+
+#: admin/wp-dispensary-admin-settings.php:973
+msgid "Enable Google Maps geocode for latitude and longitude"
+msgstr "אפשר קוד גיאוגרפי של מפות Google עבור קווי רוחב ואורך"
+
+#: admin/wp-dispensary-data-output.php:75
+msgid "Shelf"
+msgstr "מַדָף"
+
+#: admin/wp-dispensary-data-output.php:80
+msgid "Strain"
+msgstr "מתח"
+
+#: admin/wp-dispensary-data-output.php:85
+msgid "Vendor"
+msgstr "ספק"
+
+#: admin/wp-dispensary-data-output.php:190
+msgid "Net weight"
+msgstr "משקל נטו"
+
+#: admin/wp-dispensary-data-output.php:196
+#: includes/functions/wp-dispensary-product-functions.php:159
+msgid "Size"
+msgstr "גודל"
+
+#: admin/wp-dispensary-data-output.php:238
+#: includes/functions/wp-dispensary-product-functions.php:192
+msgid "Weight"
+msgstr "משקל"
+
+#: admin/wp-dispensary-data-output.php:245
+#: admin/wp-dispensary-data-output.php:247
+msgid "Flower"
+msgstr "פֶּרַח"
+
+#: admin/wp-dispensary-data-output.php:349
+msgid "TOTAL"
+msgstr "סה\"כ"
+
+#: admin/wp-dispensary-data-output.php:356
+msgid "Compounds"
+msgstr "תרכובות"
+
+#: admin/wp-dispensary-data-output.php:406
+#: admin/wp-dispensary-data-output.php:407
+msgid "Price each:"
+msgstr "כל מחיר:"
+
+#: admin/wp-dispensary-data-output.php:414
+msgid "per pack:"
+msgstr "‫per pack:"
+
+#: admin/wp-dispensary-plugin-upgrade.php:172
+msgid "WP Dispensary database update required"
+msgstr "נדרש עדכון מסד הנתונים של WP Dispensary"
+
+#: admin/wp-dispensary-plugin-upgrade.php:173
+msgid ""
+"WP Dispensary has been updated! To keep things running smoothly, we have to "
+"update your database to the newest version. The database update process may "
+"take a little while, so please be patient."
+msgstr ""
+"מאגר WP עודכן! כדי שהדברים יפעלו בצורה חלקה, עלינו לעדכן את מסד הנתונים שלך "
+"לגרסה החדשה ביותר. תהליך עדכון מסד הנתונים עשוי להימשך זמן מה, אז נא להתאזר "
+"בסבלנות."
+
+#: admin/wp-dispensary-plugin-upgrade.php:174
+msgid "Upgrade Now"
+msgstr "לשדרג עכשיו"
+
+#: includes/class-wp-dispensary-activator.php:81
+msgid "Menu"
+msgstr "תפריט"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:407
+msgid "Donation"
+msgstr "תרומה"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:413
+msgid "Price"
+msgstr "מחיר"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1144
+#: includes/functions/wp-dispensary-pricing-functions.php:1168
+msgid "Price per unit"
+msgstr "מחיר ליחידה"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1145
+#: includes/functions/wp-dispensary-pricing-functions.php:1169
+msgid "Price per pack"
+msgstr "מחיר לחבילה"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1146
+#: includes/functions/wp-dispensary-pricing-functions.php:1170
+msgid "Units per pack"
+msgstr "יחידות לחבילה"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1153
+#: includes/functions/wp-dispensary-pricing-functions.php:1172
+msgid "1 g"
+msgstr "1 גרם"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1154
+#: includes/functions/wp-dispensary-pricing-functions.php:1173
+msgid "2 g"
+msgstr "2 גרם"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1155
+msgid "1/8 oz"
+msgstr "1/8 אונקיות"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1156
+msgid "5 g"
+msgstr "5 גרם"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1157
+msgid "1/4 oz"
+msgstr "1/4 אונקיות"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1158
+msgid "1/2 oz"
+msgstr "1/2 אונקיות"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1159
+msgid "1 oz"
+msgstr "1 גר"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1171
+msgid "1/2 gram"
+msgstr "1/2 גרם"
+
+#: includes/functions/wp-dispensary-product-functions.php:42
+#, php-format
+msgid "Product updated. <a href=\"%s\">View product</a>"
+msgstr "המוצר עודכן. <a href=\"%s\">צפה במוצר</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:43
+#: includes/functions/wp-dispensary-product-functions.php:45
+msgid "Product updated."
+msgstr "מוצר עודכן."
+
+#: includes/functions/wp-dispensary-product-functions.php:44
+msgid "Product deleted."
+msgstr "המוצר נמחק."
+
+#: includes/functions/wp-dispensary-product-functions.php:46
+#, php-format
+msgid "Product restored to revision from %s"
+msgstr "המוצר שוחזר לגרסה מ %s"
+
+#: includes/functions/wp-dispensary-product-functions.php:47
+#, php-format
+msgid "Product published. <a href=\"%s\">View product</a>"
+msgstr "מוצר פורסם. <a href=\"%s\">צפה במוצר</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:48
+msgid "Product saved."
+msgstr "מוצר נשמר."
+
+#: includes/functions/wp-dispensary-product-functions.php:49
+#, php-format
+msgid "Product submitted. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr "מוצר נשלח. <a target=\"_blank\" href=\"%s\">תצוגה מקדימה של מוצר</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:50
+#, php-format
+msgid ""
+"Product scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Preview product</a>"
+msgstr ""
+"פרסום מוצר מתוכנן ל: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
+"\">תצוגה מקדימה של המוצר</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:51
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: includes/functions/wp-dispensary-product-functions.php:52
+#, php-format
+msgid ""
+"Product draft updated. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr ""
+"טיוטת מוצר עודכנה. <a target=\"_blank\" href=\"%s\">תצוגה מקדימה של מוצר</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:137
+msgid "Seeds"
+msgstr "זרעים"
+
+#: includes/functions/wp-dispensary-product-functions.php:148
+msgid "Clones"
+msgstr "שיבוטים"
+
+#: wp-dispensary.php:102
+msgid "Go Pro"
+msgstr "שידרוג לפרו"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.wpdispensary.com"
+msgstr "‫https://www.wpdispensary.com"
+
+#. Description of the plugin/theme
+msgid ""
+"The complete marijuana menu solution for dispensaries and delivery services"
+msgstr "פתרון תפריט המריחואנה המלא עבור בתי מרקחת ושירותי משלוחים"
