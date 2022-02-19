@@ -1,0 +1,2145 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Dispensary\n"
+"POT-Creation-Date: 2022-02-03 19:32-0500\n"
+"PO-Revision-Date: 2022-02-03 20:26-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ka_GE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-dispensary.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#. Plugin Name of the plugin/theme
+#. Author of the plugin/theme
+#: admin/class-wp-dispensary-admin-settings.php:134
+#: admin/class-wp-dispensary-admin-settings.php:135
+#: admin/class-wp-dispensary-admin.php:130
+msgid "WP Dispensary"
+msgstr "WP დისპანსერი"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+msgid "WP Dispensary Settings"
+msgstr "WP დისპანსერის პარამეტრები"
+
+#: admin/class-wp-dispensary-admin-settings.php:142
+#: admin/class-wp-dispensary-admin.php:184 wp-dispensary.php:103
+msgid "Settings"
+msgstr "პარამეტრები"
+
+#: admin/class-wp-dispensary-admin-settings.php:679
+msgid "Choose File"
+msgstr "Აირჩიეთ ფაილი"
+
+#: admin/class-wp-dispensary-admin-settings.php:696
+msgid "Choose Image"
+msgstr "აირჩიეთ სურათი"
+
+#: admin/class-wp-dispensary-admin.php:152
+msgid "View Menu"
+msgstr "მენიუს ნახვა"
+
+#: admin/class-wp-dispensary-admin.php:160
+#: admin/widgets/wpd-widget-products.php:261
+#: admin/wp-dispensary-admin-settings.php:222
+msgid "Products"
+msgstr "პროდუქცია"
+
+#: admin/class-wp-dispensary-admin.php:168
+#: admin/class-wp-dispensary-csv-export.php:102
+#: admin/deprecated/wp-dispensary-categories.php:36
+#: admin/taxonomies/wpd-taxonomy-categories.php:36
+msgid "Categories"
+msgstr "კატეგორიები"
+
+#: admin/class-wp-dispensary-admin.php:176
+#: admin/class-wp-dispensary-csv-export.php:103
+#: admin/taxonomies/wpd-taxonomy-vendors.php:40
+msgid "Vendors"
+msgstr "გამყიდველები"
+
+#: admin/class-wp-dispensary-csv-export.php:72
+msgid "WP Dispensary's Product Export"
+msgstr "WP დისპანსერის პროდუქტის ექსპორტი"
+
+#: admin/class-wp-dispensary-csv-export.php:73
+msgid ""
+"Export your WP Dispensary products as a CSV file by clicking the button "
+"below."
+msgstr ""
+"თქვენი WP Dispensary პროდუქტების ექსპორტი CSV ფაილის სახით ქვემოთ მოცემულ "
+"ღილაკზე დაწკაპუნებით."
+
+#: admin/class-wp-dispensary-csv-export.php:74
+#: admin/wp-dispensary-admin-settings.php:223
+#: admin/wp-dispensary-admin-settings.php:239
+#: admin/wp-dispensary-admin-settings.php:257
+msgid "Export"
+msgstr "ექსპორტი"
+
+#: admin/class-wp-dispensary-csv-export.php:93
+msgid "ID"
+msgstr "ID"
+
+#: admin/class-wp-dispensary-csv-export.php:94
+msgid "Type"
+msgstr "ტიპი"
+
+#: admin/class-wp-dispensary-csv-export.php:95
+#: admin/wp-dispensary-admin-settings.php:289
+#: admin/wp-dispensary-admin-settings.php:447
+msgid "Title"
+msgstr "სათაური"
+
+#: admin/class-wp-dispensary-csv-export.php:96
+msgid "Content"
+msgstr "კონტენტი"
+
+#: admin/class-wp-dispensary-csv-export.php:97
+msgid "Slug"
+msgstr "იარლიყი"
+
+#: admin/class-wp-dispensary-csv-export.php:98
+msgid "Date"
+msgstr "თარიღი"
+
+#: admin/class-wp-dispensary-csv-export.php:99
+msgid "Author"
+msgstr "ავტორი"
+
+#: admin/class-wp-dispensary-csv-export.php:100
+#: admin/wp-dispensary-admin-settings.php:292
+#: includes/functions/wp-dispensary-pricing-functions.php:415
+msgid "Prices"
+msgstr "ფასები"
+
+#: admin/class-wp-dispensary-csv-export.php:101
+msgid "Inventory"
+msgstr "მარაგები"
+
+#: admin/class-wp-dispensary-csv-export.php:104
+msgid "Shelf type"
+msgstr "თაროების ტიპი"
+
+#: admin/class-wp-dispensary-csv-export.php:105
+msgid "Strain type"
+msgstr "შტამის ტიპი"
+
+#: admin/class-wp-dispensary-csv-export.php:106
+#: admin/taxonomies/wpd-taxonomy-allergens.php:40
+#: admin/wp-dispensary-data-output.php:128
+msgid "Allergens"
+msgstr "ალერგენები"
+
+#: admin/class-wp-dispensary-csv-export.php:107
+#: admin/taxonomies/wpd-taxonomy-aromas.php:40
+#: admin/wp-dispensary-data-output.php:92
+msgid "Aromas"
+msgstr "არომატები"
+
+#: admin/class-wp-dispensary-csv-export.php:108
+#: admin/taxonomies/wpd-taxonomy-conditions.php:40
+#: admin/wp-dispensary-data-output.php:116
+msgid "Conditions"
+msgstr "პირობები"
+
+#: admin/class-wp-dispensary-csv-export.php:109
+#: admin/taxonomies/wpd-taxonomy-effects.php:40
+#: admin/wp-dispensary-data-output.php:104
+msgid "Effects"
+msgstr "ეფექტები"
+
+#: admin/class-wp-dispensary-csv-export.php:110
+#: admin/taxonomies/wpd-taxonomy-flavors.php:40
+#: admin/wp-dispensary-data-output.php:98
+msgid "Flavors"
+msgstr "არომატები"
+
+#: admin/class-wp-dispensary-csv-export.php:111
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:40
+#: admin/wp-dispensary-data-output.php:122
+msgid "Ingredients"
+msgstr "ინგრედიენტები"
+
+#: admin/class-wp-dispensary-csv-export.php:112
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:40
+#: admin/wp-dispensary-data-output.php:110
+msgid "Symptoms"
+msgstr "სიმპტომები"
+
+#: admin/class-wp-dispensary-csv-export.php:113
+#: admin/wp-dispensary-admin-screens.php:26
+msgid "Featured image"
+msgstr "გამორჩეული სურათი"
+
+#: admin/class-wp-dispensary-permalink-settings.php:33
+msgid "Products Base"
+msgstr "პროდუქტების ბაზა"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:57
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:88
+msgid "Logo"
+msgstr "ლოგო"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:61
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:99
+msgid "Add Image"
+msgstr "სურათის დამატება"
+
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:62
+#: admin/class-wp-dispensary-vendors-taxonomy-fields.php:100
+msgid "Remove Image"
+msgstr "სურათის წაშლა"
+
+#: admin/deprecated-shortcodes.php:148 admin/deprecated-shortcodes.php:396
+#: admin/deprecated-shortcodes.php:580 admin/deprecated-shortcodes.php:768
+#: admin/deprecated-shortcodes.php:924 admin/deprecated-shortcodes.php:1085
+msgid "(view all)"
+msgstr "(ყველას ნახვა)"
+
+#: admin/deprecated-shortcodes.php:596
+msgid "Servings: "
+msgstr "სერვირება: "
+
+#: admin/deprecated-shortcodes.php:607 admin/deprecated-shortcodes.php:618
+msgid "THC: "
+msgstr "THC: "
+
+#: admin/deprecated-shortcodes.php:789
+msgid "Weight:"
+msgstr "წონა:"
+
+#: admin/deprecated-shortcodes.php:945
+msgid "Size:"
+msgstr "ზომა:"
+
+#: admin/deprecated-shortcodes.php:952
+msgid "THC:"
+msgstr "THC:"
+
+#: admin/deprecated-shortcodes.php:959
+msgid "CBD:"
+msgstr "CBD:"
+
+#: admin/deprecated-shortcodes.php:1106
+msgid "Seeds:"
+msgstr "თესლი:"
+
+#: admin/deprecated-shortcodes.php:1113
+msgid "Clones:"
+msgstr "კლონები:"
+
+#: admin/deprecated-shortcodes.php:1191
+msgid "Recent Products"
+msgstr "უახლესი პროდუქტები"
+
+#: admin/deprecated-widgets.php:36
+msgid "WPD Flowers"
+msgstr "WPD ყვავილები"
+
+#: admin/deprecated-widgets.php:38
+msgid "Your most recent Flowers"
+msgstr "თქვენი უახლესი ყვავილები"
+
+#: admin/deprecated-widgets.php:191 admin/deprecated-widgets.php:426
+#: admin/deprecated-widgets.php:662 admin/deprecated-widgets.php:904
+#: admin/deprecated-widgets.php:1141 admin/deprecated-widgets.php:1383
+#: admin/widgets/wpd-widget-products.php:274
+msgid "Widget Title:"
+msgstr "ვიჯეტის სათაური:"
+
+#: admin/deprecated-widgets.php:196
+msgid "Amount of flowers to show:"
+msgstr "საჩვენებელი ყვავილების რაოდენობა:"
+
+#: admin/deprecated-widgets.php:202 admin/deprecated-widgets.php:437
+#: admin/deprecated-widgets.php:673 admin/deprecated-widgets.php:915
+#: admin/deprecated-widgets.php:1152 admin/deprecated-widgets.php:1394
+#: admin/widgets/wpd-widget-products.php:300
+msgid "Randomize output?"
+msgstr "რანდომიზება გამომავალი?"
+
+#: admin/deprecated-widgets.php:207
+msgid "Display flower name?"
+msgstr "ყვავილის სახელის ჩვენება?"
+
+#: admin/deprecated-widgets.php:212
+msgid "Display flower category?"
+msgstr "ყვავილების კატეგორიის ჩვენება?"
+
+#: admin/deprecated-widgets.php:217 admin/deprecated-widgets.php:452
+#: admin/deprecated-widgets.php:688 admin/deprecated-widgets.php:930
+#: admin/deprecated-widgets.php:1167 admin/deprecated-widgets.php:1409
+msgid "Display featured image?"
+msgstr "გამორჩეული სურათის ჩვენება?"
+
+#: admin/deprecated-widgets.php:221 admin/deprecated-widgets.php:692
+#: admin/widgets/wpd-widget-products.php:319
+msgid "Image size:"
+msgstr "Სურათის ზომა:"
+
+#: admin/deprecated-widgets.php:272
+msgid "WPD Concentrates"
+msgstr "WPD კონცენტრატები"
+
+#: admin/deprecated-widgets.php:274
+msgid "Your most recent Concentrates"
+msgstr "თქვენი უახლესი კონცენტრატები"
+
+#: admin/deprecated-widgets.php:431
+msgid "Amount of concentrates to show:"
+msgstr "საჩვენებელი კონცენტრატების რაოდენობა:"
+
+#: admin/deprecated-widgets.php:442
+msgid "Display concentrate name?"
+msgstr "კონცენტრატის სახელის ჩვენება?"
+
+#: admin/deprecated-widgets.php:447
+msgid "Display concentrate category?"
+msgstr "კონცენტრატის კატეგორიის ჩვენება?"
+
+#: admin/deprecated-widgets.php:507
+msgid "WPD Edibles"
+msgstr "WPD საკვები პროდუქტები"
+
+#: admin/deprecated-widgets.php:509
+msgid "Your most recent Edibles"
+msgstr "თქვენი უახლესი საკვები პროდუქტები"
+
+#: admin/deprecated-widgets.php:667
+msgid "Amount of edibles to show:"
+msgstr "საჩვენებელი საკვების რაოდენობა:"
+
+#: admin/deprecated-widgets.php:678
+msgid "Display edible name?"
+msgstr "საკვების სახელის ჩვენება?"
+
+#: admin/deprecated-widgets.php:683
+msgid "Display edible category?"
+msgstr "საკვების კატეგორიის ჩვენება?"
+
+#: admin/deprecated-widgets.php:744
+msgid "WPD Pre-rolls"
+msgstr "WPD წინასწარ რულონები"
+
+#: admin/deprecated-widgets.php:746
+msgid "Your most recent Pre-rolls"
+msgstr "თქვენი უახლესი წინასწარი გადაღებები"
+
+#: admin/deprecated-widgets.php:909
+msgid "Amount of pre-rolls to show:"
+msgstr "საჩვენებელი წინასწარ გათამაშების რაოდენობა:"
+
+#: admin/deprecated-widgets.php:920
+msgid "Display pre-roll name?"
+msgstr "აჩვენო წინასწარი სახელი?"
+
+#: admin/deprecated-widgets.php:925
+msgid "Display pre-roll flower?"
+msgstr "აჩვენე წინასწარი ყვავილი?"
+
+#: admin/deprecated-widgets.php:986
+msgid "WPD Topicals"
+msgstr "WPD თემატიკა"
+
+#: admin/deprecated-widgets.php:988
+msgid "Your most recent Topicals"
+msgstr "თქვენი უახლესი თემები"
+
+#: admin/deprecated-widgets.php:1146
+msgid "Amount of topicals to show:"
+msgstr "საჩვენებელი თემების რაოდენობა:"
+
+#: admin/deprecated-widgets.php:1157
+msgid "Display topical name?"
+msgstr "აქტუალური სახელის ჩვენება?"
+
+#: admin/deprecated-widgets.php:1162
+msgid "Display topical category?"
+msgstr "აქტუალური კატეგორიის ჩვენება?"
+
+#: admin/deprecated-widgets.php:1222
+msgid "WPD Growers"
+msgstr "WPD მწარმოებლები"
+
+#: admin/deprecated-widgets.php:1224
+msgid "Your most recent Clones and Seeds"
+msgstr "თქვენი უახლესი კლონები და თესლი"
+
+#: admin/deprecated-widgets.php:1388
+msgid "Amount of growers to show:"
+msgstr "მწარმოებლების რაოდენობა საჩვენებლად:"
+
+#: admin/deprecated-widgets.php:1399
+msgid "Display grower name?"
+msgstr "მწარმოებლის სახელის ჩვენება?"
+
+#: admin/deprecated-widgets.php:1404
+msgid "Display flower type?"
+msgstr "ყვავილების ტიპის ჩვენება?"
+
+#: admin/deprecated/wp-dispensary-categories.php:25
+#: admin/taxonomies/wpd-taxonomy-categories.php:25
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr "კატეგორიები"
+
+#: admin/deprecated/wp-dispensary-categories.php:26
+#: admin/taxonomies/wpd-taxonomy-categories.php:26
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "კატეგორია"
+
+#: admin/deprecated/wp-dispensary-categories.php:27
+#: admin/taxonomies/wpd-taxonomy-categories.php:27
+msgid "Search Categories"
+msgstr "კატეგორიების ძიება"
+
+#: admin/deprecated/wp-dispensary-categories.php:28
+#: admin/taxonomies/wpd-taxonomy-categories.php:28
+msgid "All Categories"
+msgstr "ყველა კატეგორია"
+
+#: admin/deprecated/wp-dispensary-categories.php:29
+#: admin/taxonomies/wpd-taxonomy-categories.php:29
+msgid "Parent Category"
+msgstr "მშობლის კატეგორია"
+
+#: admin/deprecated/wp-dispensary-categories.php:30
+#: admin/taxonomies/wpd-taxonomy-categories.php:30
+msgid "Parent Category:"
+msgstr "მშობლის კატეგორია:"
+
+#: admin/deprecated/wp-dispensary-categories.php:31
+#: admin/taxonomies/wpd-taxonomy-categories.php:31
+msgid "Edit Category"
+msgstr "კატეგორიის ჩასწორება"
+
+#: admin/deprecated/wp-dispensary-categories.php:32
+#: admin/taxonomies/wpd-taxonomy-categories.php:32
+msgid "Update Category"
+msgstr "კატეგორიის განახლება"
+
+#: admin/deprecated/wp-dispensary-categories.php:33
+#: admin/taxonomies/wpd-taxonomy-categories.php:33
+msgid "Add New Category"
+msgstr "ახალი კატეგორიის დამატება"
+
+#: admin/deprecated/wp-dispensary-categories.php:34
+#: admin/taxonomies/wpd-taxonomy-categories.php:34
+msgid "New Category Name"
+msgstr "ახალი კატეგორიის სახელი"
+
+#: admin/deprecated/wp-dispensary-categories.php:35
+#: admin/deprecated/wp-dispensary-taxonomies.php:35
+#: admin/taxonomies/wpd-taxonomy-categories.php:35
+msgid "No categories found"
+msgstr "კატეგორიები ვერ მოიძებნა"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:42
+#: admin/deprecated/wp-dispensary-concentrates.php:43
+#: admin/deprecated/wp-dispensary-concentrates.php:44
+#: admin/deprecated/wp-dispensary-concentrates.php:45
+#: admin/deprecated/wp-dispensary-concentrates.php:70
+#: admin/deprecated/wp-dispensary-edibles.php:42
+#: admin/deprecated/wp-dispensary-edibles.php:43
+#: admin/deprecated/wp-dispensary-edibles.php:44
+#: admin/deprecated/wp-dispensary-edibles.php:45
+#: admin/deprecated/wp-dispensary-edibles.php:70
+#: admin/deprecated/wp-dispensary-flowers.php:42
+#: admin/deprecated/wp-dispensary-flowers.php:43
+#: admin/deprecated/wp-dispensary-flowers.php:44
+#: admin/deprecated/wp-dispensary-flowers.php:45
+#: admin/deprecated/wp-dispensary-flowers.php:70
+#: admin/deprecated/wp-dispensary-growers.php:42
+#: admin/deprecated/wp-dispensary-growers.php:43
+#: admin/deprecated/wp-dispensary-growers.php:44
+#: admin/deprecated/wp-dispensary-growers.php:45
+#: admin/deprecated/wp-dispensary-growers.php:70
+#: admin/deprecated/wp-dispensary-prerolls.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:74
+#: admin/deprecated/wp-dispensary-topicals.php:42
+#: admin/deprecated/wp-dispensary-topicals.php:43
+#: admin/deprecated/wp-dispensary-topicals.php:44
+#: admin/deprecated/wp-dispensary-topicals.php:45
+#: admin/deprecated/wp-dispensary-topicals.php:70
+#: admin/wp-dispensary-products-post-type.php:50
+#: admin/wp-dispensary-products-post-type.php:51
+#: admin/wp-dispensary-products-post-type.php:52
+#: admin/wp-dispensary-products-post-type.php:53
+#: admin/wp-dispensary-products-post-type.php:78
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:46
+#: admin/deprecated/wp-dispensary-edibles.php:46
+#: admin/deprecated/wp-dispensary-flowers.php:46
+#: admin/deprecated/wp-dispensary-growers.php:46
+#: admin/deprecated/wp-dispensary-prerolls.php:50
+#: admin/deprecated/wp-dispensary-topicals.php:46
+#: admin/wp-dispensary-products-post-type.php:54
+#, php-format
+msgid "%s Archives"
+msgstr "%s არქივები"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:47
+#: admin/deprecated/wp-dispensary-edibles.php:47
+#: admin/deprecated/wp-dispensary-flowers.php:47
+#: admin/deprecated/wp-dispensary-growers.php:47
+#: admin/deprecated/wp-dispensary-prerolls.php:51
+#: admin/deprecated/wp-dispensary-topicals.php:47
+#: admin/wp-dispensary-products-post-type.php:55
+#, php-format
+msgid "Parent %s:"
+msgstr "მშობელი %s:"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:48
+#: admin/deprecated/wp-dispensary-edibles.php:48
+#: admin/deprecated/wp-dispensary-flowers.php:48
+#: admin/deprecated/wp-dispensary-growers.php:48
+#: admin/deprecated/wp-dispensary-prerolls.php:52
+#: admin/deprecated/wp-dispensary-topicals.php:48
+#: admin/wp-dispensary-products-post-type.php:56
+#, php-format
+msgid "All %s"
+msgstr "ყველა %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:49
+#: admin/deprecated/wp-dispensary-edibles.php:49
+#: admin/deprecated/wp-dispensary-flowers.php:49
+#: admin/deprecated/wp-dispensary-growers.php:49
+#: admin/deprecated/wp-dispensary-prerolls.php:53
+#: admin/deprecated/wp-dispensary-topicals.php:49
+#: admin/wp-dispensary-products-post-type.php:57
+#, php-format
+msgid "Add New %s"
+msgstr "ახლის დამატება %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:50
+#: admin/deprecated/wp-dispensary-edibles.php:50
+#: admin/deprecated/wp-dispensary-flowers.php:50
+#: admin/deprecated/wp-dispensary-growers.php:50
+#: admin/deprecated/wp-dispensary-prerolls.php:54
+#: admin/deprecated/wp-dispensary-topicals.php:50
+#: admin/wp-dispensary-products-post-type.php:58
+msgid "Add New"
+msgstr "ახლის დამატება"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:51
+#: admin/deprecated/wp-dispensary-edibles.php:51
+#: admin/deprecated/wp-dispensary-flowers.php:51
+#: admin/deprecated/wp-dispensary-growers.php:51
+#: admin/deprecated/wp-dispensary-prerolls.php:55
+#: admin/deprecated/wp-dispensary-topicals.php:51
+#: admin/wp-dispensary-products-post-type.php:59
+#, php-format
+msgid "New %s"
+msgstr "ახალი %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:52
+#: admin/deprecated/wp-dispensary-edibles.php:52
+#: admin/deprecated/wp-dispensary-flowers.php:52
+#: admin/deprecated/wp-dispensary-growers.php:52
+#: admin/deprecated/wp-dispensary-prerolls.php:56
+#: admin/deprecated/wp-dispensary-topicals.php:52
+#: admin/wp-dispensary-products-post-type.php:60
+#, php-format
+msgid "Edit %s"
+msgstr "ჩასწორება: %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:53
+#: admin/deprecated/wp-dispensary-edibles.php:53
+#: admin/deprecated/wp-dispensary-flowers.php:53
+#: admin/deprecated/wp-dispensary-growers.php:53
+#: admin/deprecated/wp-dispensary-prerolls.php:57
+#: admin/deprecated/wp-dispensary-topicals.php:53
+#: admin/wp-dispensary-products-post-type.php:61
+#, php-format
+msgid "Update %s"
+msgstr "განახლება: %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:54
+#: admin/deprecated/wp-dispensary-edibles.php:54
+#: admin/deprecated/wp-dispensary-flowers.php:54
+#: admin/deprecated/wp-dispensary-growers.php:54
+#: admin/deprecated/wp-dispensary-prerolls.php:58
+#: admin/deprecated/wp-dispensary-topicals.php:54
+#: admin/wp-dispensary-products-post-type.php:62
+#, php-format
+msgid "View %s"
+msgstr "ნახვა %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:55
+#: admin/deprecated/wp-dispensary-edibles.php:55
+#: admin/deprecated/wp-dispensary-flowers.php:55
+#: admin/deprecated/wp-dispensary-growers.php:55
+#: admin/deprecated/wp-dispensary-prerolls.php:59
+#: admin/deprecated/wp-dispensary-topicals.php:55
+#: admin/wp-dispensary-products-post-type.php:63
+#, php-format
+msgid "Search %s"
+msgstr "ძებნა: %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:56
+#: admin/deprecated/wp-dispensary-edibles.php:56
+#: admin/deprecated/wp-dispensary-flowers.php:56
+#: admin/deprecated/wp-dispensary-growers.php:56
+#: admin/deprecated/wp-dispensary-prerolls.php:60
+#: admin/deprecated/wp-dispensary-topicals.php:56
+#: admin/wp-dispensary-products-post-type.php:64
+msgid "Not found"
+msgstr "არ მოიძებნა"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:57
+#: admin/deprecated/wp-dispensary-edibles.php:57
+#: admin/deprecated/wp-dispensary-flowers.php:57
+#: admin/deprecated/wp-dispensary-growers.php:57
+#: admin/deprecated/wp-dispensary-prerolls.php:61
+#: admin/deprecated/wp-dispensary-topicals.php:57
+#: admin/wp-dispensary-products-post-type.php:65
+msgid "Not found in Trash"
+msgstr "არ მოიძებნა წაშლილებში"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:58
+#: admin/deprecated/wp-dispensary-edibles.php:58
+#: admin/deprecated/wp-dispensary-flowers.php:58
+#: admin/deprecated/wp-dispensary-growers.php:58
+#: admin/deprecated/wp-dispensary-prerolls.php:62
+#: admin/deprecated/wp-dispensary-topicals.php:58
+#: admin/wp-dispensary-products-post-type.php:66
+msgid "Featured Image"
+msgstr "გამორჩეული სურათი"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:59
+#: admin/deprecated/wp-dispensary-edibles.php:59
+#: admin/deprecated/wp-dispensary-flowers.php:59
+#: admin/deprecated/wp-dispensary-growers.php:59
+#: admin/deprecated/wp-dispensary-prerolls.php:63
+#: admin/deprecated/wp-dispensary-topicals.php:59
+#: admin/wp-dispensary-products-post-type.php:67
+msgid "Set featured image"
+msgstr "გამორჩეული სურათის დაყენება"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:60
+#: admin/deprecated/wp-dispensary-edibles.php:60
+#: admin/deprecated/wp-dispensary-flowers.php:60
+#: admin/deprecated/wp-dispensary-growers.php:60
+#: admin/deprecated/wp-dispensary-prerolls.php:64
+#: admin/deprecated/wp-dispensary-topicals.php:60
+#: admin/wp-dispensary-products-post-type.php:68
+msgid "Remove featured image"
+msgstr "გამორჩეული სურათის წაშლა"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:61
+#: admin/deprecated/wp-dispensary-edibles.php:61
+#: admin/deprecated/wp-dispensary-flowers.php:61
+#: admin/deprecated/wp-dispensary-growers.php:61
+#: admin/deprecated/wp-dispensary-prerolls.php:65
+#: admin/deprecated/wp-dispensary-topicals.php:61
+#: admin/wp-dispensary-products-post-type.php:69
+msgid "Use as featured image"
+msgstr "გამორჩეულ სურათად გამოყენება"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:62
+#: admin/deprecated/wp-dispensary-edibles.php:62
+#: admin/deprecated/wp-dispensary-flowers.php:62
+#: admin/deprecated/wp-dispensary-growers.php:62
+#: admin/deprecated/wp-dispensary-prerolls.php:66
+#: admin/deprecated/wp-dispensary-topicals.php:62
+#: admin/wp-dispensary-products-post-type.php:70
+#, php-format
+msgid "Insert into %s"
+msgstr "Ჩადეთ %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:63
+#: admin/deprecated/wp-dispensary-edibles.php:63
+#: admin/deprecated/wp-dispensary-flowers.php:63
+#: admin/deprecated/wp-dispensary-growers.php:63
+#: admin/deprecated/wp-dispensary-prerolls.php:67
+#: admin/deprecated/wp-dispensary-topicals.php:63
+#: admin/wp-dispensary-products-post-type.php:71
+#, php-format
+msgid "Uploaded to this %s"
+msgstr "აიტვირთა ამას %s"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:64
+#: admin/deprecated/wp-dispensary-edibles.php:64
+#: admin/deprecated/wp-dispensary-flowers.php:64
+#: admin/deprecated/wp-dispensary-growers.php:64
+#: admin/deprecated/wp-dispensary-prerolls.php:68
+#: admin/deprecated/wp-dispensary-topicals.php:64
+#: admin/wp-dispensary-products-post-type.php:72
+#, php-format
+msgid "%s list"
+msgstr "%s სია"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:65
+#: admin/deprecated/wp-dispensary-edibles.php:65
+#: admin/deprecated/wp-dispensary-flowers.php:65
+#: admin/deprecated/wp-dispensary-growers.php:65
+#: admin/deprecated/wp-dispensary-prerolls.php:69
+#: admin/deprecated/wp-dispensary-topicals.php:65
+#: admin/wp-dispensary-products-post-type.php:73
+#, php-format
+msgid "%s list navigation"
+msgstr "%s სიის ნავიგაცია"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:66
+#: admin/deprecated/wp-dispensary-edibles.php:66
+#: admin/deprecated/wp-dispensary-flowers.php:66
+#: admin/deprecated/wp-dispensary-growers.php:66
+#: admin/deprecated/wp-dispensary-prerolls.php:70
+#: admin/deprecated/wp-dispensary-topicals.php:66
+#: admin/wp-dispensary-products-post-type.php:74
+#, php-format
+msgid "Filter %s list"
+msgstr "%s სიის გაფილტვრა"
+
+#: admin/deprecated/wp-dispensary-concentrates.php:71
+#: admin/deprecated/wp-dispensary-edibles.php:71
+#: admin/deprecated/wp-dispensary-flowers.php:71
+#: admin/deprecated/wp-dispensary-growers.php:71
+#: admin/deprecated/wp-dispensary-prerolls.php:75
+#: admin/deprecated/wp-dispensary-topicals.php:71
+#: admin/wp-dispensary-products-post-type.php:79
+#, php-format
+msgid "Display the %s from your menu"
+msgstr "აჩვენეთ %s თქვენი მენიუდან"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:25
+msgctxt "taxonomy general name"
+msgid "Taxonomies"
+msgstr "ტაქსონომი"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:26
+msgctxt "taxonomy singular name"
+msgid "Taxonomy"
+msgstr "ტაქსონომია"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:27
+msgid "Search Taxonomies"
+msgstr "ტაქსონომიების ძიება"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:28
+msgid "All Taxonomies"
+msgstr "ყველა ტაქსონომია"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:29
+msgid "Parent Taxonomy"
+msgstr "მშობლის ტაქსონომია"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:30
+msgid "Parent Taxonomy:"
+msgstr "მშობლის ტაქსონომია:"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:31
+msgid "Edit Taxonomy"
+msgstr "ტაქსონომიის რედაქტირება"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:32
+msgid "Update Taxonomy"
+msgstr "ტაქსონომიის განახლება"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:33
+msgid "Add New Taxonomy"
+msgstr "დაამატეთ ახალი ტაქსონომია"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:34
+msgid "New Taxonomy Name"
+msgstr "ახალი ტაქსონომიის სახელი"
+
+#: admin/deprecated/wp-dispensary-taxonomies.php:36
+msgid "Taxonomies"
+msgstr "ტაქსონომი"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:24
+msgid "Compound details"
+msgstr "რთული დეტალები"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:56
+#: admin/wp-dispensary-data-output.php:140
+#: admin/wp-dispensary-data-output.php:142
+#: includes/functions/wp-dispensary-product-functions.php:126
+#: includes/functions/wp-dispensary-product-functions.php:170
+#: includes/functions/wp-dispensary-product-functions.php:203
+msgid "THC"
+msgstr "THC"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:60
+#: admin/wp-dispensary-data-output.php:150
+msgid "THCA"
+msgstr "THCA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:64
+#: admin/wp-dispensary-data-output.php:156
+#: admin/wp-dispensary-data-output.php:158
+#: includes/functions/wp-dispensary-product-functions.php:181
+msgid "CBD"
+msgstr "CBD"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:68
+#: admin/wp-dispensary-data-output.php:166
+msgid "CBA"
+msgstr "CBA"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:72
+#: admin/wp-dispensary-data-output.php:172
+msgid "CBN"
+msgstr "CBN"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:76
+#: admin/wp-dispensary-data-output.php:178
+msgid "CBG"
+msgstr "CBG"
+
+#: admin/metaboxes/wpd-metabox-compound-details.php:80
+msgid "Total"
+msgstr "ჯამი"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:26
+msgid "Grow details"
+msgstr "დეტალების გაზრდა"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:53
+#: admin/wp-dispensary-data-output.php:214
+msgid "Origin"
+msgstr "წყარო"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:57
+#: admin/wp-dispensary-data-output.php:220
+msgid "Grow time"
+msgstr "ზრდის დრო"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:61
+#: admin/wp-dispensary-data-output.php:226
+msgid "Yield"
+msgstr "მოსავლიანობა"
+
+#: admin/metaboxes/wpd-metabox-grower-details.php:65
+#: admin/wp-dispensary-data-output.php:232
+msgid "Difficulty"
+msgstr "სირთულე"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:26
+msgid "Product Details"
+msgstr "დეტალური ინფორმაცია"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:73
+#: admin/metaboxes/wpd-metabox-product-details.php:81
+#: admin/metaboxes/wpd-metabox-product-details.php:109
+#: admin/metaboxes/wpd-metabox-product-details.php:121
+#: admin/metaboxes/wpd-metabox-product-details.php:141
+#: admin/metaboxes/wpd-metabox-product-details.php:165
+#: admin/wp-dispensary-data-output.php:134
+msgid "Activation time"
+msgstr "გააქტიურების დრო"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:89
+#: admin/metaboxes/wpd-metabox-product-details.php:157
+#: admin/wp-dispensary-data-output.php:184
+#: includes/functions/wp-dispensary-product-functions.php:214
+msgid "Servings"
+msgstr "სერვირება"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:93
+#: admin/metaboxes/wpd-metabox-product-details.php:149
+#: admin/wp-dispensary-data-output.php:141
+msgid "THC mg per serving"
+msgstr "THC მგ თითო პორციაზე"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:97
+#: admin/metaboxes/wpd-metabox-product-details.php:153
+#: admin/wp-dispensary-data-output.php:157
+msgid "CBD mg per serving"
+msgstr "CBD მგ თითო პორციაზე"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:101
+msgid "mL per serving"
+msgstr "მლ თითო პორციაზე"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:105
+msgid "Net weight (ounces)"
+msgstr "წმინდა წონა (უნცია)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:117
+msgid "Weight (g)"
+msgstr "წონა (გ)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:129
+msgid "Size (oz)"
+msgstr "ზომა (oz)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:133
+msgid "THC mg"
+msgstr "THC მგ"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:137
+msgid "CBD mg"
+msgstr "CBD მგ"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:161
+msgid "Net weight (grams)"
+msgstr "წმინდა წონა (გრამი)"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:173
+#: admin/wp-dispensary-data-output.php:202
+msgid "Seeds per unit"
+msgstr "თესლი ერთეულზე"
+
+#: admin/metaboxes/wpd-metabox-product-details.php:177
+#: admin/wp-dispensary-data-output.php:208
+msgid "Clones per unit"
+msgstr "კლონები ერთეულზე"
+
+#: admin/metaboxes/wpd-metabox-product-prices.php:26
+msgid "Product prices"
+msgstr "პროდუქტის ფასები"
+
+#: admin/metaboxes/wpd-metabox-product-type.php:25
+msgid "Product type"
+msgstr "Პროდუქტის ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:25
+msgctxt "general name"
+msgid "Allergens"
+msgstr "ალერგენები"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:26
+msgctxt "singular name"
+msgid "Allergen"
+msgstr "ალერგენი"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:27
+msgid "Search Allergens"
+msgstr "მოძებნეთ ალერგენები"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:28
+msgid "Popular Allergens"
+msgstr "პოპულარული ალერგენები"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:29
+msgid "All Allergens"
+msgstr "ყველა ალერგენი"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:32
+msgid "Edit Allergen"
+msgstr "ალერგენის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:33
+msgid "Update Allergen"
+msgstr "განაახლეთ ალერგენი"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:34
+msgid "Add New Allergen"
+msgstr "დაამატეთ ახალი ალერგენი"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:35
+msgid "New Allergen Name"
+msgstr "ახალი ალერგენის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:36
+msgid "Separate allergens with commas"
+msgstr "გამოყავით ალერგენები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:37
+msgid "Add or remove allergens"
+msgstr "დაამატეთ ან ამოიღეთ ალერგენები"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:38
+msgid "Choose from the most used allergens"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული ალერგენებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-allergens.php:39
+msgid "No allergens found"
+msgstr "ალერგენები არ არის ნაპოვნი"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:25
+msgctxt "general name"
+msgid "Aromas"
+msgstr "არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:26
+msgctxt "singular name"
+msgid "Aroma"
+msgstr "არომატი"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:27
+msgid "Search Aromas"
+msgstr "მოძებნეთ არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:28
+msgid "Popular Aromas"
+msgstr "პოპულარული არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:29
+msgid "All Aromas"
+msgstr "ყველა არომატი"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:32
+msgid "Edit Aroma"
+msgstr "არომატის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:33
+msgid "Update Aroma"
+msgstr "არომატის განახლება"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:34
+msgid "Add New Aroma"
+msgstr "დაამატეთ ახალი არომატი"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:35
+msgid "New Aroma Name"
+msgstr "ახალი არომატის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:36
+msgid "Separate aromas with commas"
+msgstr "გამოყავით არომატები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:37
+msgid "Add or remove aromas"
+msgstr "დაამატეთ ან ამოიღეთ არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:38
+msgid "Choose from the most used aromas"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული არომატებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-aromas.php:39
+msgid "No aromas found"
+msgstr "არომატები არ არის ნაპოვნი"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:25
+msgctxt "general name"
+msgid "Conditions"
+msgstr "პირობები"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:26
+msgctxt "singular name"
+msgid "Condition"
+msgstr "მდგომარეობა"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:27
+msgid "Search Conditions"
+msgstr "ძებნის პირობები"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:28
+msgid "Popular Conditions"
+msgstr "პოპულარული პირობები"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:29
+msgid "All Conditions"
+msgstr "ყველა პირობა"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:32
+msgid "Edit Condition"
+msgstr "მდგომარეობის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:33
+msgid "Update Condition"
+msgstr "განახლების მდგომარეობა"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:34
+msgid "Add New Condition"
+msgstr "დაამატეთ ახალი მდგომარეობა"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:35
+msgid "New Condition Name"
+msgstr "ახალი მდგომარეობის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:36
+msgid "Separate conditions with commas"
+msgstr "გამოყავით პირობები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:37
+msgid "Add or remove conditions"
+msgstr "პირობების დამატება ან წაშლა"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:38
+msgid "Choose from the most used conditions"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული პირობებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-conditions.php:39
+msgid "No conditions found"
+msgstr "პირობები არ მოიძებნა"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:25
+msgctxt "general name"
+msgid "Effects"
+msgstr "ეფექტები"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:26
+msgctxt "singular name"
+msgid "Effect"
+msgstr "ეფექტი"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:27
+msgid "Search Effects"
+msgstr "ძიების ეფექტები"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:28
+msgid "Popular Effects"
+msgstr "პოპულარული ეფექტები"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:29
+msgid "All Effects"
+msgstr "ყველა ეფექტი"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:32
+msgid "Edit Effect"
+msgstr "ეფექტის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:33
+msgid "Update Effect"
+msgstr "განახლების ეფექტი"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:34
+msgid "Add New Effect"
+msgstr "დაამატეთ ახალი ეფექტი"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:35
+msgid "New Effect Name"
+msgstr "ახალი ეფექტის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:36
+msgid "Separate effects with commas"
+msgstr "გამოყავით ეფექტები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:37
+msgid "Add or remove effects"
+msgstr "ეფექტების დამატება ან წაშლა"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:38
+msgid "Choose from the most used effects"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული ეფექტებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-effects.php:39
+msgid "No effects found"
+msgstr "ეფექტები არ მოიძებნა"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:25
+msgctxt "general name"
+msgid "Flavors"
+msgstr "არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:26
+msgctxt "singular name"
+msgid "Flavor"
+msgstr "Არომატი"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:27
+msgid "Search Flavors"
+msgstr "გემოს ძიება"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:28
+msgid "Popular Flavors"
+msgstr "პოპულარული არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:29
+msgid "All Flavors"
+msgstr "ყველა არომატი"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:32
+msgid "Edit Flavor"
+msgstr "გემოს რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:33
+msgid "Update Flavor"
+msgstr "არომატის განახლება"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:34
+msgid "Add New Flavor"
+msgstr "დაამატეთ ახალი არომატი"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:35
+msgid "New Flavor Name"
+msgstr "ახალი არომატის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:36
+msgid "Separate flavors with commas"
+msgstr "გამოყავით არომატები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:37
+msgid "Add or remove flavors"
+msgstr "დაამატეთ ან ამოიღეთ არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:38
+msgid "Choose from the most used flavors"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული გემოებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-flavors.php:39
+msgid "No flavors found"
+msgstr "არ არის ნაპოვნი არომატები"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:25
+msgctxt "general name"
+msgid "Ingredients"
+msgstr "ინგრედიენტები"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:26
+msgctxt "singular name"
+msgid "Ingredient"
+msgstr "ინგრედიენტი"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:27
+msgid "Search Ingredients"
+msgstr "ძებნა ინგრედიენტები"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:28
+msgid "Popular Ingredients"
+msgstr "პოპულარული ინგრედიენტები"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:29
+msgid "All Ingredients"
+msgstr "ყველა ინგრედიენტი"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:32
+msgid "Edit Ingredient"
+msgstr "ინგრედიენტის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:33
+msgid "Update Ingredient"
+msgstr "ინგრედიენტის განახლება"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:34
+msgid "Add New Ingredient"
+msgstr "დაამატეთ ახალი ინგრედიენტი"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:35
+msgid "New Ingredient Name"
+msgstr "ახალი ინგრედიენტის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:36
+msgid "Separate ingredients with commas"
+msgstr "გამოყავით ინგრედიენტები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:37
+msgid "Add or remove ingredients"
+msgstr "დაამატეთ ან ამოიღეთ ინგრედიენტები"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:38
+msgid "Choose from the most used ingredients"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული ინგრედიენტებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-ingredients.php:39
+msgid "No ingredients found"
+msgstr "ინგრედიენტები არ მოიძებნა"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:25
+msgctxt "taxonomy general name"
+msgid "Shelf Type"
+msgstr "თაროების ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Shelf Type"
+msgstr "თაროების ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:27
+msgid "Search Shelf Types"
+msgstr "თაროების ტიპების ძიება"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:28
+msgid "All Shelf Types"
+msgstr "ყველა ტიპის თარო"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:29
+msgid "Parent Shelf Type"
+msgstr "მშობლის თაროს ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:30
+msgid "Parent Shelf Type:"
+msgstr "მშობლის თაროს ტიპი:"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:31
+msgid "Edit Shelf Type"
+msgstr "შელფის ტიპის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:32
+msgid "Update Shelf Type"
+msgstr "თაროს ტიპის განახლება"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:33
+msgid "Add New Shelf Type"
+msgstr "დაამატეთ ახალი თაროს ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:34
+msgid "New Shelf Type Name"
+msgstr "ახალი თაროს ტიპის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:35
+msgid "No shelf types found"
+msgstr "თაროების ტიპები ვერ მოიძებნა"
+
+#: admin/taxonomies/wpd-taxonomy-shelf_types.php:36
+msgid "Shelf Type"
+msgstr "თაროების ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:25
+msgctxt "taxonomy general name"
+msgid "Strain Type"
+msgstr "შტამის ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:26
+msgctxt "taxonomy singular name"
+msgid "Strain Type"
+msgstr "შტამის ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:27
+msgid "Search Strain Types"
+msgstr "მოძებნეთ შტამების ტიპები"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:28
+msgid "All Strain Types"
+msgstr "ყველა სახის შტამი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:29
+msgid "Parent Strain Type"
+msgstr "მშობელი შტამის ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:30
+msgid "Parent Strain Type:"
+msgstr "მშობელი შტამის ტიპი:"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:31
+msgid "Edit Strain Type"
+msgstr "დაძაბვის ტიპის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:32
+msgid "Update Strain Type"
+msgstr "განაახლეთ შტამის ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:33
+msgid "Add New Strain Type"
+msgstr "დაამატეთ ახალი შტამის ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:34
+msgid "New Strain Type Name"
+msgstr "ახალი შტამის ტიპის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:35
+msgid "No strain types found"
+msgstr "შტამების ტიპები არ მოიძებნა"
+
+#: admin/taxonomies/wpd-taxonomy-strain_types.php:36
+msgid "Strain Type"
+msgstr "შტამის ტიპი"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:25
+msgctxt "general name"
+msgid "Symptoms"
+msgstr "სიმპტომები"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:26
+msgctxt "singular name"
+msgid "Symptom"
+msgstr "სიმპტომი"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:27
+msgid "Search Symptoms"
+msgstr "სიმპტომების ძებნა"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:28
+msgid "Popular Symptoms"
+msgstr "პოპულარული სიმპტომები"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:29
+msgid "All Symptoms"
+msgstr "ყველა სიმპტომი"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:32
+msgid "Edit Symptom"
+msgstr "სიმპტომის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:33
+msgid "Update Symptom"
+msgstr "განახლების სიმპტომი"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:34
+msgid "Add New Symptom"
+msgstr "დაამატეთ ახალი სიმპტომი"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:35
+msgid "New Symptom Name"
+msgstr "ახალი სიმპტომის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:36
+msgid "Separate symptoms with commas"
+msgstr "გამოყავით სიმპტომები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:37
+msgid "Add or remove symptoms"
+msgstr "სიმპტომების დამატება ან ამოღება"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:38
+msgid "Choose from the most used symptoms"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული სიმპტომებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-symptoms.php:39
+msgid "No symptoms found"
+msgstr "სიმპტომები არ არის ნაპოვნი"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:25
+msgctxt "general name"
+msgid "Vendors"
+msgstr "გამყიდველები"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:26
+msgctxt "singular name"
+msgid "Vendor"
+msgstr "მომწოდებელი"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:27
+msgid "Search Vendors"
+msgstr "მოძებნეთ გამყიდველები"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:28
+msgid "Popular Vendors"
+msgstr "პოპულარული გამყიდველები"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:29
+msgid "All Vendors"
+msgstr "ყველა გამყიდველი"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:32
+msgid "Edit Vendor"
+msgstr "გამყიდველის რედაქტირება"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:33
+msgid "Update Vendor"
+msgstr "გამყიდველის განახლება"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:34
+msgid "Add New Vendor"
+msgstr "დაამატეთ ახალი გამყიდველი"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:35
+msgid "New Vendor Name"
+msgstr "ახალი გამყიდველის სახელი"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:36
+msgid "Separate vendors with commas"
+msgstr "გამოყავით გამყიდველები მძიმეებით"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:37
+msgid "Add or remove vendors"
+msgstr "მოვაჭრეების დამატება ან წაშლა"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:38
+msgid "Choose from the most used vendors"
+msgstr "აირჩიეთ ყველაზე ხშირად გამოყენებული გამყიდველებიდან"
+
+#: admin/taxonomies/wpd-taxonomy-vendors.php:39
+msgid "No vendors found"
+msgstr "გამყიდველები ვერ მოიძებნა"
+
+#: admin/widgets/wpd-widget-product-search.php:33
+msgid "Product Search"
+msgstr "პროდუქტის ძებნა"
+
+#: admin/widgets/wpd-widget-product-search.php:35
+msgid "Add a search box"
+msgstr "დაამატეთ საძიებო ველი"
+
+#: admin/widgets/wpd-widget-product-search.php:72
+msgid "Search Products"
+msgstr "პროდუქტის ძიება"
+
+#: admin/widgets/wpd-widget-product-search.php:74
+msgid "Search"
+msgstr "ძებნა"
+
+#: admin/widgets/wpd-widget-products.php:33
+msgid "Dispensary Products"
+msgstr "დისპანსერული პროდუქტები"
+
+#: admin/widgets/wpd-widget-products.php:35
+msgid "Your WP Dispensary products"
+msgstr "თქვენი WP დისპანსერული პროდუქტები"
+
+#: admin/widgets/wpd-widget-products.php:279
+msgid "Menu item type:"
+msgstr "მენიუს ელემენტის ტიპი:"
+
+#: admin/widgets/wpd-widget-products.php:281
+msgid "All types"
+msgstr "ყველა ტიპი"
+
+#: admin/widgets/wpd-widget-products.php:282
+#: includes/functions/deprecated-functions.php:26
+#: includes/functions/wp-dispensary-general-functions.php:51
+#: includes/functions/wp-dispensary-general-functions.php:75
+#: includes/functions/wp-dispensary-general-functions.php:99
+msgid "Flowers"
+msgstr "ყვავილები"
+
+#: admin/widgets/wpd-widget-products.php:283
+#: includes/functions/deprecated-functions.php:27
+#: includes/functions/wp-dispensary-general-functions.php:52
+#: includes/functions/wp-dispensary-general-functions.php:76
+#: includes/functions/wp-dispensary-general-functions.php:100
+msgid "Concentrates"
+msgstr "კონცენტრატები"
+
+#: admin/widgets/wpd-widget-products.php:284
+#: includes/functions/deprecated-functions.php:29
+#: includes/functions/wp-dispensary-general-functions.php:54
+#: includes/functions/wp-dispensary-general-functions.php:78
+#: includes/functions/wp-dispensary-general-functions.php:102
+msgid "Edibles"
+msgstr "საკვები პროდუქტები"
+
+#: admin/widgets/wpd-widget-products.php:285
+#: includes/functions/deprecated-functions.php:30
+#: includes/functions/wp-dispensary-general-functions.php:55
+#: includes/functions/wp-dispensary-general-functions.php:79
+#: includes/functions/wp-dispensary-general-functions.php:103
+msgid "Pre-rolls"
+msgstr "წინასწარ რულონები"
+
+#: admin/widgets/wpd-widget-products.php:286
+#: includes/functions/deprecated-functions.php:31
+#: includes/functions/wp-dispensary-general-functions.php:56
+#: includes/functions/wp-dispensary-general-functions.php:80
+#: includes/functions/wp-dispensary-general-functions.php:104
+msgid "Topicals"
+msgstr "თემატიკა"
+
+#: admin/widgets/wpd-widget-products.php:287
+#: includes/functions/deprecated-functions.php:32
+#: includes/functions/wp-dispensary-general-functions.php:57
+#: includes/functions/wp-dispensary-general-functions.php:81
+#: includes/functions/wp-dispensary-general-functions.php:105
+msgid "Growers"
+msgstr "მწარმოებლები"
+
+#: admin/widgets/wpd-widget-products.php:288
+#: includes/functions/deprecated-functions.php:33
+#: includes/functions/wp-dispensary-general-functions.php:58
+#: includes/functions/wp-dispensary-general-functions.php:82
+#: includes/functions/wp-dispensary-general-functions.php:106
+msgid "Gear"
+msgstr "მექანიზმი"
+
+#: admin/widgets/wpd-widget-products.php:289
+#: includes/functions/deprecated-functions.php:28
+#: includes/functions/wp-dispensary-general-functions.php:53
+#: includes/functions/wp-dispensary-general-functions.php:77
+#: includes/functions/wp-dispensary-general-functions.php:101
+msgid "Tinctures"
+msgstr "ნაყენები"
+
+#: admin/widgets/wpd-widget-products.php:294
+msgid "Amount of items to show:"
+msgstr "საჩვენებელი ნივთების რაოდენობა:"
+
+#: admin/widgets/wpd-widget-products.php:305
+msgid "Display item name?"
+msgstr "საქონლის სახელის ჩვენება?"
+
+#: admin/widgets/wpd-widget-products.php:310
+msgid "Display item price?"
+msgstr "ნივთის ფასის ჩვენება?"
+
+#: admin/widgets/wpd-widget-products.php:315
+msgid "Display products in carousel?"
+msgstr "პროდუქტების ჩვენება კარუსელში?"
+
+#: admin/wp-dispensary-admin-screens.php:177
+msgid "All Types"
+msgstr "Ყველა სახის"
+
+#: admin/wp-dispensary-admin-settings.php:103
+#: admin/wp-dispensary-admin-settings.php:324
+#: admin/wp-dispensary-admin-settings.php:386
+#: admin/wp-dispensary-admin-settings.php:482
+msgid "Display"
+msgstr "ჩვენება"
+
+#: admin/wp-dispensary-admin-settings.php:111
+#: admin/wp-dispensary-admin-settings.php:518
+msgid "General"
+msgstr "მთავარი"
+
+#: admin/wp-dispensary-admin-settings.php:121
+msgid "Payments"
+msgstr "გადახდები"
+
+#: admin/wp-dispensary-admin-settings.php:129
+#: admin/wp-dispensary-admin-settings.php:256
+msgid "Customers"
+msgstr "მომხმარებლები"
+
+#: admin/wp-dispensary-admin-settings.php:137
+msgid "Pages"
+msgstr "გვერდები"
+
+#: admin/wp-dispensary-admin-settings.php:148
+msgid "Drivers"
+msgstr "მძღოლები"
+
+#: admin/wp-dispensary-admin-settings.php:157
+msgid "Advanced"
+msgstr "Მოწინავე"
+
+#: admin/wp-dispensary-admin-settings.php:171
+msgid "Advanced Settings"
+msgstr "გაფართოებული პარამეტრები"
+
+#: admin/wp-dispensary-admin-settings.php:185
+msgid "Cookie lifetime"
+msgstr "ქუქი-ფაილის სიცოცხლე"
+
+#: admin/wp-dispensary-admin-settings.php:186
+msgid ""
+"Set the amount of time the shopping cart cookie gets saved to your visitors "
+"computer"
+msgstr ""
+"დააყენეთ კალათის ქუქი-ფაილის შენახვის დრო თქვენი ვიზიტორების კომპიუტერში"
+
+#: admin/wp-dispensary-admin-settings.php:188
+msgid "1/2 hour"
+msgstr "1/2 საათი"
+
+#: admin/wp-dispensary-admin-settings.php:189
+msgid "1 hour"
+msgstr "1 საათი"
+
+#: admin/wp-dispensary-admin-settings.php:190
+msgid "3 hours"
+msgstr "3 საათი"
+
+#: admin/wp-dispensary-admin-settings.php:191
+msgid "6 hours"
+msgstr "6 საათი"
+
+#: admin/wp-dispensary-admin-settings.php:192
+msgid "12 hours"
+msgstr "12 საათი"
+
+#: admin/wp-dispensary-admin-settings.php:193
+msgid "24 hours"
+msgstr "24 საათი"
+
+#: admin/wp-dispensary-admin-settings.php:208
+msgid "Export Data"
+msgstr "მონაცემების ექსპორტი"
+
+#: admin/wp-dispensary-admin-settings.php:238
+msgid "Orders"
+msgstr "შეკვეთები"
+
+#: admin/wp-dispensary-admin-settings.php:275
+msgid "Prices table"
+msgstr "ფასების ცხრილი"
+
+#: admin/wp-dispensary-admin-settings.php:290
+#: admin/wp-dispensary-admin-settings.php:448
+msgid "Choose the title you would like used"
+msgstr "აირჩიეთ სათაური, რომლის გამოყენებაც გსურთ"
+
+#: admin/wp-dispensary-admin-settings.php:293
+#: includes/functions/wp-dispensary-pricing-functions.php:409
+msgid "Donations"
+msgstr "შემოწირულობები"
+
+#: admin/wp-dispensary-admin-settings.php:309
+#: admin/wp-dispensary-admin-settings.php:467
+msgid "or add a custom title"
+msgstr "ან დაამატეთ მორგებული სათაური"
+
+#: admin/wp-dispensary-admin-settings.php:325
+msgid "Where should the pricing display on single menu items?"
+msgstr "სად უნდა იყოს ნაჩვენები ფასები მენიუს ცალკეულ ელემენტებზე?"
+
+#: admin/wp-dispensary-admin-settings.php:327
+#: admin/wp-dispensary-admin-settings.php:389
+#: admin/wp-dispensary-admin-settings.php:485
+msgid "Above Content"
+msgstr "შინაარსის ზემოთ"
+
+#: admin/wp-dispensary-admin-settings.php:328
+#: admin/wp-dispensary-admin-settings.php:390
+#: admin/wp-dispensary-admin-settings.php:486
+msgid "Below Content"
+msgstr "შინაარსის ქვემოთ"
+
+#: admin/wp-dispensary-admin-settings.php:344
+msgid "Remove the price table from data output"
+msgstr "ამოიღეთ ფასების ცხრილი მონაცემების გამომავალიდან"
+
+#: admin/wp-dispensary-admin-settings.php:372
+msgid "Compounds table"
+msgstr "ნაერთების ცხრილი"
+
+#: admin/wp-dispensary-admin-settings.php:387
+msgid "Where should the compounds display on single menu items?"
+msgstr "სად უნდა იყოს ნაჩვენები ნაერთები მენიუს ცალკეულ ელემენტებზე?"
+
+#: admin/wp-dispensary-admin-settings.php:406
+msgid "Remove the compounds table from data output"
+msgstr "ამოიღეთ ნაერთების ცხრილი მონაცემებიდან"
+
+#: admin/wp-dispensary-admin-settings.php:433
+msgid "Details table"
+msgstr "დეტალების ცხრილი"
+
+#: admin/wp-dispensary-admin-settings.php:450
+#: includes/functions/wp-dispensary-general-functions.php:33
+#: includes/functions/wp-dispensary-settings-functions.php:101
+msgid "Details"
+msgstr "დეტალები"
+
+#: admin/wp-dispensary-admin-settings.php:451
+#: includes/functions/wp-dispensary-general-functions.php:31
+msgid "Information"
+msgstr "ინფორმაცია"
+
+#: admin/wp-dispensary-admin-settings.php:483
+msgid "Where should the details display on single menu items?"
+msgstr "სად უნდა იყოს ნაჩვენები დეტალები მენიუს ცალკეულ ელემენტებზე?"
+
+#: admin/wp-dispensary-admin-settings.php:502
+msgid "Remove the details table from data output"
+msgstr "ამოიღეთ დეტალების ცხრილი მონაცემთა გამოტანიდან"
+
+#: admin/wp-dispensary-admin-settings.php:533
+msgid "Currency"
+msgstr "ვალუტა"
+
+#: admin/wp-dispensary-admin-settings.php:534
+msgid "Select the currency symbol you would like to use"
+msgstr "აირჩიეთ ვალუტის სიმბოლო, რომლის გამოყენებაც გსურთ"
+
+#: admin/wp-dispensary-admin-settings.php:551
+msgid "Taxes"
+msgstr "გადასახადები"
+
+#: admin/wp-dispensary-admin-settings.php:565
+msgid "Sales tax"
+msgstr "Გაყიდვების საგადასახადო"
+
+#: admin/wp-dispensary-admin-settings.php:566
+msgid "Apply sales tax to orders (%)"
+msgstr "შეკვეთებზე გაყიდვების გადასახადის გამოყენება (%)"
+
+#: admin/wp-dispensary-admin-settings.php:567
+msgid "6"
+msgstr "6"
+
+#: admin/wp-dispensary-admin-settings.php:581
+msgid "Excise tax"
+msgstr "აქციზის გადასახადი"
+
+#: admin/wp-dispensary-admin-settings.php:582
+msgid "Apply excise tax to orders (%)"
+msgstr "აქციზის გამოყენება შეკვეთებზე (%)"
+
+#: admin/wp-dispensary-admin-settings.php:583
+msgid "10"
+msgstr "10"
+
+#: admin/wp-dispensary-admin-settings.php:597
+msgid "Cart"
+msgstr "კალათა"
+
+#: admin/wp-dispensary-admin-settings.php:611
+msgid "Require login to shop"
+msgstr "მაღაზიისთვის საჭიროა შესვლა"
+
+#: admin/wp-dispensary-admin-settings.php:612
+msgid "Hide the add to cart functionality for non-logged in users"
+msgstr "კალათაში დამატების ფუნქციის დამალვა არა შესული მომხმარებლებისთვის"
+
+#: admin/wp-dispensary-admin-settings.php:626
+msgid "Checkout"
+msgstr "შეკვეთის გაფორმება"
+
+#: admin/wp-dispensary-admin-settings.php:640
+msgid "Minimum order"
+msgstr "მინიმალური შეკვეთა"
+
+#: admin/wp-dispensary-admin-settings.php:641
+msgid "Require a minimum order amount before checkout"
+msgstr "მოითხოვეთ მინიმალური შეკვეთის თანხა გადახდამდე"
+
+#: admin/wp-dispensary-admin-settings.php:642
+msgid "ex: 50"
+msgstr "მაგალითი: 50"
+
+#: admin/wp-dispensary-admin-settings.php:658
+msgid "Coupons"
+msgstr "კუპონები"
+
+#: admin/wp-dispensary-admin-settings.php:659
+msgid "Allow customers to apply a coupon to their order"
+msgstr "მიეცით საშუალება მომხმარებლებს გამოიყენონ კუპონი თავიანთ შეკვეთაზე"
+
+#: admin/wp-dispensary-admin-settings.php:670
+msgid "Cash on delivery"
+msgstr "ნაღდი ანგარიშსწორება"
+
+#: admin/wp-dispensary-admin-settings.php:671
+msgid "Pay on pickup"
+msgstr "გადახდა პიკაპის დროს"
+
+#: admin/wp-dispensary-admin-settings.php:672
+msgid "Ground shipping"
+msgstr "სახმელეთო გადაზიდვა"
+
+#: admin/wp-dispensary-admin-settings.php:703
+msgid "Enable/Disable"
+msgstr "Ჩართვა გამორთვა"
+
+#: admin/wp-dispensary-admin-settings.php:704
+msgid "Enable "
+msgstr "ჩართვა "
+
+#: admin/wp-dispensary-admin-settings.php:718
+msgid "Charge"
+msgstr "დატენვა"
+
+#: admin/wp-dispensary-admin-settings.php:719
+msgid "0"
+msgstr "0"
+
+#: admin/wp-dispensary-admin-settings.php:735
+msgid "Instructions"
+msgstr "ინსტრუქციები"
+
+#: admin/wp-dispensary-admin-settings.php:736
+msgid "Let the user know how to send payment for the order."
+msgstr "აცნობეთ მომხმარებელს, თუ როგორ უნდა გაგზავნოს გადახდა შეკვეთისთვის."
+
+#: admin/wp-dispensary-admin-settings.php:750
+msgid "Customer Registration"
+msgstr "მომხმარებელთა რეგისტრაცია"
+
+#: admin/wp-dispensary-admin-settings.php:757
+msgid "Select a page"
+msgstr "აირჩიეთ გვერდი"
+
+#: admin/wp-dispensary-admin-settings.php:759
+msgid "No pages found"
+msgstr "გვერდები ვერ მოიძებნა"
+
+#: admin/wp-dispensary-admin-settings.php:772
+msgid "Redirect after registration"
+msgstr "გადამისამართება რეგისტრაციის შემდეგ"
+
+#: admin/wp-dispensary-admin-settings.php:773
+msgid "Choose the page customers will be redirected to when registering."
+msgstr ""
+"აირჩიეთ გვერდი, რომელზეც მომხმარებლები გადამისამართდებიან რეგისტრაციისას."
+
+#: admin/wp-dispensary-admin-settings.php:788
+msgid "Customer Verification"
+msgstr "მომხმარებლის დადასტურება"
+
+#: admin/wp-dispensary-admin-settings.php:802
+msgid "Drivers license / Valid ID"
+msgstr "მართვის მოწმობა / მოქმედი ID"
+
+#: admin/wp-dispensary-admin-settings.php:803
+msgid "Hide the drivers license upload from account details"
+msgstr "დამალეთ მართვის მოწმობის ატვირთვა ანგარიშის დეტალებიდან"
+
+#: admin/wp-dispensary-admin-settings.php:817
+msgid "Doctor recommendation"
+msgstr "ექიმის რეკომენდაცია"
+
+#: admin/wp-dispensary-admin-settings.php:818
+msgid "Hide the doctor recommendation upload from account details"
+msgstr "დამალეთ ექიმის რეკომენდაციის ატვირთვა ანგარიშის დეტალებიდან"
+
+#: admin/wp-dispensary-admin-settings.php:832
+msgid "Recommendation number"
+msgstr "რეკომენდაციის ნომერი"
+
+#: admin/wp-dispensary-admin-settings.php:833
+msgid "Hide the recommendation number from account details"
+msgstr "დამალეთ რეკომენდაციის ნომერი ანგარიშის დეტალებიდან"
+
+#: admin/wp-dispensary-admin-settings.php:847
+msgid "Expiration date"
+msgstr "ვადის გასვლის თარიღი"
+
+#: admin/wp-dispensary-admin-settings.php:848
+msgid "Hide the expiration date from account details"
+msgstr "დამალეთ ვადის გასვლის თარიღი ანგარიშის დეტალებიდან"
+
+#: admin/wp-dispensary-admin-settings.php:862
+msgid "Page Setup"
+msgstr "გვერდის დაყენება"
+
+#: admin/wp-dispensary-admin-settings.php:876
+msgid "Menu page"
+msgstr "მენიუს გვერდი"
+
+#: admin/wp-dispensary-admin-settings.php:877
+msgid "Page contents [wpd_menu]"
+msgstr "გვერდის შინაარსი [wpd_menu]"
+
+#: admin/wp-dispensary-admin-settings.php:892
+msgid "Cart page"
+msgstr "კალათის გვერდი"
+
+#: admin/wp-dispensary-admin-settings.php:893
+msgid "Page contents [wpd_cart]"
+msgstr "გვერდის შინაარსი [wpd_cart]"
+
+#: admin/wp-dispensary-admin-settings.php:908
+msgid "Checkout page"
+msgstr "შეკვეთის გაფორმების გვერდი"
+
+#: admin/wp-dispensary-admin-settings.php:909
+msgid "Page contents [wpd_checkout]"
+msgstr "გვერდის შინაარსი [wpd_checkout]"
+
+#: admin/wp-dispensary-admin-settings.php:924
+msgid "Account page"
+msgstr "ანგარიშის გვერდი"
+
+#: admin/wp-dispensary-admin-settings.php:925
+msgid "Page contents [wpd_account]"
+msgstr "გვერდის შინაარსი [wpd_account]"
+
+#: admin/wp-dispensary-admin-settings.php:940
+msgid "Dispatch phone number"
+msgstr "ტელეფონის ნომრის გაგზავნა"
+
+#: admin/wp-dispensary-admin-settings.php:941
+msgid "Add the phone number to your dispatch center"
+msgstr "დაამატეთ ტელეფონის ნომერი თქვენს სადისპეტჩერო ცენტრში"
+
+#: admin/wp-dispensary-admin-settings.php:956
+msgid "Google Maps API key"
+msgstr "Google Maps API გასაღები"
+
+#: admin/wp-dispensary-admin-settings.php:957
+msgid "Add a map to the order directions for your drivers"
+msgstr "დაამატეთ რუკა თქვენი მძღოლების შეკვეთის მითითებებს"
+
+#: admin/wp-dispensary-admin-settings.php:973
+msgid "Enable Google Maps geocode for latitude and longitude"
+msgstr "ჩართეთ Google Maps გეოკოდი გრძედისა და გრძედისთვის"
+
+#: admin/wp-dispensary-data-output.php:75
+msgid "Shelf"
+msgstr "თარო"
+
+#: admin/wp-dispensary-data-output.php:80
+msgid "Strain"
+msgstr "დაძაბულობა"
+
+#: admin/wp-dispensary-data-output.php:85
+msgid "Vendor"
+msgstr "მომწოდებელი"
+
+#: admin/wp-dispensary-data-output.php:190
+msgid "Net weight"
+msgstr "Წონა ნეტო"
+
+#: admin/wp-dispensary-data-output.php:196
+#: includes/functions/wp-dispensary-product-functions.php:159
+msgid "Size"
+msgstr "ზომა"
+
+#: admin/wp-dispensary-data-output.php:238
+#: includes/functions/wp-dispensary-product-functions.php:192
+msgid "Weight"
+msgstr "წონა"
+
+#: admin/wp-dispensary-data-output.php:245
+#: admin/wp-dispensary-data-output.php:247
+msgid "Flower"
+msgstr "ყვავილი"
+
+#: admin/wp-dispensary-data-output.php:349
+msgid "TOTAL"
+msgstr "სულ"
+
+#: admin/wp-dispensary-data-output.php:356
+msgid "Compounds"
+msgstr "ნაერთები"
+
+#: admin/wp-dispensary-data-output.php:406
+#: admin/wp-dispensary-data-output.php:407
+msgid "Price each:"
+msgstr "თითოეულის ფასი:"
+
+#: admin/wp-dispensary-data-output.php:414
+msgid "per pack:"
+msgstr "per pack:"
+
+#: admin/wp-dispensary-plugin-upgrade.php:172
+msgid "WP Dispensary database update required"
+msgstr "საჭიროა WP Dispensary მონაცემთა ბაზის განახლება"
+
+#: admin/wp-dispensary-plugin-upgrade.php:173
+msgid ""
+"WP Dispensary has been updated! To keep things running smoothly, we have to "
+"update your database to the newest version. The database update process may "
+"take a little while, so please be patient."
+msgstr ""
+"WP დისპანსერი განახლებულია! იმისათვის, რომ ყველაფერი შეუფერხებლად იმუშაოს, "
+"ჩვენ უნდა განვაახლოთ თქვენი მონაცემთა ბაზა უახლესი ვერსიით. მონაცემთა ბაზის "
+"განახლების პროცესს შეიძლება ცოტა დრო დასჭირდეს, ამიტომ გთხოვთ მოთმინებით "
+"იმოქმედოთ."
+
+#: admin/wp-dispensary-plugin-upgrade.php:174
+msgid "Upgrade Now"
+msgstr "განაახლეთ ახლავე"
+
+#: includes/class-wp-dispensary-activator.php:81
+msgid "Menu"
+msgstr "მენიუ"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:407
+msgid "Donation"
+msgstr "შემოწირულობა"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:413
+msgid "Price"
+msgstr "ფასი"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1144
+#: includes/functions/wp-dispensary-pricing-functions.php:1168
+msgid "Price per unit"
+msgstr "ფასი ერთეულზე"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1145
+#: includes/functions/wp-dispensary-pricing-functions.php:1169
+msgid "Price per pack"
+msgstr "ფასი შეფუთვაზე"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1146
+#: includes/functions/wp-dispensary-pricing-functions.php:1170
+msgid "Units per pack"
+msgstr "ერთეული თითო პაკეტში"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1153
+#: includes/functions/wp-dispensary-pricing-functions.php:1172
+msgid "1 g"
+msgstr "1 გ"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1154
+#: includes/functions/wp-dispensary-pricing-functions.php:1173
+msgid "2 g"
+msgstr "2 გ"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1155
+msgid "1/8 oz"
+msgstr "1/8 უნცია"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1156
+msgid "5 g"
+msgstr "5 გ"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1157
+msgid "1/4 oz"
+msgstr "1/4 უნცია"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1158
+msgid "1/2 oz"
+msgstr "1/2 უნცია"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1159
+msgid "1 oz"
+msgstr "1 უნცია"
+
+#: includes/functions/wp-dispensary-pricing-functions.php:1171
+msgid "1/2 gram"
+msgstr "1/2 გრამი"
+
+#: includes/functions/wp-dispensary-product-functions.php:42
+#, php-format
+msgid "Product updated. <a href=\"%s\">View product</a>"
+msgstr "პროდუქტი განახლებულია. <a href=\"%s\">პროდუქტის ნახვა</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:43
+#: includes/functions/wp-dispensary-product-functions.php:45
+msgid "Product updated."
+msgstr "პროდუქცია განახლდა."
+
+#: includes/functions/wp-dispensary-product-functions.php:44
+msgid "Product deleted."
+msgstr "პროდუქტი წაშლილია."
+
+#: includes/functions/wp-dispensary-product-functions.php:46
+#, php-format
+msgid "Product restored to revision from %s"
+msgstr "პროდუქტი აღდგენილია %s დან"
+
+#: includes/functions/wp-dispensary-product-functions.php:47
+#, php-format
+msgid "Product published. <a href=\"%s\">View product</a>"
+msgstr "პროდუქტი გამოქვეყნდა. <a href=\"%s\">პროდუქტის ნახვა</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:48
+msgid "Product saved."
+msgstr "პროდუქტი შენახულია."
+
+#: includes/functions/wp-dispensary-product-functions.php:49
+#, php-format
+msgid "Product submitted. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr ""
+"პროდუქტი შეტანილია. <a target=\"_blank\" href=\"%s\">წინასწარი დათვალიერება</"
+"a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:50
+#, php-format
+msgid ""
+"Product scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Preview product</a>"
+msgstr ""
+"პროდუქტი დაგეგმილია: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
+"\">პროდუქტის გადახედვა</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:51
+msgid "M j, Y @ G:i"
+msgstr "d.m.Y в H:i"
+
+#: includes/functions/wp-dispensary-product-functions.php:52
+#, php-format
+msgid ""
+"Product draft updated. <a target=\"_blank\" href=\"%s\">Preview product</a>"
+msgstr ""
+"პროდუქტის მონახაზი განახლდა. <a target=\"_blank\" href=\"%s\">წინასწარი "
+"დათვალიერება</a>"
+
+#: includes/functions/wp-dispensary-product-functions.php:137
+msgid "Seeds"
+msgstr "თესლი"
+
+#: includes/functions/wp-dispensary-product-functions.php:148
+msgid "Clones"
+msgstr "კლონები"
+
+#: wp-dispensary.php:102
+msgid "Go Pro"
+msgstr "Go Pro"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.wpdispensary.com"
+msgstr "https://www.wpdispensary.com"
+
+#. Description of the plugin/theme
+msgid ""
+"The complete marijuana menu solution for dispensaries and delivery services"
+msgstr ""
+"მარიხუანას მენიუს სრული გადაწყვეტა დისპანსერებისა და მიტანის სერვისებისთვის"
