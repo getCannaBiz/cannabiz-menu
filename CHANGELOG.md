@@ -1,5 +1,81 @@
 # Changelog
 
+## 4.0
+*   Added Spanish language translation in `languages/wp-dispensary-es_ES.po`
+*   Added Italian language translation in `languages/wp-dispensary-it_IT.po`
+*   Added German language translation in `languages/wp-dispensary-de_DE.po`
+*   Added French language translation in `languages/wp-dispensary-fr_FR.po`
+*   Added Croatian language translation in `languages/wp-dispensary-hr_HR.po`
+*   Added Czech language translation in `languages/wp-dispensary-cs_CZ.po`
+*   Added Georgian language translation in `languages/wp-dispensary-ka_GE.po`
+*   Added Hebrew language translation in `languages/wp-dispensary-he_IL.po`
+*   Added Maltese language translation in `languages/wp-dispensary-mt_MT.po`
+*   Added Dutch language translation in `languages/wp-dispensary-nl_NL.po`
+*   Added new `Products Search` widget in `admin/widgets/wpd-widget-product-search.php`
+*   Added new `Products` post type in `admin/wp-dispensary-products-post-type.php`
+*   Added new `wpd_categories` taxonomy for posts in the Products post type in `admin/taxonomies/wpd-taxonomy-categories.php`
+*   Added Products submenu item in admin dashboard in `admin/class-wp-dispensary-admin-settings.php`
+*   Added `wpd_concentrates_prices_array` helper function in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Added products post type permalink settings in `admin/class-wp-dispensary-permalink-settings.php`
+*   Added new `product_type` metadata to each product in `admin/metaboxes/wpd-metabox-product-type.php`
+*   Added new `wpd_product_schema` helper function in `includes/functions/wp-dispensary-product-functions.php`
+*   Added `Tinctures` and `Edibles` to the `product_type` metadata options in `admin/wp-dispensary-helper-functions.php`
+*   Added new `wpd_product_type_display_name` helper function in `admin/wp-dispensary-helper-functions.php`
+*   Added new `wpd_tinctures_prices_simple` helper function in `admin/wp-dispensary-helper-functions.php`
+*   Added new `wpd_gear_prices_simple` helper function in `admin/wp-dispensary-helper-functions.php`
+*   Added new `get_wpd_tinctures_prices_simple` helper function in `admin/wp-dispensary-helper-functions.php`
+*   Added new `get_wpd_gear_prices_simple` helper function in `admin/wp-dispensary-helper-functions.php`
+*   Added new `wpd_compound_type` helper function in `admin/wp-dispensary-helper-functions.php`
+*   Added new `wpd_product_prices helper function` helper function in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Added new `wpd_product_types` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `wpd_product_types_simple` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `wp_dispensary_custom_image_sizes` filter and helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `wpd_product_prices_array` helper function in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Added new `wpd_compound_list` helper function in `includes/functions/wp-dispensary-product-functions.php`
+*   Added new `get_wpd_vendors_details` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `get_wpd_strain_types_details` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `get_wpd_shelf_types_details` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `wpd_product_type_display_name_to_slug` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `get_wpd_product_type_item_count` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `get_wpd_product_type_details` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `get_wpd_product_types_details` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added new `wpd_csv_export_data_row` filter in `admin/class-wp-dispensary-csv-export.php`
+*   Added new `wpd_compounds_table_placement_options` filter in `admin/wp-dispensary-admin-settings.php`
+*   Added new `WPD_Products` class in `includes/class-wp-dispensary-products.php`
+*   Added new `wpd/v1` REST API route to the WP REST API in `admin/wp-dispensary-rest-api.php`
+*   Added `product_type` jQuery to show/hide metaboxes properly in `admin/js/wp-dispensary-admin.js`
+*   Added `convert_post_types`, `convert_metadata`, and `convert_taxonomies` helper function for v4.0 upgrade in `includes/functions/wp-dispensary-helper-functions.php`
+*   Added new Products Export option to the WP Dispensary admin settings in `admin/class-wp-dispensary-csv-export.php`
+*   Added parameter to `get_wpd_product_image` function that will link/unlink images in `includes/functions/wp-dispensary-product-functions.php`
+*   Added logo field to vendors taxonomy in `admin/class-wp-dispensary-vendors-taxonomy-fields.php`
+*   Added product type filter to admin all products screen in `admin/wp-dispensary-admin-screens.php`
+*   Added `Activation time` to product details in multiple files throughout the plugin
+*   Deprecated `flowers_category`, `concentrates_category`, `edibles_category`, `topicals_category`, and `growers_category`,  taxonomies
+*   Deprecated `Flowers`, `Concentrates`, `Edibles`, `Topicals`, `Pre-rolls`, and `Growers` post types
+*   Deprecated `Flowers`, `Concentrates`, `Edibles`, `Topicals`, `Pre-rolls`, and `Growers` widgets
+*   Deprecated `wpd-flowers`, `wpd-concentrates`, `wpd-edibles`, `wpd-topicals`, `wpd-prerolls`, `wpd-growers`, and `wpd-carousel` shortcodes
+*   Updated `wpd_menu` shortcode output styles in `public/assets/css/wp-dispensary-public.css`
+*   Updated concentrate prices variable to remove PHP notices in `admin/wp-dispensary-data-output.php`
+*   Updated `wpd_menu` shortcode to include an option to display products in a carousel in `admin/wp-dispensary-shortcodes.php`
+*   Updated `wpd_menu` div wrappers and class names for each product type in `admin/wp-dispensary-shortcodes.php`
+*   Updated shortcode output for pre-rolls product type in `admin/wp-dispensary-shortcodes.php`
+*   Updated REST API data for Products post type in `admin/wp-dispensary-rest-api.php`
+*   Updated admin 'Products' screen styles in `admin/css/wp-dispensary-admin.css`
+*   Updated admin screen styles for multiple taxonomies and Orders in `admin/css/wp-dispensary-admin.css`
+*   Updated body classes for WPD menu and products in `public/class-wp-dispensary-public.php`
+*   Updated slick.js to v1.8.1 and cleaned up additional JS in `public/js/wp-dispensary-public.js`
+*   Updated products archive to display all products in `admin/wp-dispensary-admin-screens.php`
+*   Updated `get_wpd_product_details` function's `$wrapper` arg default in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated `patient` references to `customers` in multiple file throughout the plugin
+*   Updated pricing metabox keys to use a new name structure in multiple file throughout the plugin
+*   Updated taxonomies to use a new name structure in multiple file throughout the plugin
+*   Updated product data metabox keys to use a new name structure in multiple file throughout the plugin
+*   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
+*   Bugfix to keep WPD `admin_menu` open when various taxonomies are open in `admin/class-wp-dispensary-admin-settings.php`
+*   Bugfix for admin settings redirect page array if no pages are found in `admin/wp-dispensary-admin-settings.php`
+*   Bugfix for content output of single products in `admin/wp-dispensary-data-output.php` 
+*   General code cleanup throughout various files in the plugin
+
 ## 3.3.5
 *   Added default image for the Styles add-on in `public/images/wpd-styles-list-image.jpg`
 *   Added empty var to remove WP Debug notice in `admin/wp-dispensary-data-output.php`
