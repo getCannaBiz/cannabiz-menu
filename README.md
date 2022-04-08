@@ -44,6 +44,8 @@ WP Dispensary has the following language translations included:
 *   Maltese
 *   Dutch
 
+Interested in having WP Dispensary translated into your language? Open an issue and let us know :+1:
+
 ## Extending WP Dispensary
 
 With our add-on's you can extend the functionality of the core WP Dispensary plugin, giving your website a competitive edge in the growing medical marijuana market.
