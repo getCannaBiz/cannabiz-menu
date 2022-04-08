@@ -3,7 +3,7 @@
 
 ![Cannabis Dispensary WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release: [v3.3.5](http://downloads.wordpress.org/plugin/wp-dispensary.zip?utm_source=github&utm_medium=button&utm_campaign=Github).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release: [v4.0.0](https://github.com/wpdispensary/wp-dispensary/releases/tag/v4.0).
 
 :point_right: **[View Demo](https://demo.wpdispensary.com/)**
 
@@ -28,6 +28,21 @@ When you install and activate WP Dispensary, a new "Menu" page is automatically 
 Along with full integration for WP Dispensary and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
 
 You can define your brand style through the theme Customizer by choosing the right colors and fonts, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
+
+## Translated into multiple languages
+
+WP Dispensary has the following language translations included:
+
+*   Spanish
+*   Italian
+*   German
+*   French
+*   Croatian
+*   Czech
+*   Georgian
+*   Hebrew
+*   Maltese
+*   Dutch
 
 ## Extending WP Dispensary
 
