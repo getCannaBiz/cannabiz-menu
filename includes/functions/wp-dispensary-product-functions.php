@@ -39,17 +39,17 @@ function wpd_product_updated_messages( $messages ) {
   if ( 'products' === get_post_meta( $product_id, 'product_type', true ) ) {
       $messages['post'] = array(
           0 => '', // Unused. Messages start at index 1.
-          1 => sprintf( __( 'Product updated. <a href="%s">View product</a>' ), esc_url( get_permalink( $product_id ) ) ),
-          2 => __( 'Product updated.', 'wp-dispensary' ),
-          3 => __( 'Product deleted.', 'wp-dispensary' ),
-          4 => __( 'Product updated.', 'wp-dispensary' ),
-          5 => isset( $_GET['revision'] ) ? sprintf( __( 'Product restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-          6 => sprintf( __( 'Product published. <a href="%s">View product</a>' ), esc_url( get_permalink( $product_id ) ) ),
-          7 => __( 'Product saved.', 'wp-dispensary' ),
-          8 => sprintf( __( 'Product submitted. <a target="_blank" href="%s">Preview product</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $product_id ) ) ) ),
-          9 => sprintf( __( 'Product scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview product</a>' ),
-          date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $product_id ) ) ),
-          10 => sprintf( __( 'Product draft updated. <a target="_blank" href="%s">Preview product</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $product_id ) ) ) ),
+          1 => sprintf( esc_html__( 'Product updated. <a href="%s">View product</a>' ), esc_url( get_permalink( $product_id ) ) ),
+          2 => esc_html__( 'Product updated.', 'wp-dispensary' ),
+          3 => esc_html__( 'Product deleted.', 'wp-dispensary' ),
+          4 => esc_html__( 'Product updated.', 'wp-dispensary' ),
+          5 => isset( $_GET['revision'] ) ? sprintf( esc_html__( 'Product restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+          6 => sprintf( esc_html__( 'Product published. <a href="%s">View product</a>' ), esc_url( get_permalink( $product_id ) ) ),
+          7 => esc_html__( 'Product saved.', 'wp-dispensary' ),
+          8 => sprintf( esc_html__( 'Product submitted. <a target="_blank" href="%s">Preview product</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $product_id ) ) ) ),
+          9 => sprintf( esc_html__( 'Product scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview product</a>' ),
+          date_i18n( esc_html__( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $product_id ) ) ),
+          10 => sprintf( esc_html__( 'Product draft updated. <a target="_blank" href="%s">Preview product</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $product_id ) ) ) ),
       );
   } else {
 		// Do nothing.

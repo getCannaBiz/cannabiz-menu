@@ -23,14 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function wpd_menu_types() {
 	$menu_types = array(
-		'wpd-flowers'      => __( 'Flowers', 'wp-dispensary' ),
-		'wpd-concentrates' => __( 'Concentrates', 'wp-dispensary' ),
-		'wpd-tinctures'    => __( 'Tinctures', 'wp-dispensary' ),
-		'wpd-edibles'      => __( 'Edibles', 'wp-dispensary' ),
-		'wpd-prerolls'     => __( 'Pre-rolls', 'wp-dispensary' ),
-		'wpd-topicals'     => __( 'Topicals', 'wp-dispensary' ),
-		'wpd-growers'      => __( 'Growers', 'wp-dispensary' ),
-		'wpd-gear'         => __( 'Gear', 'wp-dispensary' ),
+		'wpd-flowers'      => esc_html__( 'Flowers', 'wp-dispensary' ),
+		'wpd-concentrates' => esc_html__( 'Concentrates', 'wp-dispensary' ),
+		'wpd-tinctures'    => esc_html__( 'Tinctures', 'wp-dispensary' ),
+		'wpd-edibles'      => esc_html__( 'Edibles', 'wp-dispensary' ),
+		'wpd-prerolls'     => esc_html__( 'Pre-rolls', 'wp-dispensary' ),
+		'wpd-topicals'     => esc_html__( 'Topicals', 'wp-dispensary' ),
+		'wpd-growers'      => esc_html__( 'Growers', 'wp-dispensary' ),
+		'wpd-gear'         => esc_html__( 'Gear', 'wp-dispensary' ),
 	);
 	return apply_filters( 'wpd_menu_types', $menu_types );
 }

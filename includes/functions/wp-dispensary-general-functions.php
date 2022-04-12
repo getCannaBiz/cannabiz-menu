@@ -48,14 +48,14 @@ function get_wpd_details_phrase() {
  */
 function wpd_product_types() {
 	$product_types = array(
-		'wpd-flowers'      => __( 'Flowers', 'wp-dispensary' ),
-		'wpd-concentrates' => __( 'Concentrates', 'wp-dispensary' ),
-		'wpd-tinctures'    => __( 'Tinctures', 'wp-dispensary' ),
-		'wpd-edibles'      => __( 'Edibles', 'wp-dispensary' ),
-		'wpd-prerolls'     => __( 'Pre-rolls', 'wp-dispensary' ),
-		'wpd-topicals'     => __( 'Topicals', 'wp-dispensary' ),
-		'wpd-growers'      => __( 'Growers', 'wp-dispensary' ),
-		'wpd-gear'         => __( 'Gear', 'wp-dispensary' ),
+		'wpd-flowers'      => esc_html__( 'Flowers', 'wp-dispensary' ),
+		'wpd-concentrates' => esc_html__( 'Concentrates', 'wp-dispensary' ),
+		'wpd-tinctures'    => esc_html__( 'Tinctures', 'wp-dispensary' ),
+		'wpd-edibles'      => esc_html__( 'Edibles', 'wp-dispensary' ),
+		'wpd-prerolls'     => esc_html__( 'Pre-rolls', 'wp-dispensary' ),
+		'wpd-topicals'     => esc_html__( 'Topicals', 'wp-dispensary' ),
+		'wpd-growers'      => esc_html__( 'Growers', 'wp-dispensary' ),
+		'wpd-gear'         => esc_html__( 'Gear', 'wp-dispensary' ),
 	);
 	return apply_filters( 'wpd_product_types', $product_types );
 }
@@ -72,14 +72,14 @@ function wpd_product_type_display_name( $slug = '' ) {
 		return null;
 	}
 	$product_types = array(
-		'flowers'      => __( 'Flowers', 'wp-dispensary' ),
-		'concentrates' => __( 'Concentrates', 'wp-dispensary' ),
-		'tinctures'    => __( 'Tinctures', 'wp-dispensary' ),
-		'edibles'      => __( 'Edibles', 'wp-dispensary' ),
-		'prerolls'     => __( 'Pre-rolls', 'wp-dispensary' ),
-		'topicals'     => __( 'Topicals', 'wp-dispensary' ),
-		'growers'      => __( 'Growers', 'wp-dispensary' ),
-		'gear'         => __( 'Gear', 'wp-dispensary' ),
+		'flowers'      => esc_html__( 'Flowers', 'wp-dispensary' ),
+		'concentrates' => esc_html__( 'Concentrates', 'wp-dispensary' ),
+		'tinctures'    => esc_html__( 'Tinctures', 'wp-dispensary' ),
+		'edibles'      => esc_html__( 'Edibles', 'wp-dispensary' ),
+		'prerolls'     => esc_html__( 'Pre-rolls', 'wp-dispensary' ),
+		'topicals'     => esc_html__( 'Topicals', 'wp-dispensary' ),
+		'growers'      => esc_html__( 'Growers', 'wp-dispensary' ),
+		'gear'         => esc_html__( 'Gear', 'wp-dispensary' ),
 	);
 	return apply_filters( 'wpd_product_type_display_name', $product_types[$slug] );
 }
@@ -96,14 +96,14 @@ function wpd_product_type_display_name_to_slug( $name = '' ) {
 		return null;
 	}
 	$product_types = array(
-		__( 'Flowers', 'wp-dispensary' )      => 'flowers',
-		__( 'Concentrates', 'wp-dispensary' ) => 'concentrates',
-		__( 'Tinctures', 'wp-dispensary' )    => 'tinctures',
-		__( 'Edibles', 'wp-dispensary' )      => 'edibles',
-		__( 'Pre-rolls', 'wp-dispensary' )    => 'prerolls',
-		__( 'Topicals', 'wp-dispensary' )     => 'topicals',
-		__( 'Growers', 'wp-dispensary' )      => 'growers',
-		__( 'Gear', 'wp-dispensary' )         => 'gear',
+		esc_html__( 'Flowers', 'wp-dispensary' )      => 'flowers',
+		esc_html__( 'Concentrates', 'wp-dispensary' ) => 'concentrates',
+		esc_html__( 'Tinctures', 'wp-dispensary' )    => 'tinctures',
+		esc_html__( 'Edibles', 'wp-dispensary' )      => 'edibles',
+		esc_html__( 'Pre-rolls', 'wp-dispensary' )    => 'prerolls',
+		esc_html__( 'Topicals', 'wp-dispensary' )     => 'topicals',
+		esc_html__( 'Growers', 'wp-dispensary' )      => 'growers',
+		esc_html__( 'Gear', 'wp-dispensary' )         => 'gear',
 	);
 	return apply_filters( 'wpd_product_type_display_name', $product_types[$name] );
 }

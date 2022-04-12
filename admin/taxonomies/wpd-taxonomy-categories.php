@@ -24,16 +24,16 @@ function wp_dispensary_products_categories_taxonomy() {
 	$labels = array(
 		'name'              => _x( 'Categories', 'taxonomy general name', 'wp-dispensary' ),
 		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'wp-dispensary' ),
-		'search_items'      => __( 'Search Categories', 'wp-dispensary' ),
-		'all_items'         => __( 'All Categories', 'wp-dispensary' ),
-		'parent_item'       => __( 'Parent Category', 'wp-dispensary' ),
-		'parent_item_colon' => __( 'Parent Category:', 'wp-dispensary' ),
-		'edit_item'         => __( 'Edit Category', 'wp-dispensary' ),
-		'update_item'       => __( 'Update Category', 'wp-dispensary' ),
-		'add_new_item'      => __( 'Add New Category', 'wp-dispensary' ),
-		'new_item_name'     => __( 'New Category Name', 'wp-dispensary' ),
-		'not_found'         => __( 'No categories found', 'wp-dispensary' ),
-		'menu_name'         => __( 'Categories', 'wp-dispensary' ),
+		'search_items'      => esc_html__( 'Search Categories', 'wp-dispensary' ),
+		'all_items'         => esc_html__( 'All Categories', 'wp-dispensary' ),
+		'parent_item'       => esc_html__( 'Parent Category', 'wp-dispensary' ),
+		'parent_item_colon' => esc_html__( 'Parent Category:', 'wp-dispensary' ),
+		'edit_item'         => esc_html__( 'Edit Category', 'wp-dispensary' ),
+		'update_item'       => esc_html__( 'Update Category', 'wp-dispensary' ),
+		'add_new_item'      => esc_html__( 'Add New Category', 'wp-dispensary' ),
+		'new_item_name'     => esc_html__( 'New Category Name', 'wp-dispensary' ),
+		'not_found'         => esc_html__( 'No categories found', 'wp-dispensary' ),
+		'menu_name'         => esc_html__( 'Categories', 'wp-dispensary' ),
 	);
 
 	register_taxonomy( 'wpd_categories', 'products', array(

@@ -30,9 +30,9 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
 
 		parent::__construct(
 			'wp_dispensary_product_search_widget',
-			__( 'Product Search', 'wp-dispensary' ),
+			esc_html__( 'Product Search', 'wp-dispensary' ),
 			array(
-				'description' => __( 'Add a search box', 'wp-dispensary' ),
+				'description' => esc_html__( 'Add a search box', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
 			)
 		);
@@ -69,9 +69,9 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
 			do_action( 'wpd_product_search_widget_before_form' ) . 
 
 				'<form role="search" action="' . site_url( '/' ) . '" method="get" id="searchform">
-					<input type="text" name="s" placeholder="' . __( 'Search Products', 'wp-dispensary' ) . '" />
+					<input type="text" name="s" placeholder="' . esc_html__( 'Search Products', 'wp-dispensary' ) . '" />
 					<input type="hidden" name="post_type" value="products" />
-					<input type="submit" alt="Search" value="' . __( 'Search', 'wp-dispensary' ) . '" />
+					<input type="submit" alt="Search" value="' . esc_html__( 'Search', 'wp-dispensary' ) . '" />
 				</form>' . 
 
 			do_action( 'wpd_product_search_widget_after_form' ) . 

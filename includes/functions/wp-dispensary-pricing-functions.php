@@ -1141,22 +1141,22 @@ function wpd_product_prices( $product_type = '' ) {
 	if ( empty( $product_type ) || in_array( $product_type, apply_filters( 'wpd_general_product_prices', array( 'edibles', 'prerolls', 'topicals', 'growers', 'gear', 'tinctures' ) ) ) ) {
 		// Product prices array.
 		$product_prices = array(
-			'price_each'          => __( 'Price per unit', 'wp-dispensary' ),
-			'price_per_pack'      => __( 'Price per pack', 'wp-dispensary' ),
-			'units_per_pack'      => __( 'Units per pack', 'wp-dispensary' ),
+			'price_each'          => esc_html__( 'Price per unit', 'wp-dispensary' ),
+			'price_per_pack'      => esc_html__( 'Price per pack', 'wp-dispensary' ),
+			'units_per_pack'      => esc_html__( 'Units per pack', 'wp-dispensary' ),
 		);
 	}
 	// Flowers prices.
 	if ( 'flowers' == $product_type ) {
 		// Product prices array.
 		$product_prices = array(
-			'price_gram'          => __( '1 g', 'wp-dispensary' ),
-			'price_two_grams'     => __( '2 g', 'wp-dispensary' ),
-			'price_eighth'        => __( '1/8 oz', 'wp-dispensary' ),
-			'price_five_grams'    => __( '5 g', 'wp-dispensary' ),
-			'price_quarter_ounce' => __( '1/4 oz', 'wp-dispensary' ),
-			'price_half_ounce'    => __( '1/2 oz', 'wp-dispensary' ),
-			'price_ounce'         => __( '1 oz', 'wp-dispensary' )
+			'price_gram'          => esc_html__( '1 g', 'wp-dispensary' ),
+			'price_two_grams'     => esc_html__( '2 g', 'wp-dispensary' ),
+			'price_eighth'        => esc_html__( '1/8 oz', 'wp-dispensary' ),
+			'price_five_grams'    => esc_html__( '5 g', 'wp-dispensary' ),
+			'price_quarter_ounce' => esc_html__( '1/4 oz', 'wp-dispensary' ),
+			'price_half_ounce'    => esc_html__( '1/2 oz', 'wp-dispensary' ),
+			'price_ounce'         => esc_html__( '1 oz', 'wp-dispensary' )
 		);
 		// Filter flower prices.
 		$product_prices = apply_filters( 'wpd_flowers_product_prices', $product_prices );
@@ -1165,12 +1165,12 @@ function wpd_product_prices( $product_type = '' ) {
 	if ( 'concentrates' == $product_type ) {
 		// Product prices array.
 		$product_prices = array(
-			'price_each'          => __( 'Price per unit', 'wp-dispensary' ),
-			'price_per_pack'      => __( 'Price per pack', 'wp-dispensary' ),
-			'units_per_pack'      => __( 'Units per pack', 'wp-dispensary' ),
-			'price_half_gram'     => __( '1/2 gram', 'wp-dispensary' ),
-			'price_gram'          => __( '1 g', 'wp-dispensary' ),
-			'price_two_grams'     => __( '2 g', 'wp-dispensary' ),
+			'price_each'          => esc_html__( 'Price per unit', 'wp-dispensary' ),
+			'price_per_pack'      => esc_html__( 'Price per pack', 'wp-dispensary' ),
+			'units_per_pack'      => esc_html__( 'Units per pack', 'wp-dispensary' ),
+			'price_half_gram'     => esc_html__( '1/2 gram', 'wp-dispensary' ),
+			'price_gram'          => esc_html__( '1 g', 'wp-dispensary' ),
+			'price_two_grams'     => esc_html__( '2 g', 'wp-dispensary' ),
 		);
 		// Filter concentrates prices.
 		$product_prices = apply_filters( 'wpd_concentrates_product_prices', $product_prices );

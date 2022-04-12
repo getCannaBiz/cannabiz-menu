@@ -78,7 +78,7 @@ class WP_Dispensary_Activator {
 			$current_user = wp_get_current_user();
 			// create post object.
 			$page = array(
-				'post_title'   => __( 'Menu' ),
+				'post_title'   => esc_html__( 'Menu', 'wp-dispensary' ),
 				'post_status'  => 'publish',
 				'post_author'  => $current_user->ID,
 				'post_type'    => 'page',

@@ -69,9 +69,9 @@ class WP_Dispensary_CSV_Export {
 	 */
 	public function export_products() {
 		echo '<div class="wrap">';
-		echo '<h2>' . __( 'WP Dispensary\'s Product Export', 'wp-dispensary' ) . '</h2>';
-		echo '<p>' . __( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'wp-dispensary' ) . '</p>';
-		echo '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . __( 'Export', 'wp-dispensary' ) . '</a></p>';
+		echo '<h2>' . esc_html__( 'WP Dispensary\'s Product Export', 'wp-dispensary' ) . '</h2>';
+		echo '<p>' . esc_html__( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'wp-dispensary' ) . '</p>';
+		echo '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . esc_html__( 'Export', 'wp-dispensary' ) . '</a></p>';
 	}
 
 	/**
@@ -90,27 +90,27 @@ class WP_Dispensary_CSV_Export {
 
 		// Set the headers.
 		$header_row = array(
-			__( 'ID', 'wp-dispensary' ),
-			__( 'Type', 'wp-dispensary' ),
-			__( 'Title', 'wp-dispensary' ),
-			__( 'Content', 'wp-dispensary' ),
-			__( 'Slug', 'wp-dispensary' ),
-			__( 'Date', 'wp-dispensary' ),
-			__( 'Author', 'wp-dispensary' ),
-			__( 'Prices', 'wp-dispensary' ),
-			__( 'Inventory', 'wp-dispensary' ),
-			__( 'Categories', 'wp-dispensary' ),
-			__( 'Vendors', 'wp-dispensary' ),
-			__( 'Shelf type', 'wp-dispensary' ),
-			__( 'Strain type', 'wp-dispensary' ),
-			__( 'Allergens', 'wp-dispensary' ),
-			__( 'Aromas', 'wp-dispensary' ),
-			__( 'Conditions', 'wp-dispensary' ),
-			__( 'Effects', 'wp-dispensary' ),
-			__( 'Flavors', 'wp-dispensary' ),
-			__( 'Ingredients', 'wp-dispensary' ),
-			__( 'Symptoms', 'wp-dispensary' ),
-			__( 'Featured image', 'wp-dispensary' )
+			esc_html__( 'ID', 'wp-dispensary' ),
+			esc_html__( 'Type', 'wp-dispensary' ),
+			esc_html__( 'Title', 'wp-dispensary' ),
+			esc_html__( 'Content', 'wp-dispensary' ),
+			esc_html__( 'Slug', 'wp-dispensary' ),
+			esc_html__( 'Date', 'wp-dispensary' ),
+			esc_html__( 'Author', 'wp-dispensary' ),
+			esc_html__( 'Prices', 'wp-dispensary' ),
+			esc_html__( 'Inventory', 'wp-dispensary' ),
+			esc_html__( 'Categories', 'wp-dispensary' ),
+			esc_html__( 'Vendors', 'wp-dispensary' ),
+			esc_html__( 'Shelf type', 'wp-dispensary' ),
+			esc_html__( 'Strain type', 'wp-dispensary' ),
+			esc_html__( 'Allergens', 'wp-dispensary' ),
+			esc_html__( 'Aromas', 'wp-dispensary' ),
+			esc_html__( 'Conditions', 'wp-dispensary' ),
+			esc_html__( 'Effects', 'wp-dispensary' ),
+			esc_html__( 'Flavors', 'wp-dispensary' ),
+			esc_html__( 'Ingredients', 'wp-dispensary' ),
+			esc_html__( 'Symptoms', 'wp-dispensary' ),
+			esc_html__( 'Featured image', 'wp-dispensary' )
 		);
 
 		// Filter headers.

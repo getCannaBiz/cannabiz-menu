@@ -30,9 +30,9 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
 
 		parent::__construct(
 			'wp_dispensary_widget',
-			__( 'Dispensary Products', 'wp-dispensary' ),
+			esc_html__( 'Dispensary Products', 'wp-dispensary' ),
 			array(
-				'description' => __( 'Your WP Dispensary products', 'wp-dispensary' ),
+				'description' => esc_html__( 'Your WP Dispensary products', 'wp-dispensary' ),
 				'classname'   => 'wp-dispensary-widget',
 			)
 		);
@@ -258,7 +258,7 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
      */
     public function form( $instance ) {
         $defaults = array(
-            'title'     => __( 'Products', 'wp-dispensary' ),
+            'title'     => esc_html__( 'Products', 'wp-dispensary' ),
             'limit'     => '5',
 	        'type'      => '',
             'order'     => '',

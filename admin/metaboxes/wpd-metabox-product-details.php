@@ -70,7 +70,7 @@ function wp_dispensary_product_details_metabox_content() {
 	// Flowers fields.
 	echo '<div class="flowers-fields">';
     echo '<div class="input-field">';
-	echo '<p>' . __( 'Activation time', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
@@ -78,7 +78,7 @@ function wp_dispensary_product_details_metabox_content() {
 	// Concentrates fields.
 	echo '<div class="concentrates-fields">';
     echo '<div class="input-field">';
-	echo '<p>' . __( 'Activation time', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
@@ -106,7 +106,7 @@ function wp_dispensary_product_details_metabox_content() {
 	echo '<input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" />';
 	echo '</div>';
     echo '<div class="input-field">';
-	echo '<p>' . __( 'Activation time', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
 	echo '</div>';
@@ -114,11 +114,11 @@ function wp_dispensary_product_details_metabox_content() {
     // Pre-roll weight.
 	echo '<div class="prerolls-fields">';
     echo '<div class="input-field">';
-	echo '<p>' . __( 'Weight (g)', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Weight (g)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_weight" value="' . esc_html( $product_weight ) . '" class="widefat" />';
     echo '</div>';
     echo '<div class="input-field">';
-	echo '<p>' . __( 'Activation time', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
@@ -126,19 +126,19 @@ function wp_dispensary_product_details_metabox_content() {
     // Topicals fields.
 	echo '<div class="topicals-fields">';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Size (oz)', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Size (oz)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_size" value="' . esc_html( $product_size ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'THC mg', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'THC mg', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $compounds_thc ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'CBD mg', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'CBD mg', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $compounds_cbd ) . '" class="widefat" />';
     echo '</div>';
     echo '<div class="input-field">';
-	echo '<p>' . __( 'Activation time', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
@@ -146,23 +146,23 @@ function wp_dispensary_product_details_metabox_content() {
     // Edibles fields.
 	echo '<div class="edibles-fields">';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'THC mg per serving', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'THC mg per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'CBD mg per serving', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'CBD mg per serving', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $cbdmg ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Servings', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Servings', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_servings" value="' . esc_html( $thccbdservings ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Net weight (grams)', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Net weight (grams)', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" />';
     echo '</div>';
     echo '<div class="input-field">';
-	echo '<p>' . __( 'Activation time', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
@@ -170,11 +170,11 @@ function wp_dispensary_product_details_metabox_content() {
     // Grower fields.
 	echo '<div class="growers-fields">';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Seeds per unit', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Seeds per unit', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="seed_count" value="' . esc_html( $seedcount ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Clones per unit', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Clones per unit', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="clone_count" value="' . esc_html( $clonecount ) . '" class="widefat" />';
 	echo '</div>';
     echo '</div>';

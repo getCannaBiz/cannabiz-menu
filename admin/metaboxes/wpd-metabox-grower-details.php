@@ -23,7 +23,7 @@ function wp_dispensary_grower_details_metabox() {
     // Add metabox.
 	add_meta_box(
 		'wp_dispensary_grower_details',
-		__( 'Grow details', 'wp-dispensary' ),
+		esc_html__( 'Grow details', 'wp-dispensary' ),
 		'wp_dispensary_grower_details_metabox_content',
 		'products',
 		'normal',
@@ -50,19 +50,19 @@ function wp_dispensary_grower_details_metabox_content() {
 
 	/** Echo out the fields */
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Origin', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Origin', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_origin" value="' . esc_html( $origin ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Grow time', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Grow time', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_time" value="' . esc_html( $time ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Yield', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Yield', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_yield" value="' . esc_html( $yield ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . __( 'Difficulty', 'wp-dispensary' ) . '</p>';
+	echo '<p>' . esc_html__( 'Difficulty', 'wp-dispensary' ) . '</p>';
 	echo '<input type="text" name="product_difficulty" value="' . esc_html( $difficulty ) . '" class="widefat" />';
 	echo '</div>';
 

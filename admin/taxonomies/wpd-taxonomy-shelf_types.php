@@ -24,16 +24,16 @@ function wp_dispensary_shelf_types_taxonomy() {
 	$labels = array(
 		'name'              => _x( 'Shelf Type', 'taxonomy general name', 'wp-dispensary' ),
 		'singular_name'     => _x( 'Shelf Type', 'taxonomy singular name', 'wp-dispensary' ),
-		'search_items'      => __( 'Search Shelf Types', 'wp-dispensary' ),
-		'all_items'         => __( 'All Shelf Types', 'wp-dispensary' ),
-		'parent_item'       => __( 'Parent Shelf Type', 'wp-dispensary' ),
-		'parent_item_colon' => __( 'Parent Shelf Type:', 'wp-dispensary' ),
-		'edit_item'         => __( 'Edit Shelf Type', 'wp-dispensary' ),
-		'update_item'       => __( 'Update Shelf Type', 'wp-dispensary' ),
-		'add_new_item'      => __( 'Add New Shelf Type', 'wp-dispensary' ),
-		'new_item_name'     => __( 'New Shelf Type Name', 'wp-dispensary' ),
-		'not_found'         => __( 'No shelf types found', 'wp-dispensary' ),
-		'menu_name'         => __( 'Shelf Type', 'wp-dispensary' ),
+		'search_items'      => esc_html__( 'Search Shelf Types', 'wp-dispensary' ),
+		'all_items'         => esc_html__( 'All Shelf Types', 'wp-dispensary' ),
+		'parent_item'       => esc_html__( 'Parent Shelf Type', 'wp-dispensary' ),
+		'parent_item_colon' => esc_html__( 'Parent Shelf Type:', 'wp-dispensary' ),
+		'edit_item'         => esc_html__( 'Edit Shelf Type', 'wp-dispensary' ),
+		'update_item'       => esc_html__( 'Update Shelf Type', 'wp-dispensary' ),
+		'add_new_item'      => esc_html__( 'Add New Shelf Type', 'wp-dispensary' ),
+		'new_item_name'     => esc_html__( 'New Shelf Type Name', 'wp-dispensary' ),
+		'not_found'         => esc_html__( 'No shelf types found', 'wp-dispensary' ),
+		'menu_name'         => esc_html__( 'Shelf Type', 'wp-dispensary' ),
 	);
 
 	register_taxonomy( 'shelf_types', 'products', array(
