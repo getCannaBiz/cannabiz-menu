@@ -54,12 +54,12 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
      */
     public function add_vendor_logo_image( $taxonomy ) { ?>
     <div class="form-field term-group">
-        <label for="vendor_logo"><?php _e( 'Logo', 'wp-dispensary' ); ?></label>
+        <label for="vendor_logo"><?php esc_html_e( 'Logo', 'wp-dispensary' ); ?></label>
         <input type="hidden" id="vendor_logo" name="vendor_logo" class="custom_media_url" value="">
         <div id="vendor-logo-wrapper"></div>
         <p>
-            <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'wp-dispensary' ); ?>" />
-            <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'wp-dispensary' ); ?>" />
+            <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_html_e( 'Add Image', 'wp-dispensary' ); ?>" />
+            <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_html_e( 'Remove Image', 'wp-dispensary' ); ?>" />
         </p>
     </div>
     <?php
@@ -85,7 +85,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
     public function update_vendor_logo_image( $term, $taxonomy ) { ?>
     <tr class="form-field term-group-wrap">
         <th scope="row">
-            <label for="vendor_logo"><?php _e( 'Logo', 'wp-dispensary' ); ?></label>
+            <label for="vendor_logo"><?php esc_html_e( 'Logo', 'wp-dispensary' ); ?></label>
         </th>
         <td>
             <?php $image_id = get_term_meta( $term->term_id, 'vendor_logo', true ); ?>
@@ -96,8 +96,8 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
                 <?php } ?>
             </div>
             <p>
-                <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'wp-dispensary' ); ?>" />
-                <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'wp-dispensary' ); ?>" />
+                <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_html_e( 'Add Image', 'wp-dispensary' ); ?>" />
+                <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_html_e( 'Remove Image', 'wp-dispensary' ); ?>" />
             </p>
         </td>
     </tr>

@@ -174,7 +174,7 @@ function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
 		}
         ?>
         <select name="PRODUCT_TYPE_FIELD_VALUE">
-        <option value=""><?php _e( 'All Types', 'wp-dispensary' ); ?></option>
+        <option value=""><?php esc_html_e( 'All Types', 'wp-dispensary' ); ?></option>
         <?php
             $current_v = isset( $_GET['PRODUCT_TYPE_FIELD_VALUE'] ) ? $_GET['PRODUCT_TYPE_FIELD_VALUE'] : '';
             foreach ( $values as $label => $value ) {
