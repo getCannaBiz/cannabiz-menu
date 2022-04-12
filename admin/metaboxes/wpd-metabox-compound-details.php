@@ -98,7 +98,7 @@ function wp_dispensary_compound_details_metabox_save( $post_id, $post ) {
 	 */
 	if (
 		! isset( $_POST['compound_details_meta_noncename' ] ) ||
-		! wp_verify_nonce( $_POST['compound_details_meta_noncename'], plugin_basename( __FILE__ ) )
+		! wp_verify_nonce( filter_input( INPUT_POST, 'compound_details_meta_noncename' ), plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;
 	}
@@ -113,13 +113,13 @@ function wp_dispensary_compound_details_metabox_save( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$details_meta['compounds_thc']   = $_POST['compounds_thc'];
-	$details_meta['compounds_thca']  = $_POST['compounds_thca'];
-	$details_meta['compounds_cbd']   = $_POST['compounds_cbd'];
-	$details_meta['compounds_cba']   = $_POST['compounds_cba'];
-	$details_meta['compounds_cbn']   = $_POST['compounds_cbn'];
-	$details_meta['compounds_cbg']   = $_POST['compounds_cbg'];
-	$details_meta['compounds_total'] = $_POST['compounds_total'];
+	$details_meta['compounds_thc']   = filter_input( INPUT_POST, 'compounds_thc' );
+	$details_meta['compounds_thca']  = filter_input( INPUT_POST, 'compounds_thca' );
+	$details_meta['compounds_cbd']   = filter_input( INPUT_POST, 'compounds_cbd' );
+	$details_meta['compounds_cba']   = filter_input( INPUT_POST, 'compounds_cba' );
+	$details_meta['compounds_cbn']   = filter_input( INPUT_POST, 'compounds_cbn' );
+	$details_meta['compounds_cbg']   = filter_input( INPUT_POST, 'compounds_cbg' );
+	$details_meta['compounds_total'] = filter_input( INPUT_POST, 'compounds_total' );
 
 	// Save $details_meta as metadata.
 	foreach ( $details_meta as $key => $value ) {

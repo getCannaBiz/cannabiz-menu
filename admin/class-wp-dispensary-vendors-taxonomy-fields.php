@@ -72,7 +72,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
      */
     public function save_vendor_logo_image( $term_id, $tt_id ) {
         if ( isset( $_POST['vendor_logo'] ) && '' !== $_POST['vendor_logo'] ){
-            $image = $_POST['vendor_logo'];
+            $image = filter_input( INPUT_POST, 'vendor_logo' );
             add_term_meta( $term_id, 'vendor_logo', $image, true );
         }
     }
@@ -110,7 +110,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
     */
     public function updated_vendor_logo_image( $term_id, $tt_id ) {
         if ( isset( $_POST['vendor_logo'] ) && '' !== $_POST['vendor_logo'] ) {
-            $image = $_POST['vendor_logo'];
+            $image = filter_input( INPUT_POST, 'vendor_logo' );
             update_term_meta( $term_id, 'vendor_logo', $image );
         } else {
             update_term_meta( $term_id, 'vendor_logo', '' );

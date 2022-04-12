@@ -194,7 +194,7 @@ function wp_dispensary_product_details_metabox_save( $post_id, $post ) {
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
-	if ( ! isset( $_POST['wpd_product_details_meta_noncename' ] ) || ! wp_verify_nonce( $_POST['wpd_product_details_meta_noncename'], plugin_basename( __FILE__ ) ) ) {
+	if ( ! isset( $_POST['wpd_product_details_meta_noncename' ] ) || ! wp_verify_nonce( filter_input( INPUT_POST, 'wpd_product_details_meta_noncename' ), plugin_basename( __FILE__ ) ) ) {
 		return $post->ID;
 	}
 
@@ -208,16 +208,16 @@ function wp_dispensary_product_details_metabox_save( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
     // Product data.
-	$details_meta['activation_time']     = esc_html( $_POST['activation_time'] );
-	$details_meta['compounds_thc']       = esc_html( $_POST['compounds_thc'] );
-	$details_meta['compounds_cbd']       = esc_html( $_POST['compounds_cbd'] );
-	$details_meta['product_size']        = esc_html( $_POST['product_size'] );
-	$details_meta['product_servings']    = esc_html( $_POST['product_servings'] );
-	$details_meta['product_servings_ml'] = esc_html( $_POST['product_servings_ml'] );
-    $details_meta['product_net_weight']  = esc_html( $_POST['product_net_weight'] );
-    $details_meta['product_weight']      = esc_html( $_POST['product_weight'] );
-	$details_meta['seed_count']          = esc_html( $_POST['seed_count'] );
-	$details_meta['clone_count']         = esc_html( $_POST['clone_count'] );
+	$details_meta['activation_time']     = esc_html( filter_input( INPUT_POST, 'activation_time' ) );
+	$details_meta['compounds_thc']       = esc_html( filter_input( INPUT_POST, 'compounds_thc' ) );
+	$details_meta['compounds_cbd']       = esc_html( filter_input( INPUT_POST, 'compounds_cbd' ) );
+	$details_meta['product_size']        = esc_html( filter_input( INPUT_POST, 'product_size' ) );
+	$details_meta['product_servings']    = esc_html( filter_input( INPUT_POST, 'product_servings' ) );
+	$details_meta['product_servings_ml'] = esc_html( filter_input( INPUT_POST, 'product_servings_ml' ) );
+    $details_meta['product_net_weight']  = esc_html( filter_input( INPUT_POST, 'product_net_weight' ) );
+    $details_meta['product_weight']      = esc_html( filter_input( INPUT_POST, 'product_weight' ) );
+	$details_meta['seed_count']          = esc_html( filter_input( INPUT_POST, 'seed_count' ) );
+	$details_meta['clone_count']         = esc_html( filter_input( INPUT_POST, 'clone_count' ) );
 
 	// Save $details_meta as metadata.
 	foreach ( $details_meta as $key => $value ) {

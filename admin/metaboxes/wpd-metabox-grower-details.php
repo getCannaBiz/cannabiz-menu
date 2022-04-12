@@ -81,7 +81,7 @@ function wp_dispensary_grower_details_metabox_save( $post_id, $post ) {
 	 */
 	if (
 		! isset( $_POST['wpd_grower_details_meta_noncename'] ) ||
-		! wp_verify_nonce( $_POST['wpd_grower_details_meta_noncename'], plugin_basename( __FILE__ ) )
+		! wp_verify_nonce( filter_input( INPUT_POST, 'wpd_grower_details_meta_noncename' ), plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;
 	}
@@ -96,10 +96,10 @@ function wp_dispensary_grower_details_metabox_save( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$details_meta['product_origin']     = esc_html( $_POST['product_origin'] );
-	$details_meta['product_time']       = esc_html( $_POST['product_time'] );
-	$details_meta['product_yield']      = esc_html( $_POST['product_yield'] );
-	$details_meta['product_difficulty'] = esc_html( $_POST['product_difficulty'] );
+	$details_meta['product_origin']     = esc_html( filter_input( INPUT_POST, 'product_origin' ) );
+	$details_meta['product_time']       = esc_html( filter_input( INPUT_POST, 'product_time' ) );
+	$details_meta['product_yield']      = esc_html( filter_input( INPUT_POST, 'product_yield' ) );
+	$details_meta['product_difficulty'] = esc_html( filter_input( INPUT_POST, 'product_difficulty' ) );
 
 	// Save $details_meta as metadata.
 	foreach ( $details_meta as $key => $value ) {

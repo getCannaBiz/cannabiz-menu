@@ -54,14 +54,14 @@ class WP_Dispensary_Permalink_Settings {
 
 		// Permalinks nonce.
 		if ( isset( $_POST['wpd_permalinks_nonce'] ) ) {
-			$permalinks_nonce = $_POST['wpd_permalinks_nonce'];
+			$permalinks_nonce = filter_input( INPUT_POST, 'wpd_permalinks_nonce' );
 		}
 
 		// Save settings - Products.
 		if ( isset( $_POST['permalink_structure'] ) ||
 			 isset( $_POST['wpd_products_slug'] ) &&
 			 wp_verify_nonce( wp_unslash( $permalinks_nonce ), 'wp-dispensary' ) ) {
-				$wpd_products_slug = sanitize_title( wp_unslash( $_POST['wpd_products_slug'] ) );
+				$wpd_products_slug = sanitize_title( wp_unslash( filter_input( INPUT_POST, 'wpd_products_slug' ) ) );
 				update_option( 'wpd_products_slug', $wpd_products_slug );
 		}
 	}

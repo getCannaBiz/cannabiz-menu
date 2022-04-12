@@ -82,7 +82,7 @@ function wp_dispensary_product_type_metabox_save( $post_id, $post ) {
 	 */
 	if (
 		! isset( $_POST['wpd_product_type_meta_noncename' ] ) ||
-		! wp_verify_nonce( $_POST['wpd_product_type_meta_noncename'], plugin_basename( __FILE__ ) )
+		! wp_verify_nonce( filter_input( INPUT_POST, 'wpd_product_type_meta_noncename' ), plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;
 	}
@@ -97,7 +97,7 @@ function wp_dispensary_product_type_metabox_save( $post_id, $post ) {
 	 * We'll put it into an array to make it easier to loop though.
 	 */
 
-	$product_type_meta['product_type'] = $_POST['product_type'];
+	$product_type_meta['product_type'] = filter_input( INPUT_POST, 'product_type' );
 
 	// Save $product_type_meta as metadata.
 	foreach ( $product_type_meta as $key => $value ) {
