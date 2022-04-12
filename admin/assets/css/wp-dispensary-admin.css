@@ -16,11 +16,11 @@ div#wp_dispensary_product_prices .inside,
 div#wp_dispensary_product_details .inside,
 div#wp_dispensary_compound_details .inside,
 div#wp_dispensary_grower_details .inside {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 div#wp_dispensary_product_details .inside .edibles-fields,
@@ -28,29 +28,29 @@ div#wp_dispensary_product_details .inside .prerolls-fields,
 div#wp_dispensary_product_details .inside .topicals-fields,
 div#wp_dispensary_product_details .inside .growers-fields,
 div#wp_dispensary_product_details .inside .tinctures-fields {
-	flex-basis: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 12px;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 div#wp_dispensary_product_prices .inside div.input-field,
 div#wp_dispensary_product_details .inside div.input-field,
 div#wp_dispensary_compound_details .inside div.input-field,
 div#wp_dispensary_grower_details .inside div.input-field {
-	margin-bottom: 12px;
-	flex: 1;
+  margin-bottom: 12px;
+  flex: 1;
 }
 
 div#wp_dispensary_product_prices .inside div.input-field.flower-price,
 div#wp_dispensary_compound_details .inside div.input-field {
-	flex: 1;
+  flex: 1;
 }
 
 div#wp_dispensary_grower_details .inside div.input-field {
-	flex: 1;
+  flex: 1;
 }
 
 /** Metaboxes `select` width */
@@ -101,31 +101,31 @@ select#selected_tinctures {
 /** WPD Settings */
 
 body.toplevel_page_wpd-settings .nav-tab {
-    background: transparent;
-    border-top: 1px solid #FFF;
-    border-left: 1px solid #FFF;
-	border-right: 1px solid #FFF;
-	color: #7e8993;
+  background: transparent;
+  border-top: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  color: #7e8993;
 }
 
 body.toplevel_page_wpd-settings .nav-tab-active,
 body.toplevel_page_wpd-settings .nav-tab-active:focus,
 body.toplevel_page_wpd-settings .nav-tab-active:focus:active,
 body.toplevel_page_wpd-settings .nav-tab-active:hover {
-	background: #FFF;
-	border-bottom: 1px solid #FFF;
-    border-top: 1px solid #CCC;
-    border-left: 1px solid #CCC;
-	border-right: 1px solid #CCC;
-	color: #000;
+  background: #FFF;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  color: #000;
 }
 
 /**
  * Featured image in menu items list
  */
 th#featured_thumb {
-	width: 40px;
-	text-align: center;
+  width: 40px;
+  text-align: center;
 }
 
 .manage-column.column-featured_thumb {
@@ -134,62 +134,62 @@ th#featured_thumb {
 
 #featured_thumb span.wpd-admin-screen-featured-image-title,
 .wpd-admin-screen-featured-image-title {
-	display: none;
+  display: none;
 }
 
 /**
  * Settings page
  */
 .wpd-settings-wrap img {
-	width: 300px;
-	max-width: 300px;
+  width: 300px;
+  max-width: 300px;
 }
 
 .wpd-settings-separator {
-	background: #ccc;
-	border: 0;
-	color: #ccc;
-	height: 1px;
-	position: absolute;
-	left: 0;
-	width: 100%;
-	max-width: 100%;
+  background: #ccc;
+  border: 0;
+  color: #ccc;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .metabox-holder .group form h2:first-of-type {
-	display: none;
+  display: none;
 }
 
 .metabox-holder .group .form-table h1 {
-	font-weight: 600;
-	font-size: 18px;
-	padding: 0;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0;
 }
 
 .metabox-holder .group .form-table h1:after {
-    content: '';
-    display: block;
-    clear: both;
-    width: 24px;
-    height: 3px;
-    background: #ccc;
-    margin-top: 0px;
+  content: '';
+  display: block;
+  clear: both;
+  width: 24px;
+  height: 3px;
+  background: #ccc;
+  margin-top: 0px;
 }
 
 .wrap.wpd-settings-wrap {
-    position: relative;
+  position: relative;
 }
 
 .wrap.wpd-settings-wrap h1.settings-logo {
-	position: relative;
+  position: relative;
 }
 
 .wrap.wpd-settings-wrap span.wpd-settings-version {
-	color: #AAA;
-	font-size: 50%;
-	margin-left: 10px;
-	position: absolute;
-	top: 23px;
+  color: #AAA;
+  font-size: 50%;
+  margin-left: 10px;
+  position: absolute;
+  top: 23px;
 }
 
 .metabox-holder .group form select {
@@ -197,13 +197,13 @@ th#featured_thumb {
 }
 
 .group .form-table input.color-picker {
-	max-width: 100px;
+  max-width: 100px;
 }
 
 @media screen and (max-width: 782px) {
-	.pricebox input[type=number] {
-		height: auto;
-	}
+  .pricebox input[type=number] {
+    height: auto;
+  }
 }
 
 /* Widget styles
@@ -211,34 +211,34 @@ th#featured_thumb {
 
 div.widget[id*=_wp_dispensary_] .widget-top,
 div.widget[id*=_wp_dispensary_] .widget-top:hover {
-	border-color: #76bd43;
+  border-color: #76bd43;
 }
 
 div.widget[id*=_wp_dispensary_] .widget-title,
 div.widget[id*=_wp_dispensary_] .widget-title h3 {
-	background: #76bd43;
-	color: #FFF;
+  background: #76bd43;
+  color: #FFF;
 }
 
 div.widget[id*=_wp_dispensary_] .widget-title .in-widget-title {
-	color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.6);
 }
 
 div.widget[id*=_wp_dispensary_] .widget-action {
-	color: #FFF;
+  color: #FFF;
 }
 
 /* View All screen (mobile table layout)
 -------------------------------------------------------------- */
 
 @media screen and (max-width: 782px) {
-	.wp-list-table tr.type-products:not(.inline-edit-row):not(.no-items) td:not(.check-column) {
-	    display: table-cell;
-	}
+  .wp-list-table tr.type-products:not(.inline-edit-row):not(.no-items) td:not(.check-column) {
+    display: table-cell;
+  }
 
-	.wp-list-table tr:not(.inline-edit-row):not(.no-items) td.featured_thumb:not(.column-primary)::before {
-		display: none;
-	}
+  .wp-list-table tr:not(.inline-edit-row):not(.no-items) td.featured_thumb:not(.column-primary)::before {
+    display: none;
+  }
 }
 
 /** Admin post type screens
@@ -254,7 +254,7 @@ body.taxonomy-strain_type,
 body.taxonomy-shelf_type,
 body.toplevel_page_wpd-settings,
 .wp-dispensary_page_wpd-inventory {
-    background: #FFF;
+  background: #FFF;
 }
 
 body.post-type-products table.posts,
@@ -265,7 +265,7 @@ body.taxonomy-vendor table.posts,
 body.taxonomy-wpd_categories table.posts,
 body.taxonomy-strain_type table.posts,
 body.taxonomy-shelf_type table.posts {
-	margin-top: 12px;
+  margin-top: 12px;
 }
 
 body.post-type-products table thead,
@@ -284,7 +284,7 @@ body.taxonomy-strain_type table thead,
 body.taxonomy-strain_type table tfoot,
 body.taxonomy-shelf_type table thead,
 body.taxonomy-shelf_type table tfoot {
-    background: #F7F7F7;
+  background: #F7F7F7;
 }
 
 body.post-type-products .alternate,
@@ -311,13 +311,13 @@ body.taxonomy-strain_type ul.striped>:nth-child(odd),
 body.taxonomy-shelf_type .alternate,
 body.taxonomy-shelf_type .striped>tbody>:nth-child(odd),
 body.taxonomy-shelf_type ul.striped>:nth-child(odd) {
-	background: #FFF;
+  background: #FFF;
 }
 
 tr.type-products td, tr.type-flowers th,
 tr.type-wpd_orders td, tr.type-wpd_orders th,
 tr.type-coupons td, tr.type-coupons th {
-    border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
 }
 
 body.post-type-products .search-box input[type="search"],
@@ -328,27 +328,27 @@ body.taxonomy-vendor .search-box input[type="search"],
 body.taxonomy-wpd_categories .search-box input[type="search"],
 body.taxonomy-strain_type .search-box input[type="search"],
 body.taxonomy-shelf_type .search-box input[type="search"] {
-    min-height: 26px;
-    line-height: 1.92;
+  min-height: 26px;
+  line-height: 1.92;
 }
 
 ul#adminmenu a.toplevel_page_wpd-settings.wp-has-current-submenu:after {
-	border-right-color: #FFF;
+  border-right-color: #FFF;
 }
 
 /** Admin toolbar menu items
 -------------------------------------------------------------- */
 
 body.wp-admin #wp-admin-bar-wp_dispensary a:before {
-	content: '';
-	background: url(../images/menu-icon.png) no-repeat center center !important;
-	width: 32px;
-	height: 32px;
-	padding: 0 !important;
-	display: block;
-	margin-right: 0 !important;
+  content: '';
+  background: url(../images/menu-icon.png) no-repeat center center !important;
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  display: block;
+  margin-right: 0 !important;
 }
 
 body.wp-admin #wp-admin-bar-wp_dispensary .ab-sub-wrapper a:before {
-	display: none !important;
+  display: none !important;
 }
