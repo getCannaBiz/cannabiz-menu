@@ -38,7 +38,7 @@ class WP_Dispensary_CSV_Export {
 			header( "Content-Transfer-Encoding: binary" );
 
 			echo $csv;
-			exit;
+			wp_die();
 		}
 
 		// Create end-points.
@@ -60,7 +60,7 @@ class WP_Dispensary_CSV_Export {
 	public function parse_request( &$wp ) {
 		if ( array_key_exists( 'export_products', $wp->query_vars ) ) {
 			$this->export_products();
-			exit;
+			wp_die();
 		}
 	}
 
@@ -489,7 +489,7 @@ class WP_Dispensary_CSV_Export {
 
 		ob_end_flush();
 
-		die();
+		wp_die();
 	}
 }
 
