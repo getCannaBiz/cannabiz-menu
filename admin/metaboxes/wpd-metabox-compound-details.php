@@ -97,7 +97,7 @@ function wp_dispensary_compound_details_metabox_save( $post_id, $post ) {
 	 * because save_post can be triggered at other times
 	 */
 	if (
-		! isset( $_POST['compound_details_meta_noncename' ] ) ||
+		null == filter_input( INPUT_POST, 'compound_details_meta_noncename' ) ||
 		! wp_verify_nonce( filter_input( INPUT_POST, 'compound_details_meta_noncename' ), plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;

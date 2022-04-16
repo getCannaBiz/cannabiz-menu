@@ -79,10 +79,10 @@ class WP_Dispensary_Admin {
 		// Add the main admin js file.
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/wp-dispensary-admin.js', array( 'jquery' ), $this->version, false );
 		// Only localize script on the Edit screen.
-		if ( 'edit' == $_GET['action'] ) {
+		if ( 'edit' == filter_input( INPUT_GET, 'action' ) ) {
 			// Localize the js file.
 			wp_localize_script( $this->plugin_name, 'wpd_script_vars', array(
-				'product_type' => get_post_meta( $_GET['post'], 'product_type', true )
+				'product_type' => get_post_meta( filter_input( INPUT_GET, 'post' ), 'product_type', true )
 			) );
 		}
 	}

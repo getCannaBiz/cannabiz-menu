@@ -43,7 +43,7 @@ function wpd_product_updated_messages( $messages ) {
           2 => esc_html__( 'Product updated.', 'wp-dispensary' ),
           3 => esc_html__( 'Product deleted.', 'wp-dispensary' ),
           4 => esc_html__( 'Product updated.', 'wp-dispensary' ),
-          5 => isset( $_GET['revision'] ) ? sprintf( esc_html__( 'Product restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+          5 => null == filter_input( INPUT_GET, 'revision' ) ? sprintf( esc_html__( 'Product restored to revision from %s' ), wp_post_revision_title( (int) filter_input( INPUT_GET, 'revision' ), false ) ) : false,
           6 => sprintf( esc_html__( 'Product published. <a href="%s">View product</a>' ), esc_url( get_permalink( $product_id ) ) ),
           7 => esc_html__( 'Product saved.', 'wp-dispensary' ),
           8 => sprintf( esc_html__( 'Product submitted. <a target="_blank" href="%s">Preview product</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $product_id ) ) ) ),

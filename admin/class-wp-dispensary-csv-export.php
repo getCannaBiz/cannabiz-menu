@@ -24,7 +24,7 @@ class WP_Dispensary_CSV_Export {
 	* Constructor
 	*/
 	public function __construct() {
-		if ( isset( $_GET['export_products'] ) ) {
+		if ( null !== filter_input( INPUT_GET, 'export_products' ) ) {
 
 			// Run generate CSV function.
 			$csv = $this->generate_csv();

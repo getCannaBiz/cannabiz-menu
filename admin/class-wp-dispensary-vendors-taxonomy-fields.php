@@ -71,7 +71,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
      * @since 4.0
      */
     public function save_vendor_logo_image( $term_id, $tt_id ) {
-        if ( isset( $_POST['vendor_logo'] ) && '' !== $_POST['vendor_logo'] ){
+        if ( null !== filter_input( INPUT_POST, 'vendor_logo' ) && '' !== filter_input( INPUT_POST, 'vendor_logo' ) ){
             $image = filter_input( INPUT_POST, 'vendor_logo' );
             add_term_meta( $term_id, 'vendor_logo', $image, true );
         }
@@ -109,7 +109,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
     * @since 4.0
     */
     public function updated_vendor_logo_image( $term_id, $tt_id ) {
-        if ( isset( $_POST['vendor_logo'] ) && '' !== $_POST['vendor_logo'] ) {
+        if ( null !== filter_input( INPUT_POST, 'vendor_logo' ) && '' !== filter_input( INPUT_POST, 'vendor_logo' ) ) {
             $image = filter_input( INPUT_POST, 'vendor_logo' );
             update_term_meta( $term_id, 'vendor_logo', $image );
         } else {

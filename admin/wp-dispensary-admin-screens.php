@@ -49,9 +49,9 @@ function wp_dispensary_columns_data( $column ) {
  * 
  * @return void
  */
-if ( isset( $_GET['post_type'] ) ) {
+if ( null !== filter_input( INPUT_GET, 'post_type' ) ) {
 	// Get post type.
-	$post_type = esc_html( $_GET['post_type'] );
+	$post_type = filter_input( INPUT_GET, 'post_type' );
 	// Get post types.
 	$post_types = wpd_menu_types_simple( true );
 	// Add products to post types array.
@@ -157,39 +157,40 @@ add_action( 'pre_get_posts', 'wpd_products_archive_sort_order' );
  * @return void
  */
 function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
-    $type = 'products';
-	// Set post type.
-	if ( isset( $_GET['post_type'] ) ) {
-        $type = $_GET['post_type'];
-    }
+	// Set default type.
+	$type = 'products';
+	// Set custom post type.
+	if ( null !== filter_input( INPUT_GET, 'post_type' ) ) {
+        $type = filter_input( INPUT_GET, 'post_type' );
+	}
 
-    // Only add filter to post type you want
-    if ( 'products' == $type ) {
-		// Create array.
-		$values = array();
-		// Loop through product types.
-		foreach ( wpd_product_types() as $key=>$value ) {
-			// Add product type to array.
-			$values[$value] = wpd_product_type_display_name_to_slug( $value );
-		}
-        ?>
-        <select name="PRODUCT_TYPE_FIELD_VALUE">
-        <option value=""><?php esc_html_e( 'All Types', 'wp-dispensary' ); ?></option>
-        <?php
-            $current_v = isset( $_GET['PRODUCT_TYPE_FIELD_VALUE'] ) ? $_GET['PRODUCT_TYPE_FIELD_VALUE'] : '';
-            foreach ( $values as $label => $value ) {
-                printf
-                    (
-                        '<option value="%s"%s>%s</option>',
-                        $value,
-                        $value == $current_v ? ' selected="selected"':'',
-                        $label
-                    );
-                }
-        ?>
-        </select>
-        <?php
-    }
+	// Only add filter to post type you want
+	if ( 'products' == $type ) {
+	// Create array.
+	$values = array();
+	// Loop through product types.
+	foreach ( wpd_product_types() as $key=>$value ) {
+		// Add product type to array.
+		$values[$value] = wpd_product_type_display_name_to_slug( $value );
+	}
+		?>
+		<select name="PRODUCT_TYPE_FIELD_VALUE">
+		<option value=""><?php esc_html_e( 'All Types', 'wp-dispensary' ); ?></option>
+		<?php
+				$current_v = null !== filter_input( INPUT_GET, 'PRODUCT_TYPE_FIELD_VALUE' ) ? filter_input( INPUT_GET, 'PRODUCT_TYPE_FIELD_VALUE' ) : '';
+				foreach ( $values as $label => $value ) {
+					printf
+						(
+							'<option value="%s"%s>%s</option>',
+							$value,
+							$value == $current_v ? ' selected="selected"':'',
+							$label
+						);
+				}
+		?>
+		</select>
+		<?php
+	}
 }
 add_action( 'restrict_manage_posts', 'wp_dispensary_admin_posts_filter_restrict_manage_posts' );
 
@@ -202,12 +203,12 @@ add_action( 'restrict_manage_posts', 'wp_dispensary_admin_posts_filter_restrict_
 function wp_dispensary_posts_filter( $query ) {
     global $pagenow;
     $type = 'post';
-    if ( isset($_GET['post_type'] ) ) {
-        $type = $_GET['post_type'];
+    if ( null !== filter_input( INPUT_GET, 'post_type' )  ) {
+        $type = filter_input( INPUT_GET, 'post_type' );
     }
-    if ( 'products' == $type && is_admin() && $pagenow=='edit.php' && isset( $_GET['PRODUCT_TYPE_FIELD_VALUE'] ) && '' != $_GET['PRODUCT_TYPE_FIELD_VALUE'] ) {
+    if ( 'products' == $type && is_admin() && $pagenow == 'edit.php' && null !== filter_input( INPUT_GET, 'PRODUCT_TYPE_FIELD_VALUE' ) && '' != filter_input( INPUT_GET, 'PRODUCT_TYPE_FIELD_VALUE' ) ) {
         $query->query_vars['meta_key']   = 'product_type';
-        $query->query_vars['meta_value'] = $_GET['PRODUCT_TYPE_FIELD_VALUE'];
+        $query->query_vars['meta_value'] = filter_input( INPUT_GET, 'PRODUCT_TYPE_FIELD_VALUE' );
     }
 }
 add_filter( 'parse_query', 'wp_dispensary_posts_filter' );
