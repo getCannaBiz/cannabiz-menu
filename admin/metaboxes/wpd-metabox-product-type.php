@@ -50,7 +50,7 @@ function wp_dispensary_product_type_metabox_content() {
 	$div .= '<select name="product_type" id="product_type">';
 	$div .= '<option value="">--</option>';
 	// Loop through product types.
-	foreach ( wpd_menu_types_simple( true ) as $key=>$name ) {
+	foreach ( wpd_menu_types_simple( true ) as $name ) {
 		// Empty var.
 		$selected = '';
 		// Check if current loop item is the same as the saved product_type.
@@ -70,11 +70,10 @@ function wp_dispensary_product_type_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param  int    $post_id
  * @param  object $post
  * @return void
  */
-function wp_dispensary_product_type_metabox_save( $post_id, $post ) {
+function wp_dispensary_product_type_metabox_save( $post ) {
 
 	/**
 	 * Verify this came from the our screen and with proper authorization,
@@ -118,4 +117,4 @@ function wp_dispensary_product_type_metabox_save( $post_id, $post ) {
 		}
 	}
 }
-add_action( 'save_post', 'wp_dispensary_product_type_metabox_save', 1, 2 );
+add_action( 'save_post', 'wp_dispensary_product_type_metabox_save', 1, 1 );

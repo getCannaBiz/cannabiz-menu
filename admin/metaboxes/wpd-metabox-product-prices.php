@@ -83,11 +83,10 @@ function wp_dispensary_product_prices_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param  int    $post_id
  * @param  object $post
  * @return void
  */
-function wp_dispensary_product_prices_metabox_save( $post_id, $post ) {
+function wp_dispensary_product_prices_metabox_save( $post ) {
 
 	/**
 	 * Verify this came from the our screen and with proper authorization,
@@ -160,21 +159,21 @@ function wp_dispensary_product_prices_metabox_save( $post_id, $post ) {
 
 	// Save $prices_meta as metadata.
 	foreach ( $prices_meta as $key => $value ) {
-        // Bail on post revisions.
+		// Bail on post revisions.
 		if ( 'revision' === $post->post_type ) {
 			return; 
 		}
-        $value = implode( ',', (array) $value );
-        // Check for meta value and either update or add the metadata.
+		$value = implode( ',', (array) $value );
+		// Check for meta value and either update or add the metadata.
 		if ( get_post_meta( $post->ID, $key, false ) ) {
 			update_post_meta( $post->ID, $key, $value );
 		} else {
 			add_post_meta( $post->ID, $key, $value );
-        }
-        // Delete the metavalue if blank.
+		}
+		// Delete the metavalue if blank.
 		if ( ! $value ) {
 			delete_post_meta( $post->ID, $key );
 		}
 	}
 }
-add_action( 'save_post', 'wp_dispensary_product_prices_metabox_save', 1, 2 );
+add_action( 'save_post', 'wp_dispensary_product_prices_metabox_save', 1, 1 );

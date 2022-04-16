@@ -71,7 +71,6 @@ function wp_dispensary_menu_shortcode( $atts ) {
 	) );
 
 	// Default variables.
-	$order_new    = '';
 	$wpd_products = '';
 	$wpd_image    = '';
 	$img_size     = 'dispensary-image';

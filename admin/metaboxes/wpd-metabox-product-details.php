@@ -184,11 +184,10 @@ function wp_dispensary_product_details_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param  int    $post_id
  * @param  object $post
  * @return void
  */
-function wp_dispensary_product_details_metabox_save( $post_id, $post ) {
+function wp_dispensary_product_details_metabox_save( $post ) {
 
 	/**
 	 * Verify this came from the our screen and with proper authorization,
@@ -214,28 +213,28 @@ function wp_dispensary_product_details_metabox_save( $post_id, $post ) {
 	$details_meta['product_size']        = esc_html( filter_input( INPUT_POST, 'product_size' ) );
 	$details_meta['product_servings']    = esc_html( filter_input( INPUT_POST, 'product_servings' ) );
 	$details_meta['product_servings_ml'] = esc_html( filter_input( INPUT_POST, 'product_servings_ml' ) );
-    $details_meta['product_net_weight']  = esc_html( filter_input( INPUT_POST, 'product_net_weight' ) );
-    $details_meta['product_weight']      = esc_html( filter_input( INPUT_POST, 'product_weight' ) );
+	$details_meta['product_net_weight']  = esc_html( filter_input( INPUT_POST, 'product_net_weight' ) );
+	$details_meta['product_weight']      = esc_html( filter_input( INPUT_POST, 'product_weight' ) );
 	$details_meta['seed_count']          = esc_html( filter_input( INPUT_POST, 'seed_count' ) );
 	$details_meta['clone_count']         = esc_html( filter_input( INPUT_POST, 'clone_count' ) );
 
 	// Save $details_meta as metadata.
 	foreach ( $details_meta as $key => $value ) {
-        // Bail on post revisions.
+		// Bail on post revisions.
 		if ( 'revision' === $post->post_type ) {
 			return;
 		}
-        $value = implode( ',', (array) $value );
-        // Check for meta value and either update or add the metadata.
+		$value = implode( ',', (array) $value );
+		// Check for meta value and either update or add the metadata.
 		if ( get_post_meta( $post->ID, $key, false ) ) {
 			update_post_meta( $post->ID, $key, $value );
 		} else {
 			add_post_meta( $post->ID, $key, $value );
-        }
-        // Delete the metavalue if blank.
+		}
+		// Delete the metavalue if blank.
 		if ( ! $value ) {
 			delete_post_meta( $post->ID, $key );
 		}
 	}
 }
-add_action( 'save_post', 'wp_dispensary_product_details_metabox_save', 1, 2 );
+add_action( 'save_post', 'wp_dispensary_product_details_metabox_save', 1, 1 );

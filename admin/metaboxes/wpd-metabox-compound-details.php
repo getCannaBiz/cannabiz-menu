@@ -21,7 +21,7 @@
 function wp_dispensary_compound_details_metabox() {
 	add_meta_box(
 		'wp_dispensary_compound_details',
-		esc_html__( 'Compound details', 'wp-dispensary' ),
+		esc_attr__( 'Compound details', 'wp-dispensary' ),
 		'wp_dispensary_compound_details_metabox_content',
 		'products',
 		'normal',
@@ -53,32 +53,32 @@ function wp_dispensary_compound_details_metabox_content() {
 
 	/** Echo out the fields */
 	echo '<div class="input-field">';
-	echo '<p>' . esc_html__( 'THC', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="compounds_thc" value="' . esc_html( $thc ) . '" class="widefat" />';
+	echo '<p>' . esc_attr__( 'THC', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="compounds_thc" value="' . esc_attr( $thc ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_html__( 'THCA', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="compounds_thca" value="' . esc_html( $thca ) . '" class="widefat" />';
+	echo '<p>' . esc_attr__( 'THCA', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="compounds_thca" value="' . esc_attr( $thca ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_html__( 'CBD', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="compounds_cbd" value="' . esc_html( $cbd ) . '" class="widefat" />';
+	echo '<p>' . esc_attr__( 'CBD', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="compounds_cbd" value="' . esc_attr( $cbd ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_html__( 'CBA', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="compounds_cba" value="' . esc_html( $cba ) . '" class="widefat" />';
+	echo '<p>' . esc_attr__( 'CBA', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="compounds_cba" value="' . esc_attr( $cba ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_html__( 'CBN', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="compounds_cbn" value="' . esc_html( $cbn ) . '" class="widefat" />';
+	echo '<p>' . esc_attr__( 'CBN', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="compounds_cbn" value="' . esc_attr( $cbn ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_html__( 'CBG', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="compounds_cbg" value="' . esc_html( $cbg ) . '" class="widefat" />';
+	echo '<p>' . esc_attr__( 'CBG', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="compounds_cbg" value="' . esc_attr( $cbg ) . '" class="widefat" />';
 	echo '</div>';
 	echo '<div class="input-field">';
-	echo '<p>' . esc_html__( 'Total', 'wp-dispensary' ) . ' %</p>';
-	echo '<input type="text" name="compounds_total" value="' . esc_html( $total ) . '" class="widefat" />';
+	echo '<p>' . esc_attr__( 'Total', 'wp-dispensary' ) . ' %</p>';
+	echo '<input type="text" name="compounds_total" value="' . esc_attr( $total ) . '" class="widefat" />';
 	echo '</div>';
 
 }
@@ -86,11 +86,10 @@ function wp_dispensary_compound_details_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param  int    $post_id
  * @param  object $post
  * @return void
  */
-function wp_dispensary_compound_details_metabox_save( $post_id, $post ) {
+function wp_dispensary_compound_details_metabox_save( $post ) {
 
 	/**
 	 * Verify this came from the our screen and with proper authorization,
@@ -140,4 +139,4 @@ function wp_dispensary_compound_details_metabox_save( $post_id, $post ) {
 		}
 	}
 }
-add_action( 'save_post', 'wp_dispensary_compound_details_metabox_save', 1, 2 );
+add_action( 'save_post', 'wp_dispensary_compound_details_metabox_save', 1, 1 );

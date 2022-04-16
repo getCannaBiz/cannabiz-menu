@@ -50,7 +50,7 @@ function wpd_menu_types_simple( $lowercase = NULL ) {
 	$menu_types_simple = array();
 
 	// Loop through menu types.
-	foreach ( $menu_types as $key=>$value ) {
+	foreach ( $menu_types as $value ) {
 		// Add items to simple array.
 		if ( $lowercase ) {
 			$menu_types_simple[] = str_replace( '-', '', strtolower( $value ) );
