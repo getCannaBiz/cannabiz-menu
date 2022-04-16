@@ -3,6 +3,8 @@
 
 ![Cannabis Dispensary WordPress Plugin](https://www.wpdispensary.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5c354fa66bed47cebb795ea90d7c52df)](https://www.codacy.com/gh/wpdispensary/wp-dispensary/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wpdispensary/wp-dispensary&amp;utm_campaign=Badge_Grade)
+
 :raised_hand: **WAIT!** This repo is under active development. Download the latest stable release: [v4.0.0](https://github.com/wpdispensary/wp-dispensary/releases/tag/v4.0).
 
 :point_right: **[View Demo](https://demo.wpdispensary.com/)**
@@ -46,28 +48,11 @@ WP Dispensary has the following language translations included:
 
 Interested in having WP Dispensary translated into your language? Open an issue and let us know :+1:
 
-## Extending WP Dispensary
-
-With our add-on's you can extend the functionality of the core WP Dispensary plugin, giving your website a competitive edge in the growing medical marijuana market.
-
-WordPress.org is home to some amazing free extensions for WP Dispensary, including:
-
-*   [Dispensary Blocks](https://wordpress.org/plugins/dispensary-blocks)
-*   [Dispensary Coupons](https://wordpress.org/plugins/dispensary-coupons)
-*   [Dispensary Tinctures](https://wordpress.org/plugins/dispensary-tinctures)
-*   [Dispensary Gear](https://wordpress.org/plugins/dispensary-gear)
-
 ## Go Pro with WP Dispensary
 
 Looking to take things even further? Our commercial extensions provide you with the capabilities you need to turn your online menu into a powerhouse sales machine.
 
 *   [eCommerce](https://www.wpdispensary.com/product/ecommerce/)
-*   [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
-*   [Menu Styles](https://www.wpdispensary.com/product/styles/)
-*   [Top Sellers](https://www.wpdispensary.com/product/dispensary-top-sellers/)
-*   [Locations](https://www.wpdispensary.com/product/dispensary-locations/)
-
-Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
 
 ### We also have a WooCommerce solution
 
