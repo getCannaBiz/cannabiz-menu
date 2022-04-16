@@ -29,7 +29,7 @@ p.wpd-wooconnect {
 /** Main Table */
 
 table.wpdispensary-table {
-	background: #FFF;
+	background: #fff;
 	border-width: 1px;
 	border-collapse: collapse;
 	font-size: 14px;
@@ -40,7 +40,7 @@ table.wpdispensary-table {
 }
 
 table.wpdispensary-table td.wpdispensary-title {
-	background: #F1F1F1;
+	background: #f1f1f1;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 	color: #454545;
@@ -49,13 +49,13 @@ table.wpdispensary-table td.wpdispensary-title {
 }
 
 table.wpdispensary-table td {
-	border: 1px solid #DDD;
+	border: 1px solid #ddd;
 	padding: 10px;
 	width: 50%;
 }
 
 table.wpdispensary-table.pricing td {
-	color: #76BD1D;
+	color: #76bd1d;
 	width: auto;
 }
 
@@ -74,7 +74,7 @@ table.wpdispensary-table td span {
 }
 
 .ingredientlist {
-	border: 1px solid #DDD;
+	border: 1px solid #ddd;
 	float: left;
 	font-size: 15px;
 	line-height: 18px;
@@ -88,7 +88,7 @@ table.wpdispensary-table td span {
 }
 
 .ingredientlist strong {
-	background: #DDD;
+	background: #ddd;
 	color: #454545;
 	display: block;
 	font-weight: 600;
@@ -112,9 +112,9 @@ p.wpd-wooconnect {
 a.button.wpd-connect-btn,
 a.button.wpd-connect-btn:visited {
 	background: transparent;
-	border: 1px solid #AAA;
+	border: 1px solid #aaa;
 	box-shadow: none;
-	color: #AAA;
+	color: #aaa;
 	display: inline-block;
 	margin-bottom: 5px;
 	padding: 10px 15px;
@@ -122,20 +122,20 @@ a.button.wpd-connect-btn:visited {
 
 a.button.wpd-connect-btn:hover {
 	background: transparent;
-	border: 1px solid #76BD1D;
+	border: 1px solid #76bd1d;
 	box-shadow: none;
-	color: #76BD1D;
+	color: #76bd1d;
 }
 
 a.button.wpd-connect-btn.buy-now,
 a.button.wpd-connect-btn.buy-now:visited {
 	background: transparent;
-	border: 1px solid #76BD1D;
-	color: #76BD1D;
+	border: 1px solid #76bd1d;
+	color: #76bd1d;
 }
 
 a.button.wpd-connect-btn.buy-now:hover {
-	background: #76BD1D;
-	border: 1px solid #76BD1D;
-	color: #FFF;
+	background: #76bd1d;
+	border: 1px solid #76bd1d;
+	color: #fff;
 }
