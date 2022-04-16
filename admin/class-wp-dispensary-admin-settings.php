@@ -353,7 +353,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 				/**
 				 * Add a new section to a settings page.
 				 *
-				 * @param string   $id
+				 * @param string   $the_id
 				 * @param string   $title
 				 * @param callable $callback
 				 * @param string   $page     | Page is same as section ID.
@@ -369,7 +369,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 			 */
 			foreach ( $this->fields_array as $section => $field_array ) {
 				foreach ( $field_array as $field ) {
-						$id                = isset( $field['id'] ) ? $field['id'] : false;
+						$the_id            = isset( $field['id'] ) ? $field['id'] : false;
 						$type              = isset( $field['type'] ) ? $field['type'] : 'text';
 						$name              = isset( $field['name'] ) ? $field['name'] : 'No Name Added';
 						$label_for         = "{$section}[{$field['id']}]";
@@ -382,7 +382,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 						$button_text       = isset( $field['button_text'] ) ? $field['button_text'] : '';
 						$button_url        = isset( $field['button_url'] ) ? $field['button_url'] : '';
 						$args = array(
-							'id'                => $id,
+							'id'                => $the_id,
 							'type'              => $type,
 							'name'              => $name,
 							'label_for'         => $label_for,
@@ -399,7 +399,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 						/**
 						 * Add a new field to a section of a settings page.
 						 *
-						 * @param string 	$id
+						 * @param string 	$the_id
 						 * @param string 	$title
 						 * @param callable 	$callback
 						 * @param string 	$page
@@ -407,7 +407,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 						 * @param array 	$args = array()
 						 * @since 2.0
 						 */
-						// @param string 	$id
+						// @param string 	$the_id
 						$field_id = $section . '[' . $field['id'] . ']';
 						add_settings_field(
 							$field_id,
@@ -673,13 +673,13 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 		 * @param array $args settings field args.
 		 */
 		function callback_file( $args ) {
-			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
-			$id    = $args['section'] . '[' . $args['id'] . ']';
-			$label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : esc_html__( 'Choose File', 'wp-dispensary' );
-			$html  = sprintf( '<input type="text" class="%1$s-text wpds-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
-			$html .= '<input type="button" class="button wpds-browse" value="' . $label . '" />';
-			$html .= $this->get_field_description( $args );
+			$value  = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+			$size   = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
+			$the_id = $args['section'] . '[' . $args['id'] . ']';
+			$label  = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : esc_html__( 'Choose File', 'wp-dispensary' );
+			$html   = sprintf( '<input type="text" class="%1$s-text wpds-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
+			$html  .= '<input type="button" class="button wpds-browse" value="' . $label . '" />';
+			$html  .= $this->get_field_description( $args );
 			echo $html;
 		}
 		/**
@@ -688,10 +688,10 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 		 * @param array $args settings field args.
 		 */
 		function callback_image( $args ) {
-			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
-			$id    = $args['section'] . '[' . $args['id'] . ']';
-			$label = isset( $args['options']['button_label'] ) ?
+			$value  = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+			$size   = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
+			$the_id = $args['section'] . '[' . $args['id'] . ']';
+			$label  = isset( $args['options']['button_label'] ) ?
 			$args['options']['button_label'] :
 			esc_html__( 'Choose Image', 'wp-dispensary' );
 			$html  = sprintf( '<input type="text" class="%1$s-text wpds-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );

@@ -150,7 +150,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
 		$viewflowers = '';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewflowers . '</h2>';
+	$wpdposts = '<div id="' . $the_id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewflowers . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -398,7 +398,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
 		$viewconcentrates = '';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewconcentrates . '</h2>';
+	$wpdposts = '<div id="' . $the_id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewconcentrates . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -582,7 +582,7 @@ function wpdispensary_edibles_shortcode( $atts ) {
 		$viewedibles = '';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewedibles . '</h2>';
+	$wpdposts = '<div id="' . $the_id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewedibles . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -770,7 +770,7 @@ function wpdispensary_prerolls_shortcode( $atts ) {
 		$viewprerolls = '';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewprerolls . '</h2>';
+	$wpdposts = '<div id="' . $the_id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewprerolls . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -926,7 +926,7 @@ function wpdispensary_topicals_shortcode( $atts ) {
 		$viewtopicals = '';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewtopicals . '</h2>';
+	$wpdposts = '<div id="' . $the_id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewtopicals . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -1087,7 +1087,7 @@ function wpdispensary_growers_shortcode( $atts ) {
 		$viewgrowers = '';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewgrowers . '</h2>';
+	$wpdposts = '<div id="' . $the_id . '" class="wpdispensary"><h2 class="wpd-title">' . $title . $viewgrowers . '</h2>';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();
@@ -1221,6 +1221,8 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		$atts,
 		'wpd_carousel'
 	) );
+
+	$the_id = $id;
 
 	/**
 	 * Defining variables
@@ -1361,7 +1363,7 @@ function wpdispensary_carousel_shortcode( $atts ) {
 		$showtitle = '<h2 class="wpd-title">' . $title . '</h2>';
 	}
 
-	$wpdposts = '<div id="' . $id . '" class="carouselwrap">' . $showtitle . '<div class="wpd-carousel">';
+	$wpdposts = '<div id="' . $the_id . '" class="carouselwrap">' . $showtitle . '<div class="wpd-carousel">';
 
 	while ( $wpdquery->have_posts() ) :
 		$wpdquery->the_post();

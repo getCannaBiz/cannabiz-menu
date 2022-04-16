@@ -223,15 +223,15 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( get_post_meta( get_the_ID(), 'product_yield', true ) ) {
-			$wpd_clone_yield = '<tr><td><span>' . esc_html__( 'Yield', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_yield', true ) . '</td></tr>';
+			$clone_yield = '<tr><td><span>' . esc_html__( 'Yield', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_yield', true ) . '</td></tr>';
 		} else {
-			$wpd_clone_yield = '';
+			$clone_yield = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), 'product_difficulty', true ) ) {
-			$wpd_clone_difficulty = '<tr><td><span>' . esc_html__( 'Difficulty', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_difficulty', true ) . '</td></tr>';
+			$clone_difficulty = '<tr><td><span>' . esc_html__( 'Difficulty', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_difficulty', true ) . '</td></tr>';
 		} else {
-			$wpd_clone_difficulty = '';
+			$clone_difficulty = '';
 		}
 
 		if ( get_post_meta( get_the_ID(), 'product_weight', true ) ) {
@@ -279,9 +279,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'flowers', 'concentrates' ) ) ) {
-			$details_flowers_concentrates = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time;
+			$details_flowers = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time;
 		} else {
-			$details_flowers_concentrates = '';
+			$details_flowers = '';
 		}
 
 		if ( 'edibles' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
@@ -303,7 +303,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		}
 
 		if ( 'growers' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-			$details_growers = $wpd_strain_type . $wpd_seed_count . $wpd_clone_count . $wpd_clone_origin . $wpd_clone_time . $wpd_clone_yield . $wpd_clone_difficulty . $wpd_vendors;
+			$details_growers = $wpd_strain_type . $wpd_seed_count . $wpd_clone_count . $wpd_clone_origin . $wpd_clone_time . $clone_yield . $clone_difficulty . $wpd_vendors;
 		} else {
 			$details_growers = '';
 		}
@@ -392,9 +392,9 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 		 * Details table build
 		 */
 		if ( ! isset( $wpd_settings['wpd_hide_details'] ) ) {
-			$wpd_table_details = $details_table_top . $details_flowers_concentrates . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_tinctures . $details_gear . $details_table_bottom;
+			$wpd_table_details = $details_table_top . $details_flowers . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_tinctures . $details_gear . $details_table_bottom;
 		} elseif ( isset( $wpd_settings['wpd_hide_details'] ) && 'on' !== $wpd_settings['wpd_hide_details'] ) {
-			$wpd_table_details = $details_table_top . $details_flowers_concentrates . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_tinctures . $details_gear . $details_table_bottom;
+			$wpd_table_details = $details_table_top . $details_flowers . $details_prerolls . $details_growers . $details_edibles . $details_topicals . $details_tinctures . $details_gear . $details_table_bottom;
 		} else {
 			$wpd_table_details = '';
 		}
@@ -435,6 +435,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 				$concentrate_prices .= '<td><span>' . $id . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), $value, true ) . '</td>';
 			}
 		}
+
 		/**
 		 * Pricing Table Before Action Hook
 		 *
@@ -559,34 +560,34 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
 			// Pricing Placement.
 			if ( isset( $wpd_settings['wpd_pricing_table_placement'] ) && 'above' !== $wpd_settings['wpd_pricing_table_placement'] ) {
-				$wpd_pricing_below = $wpd_table_pricing;
+				$pricing_below = $wpd_table_pricing;
 			} else {
-				$wpd_pricing_below = '';
+				$pricing_below = '';
 			}
 
 			// Pricing Placement.
 			if ( ! isset( $wpd_settings['wpd_pricing_table_placement'] ) ) {
-				$wpd_pricing_above = $wpd_table_pricing;
+				$pricing_above = $wpd_table_pricing;
 			} elseif ( isset( $wpd_settings['wpd_pricing_table_placement'] ) && 'below' !== $wpd_settings['wpd_pricing_table_placement'] ) {
-				$wpd_pricing_above = $wpd_table_pricing;
+				$pricing_above = $wpd_table_pricing;
 			} else {
-				$wpd_pricing_above = '';
+				$pricing_above = '';
 			}
 
 			// Compounds Placement (below).
 			if ( ! isset( $wpd_settings['wpd_compounds_table_placement'] ) ) {
-				$wpd_compound_details_below = $details_compounds;
+				$compounds_below = $details_compounds;
 			} elseif ( isset( $wpd_settings['wpd_compounds_table_placement'] ) && 'above' !== $wpd_settings['wpd_compounds_table_placement'] ) {
-				$wpd_compound_details_below = $details_compounds;
+				$compounds_below = $details_compounds;
 			} else {
-				$wpd_compound_details_below = '';
+				$compounds_below = '';
 			}
 
 			// Compounds Placement (above).
 			if ( isset( $wpd_settings['wpd_compounds_table_placement'] ) && 'below' !== $wpd_settings['wpd_compounds_table_placement'] ) {
-				$wpd_compound_details_above = $details_compounds;
+				$compounds_above = $details_compounds;
 			} else {
-				$wpd_compound_details_above = '';
+				$compounds_above = '';
 			}
 
 			// Details Placement (below).
@@ -609,7 +610,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 			$product_schema = wpd_product_schema( get_the_ID() );
 
 			// Apply before.
-			$new_content = $product_schema . $wpd_pricing_above . $wpd_compound_details_above . $details_above . $original . $wpd_pricing_below . $wpd_compound_details_below . $details_below;
+			$new_content = $product_schema . $pricing_above . $compounds_above . $details_above . $original . $pricing_below . $compounds_below . $details_below;
 
 			return $new_content;
 		} else {

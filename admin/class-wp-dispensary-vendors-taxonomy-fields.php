@@ -31,9 +31,9 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
      */
     public function init() {
         add_action( 'vendors_add_form_fields', array( $this, 'add_vendor_logo_image' ), 10, 2 );
-        add_action( 'created_vendors', array( $this, 'save_vendor_logo_image' ), 10, 2 );
+        add_action( 'created_vendors', array( $this, 'save_vendor_logo_image' ), 10, 1 );
         add_action( 'vendors_edit_form_fields', array( $this, 'update_vendor_logo_image' ), 10, 2 );
-        add_action( 'edited_vendors', array( $this, 'updated_vendor_logo_image' ), 10, 2 );
+        add_action( 'edited_vendors', array( $this, 'updated_vendor_logo_image' ), 10, 1 );
         add_action( 'admin_enqueue_scripts', array( $this, 'load_media' ) );
         add_action( 'admin_footer', array( $this, 'add_script' ) );
     }
@@ -70,7 +70,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
      * 
      * @since 4.0
      */
-    public function save_vendor_logo_image( $term_id, $tt_id ) {
+    public function save_vendor_logo_image( $term_id ) {
         if ( null !== filter_input( INPUT_POST, 'vendor_logo' ) && '' !== filter_input( INPUT_POST, 'vendor_logo' ) ){
             $image = filter_input( INPUT_POST, 'vendor_logo' );
             add_term_meta( $term_id, 'vendor_logo', $image, true );
@@ -108,7 +108,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
     * Update the form field value
     * @since 4.0
     */
-    public function updated_vendor_logo_image( $term_id, $tt_id ) {
+    public function updated_vendor_logo_image( $term_id ) {
         if ( null !== filter_input( INPUT_POST, 'vendor_logo' ) && '' !== filter_input( INPUT_POST, 'vendor_logo' ) ) {
             $image = filter_input( INPUT_POST, 'vendor_logo' );
             update_term_meta( $term_id, 'vendor_logo', $image );

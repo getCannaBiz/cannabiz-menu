@@ -378,12 +378,11 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 
 	// Get post type.
 	$product_type = get_post_meta( $product_id, 'product_type', true );
-
-    // Create post type variables.
-    if ( $product_type ) {
-        $product_type_data = get_post_type_object( $product_type );
-        $product_type_name = $product_type_data->label;
-        $product_type_slug = $product_type_data->rewrite['slug'];
+	// Create post type variables.
+	if ( $product_type ) {
+			$product_type_data = get_post_type_object( $product_type );
+			$product_type_name = $product_type_data->label;
+			$product_type_slug = $product_type_data->rewrite['slug'];
 	}
 
 	if ( 'flowers' == $product_type || 'concentrates' == $product_type || 'prerolls' == $product_type || 'tinctures' == $product_type ) {
@@ -407,7 +406,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 	} else {
 		// Do nothing.
 	}
-
 	// THCA.
 	if ( NULL != $compound_array && in_array( 'thca', $compound_array ) ) {
 		if ( get_post_meta( $product_id, 'compounds_thca', true ) ) {
@@ -416,7 +414,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 	} else {
 		// Do nothing.
 	}
-
 	// CBD.
 	if ( NULL != $compound_array && in_array( 'cbd', $compound_array ) ) {
 		if ( get_post_meta( $product_id, 'compounds_cbd', true ) ) {
@@ -427,7 +424,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 	} else {
 		// Do nothing.
 	}
-
 	// CBA.
 	if ( NULL != $compound_array && in_array( 'cba', $compound_array ) ) {
 		if ( get_post_meta( $product_id, 'compounds_cba', true ) ) {
@@ -438,7 +434,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 	} else {
 		// Do nothing.
 	}
-
 	// CBN.
 	if ( NULL != $compound_array && in_array( 'cbn', $compound_array ) ) {
 		if ( get_post_meta( $product_id, 'compounds_cbn', true ) ) {
@@ -449,7 +444,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 	} else {
 		// Do nothing.
 	}
-
 	// CBG.
 	if ( NULL != $compound_array && in_array( 'cbg', $compound_array ) ) {
 		if ( get_post_meta( $product_id, 'compounds_cbg', true ) ) {
@@ -460,7 +454,6 @@ function get_wpd_compounds_simple( $product_id, $type = NULL, $compound_array = 
 	} else {
 		// Do nothing.
 	}
-
 	// Create empty variable.
 	$str = '';
 

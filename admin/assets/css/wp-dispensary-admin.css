@@ -68,19 +68,19 @@ select#selected_tinctures {
 
 /** Dashboard icons */
 
-#dashboard_right_now .products-count a:before,
-#dashboard_right_now .products-count span:before,
-#dashboard_right_now .coupons-count a:before,
-#dashboard_right_now .coupons-count span:before,
-#dashboard_right_now .wpd_orders-count a:before,
-#dashboard_right_now .wpd_orders-count span:before {
+#dashboard_right_now .products-count a::before,
+#dashboard_right_now .products-count span::before,
+#dashboard_right_now .coupons-count a::before,
+#dashboard_right_now .coupons-count span::before,
+#dashboard_right_now .wpd_orders-count a::before,
+#dashboard_right_now .wpd_orders-count span::before {
     background: url(../images/glance-icon.png) no-repeat 2px 0px;
     content: '';
     height: 20px;
     padding-right: 25px;
 }
 
-.toplevel_page_wpdispensary #adminmenu div.wp-menu-image:before {
+.toplevel_page_wpdispensary #adminmenu div.wp-menu-image::before {
     background: url(../images/menu-icon.png) no-repeat 2px 0px;
     content: '';
     height: 36px;
@@ -166,7 +166,7 @@ th#featured_thumb {
   padding: 0;
 }
 
-.metabox-holder .group .form-table h1:after {
+.metabox-holder .group .form-table h1::after {
   content: '';
   display: block;
   clear: both;
@@ -332,14 +332,14 @@ body.taxonomy-shelf_type .search-box input[type="search"] {
   line-height: 1.92;
 }
 
-ul#adminmenu a.toplevel_page_wpd-settings.wp-has-current-submenu:after {
+ul#adminmenu a.toplevel_page_wpd-settings.wp-has-current-submenu::after {
   border-right-color: #fff;
 }
 
 /** Admin toolbar menu items
 -------------------------------------------------------------- */
 
-body.wp-admin #wp-admin-bar-wp_dispensary a:before {
+body.wp-admin #wp-admin-bar-wp_dispensary a::before {
   content: '';
   background: url(../images/menu-icon.png) no-repeat center center !important;
   width: 32px;
@@ -349,6 +349,6 @@ body.wp-admin #wp-admin-bar-wp_dispensary a:before {
   margin-right: 0 !important;
 }
 
-body.wp-admin #wp-admin-bar-wp_dispensary .ab-sub-wrapper a:before {
+body.wp-admin #wp-admin-bar-wp_dispensary .ab-sub-wrapper a::before {
   display: none !important;
 }

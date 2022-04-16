@@ -22,18 +22,18 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function wpd_admin_menu_products() {
 	// Get permalink base for Products.
-	$wpd_products_slug = get_option( 'wpd_products_slug' );
+	$products_slug = get_option( 'wpd_products_slug' );
 
 	// If custom base is empty, set default.
-	if ( '' == $wpd_products_slug ) {
-		$wpd_products_slug = 'products';
+	if ( '' == $products_slug ) {
+		$products_slug = 'products';
 	}
 
 	// Capitalize first letter of new slug.
-	$wpd_products_slug_cap = ucfirst( $wpd_products_slug );
+	$products_slug_cap = ucfirst( $products_slug );
 
 	// Products submenu link.
-	add_submenu_page( 'wpd-settings', $wpd_products_slug_cap, $wpd_products_slug_cap, 'manage_options', 'edit.php?post_type=products', null );
+	add_submenu_page( 'wpd-settings', $products_slug_cap, $products_slug_cap, 'manage_options', 'edit.php?post_type=products', null );
 }
 
 /**

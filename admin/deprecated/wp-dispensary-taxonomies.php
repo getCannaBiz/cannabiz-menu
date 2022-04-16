@@ -36,117 +36,34 @@ function wp_dispensary_deprecated_taxonomies() {
 		'menu_name'         => esc_html__( 'Taxonomies', 'wp-dispensary' ),
 	);
 
-	register_taxonomy( 'shelf_type', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'shelf_type',
-			'with_front' => true,
-		),
-	) );
+	$taxonomies = array(
+		'shelf_type',
+		'strain_type',
+		'vendor',
+		'aroma',
+		'flavor',
+		'effect',
+		'symptom',
+		'condition'
+	);
 
-	register_taxonomy( 'strain_type', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'strain_type',
-			'with_front' => true,
-		),
-	) );
+	foreach( $taxonomies as $tax ) {
 
-	register_taxonomy( 'vendor', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'vendor',
-			'with_front' => true,
-		),
-	) );
+		register_taxonomy( $tax, 'products', array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => false,
+			'show_in_rest'      => false,
+			'show_admin_column' => false,
+			'show_in_nav_menus' => false,
+			'query_var'         => true,
+			'rewrite'           => array(
+				'slug'       => $tax,
+				'with_front' => true,
+			),
+		) );
 
-	register_taxonomy( 'aroma', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'aroma',
-			'with_front' => true,
-		),
-	) );
-
-	register_taxonomy( 'flavor', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'flavor',
-			'with_front' => true,
-		),
-	) );
-
-	register_taxonomy( 'effect', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'effect',
-			'with_front' => true,
-		),
-	) );
-
-	register_taxonomy( 'symptom', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'symptom',
-			'with_front' => true,
-		),
-	) );
-
-	register_taxonomy( 'condition', 'products', array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => false,
-		'show_in_rest'      => false,
-		'show_admin_column' => false,
-		'show_in_nav_menus' => false,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => 'condition',
-			'with_front' => true,
-		),
-	) );
+	}
 
 }
 add_action( 'init', 'wp_dispensary_deprecated_taxonomies', 0 );
