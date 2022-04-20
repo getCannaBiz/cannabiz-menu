@@ -68,10 +68,11 @@ class WP_Dispensary_CSV_Export {
 	 * Export WP Dispensary products
 	 */
 	public function export_products() {
-		echo '<div class="wrap">';
-		echo '<h2>' . esc_html__( 'WP Dispensary\'s Product Export', 'wp-dispensary' ) . '</h2>';
-		echo '<p>' . esc_html__( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'wp-dispensary' ) . '</p>';
-		echo '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . esc_html__( 'Export', 'wp-dispensary' ) . '</a></p>';
+		$wrap = '<div class="wrap">';
+		$wrap .= '<h2>' . esc_html__( 'WP Dispensary\'s Product Export', 'wp-dispensary' ) . '</h2>';
+		$wrap .= '<p>' . esc_html__( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'wp-dispensary' ) . '</p>';
+		$wrap .= '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . esc_html__( 'Export', 'wp-dispensary' ) . '</a></p>';
+		echo wp_kses( $wrap, wp_kses_allowed_html( 'post' ) );
 	}
 
 	/**
@@ -367,9 +368,9 @@ class WP_Dispensary_CSV_Export {
 					$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
 					$inventory_type   = 'units';
 				}
-				$price_each = '';
 			}
 
+			// Concentrates data.
 			if ( 'concentrates' == get_post_meta( $product['ID'], 'product_type', true ) ) {
 				if ( get_post_meta( $product['ID'], 'inventory_grams', TRUE ) ) {
 					$inventory_amount = get_post_meta( $product['ID'], 'inventory_grams', TRUE );
@@ -378,43 +379,25 @@ class WP_Dispensary_CSV_Export {
 					$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
 					$inventory_type   = 'units';
 				}
-				$price_each = get_post_meta( $product['ID'], 'price_each', TRUE );
 			}
 
-			if ( 'edibles' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-				$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
-				$inventory_type   = 'units';
-				$price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
-			}
+			// Additional types.
+			$types = array(
+				'edibles',
+				'prerolls',
+				'topicals',
+				'growers',
+				'gear',
+				'tinctures'
+			);
 
-			if ( 'prerolls' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-				$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
-				$inventory_type   = 'units';
-				$price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
-			}
-
-			if ( 'topicals' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-				$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
-				$inventory_type   = 'units';
-				$price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
-			}
-
-			if ( 'growers' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-				$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
-				$inventory_type   = 'units';
-				$price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
-			}
-
-			if ( 'gear' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-				$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
-				$inventory_type   = 'units';
-				$price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
-			}
-
-			if ( 'tinctures' == get_post_meta( $product['ID'], 'product_type', true ) ) {
-				$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
-				$inventory_type   = 'units';
-				$price_each       = get_post_meta( $product['ID'], 'price_each', TRUE );
+			// Loop through types.
+			foreach ( $array as $type ) {
+				// Additional data.
+				if ( $type == get_post_meta( $product['ID'], 'product_type', true ) ) {
+					$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
+					$inventory_type   = 'units';
+				}
 			}
 
 			// Create array.

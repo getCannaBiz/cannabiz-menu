@@ -20,12 +20,11 @@ if ( ! defined( 'WPINC' ) ) {
  * @return string|bool
  */
 function wpd_settings_display_compounds_table_placement() {
-    $setting = get_option( 'wpdas_display' );
+    $setting   = get_option( 'wpdas_display' );
+    $placement = 'above';
 
     if ( isset( $setting['wpd_compounds_table_placement'] ) && '' !== $setting['wpd_compounds_table_placement'] ) {
         $placement = $setting['wpd_compounds_table_placement'];
-    } else {
-        $placement = 'above';
     }
 
     return apply_filters( 'wpd_settings_display_compounds_table_placement', $placement );
@@ -38,11 +37,10 @@ function wpd_settings_display_compounds_table_placement() {
  */
 function wpd_settings_display_hide_compounds() {
     $setting = get_option( 'wpdas_display' );
+    $hide    = FALSE;
 
     if ( isset( $setting['wpd_hide_compounds'] ) && 'off' !== $setting['wpd_hide_compounds'] ) {
         $hide = TRUE;
-    } else {
-        $hide = FALSE;
     }
 
     return apply_filters( 'wpd_settings_display_hide_compounds', $hide );
@@ -54,12 +52,11 @@ function wpd_settings_display_hide_compounds() {
  * @return string|bool
  */
 function wpd_settings_display_details_table_placement() {
-    $setting = get_option( 'wpdas_display' );
+    $setting   = get_option( 'wpdas_display' );
+    $placement = 'above';
 
     if ( isset( $setting['wpd_details_table_placement'] ) && '' !== $setting['wpd_details_table_placement'] ) {
         $placement = $setting['wpd_details_table_placement'];
-    } else {
-        $placement = 'above';
     }
 
     return apply_filters( 'wpd_settings_display_details_table_placement', $placement );
@@ -72,11 +69,10 @@ function wpd_settings_display_details_table_placement() {
  */
 function wpd_settings_display_hide_details() {
     $setting = get_option( 'wpdas_display' );
+    $hide    = FALSE;
 
     if ( isset( $setting['wpd_hide_details'] ) && 'off' !== $setting['wpd_hide_details'] ) {
         $hide = TRUE;
-    } else {
-        $hide = FALSE;
     }
 
     return apply_filters( 'wpd_settings_display_hide_details', $hide );
@@ -110,12 +106,11 @@ function wpd_settings_display_details_phrase() {
  * @return string|bool
  */
 function wpd_settings_customers_registration_redirect() {
-    $setting = get_option( 'wpdas_customers' );
+    $setting      = get_option( 'wpdas_customers' );
+    $redirect_url = FALSE;
 
     if ( isset( $setting['wpd_settings_customers_registration_redirect'] ) && 0 !== $setting['wpd_settings_customers_registration_redirect'] ) {
         $redirect_url = home_url() . '/' . $setting['wpd_settings_customers_registration_redirect'];
-    } else {
-        $redirect_url = FALSE;
     }
 
 	return apply_filters( 'wpd_settings_customers_registration_redirect', $redirect_url );

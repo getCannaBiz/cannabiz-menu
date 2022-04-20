@@ -22,11 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @param object  $data
  * @param WP_Post $post    The WordPress post object.
- * @param null    $request Unused.
  *
  * @return object The featured image data.
  */
-function wpd_rest_featured_image_url( $data, $post, $request ) {
+function wpd_rest_featured_image_url( $data, $post ) {
 	$_data                       = $data->data;
 	$thumbnail_id                = get_post_thumbnail_id( $post->ID );
 	$thumbnail                   = wp_get_attachment_image_src( $thumbnail_id, 'full' );
@@ -34,7 +33,7 @@ function wpd_rest_featured_image_url( $data, $post, $request ) {
 	$data->data                  = $_data;
 	return $data;
 }
-add_filter( 'rest_prepare_products', 'wpd_rest_featured_image_url', 10, 3 );
+add_filter( 'rest_prepare_products', 'wpd_rest_featured_image_url', 10, 2 );
 
 /**
  * Adding featured image URL's to Flowers Custom Post Type
@@ -43,11 +42,10 @@ add_filter( 'rest_prepare_products', 'wpd_rest_featured_image_url', 10, 3 );
  *
  * @param object  $data
  * @param WP_Post $post    The WordPress post object.
- * @param null    $request Unused.
  *
  * @return object The featured image data.
  */
-function wpd_rest_featured_images( $data, $post, $request ) {
+function wpd_rest_featured_images( $data, $post ) {
 	$_data                             = $data->data;
 	$thumbnail_id                      = get_post_thumbnail_id( $post->ID );
 	$wpd_default                       = wp_get_attachment_image_src( $thumbnail_id, 'dispensary-image' );
@@ -63,14 +61,14 @@ function wpd_rest_featured_images( $data, $post, $request ) {
 	$data->data                        = $_data;
 	return $data;
 }
-add_filter( 'rest_prepare_products', 'wpd_rest_featured_images', 10, 3 );
+add_filter( 'rest_prepare_products', 'wpd_rest_featured_images', 10, 2 );
 
 /**
  * Add 'categories' endpoint for the Products Custom Post Type
  *
  * @since 4.0
  */
-function products_category_numbers( $data, $post, $request ) {
+function products_category_numbers( $data, $post ) {
 
 	$_data = $data->data;
 	$items = wp_get_post_terms( $post->ID, 'product_category' );
@@ -87,27 +85,27 @@ function products_category_numbers( $data, $post, $request ) {
 
 	return $data;
 }
-add_filter( 'rest_prepare_products', 'products_category_numbers', 10, 3 );
+add_filter( 'rest_prepare_products', 'products_category_numbers', 10, 2 );
 
 /**
  * Add 'prices' endpoint for the Custom Post Types
  *
  * @since 2.7
  */
-function wpd_product_prices_all( $data, $post, $request ) {
+function wpd_product_prices_all( $data, $post ) {
 	$_data           = $data->data;
 	$_data['prices'] = get_wpd_all_prices_simple( $post->ID, TRUE );
 	$data->data      = $_data;
 	return $data;
 }
-add_filter( 'rest_prepare_products', 'wpd_product_prices_all', 10, 3 );
+add_filter( 'rest_prepare_products', 'wpd_product_prices_all', 10, 2 );
 
 /**
  * Add custom taxonomies to Products
  * 
  * @since 4.0
  */
-function wpd_product_taxonomies( $data, $post, $request ) {
+function wpd_product_taxonomies( $data, $post ) {
 	$_data                 = $data->data;
 	$_data['aromas']       = get_the_term_list( $post->ID, 'aromas', '', ' ', '' );
 	$_data['flavors']      = get_the_term_list( $post->ID, 'flavors', '', ' ', '' );
@@ -120,14 +118,14 @@ function wpd_product_taxonomies( $data, $post, $request ) {
 	$data->data            = $_data;
 	return $data;
 }
-add_filter( 'rest_prepare_products', 'wpd_product_taxonomies', 10, 3 );
+add_filter( 'rest_prepare_products', 'wpd_product_taxonomies', 10, 2 );
 
 /**
  * Add 'details' endpoint to Products
  *
  * @since 2.7
  */
-function wpd_product_details_all( $data, $post, $request ) {
+function wpd_product_details_all( $data, $post ) {
 
 	// Display product details.
 	$product_details = array(
@@ -153,7 +151,7 @@ function wpd_product_details_all( $data, $post, $request ) {
 	return $data;
 
 }
-add_filter( 'rest_prepare_products', 'wpd_product_details_all', 10, 3 );
+add_filter( 'rest_prepare_products', 'wpd_product_details_all', 10, 2 );
 
 /**
  * This adds the wpdispensary_prices metafields to the
@@ -184,7 +182,7 @@ add_action( 'rest_api_init', 'slug_register_prices' );
 /**
  * Get Prices
  */
-function slug_get_prices( $object, $field_name, $request ) {
+function slug_get_prices( $object, $field_name ) {
 	return get_post_meta( $object->ID, $field_name, true );
 }
 
@@ -224,7 +222,7 @@ add_action( 'rest_api_init', 'slug_register_concentrateprices' );
 /**
  * Get Prices
  */
-function slug_get_concentrateprices( $object, $field_name, $request ) {
+function slug_get_concentrateprices( $object, $field_name ) {
 	return get_post_meta( $object->ID, $field_name, true );
 }
 
@@ -264,7 +262,7 @@ add_action( 'rest_api_init', 'slug_register_edibleinfo' );
 /**
  * Get Edible info
  */
-function slug_get_edibleinfo( $object, $field_name, $request ) {
+function slug_get_edibleinfo( $object, $field_name ) {
 	return get_post_meta( $object->ID, $field_name, true );
 }
 
@@ -304,7 +302,7 @@ add_action( 'rest_api_init', 'slug_register_prerollinfo' );
 /**
  * Get Pre-roll info
  */
-function slug_get_prerollinfo( $object, $field_name, $request ) {
+function slug_get_prerollinfo( $object, $field_name ) {
 	return get_post_meta( $object->ID, $field_name, true );
 }
 
@@ -344,7 +342,7 @@ add_action( 'rest_api_init', 'slug_register_compounds' );
 /**
  * Get Compound info
  */
-function slug_get_compounds( $object, $field_name, $request ) {
+function slug_get_compounds( $object, $field_name ) {
 	return get_post_meta( $object->ID, $field_name, true );
 }
 
@@ -384,7 +382,7 @@ add_action( 'rest_api_init', 'slug_register_topicalinfo' );
 /**
  * Get Topical info
  */
-function slug_get_topicalinfo( $object, $field_name, $request ) {
+function slug_get_topicalinfo( $object, $field_name ) {
 	return get_post_meta( $object->ID, $field_name, true );
 }
 
@@ -424,7 +422,7 @@ add_action( 'rest_api_init', 'slug_register_growerinfo' );
 /**
  * Get Grower info
  */
-function slug_get_growerinfo( $object, $field_name, $request ) {
+function slug_get_growerinfo( $object, $field_name ) {
 	return get_post_meta( $object->ID, $field_name, true );
 }
 

@@ -262,7 +262,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
 
 			// Show Price.
 			if ( 'show' === $price ) {
-				$show_price = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( $singular = true ) ) . ':</strong> ' . get_wpd_all_prices_simple( get_the_ID() ) . '</span>';
+				$show_price = '<span class="wpd-productinfo pricing"><strong>' . esc_html( get_wpd_pricing_phrase( true ) ) . ':</strong> ' . get_wpd_all_prices_simple( get_the_ID() ) . '</span>';
 				// Filter price.
 				$show_price = apply_filters( 'wpd_shortcodes_product_price', $show_price );
 			}

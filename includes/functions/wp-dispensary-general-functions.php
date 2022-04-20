@@ -126,7 +126,7 @@ function wpd_product_types_simple( $lowercase = NULL ) {
 	$product_types_simple = array();
 
 	// Loop through product types.
-	foreach ( $product_types as $key=>$value ) {
+	foreach ( $product_types as $value ) {
 		// Add items to simple array.
 		if ( $lowercase ) {
 			$product_types_simple[] = str_replace( '-', '', strtolower( $value ) );
@@ -270,7 +270,7 @@ if ( ! function_exists( 'get_wpd_strain_types_details' ) ) {
 		}
 
 		// Create list of strain types names.
-		$strain_type_names = array();
+		$strain_names = array();
 
 		// Loop through strain types.
 		foreach ( $strain_types_list as $strain ) {
@@ -330,7 +330,7 @@ if ( ! function_exists( 'get_wpd_shelf_types_details' ) ) {
 		}
 
 		// Create list of shelf types names.
-		$shelf_type_names = array();
+		$shelf_names = array();
 
 		// Loop through shelf types.
 		foreach ( $shelf_types_list as $shelf ) {
@@ -430,7 +430,7 @@ if ( ! function_exists( 'get_wpd_product_types_details' ) ) {
 		}
 
 		// Create list of product types names.
-		$product_type_names = array();
+		$product_names = array();
 
 		// Loop through product types.
 		foreach ( $details_list as $product_type ) {

@@ -36,8 +36,8 @@ function wpd_register_rest_api_route() {
 			'methods'  => 'GET',
 			'callback' => 'wpd_rest_api_products_route_callback',
 			'args'     => array(
-				'id' => array(
-				'validate_callback' => function( $param, $request, $key ) {
+				'id'                => array(
+				'validate_callback' => function( $param ) {
 					return is_numeric( $param );
 				}
 			),
@@ -63,7 +63,7 @@ function wpd_rest_api_products_route_callback( $data ) {
 	);
 
 	// Product data array.
-	$product_data  = array();
+	$product_data = array();
 
 	// Product ID.
 	$product_id = '';

@@ -39,7 +39,7 @@ add_filter( 'wpd_manage_posts_custom_column', 'wp_dispensary_columns' );
 function wp_dispensary_columns_data( $column ) {
 	switch ( $column ) {
 		case 'featured_thumb':
-			echo '<a href="' . get_edit_post_link() . '">' . the_post_thumbnail( array( 40, 40 ) ) . '</a>';
+			echo '<a href="' . esc_url( get_edit_post_link() ) . '">' . the_post_thumbnail( array( 40, 40 ) ) . '</a>';
 			break;
 	}
 }
@@ -169,7 +169,7 @@ function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
 	// Create array.
 	$values = array();
 	// Loop through product types.
-	foreach ( wpd_product_types() as $key=>$value ) {
+	foreach ( wpd_product_types() as $value ) {
 		// Add product type to array.
 		$values[$value] = wpd_product_type_display_name_to_slug( $value );
 	}

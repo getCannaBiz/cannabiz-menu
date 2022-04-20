@@ -39,7 +39,6 @@ if ( ! function_exists( 'convert_taxonomies' ) ) {
         // Loop through products.
         foreach( $products as $product ) {
             $terms      = get_the_terms( $product->ID, $old_tax );
-            $term       = array();
             $term_array = array();
             // Loop through terms.
             foreach( $terms as $t ) {

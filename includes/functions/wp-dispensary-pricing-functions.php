@@ -386,7 +386,7 @@ function wpd_all_prices_simple( $product_id = NULL, $phrase = NULL, $wrapper = T
  * @return string
  */
 function wpd_pricing_phrase( $singular ) {
-	echo esc_html( apply_filters( 'wpd_pricing_phrase', get_wpd_pricing_phrase( $product_id, $phrase ) ) );
+	echo esc_html( apply_filters( 'wpd_pricing_phrase', get_wpd_pricing_phrase( $phrase ) ) );
 }
 
 /**
@@ -439,7 +439,6 @@ function get_wpd_flowers_prices_simple( $product_id = NULL, $phrase = NULL, $wra
 	$currency_code = wpd_currency_code();
 
 	// Get prices.
-	$price_half_gram     = get_post_meta( $product_id, 'price_half_gram', true );
 	$price_one_gram      = get_post_meta( $product_id, 'price_gram', true );
 	$price_two_grams     = get_post_meta( $product_id, 'price_two_grams', true );
 	$price_eighth        = get_post_meta( $product_id, 'price_eighth', true );
