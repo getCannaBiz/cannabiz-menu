@@ -278,45 +278,45 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
     	<p>
 				<label for="<?php esc_attr_e( $this->get_field_id( 'type' ) ); ?>"><?php esc_html_e( 'Menu item type:', 'wp-dispensary' ); ?></label>
 				<select id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" class="widefat" style="width:100%;">
-					<option <?php if ( 'all' == $instance['type'] ) echo 'selected="selected"'; ?> value="all"><?php esc_html_e( 'All types', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'flowers' == $instance['type'] ) echo 'selected="selected"'; ?> value="flowers"><?php esc_html_e( 'Flowers', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'concentrates' == $instance['type'] ) echo 'selected="selected"'; ?> value="concentrates"><?php esc_html_e( 'Concentrates', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'edibles' == $instance['type'] ) echo 'selected="selected"'; ?> value="edibles"><?php esc_html_e( 'Edibles', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'prerolls' == $instance['type'] ) echo 'selected="selected"'; ?> value="prerolls"><?php esc_html_e( 'Pre-rolls', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'topicals' == $instance['type'] ) echo 'selected="selected"'; ?> value="topicals"><?php esc_html_e( 'Topicals', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'growers' == $instance['type'] ) echo 'selected="selected"'; ?> value="growers"><?php esc_html_e( 'Growers', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'gear' == $instance['type'] ) echo 'selected="selected"'; ?> value="gear"><?php esc_html_e( 'Gear', 'wp-dispensary' ); ?></option>
-					<option <?php if ( 'tinctures' == $instance['type'] ) echo 'selected="selected"'; ?> value="tinctures"><?php esc_html_e( 'Tinctures', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'all' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="all"><?php esc_html_e( 'All types', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'flowers' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="flowers"><?php esc_html_e( 'Flowers', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'concentrates' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="concentrates"><?php esc_html_e( 'Concentrates', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'edibles' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="edibles"><?php esc_html_e( 'Edibles', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'prerolls' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="prerolls"><?php esc_html_e( 'Pre-rolls', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'topicals' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="topicals"><?php esc_html_e( 'Topicals', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'growers' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="growers"><?php esc_html_e( 'Growers', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'gear' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="gear"><?php esc_html_e( 'Gear', 'wp-dispensary' ); ?></option>
+					<option <?php if ( 'tinctures' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="tinctures"><?php esc_html_e( 'Tinctures', 'wp-dispensary' ); ?></option>
 				</select>
     	</p>
 
         <p>
 					<label for="<?php esc_attr_e( $this->get_field_id( 'limit' ) ); ?>"><?php esc_html_e( 'Amount of items to show:', 'wp-dispensary' ); ?></label>
-					<input class="widefat" id="<?php esc_attr_e( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php esc_attr_e( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo $instance['limit']; ?>" />
+					<input class="widefat" id="<?php esc_attr_e( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php esc_attr_e( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php esc_attr_e( $instance['limit'] ); ?>" />
         </p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php esc_attr_e( $this->get_field_name( 'order' ) ); ?>" />
 				<label for="<?php esc_attr_e( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
 			</p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['itemname'], 'on' ); ?> id="<?php echo $this->get_field_id( 'itemname' ); ?>" name="<?php echo $this->get_field_name( 'itemname' ); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['itemname'], 'on' ); ?> id="<?php echo $this->get_field_id( 'itemname' ); ?>" name="<?php esc_attr_e( $this->get_field_name( 'itemname' ) ); ?>" />
 				<label for="<?php esc_attr_e( $this->get_field_id( 'itemname' ) ); ?>"><?php esc_html_e( 'Display item name?', 'wp-dispensary' ); ?></label>
 			</p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['itemprice'], 'on' ); ?> id="<?php echo $this->get_field_id( 'itemprice' ); ?>" name="<?php echo $this->get_field_name( 'itemprice' ); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['itemprice'], 'on' ); ?> id="<?php echo $this->get_field_id( 'itemprice' ); ?>" name="<?php esc_attr_e( $this->get_field_name( 'itemprice' ) ); ?>" />
 				<label for="<?php esc_attr_e( $this->get_field_id( 'itemprice' ) ); ?>"><?php esc_html_e( 'Display item price?', 'wp-dispensary' ); ?></label>
 			</p>
 
 	    <p>
-				<input class="checkbox" type="checkbox" <?php checked( $instance['carousel'], 'on' ); ?> id="<?php echo $this->get_field_id( 'carousel' ); ?>" name="<?php echo $this->get_field_name( 'carousel' ); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $instance['carousel'], 'on' ); ?> id="<?php echo $this->get_field_id( 'carousel' ); ?>" name="<?php esc_attr_e( $this->get_field_name( 'carousel' ) ); ?>" />
 				<label for="<?php esc_attr_e( $this->get_field_id( 'carousel' ) ); ?>"><?php esc_html_e( 'Display products in carousel?', 'wp-dispensary' ); ?></label>
 			</p>
 
 			<p>
-				<label for="<?php esc_attr_e( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_htmlesc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
+				<label for="<?php esc_attr_e( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
 				<?php
 				// Set featured image sizes.
 				$image_sizes = apply_filters( 'wpd_widgets_featured_image_sizes', wpd_featured_image_sizes() );

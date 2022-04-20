@@ -392,7 +392,7 @@ class WP_Dispensary_CSV_Export {
 			);
 
 			// Loop through types.
-			foreach ( $array as $type ) {
+			foreach ( $types as $type ) {
 				// Additional data.
 				if ( $type == get_post_meta( $product['ID'], 'product_type', true ) ) {
 					$inventory_amount = get_post_meta( $product['ID'], 'inventory_units', TRUE );
