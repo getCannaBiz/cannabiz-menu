@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_inventory_management .wpd-inventory.grams" ).show();
 	}
 	// Edibles product type.
-	if($("#product_type").val() == "edibles" ) {
+	if($("#product_type").val() === "edibles" ) {
 		$( "#wp_dispensary_product_details" ).show();
 		$( "#wp_dispensary_product_details .inside div.edibles-fields" ).show();
 		$( "#wp_dispensary_product_details .inside div.edibles-fields div.input-field" ).show();
@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
 		$( "#wp_dispensary_inventory_management .wpd-inventory.units" ).show();
 	}
 	// Concentrates product type.
-	if($("#product_type").val() == "concentrates" ) {
+	if($("#product_type").val() === "concentrates" ) {
 		$( "#wp_dispensary_product_details" ).show();
 		$( "#wp_dispensary_product_details .inside div.concentrates-fields" ).show();
 		$( "#wp_dispensary_product_details .inside div.concentrates-fields div.input-field" ).show();
