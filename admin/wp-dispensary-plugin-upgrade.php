@@ -168,11 +168,11 @@ function wp_dispensary_upgrade_admin_notice() {
 		'wpd_db_update_nonce'
 	);
 
-    echo '<div class="notice notice-info">
-		  <p><strong>' . esc_html__( 'WP Dispensary database update required', 'wp-dispensary' ) . '</strong></p>
-		  <p>' . esc_html__( 'WP Dispensary has been updated! To keep things running smoothly, we have to update your database to the newest version. The database update process may take a little while, so please be patient.', 'wp-dispensary' ) . '</p>
-		  <p><a href="' . $update_url . '" class="button button-primary">' . esc_html__( 'Upgrade Now', 'wp-dispensary' ) . '</a></p>
-         </div>';
+	echo '<div class="notice notice-info">
+					<p><strong>' . esc_html__( 'WP Dispensary database update required', 'wp-dispensary' ) . '</strong></p>
+					<p>' . esc_html__( 'WP Dispensary has been updated! To keep things running smoothly, we have to update your database to the newest version. The database update process may take a little while, so please be patient.', 'wp-dispensary' ) . '</p>
+					<p><a href="' . esc_url( $update_url ) . '" class="button button-primary">' . esc_html__( 'Upgrade Now', 'wp-dispensary' ) . '</a></p>
+				</div>';
 }
 
 if ( ! get_option( 'wpd_upgrade_complete' ) ) {
