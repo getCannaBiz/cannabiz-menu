@@ -185,12 +185,12 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				'name'    => esc_attr__( 'Cookie lifetime', 'wp-dispensary' ),
 				'desc'    => esc_attr__( 'Set the amount of time the shopping cart cookie gets saved to your visitors computer', 'wp-dispensary' ),
 				'options' => array(
-					'half_hour'    => __( '1/2 hour', 'wp-dispensary' ),
-					'one_hour'     => __( '1 hour', 'wp-dispensary' ),
-					'three_hours'  => __( '3 hours', 'wp-dispensary' ),
-					'six_hours'    => __( '6 hours', 'wp-dispensary' ),
-					'twelve_hours' => __( '12 hours', 'wp-dispensary' ),
-					'one_day'      => __( '24 hours', 'wp-dispensary' ),
+					'half_hour'    => esc_attr__( '1/2 hour', 'wp-dispensary' ),
+					'one_hour'     => esc_attr__( '1 hour', 'wp-dispensary' ),
+					'three_hours'  => esc_attr__( '3 hours', 'wp-dispensary' ),
+					'six_hours'    => esc_attr__( '6 hours', 'wp-dispensary' ),
+					'twelve_hours' => esc_attr__( '12 hours', 'wp-dispensary' ),
+					'one_day'      => esc_attr__( '24 hours', 'wp-dispensary' ),
 				),
 			)
 		);
@@ -219,8 +219,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'          => 'wpd_settings_export_products_button',
 				'type'        => 'button',
-				'name'        => __( 'Products', 'wp-dispensary' ),
-				'button_text' => __( 'Export', 'wp-dispensary' ),
+				'name'        => esc_attr__( 'Products', 'wp-dispensary' ),
+				'button_text' => esc_attr__( 'Export', 'wp-dispensary' ),
 				'button_url'  => 'admin.php?page=wpd-settings&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ),
 			)
 		);
@@ -235,8 +235,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			array(
 				'id'          => 'wpd_settings_export_orders_button',
 				'type'        => 'button',
-				'name'        => __( 'Orders', 'wp-dispensary' ),
-				'button_text' => __( 'Export', 'wp-dispensary' ),
+				'name'        => esc_attr__( 'Orders', 'wp-dispensary' ),
+				'button_text' => esc_attr__( 'Export', 'wp-dispensary' ),
 				'button_url'  => 'admin.php?page=wpd-settings&export_orders&_wpnonce=' . wp_create_nonce( 'download_csv' ),
 			)
 		);
@@ -253,8 +253,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 				array(
 					'id'          => 'wpd_settings_export_customersbutton',
 					'type'        => 'button',
-					'name'        => __( 'Customers', 'wp-dispensary' ),
-					'button_text' => __( 'Export', 'wp-dispensary' ),
+					'name'        => esc_attr__( 'Customers', 'wp-dispensary' ),
+					'button_text' => esc_attr__( 'Export', 'wp-dispensary' ),
 					'button_url'  => 'admin.php?page=wpd-settings&export_customers&_wpnonce=' . wp_create_nonce( 'download_csv' ),
 				)
 			);

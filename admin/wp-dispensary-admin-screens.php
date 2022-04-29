@@ -161,7 +161,7 @@ function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
 	$type = 'products';
 	// Set custom post type.
 	if ( null !== filter_input( INPUT_GET, 'post_type' ) ) {
-        $type = filter_input( INPUT_GET, 'post_type' );
+		$type = filter_input( INPUT_GET, 'post_type' );
 	}
 
 	// Only add filter to post type you want
@@ -173,7 +173,7 @@ function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
 		// Add product type to array.
 		$values[$value] = wpd_product_type_display_name_to_slug( $value );
 	}
-		?>
+	?>
 		<select name="PRODUCT_TYPE_FIELD_VALUE">
 		<option value=""><?php esc_html_e( 'All Types', 'wp-dispensary' ); ?></option>
 		<?php

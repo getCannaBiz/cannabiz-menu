@@ -71,7 +71,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
      * @since 4.0
      */
     public function save_vendor_logo_image( $term_id ) {
-        if ( null !== filter_input( INPUT_POST, 'vendor_logo' ) && '' !== filter_input( INPUT_POST, 'vendor_logo' ) ){
+        if ( null !== filter_input( INPUT_POST, 'vendor_logo' ) && '' !== filter_input( INPUT_POST, 'vendor_logo' ) ) {
             $image = filter_input( INPUT_POST, 'vendor_logo' );
             add_term_meta( $term_id, 'vendor_logo', $image, true );
         }
@@ -89,7 +89,7 @@ class WP_Dispensary_Vendor_Taxonomy_Fields {
         </th>
         <td>
             <?php $image_id = get_term_meta( $term->term_id, 'vendor_logo', true ); ?>
-            <input type="hidden" id="vendor_logo" name="vendor_logo" value="<?php echo $image_id; ?>">
+            <input type="hidden" id="vendor_logo" name="vendor_logo" value="<?php esc_attr_e( $image_id ); ?>">
             <div id="vendor-logo-wrapper">
                 <?php if ( $image_id ) { ?>
                 <?php echo wp_get_attachment_image( $image_id, 'thumbnail' ); ?>
