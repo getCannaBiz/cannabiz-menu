@@ -47,6 +47,13 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 			// Hook it up.
 			add_action( 'admin_init', array( $this, 'admin_init' ) );
+		}
+		/**
+		 * Initialize admin menu
+		 * 
+		 * @since 4.1
+		 */
+		public function admin_menu() {
 			// Menu.
 			add_action( 'admin_menu', array( $this, 'wpd_admin_menu' ) );
 		}

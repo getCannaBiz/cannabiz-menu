@@ -96,6 +96,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 		 */
 		$wpdas_obj = new WPD_ADMIN_SETTINGS();
 
+		// Initialize admin menu.
+		$wpdas_obj->admin_menu();
+
 		// Section: Display.
 		$wpdas_obj->add_section(
 			array(
