@@ -670,9 +670,10 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
 			 * @since 2.5
 			 */
 			$checkout_payments = array(
-				'cod'    => esc_attr__( 'Cash on delivery', 'wp-dispensary' ),
-				'pop'    => esc_attr__( 'Pay on pickup', 'wp-dispensary' ),
-				'ground' => esc_attr__( 'Ground shipping', 'wp-dispensary' ),
+				'cod'      => esc_attr__( 'Cash on delivery', 'wp-dispensary' ),
+				'pop'      => esc_attr__( 'In-store pickup', 'wp-dispensary' ),
+				'curbside' => esc_attr__( 'Curbside pickup', 'wp-dispensary' ),
+				'ground'   => esc_attr__( 'Ground shipping', 'wp-dispensary' ),
 			);
 
 			$checkout_payment_options = apply_filters( 'wpd_ecommerce_checkout_payment_options', $checkout_payments );
