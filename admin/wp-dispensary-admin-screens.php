@@ -139,15 +139,16 @@ add_filter( 'manage_edit-products_columns', 'wpd_remove_taxonomies_from_admin_co
  * @return void
  */
 function wpd_products_archive_sort_order( $query ) {
-	if ( is_post_type_archive( 'products' ) ):
+	// Only run if we're in the products post type archive.
+	if ( is_post_type_archive( 'products' ) ) {
 		// Set the order ASC or DESC.
-		$query->set( 'order', 'ASC' );
+		$query->set( 'order', apply_filters( 'wpd_products_archive_sort_order', 'ASC' ) );
 		// Set the orderby.
-		$query->set( 'orderby', 'title' );
+		$query->set( 'orderby', apply_filters( 'wpd_products_archive_sort_orderby', 'title' ) );
 		// Set the amount of products to show.
-		$query->set( 'posts_per_page', -1 );
-	endif;
-};
+		$query->set( 'posts_per_page', apply_filters( 'wpd_products_archive_sort_posts_per_page', -1 ) );
+	}
+}
 add_action( 'pre_get_posts', 'wpd_products_archive_sort_order' ); 
 
 /**
