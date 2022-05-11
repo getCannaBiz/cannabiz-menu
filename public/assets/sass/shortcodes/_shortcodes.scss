@@ -46,7 +46,7 @@
 span.wpd-pricing,
 span.wpd-thc,
 span.wpd-productinfo {
-  color: #999;
+  color: $color__gray-alt;
   font-size: 13px;
   margin: 0 5px;
 }
@@ -62,16 +62,16 @@ h2.wpd-title {
 }
 
 span.wp-dispensary-view-all {
-  color: #aaa;
+  color: $color__light-gray;
   font-size: 16px;
   display: block;
 }
 
 span.wp-dispensary-view-all a,
 span.wp-dispensary-view-all a:visited {
-  color: #aaa;
+  color: $color__light-gray;
 }
 
 span.wp-dispensary-view-all a:hover {
-  color: #454545;
+  color: $color__dark-gray;
 }

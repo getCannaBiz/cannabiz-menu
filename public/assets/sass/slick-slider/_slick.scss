@@ -115,14 +115,14 @@
 /* Slider */
 
 .slick-loading .slick-list {
-  background: #fff url('../images/ajax-loader.gif') center center no-repeat;
+  background: $color__white url('../images/ajax-loader.gif') center center no-repeat;
 }
 
 /* Icons */
 
 @font-face {
   font-family: 'slick';
-  font-weight: normal;
+  font-weight: $font-regular;
   font-style: normal;
   src: url('fonts/slick.eot');
   src: url('fonts/slick.eot?#iefix') format('embedded-opentype'), url('fonts/slick.woff') format('woff'), url('fonts/slick.ttf') format('truetype'), url('fonts/slick.svg#slick') format('svg');
@@ -307,7 +307,7 @@
 .carousel-item span.wpd-pricing,
 .carousel-item span.wpd-thc,
 .carousel-item span.wpd-productinfo {
-  color: #999;
+  color: $color__gray-alt;
   font-size: 13px;
   margin-right: 10px;
 }

@@ -27,32 +27,32 @@ div.wp-dispensary-widget-product img {
 span.wpdispensary-widget-title,
 span.wp-dispensary-widget-title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: $font-semi-bold;
   line-height: 1.2;
 }
 
 span.wpdispensary-widget-categories {
   float: right;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: $font-semi-bold;
   line-height: 1.2;
 }
 
 span.wpdispensary-widget-categories a,
 span.wpdispensary-widget-categories a:visited {
-  background: #EEE;
+  background: $color__gray;
   border-radius: 15px;
-  color: #aaa;
+  color: $color__light-gray;
   display: inline-block;
   padding: 5px 10px;
 }
 
 span.wpdispensary-widget-categories a:hover {
-  color: #454545;
+  color: $color__dark-gray;
 }
 
 ul.wpdispensary-list li::before {
-  color: #454545;
+  color: $color__dark-gray;
   content: "\f105";
   font-family: 'FontAwesome';
   margin-right: 6px;
