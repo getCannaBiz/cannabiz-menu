@@ -1,6 +1,8 @@
 /node_modules
 /old_node_modules
 
+config.codekit3
+
 .ftpssh_settings
 .ftpquota
 .DS_Store
