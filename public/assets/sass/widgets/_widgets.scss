@@ -1,0 +1,100 @@
+.wpdispensary-widget,
+div.wp-dispensary-widget-product {
+  display: inline-block;
+  margin: 12px 0;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.wpdispensary-widget:first-child,
+div.wp-dispensary-widget-product:first-child {
+  margin-top: 0;
+}
+
+.wpdispensary-widget:last-child,
+div.wp-dispensary-widget-product:last-child {
+  margin-bottom: 0;
+}
+
+.wpdispensary-widget img,
+div.wp-dispensary-widget-product img {
+  height: auto;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+span.wpdispensary-widget-title,
+span.wp-dispensary-widget-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+span.wpdispensary-widget-categories {
+  float: right;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+span.wpdispensary-widget-categories a,
+span.wpdispensary-widget-categories a:visited {
+  background: #EEE;
+  border-radius: 15px;
+  color: #aaa;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+span.wpdispensary-widget-categories a:hover {
+  color: #454545;
+}
+
+ul.wpdispensary-list li::before {
+  color: #454545;
+  content: "\f105";
+  font-family: 'FontAwesome';
+  margin-right: 6px;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul.wp-dispensary-list li img {
+  margin-right: 10px;
+}
+
+.wp-dispensary-widget-product span.wpd-productinfo.pricing {
+  display: block;
+  margin: 0;
+}
+
+li.wp-dispensary-widget-product {
+  float: left;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-image,
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
+  float: left;
+}
+
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-image {
+  max-width: 20%;
+}
+
+li.wp-dispensary-widget-product span.wp-dispensary-widget-product-name {
+  max-width: 80%;
+}
+
+/** Widget - Product Search */
+ 
+.wp-dispensary-product-search form {
+  display: flex;
+  flex-direction: row;
+  
+  input[type="text"],
+  input[type="submit"] {
+    border-radius: 0;
+  }
+}
