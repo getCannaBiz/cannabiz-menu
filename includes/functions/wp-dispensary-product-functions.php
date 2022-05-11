@@ -631,6 +631,9 @@ function wpd_compound_list() {
  * @param  int $product_id
  * @since  4.0
  * @return string
+ * 
+ * @todo create itemprop loop to make the content output more dynamic
+ * @todo create filter for availability so it can be set to in stock or out of stock by the eCommerce add-on
  */
 function wpd_product_schema( $product_id ) {
 	
