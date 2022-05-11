@@ -1,0 +1,58 @@
+{
+  "name": "wpd-gulp-package",
+  "version": "1.0.0",
+  "description": "Gulp setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Robert DeVore",
+  "license": "MIT",
+  "comments": {
+    "how-to-update": "https://flaviocopes.com/update-npm-dependencies/"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "browserify": "^17.0.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cache": "^1.1.3",
+    "gulp-concat": "*",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "*",
+    "gulp-webpack": "*",
+    "postcss-calc": "^8.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "through2-concurrent": "*",
+    "vinyl-source-stream": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "autoprefixer": "^10.2.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "jshint": "^2.12.0",
+    "postcss-cssnext": "^3.1.0",
+    "precss": "^4.0.0",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.26.3",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
