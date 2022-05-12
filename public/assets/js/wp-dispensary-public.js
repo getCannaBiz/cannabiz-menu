@@ -76,6 +76,8 @@ jQuery(document).ready(function ($) {
     /**
      * Widget carousel
      *
+     * @todo use localize_script to allow for changing the settings (an array maybe?)
+     * 
      * @since 3.0
      */
     $(".wpd-carousel-widget").slick({
@@ -85,7 +87,7 @@ jQuery(document).ready(function ($) {
         infinite: true,
         speed: 300,
         slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToScroll: 1
     });
 
 });
