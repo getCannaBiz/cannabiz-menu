@@ -49,10 +49,10 @@ span.wpd-productinfo {
   color: $color__gray-alt;
   font-size: 13px;
   margin: 0 5px;
-}
 
-span.wpd-productinfo span.wpd-productinfo.pricing {
-  margin: 0;
+  span.wpd-productinfo.pricing {
+    margin: 0;
+  }
 }
 
 h2.wpd-title {
@@ -65,13 +65,14 @@ span.wp-dispensary-view-all {
   color: $color__light-gray;
   font-size: 16px;
   display: block;
-}
 
-span.wp-dispensary-view-all a,
-span.wp-dispensary-view-all a:visited {
-  color: $color__light-gray;
-}
+  a,
+  a:visited {
+    color: $color__light-gray;
+  }
 
-span.wp-dispensary-view-all a:hover {
-  color: $color__dark-gray;
+  a:hover {
+    color: $color__dark-gray;
+  }
+
 }

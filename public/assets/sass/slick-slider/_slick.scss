@@ -231,64 +231,70 @@
   margin: 0;
   list-style: none;
   text-align: center;
+
+  li {
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      display: none !important;
+    }
+
+    button {
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: transparent;
+
+      &:before {
+        font-family: 'slick';
+        font-size: 6px;
+        line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        content: '•';
+        text-align: center;
+        opacity: .25;
+        color: black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }      
+
+      &:hover,
+      &:focus {
+        outline: none;
+
+        &:before {
+          opacity: 1;
+        }
+
+      }
+
+    }
+
+  }
+
 }
 
-.slick-dots li {
-  list-style: none;
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-  padding: 0;
-  cursor: pointer;
-}
 
-.slick-dots li::before,
-.slick-dots li::after {
-  display: none !important;
-}
 
-.slick-dots li button {
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  padding: 5px;
-  cursor: pointer;
-  color: transparent;
-  border: 0;
-  outline: none;
-  background: transparent;
-}
-
-.slick-dots li button:hover,
-.slick-dots li button:focus {
-  outline: none;
-}
-
-.slick-dots li button:hover::before,
-.slick-dots li button:focus::before {
-  opacity: 1;
-}
-
-.slick-dots li button::before {
-  font-family: 'slick';
-  font-size: 6px;
-  line-height: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  content: '•';
-  text-align: center;
-  opacity: .25;
-  color: black;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 .slick-dots li.slick-active button::before {
   opacity: .75;
@@ -297,26 +303,28 @@
 
 .carousel-item {
   padding: 0 10px;
-}
 
-.carousel-item p {
-  margin: 12px 0 0 0;
-  padding: 0;
-}
+  p {
+    margin: 12px 0 0 0;
+    padding: 0;
+  }
 
-.carousel-item span.wpd-pricing,
-.carousel-item span.wpd-thc,
-.carousel-item span.wpd-productinfo {
-  color: $color__gray-alt;
-  font-size: 13px;
-  margin-right: 10px;
-}
+  span.wpd-pricing,
+  span.wpd-thc,
+  span.wpd-productinfo {
+    color: $color__gray-alt;
+    font-size: 13px;
+    margin-right: 10px;
 
-.carousel-item span.wpd-productinfo span.wpd-productinfo.pricing {
-  margin-right: 0;
-}
+    span.wpd-productinfo.pricing {
+      margin-right: 0;
+    }
 
-.carousel-item span.wpd-topsellers-icon {
-  top: 0;
-  right: 0;
+  }
+
+  span.wpd-topsellers-icon {
+    top: 0;
+    right: 0;
+  }
+
 }

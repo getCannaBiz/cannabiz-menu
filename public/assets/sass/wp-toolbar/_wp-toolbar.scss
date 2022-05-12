@@ -1,13 +1,25 @@
-#wpadminbar #wp-admin-bar-wp_dispensary a::before {
-  content: '';
-  background: url(../images/menu-icon.png) no-repeat center center !important;
-  width: 32px;
-  height: 32px;
-  padding: 0 !important;
-  display: block;
-  margin-right: 0 !important;
-}
+#wpadminbar {
 
-#wpadminbar #wp-admin-bar-wp_dispensary .ab-sub-wrapper a::before {
-  display: none !important;
+  #wp-admin-bar-wp_dispensary {
+
+    a::before {
+      content: '';
+      background: url(../images/menu-icon.png) no-repeat center center !important;
+      width: 32px;
+      height: 32px;
+      padding: 0 !important;
+      display: block;
+      margin-right: 0 !important;
+    }
+
+    .ab-sub-wrapper {
+
+      a::before {
+        display: none !important;
+      }
+
+    }
+
+  }
+
 }
