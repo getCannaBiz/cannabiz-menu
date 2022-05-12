@@ -83,9 +83,10 @@ class WP_Dispensary_CSV_Export {
 
 		$domain = 'domain';
 
-		if ( isset( $_SERVER['SERVER_NAME'] ) ) {
-			$domain = $_SERVER['SERVER_NAME'];
+		if ( null !== filter_input( INPUT_POST, 'SERVER_NAME' ) ) {
+			$domain = filter_input( INPUT_POST, 'SERVER_NAME' );
 		}
+
 		// Create file name.
 		$file_name = 'wpd-products-' . $domain . '-' . time() . '.csv';
 
