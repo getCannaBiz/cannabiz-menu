@@ -196,7 +196,7 @@ class WP_Dispensary {
 		 *
 		 * @since    3.3.3
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated-shortcodes.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/deprecated-shortcodes.php';
 
 		/**
 		 * Adding shortcode generation
