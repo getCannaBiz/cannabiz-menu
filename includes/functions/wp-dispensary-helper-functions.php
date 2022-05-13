@@ -462,3 +462,23 @@ if ( ! function_exists( 'convert_post_types' ) ) {
         }
     }
 }
+
+if ( ! function_exists( 'convert_user_roles' ) ) {
+    /**
+     * Convert user roles
+     * 
+     * @since  4.1
+     * @return void
+     */
+    function convert_user_roles() {
+        // Get patients.
+        $patients = get_users( array( 'role__in' => array( 'patient' ) ) );
+        // Array of WP_User objects.
+        foreach ( $patients as $patient ) {
+            // Fetch the WP_User object of our user.
+            $u = new WP_User( $patient->ID );
+            // Replace the current role with 'customer' role.
+            $u->set_role( 'customer' );
+        }
+    }
+}
