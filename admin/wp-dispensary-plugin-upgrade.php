@@ -131,9 +131,9 @@ function wpd_convert_product_data() {
 	// Update taxonomy counts.
 	wpd_update_taxonomy_count();
 
-	/**
-	 * @todo convert user roles from 'patient' to 'customer'
-	 */
+	// Update user roles.
+	convert_user_roles();
+
 }
 
 /**
