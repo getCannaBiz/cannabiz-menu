@@ -94,7 +94,7 @@ add_filter( 'rest_prepare_products', 'products_category_numbers', 10, 2 );
  */
 function wpd_product_prices_all( $data, $post ) {
 	$_data           = $data->data;
-	$_data['prices'] = get_wpd_all_prices_simple( $post->ID, TRUE );
+	$_data['prices'] = get_wpd_all_prices_simple( $post->ID, true );
 	$data->data      = $_data;
 	return $data;
 }

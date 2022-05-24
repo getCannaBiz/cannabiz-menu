@@ -1,17 +1,19 @@
 <?php
+
 /**
- * The file that builds the widgets to display recent items from each custom post type
- *
- * @link       https://www.wpdispensary.com
- * @since      1.0.0
+ * The file that builds the widgets to display recent items from 
+ * each custom post type
  *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
  */
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	wp_die();
+    wp_die();
 }
 
 // Products.

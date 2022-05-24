@@ -4,9 +4,10 @@
  *
  * Plugin details
  *
- * @link              https://www.wpdispensary.com
- * @since             1.0.0
- * @package           WP_Dispensary
+ * @package WP_Dispensary
+ * @author  WP Dispensary <contact@wpdispensary.com>
+ * @link    https://www.wpdispensary.com
+ * @since   1.0
  *
  * Plugin Name:       WP Dispensary
  * Plugin URI:        https://www.wpdispensary.com
@@ -22,7 +23,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	wp_die();
+    wp_die();
 }
 
 // Define the plugin version.
@@ -41,8 +42,8 @@ $plugin_name = plugin_basename( __FILE__ );
  * @return void
  */
 function activate_wp_dispensary() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-activator.php';
-	wp_dispensary_activator::activate();
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-activator.php';
+    wp_dispensary_activator::activate();
 }
 
 /**
@@ -55,8 +56,8 @@ function activate_wp_dispensary() {
  * @return void
  */
 function deactivate_wp_dispensary() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-deactivator.php';
-	wp_dispensary_deactivator::deactivate();
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary-deactivator.php';
+    wp_dispensary_deactivator::deactivate();
 }
 
 // Registers the plugin activation hook.
@@ -83,8 +84,8 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary.php';
  */
 function run_wp_dispensary() {
 
-	$plugin = new wp_dispensary();
-	$plugin->run();
+    $plugin = new wp_dispensary();
+    $plugin->run();
 
 }
 
@@ -93,20 +94,21 @@ run_wp_dispensary();
 
 /**
  * Add settings link on plugin page
- *
+ * 
+ * @param array $links an array of links related to the plugin.
+ * 
  * @since  1.9.8
- * @param  array  $links an array of links related to the plugin.
- * @return array updatead array of links related to the plugin.
+ * @return array
  */
 function wpd_plugin_links( $links ) {
-	$pro_link      = '<a href="https://www.wpdispensary.com/product/pro-package/" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'wp-dispensary' ) . '</a>';
-	$settings_link = '<a href="admin.php?page=wpd-settings">' . esc_attr__( 'Settings', 'wp-dispensary' ) . '</a>';
-	// Updated links.
-	array_unshift( $links, $settings_link );
-	// Updated links (Pro).
-	if ( ! function_exists( 'wpd_ecommerce' ) ) {
-		array_unshift( $links, $pro_link );
-	}
-	return $links;
+    $pro_link      = '<a href="https://www.wpdispensary.com/product/pro-package/" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'wp-dispensary' ) . '</a>';
+    $settings_link = '<a href="admin.php?page=wpd-settings">' . esc_attr__( 'Settings', 'wp-dispensary' ) . '</a>';
+    // Updated links.
+    array_unshift( $links, $settings_link );
+    // Updated links (Pro).
+    if ( ! function_exists( 'wpd_ecommerce' ) ) {
+        array_unshift( $links, $pro_link );
+    }
+    return $links;
 }
 add_filter( "plugin_action_links_$plugin_name", 'wpd_plugin_links' );

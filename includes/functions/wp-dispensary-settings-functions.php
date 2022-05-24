@@ -2,16 +2,16 @@
 /**
  * The file that defines the admin settings helper functions.
  *
- * @link       https://www.wpdispensary.com
- * @since      3.0
- *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes/functions
+ * @subpackage WP_Dispensary/includes/fuctions
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @link       https://www.wpdispensary.com
+ * @since      2.5.0
  */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	wp_die();
+    wp_die();
 }
 
 /**
@@ -37,10 +37,10 @@ function wpd_settings_display_compounds_table_placement() {
  */
 function wpd_settings_display_hide_compounds() {
     $setting = get_option( 'wpdas_display' );
-    $hide    = FALSE;
+    $hide    = false;
 
     if ( isset( $setting['wpd_hide_compounds'] ) && 'off' !== $setting['wpd_hide_compounds'] ) {
-        $hide = TRUE;
+        $hide = true;
     }
 
     return apply_filters( 'wpd_settings_display_hide_compounds', $hide );
@@ -69,10 +69,10 @@ function wpd_settings_display_details_table_placement() {
  */
 function wpd_settings_display_hide_details() {
     $setting = get_option( 'wpdas_display' );
-    $hide    = FALSE;
+    $hide    = false;
 
     if ( isset( $setting['wpd_hide_details'] ) && 'off' !== $setting['wpd_hide_details'] ) {
-        $hide = TRUE;
+        $hide = true;
     }
 
     return apply_filters( 'wpd_settings_display_hide_details', $hide );
@@ -107,11 +107,11 @@ function wpd_settings_display_details_phrase() {
  */
 function wpd_settings_customers_registration_redirect() {
     $setting      = get_option( 'wpdas_customers' );
-    $redirect_url = FALSE;
+    $redirect_url = false;
 
     if ( isset( $setting['wpd_settings_customers_registration_redirect'] ) && 0 !== $setting['wpd_settings_customers_registration_redirect'] ) {
         $redirect_url = home_url() . '/' . $setting['wpd_settings_customers_registration_redirect'];
     }
 
-	return apply_filters( 'wpd_settings_customers_registration_redirect', $redirect_url );
+    return apply_filters( 'wpd_settings_customers_registration_redirect', $redirect_url );
 }

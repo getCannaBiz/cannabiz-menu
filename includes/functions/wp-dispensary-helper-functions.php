@@ -2,26 +2,26 @@
 /**
  * The file that defines the general helper functions.
  *
- * @link       https://www.wpdispensary.com
- * @since      3.4
- *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes/functions
+ * @subpackage WP_Dispensary/includes/fuctions
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
  */
 
  // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	wp_die();
+    wp_die();
 }
-
 
 if ( ! function_exists( 'convert_taxonomies' ) ) {
     /**
      * Convert Taxonomies
      *
-     * @param  string $product_type
-     * @param  string $old_tax
-     * @param  string $new_tax
+     * @param string $product_type 
+     * @param string $old_tax 
+     * @param string $new_tax 
+     * 
      * @since  4.0
      * @return void
      */
@@ -56,7 +56,8 @@ if ( ! function_exists( 'convert_metadata' ) ) {
     /**
      * Convert Metadata.
      * 
-     * @param  string $post_type
+     * @param string $post_type 
+     * 
      * @since  4.0
      * @return void
      */
@@ -421,7 +422,7 @@ if ( ! function_exists( 'convert_metadata' ) ) {
 
                 wp_update_post( $post );
 
-            endforeach;	
+            endforeach;    
         }
 
     }

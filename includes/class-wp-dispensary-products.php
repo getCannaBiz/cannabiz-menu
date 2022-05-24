@@ -2,20 +2,21 @@
 /**
  * Register the products class for this plugin
  *
- * @link       https://www.wpdispensary.com
- * @since      4.0.0
- *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
 
 /**
  * Define the WPD_Products class
  *
- * @since      4.0.0
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
 class WPD_Products {
     /**
@@ -23,15 +24,15 @@ class WPD_Products {
      *
      * @var WP_Query
      */
-    private $query;
+    private $_query;
 
     /**
      * Constructor.
      *
-     * @param WP_Query $query
+     * @param WP_Query $_query 
      */
-    public function __construct( WP_Query $query ) {
-        $this->query = $query;
+    public function __construct( WP_Query $_query ) {
+        $this->query = $_query;
     }
 
     /**
@@ -48,8 +49,8 @@ class WPD_Products {
     /**
      * Find posts written by the given author.
      *
-     * @param WP_User $author
-     * @param int     $limit
+     * @param WP_User $author 
+     * @param int     $limit 
      *
      * @return WP_Post[]
      */
@@ -63,7 +64,7 @@ class WPD_Products {
     /**
      * Find a post using the given post ID.
      *
-     * @param int $id
+     * @param int $id 
      *
      * @return WP_Post|null
      */
@@ -74,60 +75,60 @@ class WPD_Products {
     /**
      * Get products
      *
-     * @param array $query
+     * @param array $post_count 
      *
      * @return WP_Post|null
      */
     public function get_products( $post_count ) {
         // Update query to only find 1 result.
-        $query = array(
+        $_query = array(
             'post_type'      => 'products',
             'posts_per_page' => $post_count,
         );
 
-        return $this->query->query( $query );
+        return $this->query->query( $_query );
     }
 
     /**
      * Find all post objects for the given query.
      *
-     * @param array $query
+     * @param array $_query 
      *
      * @return WP_Post[]
      */
-    private function find( array $query ) {
-        $query = array_merge( array(
+    private function find( array $_query ) {
+        $_query = array_merge( array(
             'post_type'              => 'products',
             'no_found_rows'          => true,
             'update_post_meta_cache' => true,
             'update_post_term_cache' => false,
-        ), $query );
+        ), $_query );
 
-        return $this->query->query( $query );
+        return $this->query->query( $_query );
     }
 
     /**
      * Find a single post object for the given query. Returns null
      * if it doesn't find one.
      *
-     * @param array $query
+     * @param array $_query 
      *
      * @return WP_Post|null
      */
-    private function find_one( array $query ) {
+    private function find_one( array $_query ) {
         // Update query to only find 1 result.
-        $query = array_merge( $query, array(
+        $_query = array_merge( $_query, array(
             'post_type'      => 'products',
             'posts_per_page' => 1,
         ) );
         // Find the post
-        return $this->query->query( $query );
+        return $this->query->query( $_query );
     }
 
     /**
      * Save a post into the repository. Returns the post ID or a WP_Error.
      *
-     * @param array $product
+     * @param array $product 
      *
      * @return int|WP_Error
      */
@@ -139,6 +140,5 @@ class WPD_Products {
         // Insert post if $product doesn't exist.
         return wp_insert_post( $product, true );
     }
-
 
 }

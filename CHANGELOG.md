@@ -168,7 +168,7 @@
 *   Updated pricebox number input field style in `admin/css/wp-dispensary-admin.css`
 *   Updated widgets to use helper function for menu types in `admin/post-types/wp-dispensary-widgets.php`
 *   Updated drivers license setting name in `admin/wp-dispensary-admin-settings.php`
-*   Updated hide compounds function to return TRUE/FALSE in `includes/functions/wp-dispensary-settings-functions.php`
+*   Updated hide compounds function to return `true` or `false` in `includes/functions/wp-dispensary-settings-functions.php`
 *   Updated the redirect_url full with included home_url() in `includes/functions/wp-dispensary-settings-functions.php`
 *   Updated shortcodes to use the `get_wpd_product_image` function in `admin/wp-dispensary-shortcodes.php`
 *   Updated select options for featured image sizes in `admin/post-types/wp-dispensary-widgets.php`

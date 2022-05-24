@@ -2,11 +2,11 @@
 /**
  * The file that defines the taxonomies used by the various custom post types
  *
- * @link       https://www.wpdispensary.com
- * @since      1.0.0
- *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
  */
 
 // Allergens. 
