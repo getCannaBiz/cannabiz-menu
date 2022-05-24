@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.1.0
+*   Added 'Curbside pickup' option to payment options in `admin/wp-dispensary-admin-settings.php`
+*   Added `convert_user_roles` helper function in `includes/functions/wp-dispensary-helper-functions.php`
+*   Added three new filters for products post type archive sort ordering in `admin/wp-dispensary-admin-screens.php`
+*   Bugfix for product type selection when editing products in `admin/assets/js/wp-dispensary-admin.js`
+*   Updated public facing styles to use SASS instead of CSS in `public/assets/sass`
+*   Updated plugin upgrade to use new `convert_user_roles` helper function in `admin/wp-dispensary-plugin-upgrade.php`
+*   WordPress Coding Standards updates in multiple files throughout the plugin
+*   General code cleanup throughout various files in the plugin
+
 ## 4.0
 *   Added Spanish language translation in `languages/wp-dispensary-es_ES.po`
 *   Added Italian language translation in `languages/wp-dispensary-it_IT.po`
