@@ -12,3 +12,13 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
     wp_die();
 }
+
+// Get comments.
+$comments = get_comments();
+// Loop through comments.
+foreach( $comments as $comment ) {
+    // Delete product reviews comment metadata.
+    delete_comment_meta( $comment->comment_ID, 'phone' );
+    delete_comment_meta( $comment->comment_ID, 'title' );
+    delete_comment_meta( $comment->comment_ID, 'rating' );
+}

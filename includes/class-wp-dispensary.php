@@ -159,6 +159,13 @@ class WP_Dispensary {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/deprecated/wp-dispensary-growers.php';
 
         /**
+         * The file responsible for defining the product reviews functionality.
+         * 
+         * @since 4.2.0
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-product-reviews.php';
+
+        /**
          * The file responsible for defining the custom image sizes.
          * 
          * @since 4.0
