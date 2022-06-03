@@ -5,21 +5,21 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      4.0.0
  */
 
-/**
- * The admin-specific functionality of the plugin.
- *
- * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin
- * @author     WP Dispensary <contact@wpdispensary.com>
- */
 if ( ! class_exists( 'WP_Dispensary_Vendor_Taxonomy_Fields' ) ) {
 
     /**
      * Class - Vendor Taxonomy Fields
+     * 
+     * @package    WP_Dispensary
+     * @subpackage WP_Dispensary/admin
+     * @author     WP Dispensary <contact@wpdispensary.com>
+     * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+     * @link       https://www.wpdispensary.com
      */
     class WP_Dispensary_Vendor_Taxonomy_Fields {
 

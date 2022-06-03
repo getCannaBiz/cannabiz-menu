@@ -6,6 +6,7 @@
  *
  * @package WP_Dispensary
  * @author  WP Dispensary <contact@wpdispensary.com>
+ * @license GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link    https://www.wpdispensary.com
  * @since   1.0
  *
@@ -78,8 +79,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since 1.0.0
- *
+ * @since  1.0.0
  * @return void
  */
 function run_wp_dispensary() {
