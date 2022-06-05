@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Create product reviews comment type
  * 
- * @param object $default
+ * @param object $default 
  * 
  * @since  4.2.0
  * @return object $default
@@ -35,7 +35,7 @@ add_filter( 'comment_form_defaults', 'wpd_product_reviews_form' );
 /**
  * Pre-process comment data
  * 
- * @param object @commentdata
+ * @param object $commentdata 
  * 
  * @since  4.2.0
  * @return object $commentdata
@@ -86,7 +86,7 @@ add_filter( 'pre_comment_approved', 'wpd_pre_approve_product_reviews', 10, 2 );
 /**
  * Add custom comment form fields
  * 
- * @param object @fields 
+ * @param object $fields 
  * 
  * @since  4.2.0
  * @return object $fields 
@@ -100,7 +100,7 @@ function wpd_add_product_review_comment_fields( $fields ) {
 
     // Add to ratings box.
     for( $i=1; $i <= 5; $i++ ) {
-        $ratings_box .= '<span class="commentrating"><input type="radio" name="rating" id="rating" value="' . $i . '"/> ' . $i . ' </span>';
+        $ratings_box .= '<span class="commentrating"><input class="star" type="radio" name="rating" id="rating" value="' . $i . '"/> ' . $i . ' </span>';
     }
 
     // Add author field.
