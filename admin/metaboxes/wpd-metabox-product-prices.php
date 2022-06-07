@@ -4,11 +4,10 @@
  *
  * This file is used to define the product prices metabox of the plugin.
  *
- * @link       https://www.wpdispensary.com
- * @since      4.0.0
- *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/partials
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
 
 
@@ -17,7 +16,8 @@
  *
  * Adds a product prices metabox to all of the above custom post types
  *
- * @since    1.0.0
+ * @since  4.0.0
+ * @return void
  */
 function wp_dispensary_product_prices_metabox() {
     // Add metabox.
@@ -83,11 +83,10 @@ function wp_dispensary_product_prices_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param object $post 
- * 
  * @return void
  */
-function wp_dispensary_product_prices_metabox_save( $post ) {
+function wp_dispensary_product_prices_metabox_save() {
+    global $post;
 
     /**
      * Verify this came from the our screen and with proper authorization,
@@ -148,4 +147,4 @@ function wp_dispensary_product_prices_metabox_save( $post ) {
         }
     }
 }
-add_action( 'save_post', 'wp_dispensary_product_prices_metabox_save', 1, 1 );
+add_action( 'save_post', 'wp_dispensary_product_prices_metabox_save', 1 );
