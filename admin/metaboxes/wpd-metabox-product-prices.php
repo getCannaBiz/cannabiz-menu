@@ -124,7 +124,7 @@ function wp_dispensary_product_prices_metabox_save() {
         'price_ounce',
     );
 
-    $price_keys = apply_filter( 'wp_dispensary_prices_metabox_save_price_keys', $price_keys );
+    $price_keys = apply_filters( 'wp_dispensary_prices_metabox_save_price_keys', $price_keys );
 
     foreach ( $price_keys as $key ) {
         $prices_meta[$key] = filter_input( INPUT_POST, $key );

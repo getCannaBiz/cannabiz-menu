@@ -212,7 +212,7 @@ function wp_dispensary_product_details_metabox_save() {
         'clone_count',
     );
 
-    $detail_keys = apply_filter( 'wp_dispensary_details_metabox_save_detail_keys', $detail_keys );
+    $detail_keys = apply_filters( 'wp_dispensary_details_metabox_save_detail_keys', $detail_keys );
 
     foreach ( $detail_keys as $key ) {
         $details_meta[$key] = filter_input( INPUT_POST, $key );
