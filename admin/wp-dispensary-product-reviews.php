@@ -99,7 +99,7 @@ function wpd_add_product_review_comment_fields( $fields ) {
     $ratings_box = '';
 
     // Add to ratings box.
-    for( $i=1; $i <= 5; $i++ ) {
+    for ( $i=1; $i <= 5; $i++ ) {
         $ratings_box .= '<span class="commentrating"><input class="star" type="radio" name="rating" id="rating" value="' . $i . '"/> ' . $i . ' </span>';
     }
 
@@ -136,8 +136,10 @@ function wpd_add_product_review_comment_fields( $fields ) {
         // Remove cookies field.
         unset( $fields['cookies'] );
 
-        $fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
-            '<label for="wp-comment-cookies-consent">' . esc_attr__( 'Remember Me!', 'wp-dispensary' ) . '</label></p>';
+        $fields['cookies'] = '<p class="comment-form-cookies-consent">
+                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+                                '<label for="wp-comment-cookies-consent">' . esc_attr__( 'Remember Me!', 'wp-dispensary' ) . '</label>
+                              </p>';
     }
 
     return $fields;
@@ -145,8 +147,9 @@ function wpd_add_product_review_comment_fields( $fields ) {
 add_filter( 'comment_form_default_fields', 'wpd_add_product_review_comment_fields' );
 
 /**
- * 
  * Save product review metadata
+ * 
+ * @param int $comment_id 
  * 
  * @since  4.2.0
  * @return void
@@ -172,7 +175,7 @@ add_action( 'comment_post', 'save_comment_meta_data' );
 /**
  * Verify comment metadata
  * 
- * @param string #commentdata
+ * @param string $commentdata 
  * 
  * @since  4.2.0
  * @return string $commentdata
@@ -190,7 +193,7 @@ add_filter( 'preprocess_comment', 'wpd_verify_comment_meta_data' );
 /**
  * Modify comment output
  * 
- * @param string $text
+ * @param string $text 
  * 
  * @since  4.2.0
  * @return string $text
@@ -266,26 +269,31 @@ function wpd_extend_comment_meta_box( $comment ) {
 
 /**
  * Edit comment meta fields
+ * 
+ * @param int $comment_id 
+ * 
+ * @since  4.2.0
+ * @return string
  */
 function wpd_extend_comment_edit_metafields( $comment_id ) {
     if ( ! isset( $_POST['extend_comment_update'] ) || ! wp_verify_nonce( filter_input( INPUT_POST, 'extend_comment_update' ), 'extend_comment_update' ) ) return;
 
-    if ( ( isset( $_POST['phone'] ) ) && ( $_POST['phone'] != ’ ) ) :
-        $phone = wp_filter_nohtml_kses( $_POST['phone'] );
+    if ( ( isset( $_POST['phone'] ) ) && ( '' != filter_input( INPUT_POST, 'phone' ) ) ) :
+        $phone = wp_filter_nohtml_kses( filter_input( INPUT_POST, 'phone' ) );
         update_comment_meta( $comment_id, 'phone', $phone );
     else :
         delete_comment_meta( $comment_id, 'phone');
     endif;
 
-    if ( ( isset( $_POST['title'] ) ) && ( $_POST['title'] != ’) ):
-        $title = wp_filter_nohtml_kses( $_POST['title'] );
+    if ( ( isset( $_POST['title'] ) ) && ( '' != filter_input( INPUT_POST, 'title' ) ) ):
+        $title = wp_filter_nohtml_kses( filter_input( INPUT_POST, 'title' ) );
         update_comment_meta( $comment_id, 'title', $title );
     else :
         delete_comment_meta( $comment_id, 'title');
     endif;
 
-    if ( ( isset( $_POST['rating'] ) ) && ( $_POST['rating'] != ’) ):
-        $rating = wp_filter_nohtml_kses( $_POST['rating'] );
+    if ( ( isset( $_POST['rating'] ) ) && ( '' != filter_input( INPUT_POST, 'rating' ) ) ):
+        $rating = wp_filter_nohtml_kses( filter_input( INPUT_POST, 'rating' ) );
         update_comment_meta( $comment_id, 'rating', $rating );
     else :
         delete_comment_meta( $comment_id, 'rating');
