@@ -237,4 +237,4 @@ function wp_dispensary_product_details_metabox_save() {
         }
     }
 }
-add_action( 'save_post', 'wp_dispensary_product_details_metabox_save', 1 );
+add_action( 'save_post', 'wp_dispensary_product_details_metabox_save', 11 );
