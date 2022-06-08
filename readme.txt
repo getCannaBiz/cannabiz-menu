@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 5.9
-Stable tag: 4.1.0
+Tested up to: 6.0
+Stable tag: 4.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,15 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 4.1.1 =
+*   Added `wp_dispensary_details_metabox_save_detail_keys` filter in `admin/metaboxes/wpd-metabox-product-details.php`
+*   Added `wp_dispensary_prices_metabox_save_price_keys` in `admin/metaboxes/wpd-metabox-product-prices.php`
+*   Bugfix for metadata not saving correctly in `admin/metaboxes/wpd-metabox-product-details.php`
+*   Bugfix for metadata not saving correctly in `admin/metaboxes/wpd-metabox-product-prices.php`
+*   Bugfix for filter names that were used twice in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Updated prices metabox save meta with array in `admin/metaboxes/wpd-metabox-product-prices.php`
+*   Updated inline docs throughout various files in the plugin
 
 = 4.1.0 =
 *   Added 'Curbside pickup' option to payment options in `admin/wp-dispensary-admin-settings.php`
