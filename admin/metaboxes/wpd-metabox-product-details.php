@@ -175,10 +175,10 @@ function wp_dispensary_product_details_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param  object $post
  * @return void
  */
-function wp_dispensary_product_details_metabox_save( $post ) {
+function wp_dispensary_product_details_metabox_save() {
+    global $post;
 
     /**
      * Verify this came from the our screen and with proper authorization,
@@ -197,17 +197,26 @@ function wp_dispensary_product_details_metabox_save( $post ) {
      * OK, we're authenticated: we need to find and save the data
      * We'll put it into an array to make it easier to loop though.
      */
-    // Product data.
-    $details_meta['activation_time']     = esc_html( filter_input( INPUT_POST, 'activation_time' ) );
-    $details_meta['compounds_thc']       = esc_html( filter_input( INPUT_POST, 'compounds_thc' ) );
-    $details_meta['compounds_cbd']       = esc_html( filter_input( INPUT_POST, 'compounds_cbd' ) );
-    $details_meta['product_size']        = esc_html( filter_input( INPUT_POST, 'product_size' ) );
-    $details_meta['product_servings']    = esc_html( filter_input( INPUT_POST, 'product_servings' ) );
-    $details_meta['product_servings_ml'] = esc_html( filter_input( INPUT_POST, 'product_servings_ml' ) );
-    $details_meta['product_net_weight']  = esc_html( filter_input( INPUT_POST, 'product_net_weight' ) );
-    $details_meta['product_weight']      = esc_html( filter_input( INPUT_POST, 'product_weight' ) );
-    $details_meta['seed_count']          = esc_html( filter_input( INPUT_POST, 'seed_count' ) );
-    $details_meta['clone_count']         = esc_html( filter_input( INPUT_POST, 'clone_count' ) );
+
+    $details_meta = array();
+    $detail_keys  = array(
+        'activation_time',
+        'compounds_thc',
+        'compounds_cbd',
+        'product_size',
+        'product_servings',
+        'product_servings_ml',
+        'product_net_weight',
+        'product_weight',
+        'seed_count',
+        'clone_count',
+    );
+
+    $detail_keys = apply_filters( 'wp_dispensary_details_metabox_save_detail_keys', $detail_keys );
+
+    foreach ( $detail_keys as $key ) {
+        $details_meta[$key] = filter_input( INPUT_POST, $key );
+    }
 
     // Save $details_meta as metadata.
     foreach ( $details_meta as $key => $value ) {
@@ -228,4 +237,4 @@ function wp_dispensary_product_details_metabox_save( $post ) {
         }
     }
 }
-add_action( 'save_post', 'wp_dispensary_product_details_metabox_save', 1, 1 );
+add_action( 'save_post', 'wp_dispensary_product_details_metabox_save', 11 );

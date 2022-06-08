@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.1.1
+*   Added `wp_dispensary_details_metabox_save_detail_keys` filter in `admin/metaboxes/wpd-metabox-product-details.php`
+*   Added `wp_dispensary_prices_metabox_save_price_keys` in `admin/metaboxes/wpd-metabox-product-prices.php`
+*   Bugfix for metadata not saving correctly in `admin/metaboxes/wpd-metabox-product-details.php`
+*   Bugfix for metadata not saving correctly in `admin/metaboxes/wpd-metabox-product-prices.php`
+*   Bugfix for filter names that were used twice in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Updated prices metabox save meta with array in `admin/metaboxes/wpd-metabox-product-prices.php`
+*   Updated inline docs throughout various files in the plugin
+
 ## 4.1.0
 *   Added 'Curbside pickup' option to payment options in `admin/wp-dispensary-admin-settings.php`
 *   Added `convert_user_roles` helper function in `includes/functions/wp-dispensary-helper-functions.php`

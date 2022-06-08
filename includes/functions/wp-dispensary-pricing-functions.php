@@ -5,6 +5,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes/fuctions
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      2.5.0
  */
@@ -1285,7 +1286,7 @@ function wpd_product_prices_array( $product_id = null, $product_type = '' ) {
             'price_ounce'         => esc_html( get_post_meta( $product_id, 'price_ounce', true ) ),
         );
         // Filter flower prices.
-        $product_prices = apply_filters( 'wpd_flowers_product_prices', $product_prices );
+        $product_prices = apply_filters( 'wpd_flowers_product_prices_array', $product_prices );
     }
     // Concentrates prices.
     if ( 'concentrates' == $product_type ) {
@@ -1296,7 +1297,7 @@ function wpd_product_prices_array( $product_id = null, $product_type = '' ) {
             'price_two_grams' => esc_html( get_post_meta( $product_id, 'price_two_grams', true ) ),
         );
         // Filter concentrates prices.
-        $product_prices = apply_filters( 'wpd_concentrates_product_prices', $product_prices );
+        $product_prices = apply_filters( 'wpd_concentrates_product_prices_array', $product_prices );
     }
     // Filter the product prices.
     $product_prices = apply_filters( 'wpd_product_prices', $product_prices );

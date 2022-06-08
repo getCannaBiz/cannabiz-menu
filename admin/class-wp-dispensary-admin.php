@@ -5,6 +5,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  */
@@ -18,6 +19,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  */
@@ -28,7 +30,7 @@ class WP_Dispensary_Admin {
      *
      * @since  1.0.0
      * @access private
-     * @var    string $_plugin_name The ID of this plugin.
+     * @var    string $_plugin_name - The ID of this plugin.
      */
     private $_plugin_name;
 
@@ -37,15 +39,15 @@ class WP_Dispensary_Admin {
      *
      * @since  1.0.0
      * @access private
-     * @var    string $_version The current version of this plugin.
+     * @var    string $_version - The current version of this plugin.
      */
     private $_version;
 
     /**
      * Initialize the class and set its properties.
      *
-     * @param string $_plugin_name   The name of this plugin.
-     * @param string $_version       The version of this plugin.
+     * @param string $_plugin_name - The name of this plugin.
+     * @param string $_version     - The version of this plugin.
      *
      * @since  1.0.0
      * @return void
@@ -99,13 +101,16 @@ class WP_Dispensary_Admin {
  * @return void
  */
 function wpdispensary_right_now_content_table_end() {
+    // Create args array.
     $args = array(
         'public'   => true,
         '_builtin' => false,
     );
+
     $output     = 'object';
     $operator   = 'and';
     $post_types = get_post_types( $args, $output, $operator );
+
     // Loop through post types.
     foreach ( $post_types as $post_type ) {
         $count = wp_count_posts( $post_type->name );

@@ -5,6 +5,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/public
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      4.0
  */

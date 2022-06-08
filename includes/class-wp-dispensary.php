@@ -8,6 +8,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      4.0.0
  */
@@ -24,6 +25,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      4.0.0
  */
@@ -71,7 +73,7 @@ class WP_Dispensary {
     public function __construct() {
 
         $this->plugin_name = 'wp-dispensary';
-        $this->version     = '4.1.0';
+        $this->version     = '4.1.1';
 
         if ( defined( 'WP_DISPENSARY_VERSION' ) ) {
             $this->version = WP_DISPENSARY_VERSION;

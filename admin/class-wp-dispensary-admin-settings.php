@@ -7,6 +7,7 @@
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.wpdispensary.com
  * @since      2.0.0
  */
@@ -30,6 +31,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
      * @package    WP_Dispensary
      * @subpackage WP_Dispensary/includes
      * @author     WP Dispensary <contact@wpdispensary.com>
+     * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
      * @link       https://www.wpdispensary.com
      * @since      1.0.0
      */

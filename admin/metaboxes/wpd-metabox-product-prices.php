@@ -4,11 +4,10 @@
  *
  * This file is used to define the product prices metabox of the plugin.
  *
- * @link       https://www.wpdispensary.com
- * @since      4.0.0
- *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/partials
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
 
 
@@ -17,7 +16,8 @@
  *
  * Adds a product prices metabox to all of the above custom post types
  *
- * @since    1.0.0
+ * @since  4.0.0
+ * @return void
  */
 function wp_dispensary_product_prices_metabox() {
     // Add metabox.
@@ -83,10 +83,10 @@ function wp_dispensary_product_prices_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param  object $post
  * @return void
  */
-function wp_dispensary_product_prices_metabox_save( $post ) {
+function wp_dispensary_product_prices_metabox_save() {
+    global $post;
 
     /**
      * Verify this came from the our screen and with proper authorization,
@@ -99,7 +99,7 @@ function wp_dispensary_product_prices_metabox_save( $post ) {
         return $post->ID;
     }
 
-    /** Is the user allowed to edit the post or page? */
+    // Is the user allowed to edit the post or page?
     if ( ! current_user_can( 'edit_post', $post->ID ) ) {
         return $post->ID;
     }
@@ -110,51 +110,24 @@ function wp_dispensary_product_prices_metabox_save( $post ) {
      */
 
     $prices_meta = array();
+    $price_keys  = array(
+        'price_each',
+        'price_per_pack',
+        'units_per_pack',
+        'price_half_gram',
+        'price_gram',
+        'price_two_grams',
+        'price_eighth',
+        'price_five_grams',
+        'price_quarter_ounce',
+        'price_half_ounce',
+        'price_ounce',
+    );
 
-    // @todo - wrap one of these in a foreach loop, with an array of the input names (ex: price_each).
+    $price_keys = apply_filters( 'wp_dispensary_prices_metabox_save_price_keys', $price_keys );
 
-    if ( '' != filter_input( INPUT_POST, 'price_each' ) ) {
-        $prices_meta['price_each'] = esc_html( filter_input( INPUT_POST, 'price_each' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_per_pack' ) ) {
-        $prices_meta['price_per_pack'] = esc_html( filter_input( INPUT_POST, 'price_per_pack' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'units_per_pack' ) ) {
-        $prices_meta['units_per_pack'] = esc_html( filter_input( INPUT_POST, 'units_per_pack' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_half_gram' ) ) {
-        $prices_meta['price_half_gram'] = esc_html( filter_input( INPUT_POST, 'price_half_gram' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_gram' ) ) {
-        $prices_meta['price_gram'] = esc_html( filter_input( INPUT_POST, 'price_gram' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_two_grams' ) ) {
-        $prices_meta['price_two_grams'] = esc_html( filter_input( INPUT_POST, 'price_two_grams' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_eighth' ) ) {
-        $prices_meta['price_eighth'] = esc_html( filter_input( INPUT_POST, 'price_eighth' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_five_grams' ) ) {
-        $prices_meta['price_five_grams'] = esc_html( filter_input( INPUT_POST, 'price_five_grams' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_quarter_ounce' ) ) {
-        $prices_meta['price_quarter_ounce'] = esc_html( filter_input( INPUT_POST, 'price_quarter_ounce' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_half_ounce' ) ) {
-        $prices_meta['price_half_ounce'] = esc_html( filter_input( INPUT_POST, 'price_half_ounce' ) );
-    }
-
-    if ( '' != filter_input( INPUT_POST, 'price_ounce' ) ) {
-        $prices_meta['price_ounce'] = esc_html( filter_input( INPUT_POST, 'price_ounce' ) );
+    foreach ( $price_keys as $key ) {
+        $prices_meta[$key] = filter_input( INPUT_POST, $key );
     }
 
     // Save $prices_meta as metadata.
@@ -176,4 +149,4 @@ function wp_dispensary_product_prices_metabox_save( $post ) {
         }
     }
 }
-add_action( 'save_post', 'wp_dispensary_product_prices_metabox_save', 1, 1 );
+add_action( 'save_post', 'wp_dispensary_product_prices_metabox_save', 11 );

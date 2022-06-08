@@ -6,13 +6,14 @@
  *
  * @package WP_Dispensary
  * @author  WP Dispensary <contact@wpdispensary.com>
+ * @license GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link    https://www.wpdispensary.com
  * @since   1.0
  *
  * Plugin Name:       WP Dispensary
  * Plugin URI:        https://www.wpdispensary.com
  * Description:       The complete marijuana menu solution for dispensaries and delivery services
- * Version:           4.1.0
+ * Version:           4.1.1
  * Author:            WP Dispensary
  * Author URI:        https://www.wpdispensary.com
  * License:           GPL-2.0+
@@ -27,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Define the plugin version.
-define( 'WP_DISPENSARY_VERSION', '4.1.0' );
+define( 'WP_DISPENSARY_VERSION', '4.1.1' );
 
 // Define the plugin base name.
 $plugin_name = plugin_basename( __FILE__ );
@@ -78,8 +79,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-dispensary.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since 1.0.0
- *
+ * @since  1.0.0
  * @return void
  */
 function run_wp_dispensary() {
