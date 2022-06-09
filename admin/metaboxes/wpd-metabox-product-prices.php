@@ -5,7 +5,8 @@
  * This file is used to define the product prices metabox of the plugin.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/partials
+ * @subpackage WP_Dispensary/admin/metaboxes
+ * @author     WP Dispensary <contact@wpdispensary.com>
  * @link       https://www.wpdispensary.com
  * @since      4.0.0
  */
