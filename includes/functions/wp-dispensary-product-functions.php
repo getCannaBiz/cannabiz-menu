@@ -270,6 +270,22 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
         $img_size = $image_size;
     }
 
+    $size = '';
+
+    // Create image size width/height.
+    if ( $img_size == 'dispensary-image' ) {
+        $size = ' width="360" height="250"';
+    }
+    if ( $img_size == 'wpd-small' ) {
+        $size = ' width="400" height="400"';
+    }
+    if ( $img_size == 'wpd-medium' ) {
+        $size = ' width="800" height="800"';
+    }
+    if ( $img_size == 'wpd-large' ) {
+        $size = ' width="1200" height="1200"';
+    }
+
     $thumbnail_id        = get_post_thumbnail_id( $prod_id );
     $thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $img_size, false );
     $thumbnail_url       = $thumbnail_url_array[0];
@@ -278,19 +294,19 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
     if ( null === $thumbnail_url && 'full' === $image_size ) {
         $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/assets/images/wpd-large.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
-        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" />';
+        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" ' . $size . ' />';
         if ( true == $link ) {
             $show_image = '<a href="' . get_permalink( $product_id ) . '">' . $show_image . '</a>';
         }
     } elseif ( null !== $thumbnail_url ) {
-        $show_image  = '<img src="' . $thumbnail_url . '" alt="' . get_the_title() . '" />';
+        $show_image  = '<img src="' . $thumbnail_url . '" alt="' . get_the_title() . '" ' . $size . ' />';
         if ( true == $link ) {
             $show_image = '<a href="' . get_permalink( $product_id ) . '">' . $show_image . '</a>';
         }
     } else {
         $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/assets/images/' . $image_size . '.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
-        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" />';
+        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" ' . $size . ' />';
         if ( true == $link ) {
             $show_image = '<a href="' . get_permalink( $product_id ) . '">' . $show_image . '</a>';
         }
@@ -655,9 +671,8 @@ function wpd_compound_list() {
 /**
  * Product Schema
  * 
- * @param  int $product_id
+ * @param int $product_id 
  * 
- * @todo create itemprop loop to make the content output more dynamic
  * @todo create filter for availability so it can be set to in stock or out of stock by the eCommerce add-on
  * 
  * @since  4.0
@@ -668,7 +683,7 @@ function wpd_product_schema( $product_id ) {
     $wpd_settings = get_option( 'wpdas_general' );
     $vendors      = wp_get_object_terms( $product_id, 'vendors' );
     $price        = get_wpd_all_prices_simple( $product_id, null, null );
-    $price        = str_replace( '&#36;', '', $price );
+    $price        = str_replace( '&#36;', '', $price ); // @TODO update string to be dynamic
 
     if ( ! isset ( $wpd_settings['wpd_pricing_currency_code'] ) ) {
         $wpd_currency = 'USD';
@@ -688,7 +703,7 @@ function wpd_product_schema( $product_id ) {
             <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
             <link itemprop="availability" href="http://schema.org/InStock">
             <meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
-            <meta itemprop="price" content="<?php echo $price; ?>">
+            <meta itemprop="price" content="<?php esc_attr_e( $price ); ?>">
         </div>
         <?php if ( get_post_meta( $product_id, 'product_sku', true ) ) { ?>
         <meta itemprop="sku" content="<?php esc_attr_e( get_post_meta( $product_id, 'product_sku', true ) ); ?>" />
