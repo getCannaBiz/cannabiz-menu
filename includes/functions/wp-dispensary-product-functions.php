@@ -286,6 +286,18 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
         $size = ' width="1200" height="1200"';
     }
 
+    // Get all registered images sizes.
+    $sizes = get_wpd_all_image_sizes();
+
+    // Loop through image sizes.
+    foreach ( $sizes as $the_size ) {
+        // Update size if image matches.
+        if ( $img_size === $the_size  ) {
+            $size = ' width="' . $the_size['width']. '" height="' . $the_size['height'] . '"';
+            break;
+        }
+    }
+
     $thumbnail_id        = get_post_thumbnail_id( $prod_id );
     $thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $img_size, false );
     $thumbnail_url       = $thumbnail_url_array[0];
@@ -325,7 +337,7 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
  * @return string
  */
 function wpd_product_image( $product_id, $image_size ) {
-    echo apply_filters( 'wpd_product_image', get_wpd_product_image( $product_id, $image_size ) );
+    echo apply_filters( 'wpd_product_image', get_wpd_product_image( $product_id, $image_size, $link ) );
 }
 
 /**
