@@ -4,27 +4,33 @@
  *
  * This file is used to define the product search widget of the plugin.
  *
- * @link       https://www.wpdispensary.com
- * @since      4.0.0
- *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/widgets
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
 
 
 /**
  * WP Dispensary Product Search Widget
  *
- * @since 4.0
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin/widgets
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
 class WP_Dispensary_Product_Search_Widget extends WP_Widget {
 
     /**
      * Constructor
      *
-     * @access      public
-     * @since       4.0.0
-     * @return      void
+     * @access public
+     * @since  4.0.0
+     * @return void
      */
     public function __construct() {
 
@@ -42,12 +48,13 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
     /**
      * Widget definition
      *
-     * @access      public
-     * @since       4.0.0
-     * @see         WP_Widget::widget
-     * @param       array $args Arguments to pass to the widget.
-     * @param       array $instance A given widget instance.
-     * @return      void
+     * @param array $args     - Arguments to pass to the widget. 
+     * @param array $instance - A given widget instance. 
+     * 
+     * @access public
+     * @since  4.0.0
+     * @see    WP_Widget::widget
+     * @return void
      */
     public function widget( $args, $instance ) {
         if ( ! isset( $args['id'] ) ) {
@@ -87,12 +94,13 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
     /**
      * Update widget options
      *
-     * @access      public
-     * @since       4.0.0
-     * @see         WP_Widget::update
-     * @param       array $new_instance The updated options.
-     * @param       array $old_instance The old options.
-     * @return      array $instance The updated instance options
+     * @param array $new_instance - The updated options. 
+     * @param array $old_instance - The old options. 
+     * 
+     * @access public
+     * @since  4.0.0
+     * @see    WP_Widget::update
+     * @return array $instance The updated instance options
      */
     public function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
@@ -104,11 +112,12 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
     /**
      * Display widget form on dashboard
      *
-     * @access      public
-     * @since       4.0.0
-     * @see         WP_Widget::form
-     * @param       array $instance A given widget instance.
-     * @return      void
+     * @param array $instance - A given widget instance.
+     * 
+     * @access public
+     * @since  4.0.0
+     * @see    WP_Widget::form
+     * @return void
      */
     public function form( $instance ) {
         // Do nothing.
@@ -118,8 +127,8 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
 /**
  * Register the new widget
  *
- * @since       4.0.0
- * @return      void
+ * @since  4.0.0
+ * @return void
  */
 function wp_dispensary_product_search_register_widget() {
     register_widget( 'WP_Dispensary_Product_Search_Widget' );
