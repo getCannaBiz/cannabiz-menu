@@ -4,11 +4,12 @@
  *
  * This file is used to define the product categories taxonomy of the plugin.
  *
- * @link       https://www.wpdispensary.com
- * @since      4.0.0
- *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/taxonomies
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
 
 
@@ -17,7 +18,8 @@
  *
  * Adds the default categories taxonomy to all custom post types
  *
- * @since    4.0
+ * @since  4.0
+ * @return void
  */
 function wp_dispensary_products_categories_taxonomy() {
 

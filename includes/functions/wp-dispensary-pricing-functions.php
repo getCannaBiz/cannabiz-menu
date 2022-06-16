@@ -241,6 +241,10 @@ function wpd_pricing_currency_codes() {
 
 /**
  * Flowers Prices - Simple
+ * 
+ * @param int  $product_id 
+ * @param bool $phrase 
+ * @param bool $wrapper 
  *
  * @see    get_wpd_flowers_prices_simple()
  * @since  2.4
