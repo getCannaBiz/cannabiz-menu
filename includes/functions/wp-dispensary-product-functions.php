@@ -270,6 +270,34 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
         $img_size = $image_size;
     }
 
+    $size = '';
+
+    // Create image size width/height.
+    if ( $img_size == 'dispensary-image' ) {
+        $size = ' width="360" height="250"';
+    }
+    if ( $img_size == 'wpd-small' ) {
+        $size = ' width="400" height="400"';
+    }
+    if ( $img_size == 'wpd-medium' ) {
+        $size = ' width="800" height="800"';
+    }
+    if ( $img_size == 'wpd-large' ) {
+        $size = ' width="1200" height="1200"';
+    }
+
+    // Get all registered images sizes.
+    $sizes = get_wpd_all_image_sizes();
+
+    // Loop through image sizes.
+    foreach ( $sizes as $the_size ) {
+        // Update size if image matches.
+        if ( $img_size === $the_size  ) {
+            $size = ' width="' . $the_size['width']. '" height="' . $the_size['height'] . '"';
+            break;
+        }
+    }
+
     $thumbnail_id        = get_post_thumbnail_id( $prod_id );
     $thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $img_size, false );
     $thumbnail_url       = $thumbnail_url_array[0];
@@ -278,19 +306,19 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
     if ( null === $thumbnail_url && 'full' === $image_size ) {
         $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/assets/images/wpd-large.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
-        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" />';
+        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" ' . $size . ' />';
         if ( true == $link ) {
             $show_image = '<a href="' . get_permalink( $product_id ) . '">' . $show_image . '</a>';
         }
     } elseif ( null !== $thumbnail_url ) {
-        $show_image  = '<img src="' . $thumbnail_url . '" alt="' . get_the_title() . '" />';
+        $show_image  = '<img src="' . $thumbnail_url . '" alt="' . get_the_title() . '" ' . $size . ' />';
         if ( true == $link ) {
             $show_image = '<a href="' . get_permalink( $product_id ) . '">' . $show_image . '</a>';
         }
     } else {
         $default_url = site_url() . '/wp-content/plugins/wp-dispensary/public/assets/images/' . $image_size . '.jpg';
         $default_img = apply_filters( 'wpd_shortcodes_default_image', $default_url );
-        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" />';
+        $show_image  = '<img src="' . $default_img . '" alt="' . get_the_title() . '" ' . $size . ' />';
         if ( true == $link ) {
             $show_image = '<a href="' . get_permalink( $product_id ) . '">' . $show_image . '</a>';
         }
@@ -309,7 +337,7 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
  * @return string
  */
 function wpd_product_image( $product_id, $image_size ) {
-    echo apply_filters( 'wpd_product_image', get_wpd_product_image( $product_id, $image_size ) );
+    echo apply_filters( 'wpd_product_image', get_wpd_product_image( $product_id, $image_size, $link ) );
 }
 
 /**
@@ -655,9 +683,8 @@ function wpd_compound_list() {
 /**
  * Product Schema
  * 
- * @param  int $product_id
+ * @param int $product_id 
  * 
- * @todo create itemprop loop to make the content output more dynamic
  * @todo create filter for availability so it can be set to in stock or out of stock by the eCommerce add-on
  * 
  * @since  4.0
@@ -666,6 +693,9 @@ function wpd_compound_list() {
 function wpd_product_schema( $product_id ) {
     
     $wpd_settings = get_option( 'wpdas_general' );
+    $vendors      = wp_get_object_terms( $product_id, 'vendors' );
+    $price        = get_wpd_all_prices_simple( $product_id, null, null );
+    $price        = str_replace( '&#36;', '', $price ); // @TODO update string to be dynamic
 
     if ( ! isset ( $wpd_settings['wpd_pricing_currency_code'] ) ) {
         $wpd_currency = 'USD';
@@ -675,17 +705,26 @@ function wpd_product_schema( $product_id ) {
     ?>
     <!-- BEGIN Schema.org Product Rich Snippet Markup -->
     <div itemscope="" itemtype="http://schema.org/Product">
-      <meta itemprop="category" content="<?php get_the_term_list( $product_id, 'wpd_categories', '', '' ); ?>">
-      <meta itemprop="name" content="<?php the_title(); ?>">
-      <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>">
-
-      <!-- offers -->
-      <div id="dvProductPricing" class="ProductDetailsPricing" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-        <meta itemprop="seller" content="<?php echo get_bloginfo( 'name' ); ?>">
-        <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
-        <link itemprop="availability" href="http://schema.org/InStock">
-        <meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
-        <meta itemprop="price" content="<?php echo wpd_all_prices_simple( $product_id, null, null ); ?>">
+        <meta itemprop="category" content="<?php get_the_term_list( $product_id, 'wpd_categories', '', '' ); ?>">
+        <meta itemprop="name" content="<?php the_title( $product_id ); ?>">
+        <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( $product_id, 'full' ); ?>">
+        <!-- offers -->
+        <div id="dvProductPricing" class="ProductDetailsPricing" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+            <meta itemprop="seller" content="<?php echo get_bloginfo( 'name' ); ?>">
+            <meta itemprop="url" content="<?php the_permalink( $product_id ); ?>">
+            <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            <meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
+            <meta itemprop="price" content="<?php esc_attr_e( $price ); ?>">
+        </div>
+        <?php if ( get_post_meta( $product_id, 'product_sku', true ) ) { ?>
+        <meta itemprop="sku" content="<?php esc_attr_e( get_post_meta( $product_id, 'product_sku', true ) ); ?>" />
+        <?php } ?>
+        <?php if ( $vendors ) { ?>
+        <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
+            <meta itemprop="name" content="<?php echo $vendors[0]->name; ?> " />
+        </div>
+        <?php } ?>
     </div>
     <!-- END Schema.org Product Structured Data Markup -->
 <?php }

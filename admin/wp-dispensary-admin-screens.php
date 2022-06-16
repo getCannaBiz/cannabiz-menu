@@ -151,11 +151,14 @@ add_filter( 'manage_edit-products_columns', 'wpd_remove_taxonomies_from_admin_co
  * @param object $query 
  * 
  * @since  4.0
- * @return void
+ * @return object
  */
 function wpd_products_archive_sort_order( $query ) {
+    if ( ! is_admin() && $query->is_search() ) {
+        $query->set( 'post_type', array( 'products' ) );
+    }
     // Only run if we're in the products post type archive.
-    if ( is_post_type_archive( 'products' ) ) {
+    if ( ! is_admin() && $query->is_main_query() && ! $query->is_search() && is_post_type_archive( 'products' ) ) {
         // Set the order ASC or DESC.
         $query->set( 'order', apply_filters( 'wpd_products_archive_sort_order', 'ASC' ) );
         // Set the orderby.
@@ -163,6 +166,8 @@ function wpd_products_archive_sort_order( $query ) {
         // Set the amount of products to show.
         $query->set( 'posts_per_page', apply_filters( 'wpd_products_archive_sort_posts_per_page', -1 ) );
     }
+
+    return $query;
 }
 add_action( 'pre_get_posts', 'wpd_products_archive_sort_order' ); 
 
@@ -181,7 +186,7 @@ function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
     }
 
     // Only add filter to post type you want
-    if ( 'products' == $type ) {
+    if ( 'products' == $type && is_admin() ) {
         // Create array.
         $values = array();
         // Loop through product types.

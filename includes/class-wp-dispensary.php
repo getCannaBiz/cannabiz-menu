@@ -32,8 +32,8 @@
 class WP_Dispensary {
 
     /**
-     * The loader that's responsible for maintaining and registering all hooks that power
-     * the plugin.
+     * The loader that's responsible for maintaining and registering all 
+     * hooks that power the plugin.
      *
      * @since  1.0.0
      * @access protected
@@ -117,7 +117,8 @@ class WP_Dispensary {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-dispensary-i18n.php';
 
         /**
-         * The class responsible for defining all actions that occur in the admin area.
+         * The class responsible for defining all actions that occur in the 
+         * admin area.
          */
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-admin.php';
 
@@ -129,8 +130,8 @@ class WP_Dispensary {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-admin-menu-links.php';
 
         /**
-         * The class responsible for defining all actions that occur in the public-facing
-         * side of the site.
+         * The class responsible for defining all actions that occur in the 
+         * public-facing side of the site.
          */
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-dispensary-public.php';
 
@@ -175,7 +176,8 @@ class WP_Dispensary {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-image-sizes.php';
 
         /**
-         * The functions responsible for updating WP Dispensary data during plugin upgrades
+         * The functions responsible for updating WP Dispensary data during 
+         * the plugin upgrades
          * 
          * @since 4.0
          */
@@ -261,8 +263,8 @@ class WP_Dispensary {
     /**
      * Define the locale for this plugin for internationalization.
      *
-     * Uses the WP_Dispensary_i18n class in order to set the domain and to register the hook
-     * with WordPress.
+     * Uses the WP_Dispensary_i18n class in order to set the domain and to 
+     * register the hook with WordPress.
      *
      * @since  1.0.0
      * @access private

@@ -1,13 +1,14 @@
 <?php
 /**
- * deprecated functions that are still able to be used, but will no longer be
+ * Deprecated functions that are still able to be used, but will no longer be
  * updated with new features.
  *
- * @link       https://www.wpdispensary.com
- * @since      4.0
- *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin
+ * @subpackage WP_Dispensary/includes/fuctions
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
  */
 
 // Exit if accessed directly.
@@ -18,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Get all menu types
  *
- * @since 2.5
+ * @since  2.5
  * @return array
  */
 function wpd_menu_types() {
@@ -37,8 +38,10 @@ function wpd_menu_types() {
 
 /**
  * Get all menu types - Simple
+ * 
+ * @param bool $lowercase 
  *
- * @since 2.5
+ * @since  2.5
  * @return array
  */
 function wpd_menu_types_simple( $lowercase = null ) {

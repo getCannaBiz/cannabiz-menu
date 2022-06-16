@@ -4,11 +4,11 @@
  *
  * This file is used to define the product details metabox of the plugin.
  *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin/metaboxes
+ * @author     WP Dispensary <contact@wpdispensary.com>
  * @link       https://www.wpdispensary.com
  * @since      4.0.0
- *
- * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/partials
  */
 
 
@@ -17,7 +17,8 @@
  *
  * Adds a details metabox to the products post type.
  *
- * @since    4.0.0
+ * @since  4.0.0
+ * @return void
  */
 function wp_dispensary_product_details_metabox() {
     // Add Metabox.

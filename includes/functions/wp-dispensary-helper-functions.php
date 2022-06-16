@@ -28,21 +28,25 @@ if ( ! function_exists( 'convert_taxonomies' ) ) {
      */
     function convert_taxonomies( $product_type, $old_tax, $new_tax ) {
         // Get products.
-        $products = get_posts( array(
-            'post_type'      => $product_type,
-            'posts_per_page' => -1,
-            'post_status'    => array( 'publish', 'pending', 'draft', 'future', 'private' ),
-            'tax_query'      => array( array(
-                'taxonomy' => $old_tax,
-                'operator' => 'EXISTS'
-            ) )
-        ) );
+        $products = get_posts( 
+            array(
+                'post_type'      => $product_type,
+                'posts_per_page' => -1,
+                'post_status'    => array( 'publish', 'pending', 'draft', 'future', 'private' ),
+                'tax_query'      => array(
+                    array(
+                        'taxonomy' => $old_tax,
+                        'operator' => 'EXISTS'
+                    )
+                )
+            )
+        );
         // Loop through products.
-        foreach( $products as $product ) {
+        foreach ( $products as $product ) {
             $terms      = get_the_terms( $product->ID, $old_tax );
             $term_array = array();
             // Loop through terms.
-            foreach( $terms as $t ) {
+            foreach ( $terms as $t ) {
                 $term_array[] = $t->name;
                 if ( false == get_term_by( 'name', $t->name, $new_tax ) ) {
                    wp_insert_term( $t->name, $new_tax, $args = array() );
@@ -69,11 +73,13 @@ if ( ! function_exists( 'convert_metadata' ) ) {
         }
 
         // Get products.
-        $products = get_posts( array(
-            'numberposts' => -1,
-            'post_type'   => $post_type,
-            'post_status' => array( 'publish', 'pending', 'draft', 'future', 'private' )
-        ) );
+        $products = get_posts(
+            array(
+                'numberposts' => -1,
+                'post_type'   => $post_type,
+                'post_status' => array( 'publish', 'pending', 'draft', 'future', 'private' )
+            )
+        );
 
         // Make sure products exist.
         if ( $products ) {

@@ -4,11 +4,11 @@
  *
  * This file is used to define the compound details metabox of the plugin.
  *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin/metaboxes
+ * @author     WP Dispensary <contact@wpdispensary.com>
  * @link       https://www.wpdispensary.com
  * @since      4.0.0
- *
- * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/partials
  */
 
 /**
@@ -16,7 +16,8 @@
  *
  * Adds a details metabox to the products post type.
  *
- * @since    4.0.0
+ * @since  4.0.0
+ * @return void
  */
 function wp_dispensary_compound_details_metabox() {
     add_meta_box(
@@ -38,11 +39,11 @@ add_action( 'add_meta_boxes', 'wp_dispensary_compound_details_metabox' );
 function wp_dispensary_compound_details_metabox_content() {
     global $post;
 
-    /** Noncename needed to verify where the data originated */
+    // Noncename needed to verify where the data originated.
     echo '<input type="hidden" name="compound_details_meta_noncename" id="compound_details_meta_noncename" value="' .
     wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-    /** Get the thccbd data if its already been entered */
+    // Get the thccbd data if its already been entered.
     $thc   = get_post_meta( $post->ID, 'compounds_thc', true );
     $thca  = get_post_meta( $post->ID, 'compounds_thca', true );
     $cbd   = get_post_meta( $post->ID, 'compounds_cbd', true );
@@ -51,7 +52,7 @@ function wp_dispensary_compound_details_metabox_content() {
     $cbg   = get_post_meta( $post->ID, 'compounds_cbg', true );
     $total = get_post_meta( $post->ID, 'compounds_total', true );
 
-    /** Echo out the fields */
+    // Echo out the fields.
     echo '<div class="input-field">';
     echo '<p>' . esc_attr__( 'THC', 'wp-dispensary' ) . ' %</p>';
     echo '<input type="text" name="compounds_thc" value="' . esc_attr( $thc ) . '" class="widefat" />';
@@ -86,7 +87,8 @@ function wp_dispensary_compound_details_metabox_content() {
 /**
  * Save the Metabox Data
  * 
- * @param  object $post
+ * @param object $post 
+ * 
  * @return void
  */
 function wp_dispensary_compound_details_metabox_save( $post ) {
@@ -102,7 +104,7 @@ function wp_dispensary_compound_details_metabox_save( $post ) {
         return $post->ID;
     }
 
-    /** Is the user allowed to edit the post or page? */
+    // Is the user allowed to edit the post or page?
     if ( ! current_user_can( 'edit_post', $post->ID ) ) {
         return $post->ID;
     }
@@ -135,8 +137,8 @@ function wp_dispensary_compound_details_metabox_save( $post ) {
         }
         // Delete the metavalue if blank.
         if ( ! $value ) {
-    		delete_post_meta( $post->ID, $key );
-		}
-	}
+            delete_post_meta( $post->ID, $key );
+        }
+    }
 }
-add_action( 'save_post', 'wp_dispensary_compound_details_metabox_save', 1, 1 );
+add_action( 'save_post', 'wp_dispensary_compound_details_metabox_save', 11 );
