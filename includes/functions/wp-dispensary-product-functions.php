@@ -272,28 +272,15 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
 
     $size = '';
 
-    // Create image size width/height.
-    if ( $img_size == 'dispensary-image' ) {
-        $size = ' width="360" height="250"';
-    }
-    if ( $img_size == 'wpd-small' ) {
-        $size = ' width="400" height="400"';
-    }
-    if ( $img_size == 'wpd-medium' ) {
-        $size = ' width="800" height="800"';
-    }
-    if ( $img_size == 'wpd-large' ) {
-        $size = ' width="1200" height="1200"';
-    }
-
     // Get all registered images sizes.
     $sizes = get_wpd_all_image_sizes();
 
     // Loop through image sizes.
-    foreach ( $sizes as $the_size ) {
+    foreach ( $sizes as $key=>$val ) {
         // Update size if image matches.
-        if ( $img_size === $the_size  ) {
-            $size = ' width="' . $the_size['width']. '" height="' . $the_size['height'] . '"';
+        if ( $img_size === $key  ) {
+            // Set the image size that's used in the HTML.
+            $size = ' width="' . $val['width']. '" height="' . $val['height'] . '"';
             break;
         }
     }
@@ -332,11 +319,12 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
  *
  * @param int    $product_id 
  * @param string $image_size 
+ * @param bool   $link
  * 
  * @since  2.6
  * @return string
  */
-function wpd_product_image( $product_id, $image_size ) {
+function wpd_product_image( $product_id, $image_size, $link = true ) {
     echo apply_filters( 'wpd_product_image', get_wpd_product_image( $product_id, $image_size, $link ) );
 }
 
