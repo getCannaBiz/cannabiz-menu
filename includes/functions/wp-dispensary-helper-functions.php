@@ -181,9 +181,9 @@ if ( ! function_exists( 'convert_metadata' ) ) {
                     $inventory_display = get_post_meta( $post->ID, 'wpd_inventory_display', true );
 
                     // Compounds metadata.
-                    $compounds_thc    = get_post_meta( $post->ID, '_thcmg', true );
-                    $compounds_cbd    = get_post_meta( $post->ID, '_cbdmg', true );
-                    $product_servings = get_post_meta( $post->ID, '_thccbdservings', true );
+                    $compounds_thc      = get_post_meta( $post->ID, '_thcmg', true );
+                    $compounds_cbd      = get_post_meta( $post->ID, '_cbdmg', true );
+                    $product_servings   = get_post_meta( $post->ID, '_thccbdservings', true );
                     $product_net_weight = get_post_meta( $post->ID, '_netweight', true );
 
                     // Update new meta.

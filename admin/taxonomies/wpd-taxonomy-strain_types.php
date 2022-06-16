@@ -4,20 +4,21 @@
  *
  * This file is used to define the product strain types taxonomy of the plugin.
  *
- * @link       https://www.wpdispensary.com
- * @since      4.0.0
- *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/taxonomies
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      4.0.0
  */
-
 
 /**
  * Strain Types
  *
  * Adds the Strain Types taxonomy to specific custom post types
  *
- * @since    2.3.0
+ * @since  2.3.0
+ * @return void
  */
 function wp_dispensary_strain_types_taxonomy() {
 
