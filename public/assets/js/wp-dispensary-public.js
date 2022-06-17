@@ -90,4 +90,44 @@ jQuery(document).ready(function ($) {
         slidesToScroll: 1
     });
 
+    $(".wpd-rating:first-of-type() .star").click(function() {
+        $(".wpd-rating:first-of-type() .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(2) .star").prop("checked", false);
+        $(".wpd-rating:nth-of-type(3) .star").prop("checked", false);
+        $(".wpd-rating:nth-of-type(4) .star").prop("checked", false);
+        $(".wpd-rating:nth-of-type(5) .star").prop("checked", false);
+    });  
+
+    $(".wpd-rating:nth-of-type(2) .star").click(function() {
+        $(".wpd-rating:first-of-type() .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(2) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(3) .star").prop("checked", false);
+        $(".wpd-rating:nth-of-type(4) .star").prop("checked", false);
+        $(".wpd-rating:nth-of-type(5) .star").prop("checked", false);
+    });  
+
+    $(".wpd-rating:nth-of-type(3) .star").click(function() {
+        $(".wpd-rating:first-of-type() .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(2) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(3) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(4) .star").prop("checked", false);
+        $(".wpd-rating:nth-of-type(5) .star").prop("checked", false);
+    });  
+
+    $(".wpd-rating:nth-of-type(4) .star").click(function() {
+        $(".wpd-rating:first-of-type() .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(2) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(3) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(4) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(5) .star").prop("checked", false);
+    });
+
+    $(".wpd-rating:nth-of-type(5) .star").click(function() {
+        $(".wpd-rating:first-of-type() .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(2) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(3) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(4) .star").prop("checked", true);
+        $(".wpd-rating:nth-of-type(5) .star").prop("checked", true);
+    });
+
 });
