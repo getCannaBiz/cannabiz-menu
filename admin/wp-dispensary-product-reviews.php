@@ -25,7 +25,7 @@ if ( ! defined( 'WPINC' ) ) {
 function wpd_product_reviews_form( $default ) {
 
     if ( 'products' == get_post_type() ) {
-        $default['title_reply'] = esc_attr__( 'Leave a Review' );
+        $default['title_reply'] = esc_attr__( 'Leave a Review', 'wp-dispensary' );
     }
 
     return $default;       
@@ -98,21 +98,16 @@ function wpd_add_product_review_comment_fields( $fields ) {
     $aria_req    = ( $req ? " aria-required='true'" : ’ );
     $ratings_box = '';
 
-    // Add to ratings box.
-    for ( $i=1; $i <= 5; $i++ ) {
-        $ratings_box .= '<span class="commentrating"><input class="star" type="radio" name="rating" id="rating" value="' . $i . '"/> ' . $i . ' </span>';
-    }
-
     // Add author field.
     $fields[ 'author' ] = '<p class="comment-form-author">'.
-        '<label for="author">' . esc_attr__( 'Name' ) .
+        '<label for="author">' . esc_attr__( 'Name', 'wp-dispensary' ) .
         ( $req ? '<span class="required">*</span>' : ’ ). '</label>'.
         '<input id="author" name="author" type="text" value="'. esc_attr( $commenter['comment_author'] ) .
         '" size="30" tabindex="1"' . $aria_req . ' /></p>';
 
     // Add email field.
     $fields[ 'email' ] = '<p class="comment-form-email">'.
-        '<label for="email">' . esc_attr__( 'Email' ) .
+        '<label for="email">' . esc_attr__( 'Email', 'wp-dispensary' ) .
         ( $req ? '<span class="required">*</span>' : ’ ). '</label>'.
         '<input id="email" name="email" type="text" value="'. esc_attr( $commenter['comment_author_email'] ) .
         '" size="30"  tabindex="2"' . $aria_req . ' /></p>';
@@ -121,15 +116,8 @@ function wpd_add_product_review_comment_fields( $fields ) {
         // Add phone field.
         $fields[ 'phone' ] = '<p class="comment-form-phone">'.
             '<label for="phone">' . esc_attr__( 'Phone' ) . '</label>'.
-            '<input id="phone" name="phone" type="text" size="30"  tabindex="4" /></p>';
-
-        $fields['title'] = '<p class="comment-form-title">'.
-            '<label for="title">' . esc_attr__( 'Comment Title', 'wp-dispensary' ) . '</label>'.
-            '<input id="title" name="title" type="text" size="30"  tabindex="5" /></p>';
-
-        $fields['rating'] = '<p class="comment-form-rating">
-            <label for="rating">'. esc_attr__( 'Rating', 'wp-dispensary' ) . '<span class="required">*</span></label>
-            <span class="commentratingbox">' . $ratings_box . '</span></p>';
+            '<input id="phone" name="phone" type="text" size="30"  tabindex="4" /></p>
+            <input type="hidden" name="comment_type" value="wpd_ratings" id="comment_type" />';
 
         // Remove URL field.
         unset( $fields[ 'url' ] );
@@ -145,6 +133,40 @@ function wpd_add_product_review_comment_fields( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_default_fields', 'wpd_add_product_review_comment_fields' );
+
+
+/**
+ * Add custom comment form fields
+ * 
+ * @param array $defaults 
+ * 
+ * @since  4.2.0
+ * @return array
+ */
+function wpd_comment_form_defaults( $defaults ) {
+
+    if ( 'products' == get_post_type() ) {
+        $comment_field = $defaults['comment_field'];
+
+        unset( $defaults['comment_field'] );
+
+        // Add to ratings box.
+        for ( $i=1; $i <= 5; $i++ ) {
+            $ratings_box .= '<span class="wpd-rating"><input class="star" type="checkbox" name="rating" id="rating" value="' . $i . '"/></span>';
+        }
+
+        $defaults['comment_field'] = '<p class="comment-form-rating">
+            <span class="commentratingbox">' . $ratings_box . '</span></p>';
+        $defaults['comment_field'] .= '<p class="comment-form-title">'.
+            '<label for="title">' . esc_attr__( 'Review Title', 'wp-dispensary' ) . '</label>'.
+            '<input id="title" name="title" type="text" size="30"  tabindex="5" /></p>';
+
+        $defaults['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_attr__( 'Your Review', 'wp-dispensary' ) . ' <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>';
+    }
+
+    return $defaults;
+}
+add_filter( 'comment_form_defaults', 'wpd_comment_form_defaults' );
 
 /**
  * Save product review metadata
@@ -203,7 +225,7 @@ function wpd_modify_comment( $text ) {
     $plugin_url_path = WP_PLUGIN_URL;
 
     if ( $title = get_comment_meta( get_comment_ID(), 'title', true ) ) {
-        $title = '<strong>' . esc_attr( $title ) . '</strong><br/>';
+        $title = '<p class="wpd-rating-title"><strong>' . esc_attr( $title ) . '</strong></p>';
         $text  = $title . $text;
     }
 
@@ -302,3 +324,23 @@ function wpd_extend_comment_edit_metafields( $comment_id ) {
 
 }
 add_action( 'edit_comment', 'wpd_extend_comment_edit_metafields' );
+
+/**
+ * Change comment form button on products post type
+ * 
+ * Define the comment_form_submit_button callback
+ * 
+ * @param string $submit_button 
+ * 
+ * @since  4.2.0
+ * @return string
+ */
+function filter_comment_form_submit_button( $submit_button, $args ) {
+    // Edit this to your needs:
+    $button = '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="Submit Review" />';
+
+    // Override the default submit button:
+    $defaults['submit_button'] = $button;
+
+    return $defaults;
+}
