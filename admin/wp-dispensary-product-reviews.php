@@ -324,23 +324,3 @@ function wpd_extend_comment_edit_metafields( $comment_id ) {
 
 }
 add_action( 'edit_comment', 'wpd_extend_comment_edit_metafields' );
-
-/**
- * Change comment form button on products post type
- * 
- * Define the comment_form_submit_button callback
- * 
- * @param string $submit_button 
- * 
- * @since  4.2.0
- * @return string
- */
-function filter_comment_form_submit_button( $submit_button, $args ) {
-    // Edit this to your needs:
-    $button = '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="Submit Review" />';
-
-    // Override the default submit button:
-    $defaults['submit_button'] = $button;
-
-    return $defaults;
-}
