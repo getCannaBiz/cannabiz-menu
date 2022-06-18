@@ -53,6 +53,8 @@ add_filter( 'preprocess_comment', 'wpd_preprocess_comment_handler', 12, 1 );
 /**
  * Remove reviews from comments loop
  * 
+ * @param object $query 
+ * 
  * @since  4.2.0
  * @return void
  */
@@ -152,7 +154,7 @@ function wpd_comment_form_defaults( $defaults ) {
 
         // Add to ratings box.
         for ( $i=1; $i <= 5; $i++ ) {
-            $ratings_box .= '<span class="wpd-rating"><input class="star" type="checkbox" name="rating" id="rating" value="' . $i . '"/></span>';
+            $ratings_box .= '<span class="wpd-rating"><input class="star" type="checkbox" name="product_rating" id="product_rating" value="' . $i . '"/></span>';
         }
 
         $defaults['comment_field'] = '<p class="comment-form-rating">
@@ -187,9 +189,9 @@ function save_comment_meta_data( $comment_id ) {
         add_comment_meta( $comment_id, 'title', $title );
     }
 
-    if ( ( isset( $_POST['rating'] ) ) && ( '' != $_POST['rating'] ) ) {
-        $rating = wp_filter_nohtml_kses( $_POST['rating'] );
-        add_comment_meta( $comment_id, 'rating', $rating );
+    if ( ( isset( $_POST['product_rating'] ) ) && ( '' != $_POST['product_rating'] ) ) {
+        $rating = wp_filter_nohtml_kses( $_POST['product_rating'] );
+        add_comment_meta( $comment_id, 'product_rating', $rating );
     }
 }
 add_action( 'comment_post', 'save_comment_meta_data' );
@@ -204,8 +206,8 @@ add_action( 'comment_post', 'save_comment_meta_data' );
  */
 function wpd_verify_comment_meta_data( $commentdata ) {
     if ( 'products' == get_post_type() ) {
-        if ( ! isset( $_POST['rating'] ) ) {
-            wp_die( esc_attr__( 'Error: You did not add a rating. Hit the Back button on your Web browser and resubmit your review with a rating.', 'wp-dispensary' ) );
+        if ( ! isset( $_POST['product_rating'] ) ) {
+            wp_die( esc_attr__( 'Error: You did not add a rating. Please hit the Back button on your browser and resubmit your review with a rating.', 'wp-dispensary' ) );
         }
     }
     return $commentdata;
@@ -231,7 +233,7 @@ function wpd_modify_comment( $text ) {
 
     $star = '<i class="fas fa-star"></i>';
 
-    if ( $commentrating = get_comment_meta( get_comment_ID(), 'rating', true ) ) {
+    if ( $commentrating = get_comment_meta( get_comment_ID(), 'product_rating', true ) ) {
         $commentrating = '<p class="comment-rating">' . str_repeat( $star, $commentrating ) . '</p>';
         $text = $commentrating . $text;
         return $text;
@@ -265,7 +267,7 @@ function wpd_extend_comment_meta_box( $comment ) {
     // Get vars.
     $phone  = get_comment_meta( $comment->comment_ID, 'phone', true );
     $title  = get_comment_meta( $comment->comment_ID, 'title', true );
-    $rating = get_comment_meta( $comment->comment_ID, 'rating', true );
+    $rating = get_comment_meta( $comment->comment_ID, 'product_rating', true );
     wp_nonce_field( 'extend_comment_update', 'extend_comment_update', false );
     ?>
     <p>
@@ -277,10 +279,10 @@ function wpd_extend_comment_meta_box( $comment ) {
         <input type="text" name="title" value="<?php echo esc_attr( $title ); ?>" class="widefat" />
     </p>
     <p>
-        <label for="rating"><?php esc_attr_e( 'Rating: ' ); ?></label>
+        <label for="product_rating"><?php esc_attr_e( 'Rating: ' ); ?></label>
         <span class="commentratingbox">
         <?php for( $i=1; $i <= 5; $i++ ) {
-            echo '<span class="commentrating"><input type="radio" name="rating" id="rating" value="'. $i .'"';
+            echo '<span class="commentrating"><input type="radio" name="product_rating" id="product_rating" value="'. $i .'"';
             if ( $rating == $i ) echo ' checked="checked"';
             echo ' />'. $i .' </span>';
             }
@@ -315,11 +317,11 @@ function wpd_extend_comment_edit_metafields( $comment_id ) {
         delete_comment_meta( $comment_id, 'title');
     endif;
 
-    if ( ( isset( $_POST['rating'] ) ) && ( '' != filter_input( INPUT_POST, 'rating' ) ) ):
-        $rating = wp_filter_nohtml_kses( filter_input( INPUT_POST, 'rating' ) );
-        update_comment_meta( $comment_id, 'rating', $rating );
+    if ( ( isset( $_POST['product_rating'] ) ) && ( '' != filter_input( INPUT_POST, 'product_rating' ) ) ):
+        $rating = wp_filter_nohtml_kses( filter_input( INPUT_POST, 'product_rating' ) );
+        update_comment_meta( $comment_id, 'product_rating', $rating );
     else :
-        delete_comment_meta( $comment_id, 'rating');
+        delete_comment_meta( $comment_id, 'product_rating' );
     endif;
 
 }
