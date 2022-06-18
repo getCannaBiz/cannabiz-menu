@@ -23,6 +23,8 @@ div#wp_dispensary_grower_details .inside {
   gap: 12px;
 }
 
+div#wp_dispensary_product_details .inside .flowers-fields,
+div#wp_dispensary_product_details .inside .concentrates-fields,
 div#wp_dispensary_product_details .inside .edibles-fields,
 div#wp_dispensary_product_details .inside .prerolls-fields,
 div#wp_dispensary_product_details .inside .topicals-fields,

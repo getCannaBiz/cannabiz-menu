@@ -133,9 +133,15 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         }
 
         if ( get_post_meta( get_the_ID(), 'activation_time', true ) ) {
-            $activation_time = '<td><span>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'activation_time', true ) . '</td>';
+            $activation_time = '<tr><td><span>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'activation_time', true ) . '</td></tr>';
         } else {
             $activation_time = '';
+        }
+
+        if ( get_post_meta( get_the_ID(), 'product_sku', true ) ) {
+            $wpd_sku = '<tr><td><span>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_sku', true ) . '</td></tr>';
+        } else {
+            $wpd_sku = '';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_thc', true ) ) {
@@ -281,43 +287,43 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         }
 
         if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'flowers', 'concentrates' ) ) ) {
-            $details_flowers = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time;
+            $details_flowers = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time . $wpd_sku;
         } else {
             $details_flowers = '';
         }
 
         if ( 'edibles' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_edibles = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time;
+            $details_edibles = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time . $wpd_sku;
         } else {
             $details_edibles = '';
         }
 
         if ( 'prerolls' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_vendors . $wpd_preroll_weight . $activation_time;
+            $details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_vendors . $wpd_preroll_weight . $activation_time . $wpd_sku;
         } else {
             $details_prerolls = '';
         }
 
         if ( 'topicals' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_topicals = $wpd_size_topical . $wpd_thc_topical . $wpd_cbd_topical . $wpd_ingredients . $wpd_vendors;
+            $details_topicals = $wpd_size_topical . $wpd_thc_topical . $wpd_cbd_topical . $wpd_ingredients . $wpd_vendors . $wpd_sku;
         } else {
             $details_topicals = '';
         }
 
         if ( 'growers' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_growers = $wpd_strain_type . $wpd_seed_count . $wpd_clone_count . $wpd_clone_origin . $wpd_clone_time . $clone_yield . $clone_difficulty . $wpd_vendors;
+            $details_growers = $wpd_strain_type . $wpd_seed_count . $wpd_clone_count . $wpd_clone_origin . $wpd_clone_time . $clone_yield . $clone_difficulty . $wpd_vendors . $wpd_sku;
         } else {
             $details_growers = '';
         }
 
         if ( 'tinctures' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_tinctures = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time;
+            $details_tinctures = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time . $wpd_sku;
         } else {
             $details_tinctures = '';
         }
 
         if ( 'gear' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_gear = $wpd_vendors;
+            $details_gear = $wpd_vendors . $wpd_sku;
         } else {
             $details_gear = '';
         }

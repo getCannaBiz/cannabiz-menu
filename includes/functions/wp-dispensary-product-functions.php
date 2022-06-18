@@ -696,6 +696,7 @@ function wpd_product_schema( $product_id ) {
         <meta itemprop="category" content="<?php get_the_term_list( $product_id, 'wpd_categories', '', '' ); ?>">
         <meta itemprop="name" content="<?php the_title( $product_id ); ?>">
         <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( $product_id, 'full' ); ?>">
+
         <!-- offers -->
         <div id="dvProductPricing" class="ProductDetailsPricing" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
             <meta itemprop="seller" content="<?php echo get_bloginfo( 'name' ); ?>">
@@ -705,14 +706,17 @@ function wpd_product_schema( $product_id ) {
             <meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
             <meta itemprop="price" content="<?php esc_attr_e( $price ); ?>">
         </div>
+
         <?php if ( get_post_meta( $product_id, 'product_sku', true ) ) { ?>
         <meta itemprop="sku" content="<?php esc_attr_e( get_post_meta( $product_id, 'product_sku', true ) ); ?>" />
         <?php } ?>
+
         <?php if ( $vendors ) { ?>
         <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
             <meta itemprop="name" content="<?php echo $vendors[0]->name; ?> " />
         </div>
         <?php } ?>
+
     </div>
     <!-- END Schema.org Product Structured Data Markup -->
 <?php }

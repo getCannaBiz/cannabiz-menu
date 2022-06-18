@@ -119,6 +119,8 @@ function wpd_rest_api_products_route_callback( $data ) {
         }
         // Activation time.
         $activation_time = get_post_meta( $product_id, 'activation_time', true );
+        // Activation time.
+        $product_sku = get_post_meta( $product_id, 'product_sku', true );
         // Compound type.
         $compound_type = wpd_compound_type( $product_id );
         // Compound total.
@@ -185,6 +187,7 @@ function wpd_rest_api_products_route_callback( $data ) {
         $product_data[$product_id]['details']['net_weight']      = $product_net_weight;
         $product_data[$product_id]['details']['product_flower']  = $product_flower;
         $product_data[$product_id]['details']['product_weight']  = $product_weight;
+        $product_data[$product_id]['details']['product_sku']     = $product_sku;
         $product_data[$product_id]['details']['activation_time'] = $activation_time;
         // Create growers endpoints.
         $product_data[$product_id]['growers']['origin']      = $product_origin;
