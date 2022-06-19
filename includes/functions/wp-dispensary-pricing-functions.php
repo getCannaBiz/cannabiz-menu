@@ -1308,3 +1308,116 @@ function wpd_product_prices_array( $product_id = null, $product_type = '' ) {
 
     return $product_prices;
 }
+
+/**
+ * Product Price - Get the lowest price
+ *
+ * @param int $product_id 
+ * 
+ * @since  4.2.0
+ * @return int
+ */
+function get_wpd_product_price_low( $product_id = null ) {
+    // Bail early?
+    if ( ! $product_id ) {
+        return;
+    }
+
+    /**
+     * @todo switch these variables to use anothe rhelper function that loops 
+     *       through ALL prices and outputs the price into the $product_prices array.
+     * 
+     *       as it stands right now, these do not include Heavyweight pricing, and I'd hate 
+     *       to have to rebuild the same code that is already in use elsewhere.
+     */
+
+    // Get prices. 
+    $price_each          = (int)get_post_meta( $product_id, 'price_each', true );
+    $price_per_pack      = (int)get_post_meta( $product_id, 'price_per_pack', true );
+    $price_half_gram     = (int)get_post_meta( $product_id, 'price_half_gram', true );
+    $price_one_gram      = (int)get_post_meta( $product_id, 'price_gram', true );
+    $price_two_grams     = (int)get_post_meta( $product_id, 'price_two_grams', true );
+    $price_eighth        = (int)get_post_meta( $product_id, 'price_eighth', true );
+    $price_five_grams    = (int)get_post_meta( $product_id, 'price_five_grams', true );
+    $price_quarter_ounce = (int)get_post_meta( $product_id, 'price_quarter_ounce', true );
+    $price_half_ounce    = (int)get_post_meta( $product_id, 'price_half_ounce', true );
+    $price_one_ounce     = (int)get_post_meta( $product_id, 'price_ounce', true );
+
+    // Create array of prices.
+    $product_prices = array(
+        $price_each,
+        $price_per_pack,
+        $price_half_gram,
+        $price_one_gram,
+        $price_two_grams,
+        $price_eighth,
+        $price_five_grams,
+        $price_quarter_ounce,
+        $price_half_ounce,
+        $price_one_ounce
+    );
+
+    $product_prices = array_filter( $product_prices );
+
+    $price_low = min( $product_prices );
+
+    // Filter the low price.
+    $price_low = apply_filters( 'get_wpd_product_price_low', $price_low );
+
+    return $price_low;
+}
+
+/**
+ * Product Price - Get the highest price
+ *
+ * @param int $product_id 
+ * 
+ * @since  4.2.0
+ * @return int
+ */
+function get_wpd_product_price_high( $product_id = null ) {
+    // Bail early?
+    if ( ! $product_id ) {
+        return;
+    }
+
+    /**
+     * @todo switch these variables to use anothe rhelper function that loops 
+     *       through ALL prices and outputs the price into the $product_prices array.
+     */
+
+    // Get prices.
+    $price_each          = (int)get_post_meta( $product_id, 'price_each', true );
+    $price_per_pack      = (int)get_post_meta( $product_id, 'price_per_pack', true );
+    $price_half_gram     = (int)get_post_meta( $product_id, 'price_half_gram', true );
+    $price_one_gram      = (int)get_post_meta( $product_id, 'price_gram', true );
+    $price_two_grams     = (int)get_post_meta( $product_id, 'price_two_grams', true );
+    $price_eighth        = (int)get_post_meta( $product_id, 'price_eighth', true );
+    $price_five_grams    = (int)get_post_meta( $product_id, 'price_five_grams', true );
+    $price_quarter_ounce = (int)get_post_meta( $product_id, 'price_quarter_ounce', true );
+    $price_half_ounce    = (int)get_post_meta( $product_id, 'price_half_ounce', true );
+    $price_one_ounce     = (int)get_post_meta( $product_id, 'price_ounce', true );
+
+    // Create array of prices.
+    $product_prices = array(
+        $price_each,
+        $price_per_pack,
+        $price_half_gram,
+        $price_one_gram,
+        $price_two_grams,
+        $price_eighth,
+        $price_five_grams,
+        $price_quarter_ounce,
+        $price_half_ounce,
+        $price_one_ounce
+    );
+
+    $product_prices = array_filter( $product_prices );
+
+    $price_high = max( $product_prices );
+
+    // Filter the high price.
+    $price_high = apply_filters( 'get_wpd_product_price_high', $price_high );
+
+    return $price_high;
+}
