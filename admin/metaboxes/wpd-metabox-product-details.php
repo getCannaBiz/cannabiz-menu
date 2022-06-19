@@ -46,6 +46,8 @@ function wp_dispensary_product_details_metabox_content() {
     wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
     // Activation time.
     $activation_time = get_post_meta( $post->ID, 'activation_time', true );
+    // Product SKU.
+    $product_sku = get_post_meta( $post->ID, 'product_sku', true );
     // Tinctures data.
     $thcmg          = get_post_meta( $post->ID, 'compounds_thc', true );
     $cbdmg          = get_post_meta( $post->ID, 'compounds_cbd', true );
@@ -72,12 +74,20 @@ function wp_dispensary_product_details_metabox_content() {
     echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
     echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
+    echo '<div class="input-field">';
+    echo '<p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p>';
+    echo '<input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" />';
+    echo '</div>';
     echo '</div>';
     // Concentrates fields.
     echo '<div class="concentrates-fields">';
     echo '<div class="input-field">';
     echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
     echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
+    echo '</div>';
+    echo '<div class="input-field">';
+    echo '<p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p>';
+    echo '<input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
     // Tinctures fields.
@@ -106,6 +116,10 @@ function wp_dispensary_product_details_metabox_content() {
     echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
     echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
+    echo '<div class="input-field">';
+    echo '<p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p>';
+    echo '<input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" />';
+    echo '</div>';
     echo '</div>';
     // Pre-roll weight.
     echo '<div class="prerolls-fields">';
@@ -116,6 +130,10 @@ function wp_dispensary_product_details_metabox_content() {
     echo '<div class="input-field">';
     echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
     echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
+    echo '</div>';
+    echo '<div class="input-field">';
+    echo '<p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p>';
+    echo '<input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
     // Topicals fields.
@@ -135,6 +153,10 @@ function wp_dispensary_product_details_metabox_content() {
     echo '<div class="input-field">';
     echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
     echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
+    echo '</div>';
+    echo '<div class="input-field">';
+    echo '<p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p>';
+    echo '<input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
     // Edibles fields.
@@ -159,6 +181,10 @@ function wp_dispensary_product_details_metabox_content() {
     echo '<p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p>';
     echo '<input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" />';
     echo '</div>';
+    echo '<div class="input-field">';
+    echo '<p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p>';
+    echo '<input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" />';
+    echo '</div>';
     echo '</div>';
     // Grower fields.
     echo '<div class="growers-fields">';
@@ -169,6 +195,10 @@ function wp_dispensary_product_details_metabox_content() {
     echo '<div class="input-field">';
     echo '<p>' . esc_html__( 'Clones per unit', 'wp-dispensary' ) . '</p>';
     echo '<input type="text" name="clone_count" value="' . esc_html( $clonecount ) . '" class="widefat" />';
+    echo '</div>';
+    echo '<div class="input-field">';
+    echo '<p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p>';
+    echo '<input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" />';
     echo '</div>';
     echo '</div>';
 
@@ -203,6 +233,7 @@ function wp_dispensary_product_details_metabox_save() {
     $details_meta = array();
     $detail_keys  = array(
         'activation_time',
+        'product_sku',
         'compounds_thc',
         'compounds_cbd',
         'product_size',
