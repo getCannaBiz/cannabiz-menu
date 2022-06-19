@@ -694,9 +694,10 @@ function wpd_product_schema( $product_id ) {
     <!-- BEGIN Schema.org Product Rich Snippet Markup -->
     <div itemscope="" itemtype="http://schema.org/Product">
         <meta itemprop="category" content="<?php get_the_term_list( $product_id, 'wpd_categories', '', '' ); ?>">
-        <meta itemprop="name" content="<?php the_title( $product_id ); ?>">
+        <meta itemprop="name" content="<?php echo get_the_title( $product_id ); ?>">
         <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( $product_id, 'full' ); ?>">
 
+        <?php if ( get_wpd_product_price_high( $product_id ) == get_wpd_product_price_low( $product_id ) ) { ?>
         <!-- offers -->
         <div id="dvProductPricing" class="ProductDetailsPricing" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
             <meta itemprop="seller" content="<?php echo get_bloginfo( 'name' ); ?>">
@@ -704,8 +705,20 @@ function wpd_product_schema( $product_id ) {
             <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
             <link itemprop="availability" href="http://schema.org/InStock">
             <meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
-            <meta itemprop="price" content="<?php esc_attr_e( $price ); ?>">
+            <meta itemprop="price" content="<?php echo get_wpd_product_price_high( $product_id ); ?>">
         </div>
+        <?php } else { ?>
+        <!-- offers -->
+        <div id="dvProductPricing" class="ProductDetailsPricing" itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+            <meta itemprop="seller" content="<?php echo get_bloginfo( 'name' ); ?>">
+            <meta itemprop="url" content="<?php the_permalink( $product_id ); ?>">
+            <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            <meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
+            <meta itemprop="lowPrice" content="<?php echo get_wpd_product_price_low( $product_id ); ?>">
+            <meta itemprop="highPrice" content="<?php echo get_wpd_product_price_high( $product_id ); ?>">
+        </div>
+        <?php } ?>
 
         <?php if ( get_post_meta( $product_id, 'product_sku', true ) ) { ?>
         <meta itemprop="sku" content="<?php esc_attr_e( get_post_meta( $product_id, 'product_sku', true ) ); ?>" />
