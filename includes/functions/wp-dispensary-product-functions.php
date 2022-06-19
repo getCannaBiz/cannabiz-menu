@@ -682,8 +682,6 @@ function wpd_product_schema( $product_id ) {
     
     $wpd_settings = get_option( 'wpdas_general' );
     $vendors      = wp_get_object_terms( $product_id, 'vendors' );
-    $price        = get_wpd_all_prices_simple( $product_id, null, null );
-    $price        = str_replace( '&#36;', '', $price ); // @TODO update string to be dynamic
 
     if ( ! isset ( $wpd_settings['wpd_pricing_currency_code'] ) ) {
         $wpd_currency = 'USD';
