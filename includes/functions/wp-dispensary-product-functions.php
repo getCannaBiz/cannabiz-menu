@@ -731,3 +731,47 @@ function wpd_product_schema( $product_id ) {
     </div>
     <!-- END Schema.org Product Structured Data Markup -->
 <?php }
+
+/**
+ * Get ratings details by product ID
+ * 
+ * @param int $product_id 
+ * 
+ * @return int
+ */
+function wpd_product_ratings_details( $product_id = null ) {
+    // Bail early?
+    if ( ! $product_id ) {
+        return;
+    }
+
+    // Rating array.
+    $ratings_array = array();
+
+    // Get comments.
+    $comments = get_comments(
+        array(
+            'post_id' => $product_id,
+        )
+    );
+
+    // Loop through comments
+    foreach ( $comments as $comment ) {
+        // Get Rating.
+        $rating = get_comment_meta( $comment->comment_ID, 'product_rating', true );
+        // Add rating to array.
+        if ( $rating ) {
+            $ratings_array[] = $rating;
+        }
+    }
+
+    $product_ratings = array(
+        'ratings_count'   => count( $ratings_array ),
+        'ratings_total'   => array_sum( $ratings_array ),
+        'ratings_average' => array_sum( $ratings_array )/count( $ratings_array ),
+    );
+
+    $product_ratings = apply_filters( 'wpd_product_ratings_details', $product_ratings, $product_id );
+
+    return $product_ratings;
+}
