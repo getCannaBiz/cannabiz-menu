@@ -718,9 +718,23 @@ function wpd_product_schema( $product_id ) {
         </div>
         <?php } ?>
 
+        <?php
+        // Get product rating details.
+        $ratings_details = wpd_product_ratings_details( $product_id );
+
+        // Check if there's a product rating saved.
+        if ( $ratings_details['ratings_average'] && ! is_nan( $ratings_details['ratings_average'] ) ) { ?>
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="<?php echo $ratings_details['ratings_average']; ?>">
+            <meta itemprop="ratingCount" content="<?php echo $ratings_details['ratings_count']; ?>">
+        </div>
+        <?php } ?>
+
         <?php if ( get_post_meta( $product_id, 'product_sku', true ) ) { ?>
         <meta itemprop="sku" content="<?php esc_attr_e( get_post_meta( $product_id, 'product_sku', true ) ); ?>" />
         <?php } ?>
+
+        <meta itemprop="description" content="<?php echo get_post_meta( $product_id, '_yoast_wpseo_metadesc', true ); ?>" />
 
         <?php if ( $vendors ) { ?>
         <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
