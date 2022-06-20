@@ -715,6 +715,17 @@ function wpd_product_schema( $product_id ) {
             <meta itemprop="priceCurrency" content="<?php echo $wpd_currency; ?>">
             <meta itemprop="lowPrice" content="<?php echo get_wpd_product_price_low( $product_id ); ?>">
             <meta itemprop="highPrice" content="<?php echo get_wpd_product_price_high( $product_id ); ?>">
+            <?php if ( get_post_meta( $product_id, 'inventory_grams', true ) ) { ?>
+                <meta itemprop="offerCount" content="<?php echo get_post_meta( $product_id, 'inventory_grams', true ); ?>">
+            <?php } else { ?>
+            <?php } ?>
+            <?php if ( get_post_meta( $product_id, 'inventory_units', true ) ) { ?>
+                <meta itemprop="offerCount" content="<?php echo get_post_meta( $product_id, 'inventory_units', true ); ?>">
+            <?php } else { ?>
+            <?php } ?>
+            <?php if ( ! get_post_meta( $product_id, 'inventory_units', true ) && ! get_post_meta( $product_id, 'inventory_grams', true ) ) { ?>
+                <meta itemprop="offerCount" content="">
+            <?php } ?>
         </div>
         <?php } ?>
 
@@ -734,7 +745,12 @@ function wpd_product_schema( $product_id ) {
         <meta itemprop="sku" content="<?php esc_attr_e( get_post_meta( $product_id, 'product_sku', true ) ); ?>" />
         <?php } ?>
 
-        <meta itemprop="description" content="<?php echo get_post_meta( $product_id, '_yoast_wpseo_metadesc', true ); ?>" />
+        <?php 
+        if ( has_excerpt( $product_id ) ) { ?>
+            <meta itemprop="description" content="<?php echo get_the_excerpt( $product_id ); ?>" />
+        <?php } else { ?>
+            <meta itemprop="description" content="" />
+        <?php } ?>
 
         <?php if ( $vendors ) { ?>
         <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
