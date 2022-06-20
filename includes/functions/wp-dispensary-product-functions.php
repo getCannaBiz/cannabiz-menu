@@ -789,3 +789,47 @@ function wpd_product_ratings_details( $product_id = null ) {
 
     return $product_ratings;
 }
+
+/**
+ * Get ratings stars by product ID
+ * 
+ * @param int $product_id 
+ * 
+ * @since  4.2.0
+ * @return string
+ */
+function get_wpd_product_ratings_stars( $product_id = null ) {
+    // Bail early?
+    if ( ! $product_id ) {
+        return;
+    }
+
+    // Get ratings details.
+    $ratings_details = wpd_product_ratings_details( $product_id );
+
+    // Check if there's a product rating saved.
+    if ( $ratings_details['ratings_average'] && ! is_nan( $ratings_details['ratings_average'] ) ) {
+        $str = '';
+        // Loop through 5 times.
+        for ( $i = 1; $i <= 5; $i++ ) {
+            if ( $ratings_details['ratings_average'] < $i ) {
+                if ( is_float( $ratings_details['ratings_average'] ) && ( round( $ratings_details['ratings_average'] ) == $i ) ) {
+                    $str .= '<i class="fas fa-star-half-alt"></i> ';
+                } else {
+                    $str .= '<i class="far fa-star"></i> ';
+                }
+            } else {
+                $str .= '<i class="fas fa-star"></i> ';
+            }
+        }
+
+        // Get the ratings stars HTML.
+        $ratings_stars = '<p class="comment-rating">' . $str . '</p>';
+        // Filter the ratings stars HTML.
+        $ratings_stars = apply_filters( 'wpd_product_ratings_stars', $ratings_stars );
+
+        return $ratings_stars;
+    }
+
+    return;
+}
