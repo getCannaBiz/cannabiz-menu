@@ -79,7 +79,7 @@ function wp_dispensary_products_post_type() {
         'label'               => sprintf( esc_html__( '%s', 'wp-dispensary' ), $wpd_products_slug_cap ),
         'description'         => sprintf( esc_html__( 'Display the %s from your menu', 'wp-dispensary' ), $wpd_products_slug ),
         'labels'              => $labels,
-        'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
+        'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions' ),
         'taxonomies'          => array(),
         'hierarchical'        => false,
         'public'              => true,
