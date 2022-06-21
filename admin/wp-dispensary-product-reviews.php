@@ -233,6 +233,7 @@ function wpd_modify_comment( $text ) {
 
     $star = '<i class="fas fa-star"></i>';
 
+    // Check if there's a product rating saved.
     if ( $commentrating = get_comment_meta( get_comment_ID(), 'product_rating', true ) ) {
         $commentrating = '<p class="comment-rating">' . str_repeat( $star, $commentrating ) . '</p>';
         $text = $commentrating . $text;

@@ -121,6 +121,12 @@ function wpd_rest_api_products_route_callback( $data ) {
         $activation_time = get_post_meta( $product_id, 'activation_time', true );
         // Activation time.
         $product_sku = get_post_meta( $product_id, 'product_sku', true );
+        // Rating details.
+        $rating_details  = '';
+        $ratings_details = wpd_product_ratings_details( $product_id );
+        if ( $ratings_details['ratings_average'] && ! is_nan( $ratings_details['ratings_average'] ) ) {
+            $rating_details = wpd_product_ratings_details( $product_id );
+        }
         // Compound type.
         $compound_type = wpd_compound_type( $product_id );
         // Compound total.
@@ -155,20 +161,21 @@ function wpd_rest_api_products_route_callback( $data ) {
         $seed_count         = get_post_meta( $product_id, 'seed_count', true );
 
         // Create individual product data endpoints.
-        $product_data[$product_id]['title']        = $product_title;
-        $product_data[$product_id]['content']      = $product_content;
-        $product_data[$product_id]['product_type'] = $product_type;
-        $product_data[$product_id]['featured']     = $product_featured;
-        $product_data[$product_id]['prices']       = $product_prices;
-        $product_data[$product_id]['categories']   = $product_categories;
-        $product_data[$product_id]['vendors']      = $product_vendors;
-        $product_data[$product_id]['shelf_type']   = $product_shelf_type;
-        $product_data[$product_id]['strain_type']  = $product_strain_type;
-        $product_data[$product_id]['aromas']       = $product_aromas;
-        $product_data[$product_id]['flavors']      = $product_flavors;
-        $product_data[$product_id]['effects']      = $product_effects;
-        $product_data[$product_id]['symptoms']     = $product_symptoms;
-        $product_data[$product_id]['conditions']   = $product_conditions;
+        $product_data[$product_id]['title']          = $product_title;
+        $product_data[$product_id]['content']        = $product_content;
+        $product_data[$product_id]['product_type']   = $product_type;
+        $product_data[$product_id]['featured']       = $product_featured;
+        $product_data[$product_id]['prices']         = $product_prices;
+        $product_data[$product_id]['categories']     = $product_categories;
+        $product_data[$product_id]['vendors']        = $product_vendors;
+        $product_data[$product_id]['shelf_type']     = $product_shelf_type;
+        $product_data[$product_id]['strain_type']    = $product_strain_type;
+        $product_data[$product_id]['aromas']         = $product_aromas;
+        $product_data[$product_id]['flavors']        = $product_flavors;
+        $product_data[$product_id]['effects']        = $product_effects;
+        $product_data[$product_id]['symptoms']       = $product_symptoms;
+        $product_data[$product_id]['conditions']     = $product_conditions;
+        $product_data[$product_id]['ratings']        = $rating_details;
         // Create inventory endpoints.
         $product_data[$product_id]['inventory']['type']   = $inventory_type;
         $product_data[$product_id]['inventory']['amount'] = $inventory_amount;
