@@ -328,3 +328,21 @@ function wpd_extend_comment_edit_metafields( $comment_id ) {
 
 }
 add_action( 'edit_comment', 'wpd_extend_comment_edit_metafields' );
+
+/**
+ * Add star ratings to wpd_menu shortcode
+ * 
+ * @param string $show_name 
+ * @param int    $product_id 
+ * 
+ * @since  4.2.0
+ * @return string
+ */
+function wpd_add_star_ratings_to_shortcode( $show_name, $product_id ) {
+    // Do something.
+    $ratings  = '<span class="product-ratings">' . get_wpd_product_ratings_stars( $product_id )  . '</span>';
+    $ratings .= $show_name;
+
+    return $ratings;
+}
+add_filter( 'wpd_shortcodes_product_title', 'wpd_add_star_ratings_to_shortcode', 10, 2 );
