@@ -257,6 +257,8 @@ function wp_dispensary_menu_shortcode( $atts ) {
             // Show name.
             if ( 'show' === $name ) {
                 $show_name = '<h2 class="wpd-producttitle"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
+                // Filter name.
+                $show_name = apply_filters( 'wpd_shortcodes_product_title', $show_name, get_the_ID() );
             }
 
             // Show Price.
