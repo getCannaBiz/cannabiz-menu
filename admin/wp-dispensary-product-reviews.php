@@ -252,7 +252,7 @@ add_filter( 'comment_text', 'wpd_modify_comment' );
  */
 function extend_comment_add_meta_box() {
     // Add metabox.
-    add_meta_box( 'title', esc_attr__( 'Comment Metadata - Extend Comment', 'wp-dispensary' ), 'wpd_extend_comment_meta_box', 'comment', 'normal', 'high' );
+    add_meta_box( 'title', esc_attr__( 'WP Dispensary - Product Reviews', 'wp-dispensary' ), 'wpd_extend_comment_meta_box', 'comment', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes_comment', 'extend_comment_add_meta_box' );
 
@@ -272,23 +272,24 @@ function wpd_extend_comment_meta_box( $comment ) {
     wp_nonce_field( 'extend_comment_update', 'extend_comment_update', false );
     ?>
     <p>
-        <label for="phone"><?php esc_attr_e( 'Phone' ); ?></label>
-        <input type="text" name="phone" value="<?php echo esc_attr( $phone ); ?>" class="widefat" />
+        <label for="title"><?php esc_attr_e( 'Review Title', 'wp-dispensary' ); ?></label>
+        <input type="text" name="title" value="<?php esc_attr_e( $title ); ?>" class="widefat" />
     </p>
     <p>
-        <label for="title"><?php esc_attr_e( 'Comment Title' ); ?></label>
-        <input type="text" name="title" value="<?php echo esc_attr( $title ); ?>" class="widefat" />
-    </p>
-    <p>
-        <label for="product_rating"><?php esc_attr_e( 'Rating: ' ); ?></label>
-        <span class="commentratingbox">
-        <?php for( $i=1; $i <= 5; $i++ ) {
-            echo '<span class="commentrating"><input type="radio" name="product_rating" id="product_rating" value="'. $i .'"';
+        <label for="product_rating"><?php esc_attr_e( 'Review Rating', 'wp-dispensary' ); ?>: </label>
+        <div class="commentratingbox">
+        <?php
+        for ( $i=1; $i <= 5; $i++ ) {
+            echo '<span class="commentrating"><input type="radio" name="product_rating" id="product_rating" value="' . $i . '"';
             if ( $rating == $i ) echo ' checked="checked"';
-            echo ' />'. $i .' </span>';
-            }
+            echo ' />' . $i . ' </span>';
+        }
         ?>
-        </span>
+        </div>
+    </p>
+    <p>
+        <label for="phone"><?php esc_attr_e( 'Phone', 'wp-dispensary' ); ?></label>
+        <input type="text" name="phone" value="<?php echo esc_attr( $phone ); ?>" class="widefat" />
     </p>
     <?php
 }
