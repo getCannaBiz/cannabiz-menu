@@ -293,38 +293,45 @@
 
 }
 
-
-
-
 .slick-dots li.slick-active button::before {
-  opacity: .75;
-  color: black;
+    opacity: .75;
+    color: black;
 }
 
 .carousel-item {
-  padding: 0 10px;
+    padding: 0 10px;
+    text-align: center;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
 
-  p {
-    margin: 12px 0 0 0;
-    padding: 0;
-  }
-
-  span.wpd-pricing,
-  span.wpd-thc,
-  span.wpd-productinfo {
-    color: $color__gray-alt;
-    font-size: 13px;
-    margin-right: 10px;
-
-    span.wpd-productinfo.pricing {
-      margin-right: 0;
+    h2.wpd-producttitle {
+        flex: 1;
     }
 
-  }
+    p {
+        margin: 12px 0 0 0;
+        padding: 0;
+    }
 
-  span.wpd-topsellers-icon {
-    top: 0;
-    right: 0;
-  }
+    span.wpd-pricing,
+    span.wpd-thc,
+    span.wpd-productinfo {
+        color: $color__gray-alt;
+        font-size: 13px;
+        margin-right: 10px;
+
+        span.wpd-productinfo.pricing {
+            margin-right: 0;
+        }
+
+    }
+
+    span.wpd-topsellers-icon {
+        top: 0;
+        right: 0;
+    }
 
 }
