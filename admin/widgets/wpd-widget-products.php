@@ -182,6 +182,8 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
 
                 wpd_product_image( $post->ID, $instance['imagesize'] );
 
+                echo '<span class="wp-dispensary-widget-product-ratings">' . get_wpd_product_ratings_stars( $post->ID ) . '</span>';
+
                 if ( 'on' == $instance['itemname'] ) {
                     echo '<span class="wp-dispensary-widget-title"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></span>';
                 }
