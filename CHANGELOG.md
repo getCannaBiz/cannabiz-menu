@@ -1,5 +1,38 @@
 # Changelog
 
+## 4.2.0
+*   Added `get_wpd_all_image_sizes` helper function in `includes/functions/wp-dispensary-general-functions.php`
+*   Added `get_wpd_product_price_high` helper function in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Added `get_wpd_product_price_low` helper function in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Added `wpd_product_ratings_details` helper function in `includes/functions/wp-dispensary-product-functions.php`
+*   Added `get_wpd_product_ratings_stars` helper function in `includes/functions/wp-dispensary-product-functions.php`
+*   Added `wpd_shortcodes_product_title` filter in `admin/wp-dispensary-shortcodes.php`
+*   Added excerpt to the products post type in `admin/wp-dispensary-products-post-type.php`
+*   Added new product ratings feature in `admin/wp-dispensary-product-reviews.php`
+*   Added product ratings to schema details in `includes/functions/wp-dispensary-product-functions.php`
+*   Added product ratings details to REST API in `admin/wp-dispensary-rest-api.php`
+*   Added product ratings stars to `wpd_menu` shortcode in `admin/wp-dispensary-product-reviews.php`
+*   Added product SKU metadata option in `admin/metaboxes/wpd-metabox-product-details.php`
+*   Added product SKU metadata to table data output in `admin/wp-dispensary-data-output.php`
+*   Added product SKU metadata to REST API in `admin/wp-dispensary-rest-api.php`
+*   Bugfix for metadata not saving in `admin/metaboxes/wpd-metabox-compound-details.php`
+*   Bugfix for metadata not saving in `admin/metaboxes/wpd-metabox-grower-details.php`
+*   Bugfix for metadata not saving in `admin/metaboxes/wpd-metabox-product-details.php`
+*   Bugfix for metadata not saving in `admin/metaboxes/wpd-metabox-product-prices.php`
+*   Bugfix for metadata not saving in `admin/metaboxes/wpd-metabox-product-type.php`
+*   Bugfix for product type dropdown displaying on more screens than just products in `admin/wp-dispensary-admin-screens.php`
+*   Updated pre_get_posts for product archive and search results in `admin/wp-dispensary-admin-screens.php`
+*   Updated product schema to include SKU, description and brand itemtype's in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated product schema price to utilize AggregateOffer option when needed in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated `get_wpd_product_image` to include width/height in HTML in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated JS for star rating selection when leaving a review in `public/assets/js/wp-dispensary-public.js`
+*   Updated carousel slider text to center align in `public/assets/sass/slick-slider/_slick.scss`
+*   Updated wpd_menu shortcode styles for the new star ratings in `public/assets/sass/shortcodes/_shortcodes.scss`
+*   Updated product widget to include star ratings in `admin/widgets/wpd-widget-products.php`
+*   Updated `.pot` files with text strings for localization in `languages/`
+*   WordPress Coding Standards updates in multiple files throughout the plugin
+*   General code cleanup throughout various files in the plugin
+
 ## 4.1.1
 *   Added `wp_dispensary_details_metabox_save_detail_keys` filter in `admin/metaboxes/wpd-metabox-product-details.php`
 *   Added `wp_dispensary_prices_metabox_save_price_keys` in `admin/metaboxes/wpd-metabox-product-prices.php`
