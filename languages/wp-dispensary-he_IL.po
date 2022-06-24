@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Dispensary\n"
 "POT-Creation-Date: 2022-02-03 20:39-0500\n"
-"PO-Revision-Date: 2022-02-03 21:29-0500\n"
+"PO-Revision-Date: 2022-06-23 21:15-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -1191,7 +1191,7 @@ msgstr "מרכיבים"
 #: admin/taxonomies/wpd-taxonomy-ingredients.php:26
 msgctxt "singular name"
 msgid "Ingredient"
-msgstr "מַרכִּיב"
+msgstr "מַרכִּיב"
 
 #: admin/taxonomies/wpd-taxonomy-ingredients.php:27
 msgid "Search Ingredients"
@@ -1804,7 +1804,7 @@ msgstr "הפעלה/ביטול"
 
 #: admin/wp-dispensary-admin-settings.php:704
 msgid "Enable "
-msgstr "לְאַפשֵׁר "
+msgstr "לְאַפשֵׁר "
 
 #: admin/wp-dispensary-admin-settings.php:718
 msgid "Charge"
@@ -1963,7 +1963,7 @@ msgstr "משקל"
 #: admin/wp-dispensary-data-output.php:245
 #: admin/wp-dispensary-data-output.php:247
 msgid "Flower"
-msgstr "פֶּרַח"
+msgstr "פֶּרַח"
 
 #: admin/wp-dispensary-data-output.php:349
 msgid "TOTAL"
