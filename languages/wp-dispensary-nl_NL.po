@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Dispensary\n"
 "POT-Creation-Date: 2022-02-05 19:47-0500\n"
-"PO-Revision-Date: 2022-02-05 20:34-0500\n"
+"PO-Revision-Date: 2022-06-23 21:12-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -130,11 +130,11 @@ msgstr "Voorraad"
 
 #: admin/class-wp-dispensary-csv-export.php:104
 msgid "Shelf type"
-msgstr "plank type:"
+msgstr "Plank type"
 
 #: admin/class-wp-dispensary-csv-export.php:105
 msgid "Strain type"
-msgstr "soort stam:"
+msgstr "Soort stam"
 
 #: admin/class-wp-dispensary-csv-export.php:106
 #: admin/taxonomies/wpd-taxonomy-allergens.php:40
@@ -185,7 +185,7 @@ msgstr "Uitgelichte afbeelding"
 
 #: admin/class-wp-dispensary-permalink-settings.php:33
 msgid "Products Base"
-msgstr "Productenbasis:"
+msgstr "Productenbasis"
 
 #: admin/class-wp-dispensary-vendors-taxonomy-fields.php:57
 #: admin/class-wp-dispensary-vendors-taxonomy-fields.php:88
@@ -287,7 +287,7 @@ msgstr "Toon uitgelichte afbeelding?"
 #: admin/deprecated-widgets.php:221 admin/deprecated-widgets.php:692
 #: admin/widgets/wpd-widget-products.php:319
 msgid "Image size:"
-msgstr "Afbeelding formaat"
+msgstr "Afbeelding formaat:"
 
 #: admin/deprecated-widgets.php:272
 msgid "WPD Concentrates"
@@ -1336,7 +1336,7 @@ msgstr "Geen soorten gevonden"
 
 #: admin/taxonomies/wpd-taxonomy-strain_types.php:36
 msgid "Strain Type"
-msgstr "Soort stam:"
+msgstr "Soort stam"
 
 #: admin/taxonomies/wpd-taxonomy-symptoms.php:25
 msgctxt "general name"
@@ -1696,7 +1696,7 @@ msgstr "De samenstellingstabel verwijderen uit de gegevensuitvoer"
 
 #: admin/wp-dispensary-admin-settings.php:433
 msgid "Details table"
-msgstr "Details tabel:"
+msgstr "Details tabel"
 
 #: admin/wp-dispensary-admin-settings.php:450
 #: includes/functions/wp-dispensary-general-functions.php:33

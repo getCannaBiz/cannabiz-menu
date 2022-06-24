@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Dispensary\n"
 "POT-Creation-Date: 2022-02-01 15:50-0500\n"
-"PO-Revision-Date: 2022-02-01 15:55-0500\n"
+"PO-Revision-Date: 2022-06-23 21:16-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -778,7 +778,7 @@ msgstr "Zusammengesetzte Details"
 #: includes/functions/wp-dispensary-product-functions.php:170
 #: includes/functions/wp-dispensary-product-functions.php:203
 msgid "THC"
-msgstr " "
+msgstr "THC"
 
 #: admin/metaboxes/wpd-metabox-compound-details.php:60
 #: admin/wp-dispensary-data-output.php:150
@@ -1404,7 +1404,7 @@ msgstr "Verkäufer"
 
 #: admin/taxonomies/wpd-taxonomy-vendors.php:27
 msgid "Search Vendors"
-msgstr "Suche Verkäufer "
+msgstr "Suche Verkäufer"
 
 #: admin/taxonomies/wpd-taxonomy-vendors.php:28
 msgid "Popular Vendors"
@@ -1731,7 +1731,7 @@ msgstr "Steuern"
 
 #: admin/wp-dispensary-admin-settings.php:565
 msgid "Sales tax"
-msgstr "MwSt."
+msgstr "MwSt"
 
 #: admin/wp-dispensary-admin-settings.php:566
 msgid "Apply sales tax to orders (%)"
@@ -1949,7 +1949,7 @@ msgstr "Regal"
 
 #: admin/wp-dispensary-data-output.php:80
 msgid "Strain"
-msgstr " "
+msgstr "Strähn"
 
 #: admin/wp-dispensary-data-output.php:85
 msgid "Vendor"
