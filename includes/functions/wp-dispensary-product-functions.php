@@ -795,12 +795,24 @@ function wpd_product_ratings_details( $product_id = null ) {
         }
     }
 
+    // Set ratings details.
+    $ratings_count   = count( $ratings_array );
+    $ratings_total   = array_sum( $ratings_array );
+    $ratings_average = '';
+
+    // Only run this if the count and total are both integers.
+    if ( is_int( $ratings_count ) && is_int( $ratings_total ) ) {
+        $ratings_average = $ratings_total/$ratings_count;
+    }
+
+    // Set the product ratings array.
     $product_ratings = array(
-        'ratings_count'   => count( $ratings_array ),
-        'ratings_total'   => array_sum( $ratings_array ),
-        'ratings_average' => array_sum( $ratings_array )/count( $ratings_array ),
+        'ratings_count'   => $ratings_count,
+        'ratings_total'   => $ratings_total,
+        'ratings_average' => $ratings_average,
     );
 
+    // Filter the product ratings array.
     $product_ratings = apply_filters( 'wpd_product_ratings_details', $product_ratings, $product_id );
 
     return $product_ratings;
