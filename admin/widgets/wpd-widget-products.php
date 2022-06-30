@@ -105,6 +105,7 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
                     'relation' => 'OR',
                 )
             );
+
             foreach ( $product_types as $type ) {
                 $type_array[] = array(
                     'key'   => 'product_type',
@@ -290,14 +291,10 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
             <label for="<?php esc_attr_e( $this->get_field_id( 'type' ) ); ?>"><?php esc_html_e( 'Menu item type:', 'wp-dispensary' ); ?></label>
             <select id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" class="widefat" style="width:100%;">
                 <option <?php if ( 'all' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="all"><?php esc_html_e( 'All types', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'flowers' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="flowers"><?php esc_html_e( 'Flowers', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'concentrates' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="concentrates"><?php esc_html_e( 'Concentrates', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'edibles' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="edibles"><?php esc_html_e( 'Edibles', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'prerolls' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="prerolls"><?php esc_html_e( 'Pre-rolls', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'topicals' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="topicals"><?php esc_html_e( 'Topicals', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'growers' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="growers"><?php esc_html_e( 'Growers', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'gear' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="gear"><?php esc_html_e( 'Gear', 'wp-dispensary' ); ?></option>
-                <option <?php if ( 'tinctures' == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="tinctures"><?php esc_html_e( 'Tinctures', 'wp-dispensary' ); ?></option>
+                <?php
+                foreach ( wpd_product_types() as $value ) { ?>
+                <option <?php if ( wpd_product_type_display_name_to_slug( $value ) == $instance['type'] ) esc_attr_e( 'selected="selected"' ); ?> value="<?php echo wpd_product_type_display_name_to_slug( $value ); ?>"><?php echo $value; ?></option>
+                <?php } ?>
             </select>
         </p>
 
