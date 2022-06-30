@@ -406,6 +406,9 @@ class WP_Dispensary_CSV_Export {
                 'tinctures'
             );
 
+            // Filter additional types.
+            $types = apply_filters( 'wpd_csv_export_additional_types', $types );
+
             // Loop through types.
             foreach ( $types as $type ) {
                 // Additional data.
