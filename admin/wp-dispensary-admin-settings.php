@@ -78,6 +78,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             'post_status'  => 'publish'
         );
 
+        $args = apply_filters( 'wpd_admin_settings_fields_args', $args );
+
         // Get all pages.
         $pages = get_pages( $args );
 
