@@ -85,8 +85,10 @@ add_action( 'init', 'wp_dispensary_admin_submenu_links' );
  */
 function wpd_keep_taxonomy_menu_open( $parent_file ) {
     global $current_screen;
+
     // Get current screen taxonomy.
     $taxonomy = $current_screen->taxonomy;
+
     // Check taxonomies.
     $tax_check = array(
         'vendors',
@@ -94,6 +96,9 @@ function wpd_keep_taxonomy_menu_open( $parent_file ) {
         'shelf_types',
         'strain_types'
     );
+
+    // Filter the taxonomies.
+    $tax_check = apply_filters( 'wpd_keep_taxonomy_menu_open', $tax_check );
 
     // Check taxonomies.
     if ( in_array( $taxonomy, $tax_check ) ) {
