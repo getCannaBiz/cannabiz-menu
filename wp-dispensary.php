@@ -6,7 +6,7 @@
  *
  * @package WP_Dispensary
  * @author  WP Dispensary <contact@wpdispensary.com>
- * @license GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link    https://www.wpdispensary.com
  * @since   1.0
  *
@@ -16,8 +16,8 @@
  * Version:           4.2.0
  * Author:            WP Dispensary
  * Author URI:        https://www.wpdispensary.com
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       wp-dispensary
  * Domain Path:       /languages
  */
