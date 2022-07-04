@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.2.1
+*   Added `wpd_keep_taxonomy_menu_open` filter in `admin/wp-dispensary-admin-menu-links.php`
+*   Added `wpd_csv_export_additional_types` filter in `admin/class-wp-dispensary-csv-export.php`
+*   Added `wpd_admin_settings_fields_args` filter in `admin/wp-dispensary-admin-settings.php`
+*   Bugfix for ratings calculation fatal error if count/total is not integer in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated products widget type dropdown setting in `admin/widgets/wpd-widget-products.php`
+*   Updated license to GPL v3.0
+*   Updated `.pot` files with text strings for localization in `languages/`
+*   General code cleanup throughout various files in the plugin
+
 ## 4.2.0
 *   Added `get_wpd_all_image_sizes` helper function in `includes/functions/wp-dispensary-general-functions.php`
 *   Added `get_wpd_product_price_high` helper function in `includes/functions/wp-dispensary-pricing-functions.php`
