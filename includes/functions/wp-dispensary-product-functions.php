@@ -413,12 +413,6 @@ function get_wpd_compounds_simple( $product_id, $type = null, $compound_array = 
 
     // Get post type.
     $product_type = get_post_meta( $product_id, 'product_type', true );
-    // Create post type variables.
-    if ( $product_type ) {
-        $product_type_data = get_post_type_object( $product_type );
-        $product_type_name = $product_type_data->label;
-        //$product_type_slug = $product_type_data->rewrite['slug'];
-    }
 
     if ( 'flowers' == $product_type || 'concentrates' == $product_type || 'prerolls' == $product_type || 'tinctures' == $product_type ) {
         $type = '%';
