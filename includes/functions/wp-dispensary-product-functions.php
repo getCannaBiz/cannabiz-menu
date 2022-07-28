@@ -800,8 +800,8 @@ function wpd_product_ratings_details( $product_id = null ) {
     $ratings_total   = array_sum( $ratings_array );
     $ratings_average = '';
 
-    // Only run this if the count and total are both integers.
-    if ( is_int( $ratings_count ) && is_int( $ratings_total ) ) {
+    // Only run this if the count and total are both integers and greater than zero.
+    if ( is_int( $ratings_count ) && is_int( $ratings_total ) && $ratings_count > 0 && $ratings_total > 0 ) {
         $ratings_average = $ratings_total/$ratings_count;
     }
 
