@@ -61,13 +61,7 @@ class WP_Dispensary_Product_Search_Widget extends WP_Widget {
             $args['id'] = 'wp_dispensary_product_search_widget';
         }
 
-        $title = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
-
         echo $args['before_widget'];
-
-        if ( $title ) {
-            echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
-        }
 
         do_action( 'wpd_product_search_widget_before' );
 
