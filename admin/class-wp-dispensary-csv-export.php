@@ -126,7 +126,8 @@ class WP_Dispensary_CSV_Export {
             esc_html__( 'Flavors', 'wp-dispensary' ),
             esc_html__( 'Ingredients', 'wp-dispensary' ),
             esc_html__( 'Symptoms', 'wp-dispensary' ),
-            esc_html__( 'Featured image', 'wp-dispensary' )
+            esc_html__( 'Featured image', 'wp-dispensary' ),
+            esc_html__( 'Ratings', 'wp-dispensary' ),            
         );
 
         // Filter headers.
@@ -465,6 +466,7 @@ class WP_Dispensary_CSV_Export {
                 $ingredients_ids,
                 $symptoms_ids,
                 get_the_post_thumbnail_url( $product['ID'] ),
+                json_encode( wpd_product_ratings_details( $product['ID'] ), JSON_FORCE_OBJECT )
             );
             $data_rows[] = apply_filters( 'wpd_csv_export_data_row', $row, $product );
         }
