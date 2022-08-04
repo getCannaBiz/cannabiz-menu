@@ -154,13 +154,13 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
         public function wpd_admin_menu() {
             // Add menu page.
             add_menu_page(
-                esc_html__( 'WP Dispensary', 'wp-dispensary' ), /* Paramater: page_title */
-                esc_html__( 'WP Dispensary', 'wp-dispensary' ), /* Paramater: menu_title */
-                'manage_options', /* Paramater: capability */
-                'wpd-settings', /* Paramater: menu_slug */
-                array( $this, 'wp_dispensary_create_admin_page' ), /* Paramater: function */
-                'none', /* Paramater: icon_url */
-                3 /* Paramater: position */
+                esc_html__( 'WP Dispensary', 'wp-dispensary' ),
+                esc_html__( 'WP Dispensary', 'wp-dispensary' ),
+                'manage_options',
+                'wpd-settings',
+                array( $this, 'wp_dispensary_create_admin_page' ),
+                'none',
+                3
             );
             add_submenu_page( 'wpd-settings', esc_html__( 'WP Dispensary Settings', 'wp-dispensary' ), esc_html__( 'Settings', 'wp-dispensary' ), 'manage_options', 'wpd-settings' );
         }

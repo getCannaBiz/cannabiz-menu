@@ -18,8 +18,10 @@
  *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/public
- * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
  */
 class WP_Dispensary_Public {
 
@@ -28,7 +30,7 @@ class WP_Dispensary_Public {
      *
      * @since  1.0.0
      * @access private
-     * @var    string    $_plugin_name    The ID of this plugin.
+     * @var    string  $_plugin_name - The ID of this plugin.
      */
     private $_plugin_name;
 
@@ -37,15 +39,15 @@ class WP_Dispensary_Public {
      *
      * @since  1.0.0
      * @access private
-     * @var    string    $_version    The current version of this plugin.
+     * @var    string  $_version - The current version of this plugin.
      */
     private $_version;
 
     /**
      * Initialize the class and set its properties.
      *
-     * @param string $_plugin_name The name of the plugin.
-     * @param string $_version     The version of this plugin.
+     * @param string $_plugin_name - The name of the plugin.
+     * @param string $_version     - The version of this plugin.
      *
      * @since  1.0.0
      * @return void

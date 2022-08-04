@@ -30,7 +30,7 @@ class WP_Dispensary_Admin {
      *
      * @since  1.0.0
      * @access private
-     * @var    string $_plugin_name - The ID of this plugin.
+     * @var    string  $_plugin_name - The ID of this plugin.
      */
     private $_plugin_name;
 
@@ -39,7 +39,7 @@ class WP_Dispensary_Admin {
      *
      * @since  1.0.0
      * @access private
-     * @var    string $_version - The current version of this plugin.
+     * @var    string  $_version - The current version of this plugin.
      */
     private $_version;
 
@@ -64,7 +64,6 @@ class WP_Dispensary_Admin {
      *
      * @since  1.0.0
      * @access public
-     *
      * @return void
      */
     public function enqueue_styles() {
@@ -76,7 +75,6 @@ class WP_Dispensary_Admin {
      *
      * @since  1.0.0
      * @access public
-     *
      * @return void
      */
     public function enqueue_scripts() {
