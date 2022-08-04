@@ -128,7 +128,7 @@ function wpd_add_product_review_comment_fields( $fields ) {
         unset( $fields['cookies'] );
 
         $fields['cookies'] = '<p class="comment-form-cookies-consent">
-                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" />' .
                                 '<label for="wp-comment-cookies-consent">' . esc_attr__( 'Remember Me!', 'wp-dispensary' ) . '</label>
                               </p>';
     }
@@ -150,6 +150,7 @@ function wpd_comment_form_defaults( $defaults ) {
 
     if ( 'products' == get_post_type() ) {
         $comment_field = $defaults['comment_field'];
+        $ratings_box   = '';
 
         unset( $defaults['comment_field'] );
 
