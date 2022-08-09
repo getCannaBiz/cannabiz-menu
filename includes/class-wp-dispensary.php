@@ -73,7 +73,7 @@ class WP_Dispensary {
     public function __construct() {
 
         $this->plugin_name = 'wp-dispensary';
-        $this->version     = '4.2.1';
+        $this->version     = '4.3.0';
 
         if ( defined( 'WP_DISPENSARY_VERSION' ) ) {
             $this->version = WP_DISPENSARY_VERSION;

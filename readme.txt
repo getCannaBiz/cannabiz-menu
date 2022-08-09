@@ -3,7 +3,7 @@ Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
 Tested up to: 6.0
-Stable tag: 4.2.1
+Stable tag: 4.3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -78,6 +78,15 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 4.3.0 =
+*   Added `CPT_Columns` class for easier admin screen editor in `admin/class-wp-dispensary-cpt-columns.php`
+*   Updated product admin screen to show product ratings in `admin/wp-dispensary-admin-screens.php`
+*   Updated product search widget to no longer check for a title in `admin/widgets/wpd-widget-product-search.php`
+*   Updated product rating average calculations in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated blank var for ratings box HTML in comment form in `admin/wp-dispensary-product-reviews.php`
+*   Updated CSV export with product ratings details `admin/class-wp-dispensary-csv-export.php`
+*   General code cleanup throughout various files in the plugin
 
 = 4.2.1 =
 *   Added `wpd_keep_taxonomy_menu_open` filter in `admin/wp-dispensary-admin-menu-links.php`
