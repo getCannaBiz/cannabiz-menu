@@ -117,6 +117,13 @@ class WP_Dispensary {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-dispensary-i18n.php';
 
         /**
+         * The class responsible for customizing the post type admin columns
+         * 
+         * @since 4.0
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-cpt-columns.php';
+
+        /**
          * The class responsible for defining all actions that occur in the 
          * admin area.
          */
