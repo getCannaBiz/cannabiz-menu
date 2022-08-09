@@ -16,64 +16,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Creates new featured image column
+ * Add Product Ratings stars to Products admin screen
  * 
- * @param object $columns 
- * 
- * @return object
- */
-function wp_dispensary_columns( $columns ) {
-
-    $wpd_columns = array();
-    $title       = 'cb';
-
-    foreach ( $columns as $key => $value ) {
-        $wpd_columns[$key] = $value;
-        if ( $key == $title ) {
-            $wpd_columns['featured_thumb'] = '<span class="dashicons dashicons-format-image"></span><span class="wpd-admin-screen-featured-image-title">' . esc_html__( 'Featured image', 'wp-dispenary' ) . '</span>';
-        }
-    }
-
-    return $wpd_columns;
-}
-add_filter( 'wpd_manage_posts_custom_column', 'wp_dispensary_columns' );
-
-/**
- * Adds the featured image to the column
- * 
- * @param object $column 
- * 
+ * @since  4.3.0
  * @return void
  */
-function wp_dispensary_columns_data( $column ) {
-    switch ( $column ) {
-        case 'featured_thumb':
-            echo '<a href="' . esc_url( get_edit_post_link() ) . '">' . the_post_thumbnail( array( 40, 40 ) ) . '</a>';
-            break;
-    }
+function wpd_add_custom_html_column_to_admin_screen() {
+    // Create an instance.
+    $product_columns = new CPT_Columns( 'products' );
+
+    // Add thumb column.
+    $product_columns->add_column( 'featured_thumb',
+        array(
+            'label' => esc_html__( 'Image', 'wp-dispensary' ),
+            'type'  => 'thumb',
+            'order' => '-13',
+            'size'  => array( '36', '36' )
+        )
+    );
+
+    // Add thumb column.
+    $product_columns->add_column( 'custom_html',
+        array(
+            'label' => esc_html__( 'Ratings', 'wp-dispensary' ),
+            'type'  => 'custom_html',
+            'order' => '12',
+            'html'  => '' // pass empty to utilize filter below
+        )
+    );
 }
+add_action( 'admin_init', 'wpd_add_custom_html_column_to_admin_screen' );
 
 /**
- * Add thumbnails to post_type screen for WPD menu types.
+ * Add ‘Ratings’ column to Products admin screen
  * 
- * @return void
+ * @since  4.3.0
+ * @return string
  */
-if ( null !== filter_input( INPUT_GET, 'post_type' ) ) {
-    // Get post type.
-    $post_type = filter_input( INPUT_GET, 'post_type' );
-    // Get post types.
-    $post_types = wpd_menu_types_simple( true );
-    // Add products to post types array.
-    $post_types[] = 'products';
+function wpd_add_custom_html_column_to_admin_screen_filter( $post_id, $column, $column_name ) {
+    // Create variable of custom HTML that we'll add to the column.
+    $custom_html = get_wpd_product_ratings_stars( $column );
 
-    // Add actions and filters if post type is a WPD Menu type.
-    if ( in_array( $post_type, apply_filters( 'wpd_admin_screen_thumbnails', $post_types ) ) ) {
-        add_filter( 'manage_posts_columns', 'wp_dispensary_columns' );
-        add_action( 'manage_posts_custom_column', 'wp_dispensary_columns_data', 10, 1 );
-        add_filter( 'manage_pages_columns', 'wp_dispensary_columns' );
-        add_action( 'manage_pages_custom_column', 'wp_dispensary_columns_data', 10, 1 );
-    }
+    return $custom_html;
 }
+add_filter( 'columns_custom_html_custom_html', 'wpd_add_custom_html_column_to_admin_screen_filter', 20, 3 );
 
 /**
  * Hide specific metaboxes by default.
