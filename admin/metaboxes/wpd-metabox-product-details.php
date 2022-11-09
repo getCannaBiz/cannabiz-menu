@@ -220,7 +220,9 @@ function wp_dispensary_product_details_metabox_save() {
         return $post->ID;
     }
 
-    /** Is the user allowed to edit the post or page? */
+    /**
+     * Is the user allowed to edit the post or page?
+     */
     if ( ! current_user_can( 'edit_post', $post->ID ) ) {
         return $post->ID;
     }

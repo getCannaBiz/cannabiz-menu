@@ -80,7 +80,7 @@ function wp_dispensary_grower_details_metabox_content() {
  * @return void
  */
 function wp_dispensary_grower_details_metabox_save( $post ) {
-
+    global $post;
     /**
      * Verify this came from the our screen and with proper authorization,
      * because save_post can be triggered at other times
