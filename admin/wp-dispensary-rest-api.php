@@ -123,6 +123,8 @@ function wpd_rest_api_products_route_callback( $data ) {
         $harvest_date = get_post_meta( $product_id, 'harvest_date', true );
         // Test date.
         $test_date = get_post_meta( $product_id, 'test_date', true );
+        // Test lab.
+        $test_lab = get_post_meta( $product_id, 'test_lab', true );
         // Activation time.
         $product_sku = get_post_meta( $product_id, 'product_sku', true );
         // Rating details.
@@ -202,6 +204,7 @@ function wpd_rest_api_products_route_callback( $data ) {
         $product_data[$product_id]['details']['activation_time'] = $activation_time;
         $product_data[$product_id]['details']['harvest_date']    = $harvest_date;
         $product_data[$product_id]['details']['test_date']       = $test_date;
+        $product_data[$product_id]['details']['test_lab']       = $test_lab;
         // Create growers endpoints.
         $product_data[$product_id]['growers']['origin']      = $product_origin;
         $product_data[$product_id]['growers']['yield']       = $product_yield;
