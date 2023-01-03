@@ -48,7 +48,7 @@ function wp_dispensary_product_details_metabox_content() {
 
     // Flowers fields.
     $str  = '<div class="flowers-fields">';
-    $str .= wp_dispensary_product_details_array( array( 'activation_time', 'product_sku' ) );
+    $str .= wp_dispensary_product_details_array( array( 'activation_time', 'product_sku', 'harvest_date' ) );
     $str .= '</div>';
     // Concentrates fields.
     $str .= '<div class="concentrates-fields">';
@@ -58,9 +58,9 @@ function wp_dispensary_product_details_metabox_content() {
     $str .= '<div class="tinctures-fields">';
     $str .= wp_dispensary_product_details_array( array( 'product_servings', 'compounds_thc', 'compounds_cbd', 'product_servings_ml', 'product_net_weight', 'activation_time', 'product_sku' ) );
     $str .= '</div>';
-    // Pre-roll weight.
+    // Pre-roll fields.
     $str .= '<div class="prerolls-fields">';
-    $str .= wp_dispensary_product_details_array( array( 'product_weight', 'activation_time', 'product_sku' ) );
+    $str .= wp_dispensary_product_details_array( array( 'product_weight', 'activation_time', 'product_sku', 'harvest_date' ) );
     $str .= '</div>';
     // Topicals fields.
     $str .= '<div class="topicals-fields">';
@@ -110,6 +110,7 @@ function wp_dispensary_product_details_metabox_save() {
     $detail_keys  = array(
         'activation_time',
         'product_sku',
+        'harvest_date',
         'compounds_thc',
         'compounds_cbd',
         'product_size',
@@ -163,6 +164,8 @@ function wp_dispensary_product_details_array( $product_details = array() ) {
     $activation_time = get_post_meta( $post->ID, 'activation_time', true );
     // Product SKU.
     $product_sku = get_post_meta( $post->ID, 'product_sku', true );
+    // Harvest date.
+    $harvest_date = get_post_meta( $post->ID, 'harvest_date', true );
     // Tinctures data.
     $thcmg          = get_post_meta( $post->ID, 'compounds_thc', true );
     $cbdmg          = get_post_meta( $post->ID, 'compounds_cbd', true );
@@ -183,11 +186,12 @@ function wp_dispensary_product_details_array( $product_details = array() ) {
     // Growers data.
     $clonecount = get_post_meta( $post->ID, 'clone_count', true );
     $seedcount  = get_post_meta( $post->ID, 'seed_count', true );
-    
+
     // Details array.
     $details = array(
         'activation_time'     => '<div class="input-field"><p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p><input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" /></div>',
         'product_sku'         => '<div class="input-field"><p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p><input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" /></div>',
+        'harvest_date'        => '<div class="input-field"><p>' . esc_html__( 'Harvest date', 'wp-dispensary' ) . '</p><input type="date" name="product_harvest_date" value="' . esc_html( $harvest_date ) . '" class="widefat" /></div>',
         'compounds_thc'       => '<div class="input-field"><p>' . esc_html__( 'THC per serving', 'wp-dispensary' ) . '</p><input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" /></div>',
         'compounds_cbd'       => '<div class="input-field"><p>' . esc_html__( 'CBD per serving', 'wp-dispensary' ) . '</p><input type="text" name="compounds_cbd" value="' . esc_html( $cbdmg ) . '" class="widefat" /></div>',
         'product_size'        => '<div class="input-field"><p>' . esc_html__( 'Size (oz)', 'wp-dispensary' ) . '</p><input type="text" name="product_size" value="' . esc_html( $product_size ) . '" class="widefat" /></div>',
@@ -209,5 +213,4 @@ function wp_dispensary_product_details_array( $product_details = array() ) {
     }
 
     return apply_filters( 'wp_dispensary_product_details_array', $details_html );
-
 }

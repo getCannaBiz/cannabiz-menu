@@ -96,6 +96,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         $wpd_ingredients    = '';
         $wpd_allergens      = '';
         $activation_time    = '';
+        $harvest_date       = '';
         $wpd_sku            = '';
         $wpd_thc            = '';
         $wpd_thc_mg         = '';
@@ -154,6 +155,10 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
         if ( get_post_meta( get_the_ID(), 'product_sku', true ) ) {
             $wpd_sku = '<tr><td><span>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_sku', true ) . '</td></tr>';
+        }
+
+        if ( get_post_meta( get_the_ID(), 'harvest_date', true ) ) {
+            $harvest_date = '<tr><td><span>' . esc_html__( 'Harvest date', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'harvest_date', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_thc', true ) ) {
@@ -260,7 +265,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         }
 
         if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'flowers', 'concentrates' ) ) ) {
-            $details_flowers = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time . $wpd_sku;
+            $details_flowers = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time . $wpd_sku . $harvest_date;
         } else {
             $details_flowers = '';
         }
@@ -272,7 +277,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         }
 
         if ( 'prerolls' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_vendors . $wpd_preroll_weight . $activation_time . $wpd_sku;
+            $details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_vendors . $wpd_preroll_weight . $activation_time . $wpd_sku . $harvest_date;
         } else {
             $details_prerolls = '';
         }

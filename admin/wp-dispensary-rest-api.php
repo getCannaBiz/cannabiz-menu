@@ -119,6 +119,8 @@ function wpd_rest_api_products_route_callback( $data ) {
         }
         // Activation time.
         $activation_time = get_post_meta( $product_id, 'activation_time', true );
+        // Harvest date.
+        $harvest_date = get_post_meta( $product_id, 'harvest_date', true );
         // Activation time.
         $product_sku = get_post_meta( $product_id, 'product_sku', true );
         // Rating details.
@@ -196,6 +198,7 @@ function wpd_rest_api_products_route_callback( $data ) {
         $product_data[$product_id]['details']['product_weight']  = $product_weight;
         $product_data[$product_id]['details']['product_sku']     = $product_sku;
         $product_data[$product_id]['details']['activation_time'] = $activation_time;
+        $product_data[$product_id]['details']['harvest_date']    = $harvest_date;
         // Create growers endpoints.
         $product_data[$product_id]['growers']['origin']      = $product_origin;
         $product_data[$product_id]['growers']['yield']       = $product_yield;
