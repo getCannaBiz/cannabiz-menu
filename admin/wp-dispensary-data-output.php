@@ -99,6 +99,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         $harvest_date       = '';
         $test_date          = '';
         $test_lab           = '';
+        $package_id         = '';
         $wpd_sku            = '';
         $wpd_thc            = '';
         $wpd_thc_mg         = '';
@@ -164,11 +165,15 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         }
 
         if ( get_post_meta( get_the_ID(), 'test_date', true ) ) {
-            $harvest_date = '<tr><td><span>' . esc_html__( 'Test date', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_date', true ) . '</td></tr>';
+            $test_date = '<tr><td><span>' . esc_html__( 'Test date', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_date', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'test_lab', true ) ) {
-            $harvest_date = '<tr><td><span>' . esc_html__( 'Test lab', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_lab', true ) . '</td></tr>';
+            $test_lab = '<tr><td><span>' . esc_html__( 'Test lab', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_lab', true ) . '</td></tr>';
+        }
+
+        if ( get_post_meta( get_the_ID(), 'package_id', true ) ) {
+            $package_id = '<tr><td><span>' . esc_html__( 'Package ID', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'package_id', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_thc', true ) ) {
@@ -275,43 +280,43 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         }
 
         if ( in_array( get_post_meta( get_the_ID(), 'product_type', true ), array( 'flowers', 'concentrates' ) ) ) {
-            $details_flowers = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time . $wpd_sku . $harvest_date . $test_date . $test_lab;
+            $details_flowers = $wpd_shelf_type . $wpd_strain_type . $wpd_aroma . $wpd_flavor . $wpd_effect . $wpd_symptom . $wpd_condition . $wpd_vendors . $activation_time . $wpd_sku . $harvest_date . $test_date . $test_lab . $package_id;
         } else {
             $details_flowers = '';
         }
 
         if ( 'edibles' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_edibles = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time . $wpd_sku . $test_date . $test_lab;
+            $details_edibles = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time . $wpd_sku . $test_date . $test_lab . $package_id;
         } else {
             $details_edibles = '';
         }
 
         if ( 'prerolls' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_vendors . $wpd_preroll_weight . $activation_time . $wpd_sku . $harvest_date . $test_date . $test_lab;
+            $details_prerolls = $wpd_shelf_type . $wpd_strain_type . $wpd_preroll . $wpd_vendors . $wpd_preroll_weight . $activation_time . $wpd_sku . $harvest_date . $test_date . $test_lab . $package_id;
         } else {
             $details_prerolls = '';
         }
 
         if ( 'topicals' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_topicals = $wpd_size_topical . $wpd_thc_topical . $wpd_cbd_topical . $wpd_ingredients . $wpd_vendors . $wpd_sku;
+            $details_topicals = $wpd_size_topical . $wpd_thc_topical . $wpd_cbd_topical . $wpd_ingredients . $wpd_vendors . $wpd_sku . $package_id;
         } else {
             $details_topicals = '';
         }
 
         if ( 'growers' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_growers = $wpd_strain_type . $wpd_seed_count . $wpd_clone_count . $wpd_clone_origin . $wpd_clone_time . $clone_yield . $clone_difficulty . $wpd_vendors . $wpd_sku;
+            $details_growers = $wpd_strain_type . $wpd_seed_count . $wpd_clone_count . $wpd_clone_origin . $wpd_clone_time . $clone_yield . $clone_difficulty . $wpd_vendors . $wpd_sku . $package_id;
         } else {
             $details_growers = '';
         }
 
         if ( 'tinctures' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_tinctures = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time . $wpd_sku;
+            $details_tinctures = $wpd_servings . $wpd_thc_mg . $wpd_cbd_mg . $wpd_net_weight . $wpd_ingredients . $wpd_allergens . $wpd_vendors . $activation_time . $wpd_sku . $package_id;
         } else {
             $details_tinctures = '';
         }
 
         if ( 'gear' == get_post_meta( get_the_ID(), 'product_type', true ) ) {
-            $details_gear = $wpd_vendors . $wpd_sku;
+            $details_gear = $wpd_vendors . $wpd_sku . $package_id;
         } else {
             $details_gear = '';
         }
