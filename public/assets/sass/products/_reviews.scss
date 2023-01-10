@@ -26,3 +26,16 @@ p.comment-rating {
         font-size: 18px;
     }
 }
+
+span.verified-purchase {
+    color: #76bd43;
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 6px !important;
+}
+
+.comment-meta {
+    .url {
+        color: #454545;
+    }
+}

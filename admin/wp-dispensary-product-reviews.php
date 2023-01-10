@@ -224,10 +224,8 @@ add_filter( 'preprocess_comment', 'wpd_verify_comment_meta_data' );
  * @since  4.2.0
  * @return string $text
  */
-function wpd_modify_comment( $text ) {
-
-    $plugin_url_path = WP_PLUGIN_URL;
-
+function wpd_modify_comment( $text, $comment ) { 
+    // Check if a title was added to the comment.
     if ( $title = get_comment_meta( get_comment_ID(), 'title', true ) ) {
         $title = '<p class="wpd-rating-title"><strong>' . esc_attr( $title ) . '</strong></p>';
         $text  = $title . $text;
@@ -244,7 +242,7 @@ function wpd_modify_comment( $text ) {
         return $text;
     }
 }
-add_filter( 'comment_text', 'wpd_modify_comment' );
+add_filter( 'comment_text', 'wpd_modify_comment', 10, 2 );
 
 /**
  * Add extend comment meta box
