@@ -118,7 +118,7 @@ function wpd_add_product_review_comment_fields( $fields ) {
     if ( 'products' == get_post_type() ) {
         // Add phone field.
         $fields[ 'phone' ] = '<p class="comment-form-phone">'.
-            '<label for="phone">' . esc_attr__( 'Phone' ) . '</label>'.
+            '<label for="phone">' . esc_attr__( 'Phone', 'wp-dispensary' ) . '</label>'.
             '<input id="phone" name="phone" type="text" size="30"  tabindex="4" /></p>
             <input type="hidden" name="comment_type" value="wpd_ratings" id="comment_type" />';
 
