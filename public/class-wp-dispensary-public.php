@@ -116,8 +116,12 @@ function wp_dispensary_body_class( $classes ) {
     if ( is_singular( 'products' ) ) {
         $classes[] = 'wpd-single';
     }
-    // Add wpd-products class name to products and category archives.
+    // Add wpd-archive class name to products and category archives.
     if ( is_post_type_archive( 'products' ) || is_category( 'wpd_categories' ) ) {
+        $classes[] = 'wpd-archive';
+    }
+    // Add wpd-archive class name to taxonomy archives.
+    if ( is_tax( 'allergens' ) || is_tax( 'aromas' ) || is_tax( 'conditions' ) || is_tax( 'effects' ) || is_tax( 'flavors' ) || is_tax( 'ingredients' ) || is_tax( 'shelf_types' ) || is_tax( 'strain_types' ) || is_tax( 'symptoms' ) || is_tax( 'vendors' ) ) {
         $classes[] = 'wpd-archive';
     }
     return $classes; 
