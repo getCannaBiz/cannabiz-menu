@@ -17,13 +17,17 @@
 
 .wpdshortcode,
 .wpd-menu-item {
-  display: flex;
-  flex-basis: 31%;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 12px 1%;
-  position: relative;
-  text-align: center;
+    display: flex;
+    flex-basis: 31%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 12px 1%;
+    position: relative;
+    text-align: center;
+
+    @media (max-width: 600px) {
+        flex-basis: 48%;
+    }
 }
 
 .entry-content .wpd-menu-item:last-child,
