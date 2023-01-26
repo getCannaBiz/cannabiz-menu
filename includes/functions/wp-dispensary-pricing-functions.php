@@ -1421,3 +1421,28 @@ function get_wpd_product_price_high( $product_id = null ) {
 
     return $price_high;
 }
+
+/**
+ * Simple Price Keys
+ * 
+ * @since  4.4.0
+ * @return array
+ */
+function get_wpd_simple_price_keys() {
+    // Price keys.
+    $price_keys = array(
+        'price_each',
+        'price_per_pack',
+        'units_per_pack',
+        'price_half_gram',
+        'price_gram',
+        'price_two_grams',
+        'price_eighth',
+        'price_five_grams',
+        'price_quarter_ounce',
+        'price_half_ounce',
+        'price_ounce',
+    );
+
+    return apply_filters( 'get_wpd_simple_price_keys', $price_keys );
+}

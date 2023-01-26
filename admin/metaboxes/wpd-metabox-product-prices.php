@@ -112,21 +112,7 @@ function wp_dispensary_product_prices_metabox_save() {
      */
 
     $prices_meta = array();
-    $price_keys  = array(
-        'price_each',
-        'price_per_pack',
-        'units_per_pack',
-        'price_half_gram',
-        'price_gram',
-        'price_two_grams',
-        'price_eighth',
-        'price_five_grams',
-        'price_quarter_ounce',
-        'price_half_ounce',
-        'price_ounce',
-    );
-
-    $price_keys = apply_filters( 'wp_dispensary_prices_metabox_save_price_keys', $price_keys );
+    $price_keys  = get_wpd_simple_price_keys();
 
     foreach ( $price_keys as $key ) {
         $prices_meta[$key] = filter_input( INPUT_POST, $key );
