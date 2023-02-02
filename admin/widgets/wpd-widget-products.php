@@ -72,10 +72,12 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
             echo $args['before_title'] . $title . $args['after_title'];
         }
 
+        $widget_style = $instance['widgetstyle'];
+
         do_action( 'wp_dispensary_before_widget' );
 
-        if ( 'wpd-thumbnail' == $instance['imagesize'] ) {
-            echo "<ul class='wp-dispensary-list'>";
+        if ( 'basic-list' == $instance['widgetstyle'] ) {
+            echo '<ul class="wp-dispensary-list">';
         } else {
             if ( 'on' == $instance['carousel'] ) {
                 echo '<div class="wpd-carousel-widget">';
@@ -170,36 +172,10 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
         );
 
         while ( $wp_dispensary_widget->have_posts() ) : $wp_dispensary_widget->the_post();
-        
+
             $do_not_duplicate = $post->ID;
 
-            if ( 'wpd-thumbnail' !== $instance['imagesize'] ) {
-                
-                do_action( 'wp_dispensary_widget_product_before' );
-
-                echo '<div class="wp-dispensary-widget-product">';
-
-                do_action( 'wp_dispensary_widget_product_inside_top' );
-
-                wpd_product_image( $post->ID, $instance['imagesize'] );
-
-                echo '<span class="wp-dispensary-widget-product-ratings">' . get_wpd_product_ratings_stars( $post->ID ) . '</span>';
-
-                if ( 'on' == $instance['itemname'] ) {
-                    echo '<span class="wp-dispensary-widget-title"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></span>';
-                }
-
-                if ( 'on' == $instance['itemprice'] ) {
-                    echo wpd_all_prices_simple( $post->ID, true );
-                }
-
-                do_action( 'wp_dispensary_widget_product_inside_bottom' );
-
-                echo '</div>';
-
-                do_action( 'wp_dispensary_widget_product_after' );
-
-            } else {
+            if ( 'basic-list' == $instance['widgetstyle'] ) {
 
                 echo '<li class="wp-dispensary-widget-product">';
                 echo '<span class="wp-dispensary-widget-product-image">' . get_wpd_product_image( $post->ID, $instance['imagesize'] ) . '</span>';
@@ -213,11 +189,41 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
                 echo '</span>';
                 echo '</li>';
 
+            } else {
+
+                do_action( 'wp_dispensary_widget_product_before' );
+
+                echo '<div class="wp-dispensary-widget-product ' . $widget_style . '">';
+
+                do_action( 'wp_dispensary_widget_product_inside_top' );
+
+                echo '<div class="wp-dispensary-widget-product-image">';
+                wpd_product_image( $post->ID, $instance['imagesize'] );
+                echo '</div>';
+
+                echo '<div class="wp-dispensary-widget-product-content">';
+                echo '<span class="wp-dispensary-widget-product-ratings">' . get_wpd_product_ratings_stars( $post->ID ) . '</span>';
+
+                if ( 'on' == $instance['itemname'] ) {
+                    echo '<span class="wp-dispensary-widget-title"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></span>';
+                }
+
+                if ( 'on' == $instance['itemprice'] ) {
+                    echo wpd_all_prices_simple( $post->ID, true );
+                }
+
+                do_action( 'wp_dispensary_widget_product_inside_bottom' );
+
+                echo '</div>';
+                echo '</div>';
+
+                do_action( 'wp_dispensary_widget_product_after' );
+
             }
 
         endwhile; // end loop
 
-        if ( 'wpd-thumbnail' == $instance['imagesize'] ) {
+        if ( 'basic-list' == $instance['widgetstyle'] ) {
             echo '</ul>';
         } else {
             if ( 'on' == $instance['carousel'] ) {
@@ -245,14 +251,15 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
 
-        $instance['type']      = strip_tags( $new_instance['type'] );
-        $instance['title']     = strip_tags( $new_instance['title'] );
-        $instance['limit']     = strip_tags( $new_instance['limit'] );
-        $instance['order']     = $new_instance['order'];
-        $instance['itemname']  = $new_instance['itemname'];
-        $instance['itemprice'] = $new_instance['itemprice'];
-        $instance['carousel']  = $new_instance['carousel'];
-        $instance['imagesize'] = $new_instance['imagesize'];
+        $instance['type']        = strip_tags( $new_instance['type'] );
+        $instance['title']       = strip_tags( $new_instance['title'] );
+        $instance['limit']       = strip_tags( $new_instance['limit'] );
+        $instance['order']       = $new_instance['order'];
+        $instance['itemname']    = $new_instance['itemname'];
+        $instance['itemprice']   = $new_instance['itemprice'];
+        $instance['carousel']    = $new_instance['carousel'];
+        $instance['imagesize']   = $new_instance['imagesize'];
+        $instance['widgetstyle'] = $new_instance['widgetstyle'];
 
         return $instance;
     }
@@ -270,14 +277,15 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
      */
     public function form( $instance ) {
         $defaults = array(
-            'title'     => esc_html__( 'Products', 'wp-dispensary' ),
-            'limit'     => '5',
-            'type'      => '',
-            'order'     => '',
-            'itemname'  => 'on',
-            'itemprice' => 'on',
-            'carousel'  => '',
-            'imagesize' => 'wpd-thumbnail',
+            'title'       => esc_html__( 'Products', 'wp-dispensary' ),
+            'limit'       => '5',
+            'type'        => '',
+            'order'       => '',
+            'itemname'    => 'on',
+            'itemprice'   => 'on',
+            'carousel'    => '',
+            'imagesize'   => 'wpd-thumbnail',
+            'widgetstyle' => 'basic-list'
         );
 
         $instance = wp_parse_args( (array) $instance, $defaults );
@@ -324,6 +332,27 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
         </p>
 
         <p>
+            <label for="<?php esc_attr_e( $this->get_field_id( 'widgetstyle' ) ); ?>"><?php esc_html_e( 'Widget style:', 'wp-dispensary' ); ?></label>
+            <?php
+            // Set widget styles.
+            $widget_styles = apply_filters( 'wpd_widgets_widget_styles', array( 'basic-list' => 'Basic list', 'basic-block' => esc_html__( 'Basic block', 'wp-dispensary' ), 'advanced-block' => esc_html__( 'Advanced block', 'wp-dispensary' ) ) );
+            if ( $widget_styles ) {
+                printf( '<select name="%s" id="' . esc_html( $this->get_field_id( 'widgetstyle' ) ) . '" name="' . esc_html( $this->get_field_name( 'widgetstyle' ) ) . '" class="widefat">', esc_attr( $this->get_field_name( 'widgetstyle' ) ) );
+                // Loop through each widget style.
+                foreach ( $widget_styles as $key=>$value ) {
+                    if ( esc_html( $key ) != $instance['widgetstyle'] ) {
+                        $image_selected = '';
+                    } else {
+                        $image_selected = 'selected="selected"';
+                    }
+                    printf( '<option value="%s" ' . esc_html( $image_selected ) . '>%s</option>', esc_html( $key ), esc_html( $value ) );
+                }
+                print( '</select>' );
+            }
+          ?>
+        </p>
+
+        <p>
             <label for="<?php esc_attr_e( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
             <?php
             // Set featured image sizes.
@@ -333,9 +362,9 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
                 // Loop through each image size.
                 foreach ( $image_sizes as $image ) {
                     if ( esc_html( $image ) != $instance['imagesize'] ) {
-                            $image_selected = '';
+                        $image_selected = '';
                     } else {
-                            $image_selected = 'selected="selected"';
+                        $image_selected = 'selected="selected"';
                     }
                     printf( '<option value="%s" ' . esc_html( $image_selected ) . '>%s</option>', esc_html( $image ), esc_html( $image ) );
                 }

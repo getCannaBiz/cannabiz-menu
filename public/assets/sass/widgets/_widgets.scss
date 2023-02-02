@@ -85,3 +85,31 @@ li.wp-dispensary-widget-product {
     border-radius: 0;
   }
 }
+
+/** Widget - Product - Advanced block style */
+
+.wp-dispensary-widget-product.advanced-block {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+    align-items: center;
+    .wp-dispensary-widget-product-image {
+        flex-basis: 124px;
+    }
+
+    .wp-dispensary-widget-product-content {
+        flex: 1;
+    }
+
+    .button.wpd-buy-btn {
+        display: none;
+    }
+
+    .comment-rating {
+        margin-top: 0;
+    }
+
+    img {
+        margin-bottom: 0;
+    }
+}
