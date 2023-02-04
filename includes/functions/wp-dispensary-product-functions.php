@@ -287,7 +287,11 @@ function get_wpd_product_image( $product_id = null, $image_size = null, $link = 
 
     $thumbnail_id        = get_post_thumbnail_id( $prod_id );
     $thumbnail_url_array = wp_get_attachment_image_src( $thumbnail_id, $img_size, false );
-    $thumbnail_url       = $thumbnail_url_array[0];
+    $thumbnail_url       = null;
+
+    if ( $thumbnail_url_array ) {
+        $thumbnail_url = $thumbnail_url_array[0];
+    }
 
     // Show image.
     if ( null === $thumbnail_url && 'full' === $image_size ) {
