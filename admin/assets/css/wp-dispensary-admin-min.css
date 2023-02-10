@@ -250,10 +250,10 @@ body.post-type-products,
 body.post-type-wpd_orders,
 body.post-type-coupons,
 body.taxonomy-locations,
-body.taxonomy-vendor,
+body.taxonomy-vendors,
 body.taxonomy-wpd_categories,
-body.taxonomy-strain_type,
-body.taxonomy-shelf_type,
+body.taxonomy-strain_types,
+body.taxonomy-shelf_types,
 body.toplevel_page_wpd-settings,
 .wp-dispensary_page_wpd-inventory {
   background: #fff;
@@ -263,10 +263,10 @@ body.post-type-products table.posts,
 body.post-type-wpd_orders table.posts,
 body.post-type-coupons table.posts,
 body.taxonomy-locations table.posts,
-body.taxonomy-vendor table.posts,
+body.taxonomy-vendors table.posts,
 body.taxonomy-wpd_categories table.posts,
-body.taxonomy-strain_type table.posts,
-body.taxonomy-shelf_type table.posts {
+body.taxonomy-strain_types table.posts,
+body.taxonomy-shelf_types table.posts {
   margin-top: 12px;
 }
 
@@ -278,14 +278,14 @@ body.post-type-coupons table thead,
 body.post-type-coupons table tfoot,
 body.taxonomy-locations table thead,
 body.taxonomy-locations table tfoot,
-body.taxonomy-vendor table thead,
-body.taxonomy-vendor table tfoot,
+body.taxonomy-vendors table thead,
+body.taxonomy-vendors table tfoot,
 body.taxonomy-wpd_categories table thead,
 body.taxonomy-wpd_categories table tfoot,
-body.taxonomy-strain_type table thead,
-body.taxonomy-strain_type table tfoot,
-body.taxonomy-shelf_type table thead,
-body.taxonomy-shelf_type table tfoot {
+body.taxonomy-strain_types table thead,
+body.taxonomy-strain_types table tfoot,
+body.taxonomy-shelf_types table thead,
+body.taxonomy-shelf_types table tfoot {
   background: #f7f7f7;
 }
 
@@ -301,18 +301,18 @@ body.post-type-coupons ul.striped>:nth-child(odd),
 body.taxonomy-locations .alternate,
 body.taxonomy-locations .striped>tbody>:nth-child(odd),
 body.taxonomy-locations ul.striped>:nth-child(odd),
-body.taxonomy-vendor .alternate,
-body.taxonomy-vendor .striped>tbody>:nth-child(odd),
-body.taxonomy-vendor ul.striped>:nth-child(odd),
+body.taxonomy-vendors .alternate,
+body.taxonomy-vendors .striped>tbody>:nth-child(odd),
+body.taxonomy-vendors ul.striped>:nth-child(odd),
 body.taxonomy-wpd_categories .alternate,
 body.taxonomy-wpd_categories .striped>tbody>:nth-child(odd),
 body.taxonomy-wpd_categories ul.striped>:nth-child(odd),
-body.taxonomy-strain_type .alternate,
-body.taxonomy-strain_type .striped>tbody>:nth-child(odd),
-body.taxonomy-strain_type ul.striped>:nth-child(odd),
-body.taxonomy-shelf_type .alternate,
-body.taxonomy-shelf_type .striped>tbody>:nth-child(odd),
-body.taxonomy-shelf_type ul.striped>:nth-child(odd) {
+body.taxonomy-strain_types .alternate,
+body.taxonomy-strain_types .striped>tbody>:nth-child(odd),
+body.taxonomy-strain_types ul.striped>:nth-child(odd),
+body.taxonomy-shelf_types .alternate,
+body.taxonomy-shelf_types .striped>tbody>:nth-child(odd),
+body.taxonomy-shelf_types ul.striped>:nth-child(odd) {
   background: #fff;
 }
 
@@ -326,10 +326,10 @@ body.post-type-products .search-box input[type="search"],
 body.post-type-wpd_orders .search-box input[type="search"],
 body.post-type-coupons .search-box input[type="search"],
 body.taxonomy-locations .search-box input[type="search"],
-body.taxonomy-vendor .search-box input[type="search"],
+body.taxonomy-vendors .search-box input[type="search"],
 body.taxonomy-wpd_categories .search-box input[type="search"],
-body.taxonomy-strain_type .search-box input[type="search"],
-body.taxonomy-shelf_type .search-box input[type="search"] {
+body.taxonomy-strain_types .search-box input[type="search"],
+body.taxonomy-shelf_types .search-box input[type="search"] {
   min-height: 26px;
   line-height: 1.92;
 }

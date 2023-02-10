@@ -10,6 +10,9 @@
  * @since      1.0.0
  */
 
+// Strain types color picker.
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-color-picker.php';
+
 // Allergens. 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-allergens.php';
 

@@ -184,6 +184,22 @@ function toolbar_quick_menu( $wp_admin_bar ) {
         'parent' => 'wp_dispensary'
     );
 
+    // Add Strain types.
+    $menu[] = array(
+        'id'     => 'wpd_strain_types',
+        'title'  => esc_attr__( 'Strain types', 'wp-dispensary' ),
+        'href'   => admin_url() . 'edit-tags.php?taxonomy=strain-types',
+        'parent' => 'wp_dispensary'
+    );
+
+    // Add Shelf types.
+    $menu[] = array(
+        'id'     => 'wpd_shelf_types',
+        'title'  => esc_attr__( 'Shelf types', 'wp-dispensary' ),
+        'href'   => admin_url() . 'edit-tags.php?taxonomy=shelf-types',
+        'parent' => 'wp_dispensary'
+    );
+
     // Add Settings.
     $menu[] = array(
         'id'     => 'wpd_settings',

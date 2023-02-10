@@ -60,6 +60,28 @@ function wpd_admin_menu_vendors() {
 }
 
 /**
+ * Admin menu - Strain types.
+ * 
+ * @since  4.4.0
+ * @return void
+ */
+function wpd_admin_menu_strain_types() {
+    // Strain types submenu link.
+    add_submenu_page( 'wpd-settings', esc_html__( 'Strain types', 'wp-dispensary' ), esc_html__( 'Strain types', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=strain_types', null );
+}
+
+/**
+ * Admin menu - Shelf types.
+ * 
+ * @since  4.4.0
+ * @return void
+ */
+function wpd_admin_menu_shelf_types() {
+    // Shelf types submenu link.
+    add_submenu_page( 'wpd-settings', esc_html__( 'Shelf types', 'wp-dispensary' ), esc_html__( 'Shelf types', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=shelf_types', null );
+}
+
+/**
  * Admin submenu links.
  * 
  * @since  4.0
@@ -71,7 +93,11 @@ function wp_dispensary_admin_submenu_links() {
     // Categories submenu link.
     add_action( 'admin_menu', 'wpd_admin_menu_categories', 2 );
     // Vendors submenu link.
-    add_action( 'admin_menu', 'wpd_admin_menu_vendors', 6 );  
+    add_action( 'admin_menu', 'wpd_admin_menu_vendors', 6 );
+    // Strain types submenu link.
+    add_action( 'admin_menu', 'wpd_admin_menu_strain_types', 7 );
+    // Shelf types submenu link.
+    add_action( 'admin_menu', 'wpd_admin_menu_shelf_types', 8 );
 }
 add_action( 'init', 'wp_dispensary_admin_submenu_links' );
 
