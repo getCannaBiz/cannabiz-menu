@@ -137,6 +137,13 @@ class WP_Dispensary {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dispensary-admin.php';
 
         /**
+         * The file responsible for defining custom user roles
+         * 
+         * @since 4.4.0
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wp-dispensary-user-roles.php';
+
+        /**
          * The file responsible for defining all admin menu related functionality
          * 
          * @since 4.0

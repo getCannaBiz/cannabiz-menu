@@ -188,7 +188,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     $menu[] = array(
         'id'     => 'wpd_strain_types',
         'title'  => esc_attr__( 'Strain types', 'wp-dispensary' ),
-        'href'   => admin_url() . 'edit-tags.php?taxonomy=strain-types',
+        'href'   => admin_url() . 'edit-tags.php?taxonomy=strain_types',
         'parent' => 'wp_dispensary'
     );
 
@@ -196,7 +196,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     $menu[] = array(
         'id'     => 'wpd_shelf_types',
         'title'  => esc_attr__( 'Shelf types', 'wp-dispensary' ),
-        'href'   => admin_url() . 'edit-tags.php?taxonomy=shelf-types',
+        'href'   => admin_url() . 'edit-tags.php?taxonomy=shelf_types',
         'parent' => 'wp_dispensary'
     );
 
