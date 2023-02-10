@@ -91,7 +91,7 @@ function wp_dispensary_product_details_metabox_save() {
      * because save_post can be triggered at other times
      */
     if ( null == filter_input( INPUT_POST, 'wpd_product_details_meta_noncename' ) || ! wp_verify_nonce( filter_input( INPUT_POST, 'wpd_product_details_meta_noncename' ), plugin_basename( __FILE__ ) ) ) {
-        return $post->ID;
+        return $post;
     }
 
     /**
