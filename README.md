@@ -5,7 +5,7 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5c354fa66bed47cebb795ea90d7c52df)](https://www.codacy.com/gh/wpdispensary/wp-dispensary/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wpdispensary/wp-dispensary&amp;utm_campaign=Badge_Grade)
 
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release: [v4.3.0](https://wordpress.org/plugins/wp-dispensary/).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release: [v4.4.0](https://wordpress.org/plugins/wp-dispensary/).
 
 :point_right: **[View Demo](https://demo.wpdispensary.com/)**
 

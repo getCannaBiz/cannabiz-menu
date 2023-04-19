@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 6.0
-Stable tag: 4.3.0
+Tested up to: 6.2.0
+Stable tag: 4.4.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -78,6 +78,24 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 4.4.0 =
+*   Added `WPD_Logging` class to help with debugging in `admin/class-wp-dispensary-wpd-logging.php`
+*   Added `wp_dispensary_product_details_array` function and filter in `admin/metaboxes/wpd-metabox-product-details.php`
+*   Added `get_wpd_simple_price_keys` helper function and filter in `includes/functions/wp-dispensary-pricing-functions.php`
+*   Added harvest date, test date, test lab and pacakge ID to product data in various files in the plugin
+*   Added color metadata option to strain types taxonomy in `admin/taxonomies/wpd-taxonomy-color-picker.php`
+*   Added `shop_owner` and `shop_manager` user roles in `admin/wp-dispensary-user-roles.php`
+*   Updated verified purchase notification styles from eCommerce addon in `public/assets/sass/products/_reviews.scss`
+*   Updated body classes to include wpd-archive for taxonomies in `public/class-wp-dispensary-public.php`
+*   Updated menu grid to use 2 columns on mobile instead of 3 in `public/assets/sass/shortcodes/_shortcodes.scss`
+*   Updated widgets with various upgrades in `admin/widgets/wpd-widget-products.php`
+*   Updated admin menu to include Shelf Types and Strain Types in `admin/wp-dispensary-admin-menu-links.php`
+*   Updated toolbar menu to include Shelf Types and Strain Types in `admin/class-wp-dispensary-admin.php`
+*   Updated widget styles in `public/assets/sass/widgets/_widgets.scss`
+*   Updated PHP 8 compatibility in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated `.pot` files with text strings for localization in `languages/`
+*   General code cleanup throughout various files in the plugin
 
 = 4.3.0 =
 *   Added `CPT_Columns` class for easier admin screen editor in `admin/class-wp-dispensary-cpt-columns.php`
