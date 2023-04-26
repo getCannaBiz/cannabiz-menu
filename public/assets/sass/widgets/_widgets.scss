@@ -79,7 +79,8 @@ li.wp-dispensary-widget-product {
 .wp-dispensary-product-search form {
   display: flex;
   flex-direction: row;
-  
+  margin-bottom: 0;
+
   input[type="text"],
   input[type="submit"] {
     border-radius: 0;
@@ -111,5 +112,15 @@ li.wp-dispensary-widget-product {
 
     img {
         margin-bottom: 0;
+    }
+}
+
+/** Widget - Product - Carousel */
+
+.wpd-carousel-widget {
+    .wp-dispensary-widget-product.advanced-block {
+        img {
+            margin-bottom: 12px;
+        }
     }
 }
