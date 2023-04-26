@@ -102,7 +102,7 @@ function wp_dispensary_compound_details_metabox_save( $post ) {
         null == filter_input( INPUT_POST, 'compound_details_meta_noncename' ) ||
         ! wp_verify_nonce( filter_input( INPUT_POST, 'compound_details_meta_noncename' ), plugin_basename( __FILE__ ) )
     ) {
-        return $post->ID;
+        return $post;
     }
 
     // Is the user allowed to edit the post or page?
