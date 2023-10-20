@@ -192,7 +192,7 @@ if ( ! function_exists( 'get_wpd_vendors_details' ) ) {
      * @param string $details 
      * 
      * @since  4.0
-     * @return array
+     * @return array|null
      */
     function get_wpd_vendors_details( $details = null ) {
         // Bail early?
@@ -253,7 +253,7 @@ if ( ! function_exists( 'get_wpd_strain_types_details' ) ) {
      * @param string $details 
      * 
      * @since  4.0
-     * @return array  $details
+     * @return array|null $details
      */
     function get_wpd_strain_types_details( $details = null ) {
         // Bail early?

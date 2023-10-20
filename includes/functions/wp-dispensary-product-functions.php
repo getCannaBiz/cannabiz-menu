@@ -374,7 +374,7 @@ function wpd_compound_type( $product_id ) {
         $type = 'mg';
     }
     // Default return.
-    if ( ! $type ) {
+    if ( ! isset( $type ) ) {
         return '';
     }
     // Return type.
