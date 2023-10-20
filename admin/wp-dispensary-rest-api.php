@@ -169,7 +169,6 @@ function wpd_rest_api_products_route_callback( $data ) {
         $seed_count         = get_post_meta( $product_id, 'seed_count', true );
 
         // Create individual product data endpoints.
-        $product_data[$product_id]['id']             = $product_id;
         $product_data[$product_id]['link']           = get_the_permalink( $product_id );
         $product_data[$product_id]['title']          = $product_title;
         $product_data[$product_id]['content']        = $product_content;
