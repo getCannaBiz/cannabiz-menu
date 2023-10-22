@@ -164,10 +164,11 @@ class WP_Dispensary_Products_Widget extends WP_Widget {
 
         $wp_dispensary_widget = new WP_Query(
             array(
-                'post_type'  => 'products',
-                'showposts'  => $instance['limit'],
-                'orderby'    => $rand_order,
-                'meta_query' => $meta_query
+                'post_type'   => 'products',
+                'showposts'   => $instance['limit'],
+                'orderby'     => $rand_order,
+                'meta_query'  => $meta_query,
+                'wp_query_id' => 'wpd_products_widget'
             )
         );
 

@@ -210,6 +210,8 @@ function wp_dispensary_menu_shortcode( $atts ) {
             'orderby'        => $orderby,
             'order'          => $order,
             'meta_query'     => $meta_query,
+            'no_found_rows'  => true,
+            'wp_query_id'    => 'wpd_menu_shortcode'
         ) );
 
         // Create new WP_Query.

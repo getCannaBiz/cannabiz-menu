@@ -373,13 +373,13 @@ if ( ! function_exists( 'get_wpd_product_type_item_count' ) ) {
      * @param string $product_type 
      * 
      * @since  4.0
-     * @return int
+     * @return int|null
      */
     function get_wpd_product_type_item_count( $product_type = null ) {
         // Bail early?
         if ( ! $product_type ) { return null; }
         // Build query.
-        $query = new WP_Query( array( 'post_type' => 'products', 'meta_key' => 'product_type', 'meta_value' => $product_type ) );
+        $query = new WP_Query( array( 'post_type' => 'products', 'meta_key' => 'product_type', 'meta_value' => $product_type, 'wp_query_id' => 'wpd_product_count_by_type' ) );
 
         return $query->found_posts;
     }
