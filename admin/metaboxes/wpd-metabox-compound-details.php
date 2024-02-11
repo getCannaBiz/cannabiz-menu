@@ -12,6 +12,11 @@
  * @since      4.0.0
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
+
 /**
  * Compound Details metabox
  *
@@ -54,34 +59,36 @@ function wp_dispensary_compound_details_metabox_content() {
     $total = get_post_meta( $post->ID, 'compounds_total', true );
 
     // Echo out the fields.
-    echo '<div class="input-field">';
-    echo '<p>' . esc_attr__( 'THC', 'wp-dispensary' ) . ' %</p>';
-    echo '<input type="text" name="compounds_thc" value="' . esc_attr( $thc ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_attr__( 'THCA', 'wp-dispensary' ) . ' %</p>';
-    echo '<input type="text" name="compounds_thca" value="' . esc_attr( $thca ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_attr__( 'CBD', 'wp-dispensary' ) . ' %</p>';
-    echo '<input type="text" name="compounds_cbd" value="' . esc_attr( $cbd ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_attr__( 'CBA', 'wp-dispensary' ) . ' %</p>';
-    echo '<input type="text" name="compounds_cba" value="' . esc_attr( $cba ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_attr__( 'CBN', 'wp-dispensary' ) . ' %</p>';
-    echo '<input type="text" name="compounds_cbn" value="' . esc_attr( $cbn ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_attr__( 'CBG', 'wp-dispensary' ) . ' %</p>';
-    echo '<input type="text" name="compounds_cbg" value="' . esc_attr( $cbg ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_attr__( 'Total', 'wp-dispensary' ) . ' %</p>';
-    echo '<input type="text" name="compounds_total" value="' . esc_attr( $total ) . '" class="widefat" />';
-    echo '</div>';
+    $html  = '<div class="input-field">';
+    $html .= '<p>' . esc_attr__( 'THC', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<input type="text" name="compounds_thc" value="' . esc_attr( $thc ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_attr__( 'THCA', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<input type="text" name="compounds_thca" value="' . esc_attr( $thca ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_attr__( 'CBD', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<input type="text" name="compounds_cbd" value="' . esc_attr( $cbd ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_attr__( 'CBA', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<input type="text" name="compounds_cba" value="' . esc_attr( $cba ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_attr__( 'CBN', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<input type="text" name="compounds_cbn" value="' . esc_attr( $cbn ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_attr__( 'CBG', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<input type="text" name="compounds_cbg" value="' . esc_attr( $cbg ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_attr__( 'Total', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<input type="text" name="compounds_total" value="' . esc_attr( $total ) . '" class="widefat" />';
+    $html .= '</div>';
+
+    echo $html;
 
 }
 

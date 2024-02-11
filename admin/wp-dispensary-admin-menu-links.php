@@ -45,7 +45,7 @@ function wpd_admin_menu_products() {
  */
 function wpd_admin_menu_categories() {
     // Categories submenu link.
-    add_submenu_page( 'wpd-settings', 'Categories', 'Categories', 'manage_options', 'edit-tags.php?taxonomy=wpd_categories', null );
+    add_submenu_page( 'wpd-settings', esc_html__( 'Categories', 'wp-dispensary' ), esc_html__( 'Categories', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=wpd_categories', null );
 }
 
 /**
@@ -56,7 +56,7 @@ function wpd_admin_menu_categories() {
  */
 function wpd_admin_menu_vendors() {
     // Vendors submenu link.
-    add_submenu_page( 'wpd-settings', 'Vendors', 'Vendors', 'manage_options', 'edit-tags.php?taxonomy=vendors', null );
+    add_submenu_page( 'wpd-settings', esc_html__( 'Vendors', 'wp-dispensary' ), esc_html__( 'Vendors', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=vendors', null );
 }
 
 /**

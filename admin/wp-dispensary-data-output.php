@@ -532,12 +532,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         }
 
         $wpd_table_pricing = '';
-        $pricing_below = '';
-        $pricing_above = '';
-        $compounds_below = '';
-        $compounds_above = '';
-        $details_below = '';
-        $details_above = '';
+        $pricing_below     = '';
+        $pricing_above     = '';
+        $compounds_below   = '';
+        $compounds_above   = '';
+        $details_below     = '';
+        $details_above     = '';
 
         /**
          * Price table build

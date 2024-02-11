@@ -283,8 +283,6 @@ if ( ! class_exists( 'WPD_Logging' ) ) {
          */
         public static function update_log( $log_data = array(), $log_meta = array() ) {
 
-            do_action( 'wpd_pre_update_log', $log_id );
-
             $defaults = array(
                 'post_type'   => 'wpd_log',
                 'post_status' => 'publish',
@@ -295,6 +293,8 @@ if ( ! class_exists( 'WPD_Logging' ) ) {
 
             // store the log entry
             $log_id = wp_update_post( $args );
+
+            do_action( 'wpd_pre_update_log', $log_id );
 
             if( $log_id && ! empty( $log_meta ) ) {
                 foreach( (array) $log_meta as $key => $meta ) {

@@ -162,10 +162,10 @@ function wpd_comment_form_defaults( $defaults ) {
         $defaults['comment_field'] = '<p class="comment-form-rating">
             <span class="commentratingbox">' . $ratings_box . '</span></p>';
         $defaults['comment_field'] .= '<p class="comment-form-title">'.
-            '<label for="title">' . esc_attr__( 'Review Title', 'wp-dispensary' ) . '</label>'.
+            '<label for="title">' . esc_html__( 'Review Title', 'wp-dispensary' ) . '</label>'.
             '<input id="title" name="title" type="text" size="30"  tabindex="5" /></p>';
 
-        $defaults['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_attr__( 'Your Review', 'wp-dispensary' ) . ' <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>';
+        $defaults['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your Review', 'wp-dispensary' ) . ' <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>';
     }
 
     return $defaults;
@@ -252,7 +252,7 @@ add_filter( 'comment_text', 'wpd_modify_comment', 10, 2 );
  */
 function extend_comment_add_meta_box() {
     // Add metabox.
-    add_meta_box( 'title', esc_attr__( 'WP Dispensary - Product Reviews', 'wp-dispensary' ), 'wpd_extend_comment_meta_box', 'comment', 'normal', 'high' );
+    add_meta_box( 'title', esc_html__( 'WP Dispensary - Product Reviews', 'wp-dispensary' ), 'wpd_extend_comment_meta_box', 'comment', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes_comment', 'extend_comment_add_meta_box' );
 
@@ -272,11 +272,11 @@ function wpd_extend_comment_meta_box( $comment ) {
     wp_nonce_field( 'extend_comment_update', 'extend_comment_update', false );
     ?>
     <p>
-        <label for="title"><?php esc_attr_e( 'Review Title', 'wp-dispensary' ); ?></label>
-        <input type="text" name="title" value="<?php esc_attr_e( $title ); ?>" class="widefat" />
+        <label for="title"><?php esc_html_e( 'Review Title', 'wp-dispensary' ); ?></label>
+        <input type="text" name="title" value="<?php esc_html_e( $title ); ?>" class="widefat" />
     </p>
     <p>
-        <label for="product_rating"><?php esc_attr_e( 'Review Rating', 'wp-dispensary' ); ?>: </label>
+        <label for="product_rating"><?php esc_html_e( 'Review Rating', 'wp-dispensary' ); ?>: </label>
         <div class="commentratingbox">
         <?php
         for ( $i=1; $i <= 5; $i++ ) {
@@ -288,7 +288,7 @@ function wpd_extend_comment_meta_box( $comment ) {
         </div>
     </p>
     <p>
-        <label for="phone"><?php esc_attr_e( 'Phone', 'wp-dispensary' ); ?></label>
+        <label for="phone"><?php esc_html_e( 'Phone', 'wp-dispensary' ); ?></label>
         <input type="text" name="phone" value="<?php echo esc_attr( $phone ); ?>" class="widefat" />
     </p>
     <?php
@@ -300,7 +300,7 @@ function wpd_extend_comment_meta_box( $comment ) {
  * @param int $comment_id 
  * 
  * @since  4.2.0
- * @return string
+ * @return void
  */
 function wpd_extend_comment_edit_metafields( $comment_id ) {
     if ( ! isset( $_POST['extend_comment_update'] ) || ! wp_verify_nonce( filter_input( INPUT_POST, 'extend_comment_update' ), 'extend_comment_update' ) ) return;

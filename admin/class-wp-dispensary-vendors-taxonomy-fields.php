@@ -10,6 +10,11 @@
  * @since      4.0.0
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
+
 if ( ! class_exists( 'WP_Dispensary_Vendor_Taxonomy_Fields' ) ) {
 
     /**

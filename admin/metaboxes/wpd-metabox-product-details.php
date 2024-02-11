@@ -12,6 +12,10 @@
  * @since      4.0.0
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
 
 /**
  * Product Details metabox

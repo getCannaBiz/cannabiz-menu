@@ -1,5 +1,21 @@
 <?php
 /**
+ * The admin-specific functionality of the plugin.
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      2.2.0
+ */
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
+
+/**
  * The Class responsible for defining the custom permalink settings.
  * 
  * @package    WP_Dispensary

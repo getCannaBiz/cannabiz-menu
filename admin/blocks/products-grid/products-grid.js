@@ -24,35 +24,27 @@
                     return response.json();
                 })
                 .then(function (posts) {
-                    console.log(posts);
 
                     var postsArray = Object.values(posts);
 
                     var postPromises = postsArray.map(function (post) {
-
-                        console.log(post);
-
                         return post;
                     });
 
                     Promise.all(postPromises).then(function(images) {
-                        console.log(images);
                         var postsArray = Object.values(images);
                         var previewContent = postsArray.map(function (post, index) {
                             var content = [];
-                            var parser = new DOMParser();
                     
-                            console.log(post);                    
-                            console.log(index);
-                            console.log(post);
-                    
-                            content.push(
-                                el('div', { className: 'list-content' },
-                                    el('h3', {},
-                                        el('a', { href: post.link }, post.title) // Rendering post.title and post.link
-                                    ),
-                                )
-                            );
+                            if (post) {
+                                content.push(
+                                    el('div', { className: 'list-content' },
+                                        el('h3', {},
+                                            el('a', { href: post.link }, post.title) // Rendering post.title and post.link
+                                        ),
+                                    )
+                                );
+                            }
                     
                             return content;
                         });
@@ -204,23 +196,19 @@
                 ),
                 el('div', { className: blockClassName },
                     previewContent.map(function (content, index) {
-                        console.log(content);
-                        return el('div', { className: 'wpd-block-post' }, content);
+                        return el('div', { className: 'wpd-block-post', key: index }, content);
                     })
                 )
-
             );
         },
         save: function (props) {
             var attributes = props.attributes;
             var blockClassName = 'wpd-block-' + attributes.displayStyle;
-//            console.log(attributes);
 
             return el('div', { className: props.className },
                 el('div', { className: blockClassName },
                     attributes.previewContent.map(function (content, index) {
-//                        console.log(attributes.previewContent);
-                        return el('div', { className: 'product-block-post', key: index }, content);
+                        return el('div', { className: 'product-block', key: index }, content);
                     })
                 )
             );

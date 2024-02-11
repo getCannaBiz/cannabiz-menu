@@ -30,10 +30,10 @@ function wp_dispensary_strain_types_color_field( $tag, $taxonomy ) {
     $strain_type_color = get_term_meta( $tag->term_id, 'strain_type_color', true );
     ?>
     <tr class="form-field term-strain-type-color-wrap">
-        <th scope="row"><label for="strain_type_color">Color</label></th>
+        <th scope="row"><label for="strain_type_color"><?php esc_attr_e( 'Select a color for this strain type', 'wp-dispensary' ) ?></label></th>
         <td>
             <input type="text" id="strain_type_color" name="strain_type_color" value="<?php echo esc_attr( $strain_type_color ); ?>" class="strain-type-color-field">
-            <p class="description">Select a color for this strain type</p>
+            <p class="description"><?php esc_attr_e( 'Select a color for this strain type', 'wp-dispensary' ) ?></p>
         </td>
     </tr>
     <script>
@@ -62,7 +62,7 @@ function wp_dispensary_save_strain_types_color_field( $term_id, $tt_id ) {
 add_action( 'edit_strain_types', 'wp_dispensary_save_strain_types_color_field', 10, 2 );
 
 /**
- * 
+ * Enqueue wp-color-picker style and script
  * 
  * @since  4.4.0
  * @return void
@@ -91,7 +91,7 @@ add_filter( 'manage_edit-strain_types_columns', 'wp_dispensary_add_strain_types_
  * Display strain types color
  * 
  * @since  4.4.0
- * @return string
+ * @return null|string
  */
 function wp_dispensary_display_strain_types_color( $empty, $column_name, $term_id ) {
     if ( 'strain_type_color' !== $column_name ) {
@@ -101,6 +101,7 @@ function wp_dispensary_display_strain_types_color( $empty, $column_name, $term_i
     $strain_type_color = get_term_meta( $term_id, 'strain_type_color', true );
 
     $color_box = '<div style="display:inline-block;width:40px;height:40px;background-color:' . $strain_type_color . '"></div>';
+
     echo $color_box;
 }
 add_action( 'manage_strain_types_custom_column', 'wp_dispensary_display_strain_types_color', 10, 3 );
@@ -109,7 +110,7 @@ add_action( 'manage_strain_types_custom_column', 'wp_dispensary_display_strain_t
  * Custom column width
  * 
  * @since  4.4.0
- * @return string
+ * @return null|string
  */
 function wp_dispensary_custom_column_widths() {
     $screen = get_current_screen();

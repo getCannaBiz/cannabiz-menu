@@ -11,6 +11,11 @@
  * @since      1.2.0
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
+
 /**
  * WP Dispensary Menu Shortcode
  *
@@ -21,7 +26,7 @@
 function wp_dispensary_menu_shortcode( $atts ) {
 
     // Menu types (string).
-    $menu_types = implode ( ', ', wpd_menu_types( true ) );
+    $menu_types = implode ( ', ', wpd_menu_types() );
 
     // Attributes.
     extract( shortcode_atts(

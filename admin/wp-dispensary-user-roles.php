@@ -1,10 +1,24 @@
 <?php
+/**
+ * The file that sets custom user roles
+ *
+ * @package    WP_Dispensary
+ * @subpackage WP_Dispensary/admin
+ * @author     WP Dispensary <contact@wpdispensary.com>
+ * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
+ * @link       https://www.wpdispensary.com
+ * @since      1.0.0
+ */
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
 
 /**
  * Add shop manager user role
  * 
  * @since  4.4.0
- * @return string
+ * @return void
  */
 function wp_dispensary_add_user_roles() {
     add_role(

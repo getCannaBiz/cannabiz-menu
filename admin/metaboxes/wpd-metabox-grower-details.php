@@ -12,6 +12,10 @@
  * @since      4.0.0
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
 
 /**
  * Growers Clone Details metabox
@@ -53,23 +57,24 @@ function wp_dispensary_grower_details_metabox_content() {
     $difficulty = get_post_meta( $post->ID, 'product_difficulty', true );
 
     // Echo out the fields.
-    echo '<div class="input-field">';
-    echo '<p>' . esc_html__( 'Origin', 'wp-dispensary' ) . '</p>';
-    echo '<input type="text" name="product_origin" value="' . esc_html( $origin ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_html__( 'Grow time', 'wp-dispensary' ) . '</p>';
-    echo '<input type="text" name="product_time" value="' . esc_html( $time ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_html__( 'Yield', 'wp-dispensary' ) . '</p>';
-    echo '<input type="text" name="product_yield" value="' . esc_html( $yield ) . '" class="widefat" />';
-    echo '</div>';
-    echo '<div class="input-field">';
-    echo '<p>' . esc_html__( 'Difficulty', 'wp-dispensary' ) . '</p>';
-    echo '<input type="text" name="product_difficulty" value="' . esc_html( $difficulty ) . '" class="widefat" />';
-    echo '</div>';
+    $html  = '<div class="input-field">';
+    $html .= '<p>' . esc_html__( 'Origin', 'wp-dispensary' ) . '</p>';
+    $html .= '<input type="text" name="product_origin" value="' . esc_html( $origin ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_html__( 'Grow time', 'wp-dispensary' ) . '</p>';
+    $html .= '<input type="text" name="product_time" value="' . esc_html( $time ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_html__( 'Yield', 'wp-dispensary' ) . '</p>';
+    $html .= '<input type="text" name="product_yield" value="' . esc_html( $yield ) . '" class="widefat" />';
+    $html .= '</div>';
+    $html .= '<div class="input-field">';
+    $html .= '<p>' . esc_html__( 'Difficulty', 'wp-dispensary' ) . '</p>';
+    $html .= '<input type="text" name="product_difficulty" value="' . esc_html( $difficulty ) . '" class="widefat" />';
+    $html .= '</div>';
 
+    echo $html;
 }
 
 /**

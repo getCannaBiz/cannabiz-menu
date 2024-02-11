@@ -10,6 +10,11 @@
  * @since      1.0.0
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    wp_die();
+}
+
 // Strain types color picker.
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/taxonomies/wpd-taxonomy-color-picker.php';
 
