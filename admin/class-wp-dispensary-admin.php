@@ -72,7 +72,8 @@ class WP_Dispensary_Admin {
      * @return void
      */
     public function enqueue_styles() {
-        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/wp-dispensary-admin-min.css', array(), $this->version, 'all' );
+        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/wp-dispensary-admin.min.css', array(), $this->version, 'all' );
+        wp_enqueue_style( $this->plugin_name . '-font-awesome', plugin_dir_url( __FILE__ ) . 'assets/css/fontawesome.min.css', array(), $this->version, 'all' );
     }
 
     /**

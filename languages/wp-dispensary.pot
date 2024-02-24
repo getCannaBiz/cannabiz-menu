@@ -79,10 +79,6 @@ msgstr ""
 msgid "Shelf types"
 msgstr ""
 
-#: admin/class-wp-dispensary-cpt-columns.php:221
-msgid "N/A"
-msgstr ""
-
 #: admin/class-wp-dispensary-cpt-columns.php:295
 msgid "Column label"
 msgstr ""

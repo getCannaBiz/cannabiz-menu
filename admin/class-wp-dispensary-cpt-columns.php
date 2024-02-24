@@ -218,7 +218,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
                 if ( has_post_thumbnail( $post_id ) ) {
                     the_post_thumbnail( $column['size'] );
                 } else {
-                    echo esc_html__( 'N/A', 'wp-dispensary' );
+                    echo '';
                 }
                 break;
             case 'post_meta':
