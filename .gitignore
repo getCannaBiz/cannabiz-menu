@@ -1,6 +1,9 @@
 /node_modules
 /old_node_modules
 
+actionFinder.py
+filterFinder.py
+
 config.codekit3
 
 .ftpssh_settings
