@@ -124,16 +124,6 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
 
     // Loop through required product details.
     foreach ( $product_details as $product=>$value ) {
-        // Total THC (Servings X THC).
-        if ( 'total_thc' === $product && 'show' === $value ) {
-            if ( get_post_meta( $product_id, 'compounds_thc', true ) && get_post_meta( $product_id, 'product_servings', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo thc"><strong>' . esc_attr__( 'THC', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, 'compounds_thc', true ) * get_post_meta( $product_id, 'product_servings', true ) . 'mg</'  . $wrapper . '>';
-            } else {
-                // Do nothing.
-            }
-        } else {
-            // Do nothing.
-        }
 
         // Seed count.
         if ( 'show' === $value && 'seed_count' === $product ) {
@@ -194,17 +184,6 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         if ( 'show' === $value && 'weight' === $product ) {
             if ( get_post_meta( $product_id, '_preroll_weight', true ) ) {
                 $str .= '<'  . $wrapper . ' class="wpd-productinfo weight"><strong>' . esc_attr__( 'Weight', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, '_preroll_weight', true ) . 'g</'  . $wrapper . '>';
-            } else {
-                // Do nothing.
-            }
-        } else {
-            // Do nothing.
-        }
-
-        // THC mg (Edibles).
-        if ( 'show' === $value && 'thcmg' === $product ) {
-            if ( get_post_meta( $product_id, 'compounds_thc', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo thc"><strong>' . esc_attr__( 'THC', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, 'compounds_thc', true ) . 'mg</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }
@@ -432,7 +411,11 @@ function get_wpd_compounds_simple( $product_id, $type = null, $compound_array = 
     // THC.
     if ( null != $compound_array && in_array( 'thc', $compound_array ) ) {
         if ( get_post_meta( $product_id, 'compounds_thc', true ) ) {
-            $compounds['THC'] = get_post_meta( $product_id, 'compounds_thc', true ) . $type;
+            if ( get_post_meta( $product_id, 'compounds_thc', true ) && get_post_meta( $product_id, 'product_servings', true ) ) {
+                $compounds['THC'] = get_post_meta( $product_id, 'compounds_thc', true ) * get_post_meta( $product_id, 'product_servings', true ) . $type;
+            } else {
+                $compounds['THC'] = get_post_meta( $product_id, 'compounds_thc', true ) . $type;
+            }
         } else {
             // Do nothing.
         }
