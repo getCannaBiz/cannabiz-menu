@@ -340,9 +340,12 @@ add_action( 'edit_comment', 'wpd_extend_comment_edit_metafields' );
  */
 function wpd_add_star_ratings_to_shortcode( $show_name, $product_id ) {
     // Do something.
-    $ratings  = '<span class="product-ratings">' . get_wpd_product_ratings_stars( $product_id )  . '</span>';
-    $ratings .= $show_name;
+    if ( get_wpd_product_ratings_stars( $product_id ) ) {
+        $ratings  = get_wpd_product_ratings_stars( $product_id );
+        $ratings .= $show_name;
+        return $ratings;
+    }
 
-    return $ratings;
+    return $show_name;
 }
 add_filter( 'wpd_shortcodes_product_title', 'wpd_add_star_ratings_to_shortcode', 10, 2 );
