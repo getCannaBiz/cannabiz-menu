@@ -69,6 +69,17 @@ span.wpd-productinfo {
   }
 }
 
+span.wpd-productinfo.strain-types {
+    position: absolute;
+    top: 12px;
+    left: 4px;
+    
+    a {
+        padding: 3px 6px;
+        border-radius: 3px;
+    }
+}
+
 h2.wpd-title {
   flex-basis: 100%;
   font-size: 48px;

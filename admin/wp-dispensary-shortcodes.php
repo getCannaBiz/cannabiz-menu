@@ -31,44 +31,45 @@ function wp_dispensary_menu_shortcode( $atts ) {
     // Attributes.
     extract( shortcode_atts(
         array(
-            'title'       => 'show',
-            'posts'       => '100',
-            'id'          => '',
-            'class'       => '',
-            'name'        => 'show',
-            'price'       => 'show',
-            'info'        => 'show',
-            'thc'         => 'show',
-            'thca'        => '',
-            'cbd'         => '',
-            'cba'         => '',
-            'cbn'         => '',
-            'cbg'         => '',
-            'thcmg'       => '',
-            'thc_topical' => '',
-            'aroma'       => '',
-            'flavor'      => '',
-            'effect'      => '',
-            'symptom'     => '',
-            'condition'   => '',
-            'vendor'      => '',
-            'category'    => '',
-            'shelf_type'  => '',
-            'strain_type' => '',
-            'total_thc'   => 'show',
-            'weight'      => 'show',
-            'seed_count'  => 'show',
-            'clone_count' => 'show',
-            'size'        => 'show',
-            'servings'    => '',
-            'order'       => 'DESC',
-            'orderby'     => '',
-            'meta_key'    => '',
-            'type'        => $menu_types,
-            'image'       => 'show',
-            'image_size'  => 'wpd-small',
-            'viewall'     => '',
-            'carousel'    => ''
+            'title'        => 'show',
+            'posts'        => '100',
+            'id'           => '',
+            'class'        => '',
+            'name'         => 'show',
+            'price'        => 'show',
+            'info'         => 'show',
+            'thc'          => 'show',
+            'thca'         => '',
+            'cbd'          => '',
+            'cba'          => '',
+            'cbn'          => '',
+            'cbg'          => '',
+            'thcmg'        => '',
+            'thc_topical'  => '',
+            'aroma'        => '',
+            'flavor'       => '',
+            'effect'       => '',
+            'symptom'      => '',
+            'condition'    => '',
+            'vendor'       => '',
+            'category'     => '',
+            'shelf_type'   => '',
+            'strain_type'  => '',
+            'strain_types' => '',
+            'total_thc'    => 'show',
+            'weight'       => 'show',
+            'seed_count'   => 'show',
+            'clone_count'  => 'show',
+            'size'         => 'show',
+            'servings'     => '',
+            'order'        => 'DESC',
+            'orderby'      => '',
+            'meta_key'     => '',
+            'type'         => $menu_types,
+            'image'        => 'show',
+            'image_size'   => 'wpd-small',
+            'viewall'      => '',
+            'carousel'     => ''
         ),
         $atts,
         'wpd_menu'
@@ -82,6 +83,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
     $show_name    = '';
     $show_price   = '';
     $show_info    = '';
+    $show_strains = '';
 
     // Create $tax_query variable.
     $tax_query = array(
@@ -275,6 +277,13 @@ function wp_dispensary_menu_shortcode( $atts ) {
                 $show_price = apply_filters( 'wpd_shortcodes_product_price', $show_price );
             }
 
+            // Show strain types.
+            if ( 'show' === $strain_types ) {
+                $show_strains = '<span class="wpd-productinfo strain-types">' . wpd_product_strain_types( get_the_ID() ) . '</span>';
+                // Filter strains.
+                $show_strains = apply_filters( 'wpd_shortcodes_product_strain_types', $show_strains );
+            }
+
             // Show info.
             if ( 'show' === $info ) {
                 $show_info = get_wpd_product_details( get_the_ID(), $product_details, 'span' );
@@ -318,7 +327,7 @@ function wp_dispensary_menu_shortcode( $atts ) {
             ob_end_clean();
 
             // Shortcode item.
-            $wpd_products .= $show_name . '<div class="product-details">' . $show_price . $show_info . '</div>' . $wpd_inside_bottom . $wpd_menu_bottom;
+            $wpd_products .= $show_strains . $show_name . '<div class="product-details">' . $show_price . $show_info . '</div>' . $wpd_inside_bottom . $wpd_menu_bottom;
 
             // Shortcode item end.
             $wpd_products .= '</div>';
