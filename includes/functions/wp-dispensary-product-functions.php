@@ -805,7 +805,7 @@ function wpd_product_ratings_details( $product_id = null ) {
  * @param int $product_id 
  * 
  * @since  4.2.0
- * @return string
+ * @return string|void
  */
 function get_wpd_product_ratings_stars( $product_id = null ) {
     // Bail early?
@@ -841,4 +841,41 @@ function get_wpd_product_ratings_stars( $product_id = null ) {
     }
 
     return;
+}
+
+/**
+ * Single product - Strain types
+ * 
+ * This function returns a set of ahref links for each strain type
+ * that is associated with the given product ID.
+ * 
+ * @param int $product_id - The product ID
+ * 
+ * @return string|void
+ */
+function wpd_product_strain_types( $product_id = null ) {
+    // Bail early?
+    if ( ! $product_id || ! is_int( $product_id ) ) {
+        return;
+    }
+
+    // Strain types.
+    $strain_types      = get_the_terms( $product_id, 'strain_types' );
+    $strain_type_links = '';
+    if ( ! empty( $strain_types ) ) {
+        foreach ( $strain_types as $term ) {
+            $term_id   = $term->term_id;
+            $color     = get_term_meta( $term_id, 'strain_type_color', true );
+            if ( ! $color ) {
+                $color = '#454545';
+            }
+            $term_name = $term->name;
+            $term_link = get_term_link( $term );
+    
+            // Output the link with background color and term name
+            $strain_type_links .= '<a href="' . esc_url( $term_link ) . '" style="background-color: ' . $color . ';color:#FFF;">' . esc_html( $term_name ) . '</a>';
+        }
+    }
+
+    return apply_filters( 'wpd_product_strain_types', $strain_type_links );
 }
