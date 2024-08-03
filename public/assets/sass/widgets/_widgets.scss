@@ -52,25 +52,27 @@ ul.wp-dispensary-list {
 /** Widget - list */
 
 li.wp-dispensary-widget-product {
-  float: left;
-  margin-bottom: 6px;
-  width: 100%;
-
-  span.wp-dispensary-widget-product-image {
+    display: flex;
+    gap: 6px;
     float: left;
-    max-width: 20%;
-  }
+    margin-bottom: 6px;
+    width: 100%;
 
-  span.wp-dispensary-widget-product-name {
-    float: left;
-    max-width: 80%;
-
-    span.wpd-productinfo.pricing {
-      display: block;
-      margin: 0;
+    span.wp-dispensary-widget-product-image {
+        float: left;
+        max-width: 20%;
     }
 
-  }
+    span.wp-dispensary-widget-product-name {
+        float: left;
+        max-width: 80%;
+
+        span.wpd-productinfo.pricing {
+        display: block;
+        margin: 0;
+        }
+
+    }
 
 }
 

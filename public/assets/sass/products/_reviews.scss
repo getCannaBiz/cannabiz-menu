@@ -20,6 +20,11 @@
     }
 }
 
+span.commentratingbox {
+    position: relative;
+    display: flex;
+}
+
 p.comment-rating {
     i {
         color: #FFD60B;
@@ -37,5 +42,11 @@ span.verified-purchase {
 .comment-meta {
     .url {
         color: #454545;
+    }
+}
+
+p.comment-form-title {
+    label {
+        display: block;
     }
 }
