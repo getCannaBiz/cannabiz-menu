@@ -15,18 +15,5 @@ if ( ! defined( 'ABSPATH' ) ) {
     wp_die();
 }
 
-/**
- * Enqueue custom blocks
- * 
- * @since 4.4.0
- */
-function enqueue_custom_block_script() {
-    // Products Grid.
-    wp_enqueue_script(
-        'products-grid',
-        plugin_dir_url( __FILE__ ) . '/products-grid/products-grid.js',
-        array( 'wp-blocks', 'wp-components', 'wp-element', 'wp-editor' ),
-        true
-    );
-}
-add_action( 'enqueue_block_editor_assets', 'enqueue_custom_block_script' );
+// Product Type.
+require_once plugin_dir_path( dirname( __FILE__ ) ) . '/blocks/products-display/products-display.php';
