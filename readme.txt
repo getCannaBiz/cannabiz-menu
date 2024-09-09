@@ -2,8 +2,8 @@
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
-Tested up to: 6.2.0
-Stable tag: 4.4.0
+Tested up to: 6.6.2
+Stable tag: 4.5.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -78,6 +78,22 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 8. WP Dispensary Products widget carousel style
 
 == Changelog ==
+
+= 4.5.0 =
+*   Added link attribute to REST API products endpoint in `admin/wp-dispensary-rest-api.php`
+*   Added 'wp_query_id' to WP_Query instances in various files in the plugin
+*   Added `wpd_product_strain_types` helper function and filter in `includes/functions/wp-dispensary-product-functions.php`
+*   Added `wpd_menu` shortcode setting to optionally show `strain_types` in `admin/wp-dispensary-shortcodes.php`
+*   Added warning label settings for products in `admin/wp-dispensary-admin-settings.php`
+*   Added warning label content to data output in `admin/wp-dispensary-data-output.php`
+*   Updated various styles throughout the plugin in `public/assets/css/wp-dispensary-public.css`
+*   Updated fontawesome icon font for backend and frontend in various files in the plugin
+*   Updated `get_wpd_product_details` function output in `includes/functions/wp-dispensary-product-functions.php`
+*   Updated star rating output in menu shortcode in `admin/wp-dispensary-product-reviews.php`
+*   Updated start rating styles in menu shortcode in `public/assets/sass/shortcodes/_shortcodes.scss`
+*   Updated deprecated jQuery codes in `public/assets/js/wp-dispensary-public.js`
+*   Updated carousel items to have adaptive height in `public/assets/sass/slick-slider/_slick.scss`
+*   General code cleanup throughout various files in the plugin
 
 = 4.4.0 =
 *   Added `WPD_Logging` class to help with debugging in `admin/class-wp-dispensary-wpd-logging.php`
