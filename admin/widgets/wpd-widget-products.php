@@ -6,9 +6,9 @@
  *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/widgets
- * @author     WP Dispensary <contact@wpdispensary.com>
+ * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
- * @link       https://www.wpdispensary.com
+ * @link       https://cannabizsoftware.com
  * @since      4.0.0
  */
 
@@ -18,9 +18,9 @@
  *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/admin/widgets
- * @author     WP Dispensary <contact@wpdispensary.com>
+ * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
- * @link       https://www.wpdispensary.com
+ * @link       https://cannabizsoftware.com
  * @since      3.0.0
  */
 class WP_Dispensary_Products_Widget extends WP_Widget {

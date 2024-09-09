@@ -4,7 +4,7 @@
  *
  * This file is used to create the 'Growers' custom post type.
  *
- * @link       https://www.wpdispensary.com
+ * @link       https://cannabizsoftware.com
  * @since      1.7.0
  *
  * @package    WP_Dispensary

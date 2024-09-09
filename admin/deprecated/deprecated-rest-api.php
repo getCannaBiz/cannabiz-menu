@@ -3,7 +3,7 @@
  * deprecated REST API data that are still able to be used, but will no longer be
  * updated with new features.
  *
- * @link       https://www.wpdispensary.com
+ * @link       https://cannabizsoftware.com
  * @since      4.0
  *
  * @package    WP_Dispensary

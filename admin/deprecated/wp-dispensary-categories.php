@@ -4,7 +4,7 @@
  *
  * This file is used to define the deprecated categories taxonomy of the plugin.
  *
- * @link       https://www.wpdispensary.com
+ * @link       https://cannabizsoftware.com
  * @since      4.0.0
  *
  * @package    WP_Dispensary

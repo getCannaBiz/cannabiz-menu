@@ -4,7 +4,7 @@
  *
  * This file is used to create the 'Flowers' custom post type.
  *
- * @link       https://www.wpdispensary.com
+ * @link       https://cannabizsoftware.com
  * @since      1.0.0
  *
  * @package    WP_Dispensary

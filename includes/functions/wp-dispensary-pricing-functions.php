@@ -4,9 +4,9 @@
  *
  * @package    WP_Dispensary
  * @subpackage WP_Dispensary/includes/fuctions
- * @author     WP Dispensary <contact@wpdispensary.com>
+ * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
- * @link       https://www.wpdispensary.com
+ * @link       https://cannabizsoftware.com
  * @since      2.5.0
  */
 
@@ -424,7 +424,7 @@ function wpd_all_prices_simple( $product_id = null, $phrase = null, $wrapper = t
  * @return string
  */
 function wpd_pricing_phrase( $singular ) {
-    echo esc_html( apply_filters( 'wpd_pricing_phrase', get_wpd_pricing_phrase( $phrase ) ) );
+    echo esc_html( apply_filters( 'wpd_pricing_phrase', get_wpd_pricing_phrase( $singular ) ) );
 }
 
 /**
