@@ -278,13 +278,6 @@ class WP_Dispensary {
          */
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-dispensary-products.php';
 
-        /**
-         * Adding the custom blocks.
-         * 
-         * @since 4.5.0
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/blocks/wp-dispensary-blocks.php';
-
         $this->loader = new WP_Dispensary_Loader();
     }
 

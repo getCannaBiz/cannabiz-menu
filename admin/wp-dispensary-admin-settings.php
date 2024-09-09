@@ -509,6 +509,79 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             )
         );
 
+        /**
+         * Add Field: Separator between fields
+         * Field:     separator
+         * Section:   wpdas_display
+         */
+        $wpdas_obj->add_field(
+            'wpdas_display',
+            array(
+                'id'   => 'wpd_settings_separator_details',
+                'type' => 'separator',
+            )
+        );
+
+        /**
+         * Add Field: Display a warning to help separate fields
+         * Field:     title
+         * Section:   wpdas_display
+         */
+        $wpdas_obj->add_field(
+            'wpdas_display',
+            array(
+                'id'   => 'wpd_settings_warning_message_title',
+                'type' => 'title',
+                'name' => '<h1>' . esc_attr__( 'Warning message', 'wp-dispensary' ) . '</h1>',
+            )
+        );
+
+        /**
+         * Add Field: Custom title
+         * Field:     textarea
+         * Section:   wpdas_display
+         */
+        $wpdas_obj->add_field(
+            'wpdas_display',
+            array(
+                'id'          => 'wpd_details_product_warning',
+                'type'        => 'textarea',
+                'name'        => 'Warning',
+                'desc'        => esc_attr__( 'Add a warning message to the bottom of all product pages', 'wp-dispensary' ),
+                'placeholder' => '',
+            )
+        );
+
+        /**
+         * Add Field: Display warning message
+         * Field:     checkbox
+         * Section:   wpdas_display
+         */
+        $wpdas_obj->add_field(
+            'wpdas_display',
+            array(
+                'id'   => 'wpd_details_product_warning_image',
+                'type' => 'image',
+                'name' => '',
+                'desc' => esc_attr__( 'Remove the warning message from data output', 'wp-dispensary' ),
+            )
+        );
+
+        /**
+         * Add Field: Display warning message
+         * Field:     checkbox
+         * Section:   wpdas_display
+         */
+        $wpdas_obj->add_field(
+            'wpdas_display',
+            array(
+                'id'   => 'wpd_hide_warning',
+                'type' => 'checkbox',
+                'name' => '',
+                'desc' => esc_attr__( 'Remove the warning message from data output', 'wp-dispensary' ),
+            )
+        );
+
         // Check if WPD eCommerce is active.
         if ( is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
             /**

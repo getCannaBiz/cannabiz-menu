@@ -321,8 +321,19 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
             $details_gear = '';
         }
 
+        if ( isset( $wpd_settings['wpd_hide_warning'] ) && 'on' !== $wpd_settings['wpd_hide_warning'] ) {
+            if ( isset( $wpd_settings['wpd_details_product_warning_image'] ) ) {
+                $warning_image = $wpd_settings['wpd_details_product_warning_image'];
+            } else {
+                $warning_image = '';
+            }
+            $warning_message = '<div class="wpd-warning"><div class="warning-image"><img src=' . $warning_image . '" alt="' . esc_attr__( 'Warning Label', 'wp-dispensary' ) . '" /></div><div class="warning-text">' . $wpd_settings['wpd_details_product_warning'] . '</div></div>';
+        } else {
+            $warning_message = '';
+        }
+
         // Menu types that display compounds.
-        $compounds_table = array( 'flowers', 'concentrates', 'prerolls' );
+        $compounds_table = [ 'flowers', 'concentrates', 'prerolls' ];
 
         // Filter menu types that display compounds.
         $compounds_table = apply_filters( 'wpd_data_output_compounds_table', $compounds_table );
@@ -351,17 +362,12 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
                     $showcompounds .= '<td><strong>' . esc_html__( 'TOTAL', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_ID(), 'compounds_total', true ) . '%</td>';
                 }
 
-                // Combine compounds into one variable.
-                $showcompounds = $showcompounds;
-
                 // Create compounds table.
                 $details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . esc_html__( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $showcompounds . '</tr></table>';
 
                 if ( ! is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
-                    if ( ! isset( $wpd_settings['wpd_hide_compounds'] ) ) {
-                        $details_compounds = $details_compounds;
-                    } elseif ( isset( $wpd_settings['wpd_hide_compounds'] ) && 'on' !== $wpd_settings['wpd_hide_compounds'] ) {
-                        $details_compounds = $details_compounds;
+                    if ( ! isset( $wpd_settings['wpd_hide_compounds'] ) || 'on' !== $wpd_settings['wpd_hide_compounds'] ) {
+                        // Do nothing.
                     } else {
                         $details_compounds = '';
                     }
@@ -602,7 +608,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
             $product_schema = wpd_product_schema( get_the_ID() );
 
             // Apply before.
-            $new_content = $product_schema . $pricing_above . $compounds_above . $details_above . $original . $pricing_below . $compounds_below . $details_below;
+            $new_content = $product_schema . $pricing_above . $compounds_above . $details_above . $original . $pricing_below . $compounds_below . $details_below . $warning_message;
 
             return $new_content;
         } else {

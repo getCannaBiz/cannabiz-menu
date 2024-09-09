@@ -1,0 +1,19 @@
+.wpd-warning {
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.warning-image {
+    max-width: 75px;
+}
+
+.warning-image img {
+    margin-top: 6px;
+}
+
+.warning-text {
+    flex: 1;
+}
