@@ -2137,8 +2137,8 @@ msgstr "Idi Pro"
 
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
-msgid "https://www.wpdispensary.com"
-msgstr "https://www.wpdispensary.com"
+msgid "https://cannabizsoftware.com"
+msgstr "https://cannabizsoftware.com"
 
 #. Description of the plugin/theme
 msgid ""

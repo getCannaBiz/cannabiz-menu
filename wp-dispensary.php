@@ -10,8 +10,8 @@
  * @link    https://cannabizsoftware.com
  * @since   1.0
  *
- * Plugin Name:       WP Dispensary
- * Plugin URI:        https://cannabizsoftware.com/wp-dispensary/
+ * Plugin Name:       CannaBiz Menu
+ * Plugin URI:        https://cannabizsoftware.com/menu/
  * Description:       The complete marijuana menu solution for dispensaries and delivery services
  * Version:           4.5.0
  * Author:            CannaBiz Software
@@ -101,7 +101,7 @@ run_wp_dispensary();
  * @return array
  */
 function wpd_plugin_links( $links ) {
-    $pro_link      = '<a href="https://www.wpdispensary.com/product/pro-package/" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'wp-dispensary' ) . '</a>';
+    $pro_link      = '<a href="https://cannabizsoftware.com/product/pro-package/" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'wp-dispensary' ) . '</a>';
     $settings_link = '<a href="admin.php?page=wpd-settings">' . esc_attr__( 'Settings', 'wp-dispensary' ) . '</a>';
     // Updated links.
     array_unshift( $links, $settings_link );

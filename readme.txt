@@ -1,4 +1,4 @@
-=== WP Dispensary ===
+=== CannaBiz Menu ===
 Contributors: wpdispensary, deviodigital
 Tags: cannabis, dispensary, menu, marijuana, weed, wp-dispensary, pot, mmj, mmp, menu-management, medical-marijuana
 Requires at least: 3.0.1
@@ -13,69 +13,69 @@ The complete marijuana dispensary menu solution for WordPress
 
 ### The complete online menu solution for dispensaries
 
-WP Dispensary is open source canna-tech for dispensary and delivery services who need a simple way to manage online product menus and let patients place orders directly through their own website.
+CannaBiz Menu is open source canna-tech for dispensary and delivery services who need a simple way to manage online product menus and let patients place orders directly through their own website.
 
-**[view demo](https://demo.wpdispensary.com/)**
+**[view demo](https://demo.cannabizsoftware.com/)**
 
 ## Dispensary menu features
 
-WP Dispensary is packed with features to enhance the online presence of your cannabis business.
+CannaBiz Menu is packed with features to enhance the online presence of your cannabis business.
 
-With **WP Dispensary** you can easily create an online menu for patients to browse your inventory in style. With the commercial add-on's offered, your patients can place orders directly through your website!
+With **CannaBiz Menu** you can easily create an online menu for patients to browse your inventory in style. With the commercial add-on's offered, your patients can place orders directly through your website!
 
-**[View Features](https://www.wpdispensary.com/features/)**
+**[View Features](https://cannabizsoftware.com/features/)**
 
 ### Menu page auto-created on installation
 
-When you install and activate WP Dispensary, a new "Menu" page is automatically created for you, pre-populated with the default `[wpd_menu]` shortcode.
+When you install and activate CannaBiz Menu, a new "Menu" page is automatically created for you, pre-populated with the default `[wpd_menu]` shortcode.
 
-**[View Documentation](https://www.wpdispensary.com/articles/creating-a-menu-page-using-wp-dispensary-shortcodes/)**
+**[View Documentation](https://cannabizsoftware.com/articles/creating-a-menu-page-using-wp-dispensary-shortcodes/)**
 
 ## Define your dispensary style
 
-[CannaBiz](https://www.wpdispensary.com/product/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
+[CannaBiz](https://cannabizsoftware.com/product/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **CannaBiz Menu**.
 
-Along with full integration for WP Dispensary and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
+Along with full integration for CannaBiz Menu and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
 
 You can define your brand style through the theme Customizer by choosing the right colors and fonts, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
 
-## Extending WP Dispensary
+## Extending CannaBiz Menu
 
-With our add-on's you can extend the functionality of the core WP Dispensary plugin, giving your website a competitive edge in the growing medical marijuana market.
+With our add-on's you can extend the functionality of the core CannaBiz Menu plugin, giving your website a competitive edge in the growing medical marijuana market.
 
-WordPress.org is home to some amazing free extensions for WP Dispensary, including:
+WordPress.org is home to some amazing free extensions for CannaBiz Menu, including:
 
 *   [Dispensary Blocks](https://wordpress.org/plugins/dispensary-blocks)
 *   [Dispensary Coupons](https://wordpress.org/plugins/dispensary-coupons)
 
-## Go Pro with WP Dispensary
+## Go Pro with CannaBiz Menu
 
 Looking to take things even further? Our commercial extensions provide you with the capabilities you need to turn your online menu into a powerhouse sales machine.
 
-*   [eCommerce](https://www.wpdispensary.com/product/ecommerce/)
-*   [Inventory Management](https://www.wpdispensary.com/product/dispensary-inventory-management/)
-*   [Menu Styles](https://www.wpdispensary.com/product/styles/)
-*   [Top Sellers](https://www.wpdispensary.com/product/dispensary-top-sellers/)
-*   [Locations](https://www.wpdispensary.com/product/dispensary-locations/)
+*   [eCommerce](https://cannabizsoftware.com/product/ecommerce/)
+*   [Inventory Management](https://cannabizsoftware.com/product/dispensary-inventory-management/)
+*   [Menu Styles](https://cannabizsoftware.com/product/styles/)
+*   [Top Sellers](https://cannabizsoftware.com/product/dispensary-top-sellers/)
+*   [Locations](https://cannabizsoftware.com/product/dispensary-locations/)
 
-Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out everything that's possible with our premium WP Dispensary extensions.
+Visit our [extensions page](https://cannabizsoftware.com/add-ons) to find out everything that's possible with our premium CannaBiz Menu extensions.
 
 == Installation ==
 
-1. Go to `Plugins - Add New` in your WordPress admin panel and search for **WP Dispensary**
+1. Go to `Plugins - Add New` in your WordPress admin panel and search for **CannaBiz Menu**
 2. Install and activate the plugin directly in your admin panel
 3. Pat yourself on the back for a job well done :)
 
 == Screenshots ==
 
-1. WP Dispensary example menu display
-2. WP Dispensary single menu item display
-3. WP Dispensary single menu item display, using our [eCommerce](https://www.wpdispensary.com/product/ecommerce/) add-on
-4. WP Dispensary admin "Flowers" menu type
-5. WP Dispensary edit "Flowers" product
-6. WP Dispensary admin Settings page
-7. WP Dispensary Products widget list style
-8. WP Dispensary Products widget carousel style
+1. CannaBiz Menu example menu display
+2. CannaBiz Menu single menu item display
+3. CannaBiz Menu single menu item display, using our [eCommerce](https://cannabizsoftware.com/product/ecommerce/) add-on
+4. CannaBiz Menu admin "Flowers" menu type
+5. CannaBiz Menu edit "Flowers" product
+6. CannaBiz Menu admin Settings page
+7. CannaBiz Menu Products widget list style
+8. CannaBiz Menu Products widget carousel style
 
 == Changelog ==
 
@@ -229,7 +229,7 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 *   Added new `wpd/v1` REST API route to the WP REST API in `admin/wp-dispensary-rest-api.php`
 *   Added `product_type` jQuery to show/hide metaboxes properly in `admin/js/wp-dispensary-admin.js`
 *   Added `convert_post_types`, `convert_metadata`, and `convert_taxonomies` helper function for v4.0 upgrade in `includes/functions/wp-dispensary-helper-functions.php`
-*   Added new Products Export option to the WP Dispensary admin settings in `admin/class-wp-dispensary-csv-export.php`
+*   Added new Products Export option to the CannaBiz Menu admin settings in `admin/class-wp-dispensary-csv-export.php`
 *   Added parameter to `get_wpd_product_image` function that will link/unlink images in `includes/functions/wp-dispensary-product-functions.php`
 *   Added logo field to vendors taxonomy in `admin/class-wp-dispensary-vendors-taxonomy-fields.php`
 *   Added product type filter to admin all products screen in `admin/wp-dispensary-admin-screens.php`
@@ -274,7 +274,7 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 *   Added shelf and strain type to Edibles REST API endpoint in `admin/wp-dispensary-rest-api.php`
 *   Added file to store the code for 6 upcoming deprecated shortcodes in `admin/deprecated-shortcodes.php`
 *   Updated codes used for flower prices in prices table output in `admin/wp-dispensary-data-output.php`
-*   Updated admin settings logo file to use the new WP Dispensary logo in `admin/images/wpd-logo.png`
+*   Updated admin settings logo file to use the new CannaBiz Menu logo in `admin/images/wpd-logo.png`
 *   Updated `.pot` file with text strings for localization in `languages/wp-dispensary.pot`
 *   General code cleanup throughout various files in the plugin
 
@@ -542,7 +542,7 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 
 = 2.2 =
 *   Added updates to `.pot` file for localization in `languages/wp-dispensary.pot`
-*   Added all default WP Dispensary menu types to the Permalinks Settings page in `admin/class-wp-dispensary-permalink-settings.php`
+*   Added all default CannaBiz Menu menu types to the Permalinks Settings page in `admin/class-wp-dispensary-permalink-settings.php`
 *   Bugfix with the `WP_Dispensary_Version` name in `includes/class-wp-dispensary.php`
 *   Updated permalink base codes for the `flowers` permalink base in `admin/post-types/wp-dispensary-flowers.php`
 *   Updated permalink base codes for the `concentrates` permalink base in `admin/post-types/wp-dispensary-concentrates.php`
@@ -585,9 +585,9 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 *   Fixed deprecated string value in get_bloginfo function in `admin/wp-dispensary-shortcodes.php`
 *   Fixed bug in CBA variable names in `admin/wp-dispensary-shortcodes.php`
 *   Fixed bug in Concentrates widget form category default `admin/post-types/wp-dispensary-widgets.php`
-*   Rebuilt the admin Settings for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
+*   Rebuilt the admin Settings for CannaBiz Menu in `admin/wp-dispensary-admin-settings.php`
 *   Updated undefined variables for Details and Pricing tables in `admin/wp-dispensary-data-output.php`
-*   Updated the admin WP Dispensary sub-menu link order in `admin/wp-dispensary-admin-settings.php`
+*   Updated the admin CannaBiz Menu sub-menu link order in `admin/wp-dispensary-admin-settings.php`
 *   Updated default variable values for pricinglow & pricinghigh in `admin/wp-dispensary-shortcodes.php`
 *   Updated default order for taxonomies & metaboxes in Edit screens in `admin/wp-dispensary-admin-screens.php`
 *   Updated Seed & Clone counts to be in a single metabox in `admin/post-types/wp-dispensary-metaboxes.php`
@@ -688,9 +688,9 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 *   Updated Pricing table's title if donation is selected in `admin/wp-dispensary-data-output.php`
 
 = 1.9.8 =
-*   Added `Settings` link for WP Dispensary on the `plugins` page in `wp-dispensary.php`
+*   Added `Settings` link for CannaBiz Menu on the `plugins` page in `wp-dispensary.php`
 *   Removed all custom post type's from admin dashboard menu in `admin/post-types/`
-*   Updated placement of `WP Dispensary` in the admin dashboard menu, and added menu type links to sub-menu in `admin/wp-dispensary-admin-settings.php`
+*   Updated placement of `CannaBiz Menu` in the admin dashboard menu, and added menu type links to sub-menu in `admin/wp-dispensary-admin-settings.php`
 
 = 1.9.7 =
 *   Added 12 new Action Hooks to widgets in `admin/wp-dispenesary-widgets.php`
@@ -723,7 +723,7 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 *   Added Carousel shortcode in `admin/wp-dispensary-shortcodes.php`
 *   Added CSS styles for the Carousel shortcode in `public/css/wp-dispensary-public.css`
 *   Added slick.js for the Carousel shortcode in `public/js/wp-dispensary-public.js`
-*   Updated promotion for premium add-ons for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
+*   Updated promotion for premium add-ons for CannaBiz Menu in `admin/wp-dispensary-admin-settings.php`
 
 = 1.9.4 =
 *   Added check for all prices, not just grams in `admin/wp-dispensary-shortcodes.php`
@@ -764,14 +764,14 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 = 1.8 =
 *   Added "prerolls" in array to output </table> in `admin/wp-dispensary-data-output.php`
 *   Added Action Hooks to Pricing & Data Tables in `admin/wp-dispensary-data-output.php`
-*   Added promotion for premium add-ons for WP Dispensary in `admin/wp-dispensary-admin-settings.php`
+*   Added promotion for premium add-ons for CannaBiz Menu in `admin/wp-dispensary-admin-settings.php`
 *   Fixed shortcode [wpd-edibles] serving count output in `admin/wp-dispensary-shortcodes.php`
 *   Removed unnecessary pricing variable in `admin/wp-dispensary-shortcodes.php`
 *   Updated shortcode [wpd-edibles] output of THC mg% & servings in `admin/wp-dispensary-shortcodes.php`
 *   Updated serving count variable name for edibles in `admin/wp-dispensary-shortcodes.php`
 
 = 1.7.1 =
-*   Added 'placement' and 'display' options to the WP Dispensary settings page
+*   Added 'placement' and 'display' options to the CannaBiz Menu settings page
 *   Updated price output in the flowers shortcode if only the gram price is added
 
 = 1.7 =
@@ -782,7 +782,7 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 *   Updated `languages/wp-dispensary.pot` file with all current translatable text throughout the plugin
 
 = 1.6 =
-*   Added WP Dispensary settings page to the WordPress admin menu
+*   Added CannaBiz Menu settings page to the WordPress admin menu
 *   Added in automatic output of menu item details and pricing to `the_content`
 *   Updated `admin/post-types/wp-dispensary-metaboxes.php` to fix Serving information metabox details
 *   WordPress Coding Standards updates ([issue](https://github.com/deviodigital/wp-dispensary/issues/1))
@@ -802,7 +802,7 @@ Visit our [extensions page](https://www.wpdispensary.com/add-ons) to find out ev
 *   Updated CSS in `public/css/wp-dispensary-public.css` for improved display in the widgets
 
 = 1.4 =
-*   Added the WP Dispensary icon to each CPT in the admin dashboard for easier visual recognition
+*   Added the CannaBiz Menu icon to each CPT in the admin dashboard for easier visual recognition
 *   Added `active_plugins` check for "Subtitles" plugin in `admin/wp-dispensary-rest-api.php` API output
 *   Added sanitization to $_POST in `admin/post-types/wp-dispensary-metaboxes.php` pre-roll flower selection drop down
 *   Created the Topicals menu type, with Widget, Shortcode and WP-API output options

@@ -562,7 +562,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
          * Conditional statement to output menu
          * item pricing above or below the_content
          */
-        if ( is_singular( apply_filters( 'wpd_pricing_table_placement_array', array( 'products' ) ) ) ) {
+        if ( is_singular( apply_filters( 'wpd_pricing_table_placement_array', array( 'products' ) ) ) && in_the_loop() && is_main_query() ) {
 
             // Pricing Placement.
             if ( isset( $wpd_settings['wpd_pricing_table_placement'] ) && 'above' !== $wpd_settings['wpd_pricing_table_placement'] ) {

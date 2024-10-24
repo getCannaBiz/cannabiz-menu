@@ -20,8 +20,6 @@
  */
 function wpd_excerpt_embed( $output ) {
     return the_content();
-    // NOTE: the code below can never execute???
-    return $output;
 }
 add_filter( 'the_excerpt_embed', 'wpd_excerpt_embed' );
 

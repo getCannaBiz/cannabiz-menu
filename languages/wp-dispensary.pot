@@ -2147,7 +2147,7 @@ msgstr ""
 
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
-msgid "https://www.wpdispensary.com"
+msgid "https://cannabizsoftware.com"
 msgstr ""
 
 #. Description of the plugin/theme
