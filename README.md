@@ -1,39 +1,37 @@
-# WP Dispensary Menu Management Software
-**The #1 Marijuana Dispensary WordPress Plugin.** Make sure you :star: and :eyes: this repo :point_up:
+# CannaBiz Menu - Cannabis Menu Management Software for WordPress®
+**The #1 Marijuana Dispensary WordPress® Plugin.** Make sure you :star: and :eyes: this repo :point_up:
 
-![Cannabis Dispensary WordPress Plugin](https://cannabizsoftware.com/wp-content/uploads/2018/03/wpd-github-readme.jpg)
+---
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5c354fa66bed47cebb795ea90d7c52df)](https://www.codacy.com/gh/wpdispensary/wp-dispensary/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wpdispensary/wp-dispensary&amp;utm_campaign=Badge_Grade)
-
-:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release: [v4.4.0](https://wordpress.org/plugins/wp-dispensary/).
+:raised_hand: **WAIT!** This repo is under active development. Download the latest stable release: [v4.5.0](https://wordpress.org/plugins/wp-dispensary/).
 
 :point_right: **[View Demo](https://demo.wpdispensary.com/)**
 
 ## Dispensary Menu Features
 
-WP Dispensary is packed with features to enhance the online presence of your cannabis business.
+CannaBiz Menu is packed with features to enhance the online presence of your cannabis business.
 
-With **WP Dispensary** you can easily create an online menu for patients to browse your inventory in style. **[Go Pro](https://wpdispensary.com/pro/)** and your patients can place orders directly through your website!
+With **CannaBiz Menu** you can easily create an online menu for patients to browse your inventory in style.
 
 :point_right: **[View Features](https://cannabizsoftware.com/features/)**
 
 ### Menu page auto-created on installation
 
-When you install and activate WP Dispensary, a new "Menu" page is automatically created for you, pre-populated with the default `[wpd_menu]` shortcode.
+When you install and activate CannaBiz Menu, a new "Menu" page is automatically created for you, pre-populated with the default `[wpd_menu]` shortcode.
 
 :point_right: **[View Documentation](https://cannabizsoftware.com/articles/creating-a-menu-page-using-wp-dispensary-shortcodes/)**
 
 ## Define your dispensary style
 
-[CannaBiz](https://cannabizsoftware.com/product/cannabiz) is a commercial WordPress theme for the cannabis industry, built and maintained by **WP Dispensary**.
+[CannaBiz](https://cannabizsoftware.com/product/cannabiz) is a commercial WordPress® theme for the cannabis industry, built and maintained by **CannaBiz Menu**.
 
-Along with full integration for WP Dispensary and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
+Along with full integration for CannaBiz Menu and WooCommerce, CannaBiz focuses on page speed and easy to use customization options.
 
 You can define your brand style through the theme Customizer by choosing the right colors and fonts, optimize the layout for your specific needs and give your patients a truly beautiful experience unlike anything your competitors offer.
 
 ## Translated into multiple languages
 
-WP Dispensary has the following language translations included:
+CannaBiz Menu has the following language translations included:
 
 *   Spanish
 *   Italian
@@ -46,20 +44,14 @@ WP Dispensary has the following language translations included:
 *   Maltese
 *   Dutch
 
-Interested in having WP Dispensary translated into your language? Open an issue and let us know :+1:
-
-## Go Pro with WP Dispensary
-
-Looking to take things even further? Our commercial extensions provide you with the capabilities you need to turn your online menu into a powerhouse sales machine.
-
-*   [eCommerce](https://cannabizsoftware.com/product/ecommerce/)
+Interested in having CannaBiz Menu translated into your language? Open an issue and let us know :+1:
 
 ### We also have a WooCommerce solution
 
 If you're looking for a WooCommerce solution for your dispensary website, we released the [Dispensary Details for WooCommerce](https://cannabizsoftware.com/product/dispensary-details-for-woocommerce/) plugin that adds all of the required cannabis related details to your WooCommerce store.
 
-This plugin works independently of WP Dispensary, and is a perfect solution for you if you're already comfortable working with WooCommerce and don't want to learn a whole new system.
+This plugin works independently of CannaBiz Menu, and is a perfect solution for you if you're already comfortable working with WooCommerce and don't want to learn a whole new system.
 
 ## Changelog
 
-View [CHANGELOG.md](https://github.com/wpdispensary/wp-dispensary/blob/master/CHANGELOG.md)
+View [CHANGELOG.md](https://github.com/getCannaBiz/cannabiz-menu/blob/master/CHANGELOG.md)
