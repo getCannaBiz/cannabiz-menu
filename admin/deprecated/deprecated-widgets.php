@@ -33,9 +33,9 @@ class wpdispensary_flowers_widget extends WP_Widget {
 
         parent::__construct(
             'wpdispensary_flowers_widget',
-            esc_html__( 'WPD Flowers', 'wp-dispensary' ),
+            esc_html__( 'WPD Flowers', 'cannabiz-menu' ),
             array(
-                'description' => esc_html__( 'Your most recent Flowers', 'wp-dispensary' ),
+                'description' => esc_html__( 'Your most recent Flowers', 'cannabiz-menu' ),
                 'classname'   => 'wp-dispensary-widget',
             )
         );
@@ -188,37 +188,37 @@ class wpdispensary_flowers_widget extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, $defaults );
     ?>
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'cannabiz-menu' ); ?></label>
         <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>" />
     </p>
 
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of flowers to show:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of flowers to show:', 'cannabiz-menu' ); ?></label>
         <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo esc_html( $instance['limit'] ); ?>" />
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['flowername'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'flowername' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'flowername' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'flowername' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower name?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'flowername' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower name?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['flowercategory'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'flowercategory' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'flowercategory' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'flowercategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower category?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'flowercategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower category?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_htmlesc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_htmlesc_html_e( 'Image size:', 'cannabiz-menu' ); ?></label>
         <?php
             $terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
             if ( $terms ) {
@@ -269,9 +269,9 @@ class wpdispensary_concentrates_widget extends WP_Widget {
 
         parent::__construct(
             'wpdispensary_concentrates_widget',
-            esc_html__( 'WPD Concentrates', 'wp-dispensary' ),
+            esc_html__( 'WPD Concentrates', 'cannabiz-menu' ),
             array(
-                'description' => esc_html__( 'Your most recent Concentrates', 'wp-dispensary' ),
+                'description' => esc_html__( 'Your most recent Concentrates', 'cannabiz-menu' ),
                 'classname'   => 'wp-dispensary-widget',
             )
         );
@@ -423,37 +423,37 @@ class wpdispensary_concentrates_widget extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, $defaults );
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'cannabiz-menu' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of concentrates to show:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of concentrates to show:', 'cannabiz-menu' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo esc_html( $instance['limit'] ); ?>" />
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['concentratename'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'concentratename' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'concentratename' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'concentratename' ) ); ?>"><?php esc_htmlesc_html_e( 'Display concentrate name?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'concentratename' ) ); ?>"><?php esc_htmlesc_html_e( 'Display concentrate name?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['concentratecategory'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'concentratecategory' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'concentratecategory' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'concentratecategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display concentrate category?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'concentratecategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display concentrate category?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'cannabiz-menu' ); ?></label>
             <?php
                 $terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
                 if ( $terms ) {
@@ -504,9 +504,9 @@ class wpdispensary_edibles_widget extends WP_Widget {
 
         parent::__construct(
             'wpdispensary_edibles_widget',
-            esc_html__( 'WPD Edibles', 'wp-dispensary' ),
+            esc_html__( 'WPD Edibles', 'cannabiz-menu' ),
             array(
-                'description' => esc_html__( 'Your most recent Edibles', 'wp-dispensary' ),
+                'description' => esc_html__( 'Your most recent Edibles', 'cannabiz-menu' ),
                 'classname'   => 'wp-dispensary-widget',
             )
         );
@@ -659,37 +659,37 @@ class wpdispensary_edibles_widget extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, $defaults );
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'cannabiz-menu' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of edibles to show:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of edibles to show:', 'cannabiz-menu' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo esc_html( $instance['limit'] ); ?>" />
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['ediblename'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'ediblename' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ediblename' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'ediblename' ) ); ?>"><?php esc_htmlesc_html_e( 'Display edible name?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'ediblename' ) ); ?>"><?php esc_htmlesc_html_e( 'Display edible name?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['ediblecategory'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'ediblecategory' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ediblecategory' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'ediblecategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display edible category?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'ediblecategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display edible category?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_htmlesc_html_e( 'Image size:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_htmlesc_html_e( 'Image size:', 'cannabiz-menu' ); ?></label>
             <?php
                 $terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
                 if ( $terms ) {
@@ -741,9 +741,9 @@ class wpdispensary_prerolls_widget extends WP_Widget {
 
         parent::__construct(
             'wpdispensary_prerolls_widget',
-            esc_html__( 'WPD Pre-rolls', 'wp-dispensary' ),
+            esc_html__( 'WPD Pre-rolls', 'cannabiz-menu' ),
             array(
-                'description' => esc_html__( 'Your most recent Pre-rolls', 'wp-dispensary' ),
+                'description' => esc_html__( 'Your most recent Pre-rolls', 'cannabiz-menu' ),
                 'classname'   => 'wp-dispensary-widget',
             )
         );
@@ -901,37 +901,37 @@ class wpdispensary_prerolls_widget extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, $defaults );
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'cannabiz-menu' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of pre-rolls to show:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of pre-rolls to show:', 'cannabiz-menu' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo esc_html( $instance['limit'] ); ?>" />
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['prerollname'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'prerollname' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prerollname' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'prerollname' ) ); ?>"><?php esc_htmlesc_html_e( 'Display pre-roll name?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'prerollname' ) ); ?>"><?php esc_htmlesc_html_e( 'Display pre-roll name?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['prerollflower'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'prerollflower' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prerollflower' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'prerollflower' ) ); ?>"><?php esc_htmlesc_html_e( 'Display pre-roll flower?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'prerollflower' ) ); ?>"><?php esc_htmlesc_html_e( 'Display pre-roll flower?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
             <input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'cannabiz-menu' ); ?></label>
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'cannabiz-menu' ); ?></label>
             <?php
                 $terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
                 if ( $terms ) {
@@ -983,9 +983,9 @@ class wpdispensary_topicals_widget extends WP_Widget {
 
         parent::__construct(
             'wpdispensary_topicals_widget',
-            esc_html__( 'WPD Topicals', 'wp-dispensary' ),
+            esc_html__( 'WPD Topicals', 'cannabiz-menu' ),
             array(
-                'description' => esc_html__( 'Your most recent Topicals', 'wp-dispensary' ),
+                'description' => esc_html__( 'Your most recent Topicals', 'cannabiz-menu' ),
                 'classname'   => 'wp-dispensary-widget',
             )
         );
@@ -1138,37 +1138,37 @@ class wpdispensary_topicals_widget extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, $defaults );
     ?>
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'cannabiz-menu' ); ?></label>
         <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>" />
     </p>
 
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of topicals to show:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of topicals to show:', 'cannabiz-menu' ); ?></label>
         <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo esc_html( $instance['limit'] ); ?>" />
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['topicalname'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'topicalname' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'topicalname' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'topicalname' ) ); ?>"><?php esc_htmlesc_html_e( 'Display topical name?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'topicalname' ) ); ?>"><?php esc_htmlesc_html_e( 'Display topical name?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['topicalcategory'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'topicalcategory' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'topicalcategory' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'topicalcategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display topical category?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'topicalcategory' ) ); ?>"><?php esc_htmlesc_html_e( 'Display topical category?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'cannabiz-menu' ); ?></label>
         <?php
             $terms = apply_filters( 'wpd_widgets_featured_image_sizes', array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' ) );
             if ( $terms ) {
@@ -1219,9 +1219,9 @@ class wpdispensary_growers_widget extends WP_Widget {
 
         parent::__construct(
             'wpdispensary_growers_widget',
-            esc_html__( 'WPD Growers', 'wp-dispensary' ),
+            esc_html__( 'WPD Growers', 'cannabiz-menu' ),
             array(
-                'description' => esc_html__( 'Your most recent Clones and Seeds', 'wp-dispensary' ),
+                'description' => esc_html__( 'Your most recent Clones and Seeds', 'cannabiz-menu' ),
                 'classname'   => 'wp-dispensary-widget',
             )
         );
@@ -1380,37 +1380,37 @@ class wpdispensary_growers_widget extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, $defaults );
     ?>
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_htmlesc_html_e( 'Widget Title:', 'cannabiz-menu' ); ?></label>
         <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>" />
     </p>
 
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of growers to show:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_htmlesc_html_e( 'Amount of growers to show:', 'cannabiz-menu' ); ?></label>
         <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" type="number" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" min="1" max="999" value="<?php echo esc_html( $instance['limit'] ); ?>" />
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['order'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_htmlesc_html_e( 'Randomize output?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['growername'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'growername' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'growername' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'growername' ) ); ?>"><?php esc_htmlesc_html_e( 'Display grower name?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'growername' ) ); ?>"><?php esc_htmlesc_html_e( 'Display grower name?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['growerflower'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'growerflower' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'growerflower' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'growerflower' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower type?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'growerflower' ) ); ?>"><?php esc_htmlesc_html_e( 'Display flower type?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
         <input class="checkbox" type="checkbox" <?php checked( $instance['featuredimage'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'featuredimage' ) ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'featuredimage' ) ); ?>"><?php esc_htmlesc_html_e( 'Display featured image?', 'cannabiz-menu' ); ?></label>
     </p>
 
     <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'wp-dispensary' ); ?></label>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'imagesize' ) ); ?>"><?php esc_html( 'Image size:', 'cannabiz-menu' ); ?></label>
         <?php
             $terms = array( 'wpdispensary-widget', 'dispensary-image', 'wpd-small', 'wpd-medium', 'wpd-large' );
             if ( $terms ) {

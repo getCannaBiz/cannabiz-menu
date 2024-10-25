@@ -28,22 +28,22 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_flavors_taxonomy() {
 
     $labels = array(
-        'name'                       => _x( 'Flavors', 'general name', 'wp-dispensary' ),
-        'singular_name'              => _x( 'Flavor', 'singular name', 'wp-dispensary' ),
-        'search_items'               => esc_html__( 'Search Flavors', 'wp-dispensary' ),
-        'popular_items'              => esc_html__( 'Popular Flavors', 'wp-dispensary' ),
-        'all_items'                  => esc_html__( 'All Flavors', 'wp-dispensary' ),
+        'name'                       => _x( 'Flavors', 'general name', 'cannabiz-menu' ),
+        'singular_name'              => _x( 'Flavor', 'singular name', 'cannabiz-menu' ),
+        'search_items'               => esc_html__( 'Search Flavors', 'cannabiz-menu' ),
+        'popular_items'              => esc_html__( 'Popular Flavors', 'cannabiz-menu' ),
+        'all_items'                  => esc_html__( 'All Flavors', 'cannabiz-menu' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => esc_html__( 'Edit Flavor', 'wp-dispensary' ),
-        'update_item'                => esc_html__( 'Update Flavor', 'wp-dispensary' ),
-        'add_new_item'               => esc_html__( 'Add New Flavor', 'wp-dispensary' ),
-        'new_item_name'              => esc_html__( 'New Flavor Name', 'wp-dispensary' ),
-        'separate_items_with_commas' => esc_html__( 'Separate flavors with commas', 'wp-dispensary' ),
-        'add_or_remove_items'        => esc_html__( 'Add or remove flavors', 'wp-dispensary' ),
-        'choose_from_most_used'      => esc_html__( 'Choose from the most used flavors', 'wp-dispensary' ),
-        'not_found'                  => esc_html__( 'No flavors found', 'wp-dispensary' ),
-        'menu_name'                  => esc_html__( 'Flavors', 'wp-dispensary' ),
+        'edit_item'                  => esc_html__( 'Edit Flavor', 'cannabiz-menu' ),
+        'update_item'                => esc_html__( 'Update Flavor', 'cannabiz-menu' ),
+        'add_new_item'               => esc_html__( 'Add New Flavor', 'cannabiz-menu' ),
+        'new_item_name'              => esc_html__( 'New Flavor Name', 'cannabiz-menu' ),
+        'separate_items_with_commas' => esc_html__( 'Separate flavors with commas', 'cannabiz-menu' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove flavors', 'cannabiz-menu' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used flavors', 'cannabiz-menu' ),
+        'not_found'                  => esc_html__( 'No flavors found', 'cannabiz-menu' ),
+        'menu_name'                  => esc_html__( 'Flavors', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'flavors', 'products', array(

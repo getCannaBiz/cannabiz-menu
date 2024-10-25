@@ -88,9 +88,9 @@ class WP_Dispensary_CSV_Export {
      */
     public function export_products() {
         $wrap = '<div class="wrap">';
-        $wrap .= '<h2>' . esc_html__( 'WP Dispensary\'s Product Export', 'wp-dispensary' ) . '</h2>';
-        $wrap .= '<p>' . esc_html__( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'wp-dispensary' ) . '</p>';
-        $wrap .= '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . esc_html__( 'Export', 'wp-dispensary' ) . '</a></p>';
+        $wrap .= '<h2>' . esc_html__( 'WP Dispensary\'s Product Export', 'cannabiz-menu' ) . '</h2>';
+        $wrap .= '<p>' . esc_html__( 'Export your WP Dispensary products as a CSV file by clicking the button below.', 'cannabiz-menu' ) . '</p>';
+        $wrap .= '<p><a class="button" href="admin.php?page=export_products&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ) . '">' . esc_html__( 'Export', 'cannabiz-menu' ) . '</a></p>';
         echo wp_kses( $wrap, wp_kses_allowed_html( 'post' ) );
     }
 
@@ -111,28 +111,28 @@ class WP_Dispensary_CSV_Export {
 
         // Set the headers.
         $header_row = array(
-            esc_html__( 'ID', 'wp-dispensary' ),
-            esc_html__( 'Type', 'wp-dispensary' ),
-            esc_html__( 'Title', 'wp-dispensary' ),
-            esc_html__( 'Content', 'wp-dispensary' ),
-            esc_html__( 'Slug', 'wp-dispensary' ),
-            esc_html__( 'Date', 'wp-dispensary' ),
-            esc_html__( 'Author', 'wp-dispensary' ),
-            esc_html__( 'Prices', 'wp-dispensary' ),
-            esc_html__( 'Inventory', 'wp-dispensary' ),
-            esc_html__( 'Categories', 'wp-dispensary' ),
-            esc_html__( 'Vendors', 'wp-dispensary' ),
-            esc_html__( 'Shelf type', 'wp-dispensary' ),
-            esc_html__( 'Strain type', 'wp-dispensary' ),
-            esc_html__( 'Allergens', 'wp-dispensary' ),
-            esc_html__( 'Aromas', 'wp-dispensary' ),
-            esc_html__( 'Conditions', 'wp-dispensary' ),
-            esc_html__( 'Effects', 'wp-dispensary' ),
-            esc_html__( 'Flavors', 'wp-dispensary' ),
-            esc_html__( 'Ingredients', 'wp-dispensary' ),
-            esc_html__( 'Symptoms', 'wp-dispensary' ),
-            esc_html__( 'Featured image', 'wp-dispensary' ),
-            esc_html__( 'Ratings', 'wp-dispensary' ),            
+            esc_html__( 'ID', 'cannabiz-menu' ),
+            esc_html__( 'Type', 'cannabiz-menu' ),
+            esc_html__( 'Title', 'cannabiz-menu' ),
+            esc_html__( 'Content', 'cannabiz-menu' ),
+            esc_html__( 'Slug', 'cannabiz-menu' ),
+            esc_html__( 'Date', 'cannabiz-menu' ),
+            esc_html__( 'Author', 'cannabiz-menu' ),
+            esc_html__( 'Prices', 'cannabiz-menu' ),
+            esc_html__( 'Inventory', 'cannabiz-menu' ),
+            esc_html__( 'Categories', 'cannabiz-menu' ),
+            esc_html__( 'Vendors', 'cannabiz-menu' ),
+            esc_html__( 'Shelf type', 'cannabiz-menu' ),
+            esc_html__( 'Strain type', 'cannabiz-menu' ),
+            esc_html__( 'Allergens', 'cannabiz-menu' ),
+            esc_html__( 'Aromas', 'cannabiz-menu' ),
+            esc_html__( 'Conditions', 'cannabiz-menu' ),
+            esc_html__( 'Effects', 'cannabiz-menu' ),
+            esc_html__( 'Flavors', 'cannabiz-menu' ),
+            esc_html__( 'Ingredients', 'cannabiz-menu' ),
+            esc_html__( 'Symptoms', 'cannabiz-menu' ),
+            esc_html__( 'Featured image', 'cannabiz-menu' ),
+            esc_html__( 'Ratings', 'cannabiz-menu' ),            
         );
 
         // Filter headers.

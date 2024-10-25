@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_product_type_metabox() {
     add_meta_box(
         'wp_dispensary_product_type',
-        esc_html__( 'Product type', 'wp-dispensary' ),
+        esc_html__( 'Product type', 'cannabiz-menu' ),
         'wp_dispensary_product_type_metabox_content',
         'products',
         'normal',

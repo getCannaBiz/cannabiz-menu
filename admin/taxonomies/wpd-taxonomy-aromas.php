@@ -28,22 +28,22 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_aromas_taxonomy() {
 
     $labels = array(
-        'name'                       => _x( 'Aromas', 'general name', 'wp-dispensary' ),
-        'singular_name'              => _x( 'Aroma', 'singular name', 'wp-dispensary' ),
-        'search_items'               => esc_html__( 'Search Aromas', 'wp-dispensary' ),
-        'popular_items'              => esc_html__( 'Popular Aromas', 'wp-dispensary' ),
-        'all_items'                  => esc_html__( 'All Aromas', 'wp-dispensary' ),
+        'name'                       => _x( 'Aromas', 'general name', 'cannabiz-menu' ),
+        'singular_name'              => _x( 'Aroma', 'singular name', 'cannabiz-menu' ),
+        'search_items'               => esc_html__( 'Search Aromas', 'cannabiz-menu' ),
+        'popular_items'              => esc_html__( 'Popular Aromas', 'cannabiz-menu' ),
+        'all_items'                  => esc_html__( 'All Aromas', 'cannabiz-menu' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => esc_html__( 'Edit Aroma', 'wp-dispensary' ),
-        'update_item'                => esc_html__( 'Update Aroma', 'wp-dispensary' ),
-        'add_new_item'               => esc_html__( 'Add New Aroma', 'wp-dispensary' ),
-        'new_item_name'              => esc_html__( 'New Aroma Name', 'wp-dispensary' ),
-        'separate_items_with_commas' => esc_html__( 'Separate aromas with commas', 'wp-dispensary' ),
+        'edit_item'                  => esc_html__( 'Edit Aroma', 'cannabiz-menu' ),
+        'update_item'                => esc_html__( 'Update Aroma', 'cannabiz-menu' ),
+        'add_new_item'               => esc_html__( 'Add New Aroma', 'cannabiz-menu' ),
+        'new_item_name'              => esc_html__( 'New Aroma Name', 'cannabiz-menu' ),
+        'separate_items_with_commas' => esc_html__( 'Separate aromas with commas', 'cannabiz-menu' ),
         'add_or_remove_items'        => esc_html__( 'Add or remove aromas' , 'wp-dispensary'),
-        'choose_from_most_used'      => esc_html__( 'Choose from the most used aromas', 'wp-dispensary' ),
-        'not_found'                  => esc_html__( 'No aromas found', 'wp-dispensary' ),
-        'menu_name'                  => esc_html__( 'Aromas', 'wp-dispensary' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used aromas', 'cannabiz-menu' ),
+        'not_found'                  => esc_html__( 'No aromas found', 'cannabiz-menu' ),
+        'menu_name'                  => esc_html__( 'Aromas', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'aromas', 'products', array(

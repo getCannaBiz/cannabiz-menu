@@ -70,12 +70,12 @@ if ( ! class_exists( 'WP_Dispensary_Vendor_Taxonomy_Fields' ) ) {
          */
         public function add_vendor_logo_image( $taxonomy ) { ?>
         <div class="form-field term-group">
-            <label for="vendor_logo"><?php esc_html_e( 'Logo', 'wp-dispensary' ); ?></label>
+            <label for="vendor_logo"><?php esc_html_e( 'Logo', 'cannabiz-menu' ); ?></label>
             <input type="hidden" id="vendor_logo" name="vendor_logo" class="custom_media_url" value="">
             <div id="vendor-logo-wrapper"></div>
             <p>
-                <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_html_e( 'Add Image', 'wp-dispensary' ); ?>" />
-                <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_html_e( 'Remove Image', 'wp-dispensary' ); ?>" />
+                <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_html_e( 'Add Image', 'cannabiz-menu' ); ?>" />
+                <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_html_e( 'Remove Image', 'cannabiz-menu' ); ?>" />
             </p>
         </div>
             <?php
@@ -108,7 +108,7 @@ if ( ! class_exists( 'WP_Dispensary_Vendor_Taxonomy_Fields' ) ) {
         public function update_vendor_logo_image( $term, $taxonomy ) { ?>
         <tr class="form-field term-group-wrap">
             <th scope="row">
-                <label for="vendor_logo"><?php esc_html_e( 'Logo', 'wp-dispensary' ); ?></label>
+                <label for="vendor_logo"><?php esc_html_e( 'Logo', 'cannabiz-menu' ); ?></label>
             </th>
             <td>
                 <?php $image_id = get_term_meta( $term->term_id, 'vendor_logo', true ); ?>
@@ -119,8 +119,8 @@ if ( ! class_exists( 'WP_Dispensary_Vendor_Taxonomy_Fields' ) ) {
                     <?php } ?>
                 </div>
                 <p>
-                    <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_html_e( 'Add Image', 'wp-dispensary' ); ?>" />
-                    <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_html_e( 'Remove Image', 'wp-dispensary' ); ?>" />
+                    <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_html_e( 'Add Image', 'cannabiz-menu' ); ?>" />
+                    <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_html_e( 'Remove Image', 'cannabiz-menu' ); ?>" />
                 </p>
             </td>
         </tr>

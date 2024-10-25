@@ -77,13 +77,13 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
             $wpd_strain_type = '';
             $wpd_vendors     = '';
             if ( get_the_term_list( $post->ID, 'shelf_types', true ) ) {
-                $wpd_shelf_type = '<tr><td><span>' . esc_html__( 'Shelf', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_types', '', ', ', '' ) . '</td></tr>';
+                $wpd_shelf_type = '<tr><td><span>' . esc_html__( 'Shelf', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'shelf_types', '', ', ', '' ) . '</td></tr>';
             }
             if ( get_the_term_list( $post->ID, 'strain_types', true ) ) {
-                $wpd_strain_type = '<tr><td><span>' . esc_html__( 'Strain', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_types', '', ', ', '' ) . '</td></tr>';
+                $wpd_strain_type = '<tr><td><span>' . esc_html__( 'Strain', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'strain_types', '', ', ', '' ) . '</td></tr>';
             }
             if ( get_the_term_list( $post->ID, 'vendors', true ) ) {
-                $wpd_vendors = '<tr><td><span>' . esc_html__( 'Vendor', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendors', '', ', ', '' ) . '</td></tr>';
+                $wpd_vendors = '<tr><td><span>' . esc_html__( 'Vendor', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'vendors', '', ', ', '' ) . '</td></tr>';
             }
         }
 
@@ -125,130 +125,130 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         $wpd_grower         = '';
 
         if ( get_the_term_list( $post->ID, 'aromas', true ) ) {
-            $wpd_aroma = '<tr><td><span>' . esc_html__( 'Aromas', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'aromas', '', ', ', '' ) . '</td></tr>';
+            $wpd_aroma = '<tr><td><span>' . esc_html__( 'Aromas', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'aromas', '', ', ', '' ) . '</td></tr>';
         }
 
         if ( get_the_term_list( $post->ID, 'flavors', true ) ) {
-            $wpd_flavor = '<tr><td><span>' . esc_html__( 'Flavors', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'flavors', '', ', ', '' ) . '</td></tr>';
+            $wpd_flavor = '<tr><td><span>' . esc_html__( 'Flavors', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'flavors', '', ', ', '' ) . '</td></tr>';
         }
 
         if ( get_the_term_list( $post->ID, 'effects', true ) ) {
-            $wpd_effect = '<tr><td><span>' . esc_html__( 'Effects', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'effects', '', ', ', '' ) . '</td></tr>';
+            $wpd_effect = '<tr><td><span>' . esc_html__( 'Effects', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'effects', '', ', ', '' ) . '</td></tr>';
         }
 
         if ( get_the_term_list( $post->ID, 'symptoms', true ) ) {
-            $wpd_symptom = '<tr><td><span>' . esc_html__( 'Symptoms', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'symptoms', '', ', ', '' ) . '</td></tr>';
+            $wpd_symptom = '<tr><td><span>' . esc_html__( 'Symptoms', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'symptoms', '', ', ', '' ) . '</td></tr>';
         }
 
         if ( get_the_term_list( $post->ID, 'conditions', true ) ) {
-            $wpd_condition = '<tr><td><span>' . esc_html__( 'Conditions', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'conditions', '', ', ', '' ) . '</td></tr>';
+            $wpd_condition = '<tr><td><span>' . esc_html__( 'Conditions', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'conditions', '', ', ', '' ) . '</td></tr>';
         }
 
         if ( get_the_term_list( $post->ID, 'ingredients', true ) ) {
-            $wpd_ingredients = '<tr><td><span>' . esc_html__( 'Ingredients', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'ingredients', '', ', ', '' ) . '</td></tr>';
+            $wpd_ingredients = '<tr><td><span>' . esc_html__( 'Ingredients', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'ingredients', '', ', ', '' ) . '</td></tr>';
         }
 
         if ( get_the_term_list( $post->ID, 'allergens', true ) ) {
-            $wpd_allergens = '<tr><td><span>' . esc_html__( 'Allergens', 'wp-dispensary' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'allergens', '', ', ', '' ) . '</td></tr>';
+            $wpd_allergens = '<tr><td><span>' . esc_html__( 'Allergens', 'cannabiz-menu' ) . '</span></td><td>' . get_the_term_list( $post->ID, 'allergens', '', ', ', '' ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'activation_time', true ) ) {
-            $activation_time = '<tr><td><span>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'activation_time', true ) . '</td></tr>';
+            $activation_time = '<tr><td><span>' . esc_html__( 'Activation time', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'activation_time', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_sku', true ) ) {
-            $wpd_sku = '<tr><td><span>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_sku', true ) . '</td></tr>';
+            $wpd_sku = '<tr><td><span>' . esc_html__( 'SKU', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_sku', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'harvest_date', true ) ) {
-            $harvest_date = '<tr><td><span>' . esc_html__( 'Harvest date', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'harvest_date', true ) . '</td></tr>';
+            $harvest_date = '<tr><td><span>' . esc_html__( 'Harvest date', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'harvest_date', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'test_date', true ) ) {
-            $test_date = '<tr><td><span>' . esc_html__( 'Test date', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_date', true ) . '</td></tr>';
+            $test_date = '<tr><td><span>' . esc_html__( 'Test date', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_date', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'test_lab', true ) ) {
-            $test_lab = '<tr><td><span>' . esc_html__( 'Test lab', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_lab', true ) . '</td></tr>';
+            $test_lab = '<tr><td><span>' . esc_html__( 'Test lab', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'test_lab', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'package_id', true ) ) {
-            $package_id = '<tr><td><span>' . esc_html__( 'Package ID', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'package_id', true ) . '</td></tr>';
+            $package_id = '<tr><td><span>' . esc_html__( 'Package ID', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'package_id', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_thc', true ) ) {
-            $wpd_thc         = '<td><span>' . esc_html__( 'THC', 'wp-dispensary' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . '%</td>';
-            $wpd_thc_mg      = '<tr><td><span>' . esc_html__( 'THC mg per serving', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . '</td></tr>';
-            $wpd_thc_topical = '<tr><td><span>' . esc_html__( 'THC', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . 'mg</td></tr>';
+            $wpd_thc         = '<td><span>' . esc_html__( 'THC', 'cannabiz-menu' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . '%</td>';
+            $wpd_thc_mg      = '<tr><td><span>' . esc_html__( 'THC mg per serving', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . '</td></tr>';
+            $wpd_thc_topical = '<tr><td><span>' . esc_html__( 'THC', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_thc', true ) . 'mg</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_thca', true ) ) {
-            $wpd_thca = '<td><span>' . esc_html__( 'THCA', 'wp-dispensary' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_thca', true ) . '%</td>';
+            $wpd_thca = '<td><span>' . esc_html__( 'THCA', 'cannabiz-menu' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_thca', true ) . '%</td>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_cbd', true ) ) {
-            $wpd_cbd         = '<td><span>' . esc_html__( 'CBD', 'wp-dispensary' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cbd', true ) . '%</td>';
-            $wpd_cbd_mg      = '<tr><td><span>' . esc_html__( 'CBD mg per serving', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_cbd', true ) . '</td></tr>';
-            $wpd_cbd_topical = '<tr><td><span>' . esc_html__( 'CBD', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_cbd', true ) . 'mg</td></tr>';
+            $wpd_cbd         = '<td><span>' . esc_html__( 'CBD', 'cannabiz-menu' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cbd', true ) . '%</td>';
+            $wpd_cbd_mg      = '<tr><td><span>' . esc_html__( 'CBD mg per serving', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_cbd', true ) . '</td></tr>';
+            $wpd_cbd_topical = '<tr><td><span>' . esc_html__( 'CBD', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'compounds_cbd', true ) . 'mg</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_cba', true ) ) {
-            $wpd_cba = '<td><span>' . esc_html__( 'CBA', 'wp-dispensary' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cba', true ) . '%</td>';
+            $wpd_cba = '<td><span>' . esc_html__( 'CBA', 'cannabiz-menu' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cba', true ) . '%</td>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_cbn', true ) ) {
-            $wpd_cbn = '<td><span>' . esc_html__( 'CBN', 'wp-dispensary' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cbn', true ) . '%</td>';
+            $wpd_cbn = '<td><span>' . esc_html__( 'CBN', 'cannabiz-menu' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cbn', true ) . '%</td>';
         }
 
         if ( get_post_meta( get_the_ID(), 'compounds_cbg', true ) ) {
-            $wpd_cbg = '<td><span>' . esc_html__( 'CBG', 'wp-dispensary' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cbg', true ) . '%</td>';
+            $wpd_cbg = '<td><span>' . esc_html__( 'CBG', 'cannabiz-menu' ) . '</span>' . get_post_meta( get_the_id(), 'compounds_cbg', true ) . '%</td>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_servings', true ) ) {
-            $wpd_servings = '<tr><td><span>' . esc_html__( 'Servings', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_servings', true ) . '</td></tr>';
+            $wpd_servings = '<tr><td><span>' . esc_html__( 'Servings', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_servings', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_net_weight', true ) ) {
-            $wpd_net_weight = '<tr><td><span>' . esc_html__( 'Net weight', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_net_weight', true ) . 'g</td></tr>';
+            $wpd_net_weight = '<tr><td><span>' . esc_html__( 'Net weight', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_net_weight', true ) . 'g</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_size', true ) ) {
-            $wpd_size_topical = '<tr><td><span>' . esc_html__( 'Size', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_size', true ) . ' (oz)</td></tr>';
+            $wpd_size_topical = '<tr><td><span>' . esc_html__( 'Size', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_size', true ) . ' (oz)</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'seed_count', true ) ) {
-            $wpd_seed_count = '<tr><td><span>' . esc_html__( 'Seeds per unit', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'seed_count', true ) . '</td></tr>';
+            $wpd_seed_count = '<tr><td><span>' . esc_html__( 'Seeds per unit', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'seed_count', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'clone_count', true ) ) {
-            $wpd_clone_count = '<tr><td><span>' . esc_html__( 'Clones per unit', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'clone_count', true ) . '</td></tr>';
+            $wpd_clone_count = '<tr><td><span>' . esc_html__( 'Clones per unit', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'clone_count', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_origin', true ) ) {
-            $wpd_clone_origin = '<tr><td><span>' . esc_html__( 'Origin', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_origin', true ) . '</td></tr>';
+            $wpd_clone_origin = '<tr><td><span>' . esc_html__( 'Origin', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_origin', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_time', true ) ) {
-            $wpd_clone_time = '<tr><td><span>' . esc_html__( 'Grow time', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_time', true ) . '</td></tr>';
+            $wpd_clone_time = '<tr><td><span>' . esc_html__( 'Grow time', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_time', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_yield', true ) ) {
-            $clone_yield = '<tr><td><span>' . esc_html__( 'Yield', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_yield', true ) . '</td></tr>';
+            $clone_yield = '<tr><td><span>' . esc_html__( 'Yield', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_yield', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_difficulty', true ) ) {
-            $clone_difficulty = '<tr><td><span>' . esc_html__( 'Difficulty', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_difficulty', true ) . '</td></tr>';
+            $clone_difficulty = '<tr><td><span>' . esc_html__( 'Difficulty', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_difficulty', true ) . '</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_weight', true ) ) {
-            $wpd_preroll_weight = '<tr><td><span>' . esc_html__( 'Weight', 'wp-dispensary' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_weight', true ) . 'g</td></tr>';
+            $wpd_preroll_weight = '<tr><td><span>' . esc_html__( 'Weight', 'cannabiz-menu' ) . '</span></td><td>' . get_post_meta( get_the_id(), 'product_weight', true ) . 'g</td></tr>';
         }
 
         if ( get_post_meta( get_the_ID(), 'product_flower', true ) ) {
             $preroll_flower = get_post_meta( get_the_id(), 'product_flower', true );
-            $wpd_preroll    = '<tr><td><span>' . esc_html__( 'Flower', 'wp-dispensary' ) . '</span></td><td><a href=' . get_permalink( $preroll_flower ) . '>' . get_the_title( $preroll_flower ) . '</a></td></tr>';
+            $wpd_preroll    = '<tr><td><span>' . esc_html__( 'Flower', 'cannabiz-menu' ) . '</span></td><td><a href=' . get_permalink( $preroll_flower ) . '>' . get_the_title( $preroll_flower ) . '</a></td></tr>';
             $grower_flower  = get_post_meta( get_the_id(), 'product_flower', true );
-            $wpd_grower     = '<tr><td><span>' . esc_html__( 'Flower', 'wp-dispensary' ) . '</span></td><td><a href=' . get_permalink( $grower_flower ) . '>' . get_the_title( $grower_flower ) . '</a></td></tr>';
+            $wpd_grower     = '<tr><td><span>' . esc_html__( 'Flower', 'cannabiz-menu' ) . '</span></td><td><a href=' . get_permalink( $grower_flower ) . '>' . get_the_title( $grower_flower ) . '</a></td></tr>';
         }
 
         /**
@@ -327,7 +327,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
             } else {
                 $warning_image = '';
             }
-            $warning_message = '<div class="wpd-warning"><div class="warning-image"><img src=' . $warning_image . '" alt="' . esc_attr__( 'Warning Label', 'wp-dispensary' ) . '" /></div><div class="warning-text">' . $wpd_settings['wpd_details_product_warning'] . '</div></div>';
+            $warning_message = '<div class="wpd-warning"><div class="warning-image"><img src=' . $warning_image . '" alt="' . esc_attr__( 'Warning Label', 'cannabiz-menu' ) . '" /></div><div class="warning-text">' . $wpd_settings['wpd_details_product_warning'] . '</div></div>';
         } else {
             $warning_message = '';
         }
@@ -359,11 +359,11 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
 
                 // Add total compounds.
                 if ( get_post_meta( get_the_ID(), 'compounds_total', true ) ) {
-                    $showcompounds .= '<td><strong>' . esc_html__( 'TOTAL', 'wp-dispensary' ) . '</strong> ' . get_post_meta( get_the_ID(), 'compounds_total', true ) . '%</td>';
+                    $showcompounds .= '<td><strong>' . esc_html__( 'TOTAL', 'cannabiz-menu' ) . '</strong> ' . get_post_meta( get_the_ID(), 'compounds_total', true ) . '%</td>';
                 }
 
                 // Create compounds table.
-                $details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . esc_html__( 'Compounds', 'wp-dispensary' ) . '</td></tr><tr>' . $showcompounds . '</tr></table>';
+                $details_compounds = '<table class="wpdispensary-table single details compound-details"><tr><td class="wpdispensary-title" colspan="6">' . esc_html__( 'Compounds', 'cannabiz-menu' ) . '</td></tr><tr>' . $showcompounds . '</tr></table>';
 
                 if ( ! is_plugin_active( 'wpd-ecommerce/wpd-ecommerce.php' ) ) {
                     if ( ! isset( $wpd_settings['wpd_hide_compounds'] ) || 'on' !== $wpd_settings['wpd_hide_compounds'] ) {
@@ -409,15 +409,15 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
          * Setting up WP Dispensary menu pricing data
          */
         if ( get_post_meta( get_the_ID(), 'price_each', true ) ) {
-            $price_each     = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
-            $price_per_unit = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
+            $price_each     = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'cannabiz-menu' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
+            $price_per_unit = '<tr class="priceeach"><td><span>' . esc_attr__( 'Price each:', 'cannabiz-menu' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_id(), 'price_each', true ) . '</td></tr>';
         } else {
             $price_each     = '';
             $price_per_unit = '';
         }
 
         if ( get_post_meta( get_the_ID(), 'price_per_pack', true ) ) {
-            $price_per_pack = '<tr class="priceeach"><td><span>' . get_post_meta( get_the_ID(), 'units_per_pack', true ) . ' ' . esc_html__( 'per pack:', 'wp-dispensary' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_ID(), 'price_per_pack', true ) . '</td></tr>';
+            $price_per_pack = '<tr class="priceeach"><td><span>' . get_post_meta( get_the_ID(), 'units_per_pack', true ) . ' ' . esc_html__( 'per pack:', 'cannabiz-menu' ) . '</span></td><td>' . wpd_currency_code() . get_post_meta( get_the_ID(), 'price_per_pack', true ) . '</td></tr>';
         } else {
             $price_per_pack = '';
         }

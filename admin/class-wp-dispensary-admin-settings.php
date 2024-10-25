@@ -154,15 +154,15 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
         public function wpd_admin_menu() {
             // Add menu page.
             add_menu_page(
-                esc_html__( 'WP Dispensary', 'wp-dispensary' ),
-                esc_html__( 'WP Dispensary', 'wp-dispensary' ),
+                esc_html__( 'WP Dispensary', 'cannabiz-menu' ),
+                esc_html__( 'WP Dispensary', 'cannabiz-menu' ),
                 'manage_options',
                 'wpd-settings',
                 array( $this, 'wp_dispensary_create_admin_page' ),
                 'none',
                 3
             );
-            add_submenu_page( 'wpd-settings', esc_html__( 'WP Dispensary Settings', 'wp-dispensary' ), esc_html__( 'Settings', 'wp-dispensary' ), 'manage_options', 'wpd-settings' );
+            add_submenu_page( 'wpd-settings', esc_html__( 'WP Dispensary Settings', 'cannabiz-menu' ), esc_html__( 'Settings', 'cannabiz-menu' ), 'manage_options', 'wpd-settings' );
         }
         /**
          * Crete admin page
@@ -748,7 +748,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
             $value    = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
             $size     = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
             $the_id = $args['section'] . '[' . $args['id'] . ']';
-            $label    = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : esc_html__( 'Choose File', 'wp-dispensary' );
+            $label    = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : esc_html__( 'Choose File', 'cannabiz-menu' );
             $html     = sprintf( '<input type="text" class="%1$s-text wpds-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
             $html    .= '<input type="button" class="button wpds-browse" value="' . $label . '" />';
             $html    .= $this->get_field_description( $args );
@@ -767,7 +767,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
             $the_id = $args['section'] . '[' . $args['id'] . ']';
             $label  = isset( $args['options']['button_label'] ) ?
             $args['options']['button_label'] :
-            esc_html__( 'Choose Image', 'wp-dispensary' );
+            esc_html__( 'Choose Image', 'cannabiz-menu' );
             $html  = sprintf( '<input type="text" class="%1$s-text wpds-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
             $html .= '<input type="button" class="button wpds-browse" value="' . $label . '" />';
             $html .= $this->get_field_description( $args );

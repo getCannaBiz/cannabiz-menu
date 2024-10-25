@@ -29,7 +29,7 @@ function wp_dispensary_product_details_metabox() {
     // Add Metabox.
     add_meta_box(
         'wp_dispensary_product_details',
-        esc_attr__( 'Product Details', 'wp-dispensary' ),
+        esc_attr__( 'Product Details', 'cannabiz-menu' ),
         'wp_dispensary_product_details_metabox_content',
         'products',
         'normal',
@@ -202,21 +202,21 @@ function wp_dispensary_product_details_array( $product_details = array() ) {
 
     // Details array.
     $details = array(
-        'activation_time'     => '<div class="input-field"><p>' . esc_html__( 'Activation time', 'wp-dispensary' ) . '</p><input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" /></div>',
-        'product_sku'         => '<div class="input-field"><p>' . esc_html__( 'SKU', 'wp-dispensary' ) . '</p><input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" /></div>',
-        'harvest_date'        => '<div class="input-field"><p>' . esc_html__( 'Harvest date', 'wp-dispensary' ) . '</p><input type="date" name="harvest_date" value="' . esc_html( $harvest_date ) . '" class="widefat" /></div>',
-        'test_date'           => '<div class="input-field"><p>' . esc_html__( 'Test date', 'wp-dispensary' ) . '</p><input type="date" name="test_date" value="' . esc_html( $test_date ) . '" class="widefat" /></div>',
-        'test_lab'            => '<div class="input-field"><p>' . esc_html__( 'Test lab', 'wp-dispensary' ) . '</p><input type="text" name="test_lab" value="' . esc_html( $test_lab ) . '" class="widefat" /></div>',
-        'package_id'          => '<div class="input-field"><p>' . esc_html__( 'Package ID', 'wp-dispensary' ) . '</p><input type="text" name="package_id" value="' . esc_html( $package_id ) . '" class="widefat" /></div>',
-        'compounds_thc'       => '<div class="input-field"><p>' . esc_html__( 'THC per serving', 'wp-dispensary' ) . '</p><input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" /></div>',
-        'compounds_cbd'       => '<div class="input-field"><p>' . esc_html__( 'CBD per serving', 'wp-dispensary' ) . '</p><input type="text" name="compounds_cbd" value="' . esc_html( $cbdmg ) . '" class="widefat" /></div>',
-        'product_size'        => '<div class="input-field"><p>' . esc_html__( 'Size (oz)', 'wp-dispensary' ) . '</p><input type="text" name="product_size" value="' . esc_html( $product_size ) . '" class="widefat" /></div>',
-        'product_servings'    => '<div class="input-field"><p>' . esc_html__( 'Servings', 'wp-dispensary' ) . '</p><input type="text" name="product_servings" value="' . esc_html( $thccbdservings ) . '" class="widefat" /></div>',
-        'product_servings_ml' => '<div class="input-field"><p>' . esc_attr__( 'mL per serving', 'wp-dispensary' ) . '</p><input type="text" name="product_servings_ml" value="' . esc_html( $mlserving ) . '" class="widefat" /></div>',
-        'product_net_weight'  => '<div class="input-field"><p>' . esc_html__( 'Net weight', 'wp-dispensary' ) . '</p><input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" /></div>',
-        'product_weight'      => '<div class="input-field"><p>' . esc_html__( 'Weight (g)', 'wp-dispensary' ) . '</p><input type="text" name="product_weight" value="' . esc_html( $product_weight ) . '" class="widefat" /></div>',
-        'seed_count'          => '<div class="input-field"><p>' . esc_html__( 'Seeds per unit', 'wp-dispensary' ) . '</p><input type="text" name="seed_count" value="' . esc_html( $seedcount ) . '" class="widefat" /></div>',
-        'clone_count'         => '<div class="input-field"><p>' . esc_html__( 'Clones per unit', 'wp-dispensary' ) . '</p><input type="text" name="clone_count" value="' . esc_html( $clonecount ) . '" class="widefat" /></div>',
+        'activation_time'     => '<div class="input-field"><p>' . esc_html__( 'Activation time', 'cannabiz-menu' ) . '</p><input type="text" name="activation_time" value="' . esc_html( $activation_time ) . '" class="widefat" /></div>',
+        'product_sku'         => '<div class="input-field"><p>' . esc_html__( 'SKU', 'cannabiz-menu' ) . '</p><input type="text" name="product_sku" value="' . esc_html( $product_sku ) . '" class="widefat" /></div>',
+        'harvest_date'        => '<div class="input-field"><p>' . esc_html__( 'Harvest date', 'cannabiz-menu' ) . '</p><input type="date" name="harvest_date" value="' . esc_html( $harvest_date ) . '" class="widefat" /></div>',
+        'test_date'           => '<div class="input-field"><p>' . esc_html__( 'Test date', 'cannabiz-menu' ) . '</p><input type="date" name="test_date" value="' . esc_html( $test_date ) . '" class="widefat" /></div>',
+        'test_lab'            => '<div class="input-field"><p>' . esc_html__( 'Test lab', 'cannabiz-menu' ) . '</p><input type="text" name="test_lab" value="' . esc_html( $test_lab ) . '" class="widefat" /></div>',
+        'package_id'          => '<div class="input-field"><p>' . esc_html__( 'Package ID', 'cannabiz-menu' ) . '</p><input type="text" name="package_id" value="' . esc_html( $package_id ) . '" class="widefat" /></div>',
+        'compounds_thc'       => '<div class="input-field"><p>' . esc_html__( 'THC per serving', 'cannabiz-menu' ) . '</p><input type="text" name="compounds_thc" value="' . esc_html( $thcmg ) . '" class="widefat" /></div>',
+        'compounds_cbd'       => '<div class="input-field"><p>' . esc_html__( 'CBD per serving', 'cannabiz-menu' ) . '</p><input type="text" name="compounds_cbd" value="' . esc_html( $cbdmg ) . '" class="widefat" /></div>',
+        'product_size'        => '<div class="input-field"><p>' . esc_html__( 'Size (oz)', 'cannabiz-menu' ) . '</p><input type="text" name="product_size" value="' . esc_html( $product_size ) . '" class="widefat" /></div>',
+        'product_servings'    => '<div class="input-field"><p>' . esc_html__( 'Servings', 'cannabiz-menu' ) . '</p><input type="text" name="product_servings" value="' . esc_html( $thccbdservings ) . '" class="widefat" /></div>',
+        'product_servings_ml' => '<div class="input-field"><p>' . esc_attr__( 'mL per serving', 'cannabiz-menu' ) . '</p><input type="text" name="product_servings_ml" value="' . esc_html( $mlserving ) . '" class="widefat" /></div>',
+        'product_net_weight'  => '<div class="input-field"><p>' . esc_html__( 'Net weight', 'cannabiz-menu' ) . '</p><input type="text" name="product_net_weight" value="' . esc_html( $netweight ) . '" class="widefat" /></div>',
+        'product_weight'      => '<div class="input-field"><p>' . esc_html__( 'Weight (g)', 'cannabiz-menu' ) . '</p><input type="text" name="product_weight" value="' . esc_html( $product_weight ) . '" class="widefat" /></div>',
+        'seed_count'          => '<div class="input-field"><p>' . esc_html__( 'Seeds per unit', 'cannabiz-menu' ) . '</p><input type="text" name="seed_count" value="' . esc_html( $seedcount ) . '" class="widefat" /></div>',
+        'clone_count'         => '<div class="input-field"><p>' . esc_html__( 'Clones per unit', 'cannabiz-menu' ) . '</p><input type="text" name="clone_count" value="' . esc_html( $clonecount ) . '" class="widefat" /></div>',
     );
 
     // Create empty string.

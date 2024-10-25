@@ -28,22 +28,22 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_allergens_taxonomy() {
 
     $labels = array(
-        'name'                       => _x( 'Allergens', 'general name', 'wp-dispensary' ),
-        'singular_name'              => _x( 'Allergen', 'singular name', 'wp-dispensary' ),
-        'search_items'               => esc_html__( 'Search Allergens', 'wp-dispensary' ),
-        'popular_items'              => esc_html__( 'Popular Allergens', 'wp-dispensary' ),
-        'all_items'                  => esc_html__( 'All Allergens', 'wp-dispensary' ),
+        'name'                       => _x( 'Allergens', 'general name', 'cannabiz-menu' ),
+        'singular_name'              => _x( 'Allergen', 'singular name', 'cannabiz-menu' ),
+        'search_items'               => esc_html__( 'Search Allergens', 'cannabiz-menu' ),
+        'popular_items'              => esc_html__( 'Popular Allergens', 'cannabiz-menu' ),
+        'all_items'                  => esc_html__( 'All Allergens', 'cannabiz-menu' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => esc_html__( 'Edit Allergen', 'wp-dispensary' ),
-        'update_item'                => esc_html__( 'Update Allergen', 'wp-dispensary' ),
-        'add_new_item'               => esc_html__( 'Add New Allergen', 'wp-dispensary' ),
-        'new_item_name'              => esc_html__( 'New Allergen Name', 'wp-dispensary' ),
-        'separate_items_with_commas' => esc_html__( 'Separate allergens with commas', 'wp-dispensary' ),
-        'add_or_remove_items'        => esc_html__( 'Add or remove allergens', 'wp-dispensary' ),
-        'choose_from_most_used'      => esc_html__( 'Choose from the most used allergens', 'wp-dispensary' ),
-        'not_found'                  => esc_html__( 'No allergens found', 'wp-dispensary' ),
-        'menu_name'                  => esc_html__( 'Allergens', 'wp-dispensary' ),
+        'edit_item'                  => esc_html__( 'Edit Allergen', 'cannabiz-menu' ),
+        'update_item'                => esc_html__( 'Update Allergen', 'cannabiz-menu' ),
+        'add_new_item'               => esc_html__( 'Add New Allergen', 'cannabiz-menu' ),
+        'new_item_name'              => esc_html__( 'New Allergen Name', 'cannabiz-menu' ),
+        'separate_items_with_commas' => esc_html__( 'Separate allergens with commas', 'cannabiz-menu' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove allergens', 'cannabiz-menu' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used allergens', 'cannabiz-menu' ),
+        'not_found'                  => esc_html__( 'No allergens found', 'cannabiz-menu' ),
+        'menu_name'                  => esc_html__( 'Allergens', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'allergens', 'products', array(

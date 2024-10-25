@@ -28,22 +28,22 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_symptoms_taxonomy() {
 
     $labels = array(
-        'name'                       => _x( 'Symptoms', 'general name', 'wp-dispensary' ),
-        'singular_name'              => _x( 'Symptom', 'singular name', 'wp-dispensary' ),
-        'search_items'               => esc_html__( 'Search Symptoms', 'wp-dispensary' ),
-        'popular_items'              => esc_html__( 'Popular Symptoms', 'wp-dispensary' ),
-        'all_items'                  => esc_html__( 'All Symptoms', 'wp-dispensary' ),
+        'name'                       => _x( 'Symptoms', 'general name', 'cannabiz-menu' ),
+        'singular_name'              => _x( 'Symptom', 'singular name', 'cannabiz-menu' ),
+        'search_items'               => esc_html__( 'Search Symptoms', 'cannabiz-menu' ),
+        'popular_items'              => esc_html__( 'Popular Symptoms', 'cannabiz-menu' ),
+        'all_items'                  => esc_html__( 'All Symptoms', 'cannabiz-menu' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => esc_html__( 'Edit Symptom', 'wp-dispensary' ),
-        'update_item'                => esc_html__( 'Update Symptom', 'wp-dispensary' ),
-        'add_new_item'               => esc_html__( 'Add New Symptom', 'wp-dispensary' ),
-        'new_item_name'              => esc_html__( 'New Symptom Name', 'wp-dispensary' ),
-        'separate_items_with_commas' => esc_html__( 'Separate symptoms with commas', 'wp-dispensary' ),
-        'add_or_remove_items'        => esc_html__( 'Add or remove symptoms', 'wp-dispensary' ),
-        'choose_from_most_used'      => esc_html__( 'Choose from the most used symptoms', 'wp-dispensary' ),
-        'not_found'                  => esc_html__( 'No symptoms found', 'wp-dispensary' ),
-        'menu_name'                  => esc_html__( 'Symptoms', 'wp-dispensary' ),
+        'edit_item'                  => esc_html__( 'Edit Symptom', 'cannabiz-menu' ),
+        'update_item'                => esc_html__( 'Update Symptom', 'cannabiz-menu' ),
+        'add_new_item'               => esc_html__( 'Add New Symptom', 'cannabiz-menu' ),
+        'new_item_name'              => esc_html__( 'New Symptom Name', 'cannabiz-menu' ),
+        'separate_items_with_commas' => esc_html__( 'Separate symptoms with commas', 'cannabiz-menu' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove symptoms', 'cannabiz-menu' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used symptoms', 'cannabiz-menu' ),
+        'not_found'                  => esc_html__( 'No symptoms found', 'cannabiz-menu' ),
+        'menu_name'                  => esc_html__( 'Symptoms', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'symptoms', 'products', array(

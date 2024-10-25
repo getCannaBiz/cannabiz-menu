@@ -28,7 +28,7 @@ function wpd_add_custom_html_column_to_admin_screen() {
     // Add thumb column.
     $product_columns->add_column( 'featured_thumb',
         array(
-            'label' => esc_html__( 'Image', 'wp-dispensary' ),
+            'label' => esc_html__( 'Image', 'cannabiz-menu' ),
             'type'  => 'thumb',
             'order' => '-13',
             'size'  => array( '36', '36' )
@@ -38,7 +38,7 @@ function wpd_add_custom_html_column_to_admin_screen() {
     // Add thumb column.
     $product_columns->add_column( 'custom_html',
         array(
-            'label' => esc_html__( 'Ratings', 'wp-dispensary' ),
+            'label' => esc_html__( 'Ratings', 'cannabiz-menu' ),
             'type'  => 'custom_html',
             'order' => '12',
             'html'  => '' // pass empty to utilize filter below
@@ -182,7 +182,7 @@ function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
         }
         ?>
         <select name="PRODUCT_TYPE_FIELD_VALUE">
-        <option value=""><?php esc_html_e( 'All Types', 'wp-dispensary' ); ?></option>
+        <option value=""><?php esc_html_e( 'All Types', 'cannabiz-menu' ); ?></option>
         <?php
         $current_v = null !== filter_input( INPUT_GET, 'PRODUCT_TYPE_FIELD_VALUE' ) ? filter_input( INPUT_GET, 'PRODUCT_TYPE_FIELD_VALUE' ) : '';
         foreach ( $values as $label => $value ) {

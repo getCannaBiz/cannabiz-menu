@@ -22,18 +22,18 @@
 function wp_dispensary_deprecated_categories() {
 
     $labels = array(
-        'name'              => _x( 'Categories', 'taxonomy general name', 'wp-dispensary' ),
-        'singular_name'     => _x( 'Category', 'taxonomy singular name', 'wp-dispensary' ),
-        'search_items'      => esc_html__( 'Search Categories', 'wp-dispensary' ),
-        'all_items'         => esc_html__( 'All Categories', 'wp-dispensary' ),
-        'parent_item'       => esc_html__( 'Parent Category', 'wp-dispensary' ),
-        'parent_item_colon' => esc_html__( 'Parent Category:', 'wp-dispensary' ),
-        'edit_item'         => esc_html__( 'Edit Category', 'wp-dispensary' ),
-        'update_item'       => esc_html__( 'Update Category', 'wp-dispensary' ),
-        'add_new_item'      => esc_html__( 'Add New Category', 'wp-dispensary' ),
-        'new_item_name'     => esc_html__( 'New Category Name', 'wp-dispensary' ),
-        'not_found'         => esc_html__( 'No categories found', 'wp-dispensary' ),
-        'menu_name'         => esc_html__( 'Categories', 'wp-dispensary' ),
+        'name'              => _x( 'Categories', 'taxonomy general name', 'cannabiz-menu' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name', 'cannabiz-menu' ),
+        'search_items'      => esc_html__( 'Search Categories', 'cannabiz-menu' ),
+        'all_items'         => esc_html__( 'All Categories', 'cannabiz-menu' ),
+        'parent_item'       => esc_html__( 'Parent Category', 'cannabiz-menu' ),
+        'parent_item_colon' => esc_html__( 'Parent Category:', 'cannabiz-menu' ),
+        'edit_item'         => esc_html__( 'Edit Category', 'cannabiz-menu' ),
+        'update_item'       => esc_html__( 'Update Category', 'cannabiz-menu' ),
+        'add_new_item'      => esc_html__( 'Add New Category', 'cannabiz-menu' ),
+        'new_item_name'     => esc_html__( 'New Category Name', 'cannabiz-menu' ),
+        'not_found'         => esc_html__( 'No categories found', 'cannabiz-menu' ),
+        'menu_name'         => esc_html__( 'Categories', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'flowers_category', 'products', array(

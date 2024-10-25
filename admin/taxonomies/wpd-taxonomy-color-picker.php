@@ -30,10 +30,10 @@ function wp_dispensary_strain_types_color_field( $tag, $taxonomy ) {
     $strain_type_color = get_term_meta( $tag->term_id, 'strain_type_color', true );
     ?>
     <tr class="form-field term-strain-type-color-wrap">
-        <th scope="row"><label for="strain_type_color"><?php esc_attr_e( 'Select a color for this strain type', 'wp-dispensary' ) ?></label></th>
+        <th scope="row"><label for="strain_type_color"><?php esc_attr_e( 'Select a color for this strain type', 'cannabiz-menu' ) ?></label></th>
         <td>
             <input type="text" id="strain_type_color" name="strain_type_color" value="<?php echo esc_attr( $strain_type_color ); ?>" class="strain-type-color-field">
-            <p class="description"><?php esc_attr_e( 'Select a color for this strain type', 'wp-dispensary' ) ?></p>
+            <p class="description"><?php esc_attr_e( 'Select a color for this strain type', 'cannabiz-menu' ) ?></p>
         </td>
     </tr>
     <script>
@@ -81,7 +81,7 @@ add_action( 'admin_enqueue_scripts', 'wp_dispensary_enqueue_color_picker' );
  */
 function wp_dispensary_add_strain_types_color_column( $columns ) {
     $checkbox_column = array_slice( $columns, 0, 1 );
-    $new_columns     = array( 'strain_type_color' => esc_html__( 'Color', 'wp-dispensary' ) );
+    $new_columns     = array( 'strain_type_color' => esc_html__( 'Color', 'cannabiz-menu' ) );
 
     return array_merge( $checkbox_column, $new_columns, array_slice( $columns, 1 ) );
 }

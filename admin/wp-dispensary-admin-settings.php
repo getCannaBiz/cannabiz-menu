@@ -106,7 +106,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
         $wpdas_obj->add_section(
             array(
                 'id'    => 'wpdas_display',
-                'title' => esc_attr__( 'Display', 'wp-dispensary' ),
+                'title' => esc_attr__( 'Display', 'cannabiz-menu' ),
             )
         );
 
@@ -114,7 +114,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
         $wpdas_obj->add_section(
             array(
                 'id'    => 'wpdas_general',
-                'title' => esc_attr__( 'General', 'wp-dispensary' ),
+                'title' => esc_attr__( 'General', 'cannabiz-menu' ),
             )
         );
 
@@ -124,7 +124,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             $wpdas_obj->add_section(
                 array(
                     'id'    => 'wpdas_payments',
-                    'title' => esc_attr__( 'Payments', 'wp-dispensary' ),
+                    'title' => esc_attr__( 'Payments', 'cannabiz-menu' ),
                 )
             );
 
@@ -132,7 +132,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             $wpdas_obj->add_section(
                 array(
                     'id'    => 'wpdas_customers',
-                    'title' => esc_attr__( 'Customers', 'wp-dispensary' ),
+                    'title' => esc_attr__( 'Customers', 'cannabiz-menu' ),
                 )
             );
 
@@ -140,7 +140,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             $wpdas_obj->add_section(
                 array(
                     'id'    => 'wpdas_pages',
-                    'title' => esc_attr__( 'Pages', 'wp-dispensary' ),
+                    'title' => esc_attr__( 'Pages', 'cannabiz-menu' ),
                 )
             );
         }
@@ -151,7 +151,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             $wpdas_obj->add_section(
                 array(
                     'id'    => 'wpdas_drivers',
-                    'title' => esc_attr__( 'Drivers', 'wp-dispensary' ),
+                    'title' => esc_attr__( 'Drivers', 'cannabiz-menu' ),
                 )
             );
         }
@@ -160,7 +160,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
         $wpdas_obj->add_section(
             array(
                 'id'    => 'wpdas_advanced',
-                'title' => esc_attr__( 'Advanced', 'wp-dispensary' ),
+                'title' => esc_attr__( 'Advanced', 'cannabiz-menu' ),
             )
         );
 
@@ -174,7 +174,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'   => 'wpd_settings_advanced_section_title',
                 'type' => 'title',
-                'name' => '<h1>' . esc_attr__( 'Advanced Settings', 'wp-dispensary' ) . '</h1>',
+                'name' => '<h1>' . esc_attr__( 'Advanced Settings', 'cannabiz-menu' ) . '</h1>',
             )
         );
 
@@ -188,15 +188,15 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'      => 'wpd_settings_cookie_lifetime',
                 'type'    => 'select',
-                'name'    => esc_attr__( 'Cookie lifetime', 'wp-dispensary' ),
-                'desc'    => esc_attr__( 'Set the amount of time the shopping cart cookie gets saved to your visitors computer', 'wp-dispensary' ),
+                'name'    => esc_attr__( 'Cookie lifetime', 'cannabiz-menu' ),
+                'desc'    => esc_attr__( 'Set the amount of time the shopping cart cookie gets saved to your visitors computer', 'cannabiz-menu' ),
                 'options' => array(
-                    'half_hour'    => esc_attr__( '1/2 hour', 'wp-dispensary' ),
-                    'one_hour'     => esc_attr__( '1 hour', 'wp-dispensary' ),
-                    'three_hours'  => esc_attr__( '3 hours', 'wp-dispensary' ),
-                    'six_hours'    => esc_attr__( '6 hours', 'wp-dispensary' ),
-                    'twelve_hours' => esc_attr__( '12 hours', 'wp-dispensary' ),
-                    'one_day'      => esc_attr__( '24 hours', 'wp-dispensary' ),
+                    'half_hour'    => esc_attr__( '1/2 hour', 'cannabiz-menu' ),
+                    'one_hour'     => esc_attr__( '1 hour', 'cannabiz-menu' ),
+                    'three_hours'  => esc_attr__( '3 hours', 'cannabiz-menu' ),
+                    'six_hours'    => esc_attr__( '6 hours', 'cannabiz-menu' ),
+                    'twelve_hours' => esc_attr__( '12 hours', 'cannabiz-menu' ),
+                    'one_day'      => esc_attr__( '24 hours', 'cannabiz-menu' ),
                 ),
             )
         );
@@ -211,7 +211,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'   => 'wpd_settings_export_section_title',
                 'type' => 'title',
-                'name' => '<h1>' . esc_attr__( 'Export Data', 'wp-dispensary' ) . '</h1>',
+                'name' => '<h1>' . esc_attr__( 'Export Data', 'cannabiz-menu' ) . '</h1>',
             )
         );
 
@@ -225,8 +225,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'          => 'wpd_settings_export_products_button',
                 'type'        => 'button',
-                'name'        => esc_attr__( 'Products', 'wp-dispensary' ),
-                'button_text' => esc_attr__( 'Export', 'wp-dispensary' ),
+                'name'        => esc_attr__( 'Products', 'cannabiz-menu' ),
+                'button_text' => esc_attr__( 'Export', 'cannabiz-menu' ),
                 'button_url'  => 'admin.php?page=wpd-settings&export_products&_wpnonce=' . wp_create_nonce( 'download_csv' ),
             )
         );
@@ -241,8 +241,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'          => 'wpd_settings_export_orders_button',
                 'type'        => 'button',
-                'name'        => esc_attr__( 'Orders', 'wp-dispensary' ),
-                'button_text' => esc_attr__( 'Export', 'wp-dispensary' ),
+                'name'        => esc_attr__( 'Orders', 'cannabiz-menu' ),
+                'button_text' => esc_attr__( 'Export', 'cannabiz-menu' ),
                 'button_url'  => 'admin.php?page=wpd-settings&export_orders&_wpnonce=' . wp_create_nonce( 'download_csv' ),
             )
         );
@@ -259,8 +259,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'          => 'wpd_settings_export_customersbutton',
                     'type'        => 'button',
-                    'name'        => esc_attr__( 'Customers', 'wp-dispensary' ),
-                    'button_text' => esc_attr__( 'Export', 'wp-dispensary' ),
+                    'name'        => esc_attr__( 'Customers', 'cannabiz-menu' ),
+                    'button_text' => esc_attr__( 'Export', 'cannabiz-menu' ),
                     'button_url'  => 'admin.php?page=wpd-settings&export_customers&_wpnonce=' . wp_create_nonce( 'download_csv' ),
                 )
             );
@@ -278,7 +278,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_pricing_table_title',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'Prices table', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'Prices table', 'cannabiz-menu' ) . '</h1>',
                 )
             );
 
@@ -292,11 +292,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'      => 'wpd_pricing_phrase',
                     'type'    => 'select',
-                    'name'    => esc_attr__( 'Title', 'wp-dispensary' ),
-                    'desc'    => esc_attr__( 'Choose the title you would like used', 'wp-dispensary' ),
+                    'name'    => esc_attr__( 'Title', 'cannabiz-menu' ),
+                    'desc'    => esc_attr__( 'Choose the title you would like used', 'cannabiz-menu' ),
                     'options' => array(
-                        'Price'    => esc_attr__( 'Prices', 'wp-dispensary' ),
-                        'Donation' => esc_attr__( 'Donations', 'wp-dispensary' ),
+                        'Price'    => esc_attr__( 'Prices', 'cannabiz-menu' ),
+                        'Donation' => esc_attr__( 'Donations', 'cannabiz-menu' ),
                     ),
                 )
             );
@@ -312,7 +312,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                     'id'          => 'wpd_pricing_phrase_custom',
                     'type'        => 'text',
                     'name'        => '',
-                    'desc'        => esc_attr__( 'or add a custom title', 'wp-dispensary' ),
+                    'desc'        => esc_attr__( 'or add a custom title', 'cannabiz-menu' ),
                     'placeholder' => '',
                 )
             );
@@ -327,11 +327,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'      => 'wpd_pricing_table_placement',
                     'type'    => 'select',
-                    'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
-                    'desc'    => esc_attr__( 'Where should the pricing display on single menu items?', 'wp-dispensary' ),
+                    'name'    => esc_attr__( 'Display', 'cannabiz-menu' ),
+                    'desc'    => esc_attr__( 'Where should the pricing display on single menu items?', 'cannabiz-menu' ),
                     'options' => array(
-                        'above' => esc_attr__( 'Above Content', 'wp-dispensary' ),
-                        'below' => esc_attr__( 'Below Content', 'wp-dispensary' ),
+                        'above' => esc_attr__( 'Above Content', 'cannabiz-menu' ),
+                        'below' => esc_attr__( 'Below Content', 'cannabiz-menu' ),
                     ),
                 )
             );
@@ -347,7 +347,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                     'id'   => 'wpd_hide_pricing',
                     'type' => 'checkbox',
                     'name' => '',
-                    'desc' => esc_attr__( 'Remove the price table from data output', 'wp-dispensary' ),
+                    'desc' => esc_attr__( 'Remove the price table from data output', 'cannabiz-menu' ),
                 )
             );
 
@@ -375,7 +375,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'   => 'wpd_settings_compounds_table_title',
                 'type' => 'title',
-                'name' => '<h1>' . esc_attr__( 'Compounds table', 'wp-dispensary' ) . '</h1>',
+                'name' => '<h1>' . esc_attr__( 'Compounds table', 'cannabiz-menu' ) . '</h1>',
             )
         );
 
@@ -389,11 +389,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'      => 'wpd_compounds_table_placement',
                 'type'    => 'select',
-                'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
-                'desc'    => esc_attr__( 'Where should the compounds display on single menu items?', 'wp-dispensary' ),
+                'name'    => esc_attr__( 'Display', 'cannabiz-menu' ),
+                'desc'    => esc_attr__( 'Where should the compounds display on single menu items?', 'cannabiz-menu' ),
                 'options' => apply_filters( 'wpd_compounds_table_placement_options', array(
-                    'above' => esc_attr__( 'Above Content', 'wp-dispensary' ),
-                    'below' => esc_attr__( 'Below Content', 'wp-dispensary' ),
+                    'above' => esc_attr__( 'Above Content', 'cannabiz-menu' ),
+                    'below' => esc_attr__( 'Below Content', 'cannabiz-menu' ),
                 ) ),
             )
         );
@@ -409,7 +409,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 'id'   => 'wpd_hide_compounds',
                 'type' => 'checkbox',
                 'name' => '',
-                'desc' => esc_attr__( 'Remove the compounds table from data output', 'wp-dispensary' ),
+                'desc' => esc_attr__( 'Remove the compounds table from data output', 'cannabiz-menu' ),
             )
         );
 
@@ -436,7 +436,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'   => 'wpd_settings_details_table_title',
                 'type' => 'title',
-                'name' => '<h1>' . esc_attr__( 'Details table', 'wp-dispensary' ) . '</h1>',
+                'name' => '<h1>' . esc_attr__( 'Details table', 'cannabiz-menu' ) . '</h1>',
             )
         );
 
@@ -450,11 +450,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'      => 'wpd_details_phrase',
                 'type'    => 'select',
-                'name'    => esc_attr__( 'Title', 'wp-dispensary' ),
-                'desc'    => esc_attr__( 'Choose the title you would like used', 'wp-dispensary' ),
+                'name'    => esc_attr__( 'Title', 'cannabiz-menu' ),
+                'desc'    => esc_attr__( 'Choose the title you would like used', 'cannabiz-menu' ),
                 'options' => array(
-                    'Details'     => esc_attr__( 'Details', 'wp-dispensary' ),
-                    'Information' => esc_attr__( 'Information', 'wp-dispensary' ),
+                    'Details'     => esc_attr__( 'Details', 'cannabiz-menu' ),
+                    'Information' => esc_attr__( 'Information', 'cannabiz-menu' ),
                 ),
             )
         );
@@ -470,7 +470,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 'id'          => 'wpd_details_phrase_custom',
                 'type'        => 'text',
                 'name'        => '',
-                'desc'        => esc_attr__( 'or add a custom title', 'wp-dispensary' ),
+                'desc'        => esc_attr__( 'or add a custom title', 'cannabiz-menu' ),
                 'placeholder' => '',
             )
         );
@@ -485,11 +485,11 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'      => 'wpd_details_table_placement',
                 'type'    => 'select',
-                'name'    => esc_attr__( 'Display', 'wp-dispensary' ),
-                'desc'    => esc_attr__( 'Where should the details display on single menu items?', 'wp-dispensary' ),
+                'name'    => esc_attr__( 'Display', 'cannabiz-menu' ),
+                'desc'    => esc_attr__( 'Where should the details display on single menu items?', 'cannabiz-menu' ),
                 'options' => array(
-                    'above' => esc_attr__( 'Above Content', 'wp-dispensary' ),
-                    'below' => esc_attr__( 'Below Content', 'wp-dispensary' ),
+                    'above' => esc_attr__( 'Above Content', 'cannabiz-menu' ),
+                    'below' => esc_attr__( 'Below Content', 'cannabiz-menu' ),
                 ),
             )
         );
@@ -505,7 +505,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 'id'   => 'wpd_hide_details',
                 'type' => 'checkbox',
                 'name' => '',
-                'desc' => esc_attr__( 'Remove the details table from data output', 'wp-dispensary' ),
+                'desc' => esc_attr__( 'Remove the details table from data output', 'cannabiz-menu' ),
             )
         );
 
@@ -532,7 +532,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'   => 'wpd_settings_warning_message_title',
                 'type' => 'title',
-                'name' => '<h1>' . esc_attr__( 'Warning message', 'wp-dispensary' ) . '</h1>',
+                'name' => '<h1>' . esc_attr__( 'Warning message', 'cannabiz-menu' ) . '</h1>',
             )
         );
 
@@ -547,7 +547,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 'id'          => 'wpd_details_product_warning',
                 'type'        => 'textarea',
                 'name'        => 'Warning',
-                'desc'        => esc_attr__( 'Add a warning message to the bottom of all product pages', 'wp-dispensary' ),
+                'desc'        => esc_attr__( 'Add a warning message to the bottom of all product pages', 'cannabiz-menu' ),
                 'placeholder' => '',
             )
         );
@@ -563,7 +563,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 'id'   => 'wpd_details_product_warning_image',
                 'type' => 'image',
                 'name' => '',
-                'desc' => esc_attr__( 'Remove the warning message from data output', 'wp-dispensary' ),
+                'desc' => esc_attr__( 'Remove the warning message from data output', 'cannabiz-menu' ),
             )
         );
 
@@ -578,7 +578,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 'id'   => 'wpd_hide_warning',
                 'type' => 'checkbox',
                 'name' => '',
-                'desc' => esc_attr__( 'Remove the warning message from data output', 'wp-dispensary' ),
+                'desc' => esc_attr__( 'Remove the warning message from data output', 'cannabiz-menu' ),
             )
         );
 
@@ -594,7 +594,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_store_general',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'General', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'General', 'cannabiz-menu' ) . '</h1>',
                 )
             );
         }
@@ -609,8 +609,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
             array(
                 'id'      => 'wpd_pricing_currency_code',
                 'type'    => 'select',
-                'name'    => esc_attr__( 'Currency', 'wp-dispensary' ),
-                'desc'    => esc_attr__( 'Select the currency symbol you would like to use', 'wp-dispensary' ),
+                'name'    => esc_attr__( 'Currency', 'cannabiz-menu' ),
+                'desc'    => esc_attr__( 'Select the currency symbol you would like to use', 'cannabiz-menu' ),
                 'options' => wpd_pricing_currency_codes()
             )
         );
@@ -627,7 +627,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_store_taxes',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'Taxes', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'Taxes', 'cannabiz-menu' ) . '</h1>',
                 )
             );
 
@@ -641,9 +641,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'          => 'wpd_ecommerce_sales_tax',
                     'type'        => 'text',
-                    'name'        => esc_attr__( 'Sales tax', 'wp-dispensary' ),
-                    'desc'        => esc_attr__( 'Apply sales tax to orders (%)', 'wp-dispensary' ),
-                    'placeholder' => esc_attr__( '6', 'wp-dispensary' ),
+                    'name'        => esc_attr__( 'Sales tax', 'cannabiz-menu' ),
+                    'desc'        => esc_attr__( 'Apply sales tax to orders (%)', 'cannabiz-menu' ),
+                    'placeholder' => esc_attr__( '6', 'cannabiz-menu' ),
                 )
             );
 
@@ -657,9 +657,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'          => 'wpd_ecommerce_excise_tax',
                     'type'        => 'text',
-                    'name'        => esc_attr__( 'Excise tax', 'wp-dispensary' ),
-                    'desc'        => esc_attr__( 'Apply excise tax to orders (%)', 'wp-dispensary' ),
-                    'placeholder' => esc_attr__( '10', 'wp-dispensary' ),
+                    'name'        => esc_attr__( 'Excise tax', 'cannabiz-menu' ),
+                    'desc'        => esc_attr__( 'Apply excise tax to orders (%)', 'cannabiz-menu' ),
+                    'placeholder' => esc_attr__( '10', 'cannabiz-menu' ),
                 )
             );
 
@@ -673,7 +673,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_cart_options',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'Cart', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'Cart', 'cannabiz-menu' ) . '</h1>',
                 )
             );
 
@@ -687,8 +687,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_ecommerce_cart_require_login_to_shop',
                     'type' => 'checkbox',
-                    'name' => esc_attr__( 'Require login to shop', 'wp-dispensary' ),
-                    'desc' => esc_attr__( 'Hide the add to cart functionality for non-logged in users', 'wp-dispensary' ),
+                    'name' => esc_attr__( 'Require login to shop', 'cannabiz-menu' ),
+                    'desc' => esc_attr__( 'Hide the add to cart functionality for non-logged in users', 'cannabiz-menu' ),
                 )
             );
 
@@ -702,7 +702,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_checkout_options',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'Checkout', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'Checkout', 'cannabiz-menu' ) . '</h1>',
                 )
             );
 
@@ -716,9 +716,9 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'          => 'wpd_ecommerce_checkout_minimum_order',
                     'type'        => 'text',
-                    'name'        => esc_attr__( 'Minimum order', 'wp-dispensary' ),
-                    'desc'        => esc_attr__( 'Require a minimum order amount before checkout', 'wp-dispensary' ),
-                    'placeholder' => esc_attr__( 'ex: 50', 'wp-dispensary' ),
+                    'name'        => esc_attr__( 'Minimum order', 'cannabiz-menu' ),
+                    'desc'        => esc_attr__( 'Require a minimum order amount before checkout', 'cannabiz-menu' ),
+                    'placeholder' => esc_attr__( 'ex: 50', 'cannabiz-menu' ),
                 )
             );
 
@@ -734,8 +734,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                     array(
                         'id'   => 'wpd_ecommerce_checkout_coupons',
                         'type' => 'checkbox',
-                        'name' => esc_attr__( 'Coupons', 'wp-dispensary' ),
-                        'desc' => esc_attr__( 'Allow customers to apply a coupon to their order', 'wp-dispensary' ),
+                        'name' => esc_attr__( 'Coupons', 'cannabiz-menu' ),
+                        'desc' => esc_attr__( 'Allow customers to apply a coupon to their order', 'cannabiz-menu' ),
                     )
                 );
             }
@@ -746,10 +746,10 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
              * @since 2.5
              */
             $checkout_payments = array(
-                'cod'      => esc_attr__( 'Cash on delivery', 'wp-dispensary' ),
-                'pop'      => esc_attr__( 'In-store pickup', 'wp-dispensary' ),
-                'curbside' => esc_attr__( 'Curbside pickup', 'wp-dispensary' ),
-                'ground'   => esc_attr__( 'Ground shipping', 'wp-dispensary' ),
+                'cod'      => esc_attr__( 'Cash on delivery', 'cannabiz-menu' ),
+                'pop'      => esc_attr__( 'In-store pickup', 'cannabiz-menu' ),
+                'curbside' => esc_attr__( 'Curbside pickup', 'cannabiz-menu' ),
+                'ground'   => esc_attr__( 'Ground shipping', 'cannabiz-menu' ),
             );
 
             $checkout_payment_options = apply_filters( 'wpd_ecommerce_checkout_payment_options', $checkout_payments );
@@ -780,8 +780,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                     array(
                         'id'   => 'wpd_ecommerce_checkout_payments_' . $id . '_checkbox',
                         'type' => 'checkbox',
-                        'name' => esc_attr__( 'Enable/Disable', 'wp-dispensary' ),
-                        'desc' => esc_attr__( 'Enable ' . $value, 'wp-dispensary' ),
+                        'name' => esc_attr__( 'Enable/Disable', 'cannabiz-menu' ),
+                        'desc' => esc_attr__( 'Enable ' . $value, 'cannabiz-menu' ),
                     )
                 );
 
@@ -795,8 +795,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                     array(
                         'id'          => 'wpd_ecommerce_checkout_payments_' . $id,
                         'type'        => 'text',
-                        'name'        => esc_attr__( 'Charge', 'wp-dispensary' ),
-                        'placeholder' => esc_attr__( '0', 'wp-dispensary' ),
+                        'name'        => esc_attr__( 'Charge', 'cannabiz-menu' ),
+                        'placeholder' => esc_attr__( '0', 'cannabiz-menu' ),
                     )
                 );
 
@@ -812,8 +812,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_ecommerce_checkout_payments_ground_textarea',
                     'type' => 'textarea',
-                    'name' => esc_attr__( 'Instructions', 'wp-dispensary' ),
-                    'desc' => esc_attr__( 'Let the user know how to send payment for the order.', 'wp-dispensary' ),
+                    'name' => esc_attr__( 'Instructions', 'cannabiz-menu' ),
+                    'desc' => esc_attr__( 'Let the user know how to send payment for the order.', 'cannabiz-menu' ),
                 )
             );
 
@@ -827,16 +827,16 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_customers_registration_title',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'Customer Registration', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'Customer Registration', 'cannabiz-menu' ) . '</h1>',
                 )
             );
 
             // Update pages array.
             if ( ! empty( $pages ) ) {
                 $pages_array = $pages_array;
-                array_unshift( $pages_array, esc_attr__( 'Select a page', 'wp-dispensary' ) );
+                array_unshift( $pages_array, esc_attr__( 'Select a page', 'cannabiz-menu' ) );
             } else {
-                $pages_array = array( esc_attr__( 'No pages found', 'wp-dispensary' ) );
+                $pages_array = array( esc_attr__( 'No pages found', 'cannabiz-menu' ) );
             }
 
             /**
@@ -849,8 +849,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'      => 'wpd_settings_customers_registration_redirect',
                     'type'    => 'select',
-                    'name'    => esc_attr__( 'Redirect after registration', 'wp-dispensary' ),
-                    'desc'    => esc_attr__( 'Choose the page customers will be redirected to when registering.', 'wp-dispensary' ),
+                    'name'    => esc_attr__( 'Redirect after registration', 'cannabiz-menu' ),
+                    'desc'    => esc_attr__( 'Choose the page customers will be redirected to when registering.', 'cannabiz-menu' ),
                     'options' => $pages_array,
                 )
             );
@@ -865,7 +865,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_customers_verification_title',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'Customer Verification', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'Customer Verification', 'cannabiz-menu' ) . '</h1>',
                 )
             );
 
@@ -879,8 +879,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_customers_verification_drivers_license',
                     'type' => 'checkbox',
-                    'name' => esc_attr__( 'Drivers license / Valid ID', 'wp-dispensary' ),
-                    'desc' => esc_attr__( 'Hide the drivers license upload from account details', 'wp-dispensary' ),
+                    'name' => esc_attr__( 'Drivers license / Valid ID', 'cannabiz-menu' ),
+                    'desc' => esc_attr__( 'Hide the drivers license upload from account details', 'cannabiz-menu' ),
                 )
             );
 
@@ -894,8 +894,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_customers_verification_recommendation_doc',
                     'type' => 'checkbox',
-                    'name' => esc_attr__( 'Doctor recommendation', 'wp-dispensary' ),
-                    'desc' => esc_attr__( 'Hide the doctor recommendation upload from account details', 'wp-dispensary' ),
+                    'name' => esc_attr__( 'Doctor recommendation', 'cannabiz-menu' ),
+                    'desc' => esc_attr__( 'Hide the doctor recommendation upload from account details', 'cannabiz-menu' ),
                 )
             );
 
@@ -909,8 +909,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_customers_verification_recommendation_num',
                     'type' => 'checkbox',
-                    'name' => esc_attr__( 'Recommendation number', 'wp-dispensary' ),
-                    'desc' => esc_attr__( 'Hide the recommendation number from account details', 'wp-dispensary' ),
+                    'name' => esc_attr__( 'Recommendation number', 'cannabiz-menu' ),
+                    'desc' => esc_attr__( 'Hide the recommendation number from account details', 'cannabiz-menu' ),
                 )
             );
 
@@ -924,8 +924,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_customers_verification_recommendation_exp',
                     'type' => 'checkbox',
-                    'name' => esc_attr__( 'Expiration date', 'wp-dispensary' ),
-                    'desc' => esc_attr__( 'Hide the expiration date from account details', 'wp-dispensary' ),
+                    'name' => esc_attr__( 'Expiration date', 'cannabiz-menu' ),
+                    'desc' => esc_attr__( 'Hide the expiration date from account details', 'cannabiz-menu' ),
                 )
             );
 
@@ -939,7 +939,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'   => 'wpd_settings_checkout_options',
                     'type' => 'title',
-                    'name' => '<h1>' . esc_attr__( 'Page Setup', 'wp-dispensary' ) . '</h1>',
+                    'name' => '<h1>' . esc_attr__( 'Page Setup', 'cannabiz-menu' ) . '</h1>',
                 )
             );
 
@@ -953,8 +953,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'      => 'wpd_pages_setup_menu_page',
                     'type'    => 'select',
-                    'name'    => esc_attr__( 'Menu page', 'wp-dispensary' ),
-                    'desc'    => esc_attr__( 'Page contents [wpd_menu]', 'wp-dispensary' ),
+                    'name'    => esc_attr__( 'Menu page', 'cannabiz-menu' ),
+                    'desc'    => esc_attr__( 'Page contents [wpd_menu]', 'cannabiz-menu' ),
                     'options' => $pages_array,
                 )
             );
@@ -969,8 +969,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'      => 'wpd_pages_setup_cart_page',
                     'type'    => 'select',
-                    'name'    => esc_attr__( 'Cart page', 'wp-dispensary' ),
-                    'desc'    => esc_attr__( 'Page contents [wpd_cart]', 'wp-dispensary' ),
+                    'name'    => esc_attr__( 'Cart page', 'cannabiz-menu' ),
+                    'desc'    => esc_attr__( 'Page contents [wpd_cart]', 'cannabiz-menu' ),
                     'options' => $pages_array,
                 )
             );
@@ -985,8 +985,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'      => 'wpd_pages_setup_checkout_page',
                     'type'    => 'select',
-                    'name'    => esc_attr__( 'Checkout page', 'wp-dispensary' ),
-                    'desc'    => esc_attr__( 'Page contents [wpd_checkout]', 'wp-dispensary' ),
+                    'name'    => esc_attr__( 'Checkout page', 'cannabiz-menu' ),
+                    'desc'    => esc_attr__( 'Page contents [wpd_checkout]', 'cannabiz-menu' ),
                     'options' => $pages_array,
                 )
             );
@@ -1001,8 +1001,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'      => 'wpd_pages_setup_account_page',
                     'type'    => 'select',
-                    'name'    => esc_attr__( 'Account page', 'wp-dispensary' ),
-                    'desc'    => esc_attr__( 'Page contents [wpd_account]', 'wp-dispensary' ),
+                    'name'    => esc_attr__( 'Account page', 'cannabiz-menu' ),
+                    'desc'    => esc_attr__( 'Page contents [wpd_account]', 'cannabiz-menu' ),
                     'options' => $pages_array,
                 )
             );
@@ -1017,8 +1017,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'          => 'wpd_dispatch_phone_number',
                     'type'        => 'text',
-                    'name'        => esc_attr__( 'Dispatch phone number', 'wp-dispensary' ),
-                    'desc'        => esc_attr__( 'Add the phone number to your dispatch center', 'wp-dispensary' ),
+                    'name'        => esc_attr__( 'Dispatch phone number', 'cannabiz-menu' ),
+                    'desc'        => esc_attr__( 'Add the phone number to your dispatch center', 'cannabiz-menu' ),
                     'placeholder' => ''
                 )
             );
@@ -1033,8 +1033,8 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                 array(
                     'id'          => 'wpd_google_maps_api_key',
                     'type'        => 'text',
-                    'name'        => esc_attr__( 'Google Maps API key', 'wp-dispensary' ),
-                    'desc'        => esc_attr__( 'Add a map to the order directions for your drivers', 'wp-dispensary' ),
+                    'name'        => esc_attr__( 'Google Maps API key', 'cannabiz-menu' ),
+                    'desc'        => esc_attr__( 'Add a map to the order directions for your drivers', 'cannabiz-menu' ),
                     'placeholder' => ''
                 )
             );
@@ -1050,7 +1050,7 @@ if ( class_exists( 'WPD_ADMIN_SETTINGS' ) ) {
                     'id'   => 'wpd_google_maps_geocode',
                     'type' => 'checkbox',
                     'name' => '',
-                    'desc' => esc_attr__( 'Enable Google Maps geocode for latitude and longitude', 'wp-dispensary' ),
+                    'desc' => esc_attr__( 'Enable Google Maps geocode for latitude and longitude', 'cannabiz-menu' ),
                 )
             );
 

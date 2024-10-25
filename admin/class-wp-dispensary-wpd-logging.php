@@ -152,7 +152,7 @@ if ( ! class_exists( 'WPD_Logging' ) ) {
          */
         public function register_post_type() {
             $log_args = array(
-                'labels'          => array( 'name' => esc_html__( 'Logs', 'wp-dispensary' ) ),
+                'labels'          => array( 'name' => esc_html__( 'Logs', 'cannabiz-menu' ) ),
                 'public'          => apply_filters( 'wpd_logging_is_public', false ),
                 'query_var'       => false,
                 'rewrite'         => false,

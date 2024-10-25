@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_compound_details_metabox() {
     add_meta_box(
         'wp_dispensary_compound_details',
-        esc_attr__( 'Compound details', 'wp-dispensary' ),
+        esc_attr__( 'Compound details', 'cannabiz-menu' ),
         'wp_dispensary_compound_details_metabox_content',
         'products',
         'normal',
@@ -60,31 +60,31 @@ function wp_dispensary_compound_details_metabox_content() {
 
     // Echo out the fields.
     $html  = '<div class="input-field">';
-    $html .= '<p>' . esc_attr__( 'THC', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<p>' . esc_attr__( 'THC', 'cannabiz-menu' ) . ' %</p>';
     $html .= '<input type="text" name="compounds_thc" value="' . esc_attr( $thc ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_attr__( 'THCA', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<p>' . esc_attr__( 'THCA', 'cannabiz-menu' ) . ' %</p>';
     $html .= '<input type="text" name="compounds_thca" value="' . esc_attr( $thca ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_attr__( 'CBD', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<p>' . esc_attr__( 'CBD', 'cannabiz-menu' ) . ' %</p>';
     $html .= '<input type="text" name="compounds_cbd" value="' . esc_attr( $cbd ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_attr__( 'CBA', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<p>' . esc_attr__( 'CBA', 'cannabiz-menu' ) . ' %</p>';
     $html .= '<input type="text" name="compounds_cba" value="' . esc_attr( $cba ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_attr__( 'CBN', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<p>' . esc_attr__( 'CBN', 'cannabiz-menu' ) . ' %</p>';
     $html .= '<input type="text" name="compounds_cbn" value="' . esc_attr( $cbn ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_attr__( 'CBG', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<p>' . esc_attr__( 'CBG', 'cannabiz-menu' ) . ' %</p>';
     $html .= '<input type="text" name="compounds_cbg" value="' . esc_attr( $cbg ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_attr__( 'Total', 'wp-dispensary' ) . ' %</p>';
+    $html .= '<p>' . esc_attr__( 'Total', 'cannabiz-menu' ) . ' %</p>';
     $html .= '<input type="text" name="compounds_total" value="' . esc_attr( $total ) . '" class="widefat" />';
     $html .= '</div>';
 

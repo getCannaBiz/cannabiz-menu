@@ -45,7 +45,7 @@ function wpd_admin_menu_products() {
  */
 function wpd_admin_menu_categories() {
     // Categories submenu link.
-    add_submenu_page( 'wpd-settings', esc_html__( 'Categories', 'wp-dispensary' ), esc_html__( 'Categories', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=wpd_categories', null );
+    add_submenu_page( 'wpd-settings', esc_html__( 'Categories', 'cannabiz-menu' ), esc_html__( 'Categories', 'cannabiz-menu' ), 'manage_options', 'edit-tags.php?taxonomy=wpd_categories', null );
 }
 
 /**
@@ -56,7 +56,7 @@ function wpd_admin_menu_categories() {
  */
 function wpd_admin_menu_vendors() {
     // Vendors submenu link.
-    add_submenu_page( 'wpd-settings', esc_html__( 'Vendors', 'wp-dispensary' ), esc_html__( 'Vendors', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=vendors', null );
+    add_submenu_page( 'wpd-settings', esc_html__( 'Vendors', 'cannabiz-menu' ), esc_html__( 'Vendors', 'cannabiz-menu' ), 'manage_options', 'edit-tags.php?taxonomy=vendors', null );
 }
 
 /**
@@ -67,7 +67,7 @@ function wpd_admin_menu_vendors() {
  */
 function wpd_admin_menu_strain_types() {
     // Strain types submenu link.
-    add_submenu_page( 'wpd-settings', esc_html__( 'Strain types', 'wp-dispensary' ), esc_html__( 'Strain types', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=strain_types', null );
+    add_submenu_page( 'wpd-settings', esc_html__( 'Strain types', 'cannabiz-menu' ), esc_html__( 'Strain types', 'cannabiz-menu' ), 'manage_options', 'edit-tags.php?taxonomy=strain_types', null );
 }
 
 /**
@@ -78,7 +78,7 @@ function wpd_admin_menu_strain_types() {
  */
 function wpd_admin_menu_shelf_types() {
     // Shelf types submenu link.
-    add_submenu_page( 'wpd-settings', esc_html__( 'Shelf types', 'wp-dispensary' ), esc_html__( 'Shelf types', 'wp-dispensary' ), 'manage_options', 'edit-tags.php?taxonomy=shelf_types', null );
+    add_submenu_page( 'wpd-settings', esc_html__( 'Shelf types', 'cannabiz-menu' ), esc_html__( 'Shelf types', 'cannabiz-menu' ), 'manage_options', 'edit-tags.php?taxonomy=shelf_types', null );
 }
 
 /**

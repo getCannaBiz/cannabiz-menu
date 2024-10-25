@@ -29,7 +29,7 @@ function wp_dispensary_grower_details_metabox() {
     // Add metabox.
     add_meta_box(
         'wp_dispensary_grower_details',
-        esc_html__( 'Grow details', 'wp-dispensary' ),
+        esc_html__( 'Grow details', 'cannabiz-menu' ),
         'wp_dispensary_grower_details_metabox_content',
         'products',
         'normal',
@@ -58,19 +58,19 @@ function wp_dispensary_grower_details_metabox_content() {
 
     // Echo out the fields.
     $html  = '<div class="input-field">';
-    $html .= '<p>' . esc_html__( 'Origin', 'wp-dispensary' ) . '</p>';
+    $html .= '<p>' . esc_html__( 'Origin', 'cannabiz-menu' ) . '</p>';
     $html .= '<input type="text" name="product_origin" value="' . esc_html( $origin ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_html__( 'Grow time', 'wp-dispensary' ) . '</p>';
+    $html .= '<p>' . esc_html__( 'Grow time', 'cannabiz-menu' ) . '</p>';
     $html .= '<input type="text" name="product_time" value="' . esc_html( $time ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_html__( 'Yield', 'wp-dispensary' ) . '</p>';
+    $html .= '<p>' . esc_html__( 'Yield', 'cannabiz-menu' ) . '</p>';
     $html .= '<input type="text" name="product_yield" value="' . esc_html( $yield ) . '" class="widefat" />';
     $html .= '</div>';
     $html .= '<div class="input-field">';
-    $html .= '<p>' . esc_html__( 'Difficulty', 'wp-dispensary' ) . '</p>';
+    $html .= '<p>' . esc_html__( 'Difficulty', 'cannabiz-menu' ) . '</p>';
     $html .= '<input type="text" name="product_difficulty" value="' . esc_html( $difficulty ) . '" class="widefat" />';
     $html .= '</div>';
 

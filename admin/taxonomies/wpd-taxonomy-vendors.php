@@ -28,22 +28,22 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_vendors_taxonomy() {
 
     $labels = array(
-        'name'                       => _x( 'Vendors', 'general name', 'wp-dispensary' ),
-        'singular_name'              => _x( 'Vendor', 'singular name', 'wp-dispensary' ),
-        'search_items'               => esc_html__( 'Search Vendors', 'wp-dispensary' ),
-        'popular_items'              => esc_html__( 'Popular Vendors', 'wp-dispensary' ),
-        'all_items'                  => esc_html__( 'All Vendors', 'wp-dispensary' ),
+        'name'                       => _x( 'Vendors', 'general name', 'cannabiz-menu' ),
+        'singular_name'              => _x( 'Vendor', 'singular name', 'cannabiz-menu' ),
+        'search_items'               => esc_html__( 'Search Vendors', 'cannabiz-menu' ),
+        'popular_items'              => esc_html__( 'Popular Vendors', 'cannabiz-menu' ),
+        'all_items'                  => esc_html__( 'All Vendors', 'cannabiz-menu' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => esc_html__( 'Edit Vendor', 'wp-dispensary' ),
-        'update_item'                => esc_html__( 'Update Vendor', 'wp-dispensary' ),
-        'add_new_item'               => esc_html__( 'Add New Vendor', 'wp-dispensary' ),
-        'new_item_name'              => esc_html__( 'New Vendor Name', 'wp-dispensary' ),
-        'separate_items_with_commas' => esc_html__( 'Separate vendors with commas', 'wp-dispensary' ),
-        'add_or_remove_items'        => esc_html__( 'Add or remove vendors', 'wp-dispensary' ),
-        'choose_from_most_used'      => esc_html__( 'Choose from the most used vendors', 'wp-dispensary' ),
-        'not_found'                  => esc_html__( 'No vendors found', 'wp-dispensary' ),
-        'menu_name'                  => esc_html__( 'Vendors', 'wp-dispensary' ),
+        'edit_item'                  => esc_html__( 'Edit Vendor', 'cannabiz-menu' ),
+        'update_item'                => esc_html__( 'Update Vendor', 'cannabiz-menu' ),
+        'add_new_item'               => esc_html__( 'Add New Vendor', 'cannabiz-menu' ),
+        'new_item_name'              => esc_html__( 'New Vendor Name', 'cannabiz-menu' ),
+        'separate_items_with_commas' => esc_html__( 'Separate vendors with commas', 'cannabiz-menu' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove vendors', 'cannabiz-menu' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used vendors', 'cannabiz-menu' ),
+        'not_found'                  => esc_html__( 'No vendors found', 'cannabiz-menu' ),
+        'menu_name'                  => esc_html__( 'Vendors', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'vendors', 'products', array(

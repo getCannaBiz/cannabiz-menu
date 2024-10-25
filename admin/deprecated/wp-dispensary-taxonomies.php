@@ -22,18 +22,18 @@
 function wp_dispensary_deprecated_taxonomies() {
 
     $labels = array(
-        'name'              => _x( 'Taxonomies', 'taxonomy general name', 'wp-dispensary' ),
-        'singular_name'     => _x( 'Taxonomy', 'taxonomy singular name', 'wp-dispensary' ),
-        'search_items'      => esc_html__( 'Search Taxonomies', 'wp-dispensary' ),
-        'all_items'         => esc_html__( 'All Taxonomies', 'wp-dispensary' ),
-        'parent_item'       => esc_html__( 'Parent Taxonomy', 'wp-dispensary' ),
-        'parent_item_colon' => esc_html__( 'Parent Taxonomy:', 'wp-dispensary' ),
-        'edit_item'         => esc_html__( 'Edit Taxonomy', 'wp-dispensary' ),
-        'update_item'       => esc_html__( 'Update Taxonomy', 'wp-dispensary' ),
-        'add_new_item'      => esc_html__( 'Add New Taxonomy', 'wp-dispensary' ),
-        'new_item_name'     => esc_html__( 'New Taxonomy Name', 'wp-dispensary' ),
-        'not_found'         => esc_html__( 'No categories found', 'wp-dispensary' ),
-        'menu_name'         => esc_html__( 'Taxonomies', 'wp-dispensary' ),
+        'name'              => _x( 'Taxonomies', 'taxonomy general name', 'cannabiz-menu' ),
+        'singular_name'     => _x( 'Taxonomy', 'taxonomy singular name', 'cannabiz-menu' ),
+        'search_items'      => esc_html__( 'Search Taxonomies', 'cannabiz-menu' ),
+        'all_items'         => esc_html__( 'All Taxonomies', 'cannabiz-menu' ),
+        'parent_item'       => esc_html__( 'Parent Taxonomy', 'cannabiz-menu' ),
+        'parent_item_colon' => esc_html__( 'Parent Taxonomy:', 'cannabiz-menu' ),
+        'edit_item'         => esc_html__( 'Edit Taxonomy', 'cannabiz-menu' ),
+        'update_item'       => esc_html__( 'Update Taxonomy', 'cannabiz-menu' ),
+        'add_new_item'      => esc_html__( 'Add New Taxonomy', 'cannabiz-menu' ),
+        'new_item_name'     => esc_html__( 'New Taxonomy Name', 'cannabiz-menu' ),
+        'not_found'         => esc_html__( 'No categories found', 'cannabiz-menu' ),
+        'menu_name'         => esc_html__( 'Taxonomies', 'cannabiz-menu' ),
     );
 
     $taxonomies = array(

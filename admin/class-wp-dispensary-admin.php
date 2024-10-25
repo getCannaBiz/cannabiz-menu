@@ -139,7 +139,7 @@ add_action( 'dashboard_glance_items', 'wpdispensary_right_now_content_table_end'
 function toolbar_quick_menu( $wp_admin_bar ) {
     $args = array(
         'id'    => 'wp_dispensary',
-        'title' => esc_attr__( 'WP Dispensary', 'wp-dispensary' ),
+        'title' => esc_attr__( 'WP Dispensary', 'cannabiz-menu' ),
         'href'  => admin_url() . 'edit.php?post_type=products',
     );
     $wp_admin_bar->add_node( $args );
@@ -161,7 +161,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     // Add Menu.
     $menu[] = array(
         'id'     => 'wpd_menu',
-        'title'  => esc_attr__( 'View Menu', 'wp-dispensary' ),
+        'title'  => esc_attr__( 'View Menu', 'cannabiz-menu' ),
         'href'   => $menu_url,
         'parent' => 'wp_dispensary'
     );
@@ -169,7 +169,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     // Add Products.
     $menu[] = array(
         'id'     => 'wpd_products',
-        'title'  => esc_attr__( 'Products', 'wp-dispensary' ),
+        'title'  => esc_attr__( 'Products', 'cannabiz-menu' ),
         'href'   => admin_url() . 'edit.php?post_type=products',
         'parent' => 'wp_dispensary'
     );
@@ -177,7 +177,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     // Add Categories.
     $menu[] = array(
         'id'     => 'wpd_categories',
-        'title'  => esc_attr__( 'Categories', 'wp-dispensary' ),
+        'title'  => esc_attr__( 'Categories', 'cannabiz-menu' ),
         'href'   => admin_url() . 'edit-tags.php?taxonomy=wpd_categories',
         'parent' => 'wp_dispensary'
     );
@@ -185,7 +185,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     // Add Vendors.
     $menu[] = array(
         'id'     => 'wpd_vendors',
-        'title'  => esc_attr__( 'Vendors', 'wp-dispensary' ),
+        'title'  => esc_attr__( 'Vendors', 'cannabiz-menu' ),
         'href'   => admin_url() . 'edit-tags.php?taxonomy=vendors',
         'parent' => 'wp_dispensary'
     );
@@ -193,7 +193,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     // Add Strain types.
     $menu[] = array(
         'id'     => 'wpd_strain_types',
-        'title'  => esc_attr__( 'Strain types', 'wp-dispensary' ),
+        'title'  => esc_attr__( 'Strain types', 'cannabiz-menu' ),
         'href'   => admin_url() . 'edit-tags.php?taxonomy=strain_types',
         'parent' => 'wp_dispensary'
     );
@@ -201,7 +201,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     // Add Shelf types.
     $menu[] = array(
         'id'     => 'wpd_shelf_types',
-        'title'  => esc_attr__( 'Shelf types', 'wp-dispensary' ),
+        'title'  => esc_attr__( 'Shelf types', 'cannabiz-menu' ),
         'href'   => admin_url() . 'edit-tags.php?taxonomy=shelf_types',
         'parent' => 'wp_dispensary'
     );
@@ -209,7 +209,7 @@ function toolbar_quick_menu( $wp_admin_bar ) {
     // Add Settings.
     $menu[] = array(
         'id'     => 'wpd_settings',
-        'title'  => esc_attr__( 'Settings', 'wp-dispensary' ),
+        'title'  => esc_attr__( 'Settings', 'cannabiz-menu' ),
         'href'   => admin_url() . 'admin.php?page=wpd-settings',
         'parent' => 'wp_dispensary'
     );

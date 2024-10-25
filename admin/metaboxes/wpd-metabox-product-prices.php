@@ -29,7 +29,7 @@ function wp_dispensary_product_prices_metabox() {
     // Add metabox.
     add_meta_box(
         'wp_dispensary_product_prices',
-        esc_html__( 'Product prices', 'wp-dispensary' ),
+        esc_html__( 'Product prices', 'cannabiz-menu' ),
         'wp_dispensary_product_prices_metabox_content',
         'products',
         'normal',

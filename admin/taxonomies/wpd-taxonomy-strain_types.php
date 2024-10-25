@@ -28,18 +28,18 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_strain_types_taxonomy() {
 
     $labels = array(
-        'name'              => _x( 'Strain Type', 'taxonomy general name', 'wp-dispensary' ),
-        'singular_name'     => _x( 'Strain Type', 'taxonomy singular name', 'wp-dispensary' ),
-        'search_items'      => esc_html__( 'Search Strain Types', 'wp-dispensary' ),
-        'all_items'         => esc_html__( 'All Strain Types', 'wp-dispensary' ),
-        'parent_item'       => esc_html__( 'Parent Strain Type', 'wp-dispensary' ),
-        'parent_item_colon' => esc_html__( 'Parent Strain Type:', 'wp-dispensary' ),
-        'edit_item'         => esc_html__( 'Edit Strain Type', 'wp-dispensary' ),
-        'update_item'       => esc_html__( 'Update Strain Type', 'wp-dispensary' ),
-        'add_new_item'      => esc_html__( 'Add New Strain Type', 'wp-dispensary' ),
-        'new_item_name'     => esc_html__( 'New Strain Type Name', 'wp-dispensary' ),
-        'not_found'         => esc_html__( 'No strain types found', 'wp-dispensary' ),
-        'menu_name'         => esc_html__( 'Strain Type', 'wp-dispensary' ),
+        'name'              => _x( 'Strain Type', 'taxonomy general name', 'cannabiz-menu' ),
+        'singular_name'     => _x( 'Strain Type', 'taxonomy singular name', 'cannabiz-menu' ),
+        'search_items'      => esc_html__( 'Search Strain Types', 'cannabiz-menu' ),
+        'all_items'         => esc_html__( 'All Strain Types', 'cannabiz-menu' ),
+        'parent_item'       => esc_html__( 'Parent Strain Type', 'cannabiz-menu' ),
+        'parent_item_colon' => esc_html__( 'Parent Strain Type:', 'cannabiz-menu' ),
+        'edit_item'         => esc_html__( 'Edit Strain Type', 'cannabiz-menu' ),
+        'update_item'       => esc_html__( 'Update Strain Type', 'cannabiz-menu' ),
+        'add_new_item'      => esc_html__( 'Add New Strain Type', 'cannabiz-menu' ),
+        'new_item_name'     => esc_html__( 'New Strain Type Name', 'cannabiz-menu' ),
+        'not_found'         => esc_html__( 'No strain types found', 'cannabiz-menu' ),
+        'menu_name'         => esc_html__( 'Strain Type', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'strain_types', 'products', array(

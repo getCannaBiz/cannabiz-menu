@@ -292,7 +292,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
          */
         function add_column( $key, $args ) {
             $def = array(
-                'label'    => esc_html__( 'Column label', 'wp-dispensary' ), 
+                'label'    => esc_html__( 'Column label', 'cannabiz-menu' ), 
                 'size'     => array( '80', '80' ),
                 'taxonomy' => '',
                 'meta_key' => '',

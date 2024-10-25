@@ -53,7 +53,7 @@ class WP_Dispensary_Permalink_Settings {
     public function register_wpd_settings_fields() {
         // Register Products slug.
         register_setting( 'permalink', 'wpd_products_slug', 'esc_attr' );
-        add_settings_field( 'wpd_products_slug', '<label for="wpd_products_slug">' . esc_html__( 'Products Base', 'wp-dispensary' ) . '</label>', array( &$this, 'wpd_products_fields_html' ), 'permalink', 'optional' );
+        add_settings_field( 'wpd_products_slug', '<label for="wpd_products_slug">' . esc_html__( 'Products Base', 'cannabiz-menu' ) . '</label>', array( &$this, 'wpd_products_fields_html' ), 'permalink', 'optional' );
     }
 
     /**
@@ -87,7 +87,7 @@ class WP_Dispensary_Permalink_Settings {
         // Save settings - Products.
         if ( null !== filter_input( INPUT_POST, 'permalink_structure' ) ||
             null !== filter_input( INPUT_POST, 'wpd_products_slug' ) &&
-            wp_verify_nonce( wp_unslash( $permalinks_nonce ), 'wp-dispensary' ) ) {
+            wp_verify_nonce( wp_unslash( $permalinks_nonce ), 'cannabiz-menu' ) ) {
               $wpd_products_slug = sanitize_title( wp_unslash( filter_input( INPUT_POST, 'wpd_products_slug' ) ) );
               update_option( 'wpd_products_slug', $wpd_products_slug );
         }

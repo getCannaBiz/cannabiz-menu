@@ -28,22 +28,22 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_conditions_taxonomy() {
 
     $labels = array(
-        'name'                       => _x( 'Conditions', 'general name', 'wp-dispensary' ),
-        'singular_name'              => _x( 'Condition', 'singular name', 'wp-dispensary' ),
-        'search_items'               => esc_html__( 'Search Conditions', 'wp-dispensary' ),
-        'popular_items'              => esc_html__( 'Popular Conditions', 'wp-dispensary' ),
-        'all_items'                  => esc_html__( 'All Conditions', 'wp-dispensary' ),
+        'name'                       => _x( 'Conditions', 'general name', 'cannabiz-menu' ),
+        'singular_name'              => _x( 'Condition', 'singular name', 'cannabiz-menu' ),
+        'search_items'               => esc_html__( 'Search Conditions', 'cannabiz-menu' ),
+        'popular_items'              => esc_html__( 'Popular Conditions', 'cannabiz-menu' ),
+        'all_items'                  => esc_html__( 'All Conditions', 'cannabiz-menu' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => esc_html__( 'Edit Condition', 'wp-dispensary' ),
-        'update_item'                => esc_html__( 'Update Condition', 'wp-dispensary' ),
-        'add_new_item'               => esc_html__( 'Add New Condition', 'wp-dispensary' ),
-        'new_item_name'              => esc_html__( 'New Condition Name', 'wp-dispensary' ),
-        'separate_items_with_commas' => esc_html__( 'Separate conditions with commas', 'wp-dispensary' ),
-        'add_or_remove_items'        => esc_html__( 'Add or remove conditions', 'wp-dispensary' ),
-        'choose_from_most_used'      => esc_html__( 'Choose from the most used conditions', 'wp-dispensary' ),
-        'not_found'                  => esc_html__( 'No conditions found', 'wp-dispensary' ),
-        'menu_name'                  => esc_html__( 'Conditions', 'wp-dispensary' ),
+        'edit_item'                  => esc_html__( 'Edit Condition', 'cannabiz-menu' ),
+        'update_item'                => esc_html__( 'Update Condition', 'cannabiz-menu' ),
+        'add_new_item'               => esc_html__( 'Add New Condition', 'cannabiz-menu' ),
+        'new_item_name'              => esc_html__( 'New Condition Name', 'cannabiz-menu' ),
+        'separate_items_with_commas' => esc_html__( 'Separate conditions with commas', 'cannabiz-menu' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove conditions', 'cannabiz-menu' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used conditions', 'cannabiz-menu' ),
+        'not_found'                  => esc_html__( 'No conditions found', 'cannabiz-menu' ),
+        'menu_name'                  => esc_html__( 'Conditions', 'cannabiz-menu' ),
     );
 
     register_taxonomy( 'conditions', 'products', array(

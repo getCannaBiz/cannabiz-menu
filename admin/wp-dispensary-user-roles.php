@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 function wp_dispensary_add_user_roles() {
     add_role(
         'shop_owner',
-        esc_html__( 'Shop Owner', 'wp-dispensary' ),
+        esc_html__( 'Shop Owner', 'cannabiz-menu' ),
         array(
             'read'                   => true,
             'edit_posts'             => true,
@@ -52,7 +52,7 @@ function wp_dispensary_add_user_roles() {
 
     add_role(
         'shop_manager',
-        esc_html__( 'Shop Manager', 'wp-dispensary' ),
+        esc_html__( 'Shop Manager', 'cannabiz-menu' ),
         array(
             'read'                     => true,
             'edit_posts'               => true,
@@ -82,7 +82,7 @@ add_action( 'init', 'wp_dispensary_add_user_roles' );
 function wp_dispensary_check_user_role_before_creating_new_user( $user_id ) {
     $current_user = wp_get_current_user();
     if ( ! in_array( 'administrator', $current_user->roles ) && ! $current_user->has_cap( 'create_non_admin_users' ) ) {
-        wp_die( esc_html__( 'You do not have sufficient permissions to add new users.', 'wp-dispensary' ) );
+        wp_die( esc_html__( 'You do not have sufficient permissions to add new users.', 'cannabiz-menu' ) );
     }
 }
 add_action( 'user_new_form', 'wp_dispensary_check_user_role_before_creating_new_user' );

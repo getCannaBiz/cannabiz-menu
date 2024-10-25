@@ -26,7 +26,7 @@ if ( ! defined( 'WPINC' ) ) {
 function wpd_product_reviews_form( $default ) {
 
     if ( 'products' == get_post_type() ) {
-        $default['title_reply'] = esc_attr__( 'Leave a Review', 'wp-dispensary' );
+        $default['title_reply'] = esc_attr__( 'Leave a Review', 'cannabiz-menu' );
     }
 
     return $default;       
@@ -103,14 +103,14 @@ function wpd_add_product_review_comment_fields( $fields ) {
 
     // Add author field.
     $fields[ 'author' ] = '<p class="comment-form-author">'.
-        '<label for="author">' . esc_attr__( 'Name', 'wp-dispensary' ) .
+        '<label for="author">' . esc_attr__( 'Name', 'cannabiz-menu' ) .
         ( $req ? '<span class="required">*</span>' : ’ ). '</label>'.
         '<input id="author" name="author" type="text" value="'. esc_attr( $commenter['comment_author'] ) .
         '" size="30" tabindex="1"' . $aria_req . ' /></p>';
 
     // Add email field.
     $fields[ 'email' ] = '<p class="comment-form-email">'.
-        '<label for="email">' . esc_attr__( 'Email', 'wp-dispensary' ) .
+        '<label for="email">' . esc_attr__( 'Email', 'cannabiz-menu' ) .
         ( $req ? '<span class="required">*</span>' : ’ ). '</label>'.
         '<input id="email" name="email" type="text" value="'. esc_attr( $commenter['comment_author_email'] ) .
         '" size="30"  tabindex="2"' . $aria_req . ' /></p>';
@@ -118,7 +118,7 @@ function wpd_add_product_review_comment_fields( $fields ) {
     if ( 'products' == get_post_type() ) {
         // Add phone field.
         $fields[ 'phone' ] = '<p class="comment-form-phone">'.
-            '<label for="phone">' . esc_attr__( 'Phone', 'wp-dispensary' ) . '</label>'.
+            '<label for="phone">' . esc_attr__( 'Phone', 'cannabiz-menu' ) . '</label>'.
             '<input id="phone" name="phone" type="text" size="30"  tabindex="4" /></p>
             <input type="hidden" name="comment_type" value="wpd_ratings" id="comment_type" />';
 
@@ -129,7 +129,7 @@ function wpd_add_product_review_comment_fields( $fields ) {
 
         $fields['cookies'] = '<p class="comment-form-cookies-consent">
                                 <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" />' .
-                                '<label for="wp-comment-cookies-consent">' . esc_attr__( 'Remember Me!', 'wp-dispensary' ) . '</label>
+                                '<label for="wp-comment-cookies-consent">' . esc_attr__( 'Remember Me!', 'cannabiz-menu' ) . '</label>
                               </p>';
     }
 
@@ -162,10 +162,10 @@ function wpd_comment_form_defaults( $defaults ) {
         $defaults['comment_field'] = '<p class="comment-form-rating">
             <span class="commentratingbox">' . $ratings_box . '</span></p>';
         $defaults['comment_field'] .= '<p class="comment-form-title">'.
-            '<label for="title">' . esc_html__( 'Review Title', 'wp-dispensary' ) . '</label>'.
+            '<label for="title">' . esc_html__( 'Review Title', 'cannabiz-menu' ) . '</label>'.
             '<input id="title" name="title" type="text" size="30"  tabindex="5" /></p>';
 
-        $defaults['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your Review', 'wp-dispensary' ) . ' <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>';
+        $defaults['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your Review', 'cannabiz-menu' ) . ' <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>';
     }
 
     return $defaults;
@@ -209,7 +209,7 @@ add_action( 'comment_post', 'save_comment_meta_data' );
 function wpd_verify_comment_meta_data( $commentdata ) {
     if ( 'products' == get_post_type() ) {
         if ( ! isset( $_POST['product_rating'] ) ) {
-            wp_die( esc_attr__( 'Error: You did not add a rating. Please hit the Back button on your browser and resubmit your review with a rating.', 'wp-dispensary' ) );
+            wp_die( esc_attr__( 'Error: You did not add a rating. Please hit the Back button on your browser and resubmit your review with a rating.', 'cannabiz-menu' ) );
         }
     }
     return $commentdata;
@@ -252,7 +252,7 @@ add_filter( 'comment_text', 'wpd_modify_comment', 10, 2 );
  */
 function extend_comment_add_meta_box() {
     // Add metabox.
-    add_meta_box( 'title', esc_html__( 'WP Dispensary - Product Reviews', 'wp-dispensary' ), 'wpd_extend_comment_meta_box', 'comment', 'normal', 'high' );
+    add_meta_box( 'title', esc_html__( 'WP Dispensary - Product Reviews', 'cannabiz-menu' ), 'wpd_extend_comment_meta_box', 'comment', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes_comment', 'extend_comment_add_meta_box' );
 
@@ -272,11 +272,11 @@ function wpd_extend_comment_meta_box( $comment ) {
     wp_nonce_field( 'extend_comment_update', 'extend_comment_update', false );
     ?>
     <p>
-        <label for="title"><?php esc_html_e( 'Review Title', 'wp-dispensary' ); ?></label>
+        <label for="title"><?php esc_html_e( 'Review Title', 'cannabiz-menu' ); ?></label>
         <input type="text" name="title" value="<?php esc_html_e( $title ); ?>" class="widefat" />
     </p>
     <p>
-        <label for="product_rating"><?php esc_html_e( 'Review Rating', 'wp-dispensary' ); ?>: </label>
+        <label for="product_rating"><?php esc_html_e( 'Review Rating', 'cannabiz-menu' ); ?>: </label>
         <div class="commentratingbox">
         <?php
         for ( $i=1; $i <= 5; $i++ ) {
@@ -288,7 +288,7 @@ function wpd_extend_comment_meta_box( $comment ) {
         </div>
     </p>
     <p>
-        <label for="phone"><?php esc_html_e( 'Phone', 'wp-dispensary' ); ?></label>
+        <label for="phone"><?php esc_html_e( 'Phone', 'cannabiz-menu' ); ?></label>
         <input type="text" name="phone" value="<?php echo esc_attr( $phone ); ?>" class="widefat" />
     </p>
     <?php
