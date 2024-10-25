@@ -354,3 +354,10 @@ body.wp-admin #wp-admin-bar-wp_dispensary a::before {
 body.wp-admin #wp-admin-bar-wp_dispensary .ab-sub-wrapper a::before {
   display: none !important;
 }
+
+/** Edit Product screen - WYSIWYG toolbar background.
+-------------------------------------------------------------- */
+
+#wp-content-editor-tools {
+    background-color: #FFF;
+}
