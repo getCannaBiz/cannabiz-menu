@@ -147,22 +147,22 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
         /**
          * Add submenu page to the Settings main menu.
          * 
-         * @author WP Dispensary
+         * @author CannaBiz Software <contact@cannabizsoftware.com>
          * @since  2.0
          * @return void
          */
         public function wpd_admin_menu() {
             // Add menu page.
             add_menu_page(
-                esc_html__( 'WP Dispensary', 'cannabiz-menu' ),
-                esc_html__( 'WP Dispensary', 'cannabiz-menu' ),
+                esc_html__( 'CannaBiz Menu', 'cannabiz-menu' ),
+                esc_html__( 'CannaBiz Menu', 'cannabiz-menu' ),
                 'manage_options',
                 'wpd-settings',
-                array( $this, 'wp_dispensary_create_admin_page' ),
+                [ $this, 'wp_dispensary_create_admin_page' ],
                 'none',
                 3
             );
-            add_submenu_page( 'wpd-settings', esc_html__( 'WP Dispensary Settings', 'cannabiz-menu' ), esc_html__( 'Settings', 'cannabiz-menu' ), 'manage_options', 'wpd-settings' );
+            add_submenu_page( 'wpd-settings', esc_html__( 'CannaBiz Menu Settings', 'cannabiz-menu' ), esc_html__( 'Settings', 'cannabiz-menu' ), 'manage_options', 'wpd-settings' );
         }
         /**
          * Crete admin page
