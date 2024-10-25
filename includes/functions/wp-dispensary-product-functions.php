@@ -603,7 +603,7 @@ function get_wpd_compounds_array( $product_id, $type = null, $compound_array = n
  * @since  2.5.2
  * @return array
  */
-function wpd_flowers_weights_[] {
+function wpd_flowers_weights_array() {
     $flowers_weights = array(
         '1 g'    => 'price_gram',
         '2 g'    => 'price_two_grams',
@@ -622,7 +622,7 @@ function wpd_flowers_weights_[] {
  * @since  2.5.2
  * @return array
  */
-function wpd_concentrates_weights_[] {
+function wpd_concentrates_weights_array() {
     $concentrates_weights = array(
         '1/2 g' => 'price_half_gram',
         '1 g'   => 'price_gram',
