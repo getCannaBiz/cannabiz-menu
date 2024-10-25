@@ -154,8 +154,8 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
         public function wpd_admin_menu() {
             // Add menu page.
             add_menu_page(
-                esc_html__( 'CannaBiz Menu', 'cannabiz-menu' ),
-                esc_html__( 'CannaBiz Menu', 'cannabiz-menu' ),
+                esc_html__( 'CannaBiz', 'cannabiz-menu' ),
+                esc_html__( 'CannaBiz', 'cannabiz-menu' ),
                 'manage_options',
                 'wpd-settings',
                 [ $this, 'wp_dispensary_create_admin_page' ],
