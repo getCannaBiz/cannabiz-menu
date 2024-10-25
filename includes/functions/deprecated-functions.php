@@ -50,7 +50,7 @@ function wpd_menu_types_simple( $lowercase = null ) {
     $menu_types = wpd_menu_types();
 
     // Create simple array.
-    $menu_types_simple = array();
+    $menu_types_simple = [];
 
     // Loop through menu types.
     foreach ( $menu_types as $value ) {

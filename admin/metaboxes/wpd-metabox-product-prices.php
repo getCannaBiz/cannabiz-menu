@@ -115,7 +115,7 @@ function wp_dispensary_product_prices_metabox_save() {
      * We'll put it into an array to make it easier to loop though.
      */
 
-    $prices_meta = array();
+    $prices_meta = [];
     $price_keys  = get_wpd_simple_price_keys();
 
     foreach ( $price_keys as $key ) {

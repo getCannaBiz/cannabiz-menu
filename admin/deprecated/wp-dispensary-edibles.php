@@ -71,7 +71,7 @@ function wpdispensary_edibles() {
         'description'         => sprintf( esc_html__( 'Display the %s from your menu', 'cannabiz-menu' ), $wpd_edibles_slug ),
         'labels'              => $labels,
         'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
-        'taxonomies'          => array(),
+        'taxonomies'          => [],
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,

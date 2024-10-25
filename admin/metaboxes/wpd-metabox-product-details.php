@@ -110,7 +110,7 @@ function wp_dispensary_product_details_metabox_save() {
      * We'll put it into an array to make it easier to loop though.
      */
 
-    $details_meta = array();
+    $details_meta = [];
     $detail_keys  = array(
         'activation_time',
         'product_sku',
@@ -164,7 +164,7 @@ add_action( 'save_post', 'wp_dispensary_product_details_metabox_save', 11 );
  * @since  4.4.0
  * @return string
  */
-function wp_dispensary_product_details_array( $product_details = array() ) {
+function wp_dispensary_product_details_array( $product_details = [] ) {
     global $post;
 
     // Activation time.

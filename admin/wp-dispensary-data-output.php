@@ -426,7 +426,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         $flower_prices = '';
 
         // Add price for each available weight.
-        foreach ( wpd_flowers_weights_array() as $id=>$value ) {
+        foreach ( wpd_flowers_weights_[] as $id=>$value ) {
             if ( get_post_meta( get_the_ID(), $value, true ) ) {
                 $flower_prices .= '<td><span>' . $id . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), $value, true ) . '</td>';
             }
@@ -436,7 +436,7 @@ if ( ! function_exists( 'wpd_data_output_content' ) ) {
         $concentrate_prices = '';
 
         // Add price for each available weight.
-        foreach ( wpd_concentrates_weights_array() as $id=>$value ) {
+        foreach ( wpd_concentrates_weights_[] as $id=>$value ) {
             if ( get_post_meta( get_the_ID(), $value, true ) ) {
                 $concentrate_prices .= '<td><span>' . $id . '</span> ' . wpd_currency_code() . get_post_meta( get_the_id(), $value, true ) . '</td>';
             }

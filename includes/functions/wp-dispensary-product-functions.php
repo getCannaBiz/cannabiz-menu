@@ -78,7 +78,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
     $str = '';
 
     // Create variable.
-    $compounds_new = array();
+    $compounds_new = [];
 
     // Wrapper type.
     if ( isset( $wrapper ) ) {
@@ -406,7 +406,7 @@ function get_wpd_compounds_simple( $product_id, $type = null, $compound_array = 
     }
 
     // Set compounds.
-    $compounds = array();
+    $compounds = [];
 
     // THC.
     if ( null != $compound_array && in_array( 'thc', $compound_array ) ) {
@@ -488,7 +488,7 @@ function get_wpd_compounds_simple( $product_id, $type = null, $compound_array = 
  * @param string $type 
  * @param array  $compound_array 
  * 
- * @see    get_wpd_compounds_array()
+ * @see    get_wpd_compounds_[]
  * @since  2.5
  * @return string
  */
@@ -528,7 +528,7 @@ function get_wpd_compounds_array( $product_id, $type = null, $compound_array = n
     }
 
     // Set compounds.
-    $compounds = array();
+    $compounds = [];
 
     // THC.
     if ( in_array( 'thc', $compound_array ) ) {
@@ -603,7 +603,7 @@ function get_wpd_compounds_array( $product_id, $type = null, $compound_array = n
  * @since  2.5.2
  * @return array
  */
-function wpd_flowers_weights_array() {
+function wpd_flowers_weights_[] {
     $flowers_weights = array(
         '1 g'    => 'price_gram',
         '2 g'    => 'price_two_grams',
@@ -622,7 +622,7 @@ function wpd_flowers_weights_array() {
  * @since  2.5.2
  * @return array
  */
-function wpd_concentrates_weights_array() {
+function wpd_concentrates_weights_[] {
     $concentrates_weights = array(
         '1/2 g' => 'price_half_gram',
         '1 g'   => 'price_gram',
@@ -757,7 +757,7 @@ function wpd_product_ratings_details( $product_id = null ) {
     }
 
     // Rating array.
-    $ratings_array = array();
+    $ratings_array = [];
 
     // Get comments.
     $comments = get_comments(

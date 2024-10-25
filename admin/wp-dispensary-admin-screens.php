@@ -174,7 +174,7 @@ function wp_dispensary_admin_posts_filter_restrict_manage_posts() {
     // Only add filter to post type you want
     if ( 'products' == $type && is_admin() ) {
         // Create array.
-        $values = array();
+        $values = [];
         // Loop through product types.
         foreach ( wpd_product_types() as $value ) {
             // Add product type to array.

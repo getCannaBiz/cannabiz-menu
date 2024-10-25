@@ -81,7 +81,7 @@ function wp_dispensary_products_post_type() {
         'description'         => sprintf( esc_html__( 'Display the %s from your menu', 'cannabiz-menu' ), $wpd_products_slug ),
         'labels'              => $labels,
         'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions' ),
-        'taxonomies'          => array(),
+        'taxonomies'          => [],
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,

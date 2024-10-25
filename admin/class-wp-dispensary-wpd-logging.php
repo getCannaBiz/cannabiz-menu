@@ -237,7 +237,7 @@ if ( ! class_exists( 'WPD_Logging' ) ) {
          * @since  4.3.0
          * @return int
          */
-        public static function insert_log( $log_data = array(), $log_meta = array() ) {
+        public static function insert_log( $log_data = [], $log_meta = [] ) {
 
             $defaults = array(
                 'post_type'    => 'wpd_log',
@@ -281,7 +281,7 @@ if ( ! class_exists( 'WPD_Logging' ) ) {
          * @since  4.3.0
          * @return bool
          */
-        public static function update_log( $log_data = array(), $log_meta = array() ) {
+        public static function update_log( $log_data = [], $log_meta = [] ) {
 
             $defaults = array(
                 'post_type'   => 'wpd_log',
@@ -334,7 +334,7 @@ if ( ! class_exists( 'WPD_Logging' ) ) {
          * @since  4.3.0
          * @return array|false
         */
-        public static function get_connected_logs( $args = array() ) {
+        public static function get_connected_logs( $args = [] ) {
 
             $defaults = array(
                 'post_parent'    => 0,

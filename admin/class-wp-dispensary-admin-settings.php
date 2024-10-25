@@ -42,14 +42,14 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
          * @var   array
          * @since 2.0
          */
-        private $_sections_array = array();
+        private $_sections_array = [];
         /**
          * Fields array.
          *
          * @var   array
          * @since 2.0
          */
-        private $_fields_array = array();
+        private $_fields_array = [];
         /**
          * Constructor.
          *
@@ -441,7 +441,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
                          * @param callable $callback
                          * @param string   $page
                          * @param string   $section = 'default'
-                         * @param array    $args = array()
+                         * @param array    $args = []
                          * 
                          * @since 2.0
                          */

@@ -71,7 +71,7 @@ function wpdispensary_concentrates() {
         'description'         => sprintf( esc_html__( 'Display the %s from your menu', 'cannabiz-menu' ), $concentrates_slug ),
         'labels'              => $labels,
         'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
-        'taxonomies'          => array(),
+        'taxonomies'          => [],
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,

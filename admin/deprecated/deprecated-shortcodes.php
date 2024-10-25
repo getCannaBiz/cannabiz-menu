@@ -176,7 +176,7 @@ function wpdispensary_flowers_shortcode( $atts ) {
         }
 
         // Compounds.
-        $compounds_new = array();
+        $compounds_new = [];
 
         /**
          * Add compounds to array, if shortcode option is set to "show".
@@ -424,7 +424,7 @@ function wpdispensary_concentrates_shortcode( $atts ) {
             $showinfo = '';
         }
 
-        $compounds_new = array();
+        $compounds_new = [];
 
         /**
          * Add compounds to array, if shortcode option is set to "show".

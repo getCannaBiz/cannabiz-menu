@@ -65,7 +65,7 @@ function wpd_rest_api_products_route_callback( $data ) {
     );
 
     // Product data array.
-    $product_data = array();
+    $product_data = [];
 
     // Product ID.
     $product_id = '';
@@ -85,7 +85,7 @@ function wpd_rest_api_products_route_callback( $data ) {
         $product_type = get_post_meta( $product_id, 'product_type', true );
         // Prices.
         $product_prices = wpd_product_prices_array( $product_id, $product_type );
-        $price_array    = array();
+        $price_array    = [];
         foreach ( $product_prices as $key=>$value ) {
             $name = str_replace( 'price_', '', $key );
             $price_array[$name] = $value;

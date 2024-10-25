@@ -40,7 +40,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
          * 
          * @var array
          */
-        public $columns = array();
+        public $columns = [];
 
         /**
          * $remove_columns
@@ -49,7 +49,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
          * 
          * @var array
          */
-        public $remove_columns = array();
+        public $remove_columns = [];
 
         /**
          * $sortable_columns
@@ -58,7 +58,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
          * 
          * @var array
          */
-        public $sortable_columns = array();
+        public $sortable_columns = [];
 
         /**
          * $name 
@@ -112,7 +112,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
         function _columns( $defaults ) {
             global $typenow;
             if ( $this->name == $typenow ) {
-                $tmp = array();
+                $tmp = [];
                 if ( $this->replace ) {
                     foreach ( $this->columns as $key => $args ) {
                         $tmp[ $key ] = $args[ 'label' ];
@@ -129,7 +129,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
                         } else {
                             $defaults = array_merge( $defaults, $tmp );
                         }
-                        $tmp = array();
+                        $tmp = [];
                     }
                 }
             }

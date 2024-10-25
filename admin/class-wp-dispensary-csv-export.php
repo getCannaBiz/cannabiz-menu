@@ -139,7 +139,7 @@ class WP_Dispensary_CSV_Export {
         $header_row = apply_filters( 'wpd_csv_export_header_row', $header_row );
 
         // Data rows.
-        $data_rows = array();
+        $data_rows = [];
 
         global $wpdb;
 
@@ -150,7 +150,7 @@ class WP_Dispensary_CSV_Export {
         foreach ( $products as $product ) {
 
             // Cat ID.
-            $cat_id = array();
+            $cat_id = [];
 
             // Category name.
             $category_name = wp_get_post_terms( $product['ID'], 'wpd_categories', array( 'fields' => 'names' ) );
@@ -171,7 +171,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Vendors ID.
-            $vendors_id = array();
+            $vendors_id = [];
 
             // Vendors name.
             $vendors_name = wp_get_post_terms( $product['ID'], 'vendors', array( 'fields' => 'names' ) );
@@ -192,7 +192,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Shelf Type ID.
-            $shelf_types_id = array();
+            $shelf_types_id = [];
 
             // Shelf Type name.
             $shelf_types_name = wp_get_post_terms( $product['ID'], 'shelf_types', array( 'fields' => 'names' ) );
@@ -213,7 +213,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Strain Type ID.
-            $strain_types_id = array();
+            $strain_types_id = [];
 
             // Strain Type name.
             $strain_types_name = wp_get_post_terms( $product['ID'], 'strain_types', array( 'fields' => 'names' ) );
@@ -234,7 +234,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Allergens ID.
-            $allergens_id = array();
+            $allergens_id = [];
 
             // Allergens name.
             $allergens_name = wp_get_post_terms( $product['ID'], 'allergens', array( 'fields' => 'names' ) );
@@ -255,7 +255,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Aromas ID.
-            $aromas_id = array();
+            $aromas_id = [];
 
             // Aromas name.
             $aromas_name = wp_get_post_terms( $product['ID'], 'aromas', array( 'fields' => 'names' ) );
@@ -276,7 +276,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Conditions ID.
-            $conditions_id = array();
+            $conditions_id = [];
 
             // Conditions name.
             $conditions_name = wp_get_post_terms( $product['ID'], 'conditions', array( 'fields' => 'names' ) );
@@ -297,7 +297,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Effects ID.
-            $effects_id = array();
+            $effects_id = [];
 
             // Effects name.
             $effects_name = wp_get_post_terms( $product['ID'], 'effects', array( 'fields' => 'names' ) );
@@ -318,7 +318,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Flavors ID.
-            $flavors_id = array();
+            $flavors_id = [];
 
             // Flavors name.
             $flavors_name = wp_get_post_terms( $product['ID'], 'flavors', array( 'fields' => 'names' ) );
@@ -339,7 +339,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Ingredients ID.
-            $ingredients_id = array();
+            $ingredients_id = [];
 
             // Ingredients name.
             $ingredients_name = wp_get_post_terms( $product['ID'], 'ingredients', array( 'fields' => 'names' ) );
@@ -360,7 +360,7 @@ class WP_Dispensary_CSV_Export {
             }
 
             // Symptoms ID.
-            $symptoms_id = array();
+            $symptoms_id = [];
 
             // Symptoms name.
             $symptoms_name = wp_get_post_terms( $product['ID'], 'symptoms', array( 'fields' => 'names' ) );
@@ -431,7 +431,7 @@ class WP_Dispensary_CSV_Export {
             );
 
             // Create array.
-            $prices_by_weight = array();
+            $prices_by_weight = [];
 
             // Flower prices.
             $flower_prices = wpd_product_prices( 'flowers' );

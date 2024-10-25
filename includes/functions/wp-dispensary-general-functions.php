@@ -129,7 +129,7 @@ function wpd_product_types_simple( $lowercase = null ) {
     $product_types = wpd_product_types();
 
     // Create simple array.
-    $product_types_simple = array();
+    $product_types_simple = [];
 
     // Loop through product types.
     foreach ( $product_types as $value ) {
@@ -199,7 +199,7 @@ if ( ! function_exists( 'get_wpd_vendors_details' ) ) {
         if ( ! $details ) { return null; }
 
         // Create vendors list.
-        $vendor_list = array();
+        $vendor_list = [];
 
         // Get vendors.
         $vendors = get_categories( [
@@ -217,7 +217,7 @@ if ( ! function_exists( 'get_wpd_vendors_details' ) ) {
         }
 
         // Create list of vendor names.
-        $vendor_names = array();
+        $vendor_names = [];
 
         // Loop through vendor names.
         foreach ( $vendor_list as $vendor ) {
@@ -225,7 +225,7 @@ if ( ! function_exists( 'get_wpd_vendors_details' ) ) {
         }
 
         // Create list of vendor counts.
-        $vendor_counts = array();
+        $vendor_counts = [];
 
         // Loop through vendor counts.
         foreach ( $vendor_list as $vendor ) {
@@ -260,7 +260,7 @@ if ( ! function_exists( 'get_wpd_strain_types_details' ) ) {
         if ( ! $details ) { return null; }
 
         // Create strain types list.
-        $strain_types_list = array();
+        $strain_types_list = [];
 
         // Get strain types.
         $strain_types = get_categories( [
@@ -278,7 +278,7 @@ if ( ! function_exists( 'get_wpd_strain_types_details' ) ) {
         }
 
         // Create list of strain types names.
-        $strain_names = array();
+        $strain_names = [];
 
         // Loop through strain types.
         foreach ( $strain_types_list as $strain ) {
@@ -286,7 +286,7 @@ if ( ! function_exists( 'get_wpd_strain_types_details' ) ) {
         }
 
         // Create list of strain types counts.
-        $strain_counts = array();
+        $strain_counts = [];
 
         // Loop through strain types.
         foreach ( $strain_types_list as $strain ) {
@@ -321,7 +321,7 @@ if ( ! function_exists( 'get_wpd_shelf_types_details' ) ) {
         if ( ! $details ) { return null; }
 
         // Create shelf types list.
-        $shelf_types_list = array();
+        $shelf_types_list = [];
 
         // Get shelf types.
         $shelf_types = get_categories( [
@@ -339,7 +339,7 @@ if ( ! function_exists( 'get_wpd_shelf_types_details' ) ) {
         }
 
         // Create list of shelf types names.
-        $shelf_names = array();
+        $shelf_names = [];
 
         // Loop through shelf types.
         foreach ( $shelf_types_list as $shelf ) {
@@ -347,7 +347,7 @@ if ( ! function_exists( 'get_wpd_shelf_types_details' ) ) {
         }
 
         // Create list of shelf types counts.
-        $shelf_counts = array();
+        $shelf_counts = [];
 
         // Loop through shelf types.
         foreach ( $shelf_types_list as $shelf ) {
@@ -398,7 +398,7 @@ if ( ! function_exists( 'get_wpd_product_type_details' ) ) {
         // Bail early?
         if ( ! $product_type ) { return null; }
         // Build details array.
-        $details = array();
+        $details = [];
         // Loop through product types.
         foreach ( wpd_product_types_simple() as $slug=>$name ) {
             // Create the product type slug.
@@ -427,7 +427,7 @@ if ( ! function_exists( 'get_wpd_product_types_details' ) ) {
      */
     function get_wpd_product_types_details( $details = null ) {
 
-        $types = array();
+        $types = [];
 
         // Loop through product types.
         foreach ( wpd_product_types_simple( true ) as $slug ) {
@@ -444,7 +444,7 @@ if ( ! function_exists( 'get_wpd_product_types_details' ) ) {
         }
 
         // Create list of product types names.
-        $product_names = array();
+        $product_names = [];
 
         // Loop through product types.
         foreach ( $details_list as $product_type ) {
@@ -452,7 +452,7 @@ if ( ! function_exists( 'get_wpd_product_types_details' ) ) {
         }
 
         // Create list of product types counts.
-        $product_counts = array();
+        $product_counts = [];
 
         // Loop through product types.
         foreach ( $details_list as $product_type ) {

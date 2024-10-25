@@ -44,12 +44,12 @@ if ( ! function_exists( 'convert_taxonomies' ) ) {
         // Loop through products.
         foreach ( $products as $product ) {
             $terms      = get_the_terms( $product->ID, $old_tax );
-            $term_array = array();
+            $term_array = [];
             // Loop through terms.
             foreach ( $terms as $t ) {
                 $term_array[] = $t->name;
                 if ( false == get_term_by( 'name', $t->name, $new_tax ) ) {
-                   wp_insert_term( $t->name, $new_tax, $args = array() );
+                   wp_insert_term( $t->name, $new_tax, $args = [] );
                 }
                 wp_set_object_terms( $product->ID, $term_array, $new_tax );
             }
