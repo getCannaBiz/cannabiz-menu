@@ -129,7 +129,7 @@ function wpdispensary_right_now_content_table_end() {
 add_action( 'dashboard_glance_items', 'wpdispensary_right_now_content_table_end' );
 
 /**
- * WP Dispensary toolbar quick menu
+ * CannaBiz toolbar quick menu
  * 
  * @param object $wp_admin_bar 
  * 
@@ -139,7 +139,7 @@ add_action( 'dashboard_glance_items', 'wpdispensary_right_now_content_table_end'
 function toolbar_quick_menu( $wp_admin_bar ) {
     $args = array(
         'id'    => 'wp_dispensary',
-        'title' => esc_attr__( 'WP Dispensary', 'cannabiz-menu' ),
+        'title' => esc_attr__( 'CannaBiz', 'cannabiz-menu' ),
         'href'  => admin_url() . 'edit.php?post_type=products',
     );
     $wp_admin_bar->add_node( $args );
