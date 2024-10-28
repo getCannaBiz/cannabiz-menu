@@ -5,7 +5,7 @@
  * This file is used to define the product details metabox of the plugin.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/metaboxes
+ * @subpackage CannaBiz_Menu/admin/metaboxes
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com

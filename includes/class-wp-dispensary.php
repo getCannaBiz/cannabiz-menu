@@ -6,7 +6,7 @@
  * public-facing side of the site and the admin area.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes
+ * @subpackage CannaBiz_Menu/includes
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -23,7 +23,7 @@
  * version of the plugin.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes
+ * @subpackage CannaBiz_Menu/includes
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -72,7 +72,7 @@ class WP_Dispensary {
      */
     public function __construct() {
 
-        $this->plugin_name = 'wp-dispensary';
+        $this->plugin_name = 'cannabiz-menu';
         $this->version     = '4.5.0';
 
         if ( defined( 'WP_DISPENSARY_VERSION' ) ) {

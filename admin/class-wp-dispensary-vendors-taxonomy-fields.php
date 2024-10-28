@@ -3,7 +3,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin
+ * @subpackage CannaBiz_Menu/admin
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -21,7 +21,7 @@ if ( ! class_exists( 'WP_Dispensary_Vendor_Taxonomy_Fields' ) ) {
      * Class - Vendor Taxonomy Fields
      * 
      * @package    WP_Dispensary
-     * @subpackage WP_Dispensary/admin
+     * @subpackage CannaBiz_Menu/admin
      * @author     CannaBiz Software <contact@cannabizsoftware.com>
      * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
      * @link       https://cannabizsoftware.com

@@ -3,7 +3,7 @@
  * The public-facing functionality of the plugin.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/public
+ * @subpackage CannaBiz_Menu/public
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -17,7 +17,7 @@
  * enqueue the admin-specific stylesheet and JavaScript.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/public
+ * @subpackage CannaBiz_Menu/public
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -105,13 +105,13 @@ add_action( 'enqueue_embed_scripts', 'wpd_oembed_styles' );
 function wp_dispensary_body_class( $classes ) {
     global $post;
 
-    // Add classes to a page that has the WP Dispensary shortcode present.
+    // Add classes to a page that has the CannaBiz Menu shortcode present.
     if ( isset( $post->post_content ) && has_shortcode( $post->post_content, 'wpd_menu' ) ) {
-        $classes[] = 'wp-dispensary';
+        $classes[] = 'cannabiz-menu';
     }
-    // Add wp-dispensary class name to multiple areas of the website.
+    // Add cannabiz-menu class name to multiple areas of the website.
     if ( is_singular( 'products' ) || is_post_type_archive( 'products' ) || is_category( 'wpd_categories' ) ) {
-        $classes[] = 'wp-dispensary';
+        $classes[] = 'cannabiz-menu';
     }
     // Add wpd-single class name to singular products.
     if ( is_singular( 'products' ) ) {

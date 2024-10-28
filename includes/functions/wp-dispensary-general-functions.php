@@ -3,7 +3,7 @@
  * The file that defines the general helper functions.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes/fuctions
+ * @subpackage CannaBiz_Menu/includes/fuctions
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -29,9 +29,9 @@ function get_wpd_details_phrase() {
     if ( isset ( $wpd_settings['wpd_details_phrase_custom'] ) && '' !== $wpd_settings['wpd_details_phrase_custom'] ) {
         $wpd_details_phrase = $wpd_settings['wpd_details_phrase_custom'];
     } elseif ( isset ( $wpd_settings['wpd_details_phrase'] ) && 'Information' === $wpd_settings['wpd_details_phrase'] ) {
-        $wpd_details_phrase = esc_attr__( 'Information', 'wp-dispensary' );
+        $wpd_details_phrase = esc_attr__( 'Information', 'cannabiz-menu' );
     } else {
-        $wpd_details_phrase = esc_attr__( 'Details', 'wp-dispensary' );
+        $wpd_details_phrase = esc_attr__( 'Details', 'cannabiz-menu' );
     }
 
     // Create filterable details phrase.
@@ -49,14 +49,14 @@ function get_wpd_details_phrase() {
  */
 function wpd_product_types() {
     $product_types = array(
-        'wpd-flowers'      => esc_html__( 'Flowers', 'wp-dispensary' ),
-        'wpd-concentrates' => esc_html__( 'Concentrates', 'wp-dispensary' ),
-        'wpd-tinctures'    => esc_html__( 'Tinctures', 'wp-dispensary' ),
-        'wpd-edibles'      => esc_html__( 'Edibles', 'wp-dispensary' ),
-        'wpd-prerolls'     => esc_html__( 'Pre-rolls', 'wp-dispensary' ),
-        'wpd-topicals'     => esc_html__( 'Topicals', 'wp-dispensary' ),
-        'wpd-growers'      => esc_html__( 'Growers', 'wp-dispensary' ),
-        'wpd-gear'         => esc_html__( 'Gear', 'wp-dispensary' ),
+        'wpd-flowers'      => esc_html__( 'Flowers', 'cannabiz-menu' ),
+        'wpd-concentrates' => esc_html__( 'Concentrates', 'cannabiz-menu' ),
+        'wpd-tinctures'    => esc_html__( 'Tinctures', 'cannabiz-menu' ),
+        'wpd-edibles'      => esc_html__( 'Edibles', 'cannabiz-menu' ),
+        'wpd-prerolls'     => esc_html__( 'Pre-rolls', 'cannabiz-menu' ),
+        'wpd-topicals'     => esc_html__( 'Topicals', 'cannabiz-menu' ),
+        'wpd-growers'      => esc_html__( 'Growers', 'cannabiz-menu' ),
+        'wpd-gear'         => esc_html__( 'Gear', 'cannabiz-menu' ),
     );
     return apply_filters( 'wpd_product_types', $product_types );
 }
@@ -74,14 +74,14 @@ function wpd_product_type_display_name( $slug = '' ) {
         return null;
     }
     $product_types = array(
-        'flowers'      => esc_html__( 'Flowers', 'wp-dispensary' ),
-        'concentrates' => esc_html__( 'Concentrates', 'wp-dispensary' ),
-        'tinctures'    => esc_html__( 'Tinctures', 'wp-dispensary' ),
-        'edibles'      => esc_html__( 'Edibles', 'wp-dispensary' ),
-        'prerolls'     => esc_html__( 'Pre-rolls', 'wp-dispensary' ),
-        'topicals'     => esc_html__( 'Topicals', 'wp-dispensary' ),
-        'growers'      => esc_html__( 'Growers', 'wp-dispensary' ),
-        'gear'         => esc_html__( 'Gear', 'wp-dispensary' ),
+        'flowers'      => esc_html__( 'Flowers', 'cannabiz-menu' ),
+        'concentrates' => esc_html__( 'Concentrates', 'cannabiz-menu' ),
+        'tinctures'    => esc_html__( 'Tinctures', 'cannabiz-menu' ),
+        'edibles'      => esc_html__( 'Edibles', 'cannabiz-menu' ),
+        'prerolls'     => esc_html__( 'Pre-rolls', 'cannabiz-menu' ),
+        'topicals'     => esc_html__( 'Topicals', 'cannabiz-menu' ),
+        'growers'      => esc_html__( 'Growers', 'cannabiz-menu' ),
+        'gear'         => esc_html__( 'Gear', 'cannabiz-menu' ),
     );
     return apply_filters( 'wpd_product_type_display_name', $product_types[$slug] );
 }
@@ -99,14 +99,14 @@ function wpd_product_type_display_name_to_slug( $name = '' ) {
         return null;
     }
     $product_types = array(
-        esc_html__( 'Flowers', 'wp-dispensary' )      => 'flowers',
-        esc_html__( 'Concentrates', 'wp-dispensary' ) => 'concentrates',
-        esc_html__( 'Tinctures', 'wp-dispensary' )    => 'tinctures',
-        esc_html__( 'Edibles', 'wp-dispensary' )      => 'edibles',
-        esc_html__( 'Pre-rolls', 'wp-dispensary' )    => 'prerolls',
-        esc_html__( 'Topicals', 'wp-dispensary' )     => 'topicals',
-        esc_html__( 'Growers', 'wp-dispensary' )      => 'growers',
-        esc_html__( 'Gear', 'wp-dispensary' )         => 'gear',
+        esc_html__( 'Flowers', 'cannabiz-menu' )      => 'flowers',
+        esc_html__( 'Concentrates', 'cannabiz-menu' ) => 'concentrates',
+        esc_html__( 'Tinctures', 'cannabiz-menu' )    => 'tinctures',
+        esc_html__( 'Edibles', 'cannabiz-menu' )      => 'edibles',
+        esc_html__( 'Pre-rolls', 'cannabiz-menu' )    => 'prerolls',
+        esc_html__( 'Topicals', 'cannabiz-menu' )     => 'topicals',
+        esc_html__( 'Growers', 'cannabiz-menu' )      => 'growers',
+        esc_html__( 'Gear', 'cannabiz-menu' )         => 'gear',
     );
     return apply_filters( 'wpd_product_type_display_name', $product_types[$name] );
 }

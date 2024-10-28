@@ -4,7 +4,7 @@
  * updated with new features.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes/fuctions
+ * @subpackage CannaBiz_Menu/includes/fuctions
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -24,14 +24,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function wpd_menu_types() {
     $menu_types = array(
-        'wpd-flowers'      => esc_html__( 'Flowers', 'wp-dispensary' ),
-        'wpd-concentrates' => esc_html__( 'Concentrates', 'wp-dispensary' ),
-        'wpd-tinctures'    => esc_html__( 'Tinctures', 'wp-dispensary' ),
-        'wpd-edibles'      => esc_html__( 'Edibles', 'wp-dispensary' ),
-        'wpd-prerolls'     => esc_html__( 'Pre-rolls', 'wp-dispensary' ),
-        'wpd-topicals'     => esc_html__( 'Topicals', 'wp-dispensary' ),
-        'wpd-growers'      => esc_html__( 'Growers', 'wp-dispensary' ),
-        'wpd-gear'         => esc_html__( 'Gear', 'wp-dispensary' ),
+        'wpd-flowers'      => esc_html__( 'Flowers', 'cannabiz-menu' ),
+        'wpd-concentrates' => esc_html__( 'Concentrates', 'cannabiz-menu' ),
+        'wpd-tinctures'    => esc_html__( 'Tinctures', 'cannabiz-menu' ),
+        'wpd-edibles'      => esc_html__( 'Edibles', 'cannabiz-menu' ),
+        'wpd-prerolls'     => esc_html__( 'Pre-rolls', 'cannabiz-menu' ),
+        'wpd-topicals'     => esc_html__( 'Topicals', 'cannabiz-menu' ),
+        'wpd-growers'      => esc_html__( 'Growers', 'cannabiz-menu' ),
+        'wpd-gear'         => esc_html__( 'Gear', 'cannabiz-menu' ),
     );
     return apply_filters( 'wpd_menu_types', $menu_types );
 }

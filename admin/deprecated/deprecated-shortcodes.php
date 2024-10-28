@@ -7,7 +7,7 @@
  * @since      3.3.3
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin
+ * @subpackage CannaBiz_Menu/admin
  */
 
 // Exit if accessed directly.

@@ -8,7 +8,7 @@
  * @since      1.4.0
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/post-types
+ * @subpackage CannaBiz_Menu/admin/post-types
  */
 
 /**

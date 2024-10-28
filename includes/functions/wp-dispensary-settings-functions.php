@@ -3,7 +3,7 @@
  * The file that defines the admin settings helper functions.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes/fuctions
+ * @subpackage CannaBiz_Menu/includes/fuctions
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -95,7 +95,7 @@ function wpd_settings_display_details_phrase() {
         $phrase = $setting['wpd_details_phrase'];
     } else {
         // Default title phrase.
-        $phrase = esc_attr__( 'Details', 'wp-dispensary' );
+        $phrase = esc_attr__( 'Details', 'cannabiz-menu' );
     }
 
     return apply_filters( 'wpd_settings_display_details_phrase', $phrase );

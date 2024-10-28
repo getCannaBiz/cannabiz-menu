@@ -3,7 +3,7 @@
  * Fired during plugin activation
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes
+ * @subpackage CannaBiz_Menu/includes
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -16,7 +16,7 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes
+ * @subpackage CannaBiz_Menu/includes
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -83,7 +83,7 @@ class WP_Dispensary_Activator {
             $current_user = wp_get_current_user();
             // create post object.
             $page = array(
-                'post_title'   => esc_html__( 'Menu', 'wp-dispensary' ),
+                'post_title'   => esc_html__( 'Menu', 'cannabiz-menu' ),
                 'post_status'  => 'publish',
                 'post_author'  => $current_user->ID,
                 'post_type'    => 'page',

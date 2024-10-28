@@ -1,10 +1,10 @@
 <?php
 /**
- * WP Dispensary
+ * CannaBiz Menu
  *
  * Plugin details
  *
- * @package WP_Dispensary
+ * @package CannaBiz_Menu
  * @author  CannaBiz Software <contact@cannabizsoftware.com>
  * @license GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link    https://cannabizsoftware.com
@@ -18,7 +18,7 @@
  * Author URI:        https://cannabizsoftware.com
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain:       wp-dispensary
+ * Text Domain:       cannabiz-menu
  * Domain Path:       /languages
  */
 
@@ -101,8 +101,8 @@ run_wp_dispensary();
  * @return array
  */
 function wpd_plugin_links( $links ) {
-    $pro_link      = '<a href="https://cannabizsoftware.com/product/pro-package/" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'wp-dispensary' ) . '</a>';
-    $settings_link = '<a href="admin.php?page=wpd-settings">' . esc_attr__( 'Settings', 'wp-dispensary' ) . '</a>';
+    $pro_link      = '<a href="https://cannabizsoftware.com/product/pro-package/" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'cannabiz-menu' ) . '</a>';
+    $settings_link = '<a href="admin.php?page=wpd-settings">' . esc_attr__( 'Settings', 'cannabiz-menu' ) . '</a>';
     // Updated links.
     array_unshift( $links, $settings_link );
     // Updated links (Pro).

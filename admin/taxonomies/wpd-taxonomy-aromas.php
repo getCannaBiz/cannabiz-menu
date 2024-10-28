@@ -5,7 +5,7 @@
  * This file is used to define the product aromas taxonomy of the plugin.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin/taxonomies
+ * @subpackage CannaBiz_Menu/admin/taxonomies
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -40,7 +40,7 @@ function wp_dispensary_aromas_taxonomy() {
         'add_new_item'               => esc_html__( 'Add New Aroma', 'cannabiz-menu' ),
         'new_item_name'              => esc_html__( 'New Aroma Name', 'cannabiz-menu' ),
         'separate_items_with_commas' => esc_html__( 'Separate aromas with commas', 'cannabiz-menu' ),
-        'add_or_remove_items'        => esc_html__( 'Add or remove aromas' , 'wp-dispensary'),
+        'add_or_remove_items'        => esc_html__( 'Add or remove aromas' , 'cannabiz-menu' ),
         'choose_from_most_used'      => esc_html__( 'Choose from the most used aromas', 'cannabiz-menu' ),
         'not_found'                  => esc_html__( 'No aromas found', 'cannabiz-menu' ),
         'menu_name'                  => esc_html__( 'Aromas', 'cannabiz-menu' ),

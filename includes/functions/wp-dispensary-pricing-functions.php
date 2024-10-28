@@ -3,7 +3,7 @@
  * The file that defines the pricing functions.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes/fuctions
+ * @subpackage CannaBiz_Menu/includes/fuctions
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -444,15 +444,15 @@ function get_wpd_pricing_phrase( $singular ) {
         $wpd_pricing_phrase = $wpd_settings['wpd_pricing_phrase_custom'];
     } elseif ( isset ( $wpd_settings['wpd_pricing_phrase'] ) && 'Donation' === $wpd_settings['wpd_pricing_phrase'] ) {
         if ( $singular == true ) {
-            $wpd_pricing_phrase = esc_attr__( 'Donation', 'wp-dispensary' );
+            $wpd_pricing_phrase = esc_attr__( 'Donation', 'cannabiz-menu' );
         } else {
-            $wpd_pricing_phrase = esc_attr__( 'Donations', 'wp-dispensary' );
+            $wpd_pricing_phrase = esc_attr__( 'Donations', 'cannabiz-menu' );
         }
     } else {
         if ( $singular == true ) {
-            $wpd_pricing_phrase = esc_attr__( 'Price', 'wp-dispensary' );
+            $wpd_pricing_phrase = esc_attr__( 'Price', 'cannabiz-menu' );
         } else {
-            $wpd_pricing_phrase = esc_attr__( 'Prices', 'wp-dispensary' );
+            $wpd_pricing_phrase = esc_attr__( 'Prices', 'cannabiz-menu' );
         }
     }
 
@@ -1215,22 +1215,22 @@ function wpd_product_prices( $product_type = '' ) {
     if ( empty( $product_type ) || in_array( $product_type, apply_filters( 'wpd_general_product_prices', array( 'edibles', 'prerolls', 'topicals', 'growers', 'gear', 'tinctures' ) ) ) ) {
         // Product prices array.
         $product_prices = array(
-            'price_each'     => esc_html__( 'Price per unit', 'wp-dispensary' ),
-            'price_per_pack' => esc_html__( 'Price per pack', 'wp-dispensary' ),
-            'units_per_pack' => esc_html__( 'Units per pack', 'wp-dispensary' ),
+            'price_each'     => esc_html__( 'Price per unit', 'cannabiz-menu' ),
+            'price_per_pack' => esc_html__( 'Price per pack', 'cannabiz-menu' ),
+            'units_per_pack' => esc_html__( 'Units per pack', 'cannabiz-menu' ),
         );
     }
     // Flowers prices.
     if ( 'flowers' == $product_type ) {
         // Product prices array.
         $product_prices = array(
-            'price_gram'          => esc_html__( '1 g', 'wp-dispensary' ),
-            'price_two_grams'     => esc_html__( '2 g', 'wp-dispensary' ),
-            'price_eighth'        => esc_html__( '1/8 oz', 'wp-dispensary' ),
-            'price_five_grams'    => esc_html__( '5 g', 'wp-dispensary' ),
-            'price_quarter_ounce' => esc_html__( '1/4 oz', 'wp-dispensary' ),
-            'price_half_ounce'    => esc_html__( '1/2 oz', 'wp-dispensary' ),
-            'price_ounce'         => esc_html__( '1 oz', 'wp-dispensary' )
+            'price_gram'          => esc_html__( '1 g', 'cannabiz-menu' ),
+            'price_two_grams'     => esc_html__( '2 g', 'cannabiz-menu' ),
+            'price_eighth'        => esc_html__( '1/8 oz', 'cannabiz-menu' ),
+            'price_five_grams'    => esc_html__( '5 g', 'cannabiz-menu' ),
+            'price_quarter_ounce' => esc_html__( '1/4 oz', 'cannabiz-menu' ),
+            'price_half_ounce'    => esc_html__( '1/2 oz', 'cannabiz-menu' ),
+            'price_ounce'         => esc_html__( '1 oz', 'cannabiz-menu' )
         );
         // Filter flower prices.
         $product_prices = apply_filters( 'wpd_flowers_product_prices', $product_prices );
@@ -1239,12 +1239,12 @@ function wpd_product_prices( $product_type = '' ) {
     if ( 'concentrates' == $product_type ) {
         // Product prices array.
         $product_prices = array(
-            'price_each'          => esc_html__( 'Price per unit', 'wp-dispensary' ),
-            'price_per_pack'      => esc_html__( 'Price per pack', 'wp-dispensary' ),
-            'units_per_pack'      => esc_html__( 'Units per pack', 'wp-dispensary' ),
-            'price_half_gram'     => esc_html__( '1/2 gram', 'wp-dispensary' ),
-            'price_gram'          => esc_html__( '1 g', 'wp-dispensary' ),
-            'price_two_grams'     => esc_html__( '2 g', 'wp-dispensary' ),
+            'price_each'          => esc_html__( 'Price per unit', 'cannabiz-menu' ),
+            'price_per_pack'      => esc_html__( 'Price per pack', 'cannabiz-menu' ),
+            'units_per_pack'      => esc_html__( 'Units per pack', 'cannabiz-menu' ),
+            'price_half_gram'     => esc_html__( '1/2 gram', 'cannabiz-menu' ),
+            'price_gram'          => esc_html__( '1 g', 'cannabiz-menu' ),
+            'price_two_grams'     => esc_html__( '2 g', 'cannabiz-menu' ),
         );
         // Filter concentrates prices.
         $product_prices = apply_filters( 'wpd_concentrates_product_prices', $product_prices );

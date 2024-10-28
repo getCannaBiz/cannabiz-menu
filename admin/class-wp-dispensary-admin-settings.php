@@ -5,7 +5,7 @@
  * Main class that deals with all other classes.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/admin
+ * @subpackage CannaBiz_Menu/admin
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WPD_ADMIN_SETTINGS' ) ) :
      * WPD Admin Settings
      * 
      * @package    WP_Dispensary
-     * @subpackage WP_Dispensary/includes
+     * @subpackage CannaBiz_Menu/includes
      * @author     CannaBiz Software <contact@cannabizsoftware.com>
      * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
      * @link       https://cannabizsoftware.com

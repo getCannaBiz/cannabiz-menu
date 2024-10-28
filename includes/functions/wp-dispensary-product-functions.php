@@ -3,7 +3,7 @@
  * The file that defines the product helper functions.
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/includes/fuctions
+ * @subpackage CannaBiz_Menu/includes/fuctions
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
@@ -44,12 +44,12 @@ function wpd_product_updated_messages( $messages ) {
         $messages['post'] = array(
             0 => '', // Unused. Messages start at index 1.
             1 => sprintf( esc_html__( 'Product updated. <a href="%s">View product</a>' ), esc_url( get_permalink( $product_id ) ) ),
-            2 => esc_html__( 'Product updated.', 'wp-dispensary' ),
-            3 => esc_html__( 'Product deleted.', 'wp-dispensary' ),
-            4 => esc_html__( 'Product updated.', 'wp-dispensary' ),
+            2 => esc_html__( 'Product updated.', 'cannabiz-menu' ),
+            3 => esc_html__( 'Product deleted.', 'cannabiz-menu' ),
+            4 => esc_html__( 'Product updated.', 'cannabiz-menu' ),
             5 => null == filter_input( INPUT_GET, 'revision' ) ? sprintf( esc_html__( 'Product restored to revision from %s' ), wp_post_revision_title( (int) filter_input( INPUT_GET, 'revision' ), false ) ) : false,
             6 => sprintf( esc_html__( 'Product published. <a href="%s">View product</a>' ), esc_url( get_permalink( $product_id ) ) ),
-            7 => esc_html__( 'Product saved.', 'wp-dispensary' ),
+            7 => esc_html__( 'Product saved.', 'cannabiz-menu' ),
             8 => sprintf( esc_html__( 'Product submitted. <a target="_blank" href="%s">Preview product</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $product_id ) ) ) ),
             9 => sprintf( esc_html__( 'Product scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview product</a>' ),
             date_i18n( esc_html__( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $product_id ) ) ),
@@ -128,7 +128,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         // Seed count.
         if ( 'show' === $value && 'seed_count' === $product ) {
             if ( get_post_meta( $product_id, 'seed_count', true ) ) {
-                    $str .= '<'  . $wrapper . ' class="wpd-productinfo seeds"><strong>' . esc_attr__( 'Seeds', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, 'seed_count', true ) . '</'  . $wrapper . '>';
+                    $str .= '<'  . $wrapper . ' class="wpd-productinfo seeds"><strong>' . esc_attr__( 'Seeds', 'cannabiz-menu' ) . ':</strong> ' . get_post_meta( $product_id, 'seed_count', true ) . '</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }
@@ -139,7 +139,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         // Clone count.
         if ( 'show' === $value && 'clone_count' === $product ) {
             if ( get_post_meta( $product_id, 'clone_count', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo clones"><strong>' . esc_attr__( 'Clones', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, 'clone_count', true ) . '</'  . $wrapper . '>';
+                $str .= '<'  . $wrapper . ' class="wpd-productinfo clones"><strong>' . esc_attr__( 'Clones', 'cannabiz-menu' ) . ':</strong> ' . get_post_meta( $product_id, 'clone_count', true ) . '</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }
@@ -150,7 +150,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         // Size oz (Topicals).
         if ( 'show' === $value && 'size' === $product ) {
             if ( get_post_meta( $product_id, '_sizetopical', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo size"><strong>' . esc_attr__( 'Size', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, '_sizetopical', true ) . 'oz</'  . $wrapper . '>';
+                $str .= '<'  . $wrapper . ' class="wpd-productinfo size"><strong>' . esc_attr__( 'Size', 'cannabiz-menu' ) . ':</strong> ' . get_post_meta( $product_id, '_sizetopical', true ) . 'oz</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }
@@ -161,7 +161,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         // THC mg (Topicals).
         if ( 'show' === $value && 'thc_topical' === $product ) {
             if ( get_post_meta( $product_id, '_thctopical', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo thc"><strong>' . esc_attr__( 'THC', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, '_thctopical', true ) . 'mg</'  . $wrapper . '>';
+                $str .= '<'  . $wrapper . ' class="wpd-productinfo thc"><strong>' . esc_attr__( 'THC', 'cannabiz-menu' ) . ':</strong> ' . get_post_meta( $product_id, '_thctopical', true ) . 'mg</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }
@@ -172,7 +172,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         // CBD mg (Topicals).
         if ( 'show' === $value && 'cbd' === $product ) {
             if ( get_post_meta( $product_id, '_cbdtopical', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo cbd"><strong>' . esc_attr__( 'CBD', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, '_cbdtopical', true ) . 'mg</'  . $wrapper . '>';
+                $str .= '<'  . $wrapper . ' class="wpd-productinfo cbd"><strong>' . esc_attr__( 'CBD', 'cannabiz-menu' ) . ':</strong> ' . get_post_meta( $product_id, '_cbdtopical', true ) . 'mg</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }
@@ -183,7 +183,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         // Pre-roll weight.
         if ( 'show' === $value && 'weight' === $product ) {
             if ( get_post_meta( $product_id, '_preroll_weight', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo weight"><strong>' . esc_attr__( 'Weight', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, '_preroll_weight', true ) . 'g</'  . $wrapper . '>';
+                $str .= '<'  . $wrapper . ' class="wpd-productinfo weight"><strong>' . esc_attr__( 'Weight', 'cannabiz-menu' ) . ':</strong> ' . get_post_meta( $product_id, '_preroll_weight', true ) . 'g</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }
@@ -194,7 +194,7 @@ function get_wpd_product_details( $product_id, $product_details, $wrapper = 'spa
         // Servings (Edibles).
         if ( 'show' === $value && 'servings' === $product ) {
             if ( get_post_meta( $product_id, 'product_servings', true ) ) {
-                $str .= '<'  . $wrapper . ' class="wpd-productinfo servings"><strong>' . esc_attr__( 'Servings', 'wp-dispensary' ) . ':</strong> ' . get_post_meta( $product_id, 'product_servings', true ) . '</'  . $wrapper . '>';
+                $str .= '<'  . $wrapper . ' class="wpd-productinfo servings"><strong>' . esc_attr__( 'Servings', 'cannabiz-menu' ) . ':</strong> ' . get_post_meta( $product_id, 'product_servings', true ) . '</'  . $wrapper . '>';
             } else {
                 // Do nothing.
             }

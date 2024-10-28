@@ -2,7 +2,7 @@
 /**
  * Fired when the plugin is uninstalled.
  *
- * @package WP_Dispensary
+ * @package CannaBiz_Menu
  * @author  CannaBiz Software <contact@cannabizsoftware.com>
  * @license GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link    https://cannabizsoftware.com

@@ -3,7 +3,7 @@
  * Adding oEmbed specific codes
  *
  * @package    WP_Dispensary
- * @subpackage WP_Dispensary/public
+ * @subpackage CannaBiz_Menu/public
  * @author     CannaBiz Software <contact@cannabizsoftware.com>
  * @license    GPL-3.0+ http://www.gnu.org/licenses/gpl-3.0.txt
  * @link       https://cannabizsoftware.com
